@@ -4,7 +4,8 @@ export type Element = "木" | "火" | "土" | "金" | "水";
 
 export type YinYang = "양" | "음";
 
-// TODO(Phase 2): @fullstackfamily/manseryeok 결과를 이 형태로 매핑한다.
+// @fullstackfamily/manseryeok 결과를 이 형태로 매핑한다 (saju.ts).
+// stem/branch는 한자 1글자(예: "庚"/"午")다. config.ts의 STEM_ELEMENT/BRANCH_ELEMENT/BRANCH_HIDDEN_STEMS 키와 맞춘다.
 export interface Saju {
   year: { stem: string; branch: string };
   month: { stem: string; branch: string };
