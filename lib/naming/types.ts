@@ -29,18 +29,41 @@ export interface YongsinResult {
   reason: string;
 }
 
-// TODO(Phase 3): DB(hanja 테이블, CLAUDE.md 4.1)에서 채운다.
+// DB(hanja 테이블, CLAUDE.md 4.1)에서 채운다.
+// element가 nullable인 이유: 자원오행은 부수 의미가 명확한 극소수 부수에만 배속했다
+// (config.ts RADICAL_ELEMENT, 부분표). 배속 안 된 부수의 한자는 element가 null이다.
 export interface Hanja {
   char: string;
   readings: string[];
   strokeOriginal: number;
   strokeActual: number;
-  radical: string;
-  element: Element;
-  meaning: string;
+  radical: string | null;
+  element: Element | null;
+  meaning: string | null;
   isNameAllowed: boolean;
   isForbidden: boolean;
   forbiddenReason: string | null;
+  // Phase 3 — OCR로 원문(PDF)을 판독한 데이터라 정확도 검증 상태를 남긴다.
+  // "confirmed": Unicode Unihan 공식 한국어 독음과 교차검증되어 일치함.
+  // 현재 DB에는 confirmed만 적재되어 있고("unverified"는 이번 Phase에서 보류),
+  // 향후 보강 시 "unverified"도 채워질 수 있다.
+  verificationStatus: "confirmed" | "unverified";
+}
+
+// DB(surname 테이블, CLAUDE.md 4.2)에서 채운다.
+export interface Surname {
+  hangul: string;
+  hanja: string;
+  strokeOriginal: number;
+  initialElement: Element;
+}
+
+// DB(numerology_81 테이블, CLAUDE.md 4.3)에서 채운다.
+export interface Numerology81 {
+  number: number;
+  fortune: string;
+  title: string | null;
+  description: string | null;
 }
 
 // TODO(Phase 4): 작명 엔진 출력 후보. LLM은 이 값을 서술만 한다 (CLAUDE.md 2.3).
