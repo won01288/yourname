@@ -7,6 +7,7 @@ import { getSurnameByHangul, getEligibleHanjaPool, getAllNumerology81 } from "@/
 import { aggregateElements } from "@/lib/naming/elements";
 import { deriveYongsin } from "@/lib/naming/yongsin";
 import { buildCandidates } from "@/lib/naming/candidates";
+import { explainCandidates } from "@/lib/llm/explain";
 
 interface NameRequestBody extends BirthInput {
   surnameHangul: string;
@@ -77,11 +78,23 @@ export async function POST(request: Request) {
     numerologyTable,
   });
 
+  const report =
+    candidates.length > 0
+      ? await explainCandidates({
+          saju,
+          elementDistribution,
+          yongsin: yongsinResult,
+          surname,
+          candidates,
+        })
+      : null;
+
   return NextResponse.json({
     saju,
     elementDistribution,
     yongsin: yongsinResult,
     surname,
     candidates,
+    report,
   });
 }

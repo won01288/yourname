@@ -179,8 +179,8 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 - [x] **Phase 1 — 뼈대 + 배포**: Next.js + TS + vercel 배포 완료, 실제 URL에서 Hello World 확인 완료. (Turso 실제 DB 생성·연결은 Phase 3에서 완료 — `.env.local`에 자격정보 있음, git에는 커밋 안 됨.)
 - [x] **Phase 2 — 사주 엔진**: 생년월일시 → 팔자 → 오행분포 → 신강약 → 용신. 순수 함수 + 테스트(vitest, 9개 통과) 완료. UI/DB 연동 없음 (`app/api/name/route.ts`는 아직 미조립).
 - [x] **Phase 3 — 참조 데이터 (대부분 완료)**: Turso 실제 DB 생성·연결 완료, `hanja`(**9,063자**, 대법원 시스템 수집 텍스트 표 기준 — 4.1 "Phase 3 데이터 출처" 참고)/`surname`(30개)/`numerology_81`(81개 전체) 테이블 적재 완료. `lib/db.ts`, `lib/naming/numerology.ts` 구현 및 테스트 완료. 남은 갭: 원획 계산이 안 되는 희귀 한자 405자 제외됨, 자원오행 배속표는 214부수 중 19개만 채워진 부분표, 성씨는 30개뿐. 6장 미결정 사항 참고.
-- [ ] **Phase 4 — 작명 엔진**: 용신 + 성씨 제약으로 후보 조합 생성.
-- [ ] **Phase 5 — LLM 설명 계층**: Claude API로 후보 큐레이션 + 해설 생성.
+- [x] **Phase 4 — 작명 엔진**: 용신 + 성씨 제약으로 후보 조합 생성. `lib/naming/candidates.ts`(발음오행 상생 + 4격 전부 길수 하드 필터, 자원오행 일치·음양 균형 가산점) 구현 및 테스트(vitest) 완료, `app/api/name/route.ts`에서 saju→db→yongsin→candidates 파이프라인 조립 완료.
+- [x] **Phase 5 — LLM 설명 계층**: Claude API로 후보 큐레이션 + 해설 생성. `lib/llm/explain.ts` 신설 — `lib/naming/` 밖에 두어 8.1 원칙(naming 폴더는 LLM을 import하지 않음)을 물리적으로 지켰다. 이미 확정된 사실(사주·오행 분포·용신·후보 획수/발음오행)만 프롬프트에 담아 전달하고, `output_config.format`(json_schema)으로 출력을 강제해 LLM이 새 수치·판정을 만들지 못하게 했다(2.3). `app/api/name/route.ts`에서 `buildCandidates` 이후에만 호출하도록 조립(8.2). 모델은 `claude-opus-4-8`. 타입 체크·기존 vitest 29개 통과 확인; 실제 API 호출 스모크 테스트는 비용이 발생해 사용자 승인 전 보류 — 실사용 전 확인 필요.
 - [ ] **Phase 6 — 프론트/UX + 마무리**: 입력 폼, 결과 리포트 디자인, 법적 고지.
 
 ---
