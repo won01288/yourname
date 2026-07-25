@@ -18,6 +18,14 @@ export const INITIAL_CONSONANT_ELEMENT: Record<string, Element> = {
   ㅁ: "水",
   ㅂ: "水",
   ㅍ: "水",
+  // 경음(된소리)은 한자 독음(한국 한자음)의 초성으로 실질적으로 쓰이지 않지만(한자음은 경음으로
+  // 시작하지 않는 것이 원칙), 방어적으로 같은 조음위치의 예사소리와 같은 오행으로 매핑해 둔다.
+  // 새로운 학파 판단이 아니라 기계적 확장이다.
+  ㄲ: "木",
+  ㄸ: "火",
+  ㅃ: "水",
+  ㅆ: "金",
+  ㅉ: "金",
 };
 
 // CLAUDE.md 3.1 — 상생 흐름: 木生火·火生土·土生金·金生水·水生木.
@@ -124,3 +132,26 @@ export const RADICAL_ELEMENT: Record<number, Element> = {
   15: "水", // 冫
   47: "水", // 巛/川
 };
+
+// Phase 4 — 이름 글자 수. 4격 이론(numerology.ts calcSagyeok)이 표준과 정확히 일치하는
+// "성 1자 + 이름 2자" 형태만 지원한다. 1글자·3글자 이상 이름의 확장은 미결정(CLAUDE.md 6장)이라
+// Phase 4에서는 다루지 않는다.
+export const GIVEN_NAME_LENGTH = 2;
+
+// Phase 4 — 최종 추천 후보 개수 (CLAUDE.md 0장 "이름 후보 3~5개").
+export const CANDIDATE_COUNT = 5;
+
+// Phase 4 — 후보 하드 필터: 4격(원형이정)이 전부 길수여야 후보로 채택한다.
+// isAuspiciousNumber()는 반길도 흉과 함께 false로 처리하므로(numerology.ts), 4격 중
+// 하나라도 길이 아니면 탈락하는 엄격한 기준이다. 발음오행(성→이름1→이름2 순방향 상생,
+// phonetic.ts isPhoneticSangsaeng)도 동일하게 하드 필터로 적용한다.
+//
+// 자원오행(hanja.element가 용신과 일치)과 음양 배열(획수 홀짝이 한쪽으로 쏠리지 않음)은
+// element가 NULL인 한자가 많아(CLAUDE.md 3.5, 약 33%) 하드 필터로 쓰면 후보 풀이 지나치게
+// 좁아진다 — 그래서 이 둘은 하드 필터가 아니라 가산점(soft score)으로만 반영한다.
+export const CANDIDATE_SCORE_WEIGHTS = {
+  // 이름 두 글자 중 자원오행이 용신과 일치하는 글자 수(0~2) × 이 값.
+  wonhaengMatch: 2,
+  // 성+이름 획수의 음양(홀/짝)이 한쪽으로 쏠리지 않으면(전부 홀 또는 전부 짝이 아니면) 가산.
+  yinYangBalanced: 1,
+} as const;
