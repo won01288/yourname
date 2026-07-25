@@ -1,0 +1,17 @@
+{
+ "total_final": 1789,
+ "total_full": 9460,
+ "not_in_full_count": 8,
+ "not_in_full_sample": [
+  "努",
+  "奴",
+  "姬",
+  "嫩",
+  "怒",
+  "港",
+  "珊",
+  "𮕩"
+ ],
+ "reading_mismatch_count": 0,
+ "reading_mismatch_sample": []
+}
