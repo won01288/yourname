@@ -1,0 +1,77 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+// design.md 3.3 — 실제 결정적 파이프라인(CLAUDE.md 2장) 단계를 그대로 보여주는 스테이지형 로딩.
+const STAGES = [
+  "사주팔자를 세우는 중",
+  "오행 분포를 계산하는 중",
+  "용신을 도출하는 중",
+  "이름 후보를 탐색하는 중",
+  "인명용 한자·수리를 검증하는 중",
+];
+
+const STEP_MS = 900;
+
+interface LoadingStagesProps {
+  /** 실제 API 요청이 끝났는지 여부. 끝나도 마지막 단계 연출은 최소 시간 유지한다. */
+  isDone: boolean;
+  onComplete: () => void;
+}
+
+export default function LoadingStages({ isDone, onComplete }: LoadingStagesProps) {
+  const [index, setIndex] = useState(0);
+  const completedRef = useRef(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => Math.min(prev + 1, STAGES.length - 1));
+    }, STEP_MS);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (index === STAGES.length - 1 && isDone && !completedRef.current) {
+      completedRef.current = true;
+      const t = setTimeout(onComplete, 350);
+      return () => clearTimeout(t);
+    }
+  }, [index, isDone, onComplete]);
+
+  return (
+    <section className="mx-auto flex w-full max-w-md flex-col items-center px-6 py-24">
+      <div className="w-full rounded-card border border-border bg-surface p-8 shadow-[var(--shadow-card)]">
+        <ul className="flex flex-col gap-4">
+          {STAGES.map((label, i) => {
+            const state = i < index ? "done" : i === index ? "active" : "pending";
+            return (
+              <li key={label} className="flex items-center gap-3">
+                <span
+                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[11px] transition-colors ${
+                    state === "done"
+                      ? "border-brand-600 bg-brand-600 text-white"
+                      : state === "active"
+                        ? "border-brand-600 text-brand-600"
+                        : "border-border text-text-secondary"
+                  }`}
+                >
+                  {state === "done" ? "✓" : i + 1}
+                </span>
+                <span
+                  className={`text-[14px] transition-colors ${
+                    state === "pending" ? "text-text-secondary" : "text-text-primary"
+                  } ${state === "active" ? "font-medium" : ""}`}
+                >
+                  {label}
+                </span>
+                {state === "active" && (
+                  <span className="ml-auto h-1.5 w-1.5 animate-pulse rounded-full bg-brand-600" />
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
+  );
+}

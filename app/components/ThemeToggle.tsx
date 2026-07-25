@@ -1,0 +1,65 @@
+"use client";
+
+import { useSyncExternalStore } from "react";
+
+type Theme = "light" | "dark";
+
+const THEME_EVENT = "yourname-theme-change";
+
+function readTheme(): Theme {
+  const stored = window.localStorage.getItem("theme");
+  if (stored === "light" || stored === "dark") return stored;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+// design.md 1.2 — 다크모드는 CSS 변수 + data-theme 토글로 전환한다.
+// useSyncExternalStore로 localStorage/matchMedia를 구독해, effect 안에서 setState하는 대신
+// 서버 스냅샷("light" — 레이아웃의 인라인 스크립트가 실제 테마를 하이드레이션 전에 <html>에 반영)과
+// 클라이언트 스냅샷을 안전하게 동기화한다.
+function subscribe(callback: () => void) {
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  media.addEventListener("change", callback);
+  window.addEventListener(THEME_EVENT, callback);
+  return () => {
+    media.removeEventListener("change", callback);
+    window.removeEventListener(THEME_EVENT, callback);
+  };
+}
+
+function getServerSnapshot(): Theme {
+  return "light";
+}
+
+function applyTheme(theme: Theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  window.localStorage.setItem("theme", theme);
+  window.dispatchEvent(new Event(THEME_EVENT));
+}
+
+export default function ThemeToggle() {
+  const theme = useSyncExternalStore(subscribe, readTheme, getServerSnapshot);
+
+  function toggle() {
+    applyTheme(theme === "dark" ? "light" : "dark");
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label="다크모드 전환"
+      className="flex h-9 w-9 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary"
+    >
+      {theme === "dark" ? (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <circle cx="12" cy="12" r="4.5" />
+          <path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" strokeLinecap="round" />
+        </svg>
+      ) : (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M20.5 14.7A8.5 8.5 0 1 1 9.3 3.5a7 7 0 0 0 11.2 11.2Z" strokeLinejoin="round" />
+        </svg>
+      )}
+    </button>
+  );
+}
