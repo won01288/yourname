@@ -16,10 +16,15 @@ CREATE TABLE IF NOT EXISTS hanja (
     CHECK (verification_status IN ('confirmed', 'unverified')),
     -- confirmed: OCR 결과가 Unihan 공인 한국어 독음과 일치해 교차검증됨
     -- unverified: OCR 신뢰도는 높으나 독립 교차검증은 안 됨 (추후 보강 대상)
-  is_common INTEGER NOT NULL DEFAULT 0
+  is_common INTEGER NOT NULL DEFAULT 0,
     -- 교육용 기초한자(Unihan kKoreanEducationHanja, 대한민국 교육부 공식 1,800자) 포함 여부.
     -- CLAUDE.md 3.6 — 후보 생성 시 "생소한 한자" 억제용 가산점으로만 쓴다. 기존 테이블에는
     -- migrate-add-is-common.js로 추가했다(이 CREATE TABLE은 신규 설치 기준).
+  hun TEXT
+    -- 한글 훈(訓) 한 단어(예: "하늘"). 한국어 위키낱말사전 "부록:한문 교육용 기초 한자 1800"
+    -- (CC BY-SA 4.0)에서 가져온 값 — LLM 번역이 아니라 공개 라이선스 데이터 재사용
+    -- (CLAUDE.md 3.10). 이 표 밖 한자는 NULL. 기존 테이블에는 migrate-add-hun.js +
+    -- seed-hanja-hun.js로 추가했다(이 CREATE TABLE은 신규 설치 기준).
 );
 
 CREATE INDEX IF NOT EXISTS idx_hanja_char ON hanja(char);

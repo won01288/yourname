@@ -19,6 +19,7 @@ import {
 } from "./config";
 import { getElementForSyllable, isPhoneticSangsaeng } from "./phonetic";
 import { calcSagyeok, isAuspiciousNumber, type Sagyeok } from "./numerology";
+import { isYinYangBalanced } from "./score";
 
 function nextElement(element: Element): Element {
   const index = SANGSAENG_ORDER.indexOf(element);
@@ -49,12 +50,6 @@ function groupBySyllable(pool: Hanja[]): Map<string, Hanja[]> {
     else map.set(syllable, [hanja]);
   }
   return map;
-}
-
-// 획수 배열의 홀(양)/짝(음)이 한쪽으로 쏠리지 않으면 true (CLAUDE.md 3.4).
-function isYinYangBalanced(strokes: number[]): boolean {
-  const parities = strokes.map((s) => s % 2);
-  return !parities.every((p) => p === parities[0]);
 }
 
 // 자원오행이 용신과 일치하는 한자 수를 센다. element가 NULL이면 이 기준을 건너뛴다

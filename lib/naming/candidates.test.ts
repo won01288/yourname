@@ -14,6 +14,7 @@ function makeHanja(overrides: Partial<Hanja> & Pick<Hanja, "char" | "readings" |
     forbiddenReason: null,
     verificationStatus: "confirmed",
     isCommon: false,
+    hun: null,
     ...overrides,
   };
 }

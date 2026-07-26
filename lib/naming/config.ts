@@ -31,6 +31,14 @@ export const INITIAL_CONSONANT_ELEMENT: Record<string, Element> = {
 // CLAUDE.md 3.1 — 상생 흐름: 木生火·火生土·土生金·金生水·水生木.
 export const SANGSAENG_ORDER: Element[] = ["木", "火", "土", "金", "水"];
 
+// CLAUDE.md 3.10 — 상극(相剋) 관계: 木克土·土克水·水克火·火克金·金克木.
+// SANGSAENG_ORDER 상 +2칸 위치가 항상 상극 대상이 되는 표준 순환 구조라 별도 표를 만들지 않고
+// 기존 순서에서 기계적으로 도출한다 (새 학파 판단이 아니라 상생 순서의 산술적 귀결).
+export function destructiveOf(element: Element): Element {
+  const idx = SANGSAENG_ORDER.indexOf(element);
+  return SANGSAENG_ORDER[(idx + 2) % SANGSAENG_ORDER.length];
+}
+
 // CLAUDE.md 3.2 — 획수 기준: 원획(原劃). 필획이 아니다. DB stroke_original 컬럼 사용.
 export const STROKE_RULE = "original" as const;
 

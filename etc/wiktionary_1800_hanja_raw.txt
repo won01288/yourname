@@ -1,0 +1,1786 @@
+{{frequent words}}
+* [[Special:RecentChangesLinked/부록:한문 교육용 기초 한자 1800|새로 수록된 기초 한자 점검]]
+* '''[[부록:한자 부수 색인|한자 부수 색인]]'''
+
+아래의 한자는 교육부에서 정한 자체를 기준으로 삼음.
+
+== 목록 ==
+=== ㄱ ===
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" | 
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㄱ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 가
+| [[家]] <small>([[집]] 가)</small> &bull; [[佳]] <small>([[아름답다|아름다울]] 가)</small> &bull; [[街]] <small>([[거리]] 가)</small> &bull; [[可]] <small>([[옳다|옳을]] 가)</small> &bull; [[歌]] <small>([[노래]] 가)</small> &bull; [[加]] <small>([[더하다|더할]] 가)</small> &bull; [[價]] <small>([[값]] 가)</small> &bull; [[假]] <small>([[거짓]] 가)</small>
+| [[架]] <small>([[시렁]] 가)</small> &bull; [[暇]] <small>([[겨를]] 가)</small>
+|-valign="top"
+! 각
+| [[各]] <small>([[각각]] 각)</small> &bull; [[角]] <small>([[뿔]] 각)</small> &bull; [[脚]] <small>([[다리]] 각)</small>
+| [[閣]] <small>([[누각]] 각)</small> &bull; [[却]] <small>([[물리치다|물리칠]] 각)</small> &bull; [[覺]] <small>([[깨닫다|깨달을]] 각)</small> &bull; [[刻]] <small>([[새기다|새길]] 각)</small>
+|-valign="top"
+! 간
+| [[干]] <small>([[방패]] 간)</small> &bull; [[間]] <small>([[사이]] 간)</small> &bull; [[看]] <small>([[보다|볼]] 간)</small>
+| [[刊]] <small>([[새기다|새길]] 간)</small> &bull; [[肝]] <small>([[간]] 간)</small> &bull; [[幹]] <small>([[줄기]] 간)</small> &bull; [[簡]] <small>([[대쪽]] 간)</small> &bull; [[姦]] <small>([[간음하다|간음할]] 간)</small> &bull; [[懇]] <small>([[간절하다|간절할]] 간)</small>
+|-valign="top"
+! 갈
+| [[渴]] <small>([[목마르다|목마를]] 갈)</small>
+|
+|-valign="top"
+! 감
+| [[甘]] <small>([[달다|달]] 감)</small> &bull; [[減]] <small>([[덜다|덜]] 감)</small> &bull; [[感]] <small>([[느끼다|느낄]] 감)</small> &bull; [[敢]] <small>([[감히]] 감)</small>
+| [[監]] <small>([[보다|볼]] 감)</small> &bull; [[鑑]] <small>([[거울]] 감)</small>
+|-valign="top"
+! 갑
+| [[甲 ]] <small>([[갑옷]] 갑)</small>
+|
+|-valign="top"	
+! 강
+| [[江]] <small>([[강]] 강)</small> &bull; [[降]] <small>([[내리다|내릴]] 강)</small> &bull; [[講]] <small>([[익히다|익힐]] 강)</small> &bull; [[強]] <small>([[굳세다|굳셀]] 강)</small>
+| [[康]] <small>([[편안하다|편안할]] 강)</small> &bull; [[剛]] <small>([[굳세다|굳셀]] 강)</small> &bull; [[鋼]] <small>([[강철]] 강)</small> &bull; [[綱]] <small>([[벼리]] 강)</small>
+|-valign="top"
+! 개
+| [[改]] <small>([[고치다|고칠]] 개)</small> &bull; [[皆]] <small>([[다]] 개)</small> &bull; [[個]] <small>([[낱]] 개)</small> &bull; [[開]] <small>([[열다|열]] 개)</small>
+| [[介]] <small>([[끼다|낄]] 개)</small> &bull; [[慨]] <small>([[슬퍼하다|슬퍼할]] 개)</small> &bull; [[槪]] <small>([[대개]] 개)</small> &bull; [[蓋]] <small>([[덮다|덮을]] 개)</small>
+|-valign="top"
+! 객
+| [[客]] <small>([[손님]] 객)</small>
+|
+|-valign="top"	
+! 갱
+| [[更]] <small>([[다시]] 갱)</small>
+|
+|-valign="top"	
+! 거
+| [[去]] <small>([[가다|갈]] 거)</small> &bull; [[巨]] <small>([[크다|클]] 거)</small> &bull; [[居]] <small>([[살다|살]] 거)</small> &bull; [[車]] <small>([[수레]] 거)</small><ref>'차 차'로도 읽는다.</ref> &bull; [[擧]] <small>([[들다|들]] 거)</small>
+| [[距]] <small>([[떨어지다|떨어질]] 거)</small> &bull; [[拒]] <small>([[막다|막을]] 거)</small> &bull; [[據]] <small>([[의거하다|의거할]] 거)</small>
+|-valign="top"
+! 건
+| [[建]] <small>([[세우다|세울]] 건)</small> &bull; [[乾]] <small>([[하늘]] 건)</small>
+| [[件]] <small>([[물건]] 건)</small> &bull; [[健]] <small>([[튼튼하다|튼튼할]] 건)</small>
+|-valign="top"
+! 걸
+|
+| [[傑]] <small>([[뛰어나다|뛰어날]] 걸)</small> &bull; [[乞]] <small>([[빌다|빌]] 걸)</small>
+|-valign="top"
+! 검
+|
+| [[儉]] <small>([[검소하다|검소할]] 검)</small> &bull; [[劍]] <small>([[칼]] 검)</small> &bull; [[檢]] <small>([[검사하다|검사할]] 검)</small>
+|-valign="top"
+! 격
+|
+| [[格]] <small>([[격식]] 격)</small> &bull; [[擊]] <small>([[치다|칠]] 격)</small> &bull; [[激]] <small>([[격하다|격할]] 격)</small> &bull; [[隔]] <small>([[사이]] [[뜨다|뜰]] 격)</small>
+|-valign="top"
+! 견
+| [[犬]] <small>([[개]] 견)</small> &bull; [[見]] <small>([[보다|볼]] 견)</small> &bull; [[堅]] <small>([[굳다|굳을]] 견)</small>
+| [[肩]] <small>([[어깨]] 견)</small> &bull; [[絹]] <small>([[비단]] 견)</small> &bull; [[遣]] <small>([[보내다|보낼]] 견)</small> &bull; [[牽]] <small>([[이끌다|이끌]] 견)</small>
+|-valign="top"
+! 결
+| [[決]] <small>([[결단하다|결단할]] 결)</small> &bull; [[結]] <small>([[맺다|맺을]] 결)</small> &bull; [[潔]] <small>([[깨끗하다|깨끗할]] 결)</small>
+| [[缺]] <small>([[이지러지다|이지러질]] 결)</small>
+|-valign="top"
+! 겸
+|
+| [[兼]] <small>([[겸하다|겸할]] 겸)</small> &bull; [[謙]] <small>([[겸손하다|겸손할]] 겸)</small>
+|-valign="top"
+! 경
+| [[京]] <small>([[서울]] 경)</small> &bull; [[景]] <small>([[볕]] 경)</small> &bull; [[輕]] <small>([[가볍다|가벼울]] 경)</small> &bull; [[經]] <small>([[지나다|지날]]/[[글]] 경)</small> &bull; [[庚]] <small>([[별]] 경)</small> &bull; [[耕]] <small>([[밭]] [[갈다|갈]] 경)</small> &bull; [[敬]] <small>([[공경하다|공경할]] 경)</small> &bull; [[驚]] <small>([[놀라다|놀랄]] 경)</small> &bull; [[慶]] <small>([[경사]] 경)</small> &bull; [[競]] <small>([[겨루다|겨룰]] 경)</small>
+| [[竟]] <small>([[마침내]] 경)</small> &bull; [[境]] <small>([[지경]] 경)</small> &bull; [[鏡]] <small>([[거울]] 경)</small> &bull; [[頃]] <small>([[이랑]]/[[잠깐]] 경)</small> &bull; [[傾]] <small>([[기울다|기울]] 경)</small> &bull; [[硬]] <small>([[굳다|굳을]] 경)</small> &bull; [[警]] <small>([[깨우치다|깨우칠]]/[[경계하다|경계할]] 경)</small> &bull; [[徑]] <small>([[지름길]] 경)</small> &bull; [[卿]] <small>([[벼슬]] 경)</small>
+|-valign="top"
+! 계
+| [[癸]] <small>([[북방]] 계)</small> &bull; [[季]] <small>([[계절]] 계)</small> &bull; [[界]] <small>([[지경]] 계)</small> &bull; [[計]] <small>([[세다|셀]] 계)</small> &bull; [[溪]] <small>([[시내]] 계)</small> &bull; [[鷄]] <small>([[닭]] 계)</small>
+| [[系]] <small>([[잇다|이을]] 계)</small> &bull; [[係]] <small>([[매다|맬]] 계)</small> &bull; [[戒]] <small>([[경계하다|경계할]] 계)</small> &bull; [[械]] <small>([[기계]] 계)</small> &bull; [[繼]] <small>([[잇다|이을]] 계)</small> &bull; [[契]] <small>([[맺다|맺을]] 계)</small> &bull; [[桂]] <small>([[계수나무]] 계)</small> &bull; [[啓]] <small>([[열다|열]] 계)</small> &bull; [[階]] <small>([[섬돌]] 계)</small> &bull; [[繫]] <small>([[매다|맬]] 계)</small>
+|-valign="top"
+! 고
+| [[古]] <small>([[예|옛]] 고)</small> &bull; [[故]] <small>([[예|옛]] 고)</small> &bull; [[固]] <small>([[굳다|굳을]] 고)</small> &bull; [[苦]] <small>([[쓰다|쓸]] 고)</small> &bull; [[考]] <small>([[생각하다|생각할]] 고)</small> &bull; [[高]] <small>([[높다|높을]] 고)</small> &bull; [[告]] <small>([[알리다|알릴]] 고)</small>
+| [[枯]] <small>([[마르다|마를]] 고)</small> &bull; [[姑]] <small>([[시어미]] 고)</small> &bull; [[庫]] <small>([[곳집]] 고)</small> &bull; [[孤]] <small>([[외롭다|외로울]] 고)</small> &bull; [[鼓]] <small>([[북]] 고)</small> &bull; [[稿]] <small>([[볏짚]] 고)</small> &bull; [[顧]] <small>([[돌아보다|돌아볼]] 고)</small>
+|-valign="top"
+! 곡
+| [[谷]] <small>([[골]] 곡)</small> &bull; [[曲]] <small>([[굽다|굽을]] 곡)</small> &bull; [[穀]] <small>([[곡식]] 곡)</small>
+| [[哭]] <small>([[울다|울]] 곡)</small>
+|-valign="top"
+! 곤
+| [[困]] <small>([[곤하다|곤할]] 곤)</small> &bull; [[坤]] <small>([[땅]] 곤)</small>
+|
+|-valign="top"	
+! 골
+| [[骨]] <small>([[뼈]] 골)</small>
+|
+|-valign="top"	
+! 공
+| [[工]] <small>([[장인]] 공)</small> &bull; [[功]] <small>([[공]] 공)</small> &bull; [[空]] <small>([[비다|빌]] 공)</small> &bull; [[共]] <small>([[함께]] 공)</small> &bull; [[公]] <small>([[공변되다|공변될]] 공)</small>
+| [[孔]] <small>([[구멍]] 공)</small> &bull; [[供]] <small>([[이바지하다|이바지할]] 공)</small> &bull; [[恭]] <small>([[공손하다|공손할]] 공)</small> &bull; [[攻]] <small>([[치다|칠]] 공)</small> &bull; [[恐]] <small>([[두렵다|두려울]] 공)</small> &bull; [[貢]] <small>([[바치다|바칠]] 공)</small>
+|-valign="top"
+! 과
+| [[果]] <small>([[열매]] 과)</small> &bull; [[課]] <small>([[공부하다|공부할]]/[[과정]] 과)</small> &bull; [[科]] <small>([[과목]] 과)</small> &bull; [[過]] <small>([[지나다|지날]] 과)</small>
+| [[誇]] <small>([[자랑하다|자랑할]] 과)</small> &bull; [[寡]] <small>([[적다|적을]] 과)</small>
+|-valign="top"
+! 곽
+|
+| [[郭]] <small>([[성곽]] 곽)</small>
+|-valign="top"
+! 관
+| [[官]] <small>([[벼슬]] 관)</small> &bull; [[觀]] <small>([[보다|볼]] 관)</small> &bull; [[關]] <small>([[빗장]] 관)</small>
+| [[館]] <small>([[집]] 관)</small> &bull; [[管]] <small>([[대롱]] 관)</small> &bull; [[貫]] <small>([[꿰다|꿸]] 관)</small> &bull; [[慣]] <small>([[익숙하다|익숙할]] 관)</small> &bull; [[冠]] <small>([[갓]] 관)</small> &bull; [[寬]] <small>([[너그럽다|너그러울]] 관)</small>
+|-valign="top"
+! 광
+| [[光]] <small>([[빛]] 광)</small> &bull; [[廣]] <small>([[넓다|넓을]] 광)</small>
+| [[鑛]] <small>([[쇳돌]] 광)</small> &bull; [[狂]] <small>([[미치다|미칠]] 광)</small>
+|-valign="top"
+! 괘
+|
+| [[掛]] <small>([[걸다|걸]] 괘)</small>
+|-valign="top"
+! 괴
+|
+| [[塊]] <small>([[흙덩이]] 괴)</small> &bull; [[愧]] <small>([[부끄럽다|부끄러울]] 괴)</small> &bull; [[怪]] <small>([[기이하다|기이할]] 괴)</small> &bull; [[壞]] <small>([[무너지다|무너질]] 괴)</small>
+|-valign="top"
+! 교
+| [[交]] <small>([[사귀다|사귈]] 교)</small> &bull; [[校]] <small>([[학교]] 교)</small> &bull; [[橋]] <small>([[다리]] 교)</small> &bull; [[敎]] <small>([[가르치다|가르칠]] 교)</small>
+| [[郊]] <small>([[들]] 교)</small> &bull; [[較]] <small>([[견주다|견줄]] 교)</small> &bull; [[巧]] <small>([[공교하다|공교할]] 교)</small> &bull; [[矯]] <small>([[바로잡다|바로잡을]] 교)</small>
+|-valign="top"
+! 구
+| [[九]] <small>([[아홉]] 구)</small> &bull; [[口]] <small>([[입]] 구)</small> &bull; [[求]] <small>([[구하다|구할]] 구)</small> &bull; [[救]] <small>([[건지다|건질]] 구)</small> &bull; [[究]] <small>([[연구하다|연구할]] 구)</small> &bull; [[久]] <small>([[오래|오랠]] 구)</small> &bull; [[句]] <small>([[글귀]] 구)</small> &bull; [[舊]] <small>([[예]] 구)</small>
+| [[具]] <small>([[갖추다|갖출]] 구)</small>&bull; [[俱]] <small>([[함께]] 구)</small> &bull; [[區]] <small>([[구분하다|구분할]] 구)</small> &bull; [[驅]] <small>([[몰다|몰]] 구)</small> &bull; [[苟]] <small>([[진실로]] 구)</small> &bull; [[拘]] <small>([[잡다|잡을]] 구)</small> &bull; [[狗]] <small>([[개]] 구)</small> &bull; [[丘]] <small>([[언덕]] 구)</small> &bull; [[懼]] <small>([[두려워하다|두려워할]] 구)</small> &bull; [[龜]] <small>([[땅]] [[이름]] 구)</small><ref>'거북 귀', '터질 균'으로도 읽는다. </ref>  &bull; [[構]] <small>([[얽다|얽을]] 구)</small> &bull; [[球]] <small>([[공]] 구)</small>
+|-valign="top"
+! 국
+| [[國]] <small>([[나라]] 국)</small>
+| [[菊]] <small>([[국화]] 국)</small> &bull; [[局]] <small>([[판]] 국)</small>
+|-valign="top"
+! 군
+| [[君]] <small>([[임금]] 군)</small> &bull; [[郡]] <small>([[고을]] 군)</small> &bull; [[軍]] <small>([[군사]] 군)</small>
+| [[群]] <small>([[무리]] 군)</small>
+|-valign="top"
+! 굴
+|
+| [[屈]] <small>([[굽히다|굽힐]] 굴)</small>
+|-valign="top"
+! 궁
+| [[弓]] <small>([[활]] 궁)</small>
+| [[宮]] <small>([[집]] 궁)</small> &bull; [[窮]] <small>([[다하다|다할]] 궁)</small>
+|-valign="top"
+!권
+| [[卷]] <small>([[책]] 권)</small> &bull; [[權]] <small>([[권세]] 권)</small> &bull; [[勸]] <small>([[권하다|권할]] 권)</small>
+| [[拳]] <small>([[주먹]] 권)</small> &bull; [[券]] <small>([[문서]] 권)</small>
+|-valign="top"
+! 궐
+|
+| [[厥]] <small>(그 궐)</small>
+|-valign="top"
+! 궤
+|
+| [[軌]] <small>([[바퀴]] [[자국]] 궤)</small>
+|-valign="top"
+! 귀
+| [[貴]] <small>([[귀하다|귀할]] 귀)</small> &bull; [[歸]] <small>([[돌아가다|돌아갈]] 귀)</small>
+| [[鬼]] <small>([[귀신]] 귀)</small>
+|-valign="top"
+! 규
+|	
+| [[叫]] <small>([[부르짖다|부르짖을]] 규)</small> &bull; [[規]] <small>([[법]] 규)</small> &bull; [[糾]] <small>([[얽히다|얽힐]] 규)</small>
+|-valign="top"
+! 균
+| [[均]] <small>([[고르다|고를]] 균)</small>
+| [[菌]] <small>([[버섯]] 균)</small>
+|-valign="top"
+! 극
+| [[極]] <small>([[다하다|다할]] 극)</small>
+| [[克]] <small>([[이기다|이길]] 극)</small> &bull; [[劇]] <small>([[심하다|심할]] 극)</small>
+|-valign="top"
+! 근
+| [[近]] <small>([[가깝다|가까울]] 근)</small> &bull; [[勤]] <small>([[부지런하다|부지런할]] 근)</small> &bull; [[根]] <small>([[뿌리]] 근)</small>
+| [[斤]] <small>([[도끼]] 근)</small> &bull; [[僅]] <small>([[겨우]] 근)</small> &bull; [[謹]] <small>([[삼가다|삼갈]] 근)</small>
+|-valign="top"
+! 금
+| [[金]] <small>([[쇠]] 금)</small><ref>'성 김'으로도 읽는다.</ref> &bull; [[今]] <small>([[이제]] 금)</small> &bull; [[禁]] <small>([[금하다|금할]] 금)</small>
+| [[錦]] <small>([[비단]] 금)</small> &bull; [[禽]] <small>([[날짐승]] 금)</small> &bull; [[琴]] <small>([[거문고]] 금)</small>
+|-valign="top"
+! 급
+| [[及]] <small>([[미치다|미칠]] 급)</small> &bull; [[給]] <small>([[주다|줄]] 급)</small> &bull; [[急]] <small>([[급하다|급할]] 급)</small>
+| [[級]] <small>([[등급]] 급)</small>
+|-valign="top"
+! 긍
+|
+| [[肯]] <small>([[즐기다|즐길]] 긍)</small>
+|-valign="top"
+! 기
+| [[己]] <small>([[몸]] 기)</small> &bull; [[記]] <small>([[기록하다|기록할]] 기)</small> &bull; [[起]] <small>([[일어나다|일어날]] 기)</small> &bull; [[其]] <small>([[그]] 기)</small> &bull; [[期]] <small>([[기약하다|기약할]] 기)</small> &bull; [[基]] <small>([[터]] 기)</small> &bull; [[氣]] <small>([[기운]] 기)</small> &bull; [[技]] <small>([[재주]] 기)</small> &bull; [[幾]] <small>([[기미]] 기)</small> &bull; [[旣]] <small>([[이미]] 기)</small>
+| [[紀]] <small>([[벼리]] 기)</small> &bull; [[忌]] <small>([[꺼리다|꺼릴]] 기)</small> &bull; [[旗]] <small>([[기]] 기)</small> &bull; [[欺]] <small>([[속이다|속일]] 기)</small> &bull; [[奇]] <small>([[기특하다|기특할]] 기)</small> &bull; [[騎]] <small>([[말]] [[타다|탈]] 기)</small> &bull; [[寄]] <small>([[부치다|부칠]] 기)</small> &bull; [[豈]] <small>([[어찌]] 기)</small> &bull; [[棄]] <small>([[버리다|버릴]] 기)</small> &bull; [[祈]] <small>([[빌다|빌]] 기)</small> &bull; [[企]] <small>([[꾀하다|꾀할]] 기)</small> &bull; [[畿]] <small>([[경기|경기]] 기)</small> &bull; [[飢]] <small>([[주리다|주릴]] 기)</small> &bull; [[器]] <small>([[그릇]] 기)</small> &bull; [[機]] <small>([[틀]] 기)</small>
+|-valign="top"
+! 긴
+|
+| [[緊]] <small>([[긴하다|긴할]] 긴)</small>
+|-valign="top"
+! 길
+| [[吉]] <small>([[길하다|길할]] 길)</small> 
+|
+|}
+
+=== ㄴ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㄴ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 나
+|
+| [[那]] <small>([[어찌]] 나)</small>
+|-valign="top"
+! 낙
+|
+| [[諾]] <small>([[허락하다|허락할]] 낙)</small>
+|-valign="top"
+! 난
+| [[暖]] <small>([[따뜻하다|따뜻할]] 난)</small> &bull; [[難]] <small>([[어렵다|어려울]] 난)</small>
+|
+|-valign="top"
+! 남
+| [[南]] <small>([[남녘]] 남)</small> &bull; [[男]] <small>([[사내]] 남)</small>
+|
+|-valign="top"
+! 납
+|
+| [[納]] <small>([[들이다|들일]]/[[바치다|바칠]] 납)</small>
+|-valign="top"
+! 낭
+|
+| [[娘]] <small>([[아가씨]] 낭)</small>
+|-valign="top"
+! 내
+| [[內]] <small>([[안]] 내)</small> &bull; [[乃]] <small>([[이에]] 내)</small>
+| [[奈]] <small>([[어찌]] 내)</small> &bull; [[耐]] <small>([[견디다|견딜]] 내)</small>
+|-valign="top"
+! 녀
+| [[女]] <small>([[계집]] 녀)</small>
+|
+|-valign="top"
+! 년
+| [[年]] <small>([[해]] 년)</small>
+|
+|-valign="top"
+! 념
+| [[念]] <small>([[생각]] 념)</small>
+|
+|-valign="top"
+! 녕
+|
+| [[寧]] <small>([[편안하다|편안할]] 녕)</small>
+|-valign="top"
+! 노
+| [[怒]] <small>([[성내다|성낼]] 노)</small>
+| [[奴]] <small>([[종]] 노)</small> &bull; [[努]] <small>([[힘쓰다|힘쓸]] 노)</small>
+|-valign="top"
+! 농
+| [[農]] <small>([[농사]] 농)</small>
+|
+|-valign="top"
+! 뇌
+|
+| [[腦]] <small>([[골]] 뇌)</small> &bull; [[惱]] <small>([[괴로워하다|괴로워할]] 뇌)</small>
+|-valign="top"
+! 능
+| [[能]] <small>([[능하다|능할]] 능)</small>
+|
+|-valign="top"
+! 니
+|
+| [[泥]] <small>([[진흙]] 니)</small>
+|}
+
+=== ㄷ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㄷ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 다
+| [[多]] <small>([[많다|많을]] 다)</small>
+| [[茶]] <small>([[차]] 다)</small>
+|-valign="top"
+! 단
+| [[丹]] <small>([[붉다|붉을]] 단)</small> &bull; [[但]] <small>([[다만]] 단)</small> &bull; [[單]] <small>([[홑]] 단)</small> &bull; [[短]] <small>([[짧다|짧을]] 단)</small> &bull; [[端]] <small>([[끝]] 단)</small>
+| [[旦]] <small>([[아침]] 단)</small> &bull; [[段]] <small>([[층계]] 단)</small> &bull; [[壇]] <small>([[단]] 단)</small> &bull; [[檀]] <small>([[박달나무]] 단)</small> &bull; [[斷]] <small>([[끊다|끊을]] 단)</small> &bull; [[團]] <small>([[둥글다|둥글]] 단)</small>
+|-valign="top"
+! 달
+| [[達]] <small>([[통달하다|통달할]] 달)</small>
+|
+|-valign="top"
+! 담
+| [[談]] <small>([[말씀]] 담)</small>
+| [[淡]] <small>([[맑다|맑을]] 담)</small> &bull; [[擔]] <small>([[메다|멜]] 담)</small>
+|-valign="top"
+! 답
+| [[答]] <small>([[대답]] 답)</small>
+| [[畓]] <small>([[논]] 답)</small> &bull; [[踏]] <small>([[밟다|밟을]] 답)</small>
+|-valign="top"
+! 당
+| [[堂]] <small>([[집]] 당)</small> &bull; [[當]] <small>([[마땅]] 당)</small>
+| [[唐]] <small>([[당나라]] 당)</small> &bull; [[糖]] <small>([[사탕]] 당)</small> &bull; [[黨]] <small>([[무리]] 당)</small>
+|-valign="top"
+! 대
+| [[大]] <small>([[크다|큰]] 대)</small> &bull; [[代]] <small>([[대신하다|대신할]] 대)</small> &bull; [[待]] <small>([[기다리다|기다릴]] 대)</small> &bull; [[對]] <small>([[대하다|대할]] 대)</small>
+| [[帶]] <small>([[띠]] 대)</small> &bull; [[臺]] <small>([[대]] 대)</small> &bull; [[貸]] <small>([[빌리다|빌릴]] 대)</small> &bull; [[隊]] <small>([[무리]] 대)</small>
+|-valign="top"
+! 덕
+| [[德]] <small>([[크다|클]] 덕)</small>
+|
+|-valign="top"
+! 도
+| [[刀]] <small>([[칼]] 도)</small> &bull; [[到]] <small>([[이르다|이를]] 도)</small> &bull; [[度]] <small>([[법도]] 도)</small><ref>'헤아릴 탁'으로도 읽는다.</ref> &bull; [[道]] <small>([[길]] 도)</small> &bull; [[島]] <small>([[섬]] 도)</small> &bull; [[徒]] <small>([[무리]] 도)</small> &bull;  [[都]] <small>([[도읍]] 도)</small> &bull; [[圖]] <small>([[그림]] 도)</small>
+| [[倒]] <small>([[넘어지다|넘어질]] 도)</small> &bull; [[挑]] <small>([[돋우다|돋울]] 도)</small> &bull; [[桃]] <small>([[복숭아]] 도)</small> &bull; [[跳]] <small>([[뛰다|뛸]] 도)</small> &bull; [[逃]] <small>([[달아나다|달아날]] 도)</small> &bull; [[渡]] <small>([[건너다|건널]] 도)</small> &bull; [[陶]] <small>([[질그릇]] 도)</small> &bull; [[途]] <small>([[길]] 도)</small> &bull; [[稻]] <small>([[벼]] 도)</small> &bull; [[導]] <small>([[이끌다|이끌]] 도)</small> &bull; [[盜]] <small>([[훔치다|훔칠]] 도)</small> &bull; [[塗]] <small>([[칠하다|칠할]] 도)</small>
+|-valign="top"
+! 독
+| [[讀]] <small>([[읽다|읽을]] 독)</small> &bull; [[獨]] <small>([[홀로]] 독)</small>
+| [[毒]] <small>([[독]] 독)</small> &bull; [[督]] <small>([[감독하다|감독할]] 독)</small> &bull; [[篤]] <small>([[도탑다|도타울]] 독)</small>
+|-valign="top"
+! 돈
+|
+| [[豚]] <small>([[돼지]] 돈)</small> &bull; [[敦]] <small>([[도탑다|도타울]] 돈)</small>
+|-valign="top"
+! 돌
+|
+| [[突]] <small>([[갑자기]] 돌)</small>
+|-valign="top"
+! 동
+| [[同]] <small>([[한가지]] 동)</small> &bull; [[洞]] <small>([[골]] 동)</small> &bull; [[童]] <small>([[아이]] 동)</small> &bull; [[冬]] <small>([[겨울]] 동)</small> &bull; [[東]] <small>([[동녘]] 동)</small> &bull; [[動]] <small>([[움직이다|움직일]] 동)</small>
+| [[銅]] <small>([[구리]] 동)</small> &bull; [[凍]] <small>([[얼다|얼]] 동)</small>
+|-valign="top"
+! 두
+| [[斗]] <small>([[말]] 두)</small> &bull; [[豆]] <small>([[콩]] 두)</small> &bull; [[頭]] <small>([[머리]] 두)</small>
+|
+|-valign="top"
+! 둔
+|
+| [[鈍]] <small>([[무디다|무딜]] 둔)</small> &bull; [[屯]] <small>([[진]] [[치다|칠]] 둔)</small>
+|-valign="top"
+! 득
+| [[得]] <small>([[얻다|얻을]] 득)</small>
+|
+|-valign="top"
+! 등
+| [[等]] <small>([[무리]] 등)</small> &bull; [[登]] <small>([[오르다|오를]] 등)</small> &bull; [[燈]] <small>([[등]] 등)</small>
+| [[騰]] <small>([[오르다|오를]] 등)</small>
+|}
+
+=== ㄹ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㄹ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 라
+|
+| [[羅]] <small>([[벌이다|벌일]] 라)</small>
+|-valign="top"
+! 락
+| [[落]] <small>([[떨어지다|떨어질]] 락)</small> &bull; [[樂]] <small>([[즐기다|즐길]] 락)</small><ref>'노래 악', '좋아할 요'로도 읽는다.</ref>
+| [[絡]] <small>([[잇다|이을]] 락)</small>
+|-valign="top"
+! 란
+| [[卵]] <small>([[알]] 란)</small>
+| [[亂]] <small>([[어지럽다|어지러울]] 란)</small> &bull; [[蘭]] <small>([[난초]] 란)</small> &bull; [[欄]] <small>([[난간]] 란)</small>
+|-valign="top"
+! 람
+|
+| [[覽]] <small>([[보다|볼]] 람)</small> &bull; [[濫]] <small>([[넘치다|넘칠]] 람)</small>
+|-valign="top"
+! 랑
+| [[浪]] <small>([[물결]] 랑)</small> &bull; [[郞]] <small>([[사내]] 랑)</small>
+| [[廊]] <small>([[사랑채]] 랑)</small>
+|-valign="top"
+! 래
+| [[來]] <small>([[오다|올]] 래)</small>
+|
+|-valign="top"
+! 랭
+| [[冷]] <small>([[차다|찰]] 랭)</small>
+|
+|-valign="top"
+! 략
+|
+| [[略]] <small>([[간략하다|간략할]]/[[다스리다|다스릴]] 략)</small> &bull; [[掠]] <small>([[노략질하다|노략질할]] 략)</small>
+|-valign="top"
+! 량
+| [[良]] <small>([[어질다|어질]] 량)</small> &bull; [[兩]] <small>([[둘|두]] 량)</small> &bull; [[量]] <small>([[헤아리다|헤아릴]] 량)</small> &bull; [[涼]] <small>([[서늘하다|서늘할]] 량)</small>
+| [[梁]] <small>([[들보]] 량)</small> &bull; [[糧]] <small>([[양식]] 량)</small> &bull; [[諒]] <small>([[살피다|살필]] 량)</small>
+|-valign="top"
+! 려
+| [[旅]] <small>([[나그네]] 려)</small>
+| [[麗]] <small>([[곱다|고울]] 려)</small> &bull; [[慮]] <small>([[생각하다|생각할]] 려)</small> &bull; [[勵]] <small>([[힘쓰다|힘쓸]] 려)</small>
+|-valign="top"
+! 력
+| [[力]] <small>([[힘]] 력)</small> &bull; [[歷]] <small>([[지나다|지날]] 력)</small>
+| [[曆]] <small>([[책력]] 력)</small>
+|-valign="top"
+! 련
+| [[連]] <small>([[잇닿다|잇닿을]] 련)</small> &bull; [[練]] <small>([[익히다|익힐]] 련)</small>
+| [[鍊]] <small>([[불리다|불릴]] 련)</small> &bull; [[憐]] <small>([[불쌍하다|불쌍히]] [[여기다|여길]] 련)</small> &bull; [[聯]] <small>([[연잇다|연이을]] 련)</small> &bull; [[戀]] <small>([[그리워하다|그리워할]]/[[사모하다|사모할]] 련)</small> &bull; [[蓮]] <small>([[연]] 련)</small>
+|-valign="top"
+! 렬
+| [[列]] <small>([[벌이다|벌일]] 렬)</small> &bull; [[烈]] <small>([[세차다|세찰]] 렬)</small>
+| [[裂]] <small>([[찢다|찢을]] 렬)</small> &bull; [[劣]] <small>([[못하다|못할]] 렬)</small>
+|-valign="top"
+! 렴
+|
+| [[廉]] <small>([[청렴하다|청렴할]] 렴)</small>
+|-valign="top"
+! 렵
+|
+| [[獵]] <small>([[사냥]] 렵)</small>
+|-valign="top"
+! 령
+| [[令]] <small>([[하여금]]/[[명령]] 령)</small> &bull; [[領]] <small>([[거느리다|거느릴]] 령)</small>
+| [[嶺]] <small>([[재]] 령)</small> &bull; [[零]] <small>([[떨어지다|떨어질]] 령)</small> &bull; [[靈]] <small>([[신령]] 령)</small>
+|-valign="top"
+! 례
+| [[例]] <small>([[법식]] 례)</small> &bull; [[禮]] <small>([[예도]] 례)</small>
+| [[隷]] <small>([[종]] 례)</small>
+|-valign="top"
+! 로
+| [[路]] <small>([[길]] 로)</small> &bull; [[露]] <small>([[이슬]] 로)</small> &bull; [[老]] <small>([[늙다|늙을]] 로)</small> &bull; [[勞]] <small>([[일하다|일할]] 로)</small>
+| [[爐]] <small>([[화로]] 로)</small>
+|-valign="top"
+! 록
+| [[綠]] <small>([[푸르다|푸를]] 록)</small>
+| [[祿]] <small>([[녹]] 록)</small> &bull; [[錄]] <small>([[기록하다|기록할]] 록)</small> &bull; [[鹿]] <small>([[사슴]] 록)</small>
+|-valign="top"
+! 론
+| [[論]] <small>([[논하다|논할]] 론)</small>
+|
+|-valign="top"
+! 롱
+|
+| [[弄]] <small>([[희롱하다|희롱할]] 롱)</small>
+|-valign="top"
+! 뢰
+|
+| [[雷]] <small>([[우레]] 뢰)</small> &bull; [[賴]] <small>([[의뢰하다|의뢰할]] 뢰)</small>
+|-valign="top"
+! 료
+| [[料]] <small>([[헤아리다|헤아릴]] 료)</small>
+| [[了]] <small>([[마치다|마칠]] 료)</small> &bull; [[僚]] <small>([[벗]] 료)</small>
+|-valign="top"
+! 룡
+|
+| [[龍]] <small>([[용]] 룡)</small>
+|-valign="top"
+! 루
+|
+| [[屢]] <small>([[여러]] 루)</small> &bull; [[樓]] <small>([[다락]] 루)</small> &bull; [[累]] <small>([[묶다|묶을]] 루)</small> &bull; [[淚]] <small>([[눈물]] 루)</small> &bull; [[漏]] <small>([[새다|샐]] 루)</small>
+|-valign="top"
+! 류
+| [[柳]] <small>([[버들]] 류)</small> &bull; [[留]] <small>([[머무르다|머무를]] 류)</small> &bull; [[流]] <small>([[흐르다|흐를]] 류)</small>
+| [[類]] <small>([[무리]] 류)</small>
+|-valign="top"
+! 륙
+| [[六]] <small>([[여섯]] 륙)</small> &bull; [[陸]] <small>([[뭍]] 륙)</small>
+|
+|-valign="top"
+! 륜
+| [[倫]] <small>([[인륜]] 륜)</small>
+| [[輪]] <small>([[바퀴]] 륜)</small>
+|-valign="top"
+! 률
+| [[律]] <small>([[법]] 률)</small>
+| [[栗]] <small>([[밤]] 률)</small> &bull; [[率]] <small>([[헤아리다|헤아릴]] 률)</small><ref>'거느릴 솔'로도 읽는다.</ref>
+|-valign="top"
+! 륭
+|
+| [[隆]] <small>([[높다|높을]] 륭)</small>
+|-valign="top"
+! 릉
+| [[陵]] <small>([[언덕]] 릉)</small>
+|
+|-valign="top"
+! 리
+| [[里]] <small>([[마을]] 리)</small> &bull; [[理]] <small>([[다스리다|다스릴]] 리)</small> &bull; [[利]] <small>([[이롭다|이로울]] 리)</small> &bull; [[李]] <small>([[오얏]] 리)</small>
+| [[梨]] <small>([[배나무]] 리)</small> &bull; [[吏]] <small>([[벼슬아치]] 리)</small> &bull; [[離]] <small>([[떠나다|떠날]] 리)</small> &bull; [[裏]] <small>([[속]] 리)</small> &bull; [[履]] <small>([[밟다|밟을]] 리)</small>
+|-valign="top"
+! 린
+|
+| [[鄰]] <small>([[이웃]] 린)</small>
+|-valign="top"
+! 림
+| [[林]] <small>([[수풀]] 림)</small>
+| [[臨]] <small>([[임하다|임할]] 림)</small>
+|-valign="top"
+! 립
+| [[立]] <small>([[서다|설]] 립)</small>
+|
+|}
+
+=== ㅁ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅁ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 마
+| [[馬]] <small>([[말]] 마)</small>
+| [[麻]] <small>([[삼]] 마)</small> &bull; [[磨]] <small>([[갈다|갈]] 마)</small>
+|-valign="top"
+! 막
+| [[莫]] <small>([[없다|없을]] 막)</small>
+| [[幕]] <small>([[장막]] 막)</small> &bull; [[漠]] <small>([[넓다|넓을]]/[[사막]] 막)</small>
+|-valign="top"
+! 만
+| [[萬]] <small>([[일만]] 만)</small> &bull; [[晩]] <small>([[늦다|늦을]] 만)</small> &bull; [[滿]] <small>([[차다|찰]] 만)</small>
+| [[漫]] <small>([[질펀하다|질펀할]] 만)</small> &bull; [[慢]] <small>([[게으르다|게으를]]/[[거만하다|거만할]] 만)</small>
+|-valign="top"
+! 말
+| [[末]] <small>([[끝]] 말)</small>
+|
+|-valign="top"
+! 망
+| [[亡]] <small>([[망하다|망할]] 망)</small> &bull; [[忙]] <small>([[바쁘다|바쁠]] 망)</small> &bull; [[忘]] <small>([[잊다|잊을]] 망)</small> &bull; [[望]] <small>([[바라다|바랄]] 망)</small>
+| [[茫]] <small>([[아득하다|아득할]] 망)</small> &bull; [[妄]] <small>([[망령되다|망령될]] 망)</small> &bull; [[罔]] <small>([[그물]] 망)</small>
+|-valign="top"
+! 매
+| [[每]] <small>([[매양]] 매)</small> &bull; [[買]] <small>([[사다|살]] 매)</small> &bull; [[賣]] <small>([[팔다|팔]] 매)</small> &bull; [[妹]] <small>([[누이]] 매)</small>
+| [[梅]] <small>([[매화]] 매)</small> &bull; [[埋]] <small>([[묻다|묻을]] 매)</small> &bull; [[媒]] <small>([[중매]] 매)</small>
+|-valign="top"
+! 맥
+| [[麥]] <small>([[보리]] 맥)</small>
+| [[脈]] <small>([[줄기]] 맥)</small>
+|-valign="top"
+! 맹
+|
+| [[孟]] <small>([[맏]] 맹)</small> &bull; [[猛]] <small>([[사납다|사나울]] 맹)</small> &bull; [[盟]] <small>([[맹세]] 맹)</small> &bull; [[盲]] <small>([[눈멀다|눈멀]] 맹)</small>
+|-valign="top"
+! 면
+| [[免]] <small>([[면하다|면할]] 면)</small> &bull; [[勉]] <small>([[힘쓰다|힘쓸]] 면)</small> &bull; [[面]] <small>([[낯]] 면)</small> &bull; [[眠]] <small>([[자다|잘]] 면)</small>
+| [[綿]] <small>([[솜]] 면)</small>
+|-valign="top"
+! 멸
+|
+| [[滅]] <small>([[꺼지다|꺼질]] 멸)</small>
+|-valign="top"
+! 명
+| [[名]] <small>([[이름]] 명)</small> &bull; [[命]] <small>([[목숨]] 명)</small> &bull; [[明]] <small>([[밝다|밝을]] 명)</small> &bull; [[鳴]] <small>([[울다|울]] 명)</small>
+| [[銘]] <small>([[새기다|새길]] 명)</small> &bull; [[冥]] <small>([[어둡다|어두울]] 명)</small>
+|-valign="top"
+! 모
+| [[母]] <small>([[어미]] 모)</small> &bull; [[毛]] <small>([[털]] 모)</small> &bull; [[暮]] <small>([[저물다|저물]] 모)</small>
+| [[某]] <small>([[아무개]] 모)</small> &bull; [[謀]] <small>([[꾀]] 모)</small> &bull; [[模]] <small>([[본뜨다|본뜰]] 모)</small> &bull; [[貌]] <small>([[모양]] 모)</small> &bull; [[募]] <small>([[모으다|모을]] 모)</small> &bull; [[慕]] <small>([[그리다|그릴]] 모)</small> &bull; [[侮]] <small>([[업신여기다|업신여길]] 모)</small> &bull; [[冒]] <small>([[무릅쓰다|무릅쓸]] 모)</small>
+|-valign="top"
+! 목
+| [[木]] <small>([[나무]] 목)</small> &bull; [[目]] <small>([[눈]] 목)</small>
+| [[牧]] <small>([[치다|칠]] 목)</small> &bull; [[睦]] <small>([[화목하다|화목할]] 목)</small>
+|-valign="top"
+! 몰
+|
+| [[沒]] <small>([[빠지다|빠질]]/[[없다|없을]] 몰)</small>
+|-valign="top"
+! 몽
+|
+| [[夢]] <small>([[꿈]] 몽)</small> &bull; [[蒙]] <small>(입을 몽)</small>
+|-valign="top"
+! 묘
+| [[卯]] <small>([[토끼]] 묘)</small> &bull; [[妙]] <small>([[묘하다|묘할]] 묘)</small>
+| [[苗]] <small>([[모]] 묘)</small> &bull; [[廟]] <small>([[사당]] 묘)</small> &bull; [[墓]] <small>([[무덤]] 묘)</small>
+|-valign="top"
+! 무
+| [[戊]] <small>([[다섯째]] [[천간]] 무)</small> &bull; [[茂]] <small>([[우거지다|우거질]] 무)</small> &bull; [[武]] <small>([[굳세다|굳셀]] 무)</small> &bull; [[務]] <small>([[힘쓰다|힘쓸]] 무)</small> &bull; [[無]] <small>([[없다|없을]] 무)</small> &bull; [[舞]] <small>([[춤추다|춤출]] 무)</small>
+| [[貿]] <small>([[무역하다|무역할]] 무)</small> &bull; [[霧]] <small>([[안개]] 무)</small>
+|-valign="top"
+! 묵
+| [[墨]] <small>([[먹]] 묵)</small>
+| [[默]] <small>([[잠잠하다|잠잠할]] 묵)</small>
+|-valign="top"
+! 문
+| [[門]] <small>([[문]] 문)</small> &bull; [[問]] <small>([[묻다|물을]] 문)</small> &bull; [[聞]] <small>([[듣다|들을]] 문)</small> &bull; [[文]] <small>([[글월]] 문)</small>
+|
+|-valign="top"
+! 물
+| [[勿]] <small>([[말다|말]] 물)</small> &bull; [[物]] <small>([[물건]] 물)</small>
+|
+|-valign="top"
+! 미
+| [[米]] <small>([[쌀]] 미)</small> &bull; [[未]] <small>([[아니다|아닐]] 미)</small> &bull; [[味]] <small>([[맛]] 미)</small> &bull; [[美]] <small>([[아름답다|아름다울]] 미)</small> &bull; [[尾]] <small>([[꼬리]] 미)</small>
+| [[迷]] <small>([[미혹하다|미혹할]] 미)</small> &bull; [[微]] <small>([[작다|작을]] 미)</small> &bull; [[眉]] <small>([[눈썹]] 미)</small>
+|-valign="top"
+! 민
+| [[民]] <small>([[백성]] 민)</small>
+| [[敏]] <small>([[재빠르다|재빠를]] 민)</small> &bull; [[憫]] <small>([[민망하다|민망할]] 민)</small>
+|-valign="top"
+! 밀
+| [[密]] <small>([[빽빽하다|빽빽할]] 밀)</small>
+| [[蜜]] <small>([[꿀]] 밀)</small>
+|}
+
+=== ㅂ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅂ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 박
+| [[朴]] <small>([[성]]/[[순박하다|순박할]] 박)</small>
+| [[泊]] <small>([[머무르다|머무를]] 박)</small> &bull; [[拍]] <small>([[치다|칠]] 박)</small> &bull; [[迫]] <small>([[핍박하다|핍박할]]/[[닥치다|닥칠]] 박)</small> &bull; [[博]] <small>([[넓다|넓을]] 박)</small> &bull; [[薄]] <small>([[엷다|엷을]] 박)</small>
+|-valign="top"
+! 반
+| [[反]] <small>([[돌아오다|돌아올]]/[[뒤집다|뒤집을]] 반)</small> &bull; [[飯]] <small>([[밥]] 반)</small> &bull; [[半]] <small>([[반]] 반)</small>
+| [[般]] <small>([[가지]] 반)</small> &bull; [[盤]] <small>([[소반]] 반)</small> &bull; [[班]] <small>([[나누다|나눌]] 반)</small> &bull; [[返]] <small>([[돌이키다|돌이킬]] 반)</small> &bull; [[叛]] <small>([[배반하다|배반할]] 반)</small> &bull; [[伴]] <small>([[짝]] 반)</small>
+|-valign="top"
+! 발
+| [[發]] <small>([[쏘다|쏠]] 발)</small>
+| [[拔]] <small>([[빼다|뺄]] 발)</small> &bull; [[髮]] <small>([[터럭]] 발)</small>
+|-valign="top"
+! 방
+| [[方]] <small>([[모]] 방)</small> &bull; [[房]] <small>([[방]] 방)</small> &bull; [[防]] <small>([[막다|막을]] 방)</small> &bull; [[放]] <small>([[놓다|놓을]] 방)</small> &bull; [[訪]] <small>([[찾다|찾을]] 방)</small>
+| [[芳]] <small>([[꽃답다|꽃다울]] 방)</small> &bull; [[傍]] <small>([[곁]] 방)</small> &bull; [[妨]] <small>([[방해하다|방해할]] 방)</small> &bull; [[倣]] <small>([[본뜨다|본뜰]] 방)</small> &bull; [[邦]] <small>([[나라]] 방)</small>
+|-valign="top"
+! 배
+| [[拜]] <small>([[절]] 배)</small> &bull; [[杯]] <small>([[잔]] 배)</small>
+| [[倍]] <small>([[곱]] 배)</small> &bull; [[培]] <small>([[북돋다|북돋을]] 배)</small> &bull; [[配]] <small>([[나누다|나눌]] 배)</small> &bull; [[排]] <small>([[밀치다|밀칠]] 배)</small> &bull; [[輩]] <small>([[무리]] 배)</small> &bull; [[背]] <small>([[등]] 배)</small>
+|-valign="top"
+! 백
+| [[白]] <small>([[희다|흰]] 백)</small> &bull; [[百]] <small>([[일백]] 백)</small>
+| [[伯]] <small>([[맏]] 백)</small>
+|-valign="top"
+! 번
+| [[番]] <small>([[차례]] 번)</small>
+| [[煩]] <small>([[번거롭다|번거로울]] 번)</small> &bull; [[繁]] <small>([[번성하다|번성할]]/[[복잡하다|복잡할]] 번)</small> &bull; [[飜]] <small>([[번역하다|번역할]]/[[날다|날]] 번)</small>
+|-valign="top"
+! 벌
+| [[伐]] <small>([[치다|칠]] 벌)</small>
+| [[罰]] <small>([[벌하다|벌할]] 벌)</small>
+|-valign="top"
+! 범
+| [[凡]] <small>([[무릇]] 범)</small>
+| [[犯]] <small>([[범하다|범할]] 범)</small> &bull; [[範]] <small>([[법]] 범)</small>
+|-valign="top"
+! 법
+| [[法]] <small>([[법]] 법)</small>
+|
+|-valign="top"
+! 벽
+|
+| [[壁]] <small>([[벽]] 벽)</small> &bull; [[碧]] <small>([[푸르다|푸를]] 벽)</small>
+|-valign="top"
+! 변
+| [[變]] <small>([[변하다|변할]] 변)</small>
+| [[辯]] <small>([[말씀]] 변)</small> &bull; [[辨]] <small>([[분별하다|분별할]] 변)</small> &bull; [[邊]] <small>([[가]] 변)</small>
+|-valign="top"
+! 별
+| [[別]] <small>([[나누다|나눌]] 별)</small>
+|
+|-valign="top"
+! 병
+| [[丙]] <small>([[남녘]] 병)</small> &bull; [[病]] <small>([[병]] 병)</small> &bull; [[兵]] <small>([[병사]] 병)</small>
+| [[竝]] <small>([[아우르다|아우를]] 병)</small> &bull; [[屛]] <small>([[병풍]] 병)</small>
+|-valign="top"
+! 보
+| [[保]] <small>([[지키다|지킬]] 보)</small> &bull; [[步]] <small>([[걸음]] 보)</small> &bull; [[報]] <small>([[갚다|갚을]] 보)</small>
+| [[普]] <small>([[넓다|넓을]] 보)</small> &bull; [[譜]] <small>([[족보]] 보)</small> &bull; [[補]] <small>([[깁다|기울]]/[[돕다|도울]] 보)</small> &bull; [[寶]] <small>([[보배]] 보)</small>
+|-valign="top"
+! 복
+| [[福]] <small>([[복]] 복)</small> &bull; [[伏]] <small>([[엎드리다|엎드릴]] 복)</small> &bull; [[服]] <small>([[옷]] 복)</small> &bull; [[復]] <small>([[돌아오다|돌아올]] 복)</small><ref>'다시 부'로도 읽는다.</ref>
+| [[腹]] <small>([[배]] 복)</small> &bull; [[複]] <small>([[겹치다|겹칠]] 복)</small> &bull; [[卜]] <small>([[점]] 복)</small> &bull; [[覆]] <small>([[다시]] 복)</small>
+|-valign="top"
+! 본
+| [[本]] <small>([[근본]]/[[뿌리]] 본)</small>
+|
+|-valign="top"
+! 봉
+| [[奉]] <small>([[받들다|받들]] 봉)</small> &bull; [[逢]] <small>([[만나다|만날]] 봉)</small>
+| [[峯]] <small>([[봉우리]] 봉)</small> &bull; [[蜂]] <small>([[벌]] 봉)</small> &bull; [[封]] <small>([[봉하다|봉할]] 봉)</small> &bull; [[鳳]] <small>([[봉황새]] 봉)</small>
+|-valign="top"
+! 부
+| [[夫]] <small>([[지아비]] 부)</small> &bull; [[扶]] <small>([[돕다|도울]] 부)</small> &bull; [[父]] <small>([[아비]] 부)</small> &bull; [[富]] <small>([[부유하다|부유할]] 부)</small> &bull; [[部]] <small>([[떼]] 부)</small> &bull; [[婦]] <small>([[며느리]]/[[아내]] 부)</small> &bull; [[否]] <small>([[아니다|아닐]] 부)</small> &bull; [[浮]] <small>([[뜨다|뜰]] 부)</small>
+| [[付]] <small>([[주다|줄]] 부)</small> &bull; [[符]] <small>([[부호]] 부)</small> &bull; [[附]] <small>([[붙다|붙을]] 부)</small> &bull; [[府]] <small>([[마을]] 부)</small> &bull; [[腐]] <small>([[썩다|썩을]] 부)</small> &bull; [[負]] <small>([[지다|질]] 부)</small> &bull; [[副]] <small>([[버금]] 부)</small> &bull; [[簿]] <small>([[장부]] 부)</small> &bull; [[赴]] <small>([[다다르다|다다를]] 부)</small> &bull; [[賦]] <small>([[부세]] 부)</small>
+|-valign="top"
+! 북
+| [[北]] <small>([[북녘]] 북)</small>
+|
+|-valign="top"
+! 분
+| [[分]] <small>([[나누다|나눌]] 분)</small><ref>'푼 푼'으로도 읽는다.</ref>
+| [[紛]] <small>([[어지럽다|어지러울]] 분)</small> &bull; [[粉]] <small>([[가루]] 분)</small> &bull; [[奔]] <small>([[달리다|달릴]] 분)</small> &bull; [[墳]] <small>([[무덤]] 분)</small> &bull; [[憤]] <small>([[분하다|분할]] 분)</small> &bull; [[奮]] <small>([[떨치다|떨칠]] 분)</small>
+|-valign="top"
+! 불
+| [[不]] <small>([[아니다|아닐]] 불)</small><ref>'아닐 부'로도 읽는다.</ref> &bull; [[佛]] <small>([[부처]] 불)</small>
+| [[拂]] <small>([[떨치다|떨칠]] 불)</small>
+|-valign="top"
+! 붕
+| [[朋]] <small>([[벗]] 붕)</small>
+| [[崩]] <small>([[무너지다|무너질]] 붕)</small>
+|-valign="top"
+! 비
+| [[比]] <small>([[견주다|견줄]] 비)</small> &bull; [[非]] <small>([[아니다|아닐]] 비)</small> &bull; [[悲]] <small>([[슬프다|슬플]] 비)</small> &bull; [[飛]] <small>([[날다|날]] 비)</small> &bull; [[鼻]] <small>([[코]] 비)</small> &bull; [[備]] <small>([[갖추다|갖출]] 비)</small>
+| [[批]] <small>([[비평하다|비평할]] 비)</small> &bull; [[卑]] <small>([[낮다|낮을]] 비)</small> &bull; [[婢]] <small>([[계집종]] 비)</small> &bull; [[碑]] <small>([[돌기둥]] 비)</small> &bull; [[妃]] <small>([[왕비]] 비)</small> &bull; [[肥]] <small>([[살찌다|살찔]] 비)</small> &bull; [[祕]] <small>([[숨기다|숨길]] 비)</small> &bull; [[費]] <small>([[쓰다|쓸]] 비)</small>
+|-valign="top"
+! 빈
+| [[貧]] <small>([[가난하다|가난할]] 빈)</small>
+| [[賓]] <small>([[손]] 빈)</small> &bull; [[頻]] <small>([[자주]] 빈)</small>
+|-valign="top"
+! 빙
+| [[氷]] <small>([[얼음]] 빙)</small>
+| [[聘]] <small>([[부르다|부를]] 빙)</small>
+|}
+
+=== ㅅ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅅ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 사
+| [[四]] <small>([[넉]] 사)</small> &bull; [[巳]] <small>([[뱀]] 사)</small> &bull; [[士]] <small>([[선비]] 사)</small> &bull; [[仕]] <small>([[섬기다|섬길]] 사)</small> &bull; [[寺]] <small>([[절]] 사)</small> &bull; [[史]] <small>([[사기]] 사)</small> &bull; [[使]] <small>([[하여금]]/[[부리다|부릴]] 사)</small> &bull; [[舍]] <small>(집 사)</small> &bull; [[射]] <small>(쏠 사)</small> &bull; [[謝]] <small>(사례할 사)</small> &bull; [[師]] <small>(스승 사)</small> &bull; [[死]] <small>(죽을 사)</small> &bull; [[私]] <small>(사사로울 사)</small> &bull; [[絲]] <small>(실 사)</small> &bull; [[思]] <small>(생각할 사)</small> &bull; [[事]] <small>(일 사)</small>
+| [[司]] <small>([[맡다|맡을]] 사)</small> &bull; [[詞]] <small>([[말씀]] 사)</small> &bull; [[蛇]] <small>([[뱀]] 사)</small> &bull; [[捨]] <small>([[버리다|버릴]] 사)</small> &bull; [[邪]] <small>([[간사하다|간사할]] 사)</small> &bull; [[賜]] <small>([[주다|줄]] 사)</small> &bull; [[斜]] <small>([[비끼다|비낄]] 사)</small> &bull; [[詐]] <small>([[속이다|속일]] 사)</small> &bull; [[社]] <small>([[모이다|모일]]/[[토지신]] 사)</small> &bull; [[沙]] <small>([[모래]] 사)</small> &bull; [[似]] <small>([[닮다|닮을]] 사)</small> &bull; [[査]] <small>([[조사하다|조사할]] 사)</small> &bull; [[寫]] <small>([[베끼다|베낄]] 사)</small> &bull; [[辭]] <small>([[말씀]] 사)</small> &bull; [[斯]] <small>([[이]] 사)</small> &bull; [[祀]] <small>([[제사]] 사)</small>
+|-valign="top"
+! 삭
+|
+| [[削]] <small>([[깎다|깎을]] 삭)</small> &bull; [[朔]] <small>([[초하루]] 삭)</small>
+|-valign="top"
+! 산
+| [[山]] <small>([[뫼]] 산)</small> &bull; [[產]] <small>([[낳다|낳을]] 산)</small> &bull; [[散]] <small>([[흩어지다|흩어질]] 산)</small> &bull; [[算]] <small>([[세다|셀]] 산)</small>
+|
+|-valign="top"
+! 살
+| [[殺]] <small>([[죽이다|죽일]] 살)</small>
+|
+|-valign="top"
+! 삼
+| [[三]] <small>([[석]] 삼)</small>
+|
+|-valign="top"
+! 상
+| [[上]] <small>([[위]] 상)</small> &bull; [[尙]] <small>([[오히려]] 상)</small> &bull; [[常]] <small>([[항상]]/[[떳떳하다|떳떳할]] 상)</small> &bull; [[賞]] <small>([[상주다|상줄]] 상)</small> &bull; [[商]] <small>([[장사]] 상)</small> &bull; [[相]] <small>([[서로]] 상)</small> &bull; [[霜]] <small>([[서리]] 상)</small> &bull; [[想]] <small>([[생각하다|생각할]] 상)</small> &bull; [[傷]] <small>([[상처]] 상)</small> &bull; [[喪]] <small>([[잃다|잃을]] 상)</small>
+| [[嘗]] <small>([[맛보다|맛볼]] 상)</small> &bull; [[裳]] <small>([[치마]] 상)</small> &bull; [[詳]] <small>([[자세하다|자세할]] 상)</small> &bull; [[祥]] <small>([[상서롭다|상서로울]] 상)</small> &bull; [[床]] <small>([[상]] 상)</small> &bull; [[象]] <small>([[코끼리]] 상)</small> &bull; [[像]] <small>([[모양]] 상)</small> &bull; [[桑]] <small>([[뽕나무]] 상)</small> &bull; [[償]] <small>([[갚다|갚을]] 상)</small> &bull; [[狀]] <small>([[형상]] 상)</small>
+|-valign="top"
+! 쌍
+|
+| [[雙]] <small>([[두]] 쌍)</small>
+|-valign="top"
+! 새
+|
+| [[塞]] <small>([[변방]] 새)</small>
+|-valign="top"
+! 색
+| [[色]] <small>([[빛 색]])</small>
+| [[索]] <small>([[찾다|찾을]] 색)</small>
+|-valign="top"
+! 생
+| [[生]] <small>([[나다|날]] 생)</small>
+|-valign="top"
+! 서
+| [[西]] <small>([[서녘]] 서)</small> &bull; [[序]] <small>([[차례]] 서)</small> &bull; [[書]] <small>([[쓰다|쓸]] 서)</small> &bull; [[暑]] <small>([[덥다|더울]] 서)</small>
+| [[敍]] <small>([[펴다|펼]] 서)</small> &bull; [[徐]] <small>([[천천히]] 서)</small> &bull; [[庶]] <small>([[여러]] 서)</small> &bull; [[恕]] <small>([[용서하다|용서할]] 서)</small> &bull; [[緖]] <small>([[실마리]] 서)</small> &bull; [[署]] <small>([[마을]] 서)</small> &bull; [[誓]] <small>([[맹세하다|맹세할]] 서)</small> &bull; [[逝]] <small>([[가다|갈]] 서)</small>
+|-valign="top"
+! 석
+| [[石]] <small>([[돌]] 석)</small> &bull; [[夕]] <small>([[저녁]] 석)</small> &bull; [[昔]] <small>([[예|옛]] 석)</small> &bull; [[惜]] <small>([[아끼다|아낄]] 석)</small> &bull; [[席]] <small>([[자리]] 석)</small>
+| [[析]] <small>([[쪼개다|쪼갤]] 석)</small> &bull; [[釋]] <small>([[풀다|풀]] 석)</small>
+|-valign="top"
+! 선
+| [[先]] <small>([[먼저]] 선)</small> &bull; [[仙]] <small>([[신선]] 선)</small> &bull; [[線]] <small>([[줄]] 선)</small> &bull; [[鮮]] <small>([[곱다|고울]] 선)</small> &bull; [[善]] <small>([[착하다|착할]] 선)</small> &bull; [[船]] <small>([[배]] 선)</small> &bull; [[選]] <small>([[가리다|가릴]] 선)</small>
+| [[宣]] <small>([[베풀디|베풀]] 선)</small> &bull; [[旋]] <small>([[돌다|돌]] 선)</small> &bull; [[禪]] <small>([[선]] 선)</small>
+|-valign="top"
+! 설
+| [[雪]] <small>([[눈]] 설)</small> &bull; [[說]] <small>([[말씀]] 설)</small> &bull; [[設]] <small>([[베풀다|베풀]] 설)</small> &bull; [[舌]] <small>([[혀]] 설)</small>
+|
+|-valign="top"
+! 섭
+|
+| [[涉]] <small>([[건너다|건널]] 섭)</small> &bull; [[攝]] <small>([[다스리다|다스릴]]/[[잡다|잡을]] 섭)</small>
+|-valign="top"
+! 성
+| [[姓]] <small>([[성]] 성)</small> &bull; [[性]] <small>([[성품]] 성)</small> &bull; [[成]] <small>([[이루다|이룰]] 성)</small> &bull; [[城]] <small>([[재]] 성)</small> &bull; [[誠]] <small>([[정성]] 성)</small> &bull; [[盛]] <small>([[성하다|성할]] 성)</small> &bull; [[省]] <small>([[살피다|살필]] 성)</small><ref>'덜 생'으로도 읽는다.</ref> &bull; [[星]] <small>([[별]] 성)</small> &bull; [[聖]] <small>([[거룩하다|거룩할]] 성)</small> &bull; [[聲]] <small>([[소리]] 성)</small>
+|
+|-valign="top"
+! 세
+| [[世]] <small>([[대]]/[[인간]] 세)</small> &bull; [[洗]] <small>([[씻다|씻을]] 세)</small> &bull; [[稅]] <small>([[세금]] 세)</small> &bull; [[細]] <small>([[가늘다|가늘]] 세)</small> &bull; [[勢]] <small>([[형세]] 세)</small> &bull; [[歲]] <small>([[해]] 세)</small>
+|
+|-valign="top"
+! 소
+| [[小]] <small>([[작다|작을]] 소)</small> &bull; [[少]] <small>([[적다|적을]] 소)</small> &bull; [[所]] <small>([[바]] 소)</small> &bull; [[消]] <small>([[사라지다|사라질]] 소)</small> &bull; [[素]] <small>([[본디]] 소)</small> &bull; [[笑]] <small>([[웃다|웃을]] 소)</small>
+| [[召]] <small>([[부르다|부를]] 소)</small> &bull; [[昭]] <small>([[밝다|밝을]] 소)</small> &bull; [[蘇]] <small>([[깨어나다|깨어날]] 소)</small> &bull; [[騷]] <small>([[떠들다|떠들]] 소)</small> &bull; [[燒]] <small>([[불사르다|불사를]] 소)</small> &bull; [[訴]] <small>([[호소하다|호소할]] 소)</small> &bull; [[掃]] <small>([[쓸다|쓸]] 소)</small> &bull; [[疏]] <small>([[트이다|트일]] 소)</small> &bull; [[蔬]] <small>([[푸성귀]] 소)</small>
+|-valign="top"
+! 속
+| [[俗]] <small>([[풍속]] 속)</small> &bull; [[速]] <small>([[빠르다|빠를]] 속)</small> &bull; [[續]] <small>([[잇다|이을]] 속)</small>
+| [[束]] <small>([[묶다|묶을]] 속)</small> &bull; [[粟]] <small>([[조]] 속)</small> &bull; [[屬]] <small>([[무리]] 속)</small>
+|-valign="top"
+! 손
+| [[孫]] <small>([[손자]] 손)</small>
+| [[損]] <small>([[덜다]]덜 손)</small>
+|-valign="top"
+! 송
+| [[松]] <small>([[소나무]] 송)</small> &bull; [[送]] <small>([[보내다|보낼]] 송)</small>
+| [[訟]] <small>([[송사하다|송사할]] 송)</small> &bull; [[頌]] <small>([[칭송하다|칭송할]] 송)</small> &bull; [[誦]] <small>([[외우다|외울]] 송)</small>
+|-valign="top"
+! 쇄
+|
+| [[刷]] <small>([[인쇄하다|인쇄할]] 쇄)</small> &bull; [[鎖]] <small>([[쇠사슬]] 쇄)</small>
+|-valign="top"
+! 쇠
+|
+| [[衰]] <small>([[쇠하다|쇠할]] 쇠)</small>
+|-valign="top"
+! 수
+| [[水]] <small>([[물]] 수)</small> &bull; [[手]] <small>([[손]] 수)</small> &bull; [[受]] <small>([[받다|받을]] 수)</small> &bull; [[授]] <small>([[주다|줄]] 수)</small> &bull; [[首]] <small>([[머리]] 수)</small> &bull; [[守]] <small>([[지키다|지킬]] 수)</small> &bull; [[收]] <small>([[거두다|거둘]] 수)</small> &bull; [[誰]] <small>([[누구]] 수)</small> &bull; [[須]] <small>([[모름지기]] 수)</small> &bull; [[雖]] <small>([[비록]] 수)</small> &bull; [[愁]] <small>([[시름]] 수)</small> &bull; [[樹]] <small>([[나무]] 수)</small> &bull; [[壽]] <small>([[목숨]] 수)</small> &bull; [[數]] <small>([[세다|셀]] 수)</small> &bull; [[修]] <small>([[닦다|닦을]] 수)</small> &bull; [[秀]] <small>([[빼어나다|빼어날]] 수)</small>
+| [[囚]] <small>([[가두다|가둘]] 수)</small> &bull; [[需]] <small>([[쓰이다|쓰일]] 수)</small> &bull; [[帥]] <small>([[장수]] 수)</small> &bull; [[殊]] <small>([[다르다|다를]] 수)</small> &bull; [[隨]] <small>([[따르다|따를]] 수)</small> &bull; [[輸]] <small>([[보내다|보낼]] 수)</small> &bull; [[獸]] <small>([[짐승]] 수)</small> &bull; [[睡]] <small>([[자다|잘]] 수)</small> &bull; [[遂]] <small>([[드디어]]/[[따르다|따를]] 수)</small> &bull; [[垂]] <small>([[드리우다|드리울]] 수)</small> &bull; [[搜]] <small>([[찾다|찾을]] 수)</small>
+|-valign="top"
+! 숙
+| [[叔]] <small>([[아저씨]] 숙)</small> &bull; [[淑]] <small>([[맑다|맑을]] 숙)</small> &bull; [[宿]] <small>([[자다|잘]] 숙)</small>
+| [[孰]] <small>([[누구]] 숙)</small> &bull; [[熟]] <small>([[익다|익을]] 숙)</small> &bull; [[肅]] <small>([[엄숙하다|엄숙할]] 숙)</small>
+|-valign="top"
+! 순
+| [[順]] <small>([[순하다|순할]] 순)</small> &bull; [[純]] <small>([[순수하다|순수할]] 순)</small>
+| [[旬]] <small>([[열흘]] 순)</small> &bull; [[殉]] <small>([[따르다|따라]] [[죽다|죽을]] 순)</small> &bull; [[循]] <small>([[돌다|돌]] 순)</small> &bull; [[脣]] <small>([[입술]] 순)</small> &bull; [[瞬]] <small>([[깜짝이다|깜짝일]] 순)</small> &bull; [[巡]] <small>([[돌아다니다|돌아다닐]] 순)</small>
+|-valign="top"
+! 술
+| [[戌]] <small>([[개]] 술)</small>
+| [[述]] <small>([[펴다|펼]] 술)</small> &bull; [[術]] <small>([[재주]] 술)</small>
+|-valign="top"
+! 숭
+| [[崇]] <small>([[높다|높을]] 숭)</small>
+|
+|-valign="top"
+! 습
+| [[習]] <small>([[익히다|익힐]] 습)</small> &bull; [[拾]] <small>([[줍다|주울]] 습)</small>
+| [[濕]] <small>([[젖다|젖을]]/[[축축하다|축축할]] 습)</small> &bull; [[襲]] <small>([[엄습하다|엄습할]] 습)</small>
+|-valign="top"
+! 승
+| [[乘]] <small>([[타다|탈]] 승)</small> &bull; [[承]] <small>([[잇다|이을]]/[[받들다|받들]] 승)</small> &bull; [[勝]] <small>([[이기다|이길]]/[[뛰어나다|뛰어날]] 승)</small>
+| [[昇]] <small>([[오르다|오를]] 승)</small> &bull; [[僧]] <small>([[중]] 승)</small>
+|-valign="top"
+! 시
+| [[市]] <small>([[저자]] 시)</small> &bull; [[示]] <small>([[보이다|보일]] 시)</small> &bull; [[是]] <small>([[옳다|옳을]] 시)</small> &bull; [[時]] <small>([[때]] 시)</small> &bull; [[詩]] <small>([[시]] 시)</small> &bull; [[視]] <small>([[보다|볼]] 시)</small> &bull; [[施]] <small>([[베풀다|베풀]] 시)</small> &bull; [[試]] <small>([[시험]] 시)</small> &bull; [[始]] <small>([[비로소]] 시)</small>
+| [[矢]] <small>([[화살]] 시)</small> &bull; [[侍]] <small>([[모시다|모실]] 시)</small>
+|-valign="top"
+! 씨
+| [[氏]] <small>([[성씨]] 씨)</small>
+|
+|-valign="top"
+! 식
+| [[食]] <small>([[먹다|먹을]] 식)</small> &bull; [[式]] <small>([[법]] 식)</small> &bull; [[植]] <small>([[심다|심을]] 식)</small> &bull; [[識]] <small>([[알다|알]] 식)</small>
+| [[息]] <small>([[숨쉬다|숨쉴]] 식)</small> &bull; [[飾]] <small>([[꾸미다|꾸밀]] 식)</small>
+|-valign="top"
+! 신
+| [[身]] <small>([[몸]] 신)</small> &bull; [[申]] <small>([[거듭]] 신)</small> &bull; [[神]] <small>([[귀신]] 신)</small> &bull; [[臣]] <small>([[신하]] 신)</small> &bull; [[信]] <small>([[믿다|믿을]] 신)</small> &bull; [[辛]] <small>([[맵다|매울]]/[[괴롭다|괴로울]] 신)</small> &bull; [[新]] <small>([[새]] 신)</small>
+| [[伸]] <small>([[펼|펴다]] 신)</small> &bull; [[晨]] <small>([[새벽]] 신)</small> &bull; [[愼]] <small>([[삼가다|삼갈]] 신)</small>
+|-valign="top"
+! 실
+| [[失]] <small>([[잃다|잃을]] 실)</small> &bull; [[室]] <small>([[집]] 실)</small> &bull; [[實]] <small>([[열매]] 실)</small>
+|
+|-valign="top"
+! 심
+| [[心]] <small>([[마음]] 심)</small> &bull; [[甚]] <small>([[심하다|심할]] 심)</small> &bull; [[深]] <small>([[깊다|깊을]] 심)</small>
+| [[尋]] <small>([[찾다|찾을]] 심)</small> &bull; [[審]] <small>([[살피다|살필]] 심)</small>
+|-valign="top"
+! 십
+| [[十]] <small>([[열]] 십)</small>
+|
+|}
+
+=== ㅇ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅇ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 아
+| [[兒]] <small>([[아이]] 아)</small> &bull; [[我]] <small>([[나]] 아)</small>
+| [[牙]] <small>([[어금니]] 아)</small> &bull; [[芽]] <small>([[싹]] 아)</small> &bull; [[雅]] <small>([[맑다|맑을]]/[[우아하다|우아할]] 아)</small> &bull; [[亞]] <small>([[버금]] 아)</small> &bull; [[餓]] <small>([[주리다|주릴]] 아)</small>
+|-valign="top"
+! 악
+| [[惡]] <small>([[나쁘다|나쁠]] 악)</small><ref>'미워할 오'로도 읽는다.</ref>
+| [[岳]] <small>([[큰]] [[산]] 악)</small>
+|-valign="top"
+! 안
+| [[安]] <small>([[편안하다|편안할]] 안)</small> &bull; [[案]] <small>([[책상]]/[[안건]] 안)</small> &bull; [[顔]] <small>([[얼굴]] 안)</small> &bull; [[眼]] <small>([[눈]] 안)</small>
+| [[岸]] <small>([[언덕]] 안)</small> &bull; [[雁]] <small>([[기러기]] 안)</small>
+|-valign="top"
+! 알
+|
+| [[謁]] <small>([[뵈다|뵐]] 알)</small>
+|-valign="top"
+! 암
+| [[暗]] <small>([[어둡다|어두울]] 암)</small> &bull; [[巖]] <small>([[바위]] 암)</small>
+|
+|-valign="top"
+! 압
+|
+| [[壓]] <small>([[누르다|누를]] 압)</small> &bull; [[押]] <small>([[누르다|누를]]/[[억압하다|억압할]] 압)</small>
+|-valign="top"
+! 앙
+| [[仰]] <small>([[우러르다|우러를]] 앙)</small>
+| [[央]] <small>([[가운데]] 앙)</small> &bull; [[殃]] <small>([[재앙]] 앙)</small>
+|-valign="top"
+! 애
+| [[愛]] <small>([[사랑]] 애)</small> &bull; [[哀]] <small>([[슬프다|슬플]] 애)</small>
+| [[涯]] <small>([[물가]] 애)</small>
+|-valign="top"
+! 액
+|
+| [[厄]] <small>([[액]] 액)</small> &bull; [[額]] <small>([[이마]] 액)</small>
+|-valign="top"
+! 야
+| [[也]] <small>([[어조사]] 야)</small> &bull; [[夜]] <small>([[밤]] 야)</small> &bull; [[野]] <small>([[들]] 야)</small>
+| [[耶]] <small>([[어조사]] 야)</small>
+|-valign="top"
+! 약
+| [[弱]] <small>([[약하다|약할]] 약)</small> &bull; [[若]] <small>([[같다|같을]] 약)</small> &bull; [[約]] <small>([[맺다|맺을]] 약)</small> &bull; [[藥]] <small>([[약]] 약)</small>
+| [[躍]] <small>([[뛰다|뛸]] 약)</small>
+|-valign="top"
+! 양
+| [[羊]] <small>([[양]] 양)</small> &bull; [[洋]] <small>([[큰]] [[바다]] 양)</small> &bull; [[養]] <small>([[기르다|기를]] 양)</small> &bull; [[揚]] <small>([[날리다|날릴]] 양)</small> &bull; [[陽]] <small>([[볕]] 양)</small> &bull; [[讓]] <small>([[사양하다|사양할]] 양)</small>
+| [[壤]] <small>([[흙]] 양)</small> &bull; [[樣]] <small>([[모양]] 양)</small> &bull; [[楊]] <small>([[버들]] 양)</small>
+|-valign="top"
+! 어
+| [[魚]] <small>([[물고기]] 어)</small> &bull; [[漁]] <small>([[고기]] [[잡다|잡을]] 어)</small> &bull; [[於]] <small>([[어조사]] 어)</small> &bull; [[語]] <small>([[말씀]] 어)</small>
+| [[御]] <small>(어거할 어)</small>
+|-valign="top"
+! 억
+| [[億]] <small>([[억]] 억)</small> &bull; [[憶]] <small>([[생각하다|생각할]] 억)</small>
+| [[抑]] <small>([[누르다|누를]]/[[억압하다|억압할]] 억)</small>
+|-valign="top"
+! 언
+| [[言]] <small>([[말씀]] 언)</small>
+| [[焉]] <small>([[어찌]] 언)</small>
+|-valign="top"
+! 엄
+| [[嚴]] <small>([[엄하다|엄할]] 엄)</small>
+|-valign="top"
+! 업
+| [[業]] <small>([[일]] 업)</small>
+|-valign="top"
+! 여
+| [[余]] <small>([[나]] 여)</small> &bull; [[餘]] <small>([[남다|남을]] 여)</small> &bull; [[如]] <small>([[같다|같을]] 여)</small> &bull; [[汝]] <small>([[너]] 여)</small> &bull; [[與]] <small>([[주다|줄]] 여)</small>
+| [[予]] <small>([[나]] 여)</small> &bull; [[輿]] <small>([[수레]] 여)</small>
+|-valign="top"
+! 역
+| [[亦]] <small>([[또]] 역)</small> &bull; [[易]] <small>([[바꾸다|바꿀]] 역)</small><ref>'쉬울 이'로도 읽는다.</ref> &bull; [[逆]] <small>([[거스르다|거스를]] 역)</small>
+| [[譯]] <small>([[풀다|풀]]/[[번역하다|번역할]] 역)</small> &bull; [[驛]] <small>([[역참]] 역)</small> &bull; [[役]] <small>([[부리다|부릴]] 역)</small> &bull; [[疫]] <small>([[전염병]] 역)</small> &bull; [[域]] <small>([[지경]] 역)</small>
+|-valign="top"
+! 연
+| [[然]] <small>([[그러하다|그러할]] 연)</small> &bull; [[煙]] <small>([[연기]] 연)</small> &bull; [[硏]] <small>([[갈다|갈]] 연)</small>
+| [[延]] <small>([[늘이다|늘일]] 연)</small> &bull; [[燃]] <small>([[타다|탈]] 연)</small> &bull; [[燕]] <small>([[제비]] 연)</small> &bull; [[沿]] <small>([[따르다|따를]] 연)</small> &bull; [[鉛]] <small>([[납]] 연)</small> &bull; [[宴]] <small>([[잔치]] 연)</small> &bull; [[軟]] <small>([[연하다|연할]] 연)</small> &bull; [[演]] <small>([[펴다|펼]] 연)</small> &bull; [[緣]] <small>([[인연]] 연)</small>
+|-valign="top"
+! 열
+| [[熱]] <small>([[덥다|더울]] 열)</small> &bull; [[悅]] <small>([[기쁘다|기쁠]] 열)</small>
+| [[閱]] <small>([[보다|볼]]/[[검열하다|검열할]] 열)</small>
+|-valign="top"
+! 염
+| [[炎]] <small>([[불꽃]] 염)</small>
+| [[染]] <small>([[물들다|물들]] 염)</small> &bull; [[鹽]] <small>([[소금]] 염)</small>
+|-valign="top"
+! 엽
+| [[葉]] <small>([[잎]] 엽)</small>
+|
+|-valign="top"
+! 영
+| [[永]] <small>([[길다|길]] 영)</small> &bull; [[英]] <small>([[꽃부리]] 영)</small> &bull; [[迎]] <small>([[맞다|맞을]] 영)</small> &bull; [[榮]] <small>([[영화롭다|영화로울]] 영)</small>
+| [[泳]] <small>([[헤엄치다|헤엄칠]] 영)</small> &bull; [[詠]] <small>([[읊다|읊을]] 영)</small> &bull; [[營]] <small>([[경영하다|경영할]] 영)</small> &bull; [[影]] <small>([[그림자]] 영)</small> &bull; [[映]] <small>([[비추다|비출]] 영)</small>
+|-valign="top"
+! 예
+| [[藝]] <small>([[재주]] 예)</small>
+| [[豫]] <small>([[미리]] 예)</small> &bull; [[譽]] <small>([[기리다|기릴]] 예)</small> &bull; [[銳]] <small>([[날카롭다|날카로울]] 예)</small>
+|-valign="top"
+! 오
+| [[五]] <small>([[다섯]] 오)</small> &bull; [[吾]] <small>([[나]] 오)</small> &bull; [[悟]] <small>([[깨닫다|깨달을]] 오)</small> &bull; [[午]] <small>([[낮]] 오)</small> &bull; [[誤]] <small>([[그르치다|그르칠]] 오)</small> &bull; [[烏]] <small>([[까마귀]] 오)</small>
+| [[汚]] <small>([[더럽다|더러울]] 오)</small> &bull; [[嗚]] <small>([[슬프다|슬플]]/[[흐느끼다|흐느낄]] 오)</small> &bull; [[娛]] <small>([[즐기다|즐길]] 오)</small> &bull; [[傲]] <small>([[오만하다|오만할]] 오)</small>
+|-valign="top"
+! 옥
+| [[玉]] <small>([[구슬]] 옥)</small> &bull; [[屋]] <small>([[집]] 옥)</small>
+| [[獄]] <small>([[옥]] 옥)</small>
+|-valign="top"
+! 온
+|
+| [[溫]] <small>([[따뜻하다|따뜻할]] 온)</small>
+|-valign="top"
+! 옹
+|
+| [[翁]] <small>([[늙은이]] 옹)</small> &bull; [[擁]] <small>([[끼다|낄]]/[[안다|안을]] 옹)</small>
+|-valign="top"
+! 와
+| [[瓦]] <small>([[기와]] 와)</small> &bull; [[臥]] <small>([[눕다|누울]] 와)</small>
+|
+|-valign="top"
+! 완
+| [[完]] <small>([[완전하다|완전할]] 완)</small>
+| [[緩]] <small>([[느리다|느릴]]/[[느슨하다|느슨할]] 완)</small>
+|-valign="top"
+! 왈
+| [[曰]] <small>([[가로다|가로]] 왈)</small>
+|
+|-valign="top"
+! 왕
+| [[王]] <small>([[임금]] 왕)</small> &bull; [[往]] <small>([[가다|갈]] 왕)</small>
+|
+|-valign="top"
+! 외
+| [[外]] <small>([[바깥]] 외)</small>
+| [[畏]] <small>([[두려워하다|두려워할]] 외)</small>
+|-valign="top"
+! 요
+| [[要]] <small>([[요긴하다|요긴할]] 요)</small>
+| [[腰]] <small>([[허리]] 요)</small> &bull; [[搖]] <small>([[흔들다|흔들]] 요)</small> &bull; [[遙]] <small>([[멀다|멀]] 요)</small> &bull; [[謠]] <small>([[노래]] 요)</small>
+|-valign="top"
+! 욕
+| [[欲]] <small>([[하다|하]][[고자]] [[하다|할]] 욕)</small> &bull; [[浴]] <small>([[목욕하다|목욕할]] 욕)</small>
+| [[慾]] <small>([[욕심]] 욕)</small> &bull; [[辱]] <small>([[욕되다|욕될]] 욕)</small>
+|-valign="top"
+! 용
+| [[用]] <small>([[쓰다|쓸]] 용)</small> &bull; [[容]] <small>([[얼굴]] 용)</small> &bull; [[勇]] <small>([[날래다|날랠]] 용)</small>
+| [[庸]] <small>([[떳떳하다|떳떳할]] 용)</small>
+|-valign="top"
+! 우
+| [[于]] <small>([[어조사]] 우)</small> &bull; [[宇]] <small>([[집]] 우)</small> &bull; [[右]] <small>([[오른]] 우)</small> &bull; [[友]] <small>([[벗]] 우)</small> &bull; [[牛]] <small>([[소]] 우)</small> &bull; [[雨]] <small>([[비]] 우)</small> &bull; [[憂]] <small>([[근심]] 우)</small> &bull; [[又]] <small>([[또]] 우)</small> &bull; [[尤]] <small>([[더욱]] 우)</small> &bull; [[遇]] <small>([[만나다|만날]] 우)</small>
+| [[羽]] <small>([[깃]] 우)</small> &bull; [[郵]] <small>([[우편]]/[[역참]] 우)</small> &bull; [[愚]] <small>([[어리석다|어리석을]] 우)</small> &bull; [[偶]] <small>([[짝]] 우)</small> &bull; [[優]] <small>([[넉넉하다|넉넉할]] 우)</small>
+|-valign="top"
+! 운
+| [[云]] <small>([[이르다|이를]] 운)</small> &bull; [[雲]] <small>([[구름]] 운)</small> &bull; [[運]] <small>([[옮기다|옮길]] 운)</small>
+| [[韻]] <small>([[운]] 운)</small>
+|-valign="top"
+! 웅
+| [[雄]] <small>([[수컷]] 웅)</small>
+|
+|-valign="top"
+! 원
+| [[元]] <small>([[으뜸]] 원)</small> &bull; [[原]] <small>([[언덕]] 원)</small> &bull; [[願]] <small>([[원하다|원할]] 원)</small> &bull; [[遠]] <small>([[멀다|멀]] 원)</small> &bull; [[園]] <small>([[동산]] 원)</small> &bull; [[怨]] <small>([[원망하다|원망할]] 원)</small> &bull; [[圓]] <small>([[둥글다|둥글]] 원)</small>
+| [[員]] <small>([[인원]]/[[관원]] 원)</small> &bull; [[源]] <small>([[근원]] 원)</small> &bull; [[援]] <small>([[돕다|도울]] 원)</small> &bull; [[院]] <small>([[집]] 원)</small>
+|-valign="top"
+! 월
+| [[月]] <small>([[달]] 월)</small>
+| [[越]] <small>([[넘다|넘을]] 월)</small>
+|-valign="top"
+! 위
+| [[位]] <small>([[자리]] 위)</small> &bull; [[危]] <small>([[위태하다|위태할]] 위)</small> &bull; [[爲]] <small>([[하다|할]] 위)</small> &bull; [[偉]] <small>([[크다|클]]/[[훌륭하다|훌륭할]] 위)</small> &bull; [[威]] <small>([[위엄]] 위)</small>
+| [[胃]] <small>([[위장]] 위)</small> &bull; [[謂]] <small>([[이르다|이를]] 위)</small> &bull; [[圍]] <small>([[에워싸다|에워쌀]] 위)</small> &bull; [[緯]] <small>([[씨]] 위)</small> &bull; [[衛]] <small>([[지키다|지킬]] 위)</small> &bull; [[違]] <small>([[어긋나다|어긋날]]/[[어기다|어길]] 위)</small> &bull; [[委]] <small>([[맡기다|맡길]] 위)</small> &bull; [[慰]] <small>([[위로하다|위로할]] 위)</small> &bull; [[僞]] <small>([[거짓]] 위)</small>
+|-valign="top"
+! 유
+| [[由]] <small>([[말미암다|말미암을]] 유)</small> &bull; [[油]] <small>([[기름]] 유)</small> &bull; [[酉]] <small>([[닭]] 유)</small> &bull; [[有]] <small>([[있다|있을]] 유)</small> &bull; [[猶]] <small>([[오히려]] 유)</small> &bull; [[唯]] <small>([[오직]] 유)</small> &bull; [[遊]] <small>([[놀다|놀]] 유)</small> &bull; [[柔]] <small>([[부드럽다|부드러울]] 유)</small> &bull; [[遺]] <small>([[남기다|남길]] 유)</small> &bull; [[幼]] <small>([[어리다|어릴]] 유)</small>
+| [[幽]] <small>([[그윽하다|그윽할]] 유)</small> &bull; [[惟]] <small>([[생각하다|생각할]] 유)</small> &bull; [[維]] <small>([[벼리]] 유)</small> &bull; [[乳]] <small>([[젖]] 유)</small> &bull; [[儒]] <small>([[선비]] 유)</small> &bull; [[裕]] <small>([[넉넉하다|넉넉할]] 유)</small> &bull; [[誘]] <small>([[꾀다|꾈]] 유)</small> &bull; [[愈]] <small>([[낫다|나을]] 유)</small> &bull; [[悠]] <small>([[멀다|멀]] 유)</small>
+|-valign="top"
+! 육
+| [[肉]] <small>([[고기]] 육)</small> &bull; [[育]] <small>([[기르다|기를]] 육)</small>
+|
+|-valign="top"
+! 윤
+|
+| [[閏]] <small>([[윤달]] 윤)</small> &bull; [[潤]] <small>([[불다|불을]]/[[젖다|젖을]]/[[윤택하다|윤택할]] 윤)</small>
+|-valign="top"
+! 은
+| [[恩]] <small>([[은혜]] 은)</small> &bull; [[銀]] <small>([[은]] 은)</small>
+| [[隱]] <small>([[숨다|숨을]] 은)</small>
+|-valign="top"
+! 을
+| [[乙]] <small>([[새]] 을)</small>
+|
+|-valign="top"
+! 음
+| [[音]] <small>([[소리]] 음)</small> &bull; [[吟]] <small>([[읊다|읊을]] 음)</small> &bull; [[飮]] <small>([[마시다|마실]] 음)</small> &bull; [[陰]] <small>([[그늘]] 음)</small>
+| [[淫]] <small>([[음란하다|음란할]] 음)</small>
+|-valign="top"
+! 읍
+| [[邑]] <small>([[고을]] 읍)</small> &bull; [[泣]] <small>([[울다|울]] 읍)</small>
+|
+|-valign="top"
+! 응
+| [[應]] <small>([[응하다|응할]] 응)</small>
+| [[凝]] <small>([[엉기다|엉길]] 응)</small>
+|-valign="top"
+! 의
+| [[衣]] <small>([[옷]] 의)</small> &bull; [[依]] <small>([[의지하다|의지할]]/[[기대다|기댈]] 의)</small> &bull; [[義]] <small>([[옳다|옳을]] 의)</small> &bull; [[議]] <small>([[의논하다|의논할]] 의)</small> &bull; [[矣]] <small>([[어조사]] 의)</small> &bull; [[醫]] <small>([[의원]] 의)</small> &bull; [[意]] <small>([[뜻]] 의)</small>
+| [[宜]] <small>([[마땅]] 의)</small> &bull; [[儀]] <small>([[거동]] 의)</small> &bull; [[疑]] <small>([[의심하다|의심할]]/[[믿다|믿]][[지]] [[않다|앓을]] 의)</small>
+|-valign="top"
+! 이
+| [[二]] <small>([[두]] 이)</small> &bull; [[以]] <small>([[써]] 이)</small> &bull; [[已]] <small>([[이미]] 이)</small> &bull; [[耳]] <small>([[귀]] 이)</small> &bull; [[而]] <small>([[말]] [[잇다|이을]] 이)</small> &bull; [[異]] <small>([[다르다|다를]] 이)</small> &bull; [[移]] <small>([[옮기다|옮길]] 이)</small>
+| [[夷]] <small>([[오랑캐]] 이)</small>
+|-valign="top"
+! 익
+| [[益]] <small>([[더하다|더할]] 익)</small>
+| [[翼]] <small>([[날개]] 익)</small>
+|-valign="top"
+! 인
+| [[人]] <small>([[사람]] 인)</small> &bull; [[引]] <small>([[끌다|끌]] 인)</small> &bull; [[仁]] <small>([[어질다|어질]] 인)</small> &bull; [[因]] <small>([[인하다|인할]] 인)</small> &bull; [[忍]] <small>([[참다|참을]] 인)</small> &bull; [[認]] <small>([[알다|알]] 인)</small> &bull; [[寅]] <small>([[범]] 인)</small> &bull; [[印]] <small>([[도장]] 인)</small>
+| [[姻]] <small>([[혼인]] 인)</small>
+|-valign="top"
+! 일
+| [[一]] <small>([[한]] 일)</small> &bull; [[日]] <small>([[날]] 일)</small>
+| [[逸]] <small>([[편안하다|편안할]] 일)</small>
+|-valign="top"
+! 임
+| [[壬]] <small>([[북방]] 임)</small>
+| [[任]] <small>([[맡기다|맡길]] 임)</small> &bull; [[賃]] <small>([[품삯]] 임)</small>
+|-valign="top"
+! 입
+| [[入]] <small>([[들다|들]] 입)</small>
+|
+|}
+
+=== ㅈ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅈ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 자
+| [[子]] <small>([[아들]] 자)</small> &bull; [[字]] <small>([[글자]] 자)</small> &bull; [[自]] <small>([[스스로]] 자)</small> &bull; [[者]] <small>([[놈]] 자)</small> &bull; [[姊]] <small>([[손윗누이]] 자)</small> &bull; [[慈]] <small>([[사랑]] 자)</small>
+| [[玆]] <small>([[무성하다|무성할]] 자)</small> &bull; [[紫]] <small>([[자줏빛]] 자)</small> &bull; [[資]] <small>([[재물]] 자)</small> &bull; [[姿]] <small>([[맵시]] 자)</small> &bull; [[恣]] <small>([[마음대로]] 자)</small> &bull; [[刺]] <small>([[찌르다|찌를]] 자)</small>
+|-valign="top"
+! 작
+| [[作]] <small>([[짓다|지을]] 작)</small> &bull; [[昨]] <small>([[어제]] 작)</small>
+| [[酌]] <small>([[따르다|따를]] 작)</small> &bull; [[爵]] <small>([[벼슬]] 작)</small>
+|-valign="top"
+! 잔
+|
+| [[殘]] <small>([[잔인하다|잔인할]] 잔)</small>
+|-valign="top"
+! 잠
+|
+| [[潛]] <small>([[잠기다|잠길]] 잠)</small> &bull; [[暫]] <small>([[잠깐]] 잠)</small>
+|-valign="top"
+! 잡
+|
+| [[雜]] <small>([[섞이다|섞일]] 잡)</small>
+|-valign="top"
+! 장
+| [[長]] <small>([[길다|길]] 장)</small> &bull; [[章]] <small>([[글]] 장)</small> &bull; [[場]] <small>([[마당]] 장)</small> &bull; [[將]] <small>([[장수]]/[[장차]] 장)</small> &bull; [[壯]] <small>([[씩씩하다|씩씩할]] 장)</small>
+| [[丈]] <small>([[어른]] 장)</small> &bull; [[張]] <small>([[베풀다|베풀]] 장)</small> &bull; [[帳]] <small>([[장막]] 장)</small> &bull; [[莊]] <small>([[엄하다|엄할]] 장)</small> &bull; [[裝]] <small>([[꾸미다|꾸밀]] 장)</small> &bull; [[奬]] <small>([[장려하다|장려할]] 장)</small> &bull; [[墻]] <small>([[담]] 장)</small> &bull; [[葬]] <small>([[장사지내다|장사지낼]] 장)</small> &bull; [[粧]] <small>([[단장하다|단장할]] 장)</small> &bull; [[掌]] <small>([[손바닥]] 장)</small> &bull; [[藏]] <small>([[감추다|감출]] 장)</small> &bull; [[臟]] <small>([[오장]] 장)</small> &bull; [[障]] <small>([[막다|막을]] 장)</small> &bull; [[腸]] <small>([[창자]] 장)</small>
+|-valign="top"
+! 재
+| [[才]] <small>([[재주]] 재)</small> &bull; [[材]] <small>([[재목]] 재)</small> &bull; [[財]] <small>([[재물]] 재)</small> &bull; [[在]] <small>([[있다|있을]] 재)</small> &bull; [[栽]] <small>([[심다|심을]] 재)</small> &bull; [[再]] <small>([[두]] 재)</small> &bull; [[哉]] <small>([[비롯할]]/[[처음]] 재)</small>
+| [[災]] <small>([[재앙]] 재)</small> &bull; [[裁]] <small>([[마르다|마를]] 재)</small> &bull; [[載]] <small>([[싣다|실을]] 재)</small> &bull; [[宰]] <small>([[재상]] 재)</small>
+|-valign="top"
+! 쟁
+| [[爭]] <small>([[다투다|다툴]] 쟁)</small>
+|
+|-valign="top"
+! 저
+| [[著]] <small>([[나타나다|나타날]] 저)</small> &bull; [[貯]] <small>([[쌓다|쌓을]] 저)</small> &bull; [[低]] <small>([[낮다|낮을]] 저)</small>
+| [[底]] <small>([[바닥]] 저)</small> &bull; [[抵]] <small>([[막다|막을]] 저)</small>
+|-valign="top"
+! 적
+| [[的]] <small>([[과녁]] 적)</small> &bull; [[赤]] <small>([[붉다|붉을]] 적)</small> &bull; [[適]] <small>([[맞다|맞을]] 적)</small> &bull; [[敵]] <small>([[대적하다|대적할]]/[[적]] 적)</small>
+| [[滴]] <small>([[물방울]] 적)</small> &bull; [[摘]] <small>([[따다|딸]] 적)</small> &bull; [[寂]] <small>([[고요하다|고요할]] 적)</small> &bull; [[籍]] <small>([[서적]] 적)</small> &bull; [[賊]] <small>([[도적]] 적)</small> &bull; [[跡]] <small>([[발자취]] 적)</small> &bull; [[蹟]] <small>([[자취]] 적)</small> &bull; [[積]] <small>([[쌓다|쌓을]] 적)</small> &bull; [[績]] <small>([[길쌈하다|길쌈할]] 적)</small>
+|-valign="top"
+! 전
+| [[田]] <small>([[밭]] 전)</small> &bull; [[全]] <small>([[온전하다|온전할]] 전)</small> &bull; [[典]] <small>([[법]] 전)</small> &bull; [[前]] <small>([[앞]] 전)</small> &bull; [[展]] <small>([[펴다|펼]] 전)</small> &bull; [[戰]] <small>([[싸우다|싸울]] 전)</small> &bull; [[電]] <small>([[번개]] 전)</small> &bull; [[錢]] <small>([[돈]] 전)</small> &bull; [[傳]] <small>([[전하다|전할]] 전)</small>
+| [[專]] <small>([[오로지]] 전)</small> &bull; [[轉]] <small>([[구르다|구를]] 전)</small> &bull; [[殿]] <small>([[전각]] 전)</small>
+|-valign="top"
+! 절
+| [[節]] <small>([[마디]] 절)</small> &bull; [[絕]] <small>([[끊다|끊을]]/[[그만두다|그만둘]] 절)</small>
+| [[切]] <small>([[끊다|끊을]]/[[베다|벨]] 절)</small> &bull; [[折]] <small>([[꺾다|꺾을]] 절)</small> &bull; [[竊]] <small>([[훔치다|훔칠]] 절)</small>
+|-valign="top"
+! 점
+| [[店]] <small>([[가게]] 점)</small>
+| [[占]] <small>([[차지하다|차지할]] 점)</small> &bull; [[點]] <small>([[점]] 점)</small> &bull; [[漸]] <small>([[점점]] 점)</small>
+|-valign="top"
+! 접
+| [[接]] <small>([[잇다|이을]]/[[접하다|접할]] 접)</small>
+| [[蝶]] <small>([[나비]] 접)</small>
+|-valign="top"
+! 정
+| [[丁]] <small>([[고무래]] 정)</small> &bull; [[停]] <small>([[머무르다|머무를]] 정)</small> &bull; [[頂]] <small>([[정수리]] 정)</small> &bull; [[井]] <small>([[우물]] 정)</small> &bull; [[正]] <small>([[바르다|바를]] 정)</small> &bull; [[政]] <small>([[정사]] 정)</small> &bull; [[定]] <small>([[정하다|정할]] 정)</small> &bull; [[貞]] <small>([[곧다|곧을]] 정)</small> &bull; [[精]] <small>([[정하다|정할]] 정)</small> &bull; [[情]] <small>([[뜻]] 정)</small> &bull; [[靜]] <small>([[고요하다|고요할]] 정)</small> &bull; [[淨]] <small>([[깨끗하다|깨끗할]] 정)</small> &bull; [[庭]] <small>([[뜰]] 정)</small>
+| [[亭]] <small>([[정자]] 정)</small> &bull; [[訂]] <small>([[바로잡다|바로잡을]] 정)</small> &bull; [[廷]] <small>([[조정]] 정)</small> &bull; [[程]] <small>([[한도]] 정)</small> &bull; [[征]] <small>([[치다|칠]] 정)</small> &bull; [[整]] <small>([[가지런하다|가지런할]] 정)</small>
+|-valign="top"
+! 제
+| [[弟]] <small>([[아우]] 제)</small> &bull; [[第]] <small>([[차례]] 제)</small> &bull; [[祭]] <small>([[제사]] 제)</small> &bull; [[帝]] <small>([[임금]] 제)</small> &bull; [[題]] <small>([[제목]] 제)</small> &bull; [[除]] <small>([[덜다|덜]] 제)</small> &bull; [[諸]] <small>([[모두]] 제)</small> &bull; [[製]] <small>([[짓다|지을]] 제)</small>
+| [[提]] <small>([[끌다|끌]] 제)</small> &bull; [[堤]] <small>([[둑]] 제)</small> &bull; [[制]] <small>([[절제하다|절제할]] 제)</small> &bull; [[際]] <small>([[즈음]]/[[가]] 제)</small> &bull; [[齊]] <small>([[가지런하다|가지런할]] 제)</small> &bull; [[濟]] <small>([[건너다|건널]] 제)</small>
+|-valign="top"
+! 조
+| [[兆]] <small>([[조]] 조)</small> &bull; [[早]] <small>([[이르다|이를]]/[[일찍]] 조)</small> &bull; [[造]] <small>([[짓다|지을]] 조)</small> &bull; [[鳥]] <small>([[새]] 조)</small> &bull; [[調]] <small>([[고르다|고를]] 조)</small> &bull; [[朝]] <small>([[아침]] 조)</small> &bull; [[助]] <small>([[돕다|도울]] 조)</small> &bull; [[祖]] <small>([[할아버지]] 조)</small>
+| [[弔]] <small>([[조상하다|조상할]] 조)</small> &bull; [[燥]] <small>([[마르다|마를]] 조)</small> &bull; [[操]] <small>([[잡다|잡을]] 조)</small> &bull; [[照]] <small>([[비추다|비출]] 조)</small> &bull; [[條]] <small>([[가지]] 조)</small> &bull; [[潮]] <small>([[밀물]]/[[조수]] 조)</small> &bull; [[租]] <small>([[조세]] 조)</small> &bull; [[組]] <small>([[끈]] 조)</small>
+|-valign="top"
+! 족
+| [[足]] <small>([[발]] 족)</small> &bull; [[族]] <small>([[겨레]] 족)</small>
+|
+|-valign="top"
+! 존
+| [[存]] <small>([[있다|있을]] 존)</small> &bull; [[尊]] <small>([[높다|높을]] 존)</small>
+|
+|-valign="top"
+! 졸
+| [[卒]] <small>([[마치다|마칠]]/[[군사]] 졸)</small>
+| [[拙]] <small>([[옹졸하다|옹졸할]] 졸)</small>
+|-valign="top"
+! 종
+| [[宗]] <small>([[마루]] 종)</small> &bull; [[種]] <small>([[씨]] 종)</small> &bull; [[鐘]] <small>([[쇠북]] 종)</small> &bull; [[終]] <small>([[마치다|마칠]] 종)</small> &bull; [[從]] <small>([[좇다|좇을]] 종)</small>
+| [[縱]] <small>([[세로]] 종)</small>
+|-valign="top"
+! 좌
+| [[左]] <small>([[왼]] 좌)</small> &bull; [[坐]] <small>([[앉다|앉을]] 좌)</small>
+| [[佐]] <small>([[돕다|도울]] 좌)</small> &bull; [[座]] <small>([[자리]] 좌)</small>
+|-valign="top"
+! 죄
+| [[罪]] <small>([[허물]] 죄)</small>
+|
+|-valign="top"
+! 주
+| [[主]] <small>([[주인]] 주)</small> &bull; [[注]] <small>([[물대다|물댈]] 주)</small> &bull; [[住]] <small>([[살다|살]] 주)</small> &bull; [[朱]] <small>([[붉다|붉을]] 주)</small> &bull; [[宙]] <small>([[집]] 주)</small> &bull; [[走]] <small>([[달리다|달릴]] 주)</small> &bull; [[酒]] <small>([[술]] 주)</small> &bull; [[晝]] <small>([[낮]] 주)</small>
+| [[舟]] <small>([[배]] 주)</small> &bull; [[周]] <small>([[두루]] 주)</small> &bull; [[株]] <small>([[그루]] 주)</small> &bull; [[州]] <small>([[고을]] 주)</small> &bull; [[洲]] <small>([[물가]] 주)</small> &bull; [[柱]] <small>([[기둥]] 주)</small> &bull; [[奏]] <small>([[아뢰다|아뢸]] 주)</small> &bull; [[珠]] <small>([[구슬]] 주)</small> &bull; [[鑄]] <small>([[불리다|불릴]] 주)</small>
+|-valign="top"
+! 죽
+| [[竹]] <small>([[대]] 죽)</small>
+|
+|-valign="top"
+! 준
+|
+| [[準]] <small>([[준하다|준할]] 준)</small> &bull; [[俊]] <small>([[준걸]] 준)</small> &bull; [[遵]] <small>([[좇다|좇을]] 준)</small>
+|-valign="top"
+! 중
+| [[中]] <small>([[가운데]] 중)</small> &bull; [[重]] <small>([[무겁다|무거울]] 중)</small> &bull; [[衆]] <small>([[무리]] 중)</small>
+| [[仲]] <small>([[버금]] 중)</small>
+|-valign="top"
+! 즉
+| [[卽]] <small>([[곧]] 즉)</small>
+|
+|-valign="top"
+! 증
+| [[曾]] <small>([[일찍]] 증)</small> &bull; [[增]] <small>([[더하다|더할]] 증)</small> &bull; [[證]] <small>([[증거]] 증)</small>
+| [[憎]] <small>([[밉다|미울]] 증)</small> &bull; [[贈]] <small>([[주다|줄]] 증)</small> &bull; [[症]] <small>([[증세]] 증)</small> &bull; [[蒸]] <small>([[찌다|찔]] 증)</small>
+|-valign="top"
+! 지
+| [[只]] <small>([[다만]] 지)</small> &bull; [[支]] <small>([[지탱하다|지탱할]] 지)</small> &bull; [[枝]] <small>([[가지]] 지)</small> &bull; [[止]] <small>([[그치다|그칠]] 지)</small> &bull; [[之]] <small>([[가다|갈]] 지)</small> &bull; [[知]] <small>([[알다|알]] 지)</small> &bull; [[地]] <small>([[땅]] 지)</small> &bull; [[指]] <small>([[손가락]] 지)</small> &bull; [[志]] <small>([[뜻]] 지)</small> &bull; [[至]] <small>([[이르다|이를]] 지)</small> &bull; [[紙]] <small>([[종이]] 지)</small> &bull; [[持]] <small>([[가지다|가질]] 지)</small>
+| [[池]] <small>([[못]] 지)</small> &bull; [[誌]] <small>([[기록하다|기록할]] 지)</small> &bull; [[智]] <small>([[슬기]] 지)</small> &bull; [[遲]] <small>([[더디다|더딜]]/[[늦다|늦을]] 지)</small>
+|-valign="top"
+! 직
+| [[直]] <small>([[곧다|곧을]] 직)</small>
+| [[職]] <small>([[벼슬]] 직)</small> &bull; [[織]] <small>([[짜다|짤]] 직)</small>
+|-valign="top"
+! 진
+| [[辰]] <small>([[별]] 진)</small> &bull; [[眞]] <small>([[참]] 진)</small> &bull; [[進]] <small>([[나아가다|나아갈]] 진)</small> &bull; [[盡]] <small>([[다하다|다할]] 진)</small>
+| [[振]] <small>([[떨치다|떨칠]] 진)</small> &bull; [[鎭]] <small>([[진압하다|진압할]] 진)</small> &bull; [[陳]] <small>([[베풀다|베풀]] 진)</small> &bull; [[陣]] <small>([[진치다|진칠]] 진)</small> &bull; [[珍]] <small>([[보배]] 진)</small> &bull; [[震]] <small>([[우레]] 진)</small>
+|-valign="top"
+! 질
+| [[質]] <small>([[바탕]] 질)</small>
+| [[秩]] <small>([[차례]] 질)</small> &bull; [[疾]] <small>([[병]] 질)</small> &bull; [[姪]] <small>([[조카]] 질)</small>
+|-valign="top"
+! 집
+| [[集]] <small>([[모으다|모을]] 집)</small> &bull; [[執]] <small>([[잡다|잡을]] 집)</small>
+|
+|-valign="top"
+! 징
+|
+| [[徵]] <small>([[부르다|부를]] 징)</small> &bull; [[懲]] <small>([[징계하다|징계할]] 징)</small>
+|}
+
+=== ㅊ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅊ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 차
+| [[且]] <small>([[또]] 차)</small> &bull; [[次]] <small>([[버금]] 차)</small> &bull; [[此]] <small>([[이]] 차)</small> &bull; [[借]] <small>([[빌다|빌]] 차)</small>
+| [[差]] <small>([[다르다|다를]] 차)</small>
+|-valign="top"
+! 착
+| [[着]] <small>([[붙다|붙을]] 착)</small>
+| [[錯]] <small>([[어긋나다|어긋날]] 착)</small> &bull; [[捉]] <small>([[잡다|잡을]] 착)</small>
+|-valign="top"
+! 찬
+|
+| [[贊]] <small>([[돕다|도울]] 찬)</small> &bull; [[讚]] <small>([[기리다|기릴]] 찬)</small>
+|-valign="top"
+! 찰
+| [[察]] <small>([[살피다|살필]] 찰)</small>
+|
+|-valign="top"
+! 참
+| [[參]] <small>([[참여하다|참여할]] 참)</small>
+| [[慘]] <small>([[참혹하다|참혹할]] 참)</small> &bull; [[慙]] <small>([[부끄럽다|부끄러울]] 참)</small>
+|-valign="top"
+! 창
+| [[昌]] <small>([[창성하다|창성할]] 창)</small> &bull; [[唱]] <small>([[노래]] 창)</small> &bull; [[窓]] <small>([[창]] 창)</small>
+| [[倉]] <small>([[곳집]] 창)</small> &bull; [[創]] <small>([[비롯하다|비롯할]] 창)</small> &bull; [[蒼]] <small>([[푸르다|푸를]] 창)</small> &bull; [[暢]] <small>([[화창하다|화창할]] 창)</small>
+|-valign="top"
+! 채
+| [[菜]] <small>([[나물]] 채)</small> &bull; [[採]] <small>([[캐다|캘]] 채)</small>
+| [[彩]] <small>([[무늬]] 채)</small> &bull; [[債]] <small>([[빚]] 채)</small>
+|-valign="top"
+! 책
+| [[責]] <small>([[꾸짖다|꾸짖을]] 책)</small> &bull; [[冊]] <small>([[책]] 책)</small>
+| [[策]] <small>([[꾀]] 책)</small>
+|-valign="top"
+! 처
+| [[妻]] <small>([[아내]] 처)</small> &bull; [[處]] <small>([[곳]] 처)</small>
+|
+|-valign="top"
+! 척
+| [[尺]] <small>([[자]] 척)</small>
+| [[斥]] <small>([[물리치다|물리칠]] 척)</small> &bull; [[拓]] <small>([[열다|열]]/[[넓히다|넓힐]] 척)</small> &bull; [[戚]] <small>([[친척]] 척)</small>
+|-valign="top"
+! 천
+| [[千]] <small>([[일천]] 천)</small> &bull; [[天]] <small>([[하늘]] 천)</small> &bull; [[川]] <small>([[내]] 천)</small> &bull; [[泉]] <small>([[샘]] 천)</small> &bull; [[淺]] <small>([[얕다|얕을]] 천)</small>
+| [[賤]] <small>([[전하다|천할]] 천)</small> &bull; [[踐]] <small>([[밟다|밟을]] 천)</small> &bull; [[遷]] <small>([[옮기다|옮길]] 천)</small> &bull; [[薦]] <small>([[천거하다|천거할]] 천)</small>
+|-valign="top"
+! 철
+| [[鐵]] <small>([[쇠]] 철)</small>
+| [[哲]] <small>([[밝다|밝을]] 철)</small> &bull; [[徹]] <small>([[뚫다|뚫을]] 철)</small>
+|-valign="top"
+! 첨
+|
+| [[尖]] <small>([[뾰족하다|뾰족할]] 첨)</small> &bull; [[添]] <small>([[더하다|더할]] 첨)</small>
+|-valign="top"
+! 첩
+|
+| [[妾]] <small>([[첩]] 첩)</small>
+|-valign="top"
+! 청
+| [[靑]] <small>([[푸르다|푸를]] 청)</small> &bull; [[淸]] <small>([[맑다|맑을]] 청)</small> &bull; [[晴]] <small>([[개다|갤]] 청)</small> &bull; [[請]] <small>([[청하다|청할]] 청)</small> &bull; [[聽]] <small>([[듣다|들을]] 청)</small>
+| [[廳]] <small>([[관청]] 청)</small>
+|-valign="top"
+! 체
+| [[體]] <small>([[몸]] 체)</small>
+| [[替]] <small>([[바꾸다|바꿀]] 체)</small> &bull; [[滯]] <small>([[막히다|막힐]] 체)</small> &bull; [[逮]] <small>([[잡다|잡을]] 체)</small> &bull; [[遞]] <small>([[갈리다|갈릴]] 체)</small>
+|-valign="top"
+! 초
+| [[初]] <small>([[처음]] 초)</small> &bull; [[草]] <small>([[풀]] 초)</small> &bull; [[招]] <small>([[부르다|부를]] 초)</small>
+| [[肖]] <small>([[닮다|닮을]] 초)</small> &bull; [[超]] <small>([[넘다|넘을]] 초)</small> &bull; [[抄]] <small>([[베끼다|베낄]] 초)</small> &bull; [[礎]] <small>([[주춧돌]] 초)</small> &bull; [[秒]] <small>([[초]] 초)</small>
+|-valign="top"
+! 촉
+|
+| [[促]] <small>([[재촉하다|재촉할]] 촉)</small> &bull; [[燭]] <small>([[촛불]] 촉)</small> &bull; [[觸]] <small>([[닿다|닿을]] 촉)</small>
+|-valign="top"
+! 촌
+| [[寸]] <small>([[마디]] 촌)</small> &bull; [[村]] <small>([[마을]] 촌)</small>
+|
+|-valign="top"
+! 총
+|
+| [[銃]] <small>([[총]] 총)</small> &bull; [[總]] <small>([[거느리다|거느릴]] 총)</small> &bull; [[聰]] <small>([[총명하다|총명할]] 총)</small>
+|-valign="top"
+! 최
+| [[最]] <small>([[가장]] 최)</small>
+| [[催]] <small>([[재촉하다|재촉할]] 최)</small>
+|-valign="top"
+! 추
+| [[秋]] <small>([[가을]] 추)</small> &bull; [[追]] <small>([[쫓다|쫓을]] 추)</small> &bull; [[推]] <small>([[밀다|밀]] 추)</small>
+| [[抽]] <small>([[뽑다|뽑을]] 추)</small> &bull; [[醜]] <small>([[추하다|추할]] 추)</small>
+|-valign="top"
+! 축
+| [[丑]] <small>([[소]] 축)</small> &bull; [[祝]] <small>([[빌다|빌]] 축)</small>
+| [[畜]] <small>([[가축]] 축)</small> &bull; [[蓄]] <small>([[모으다|모을]] 축)</small> &bull; [[築]] <small>([[쌓다|쌓을]] 축)</small> &bull; [[逐]] <small>([[쫓다|쫓을]] 축)</small> &bull; [[縮]] <small>([[줄이다|줄일]] 축)</small>
+|-valign="top"
+! 춘
+| [[春]] <small>([[봄]] 춘)</small>
+|
+|-valign="top"
+! 출
+| [[出]] <small>([[나다|날]] 출)</small>
+|
+|-valign="top"
+! 충
+| [[充]] <small>([[채우다|채울]] 충)</small> &bull; [[忠]] <small>([[충성]] 충)</small> &bull; [[蟲]] <small>([[벌레]] 충)</small>
+| [[衝]] <small>([[찌르다|찌를]] 충)</small>
+|-valign="top"
+! 취
+| [[取]] <small>([[가지다|가질]] 취)</small> &bull; [[吹]] <small>([[불다|불]] 취)</small> &bull; [[就]] <small>([[나아가다|나아갈]]/[[이루다|이룰]] 취)</small>
+| [[臭]] <small>([[냄새]] 취)</small> &bull; [[醉]] <small>([[취하다|취할]] 취)</small> &bull; [[趣]] <small>([[뜻]] 취)</small>
+|-valign="top"
+! 측
+|
+| [[側]] <small>([[곁]] 측)</small> &bull; [[測]] <small>([[재다|잴]] 측)</small>
+|-valign="top"
+! 층
+|
+| [[層]] <small>([[층]] 층)</small>
+|-valign="top"
+! 치
+| [[治]] <small>([[다스리다|다스릴]] 치)</small> &bull; [[致]] <small>([[이르다|이를]] 치)</small> &bull; [[齒]] <small>([[이]] 치)</small>
+| [[値]] <small>([[값]] 치)</small> &bull; [[置]] <small>([[두다|둘]] 치)</small> &bull; [[恥]] <small>([[부끄럽다|부끄러울]] 치)</small>
+|-valign="top"
+! 칙
+| [[則]] <small>([[법칙]] 칙)</small><ref>'곧 즉'으로도 읽는다.</ref>
+|
+|-valign="top"
+! 친
+| [[親]] <small>([[친하다|친할]] 친)</small>
+|
+|-valign="top"
+! 칠
+| [[七]] <small>([[일곱]] 칠)</small>
+| [[漆]] <small>([[옻]] 칠)</small>
+|-valign="top"
+! 침
+| [[針]] <small>([[바늘]] 침)</small>
+| [[侵]] <small>([[침노하다|침노할]] 침)</small> &bull; [[浸]] <small>([[담그다|담글]] 침)</small> &bull; [[寢]] <small>([[자다|잘]] 침)</small> &bull; [[沈]] <small>([[가라앉다|가라앉을]] 침)</small> &bull; [[枕]] <small>([[베개]] 침)</small>
+|-valign="top"
+! 칭
+|
+| [[稱]] <small>([[일컫다|일컬을]] 칭)</small>
+|}
+
+=== ㅋ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅋ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 쾌
+| [[快]] <small>([[쾌하다|쾌할]] 쾌)</small>
+|
+|}
+
+=== ㅌ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅌ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 타
+| [[他]] <small>([[다르다|다를]] 타)</small> &bull; [[打]] <small>([[치다|칠]] 타)</small>
+| [[妥]] <small>([[온당하다|온당할]] 타)</small> &bull; [[墮]] <small>([[떨어지다|떨어질]] 타)</small>
+|-valign="top"
+! 탁
+|
+| [[濁]] <small>([[흐리다|흐릴]] 탁)</small> &bull; [[托]] <small>([[맡기다|맡길]] 탁)</small> &bull; [[濯]] <small>([[씻다|씻을]] 탁)</small> &bull; [[卓]] <small>([[높다|높을]] 탁)</small>
+|-valign="top"
+! 탄
+|
+| [[炭]] <small>([[숯]] 탄)</small> &bull; [[歎]] <small>([[탄식하다|탄식할]] 탄)</small> &bull; [[彈]] <small>([[탄알]] 탄)</small> &bull; [[誕]] <small>([[낳다|낳을]] 탄)</small>
+|-valign="top"
+! 탈
+| [[脫]] <small>([[벗다|벗을]] 탈)</small>
+| [[奪]] <small>([[빼앗다|빼앗을]] 탈)</small>
+|-valign="top"
+! 탐
+| [[探]] <small>([[찾다|찾을]] 탐)</small>
+| [[貪]] <small>([[탐하다|탐할]] 탐)</small>
+|-valign="top"
+! 탑
+|
+| [[塔]] <small>([[탑]] 탑)</small>
+|-valign="top"
+! 탕
+|
+| [[湯]] <small>([[끓이다|끓일]] 탕)</small>
+|-valign="top"
+! 태
+| [[太]] <small>([[크다|클]] 태)</small> &bull; [[泰]] <small>([[크다|클]]/[[편안하다|편안할]] 태)</small>
+| [[怠]] <small>([[게으르다|게으를]] 태)</small> &bull; [[殆]] <small>([[거의]] 태)</small> &bull; [[態]] <small>([[모양]] 태)</small>
+|-valign="top"
+! 택
+| [[宅]] <small>([[집]] 택)</small>
+| [[澤]] <small>([[못]] 택)</small> &bull; [[擇]] <small>([[가리다|가릴]] 택)</small>
+|-valign="top"
+! 토
+| [[土]] <small>([[흙]] 토)</small>
+| [[吐]] <small>([[토하다|토할]] 토)</small> &bull; [[討]] <small>([[치다|칠]] 토)</small>
+|-valign="top"
+! 통
+| [[通]] <small>([[통하다|통할]] 통)</small> &bull; [[統]] <small>([[거느리다|거느릴]] 통)</small>
+| [[痛]] <small>([[아프다|아플]] 통)</small>
+|-valign="top"
+! 퇴
+| [[退]] <small>([[물러나다|물러날]] 퇴)</small>
+|
+|-valign="top"
+! 투
+| [[投]] <small>([[던지다|던질]] 투)</small>
+| [[透]] <small>([[사무치다|사무칠]] 투)</small> &bull; [[鬪]] <small>([[싸우다|싸울]] 투)</small>
+|-valign="top"
+! 특
+| [[特]] <small>([[특별하다|특별할]]/[[뛰어나다|뛰어날]] 특)</small>
+|
+|}
+
+=== ㅍ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅍ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 파
+| [[破]] <small>([[깨뜨리다|깨뜨릴]] 파)</small> &bull; [[波]] <small>([[물결]] 파)</small>
+| [[派]] <small>([[갈래]] 파)</small> &bull; [[播]] <small>([[뿌리다|뿌릴]] 파)</small> &bull; [[罷]] <small>([[마치다|마칠]] 파)</small> &bull; [[頗]] <small>([[자못]] 파)</small> &bull; [[把]] <small>([[잡다|잡을]] 파)</small>
+|-valign="top"
+! 판
+| [[判]] <small>([[판단하다|판단할]] 판)</small>
+| [[板]] <small>([[널빤지]] 판)</small> &bull; [[販]] <small>([[팔다|팔]] 판)</small> &bull; [[版]] <small>([[판목]] 판)</small>
+|-valign="top"
+! 팔
+| [[八]] <small>([[여덟]] 팔)</small>
+|
+|-valign="top"
+! 패
+| [[貝]] <small>([[조개]] 패)</small> &bull; [[敗]] <small>([[패하다|패할]] 패)</small>
+|
+|-valign="top"
+! 편
+| [[片]] <small>([[조각]] 편)</small> &bull; [[便]] <small>([[편하다|편할]] 편)</small> &bull; [[篇]] <small>([[책]] 편)</small>
+| [[編]] <small>([[엮다|엮을]] 편)</small> &bull; [[遍]] <small>([[두루]] 편)</small> &bull; [[偏]] <small>([[치우치다|치우칠]] 편)</small>
+|-valign="top"
+! 평
+| [[平]] <small>([[평평하다|평평할]] 평)</small>
+| [[評]] <small>([[평하다|평할]] 평)</small>
+|-valign="top"
+! 폐
+| [[閉]] <small>([[닫다|닫을]] 폐)</small>
+| [[肺]] <small>([[허파]] 폐)</small> &bull; [[廢]] <small>([[버리다|버릴]]/[[폐하다|폐할]] 폐)</small> &bull; [[弊]] <small>([[폐단]]/[[해지다|해질]] 폐)</small> &bull; [[蔽]] <small>([[덮다|덮을]] 폐)</small> &bull; [[幣]] <small>([[화폐]]/[[비단]] 폐)</small>
+|-valign="top"
+! 포
+| [[布]] <small>([[베]] 포)</small> &bull; [[抱]] <small>([[안다|안을]] 포)</small>
+| [[包]] <small>([[싸다|쌀]] 포)</small> &bull; [[胞]] <small>([[세포]]/[[여드름]] 포)</small> &bull; [[飽]] <small>([[배부르다|배부를]] 포)</small> &bull; [[浦]] <small>([[물가]] 포)</small> &bull; [[捕]] <small>([[잡다|잡을]] 포)</small>
+|-valign="top"
+! 폭
+| [[暴]] <small>([[사납다|사나울]]/[[쬐다|쬘]] 폭)</small>
+| [[爆]] <small>([[터지다|터질]] 폭)</small> &bull; [[幅]] <small>([[너비]] 폭)</small>
+|-valign="top"
+! 표
+| [[表]] <small>([[겉]] 표)</small>
+| [[票]] <small>([[표]] 표)</small> &bull; [[標]] <small>([[나타내다|나타낼]] 표)</small> &bull; [[漂]] <small>([[떠다니다|떠다닐]] 표)</small>
+|-valign="top"
+! 품
+| [[品]] <small>([[물건]] 품)</small>
+|
+|-valign="top"
+! 풍
+| [[風]] <small>([[바람]] 풍)</small> &bull; [[豐]] <small>([[풍년]] 풍)</small>
+|
+|-valign="top"
+! 피
+| [[皮]] <small>([[가죽]] 피)</small> &bull; [[彼]] <small>([[저]] 피)</small>
+| [[疲]] <small>([[지치다|지칠]] 피)</small> &bull; [[被]] <small>([[입다|입을]] 피)</small> &bull; [[避]] <small>([[피하다|피할]] 피)</small>
+|-valign="top"
+! 필
+| [[必]] <small>([[반드시]] 필)</small> &bull; [[匹]] <small>([[짝]] 필)</small> &bull; [[筆]] <small>([[붓]] 필)</small>
+| [[畢]] <small>([[마치다|마칠]] 필)</small>
+|}
+
+=== ㅎ ===
+
+{| width="100%" class="datatable" style="font-size: 120%"
+|-
+! width="8%" style="background-color: white;" |
+! width="46%" style="background-color: #764000; color: white;" | 중학교용 900 한자
+! width="46%" style="background-color: #764000; color: white;" | 고등학교용 900 한자
+|-
+| colspan=3 |{{닻|ㅎ}}[[Image:Icon-kangaroo.png‎]]&nbsp;[[#ㄱ|ㄱ]] [[#ㄴ|ㄴ]] [[#ㄷ|ㄷ]] [[#ㄹ|ㄹ]] [[#ㅁ|ㅁ]] [[#ㅂ|ㅂ]] [[#ㅅ|ㅅ]] [[#ㅇ|ㅇ]] [[#ㅈ|ㅈ]] [[#ㅊ|ㅊ]] [[#ㅋ|ㅋ]] [[#ㅌ|ㅌ]] [[#ㅍ|ㅍ]] [[#ㅎ|ㅎ]]
+|- valign="top"
+! 하
+| [[下]] <small>([[아래]] 하)</small> &bull; [[夏]] <small>([[여름]] 하)</small> &bull; [[賀]] <small>([[하례]] 하)</small> &bull; [[何]] <small>([[어찌]] 하)</small> &bull; [[河]] <small>([[물]] 하)</small>
+| [[荷]] <small>([[메다|멜]] 하)</small>
+|-valign="top"
+! 학
+| [[學]] <small>([[배우다|배울]] 학)</small>
+| [[鶴]] <small>([[두루미]] 학)</small>
+|-valign="top"
+! 한
+| [[閑]] <small>([[한가하다|한가할]] 한)</small> &bull; [[寒]] <small>([[차다|찰]] 한)</small> &bull; [[恨]] <small>([[한]] 한)</small> &bull; [[限]] <small>([[한하다|한할]] 한)</small> &bull; [[韓]] <small>([[한국]]/[[나라]] [[이름]] 한)</small> &bull; [[漢]] <small>([[한수]]/[[한나라]] 한)</small>
+| [[旱]] <small>([[가물다|가물]] 한)</small> &bull; [[汗]] <small>([[땀]] 한)</small>
+|-valign="top"
+! 할
+|
+| [[割]] <small>([[나누다|나눌]] 할)</small>
+|-valign="top"
+! 함
+|
+| [[咸]] <small>([[다]] 함)</small> &bull; [[含]] <small>([[머금다|머금을]] 함)</small> &bull; [[陷]] <small>([[빠지다|빠질]] 함)</small>
+|-valign="top"
+! 합
+| [[合]] <small>([[합하다|합할]] 합)</small><ref>'홉 홉'으로도 읽는다.</ref>
+|
+|-valign="top"
+! 항
+| [[恒]] <small>([[항상]] 항)</small>
+| [[巷]] <small>([[거리]] 항)</small> &bull; [[港]] <small>([[항구]] 항)</small> &bull; [[項]] <small>([[항목]] 항)</small> &bull; [[抗]] <small>([[겨루다|겨룰]] 항)</small> &bull; [[航]] <small>([[배]] 항)</small>
+|-valign="top"
+! 해
+| [[害]] <small>([[해하다|해할]] 해)</small> &bull; [[海]] <small>([[바다]] 해)</small> &bull; [[亥]] <small>([[돼지]] 해)</small> &bull; [[解]] <small>([[풀다|풀]] 해)</small>
+| [[奚]] <small>([[어찌]] 해)</small> &bull; [[該]] <small>([[갖추다|갖출]] 해)</small>
+|-valign="top"
+! 핵
+|
+| [[核]] <small>([[씨]] 핵)</small>
+|-valign="top"
+! 행
+| [[行]] <small>([[다니다|다닐]] 행)</small> &bull; [[幸]] <small>([[다행]] 행)</small>
+|
+|-valign="top"
+! 향
+| [[向]] <small>([[향하다|향할]] 향)</small> &bull; [[香]] <small>([[향기]] 향)</small> &bull; [[鄕]] <small>([[시골]] 향)</small>
+| [[響]] <small>([[울리다|울릴]] 향)</small> &bull; [[享]] <small>([[누리다|누릴]] 향)</small>
+|-valign="top"
+! 허
+| [[虛]] <small>([[비다|빌]] 허)</small> &bull; [[許]] <small>([[허락하다|허락할]] 허)</small>
+|
+|-valign="top"
+! 헌
+|
+| [[軒]] <small>([[집]] 헌)</small> &bull; [[憲]] <small>([[법]] 헌)</small> &bull; [[獻]] <small>([[드리다|드릴]]/[[바치다|바칠]] 헌)</small>
+|-valign="top"
+! 험
+|
+| [[險]] <small>([[험하다|험할]] 험)</small> &bull; [[驗]] <small>([[시험하다|시험할]] 험)</small>
+|-valign="top"
+! 혁
+| [[革]] <small>([[가죽]]/[[고치다|고칠]] 혁)</small>
+|
+|-valign="top"
+! 현
+| [[現]] <small>([[나타나다|나타날]] 현)</small> &bull; [[賢]] <small>([[어질다|어질]] 현)</small>
+| [[玄]] <small>([[검다|검을]] 현)</small> &bull; [[絃]] <small>([[줄]] 현)</small> &bull; [[縣]] <small>([[고을]] 현)</small> &bull; [[懸]] <small>([[매달다|매달]] 현)</small> &bull; [[顯]] <small>([[나타나다|나타날]] 현)</small>
+|-valign="top"
+! 혈
+| [[血]] <small>([[피]] 혈)</small>
+| [[穴]] <small>([[구멍]] 혈)</small>
+|-valign="top"
+! 협
+| [[協]] <small>([[화합하다|화합할]]/[[돕다|도울]] 협)</small>
+| [[脅]] <small>([[위협하다|위협할]]/[[으르다|으를]] 협)</small>
+|-valign="top"
+! 형
+| [[兄]] <small>([[맏]]/[[형]] 형)</small> &bull; [[刑]] <small>([[형벌]] 형)</small> &bull; [[形]] <small>([[모양]] 형)</small>
+| [[亨]] <small>([[형통하다|형통할]] 형)</small> &bull; [[螢]] <small>([[반딧불이]] 형)</small> &bull; [[衡]] <small>([[저울대]] 형)</small>
+|-valign="top"
+! 혜
+| [[惠]] <small>([[은혜]] 혜)</small>
+| [[慧]] <small>([[슬기롭다|슬기로울]] 혜)</small> &bull; [[兮]] <small>([[어조사]] 혜)</small>
+|-valign="top"
+! 호
+| [[戶]] <small>([[지게]] 호)</small> &bull; [[乎]] <small>([[어조사]] 호)</small> &bull; [[呼]] <small>([[부르다|부를]] 호)</small> &bull; [[好]] <small>([[좋다|좋을]] 호)</small> &bull; [[虎]] <small>([[범]] 호)</small> &bull; [[號]] <small>([[부르짖다|부르짖을]] 호)</small> &bull; [[湖]] <small>([[호수]] 호)</small>
+| [[互]] <small>([[서로]] 호)</small> &bull; [[胡]] <small>([[오랑캐]] 호)</small> &bull; [[浩]] <small>([[넓다|넓을]] 호)</small> &bull; [[毫]] <small>([[터럭]] 호)</small> &bull; [[豪]] <small>([[호걸]] 호)</small> &bull; [[護]] <small>([[돕다|도울]] 호)</small>
+|-valign="top"
+! 혹
+| [[或]] <small>([[혹]] 혹)</small>
+| [[惑]] <small>([[미혹하다|미혹할]] 혹)</small>
+|-valign="top"
+! 혼
+| [[婚]] <small>([[혼인하다|혼인할]] 혼)</small> &bull; [[混]] <small>([[섞다|섞을]] 혼)</small>
+| [[昏]] <small>([[어둡다|어두울]] 혼)</small> &bull; [[魂]] <small>([[넋]] 혼)</small>
+|-valign="top"
+! 홀
+|
+| [[忽]] <small>([[갑자기]]/[[문득]] 홀)</small>
+|-valign="top"
+! 홍
+| [[紅]] <small>([[붉다|붉을]] 홍)</small>
+| [[洪]] <small>([[넓다|넓을]]/[[큰물]] 홍)</small> &bull; [[弘]] <small>([[넓다|넓을]] 홍)</small> &bull; [[鴻]] <small>([[기러기]] 홍)</small>
+|-valign="top"
+! 화
+| [[火]] <small>([[불]] 화)</small> &bull; [[化]] <small>([[되다|될]] 화)</small> &bull; [[花]] <small>([[꽃]] 화)</small> &bull; [[貨]] <small>([[재화]] 화)</small> &bull; [[和]] <small>([[화하다|화할]] 화)</small> &bull; [[話]] <small>([[말씀]] 화)</small> &bull; [[畫]] <small>([[그림]] 화)</small> &bull; [[華]] <small>([[빛나다|빛날]] 화)</small>
+| [[禾]] <small>([[벼]] 화)</small> &bull; [[禍]] <small>([[재앙]] 화)</small>
+|-valign="top"
+! 확
+|
+| [[確]] <small>([[굳다|굳을]] 확)</small> &bull; [[穫]] <small>([[거두다|거둘]] 확)</small> &bull; [[擴]] <small>([[넓히다|넓힐]] 확)</small>
+|-valign="top"
+! 환
+| [[歡]] <small>([[기쁘다|기쁠]] 환)</small> &bull; [[患]] <small>([[근심]] 환)</small>
+| [[丸]] <small>([[둥글다|둥글]] 환)</small> &bull; [[換]] <small>([[바꾸다|바꿀]] 환)</small> &bull; [[環]] <small>([[고리]] 환)</small> &bull; [[還]] <small>([[돌아오다|돌아올]] 환)</small>
+|-valign="top"
+! 활
+| [[活]] <small>([[살다|살]] 활)</small>
+|
+|-valign="top"
+! 황
+| [[黃]] <small>([[누르다|누를]] 황)</small> &bull; [[皇]] <small>([[임금]] 황)</small>
+| [[況]] <small>([[상황]] 황)</small> &bull; [[荒]] <small>([[거칠다|거칠]] 황)</small>
+|-valign="top"
+! 회
+| [[回]] <small>([[돌다|돌]] 회)</small> &bull; [[會]] <small>([[모이다|모일]] 회)</small>
+| [[悔]] <small>([[뉘우치다|뉘우칠]] 회)</small> &bull; [[懷]] <small>([[품다|품을]] 회)</small>
+|-valign="top"
+! 획
+|
+| [[獲]] <small>([[얻다|얻을]] 획)</small> &bull; [[劃]] <small>([[긋다|그을]] 획)</small>
+|-valign="top"
+! 횡
+|
+| [[橫]] <small>([[가로]] 횡)</small>
+|-valign="top"
+! 효
+| [[孝]] <small>([[효도]] 효)</small> &bull; [[效]] <small>([[본받다|본받을]] 효)</small>
+| [[曉]] <small>([[새벽]] 효)</small>
+|-valign="top"
+! 후
+| [[後]] <small>([[뒤]] 후)</small> &bull; [[厚]] <small>([[두텁다|두터울]] 후)</small>
+| [[侯]] <small>([[제후]] 후)</small> &bull; [[候]] <small>([[기후]] 후)</small>
+|-valign="top"
+! 훈
+| [[訓]] <small>([[가르치다|가르칠]] 훈)</small>
+|
+|-valign="top"
+! 훼
+|
+| [[毁]] <small>([[헐다|헐]] 훼)</small>
+|-valign="top"
+! 휘
+|
+| [[揮]] <small>([[휘두르다|휘두를]] 휘)</small> &bull; [[輝]] <small>([[빛나다|빛날]] 휘)</small>
+|-valign="top"
+! 휴
+| [[休]] <small>([[쉬다|쉴]] 휴)</small>
+| [[携]] <small>([[이끌다|이끌]]/[[가지다|가질]] 휴)</small>
+|-valign="top"
+! 흉
+| [[凶]] <small>([[흉하다|흉할]] 흉)</small> &bull; [[胸]] <small>([[가슴]] 흉)</small>
+|
+|-valign="top"
+! 흑
+| [[黑]] <small>([[검다|검을]] 흑)</small>
+|
+|-valign="top"
+! 흡
+|
+| [[吸]] <small>([[마시다|마실]] 흡)</small>
+|-valign="top"
+! 흥
+| [[興]] <small>([[일다|일]] 흥)</small>
+|
+|-valign="top"
+! 희
+| [[希]] <small>([[바라다|바랄]] 희)</small> &bull; [[喜]] <small>([[기쁘다|기쁠]] 희)</small>
+| [[戲]] <small>([[놀이]] 희)</small> &bull; [[稀]] <small>([[드물다|드물]] 희)</small>
+|}
+
+== 참조 ==
+<references />
+
+[[Category:한국어 부록|한자]]
+[[Category:한자| ]]

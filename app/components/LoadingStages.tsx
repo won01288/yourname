@@ -3,7 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 // design.md 3.3 — 실제 결정적 파이프라인(CLAUDE.md 2장) 단계를 그대로 보여주는 스테이지형 로딩.
-const STAGES = [
+// stages를 prop으로 받는 범용 컴포넌트다 — 유료(/naming)와 무료(/score)는 실제로 거치는 파이프라인
+// 단계 수가 다르므로(무료는 LLM·후보탐색 단계가 없음), 각 라우트가 자신의 실제 단계만 넘겨야
+// 정직한 연출이 된다(design.md 3.3 — 과장 연출 금지 원칙).
+const DEFAULT_STAGES = [
   "사주팔자를 세우는 중",
   "오행 분포를 계산하는 중",
   "용신을 도출하는 중",
@@ -14,35 +17,37 @@ const STAGES = [
 const STEP_MS = 900;
 
 interface LoadingStagesProps {
+  /** 표시할 단계 텍스트 목록. 생략 시 유료 작명 파이프라인 기본값을 쓴다. */
+  stages?: string[];
   /** 실제 API 요청이 끝났는지 여부. 끝나도 마지막 단계 연출은 최소 시간 유지한다. */
   isDone: boolean;
   onComplete: () => void;
 }
 
-export default function LoadingStages({ isDone, onComplete }: LoadingStagesProps) {
+export default function LoadingStages({ stages = DEFAULT_STAGES, isDone, onComplete }: LoadingStagesProps) {
   const [index, setIndex] = useState(0);
   const completedRef = useRef(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => Math.min(prev + 1, STAGES.length - 1));
+      setIndex((prev) => Math.min(prev + 1, stages.length - 1));
     }, STEP_MS);
     return () => clearInterval(timer);
-  }, []);
+  }, [stages.length]);
 
   useEffect(() => {
-    if (index === STAGES.length - 1 && isDone && !completedRef.current) {
+    if (index === stages.length - 1 && isDone && !completedRef.current) {
       completedRef.current = true;
       const t = setTimeout(onComplete, 350);
       return () => clearTimeout(t);
     }
-  }, [index, isDone, onComplete]);
+  }, [index, isDone, onComplete, stages.length]);
 
   return (
     <section className="mx-auto flex w-full max-w-md flex-col items-center px-6 py-24">
       <div className="w-full rounded-card border border-border bg-surface p-8 shadow-[var(--shadow-card)]">
         <ul className="flex flex-col gap-4">
-          {STAGES.map((label, i) => {
+          {stages.map((label, i) => {
             const state = i < index ? "done" : i === index ? "active" : "pending";
             return (
               <li key={label} className="flex items-center gap-3">

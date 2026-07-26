@@ -16,7 +16,15 @@ export default function Nav() {
           </svg>
           유어네임
         </Link>
-        <ThemeToggle />
+        <nav className="flex items-center gap-4">
+          <Link href="/score" className="text-[13px] font-medium text-text-secondary transition-colors hover:text-text-primary">
+            이름 점수 확인
+          </Link>
+          <Link href="/naming" className="text-[13px] font-medium text-text-secondary transition-colors hover:text-text-primary">
+            아기 이름 짓기
+          </Link>
+          <ThemeToggle />
+        </nav>
       </div>
     </header>
   );

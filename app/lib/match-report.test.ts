@@ -17,6 +17,7 @@ function makeHanja(char: string, reading: string): Hanja {
     forbiddenReason: null,
     verificationStatus: "confirmed",
     isCommon: false,
+    hun: null,
   };
 }
 

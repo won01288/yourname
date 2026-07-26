@@ -4,7 +4,8 @@ import Nav from "./components/Nav";
 
 export const metadata: Metadata = {
   title: "유어네임 — 사주 기반 정통 작명",
-  description: "생년월일시로 사주를 분석해 용신에 맞는 아기 이름 후보와 근거 리포트를 제공합니다.",
+  description:
+    "무료로 이름 점수를 확인하거나, 사주를 분석해 용신에 맞는 아기 이름 후보와 근거 리포트를 받아보세요.",
 };
 
 // 다크모드 FOUC 방지: React 하이드레이션 전에 저장된 테마(or 시스템 설정)를 <html>에 반영한다.

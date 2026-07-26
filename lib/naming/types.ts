@@ -48,6 +48,11 @@ export interface Hanja {
   // 쓴다(CLAUDE.md 3.6). 값 자체는 한자의 좋고 나쁨을 뜻하지 않는다 — 교육용 목록 밖 한자도
   // 인명용/불용 여부는 별도로 판정된다.
   isCommon: boolean;
+  // Phase 7 — 한글 훈(訓) 한 단어(예: "하늘"). 한국어 위키낱말사전 "부록:한문 교육용 기초
+  // 한자 1800"(CC BY-SA 4.0)에서 가져온 값으로, LLM 번역이 아니라 공개 라이선스 데이터
+  // 재사용이다(CLAUDE.md 3.10·4.1). 이 표에 없는 한자(교육용 밖 한자)는 null — 3.9의
+  // hanjaGlosses(LLM 번역)와 달리 여기는 없는 값을 만들어내지 않고 표시를 생략한다.
+  hun: string | null;
   // Phase 3 — OCR로 원문(PDF)을 판독한 데이터라 정확도 검증 상태를 남긴다.
   // "confirmed": Unicode Unihan 공식 한국어 독음과 교차검증되어 일치함.
   // 현재 DB에는 confirmed만 적재되어 있고("unverified"는 이번 Phase에서 보류),
@@ -121,4 +126,58 @@ export type Gender = "M" | "F";
 export interface GivenNameEntry {
   hangul: string;
   frequency: number;
+}
+
+// Phase 7 — 이름 점수 확인 서비스(CLAUDE.md 3.10). 이미 정해진 이름을 채점한다 — 후보 생성(Candidate)과
+// 달리 하드 필터로 탈락시키지 않고 등급을 매긴다. LLM을 전혀 쓰지 않는 결정적 계산 결과만 담는다.
+
+// 발음오행 인접 두 글자 사이의 관계 등급. 상생(뒤 글자가 앞 글자를 순방향으로 생함) > 비화(같은 오행)
+// = 역상생(앞 글자가 뒤 글자를 생함, 방향이 반대일 뿐 생하는 관계이므로 상극보다는 낫다고 봄) > 상극(파괴).
+export type PhoneticLinkGrade = "상생" | "비화" | "역상생" | "상극";
+
+export interface PhoneticLinkResult {
+  from: Element;
+  to: Element;
+  grade: PhoneticLinkGrade;
+  points: number;
+  maxPoints: number;
+}
+
+export interface NumerologyGyeokScore {
+  label: "원격" | "형격" | "이격" | "정격";
+  number: number;
+  fortune: string;
+  points: number;
+  maxPoints: number;
+}
+
+export type ScoreCategoryKey = "phonetic" | "numerology" | "wonhaeng" | "yinYang";
+
+// 항목별 획득/만점. applicable=false는 자원오행처럼 판단 근거가 없어(hanja.element가 둘 다 NULL)
+// 이 항목 자체를 총점 분모에서 제외했다는 뜻이다(CLAUDE.md 3.5의 "판단 보류" 원칙과 동일).
+export interface ScoreCategoryResult {
+  key: ScoreCategoryKey;
+  label: string;
+  points: number;
+  maxPoints: number;
+  applicable: boolean;
+}
+
+// 점수(totalScore)를 구간화해 보여주는 표시 전용 값 — 새로운 판정이 아니라 이미 계산된 숫자의
+// UI 버킷팅이다(CLAUDE.md 3.10).
+export type ScoreGrade = "S" | "A" | "B" | "C" | "D";
+
+export interface ScoreWarning {
+  type: "not-name-allowed" | "forbidden";
+  char: string;
+  message: string;
+}
+
+export interface NameScoreResult {
+  totalScore: number;
+  grade: ScoreGrade;
+  categories: ScoreCategoryResult[];
+  phoneticLinks: PhoneticLinkResult[];
+  numerology: NumerologyGyeokScore[];
+  warnings: ScoreWarning[];
 }

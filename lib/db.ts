@@ -22,7 +22,7 @@ export function getDbClient(): Client {
 }
 
 const HANJA_COLUMNS = `char, readings, stroke_original, stroke_actual, radical, element,
-                 meaning, is_name_allowed, is_forbidden, forbidden_reason, verification_status, is_common`;
+                 meaning, is_name_allowed, is_forbidden, forbidden_reason, verification_status, is_common, hun`;
 
 // hanja 테이블 SELECT 결과 한 행을 Hanja 타입으로 매핑한다. getHanjaByChar/getEligibleHanjaPool 공용.
 function rowToHanja(row: Record<string, unknown>): Hanja {
@@ -39,6 +39,7 @@ function rowToHanja(row: Record<string, unknown>): Hanja {
     forbiddenReason: row.forbidden_reason as string | null,
     verificationStatus: row.verification_status as "confirmed" | "unverified",
     isCommon: Boolean(row.is_common),
+    hun: (row.hun as string | null) ?? null,
   };
 }
 
@@ -51,6 +52,24 @@ export async function getHanjaByChar(char: string): Promise<Hanja | null> {
   });
   if (result.rows.length === 0) return null;
   return rowToHanja(result.rows[0] as unknown as Record<string, unknown>);
+}
+
+// CLAUDE.md 3.10 — 한글 음으로 한자를 검색한다("한자 찾기" UI, Phase 7). readings는 JSON 배열
+// 컬럼이라 json_each로 펼쳐 대조한다. is_name_allowed/is_forbidden로 걸러내지 않는다 — 실제
+// 이름은 등록 목록 밖 한자를 쓸 수도 있으므로, 검색 결과는 전부 보여주고 정렬만 유효한 것을
+// 위로 올린다(프론트에서 인명용 아님/불용 배지로 구분 표시). 9,063행 규모라 인덱스 없이도 충분하다.
+export async function getHanjaByReading(reading: string): Promise<Hanja[]> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `SELECT h.char, h.readings, h.stroke_original, h.stroke_actual, h.radical, h.element,
+                 h.meaning, h.is_name_allowed, h.is_forbidden, h.forbidden_reason, h.verification_status,
+                 h.is_common, h.hun
+          FROM hanja h, json_each(h.readings) je
+          WHERE je.value = ?
+          ORDER BY h.is_name_allowed DESC, h.is_forbidden ASC, h.is_common DESC, h.stroke_original ASC`,
+    args: [reading],
+  });
+  return result.rows.map((row) => rowToHanja(row as unknown as Record<string, unknown>));
 }
 
 // 작명 후보 생성용 한자 풀(CLAUDE.md Phase 4). 인명용 한자이면서 불용문자가 아닌 전체를 반환한다.
