@@ -3,16 +3,20 @@
 
 import { NextResponse } from "next/server";
 import { getSaju, type BirthInput } from "@/lib/saju";
-import { getSurnameByHangul, getEligibleHanjaPool, getAllNumerology81 } from "@/lib/db";
+import { getSurnameByHangul, getEligibleHanjaPool, getAllNumerology81, getGivenNamesByGender } from "@/lib/db";
 import { aggregateElements } from "@/lib/naming/elements";
 import { deriveYongsin } from "@/lib/naming/yongsin";
 import { buildCandidates } from "@/lib/naming/candidates";
 import { explainCandidates } from "@/lib/llm/explain";
+import type { Gender } from "@/lib/naming/types";
 
 interface NameRequestBody extends BirthInput {
   surnameHangul: string;
   /** 같은 한글 성에 한자가 여럿일 때 특정 (예: "정" → 鄭/丁). 생략 시 여럿이면 400. */
   surnameHanja?: string;
+  /** CLAUDE.md 3.6 확장 — 이름 후보 풀(given_name 테이블)을 성별에 맞게 고르는 데만 쓰인다.
+   * 사주·용신 계산에는 영향을 주지 않는다. */
+  gender: Gender;
 }
 
 function isValidBirthInput(body: Partial<NameRequestBody>): body is NameRequestBody {
@@ -24,7 +28,8 @@ function isValidBirthInput(body: Partial<NameRequestBody>): body is NameRequestB
     typeof body.minute === "number" &&
     typeof body.isLunar === "boolean" &&
     typeof body.surnameHangul === "string" &&
-    body.surnameHangul.length > 0
+    body.surnameHangul.length > 0 &&
+    (body.gender === "M" || body.gender === "F")
   );
 }
 
@@ -38,7 +43,10 @@ export async function POST(request: Request) {
 
   if (!isValidBirthInput(body)) {
     return NextResponse.json(
-      { error: "필수 필드가 누락되었습니다. year/month/day/hour/minute/isLunar/surnameHangul을 확인하세요." },
+      {
+        error:
+          "필수 필드가 누락되었습니다. year/month/day/hour/minute/isLunar/surnameHangul/gender(M 또는 F)를 확인하세요.",
+      },
       { status: 400 }
     );
   }
@@ -68,7 +76,11 @@ export async function POST(request: Request) {
   const elementDistribution = aggregateElements(saju);
   const yongsinResult = deriveYongsin(saju, elementDistribution);
 
-  const [hanjaPool, numerologyTable] = await Promise.all([getEligibleHanjaPool(), getAllNumerology81()]);
+  const [hanjaPool, numerologyTable, curatedGivenNames] = await Promise.all([
+    getEligibleHanjaPool(),
+    getAllNumerology81(),
+    getGivenNamesByGender(body.gender),
+  ]);
 
   const candidates = buildCandidates({
     surnameStroke: surname.strokeOriginal,
@@ -76,6 +88,7 @@ export async function POST(request: Request) {
     yongsin: yongsinResult.yongsin,
     hanjaPool,
     numerologyTable,
+    curatedGivenNames,
   });
 
   const report =

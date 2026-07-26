@@ -1,7 +1,7 @@
 // app/api/name 을 호출하는 클라이언트 전용 fetch 래퍼 + 화면에서 쓰는 타입 재수출.
 // lib/naming/ 폴더 규칙(8.1)과 무관한 프론트엔드 전용 코드라 app/ 아래 별도로 둔다.
 
-import type { Candidate, ElementDistribution, Saju, Surname, YongsinResult } from "@/lib/naming/types";
+import type { Candidate, ElementDistribution, Gender, Saju, Surname, YongsinResult } from "@/lib/naming/types";
 import type { NamingReport } from "@/lib/llm/explain";
 
 export interface NameRequestPayload {
@@ -14,6 +14,7 @@ export interface NameRequestPayload {
   isLeapMonth?: boolean;
   surnameHangul: string;
   surnameHanja?: string;
+  gender: Gender;
 }
 
 export interface NameApiResult {

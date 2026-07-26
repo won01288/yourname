@@ -27,6 +27,7 @@ export default function CandidateDetail({ candidate, surname, yongsin, explanati
             {surname.hangul}
             {candidate.hangul}
           </p>
+          <p className="mt-1 text-[12px] text-text-secondary">실제 출생 등록 통계에 있는 이름입니다</p>
         </div>
         <button
           type="button"

@@ -26,6 +26,7 @@ function makeCandidate(hangul: string, chars: [string, string], readings: [strin
     hanja: [makeHanja(chars[0], readings[0]), makeHanja(chars[1], readings[1])],
     numerologyNumbers: [1, 2, 3, 4],
     phoneticElements: [],
+    frequency: 0,
   };
 }
 

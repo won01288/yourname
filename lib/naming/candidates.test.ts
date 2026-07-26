@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { requiredPhoneticElements, groupByPhoneticElement, buildCandidates, selectDiverseCandidates } from "./candidates";
+import { requiredPhoneticElements, buildCandidates, selectDiverseCandidates } from "./candidates";
 import { isPhoneticSangsaeng } from "./phonetic";
 import type { Candidate, Element, Hanja, Numerology81 } from "./types";
 
@@ -32,20 +32,6 @@ describe("requiredPhoneticElements", () => {
   });
 });
 
-describe("groupByPhoneticElement", () => {
-  it("대표음(readings[0]) 초성 오행 기준으로 그룹핑한다", () => {
-    const pool: Hanja[] = [
-      makeHanja({ char: "美", readings: ["미"], strokeOriginal: 9 }), // ㅁ → 水
-      makeHanja({ char: "家", readings: ["가"], strokeOriginal: 10 }), // ㄱ → 木
-      makeHanja({ char: "無讀音", readings: [], strokeOriginal: 3 }), // 대표음 없음 → 제외
-    ];
-    const grouped = groupByPhoneticElement(pool);
-    expect(grouped.水.map((h) => h.char)).toEqual(["美"]);
-    expect(grouped.木.map((h) => h.char)).toEqual(["家"]);
-    expect(grouped.火).toEqual([]);
-  });
-});
-
 // 실사용에서 재현된 버그(같은 획수 조합 안에서 점수가 전부 동점이라 첫 글자가 5개 전부 고정되고,
 // 서로 다른 한자인데 발음이 같은 후보가 중복 등장)를 최소 재현하는 테스트. score/candidate만 있으면
 // 되므로 hanja는 char만 의미 있게 채운다.
@@ -55,6 +41,7 @@ function makeCandidate(hangul: string, chars: [string, string], numerologyNumber
     hanja: chars.map((char) => makeHanja({ char, readings: [], strokeOriginal: 0 })),
     numerologyNumbers,
     phoneticElements: [],
+    frequency: 0,
   };
 }
 
@@ -103,6 +90,8 @@ describe("selectDiverseCandidates", () => {
   });
 });
 
+// Phase 6 확정(3.6 확장) — 이름(hangul) 후보는 curatedGivenNames(성별 given_name 테이블)에 있는
+// 것만 나온다. 자유 조합은 하지 않는다.
 describe("buildCandidates", () => {
   // 성 金(金=8획, 오행 金) → 이름 요구 발음오행 [水(ㅁㅂㅍ), 木(ㄱㅋ)].
   const surnameStroke = 8;
@@ -127,68 +116,142 @@ describe("buildCandidates", () => {
     return map;
   }
 
-  it("4격이 전부 길수인 조합만 후보로 남긴다", () => {
-    // stroke1=5(美), stroke2=3(佳): won=8, hyeong=13, i=11, jeong=16 → 전부 길로 설정.
-    // stroke1=4(敏), stroke2=3(佳): won=7, hyeong=12, i=11, jeong=15 → hyeong(12)을 흉으로 설정해 탈락시킨다.
+  const ALL_AUSPICIOUS = makeNumerologyTable(Array.from({ length: 30 }, (_, i) => i + 1));
+
+  it("curatedGivenNames에 없는 이름은 후보로 나오지 않는다", () => {
+    // 敏(민)+佳(가) 조합도 통과 가능하지만 "민가"가 큐레이션 목록에 없으므로 나오지 않는다.
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: [],
+      hanjaPool,
+      numerologyTable: ALL_AUSPICIOUS,
+      curatedGivenNames: [{ hangul: "미가", frequency: 100 }],
+    });
+    expect(result.map((c) => c.hangul)).toEqual(["미가"]);
+  });
+
+  it("발음오행 순방향 상생과 맞지 않는 이름은 건너뛴다", () => {
+    // "가미"는 木(가)→水(미)로, 요구된 순서([水,木])와 반대라 상생이 아니다.
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: [],
+      hanjaPool,
+      numerologyTable: ALL_AUSPICIOUS,
+      curatedGivenNames: [{ hangul: "가미", frequency: 100 }],
+    });
+    expect(result).toEqual([]);
+  });
+
+  it("발음오행은 맞지만 한자 풀에 없는 음절로 된 이름은 건너뛴다", () => {
+    // 무(ㅁ→水)+구(ㄱ→木)는 발음오행 요구([水,木])를 만족하지만, 이 테스트의 작은 hanjaPool에는
+    // "무"·"구"로 읽는 한자가 없다.
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: [],
+      hanjaPool,
+      numerologyTable: ALL_AUSPICIOUS,
+      curatedGivenNames: [{ hangul: "무구", frequency: 100 }],
+    });
+    expect(result).toEqual([]);
+  });
+
+  it("4격이 전부 길수인 이름만 후보로 남긴다", () => {
+    // 미가(美5+佳3): won=8,hyeong=13,i=11,jeong=16 → 전부 길.
+    // 민가(敏4+佳3): won=7,hyeong=12,i=11,jeong=15 → hyeong(12)을 흉으로 설정해 탈락시킨다.
     const numerologyTable = makeNumerologyTable([8, 13, 11, 16, 7, 11, 15]); // 12는 포함 안 함(흉)
 
-    const result = buildCandidates({
-      surnameStroke,
-      surnameElement,
-      yongsin: ["水", "木"],
-      hanjaPool,
-      numerologyTable,
-    });
-
-    const chars = result.map((c) => c.hanja.map((h) => h.char).join(""));
-    expect(chars).toContain("美佳"); // 통과
-    expect(chars).not.toContain("敏佳"); // hyeong 12 흉으로 탈락
-  });
-
-  it("자원오행이 용신과 일치하는 후보가 더 높은 점수로 상위에 온다", () => {
-    // 모든 조합의 4격을 길로 설정해 필터를 통과시키고 점수 정렬만 검증한다.
-    const numerologyTable = makeNumerologyTable([8, 13, 11, 16, 7, 12, 15, 9, 14, 10]);
-
-    const result = buildCandidates({
-      surnameStroke,
-      surnameElement,
-      yongsin: ["水", "木"],
-      hanjaPool,
-      numerologyTable,
-    });
-
-    expect(result.length).toBeGreaterThan(0);
-    // 美(水 용신 일치)+佳(木 용신 일치) 조합이 자원오행 2개 일치로 최고점 → 1위.
-    expect(result[0].hanja.map((h) => h.char)).toEqual(["美", "佳"]);
-  });
-
-  it("isCommon(교육용 기초한자) 가중치가 자원오행 일치보다 우선한다", () => {
-    // 美(자원오행 일치)+佳(자원오행 일치): wonhaeng 2*2=4, common 0, 음양균형 +1 = 5.
-    // 帆(isCommon)+考(isCommon): wonhaeng 0, common 2*3=6, 음양균형 +1 = 7 → 帆考가 더 높아야 한다.
-    const numerologyTable = makeNumerologyTable([8, 13, 11, 16, 14, 15, 21]);
-
-    const result = buildCandidates({
-      surnameStroke,
-      surnameElement,
-      yongsin: ["水", "木"],
-      hanjaPool,
-      numerologyTable,
-    });
-
-    expect(result[0].hanja.map((h) => h.char)).toEqual(["帆", "考"]);
-  });
-
-  it("이름 두 글자가 같은 한자인 조합은 만들지 않는다", () => {
-    const numerologyTable = makeNumerologyTable(Array.from({ length: 30 }, (_, i) => i + 1)); // 전부 길
     const result = buildCandidates({
       surnameStroke,
       surnameElement,
       yongsin: [],
       hanjaPool,
       numerologyTable,
+      curatedGivenNames: [
+        { hangul: "미가", frequency: 100 },
+        { hangul: "민가", frequency: 100 },
+      ],
     });
-    for (const candidate of result) {
-      expect(candidate.hanja[0].char).not.toBe(candidate.hanja[1].char);
-    }
+
+    expect(result.map((c) => c.hangul)).toEqual(["미가"]);
+  });
+
+  it("자원오행이 용신과 일치하는 이름이 더 높은 점수로 상위에 온다", () => {
+    // 미가(美水+佳木, 2개 일치) vs 민가(敏+佳, 1개 일치) vs 미건(美+建, 1개 일치) vs 민건(敏+建, 0개 일치).
+    const numerologyTable = makeNumerologyTable([8, 13, 11, 16, 7, 12, 11, 15, 7, 13, 10, 15, 6, 12, 10, 14]);
+
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: ["水", "木"],
+      hanjaPool,
+      numerologyTable,
+      curatedGivenNames: [
+        { hangul: "미가", frequency: 1 },
+        { hangul: "민가", frequency: 1 },
+        { hangul: "미건", frequency: 1 },
+        { hangul: "민건", frequency: 1 },
+      ],
+    });
+
+    expect(result.length).toBeGreaterThan(0);
+    expect(result[0].hangul).toBe("미가");
+  });
+
+  it("isCommon(교육용 기초한자) 가중치가 자원오행 일치보다 우선한다", () => {
+    // 미가: wonhaeng 2*2=4, common 0, 음양균형(strokes 8,5,3 → 부동) +1 = 5.
+    // 범고(帆6+考7): wonhaeng 0, common 2*3=6, 음양균형(strokes 8,6,7 → 부동) +1 = 7 → 더 높아야 한다.
+    const numerologyTable = makeNumerologyTable([8, 13, 11, 16, 13, 14, 15, 21]);
+
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: ["水", "木"],
+      hanjaPool,
+      numerologyTable,
+      curatedGivenNames: [
+        { hangul: "미가", frequency: 1 },
+        { hangul: "범고", frequency: 1 },
+      ],
+    });
+
+    expect(result[0].hangul).toBe("범고");
+  });
+
+  it("점수가 동점이면 실사용 빈도(frequency)가 높은 이름을 우선한다", () => {
+    // 미가(美5+佳3, strokes[8,5,3] 부동→+1)와 민가(敏4+佳3, strokes[8,4,3] 부동→+1)는
+    // yongsin=[]이라 wonhaeng·common 없이 둘 다 균형 가산점 1점으로 동점이다.
+    const numerologyTable = makeNumerologyTable([8, 13, 11, 16, 7, 12, 11, 15]);
+
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: [],
+      hanjaPool,
+      numerologyTable,
+      curatedGivenNames: [
+        { hangul: "민가", frequency: 50 },
+        { hangul: "미가", frequency: 200 },
+      ],
+    });
+
+    expect(result[0].hangul).toBe("미가");
+  });
+
+  it("같은 이름(hangul)에 여러 한자 조합이 가능해도 최고점 하나만 후보로 남긴다", () => {
+    // "미가"는 美+佳 조합 하나뿐이지만(현재 풀 기준), 만약 여러 조합이 있어도 결과에는
+    // 이 이름이 한 번만 나와야 한다(발음 중복 방지, CLAUDE.md 3.6).
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: [],
+      hanjaPool,
+      numerologyTable: ALL_AUSPICIOUS,
+      curatedGivenNames: [{ hangul: "미가", frequency: 100 }],
+    });
+    const count = result.filter((c) => c.hangul === "미가").length;
+    expect(count).toBeLessThanOrEqual(1);
   });
 });

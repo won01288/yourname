@@ -77,4 +77,19 @@ export interface Candidate {
   hangul: string;
   numerologyNumbers: number[];
   phoneticElements: Element[];
+  // Phase 6 확정(3.6) — 이 후보 이름(hangul)의 given_name 테이블 실사용 빈도.
+  // 후보 자체가 이제 이 표에서만 나오므로 항상 값이 있다 (db.ts getGivenNamesByGender).
+  frequency: number;
+}
+
+// Phase 6 확정(3.6) — 성별에 따라 다른 이름 후보 풀(given_name 테이블)을 쓴다.
+// 사주/용신 계산에는 영향 없음 (CLAUDE.md는 사주 계산에 성별을 쓰지 않는다) — 오직 이름 후보 풀
+// 선택에만 쓰인다.
+export type Gender = "M" | "F";
+
+// DB(given_name 테이블) 조회 결과. CLAUDE.md 3.6 확장 — 사용자 제공 etc/korean_name.xlsx의
+// A열(이름)만을 후보 풀로 쓴다는 결정에 따른 참조 데이터.
+export interface GivenNameEntry {
+  hangul: string;
+  frequency: number;
 }

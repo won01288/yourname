@@ -63,7 +63,7 @@ function buildUserPrompt(input: ExplainCandidatesInput): string {
       const hanjaDetail = c.hanja
         .map((h) => `${h.char}(${h.meaning ?? "뜻풀이 없음"}, 원획 ${h.strokeOriginal}, 자원오행 ${h.element ?? "미배속"})`)
         .join(" ");
-      return `${i + 1}. ${surname.hanja}${c.hangul} — ${hanjaDetail} / 수리(원형이정) ${c.numerologyNumbers.join("-")} / 발음오행 흐름 ${c.phoneticElements.join("→")}`;
+      return `${i + 1}. ${surname.hanja}${c.hangul} — ${hanjaDetail} / 수리(원형이정) ${c.numerologyNumbers.join("-")} / 발음오행 흐름 ${c.phoneticElements.join("→")} / 실사용 빈도 ${c.frequency}(클수록 실제로 많이 쓰이는 이름)`;
     })
     .join("\n");
 
@@ -85,7 +85,7 @@ ${surname.hangul}(${surname.hanja}), 원획 ${surname.strokeOriginal}, 초성 �
 [이름 후보 ${candidates.length}개]
 ${candidateLines}
 
-각 후보에 대해 왜 이 이름이 좋은지 부모가 읽기 쉬운 자연어로 설명하라(용신 보완, 발음오행 상생, 수리 길흉, 자원오행 일치 등 위에 주어진 근거만 언급). 후보들을 이 설명을 바탕으로 다시 순위 매겨 rank(1이 최고)를 부여하라.`;
+각 후보에 대해 왜 이 이름이 좋은지 부모가 읽기 쉬운 자연어로 설명하라(용신 보완, 발음오행 상생, 수리 길흉, 자원오행 일치, 실사용 빈도 등 위에 주어진 근거만 언급). 후보들을 이 설명을 바탕으로 다시 순위 매겨 rank(1이 최고)를 부여하라.`;
 }
 
 // 확정된 후보와 근거만 받아 해설·순위 제안을 생성한다. 사주·오행·용신·수리는 이미 lib/naming/이 계산했고

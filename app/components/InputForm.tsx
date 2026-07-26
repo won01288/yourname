@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { NameRequestPayload } from "@/app/lib/name-client";
+import type { Gender } from "@/lib/naming/types";
 
 interface InputFormProps {
   onSubmit: (payload: NameRequestPayload) => void;
@@ -13,7 +14,7 @@ interface InputFormProps {
   initialValues?: NameRequestPayload | null;
 }
 
-const STEP_LABELS = ["성씨", "생년월일", "태어난 시각"];
+const STEP_LABELS = ["기본 정보", "생년월일", "태어난 시각"];
 const CURRENT_YEAR = new Date().getFullYear();
 const YEAR_OPTIONS = Array.from({ length: CURRENT_YEAR - 1950 + 1 }, (_, i) => CURRENT_YEAR - i);
 const MONTH_OPTIONS = Array.from({ length: 12 }, (_, i) => i + 1);
@@ -33,6 +34,7 @@ export default function InputForm({
 }: InputFormProps) {
   const [step, setStep] = useState(0);
 
+  const [gender, setGender] = useState<Gender | null>(initialValues?.gender ?? null);
   const [surnameHangul, setSurnameHangul] = useState(initialValues?.surnameHangul ?? "");
   const [surnameHanja, setSurnameHanja] = useState("");
 
@@ -51,7 +53,8 @@ export default function InputForm({
   // 매 렌더마다 유효 범위로 클램프한다 — effect로 별도 setState하지 않고 읽는 시점에만 보정한다.
   const effectiveDay = Math.min(day, dayOptions.length);
 
-  const step1Valid = surnameHangul.trim().length > 0 && (!surnameOptions || surnameHanja.length > 0);
+  const step1Valid =
+    gender !== null && surnameHangul.trim().length > 0 && (!surnameOptions || surnameHanja.length > 0);
   const step2Valid = year > 0 && month >= 1 && month <= 12;
   const step3Valid = true;
 
@@ -64,7 +67,9 @@ export default function InputForm({
   }
 
   function handleSubmit() {
+    if (!gender) return; // step1Valid가 이전 단계에서 이미 강제하므로 도달하지 않는다.
     onSubmit({
+      gender,
       surnameHangul: surnameHangul.trim(),
       surnameHanja: surnameHanja || undefined,
       isLunar,
@@ -98,6 +103,26 @@ export default function InputForm({
 
         {step === 0 && (
           <div className="flex flex-col gap-4">
+            <div>
+              <label className="mb-1.5 block text-[13px] font-medium text-text-primary">아이 성별</label>
+              <div className="flex gap-2">
+                {(["F", "M"] as const).map((g) => (
+                  <button
+                    key={g}
+                    type="button"
+                    onClick={() => setGender(g)}
+                    className={`flex-1 rounded-control border px-3.5 py-2.5 text-[14px] font-medium transition-colors ${
+                      gender === g
+                        ? "border-brand-600 bg-brand-50 text-brand-800"
+                        : "border-border bg-surface text-text-secondary hover:bg-surface-muted"
+                    }`}
+                  >
+                    {g === "F" ? "여자" : "남자"}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div>
               <label htmlFor="surname" className="mb-1.5 block text-[13px] font-medium text-text-primary">
                 한글 성씨

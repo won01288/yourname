@@ -39,3 +39,17 @@ CREATE TABLE IF NOT EXISTS numerology_81 (
   title TEXT,                        -- 수리 명칭
   description TEXT                   -- 해설
 );
+
+-- CLAUDE.md 3.6 확장(2026.7.26) — 사용자 제공 etc/korean_name.xlsx(성별별 실사용 이름 상위 표)의
+-- A열(이름)만을 후보 생성의 이름 후보 풀로 쓴다. 자유 조합이 아니라 이 표에 있는 한글 이름만 후보로
+-- 나올 수 있다. 원본 시트에는 1~4글자가 섞여 있었으나, GIVEN_NAME_LENGTH=2 제약에 맞춰 2글자만
+-- 적재한다(재현: etc/parse_korean_names.py).
+CREATE TABLE IF NOT EXISTS given_name (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  hangul TEXT NOT NULL,              -- 한글 이름 2글자, 예: "서준"
+  gender TEXT NOT NULL CHECK (gender IN ('M', 'F')),
+  frequency INTEGER NOT NULL,        -- 원본 표의 실사용 빈도(순위 아님, 클수록 많이 쓰임)
+  UNIQUE(hangul, gender)
+);
+
+CREATE INDEX IF NOT EXISTS idx_given_name_gender ON given_name(gender);

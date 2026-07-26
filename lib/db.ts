@@ -2,7 +2,7 @@
 // lib/naming/ 은 이 파일을 import하지 않는다 (반대 방향: 여기서 naming의 타입을 가져다 쓴다).
 
 import { createClient, type Client } from "@libsql/client";
-import type { Element, Hanja, Numerology81, Surname } from "./naming/types";
+import type { Element, Gender, GivenNameEntry, Hanja, Numerology81, Surname } from "./naming/types";
 
 let client: Client | null = null;
 
@@ -94,6 +94,20 @@ export async function getNumerology81(number: number): Promise<Numerology81 | nu
     title: row.title as string | null,
     description: row.description as string | null,
   };
+}
+
+// given_name 테이블(CLAUDE.md 3.6 확장) 조회 — 성별에 맞는 실사용 이름(한글) 후보 풀 전체.
+// 작명 엔진은 이 목록에 있는 이름만 후보로 삼는다(자유 조합 금지).
+export async function getGivenNamesByGender(gender: Gender): Promise<GivenNameEntry[]> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `SELECT hangul, frequency FROM given_name WHERE gender = ?`,
+    args: [gender],
+  });
+  return result.rows.map((row) => ({
+    hangul: row.hangul as string,
+    frequency: row.frequency as number,
+  }));
 }
 
 // numerology_81 테이블(CLAUDE.md 4.3) 1~81 전체 조회. candidates.ts buildCandidates가
