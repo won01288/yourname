@@ -73,6 +73,7 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
                 rank={i + 1}
                 isFirst={i === 0}
                 isExpanded={expandedIndex === i}
+                hanjaGlosses={matchReportEntry(report, candidate.hangul)?.hanjaGlosses ?? []}
                 onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
               />
             ))}
@@ -85,6 +86,7 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
                 surname={surname}
                 yongsin={yongsin.yongsin}
                 explanation={matchReportEntry(report, expandedCandidate.hangul)?.explanation ?? null}
+                hanjaGlosses={matchReportEntry(report, expandedCandidate.hangul)?.hanjaGlosses ?? []}
                 onClose={() => setExpandedIndex(null)}
               />
             </div>

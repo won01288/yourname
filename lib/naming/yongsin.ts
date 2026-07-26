@@ -2,10 +2,26 @@
 // 규칙 근거: CLAUDE.md 3.3. LLM은 이 결과를 서술만 하고 판정하지 않는다 (2.3).
 
 import type { Saju, ElementDistribution, YongsinResult, Element } from "./types";
-import { STEM_ELEMENT, BRANCH_ELEMENT, SANGSAENG_ORDER, STRENGTH_THRESHOLD, MONTH_BRANCH_STRENGTH_BONUS } from "./config";
+import {
+  STEM_ELEMENT,
+  BRANCH_ELEMENT,
+  SANGSAENG_ORDER,
+  STRENGTH_THRESHOLD,
+  MONTH_BRANCH_STRENGTH_BONUS,
+  ELEMENT_READING,
+} from "./config";
 
 function elementIndex(element: Element): number {
   return SANGSAENG_ORDER.indexOf(element);
+}
+
+// 리포트 텍스트에서 오행 한자를 "한자(음)" 형태(예: 火(화))로 표기한다. 한자만 단독으로 쓰지 않는다.
+function withReading(element: Element): string {
+  return `${element}(${ELEMENT_READING[element]})`;
+}
+
+function withReadingList(elements: Element[]): string {
+  return elements.map(withReading).join("·");
 }
 
 // 인성(印星): 일간을 생하는 오행.
@@ -80,10 +96,10 @@ export function deriveYongsin(saju: Saju, distribution: ElementDistribution): Yo
       : [score.resourceElement, score.supportiveElement];
 
   const reason =
-    `일간(${saju.day.stem})은 ${score.dayMasterElement} 오행이다. ` +
-    `비겁(${score.supportiveElement})+인성(${score.resourceElement}) 세력 점수 ${score.supportScore.toFixed(2)} / 전체 ${score.totalScore.toFixed(2)}` +
+    `일간(${saju.day.stem})은 ${withReading(score.dayMasterElement)} 오행이다. ` +
+    `비겁(${withReading(score.supportiveElement)})+인성(${withReading(score.resourceElement)}) 세력 점수 ${score.supportScore.toFixed(2)} / 전체 ${score.totalScore.toFixed(2)}` +
     `(비율 ${(score.ratio * 100).toFixed(1)}%, 월지 득령 ${score.monthSupportsStrength ? "충족" : "미충족"}) → ${strength} 판정. ` +
-    `${strength === "신강" ? "설기(식상)·극제(관성)" : "생조(인성)·부조(비겁)"} 오행인 ${yongsin.join("·")}을(를) 억부용신으로 삼는다.`;
+    `${strength === "신강" ? "설기(식상)·극제(관성)" : "생조(인성)·부조(비겁)"} 오행인 ${withReadingList(yongsin)}을(를) 억부용신으로 삼는다.`;
 
   return { strength, yongsin, reason };
 }

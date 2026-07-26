@@ -133,6 +133,15 @@ export const VOID_BRANCHES_BY_GROUP: [string, string][] = [
   ["子", "丑"], // 갑인순 (甲寅~癸亥)
 ];
 
+// Phase 6 — 오행 한자의 한글 음. 리포트 텍스트에서 "한자(음)" 형태(예: 水(수))로 표기할 때 쓴다.
+export const ELEMENT_READING: Record<Element, string> = {
+  木: "목",
+  火: "화",
+  土: "토",
+  金: "금",
+  水: "수",
+};
+
 // Phase 2 — 신강/신약 판정: 월지 가중 점수제 (CLAUDE.md 3.3).
 // 비겁+인성 세력 비율(월지 득령 보너스 포함)이 이 값 이상이면 신강, 미만이면 신약.
 export const STRENGTH_THRESHOLD = 0.5;

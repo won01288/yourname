@@ -1,4 +1,5 @@
 import type { Candidate, Element, Surname } from "@/lib/naming/types";
+import type { HanjaGloss } from "@/lib/llm/explain";
 import ElementBadge from "./ElementBadge";
 
 interface CandidateDetailProps {
@@ -6,13 +7,21 @@ interface CandidateDetailProps {
   surname: Surname;
   yongsin: Element[];
   explanation: string | null;
+  hanjaGlosses: HanjaGloss[];
   onClose: () => void;
 }
 
 const SAGYEOK_LABELS = ["원격 (초년)", "형격 (중년)", "이격 (보조)", "정격 (말년)"];
 
 // design.md 3.2 2단계 — 타일 확장 시 발음오행·자원오행·수리사격·해설을 순서대로 드러낸다.
-export default function CandidateDetail({ candidate, surname, yongsin, explanation, onClose }: CandidateDetailProps) {
+export default function CandidateDetail({
+  candidate,
+  surname,
+  yongsin,
+  explanation,
+  hanjaGlosses,
+  onClose,
+}: CandidateDetailProps) {
   const hanjaText = candidate.hanja.map((h) => h.char).join("");
 
   return (
@@ -55,26 +64,35 @@ export default function CandidateDetail({ candidate, surname, yongsin, explanati
         <section>
           <h3 className="mb-2.5 text-[13px] font-semibold text-text-secondary">자원오행 (한자 뜻)</h3>
           <div className="grid gap-2.5 sm:grid-cols-2">
-            {candidate.hanja.map((h) => (
-              <div key={h.char} className="rounded-control border border-border bg-surface-muted px-3.5 py-3">
-                <div className="flex items-center gap-2">
-                  <span className="text-[18px] font-semibold text-text-primary">{h.char}</span>
-                  <span className="text-[13px] text-text-secondary">{h.readings[0]}</span>
-                  {h.element ? (
-                    <ElementBadge element={h.element} compact />
+            {candidate.hanja.map((h) => {
+              const gloss = hanjaGlosses.find((g) => g.char === h.char);
+              return (
+                <div key={h.char} className="rounded-control border border-border bg-surface-muted px-3.5 py-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[18px] font-semibold text-text-primary">{h.char}</span>
+                    <span className="text-[13px] text-text-secondary">{h.readings[0]}</span>
+                    {h.element ? (
+                      <ElementBadge element={h.element} compact />
+                    ) : (
+                      <span className="rounded-pill bg-surface px-2 py-0.5 text-[11px] text-text-secondary">
+                        부수 오행 미배속
+                      </span>
+                    )}
+                    {h.element && yongsin.includes(h.element) && (
+                      <span className="text-[11px] font-medium text-brand-600">용신 일치</span>
+                    )}
+                  </div>
+                  {gloss ? (
+                    <p className="mt-1.5 text-[13px] leading-5 text-text-primary">
+                      <span className="font-medium">{gloss.hun}</span> — {gloss.meaningKo}
+                    </p>
                   ) : (
-                    <span className="rounded-pill bg-surface px-2 py-0.5 text-[11px] text-text-secondary">
-                      부수 오행 미배속
-                    </span>
+                    h.meaning && <p className="mt-1.5 text-[13px] leading-5 text-text-secondary">{h.meaning}</p>
                   )}
-                  {h.element && yongsin.includes(h.element) && (
-                    <span className="text-[11px] font-medium text-brand-600">용신 일치</span>
-                  )}
+                  <p className="mt-1.5 text-[12px] text-text-secondary">원획 {h.strokeOriginal}획</p>
                 </div>
-                {h.meaning && <p className="mt-1.5 text-[13px] leading-5 text-text-secondary">{h.meaning}</p>}
-                <p className="mt-1.5 text-[12px] text-text-secondary">원획 {h.strokeOriginal}획</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 

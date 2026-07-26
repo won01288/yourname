@@ -1,9 +1,10 @@
 import type { Candidate } from "@/lib/naming/types";
-import type { NamingReport } from "@/lib/llm/explain";
+import type { HanjaGloss, NamingReport } from "@/lib/llm/explain";
 
 export interface ReportEntry {
   rank: number;
   explanation: string;
+  hanjaGlosses: HanjaGloss[];
 }
 
 // LLM이 반환하는 hangul이 이름 두 글자만인지 성을 포함하는지 확정할 수 없어(explain.ts 프롬프트가
@@ -11,7 +12,7 @@ export interface ReportEntry {
 export function matchReportEntry(report: NamingReport | null, candidateHangul: string): ReportEntry | null {
   if (!report) return null;
   const found = report.candidates.find((c) => c.hangul === candidateHangul || c.hangul.endsWith(candidateHangul));
-  return found ? { rank: found.rank, explanation: found.explanation } : null;
+  return found ? { rank: found.rank, explanation: found.explanation, hanjaGlosses: found.hanjaGlosses } : null;
 }
 
 // report의 rank로 후보를 재정렬한다. 매치되지 않는 후보는 원래 순서(이미 점수순)를 유지하며 뒤로 보낸다.

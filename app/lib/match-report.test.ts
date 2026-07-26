@@ -39,28 +39,50 @@ describe("matchReportEntry", () => {
       summary: "",
       sajuStory: { title: "", body: "" },
       candidates: [
-        { hangul: "탑인", rank: 2, explanation: "탑인 해설" },
-        { hangul: "도인", rank: 1, explanation: "도인 해설" },
-        { hangul: "타인", rank: 3, explanation: "타인 해설" },
+        { hangul: "탑인", rank: 2, explanation: "탑인 해설", hanjaGlosses: [] },
+        { hangul: "도인", rank: 1, explanation: "도인 해설", hanjaGlosses: [] },
+        { hangul: "타인", rank: 3, explanation: "타인 해설", hanjaGlosses: [] },
       ],
     };
 
-    expect(matchReportEntry(report, "탑인")).toEqual({ rank: 2, explanation: "탑인 해설" });
-    expect(matchReportEntry(report, "도인")).toEqual({ rank: 1, explanation: "도인 해설" });
-    expect(matchReportEntry(report, "타인")).toEqual({ rank: 3, explanation: "타인 해설" });
+    expect(matchReportEntry(report, "탑인")).toEqual({ rank: 2, explanation: "탑인 해설", hanjaGlosses: [] });
+    expect(matchReportEntry(report, "도인")).toEqual({ rank: 1, explanation: "도인 해설", hanjaGlosses: [] });
+    expect(matchReportEntry(report, "타인")).toEqual({ rank: 3, explanation: "타인 해설", hanjaGlosses: [] });
   });
 
   it("LLM이 성씨를 붙여 3글자로 반환해도(예: 金塔刃) 끝 2글자로 매칭한다", () => {
     const report: NamingReport = {
       summary: "",
       sajuStory: { title: "", body: "" },
-      candidates: [{ hangul: "김탑인", rank: 1, explanation: "탑인 해설" }],
+      candidates: [{ hangul: "김탑인", rank: 1, explanation: "탑인 해설", hanjaGlosses: [] }],
     };
-    expect(matchReportEntry(report, "탑인")).toEqual({ rank: 1, explanation: "탑인 해설" });
+    expect(matchReportEntry(report, "탑인")).toEqual({ rank: 1, explanation: "탑인 해설", hanjaGlosses: [] });
   });
 
   it("report가 없으면 null을 반환한다", () => {
     expect(matchReportEntry(null, "탑인")).toBeNull();
+  });
+
+  it("hanjaGlosses를 그대로 전달한다", () => {
+    const report: NamingReport = {
+      summary: "",
+      sajuStory: { title: "", body: "" },
+      candidates: [
+        {
+          hangul: "규리",
+          rank: 1,
+          explanation: "",
+          hanjaGlosses: [
+            { char: "規", hun: "법", meaningKo: "규칙과 법도를 뜻하는 글자" },
+            { char: "李", hun: "오얏", meaningKo: "자두나무를 뜻하며 흔히 성씨로도 쓰이는 글자" },
+          ],
+        },
+      ],
+    };
+    expect(matchReportEntry(report, "규리")?.hanjaGlosses).toEqual([
+      { char: "規", hun: "법", meaningKo: "규칙과 법도를 뜻하는 글자" },
+      { char: "李", hun: "오얏", meaningKo: "자두나무를 뜻하며 흔히 성씨로도 쓰이는 글자" },
+    ]);
   });
 });
 
@@ -75,9 +97,9 @@ describe("orderCandidatesByReport", () => {
       summary: "",
       sajuStory: { title: "", body: "" },
       candidates: [
-        { hangul: "탑인", rank: 3, explanation: "" },
-        { hangul: "도인", rank: 1, explanation: "" },
-        { hangul: "타인", rank: 2, explanation: "" },
+        { hangul: "탑인", rank: 3, explanation: "", hanjaGlosses: [] },
+        { hangul: "도인", rank: 1, explanation: "", hanjaGlosses: [] },
+        { hangul: "타인", rank: 2, explanation: "", hanjaGlosses: [] },
       ],
     };
 
@@ -95,8 +117,8 @@ describe("orderCandidatesByReport", () => {
       summary: "",
       sajuStory: { title: "", body: "" },
       candidates: [
-        { hangul: "탑인", rank: 2, explanation: "탑인 전용 해설" },
-        { hangul: "도인", rank: 1, explanation: "도인 전용 해설" },
+        { hangul: "탑인", rank: 2, explanation: "탑인 전용 해설", hanjaGlosses: [] },
+        { hangul: "도인", rank: 1, explanation: "도인 전용 해설", hanjaGlosses: [] },
       ],
     };
 
