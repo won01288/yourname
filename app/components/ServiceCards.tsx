@@ -96,9 +96,9 @@ export default function ServiceCards() {
         badge="프리미엄"
         badgeTone="premium"
         icon="naming"
-        title="아기 이름 짓기"
+        title="프리미엄 작명"
         description="생년월일시로 사주를 분석해 용신을 도출하고, 조건에 맞는 이름 후보와 전문가 수준의 상세 해설 리포트를 받아보세요."
-        cta="이름 짓기 시작"
+        cta="작명 시작하기"
       />
     </section>
   );

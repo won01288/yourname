@@ -8,7 +8,7 @@ import HanjaSearchPicker, { type HanjaSelection } from "./HanjaSearchPicker";
 interface NameScoreFormProps {
   onSubmit: (payload: ScoreRequestPayload) => void;
   submitting: boolean;
-  /** 성씨 한자가 여럿이라 API가 특정을 요구할 때 부모가 채워준다. */
+  /** 성씨 한자가 여럿이라 API가 특정을 요구할 때 사용자가 채워준다. */
   surnameOptions: string[] | null;
   errorMessage: string | null;
   initialValues?: ScoreRequestPayload | null;

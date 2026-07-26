@@ -150,7 +150,7 @@ export default function ScoreDashboard({ data, onRestart }: ScoreDashboardProps)
           href="/naming"
           className="mt-4 inline-block rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-5 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105"
         >
-          아기 이름 짓기 (프리미엄)
+          프리미엄 작명 시작하기
         </Link>
       </section>
 

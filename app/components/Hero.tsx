@@ -8,7 +8,7 @@ export default function Hero() {
       eyebrow="정통 기반 현대식 작명 서비스"
       title={
         <>
-          아이의 사주를 읽고,
+          사주를 깊이 읽고,
           <br />
           가장 좋은 이름을 찾습니다
         </>

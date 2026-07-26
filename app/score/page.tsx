@@ -68,7 +68,7 @@ export default function ScorePage() {
         <>
           <PageHero
             eyebrow="무료 서비스"
-            title={<>내 아이의 이름,&nbsp;몇 점일까요?</>}
+            title={<>내 이름,&nbsp;몇 점일까요?</>}
             description={
               <>
                 생년월일시와 이미 지어진 이름의 한자를 입력하면, 발음오행·수리사격·자원오행·음양 배열을

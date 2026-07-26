@@ -8,7 +8,7 @@ import { BirthDateFields, BirthTimeFields, daysInMonth } from "./BirthDateTimeFi
 interface InputFormProps {
   onSubmit: (payload: NameRequestPayload) => void;
   submitting: boolean;
-  /** 성씨 한자가 여럿이라 API가 특정을 요구할 때 부모가 채워준다. */
+  /** 성씨 한자가 여럿이라 API가 특정을 요구할 때 사용자가 채워준다. */
   surnameOptions: string[] | null;
   errorMessage: string | null;
   /** 성씨 한자 재선택 등으로 폼이 재마운트될 때 이전에 입력했던 값을 복원한다. */
@@ -107,7 +107,7 @@ export default function InputForm({
         {step === 0 && (
           <div className="flex flex-col gap-4">
             <div>
-              <label className="mb-1.5 block text-[13px] font-medium text-text-primary">아이 성별</label>
+              <label className="mb-1.5 block text-[13px] font-medium text-text-primary">성별</label>
               <div className="flex gap-2">
                 {(["F", "M"] as const).map((g) => (
                   <button

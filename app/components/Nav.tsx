@@ -21,7 +21,7 @@ export default function Nav() {
             이름 점수 확인
           </Link>
           <Link href="/naming" className="text-[13px] font-medium text-text-secondary transition-colors hover:text-text-primary">
-            아기 이름 짓기
+            프리미엄 작명
           </Link>
           <ThemeToggle />
         </nav>
