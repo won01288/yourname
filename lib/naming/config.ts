@@ -154,4 +154,31 @@ export const CANDIDATE_SCORE_WEIGHTS = {
   wonhaengMatch: 2,
   // 성+이름 획수의 음양(홀/짝)이 한쪽으로 쏠리지 않으면(전부 홀 또는 전부 짝이 아니면) 가산.
   yinYangBalanced: 1,
+  // 이름 두 글자 중 hanja.isCommon(교육용 기초한자 1,800자, CLAUDE.md 3.6·4.1)인 글자 수(0~2) × 이 값.
+  // 가중치를 wonhaengMatch보다 크게 둬서, "용신과는 맞지만 실사용에 거의 안 쓰이는 한자"보다
+  // "친숙한 한자"를 우선하도록 한다 — 4.1의 hanja.element가 33%만 채워진 것과 달리 isCommon은
+  // Unihan 사실 플래그를 그대로 옮긴 값이라 뜻 판단이 아니다(2.1과 충돌하지 않음).
+  commonHanja: 3,
+} as const;
+
+// Phase 6 — 후보 다양성 선택 (CLAUDE.md 3.6). 하드 필터(발음오행 상생 + 4격 길수)를 통과한 조합이
+// 많을 때, 점수(wonhaengMatch·음양)만으로는 동점이 매우 흔해 값이 갈리지 않는다(가능한 점수가
+// 0~5의 6단계뿐). 동점자를 그대로 DB 삽입 순서로 slice하면 "같은 획수 조합 안에서 한 글자만
+// 고정된 채 나머지가 채워지는" 편향이 생긴다(실사용에서 확인됨: 첫 글자가 5개 후보 전부 동일,
+// 서로 다른 한자인데 발음이 같은 후보가 중복 등장). selectDiverseCandidates가 이 상수들로
+// 점수 동점자 사이에서 다양성을 강제한다. 발음(한글) 중복 금지는 항상 강제하고(같은 이름이
+// 두 번 나오지 않도록), 글자·획수조합 중복 금지는 후보 풀이 부족할 때만 단계적으로 완화한다.
+export const CANDIDATE_DIVERSITY = {
+  // 완화 단계. 앞 단계부터 순서대로 시도해 CANDIDATE_COUNT를 채우는 첫 단계를 채택한다.
+  // maxCharReuse: 이름 첫 글자/끝 글자 각각이 상위 후보 안에서 몇 번까지 재사용될 수 있는지.
+  // maxPerNumerologyBucket: 동일 (원격,형격,이격,정격) 4격(=동일 획수쌍)을 상위 후보가 최대 몇 개
+  //   까지 공유할 수 있는지 — 너무 크면 수리사격이 전부 같은 후보만 나온다.
+  // 마지막 단계(Infinity)는 발음(hangul) 중복 금지만 남기는 최종 완화 단계로, 후보 풀이 아주
+  // 작은 희귀 조합에서도 가능한 만큼은 채운다.
+  stages: [
+    { maxCharReuse: 1, maxPerNumerologyBucket: 2 },
+    { maxCharReuse: 2, maxPerNumerologyBucket: 2 },
+    { maxCharReuse: 3, maxPerNumerologyBucket: 3 },
+    { maxCharReuse: Infinity, maxPerNumerologyBucket: Infinity },
+  ],
 } as const;

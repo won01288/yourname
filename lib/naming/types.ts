@@ -43,6 +43,11 @@ export interface Hanja {
   isNameAllowed: boolean;
   isForbidden: boolean;
   forbiddenReason: string | null;
+  // 교육용 기초한자(Unihan kKoreanEducationHanja, 대한민국 교육부 공식 1,800자) 포함 여부.
+  // 뜻 판단이 아니라 Unihan 사실 플래그 조회이며, 후보 생성에서 "생소한 한자" 억제용 가산점으로만
+  // 쓴다(CLAUDE.md 3.6). 값 자체는 한자의 좋고 나쁨을 뜻하지 않는다 — 교육용 목록 밖 한자도
+  // 인명용/불용 여부는 별도로 판정된다.
+  isCommon: boolean;
   // Phase 3 — OCR로 원문(PDF)을 판독한 데이터라 정확도 검증 상태를 남긴다.
   // "confirmed": Unicode Unihan 공식 한국어 독음과 교차검증되어 일치함.
   // 현재 DB에는 confirmed만 적재되어 있고("unverified"는 이번 Phase에서 보류),

@@ -47,9 +47,12 @@ export default function InputForm({
   const [minute, setMinute] = useState(initialValues?.minute ?? 0);
 
   const dayOptions = useMemo(() => Array.from({ length: daysInMonth(year, month) }, (_, i) => i + 1), [year, month]);
+  // 월/년이 바뀌어 그 달의 일수가 줄어들면(예: 31일 선택 후 2월로 변경) day를 그대로 두지 않고
+  // 매 렌더마다 유효 범위로 클램프한다 — effect로 별도 setState하지 않고 읽는 시점에만 보정한다.
+  const effectiveDay = Math.min(day, dayOptions.length);
 
   const step1Valid = surnameHangul.trim().length > 0 && (!surnameOptions || surnameHanja.length > 0);
-  const step2Valid = year > 0 && month >= 1 && month <= 12 && day >= 1 && day <= dayOptions.length;
+  const step2Valid = year > 0 && month >= 1 && month <= 12;
   const step3Valid = true;
 
   function goNext() {
@@ -68,7 +71,7 @@ export default function InputForm({
       isLeapMonth: isLunar ? isLeapMonth : undefined,
       year,
       month,
-      day,
+      day: effectiveDay,
       hour: timeUnknown ? 12 : hour,
       minute: timeUnknown ? 0 : minute,
     });
@@ -202,7 +205,7 @@ export default function InputForm({
               <div>
                 <label className="mb-1.5 block text-[13px] font-medium text-text-primary">일</label>
                 <select
-                  value={day}
+                  value={effectiveDay}
                   onChange={(e) => setDay(Number(e.target.value))}
                   className="w-full rounded-control border border-border bg-surface px-2 py-2.5 text-[15px] text-text-primary outline-none focus:border-brand-400"
                 >

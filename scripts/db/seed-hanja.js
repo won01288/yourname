@@ -39,8 +39,8 @@ async function main() {
       return {
         sql: `INSERT INTO hanja
           (char, readings, stroke_original, stroke_actual, radical, element, meaning,
-           is_name_allowed, is_forbidden, forbidden_reason, verification_status)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+           is_name_allowed, is_forbidden, forbidden_reason, verification_status, is_common)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
           ON CONFLICT(char) DO UPDATE SET
             readings=excluded.readings,
             stroke_original=excluded.stroke_original,
@@ -51,7 +51,8 @@ async function main() {
             is_name_allowed=excluded.is_name_allowed,
             is_forbidden=excluded.is_forbidden,
             forbidden_reason=excluded.forbidden_reason,
-            verification_status=excluded.verification_status`,
+            verification_status=excluded.verification_status,
+            is_common=excluded.is_common`,
         args: [
           h.char,
           JSON.stringify(h.readings),
@@ -64,6 +65,7 @@ async function main() {
           h.isForbidden ? 1 : 0,
           h.forbiddenReason,
           h.verificationStatus,
+          h.isCommon ? 1 : 0,
         ],
       };
     });

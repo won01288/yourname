@@ -3,7 +3,13 @@
 // DB 조회는 db.ts가 하고, 여기서는 이미 조회된 데이터(한자 풀, 81수리표)만 받아 조합·필터·점수화한다.
 
 import type { Element, Hanja, Numerology81, Candidate } from "./types";
-import { SANGSAENG_ORDER, GIVEN_NAME_LENGTH, CANDIDATE_COUNT, CANDIDATE_SCORE_WEIGHTS } from "./config";
+import {
+  SANGSAENG_ORDER,
+  GIVEN_NAME_LENGTH,
+  CANDIDATE_COUNT,
+  CANDIDATE_SCORE_WEIGHTS,
+  CANDIDATE_DIVERSITY,
+} from "./config";
 import { getElementForSyllable, isPhoneticSangsaeng } from "./phonetic";
 import { calcSagyeok, isAuspiciousNumber } from "./numerology";
 
@@ -59,6 +65,75 @@ function countWonhaengMatches(hanjaList: Hanja[], yongsin: Element[]): number {
   return hanjaList.filter((h) => h.element !== null && yongsin.includes(h.element)).length;
 }
 
+// 교육용 기초한자(hanja.isCommon)인 글자 수를 센다 (CLAUDE.md 3.6 — "생소한 한자" 억제용 가산점).
+function countCommonHanja(hanjaList: Hanja[]): number {
+  return hanjaList.filter((h) => h.isCommon).length;
+}
+
+// 이름 두 글자 원획 합. 점수 동점자 사이의 2차 정렬 키로만 쓴다(뜻 판단이 아니라 순수 수치 비교).
+function totalGivenNameStroke(candidate: Candidate): number {
+  return candidate.hanja.reduce((sum, h) => sum + h.strokeOriginal, 0);
+}
+
+// 4격(원형이정) 조합을 문자열 키로 — 같은 획수쌍에서 나온 후보인지 구분하는 용도.
+function numerologyBucketKey(candidate: Candidate): string {
+  return candidate.numerologyNumbers.join(",");
+}
+
+// 점수순으로 정렬된 후보 목록에서, 주어진 완화 단계(maxCharReuse·maxPerNumerologyBucket) 제약을
+// 지키며 앞에서부터 그리디로 count개를 고른다. 발음(hangul) 중복은 이 함수 안에서 항상 금지한다
+// (완화 단계와 무관 — CLAUDE.md 3.6: 서로 다른 한자라도 같은 이름으로 읽히는 후보를 동시에
+// 보여주지 않는다).
+function pickWithLimits(
+  sorted: Array<{ candidate: Candidate; score: number }>,
+  count: number,
+  stage: { maxCharReuse: number; maxPerNumerologyBucket: number }
+): Candidate[] {
+  const picked: Candidate[] = [];
+  const usedHangul = new Set<string>();
+  const firstCharCount = new Map<string, number>();
+  const secondCharCount = new Map<string, number>();
+  const bucketCount = new Map<string, number>();
+
+  for (const { candidate } of sorted) {
+    if (picked.length >= count) break;
+    if (usedHangul.has(candidate.hangul)) continue;
+
+    const [firstChar, secondChar] = candidate.hanja.map((h) => h.char);
+    const bucketKey = numerologyBucketKey(candidate);
+
+    if ((firstCharCount.get(firstChar) ?? 0) >= stage.maxCharReuse) continue;
+    if ((secondCharCount.get(secondChar) ?? 0) >= stage.maxCharReuse) continue;
+    if ((bucketCount.get(bucketKey) ?? 0) >= stage.maxPerNumerologyBucket) continue;
+
+    picked.push(candidate);
+    usedHangul.add(candidate.hangul);
+    firstCharCount.set(firstChar, (firstCharCount.get(firstChar) ?? 0) + 1);
+    secondCharCount.set(secondChar, (secondCharCount.get(secondChar) ?? 0) + 1);
+    bucketCount.set(bucketKey, (bucketCount.get(bucketKey) ?? 0) + 1);
+  }
+
+  return picked;
+}
+
+// CLAUDE.md 3.6 — 점수만으로는 동점(최대 6단계뿐)이 매우 흔해, 그대로 slice하면 같은 획수
+// 조합 하나 안에서 글자 하나만 고정된 채 나머지가 채워지거나(첫 글자 5개 전부 동일), 서로 다른
+// 한자인데 발음이 같은 후보가 중복 등장하는 문제가 생긴다(실사용에서 확인). CANDIDATE_DIVERSITY의
+// 완화 단계를 앞에서부터 시도해 count를 채우는 첫 단계를 채택하고, 끝까지 못 채우면 그중 가장
+// 많이 채운 단계를 반환한다(부족한 채로라도 다양성이 가장 큰 결과를 우선).
+export function selectDiverseCandidates(
+  scored: Array<{ candidate: Candidate; score: number }>,
+  count: number
+): Candidate[] {
+  let best: Candidate[] = [];
+  for (const stage of CANDIDATE_DIVERSITY.stages) {
+    const picked = pickWithLimits(scored, count, stage);
+    if (picked.length > best.length) best = picked;
+    if (picked.length >= count) return picked;
+  }
+  return best;
+}
+
 export interface BuildCandidatesInput {
   surnameStroke: number;
   surnameElement: Element;
@@ -103,8 +178,10 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
           if (h1.char === h2.char) continue; // 이름 두 글자가 같은 한자인 조합은 제외.
 
           const wonhaengMatches = countWonhaengMatches([h1, h2], yongsin);
+          const commonMatches = countCommonHanja([h1, h2]);
           const score =
             wonhaengMatches * CANDIDATE_SCORE_WEIGHTS.wonhaengMatch +
+            commonMatches * CANDIDATE_SCORE_WEIGHTS.commonHanja +
             (balanced ? CANDIDATE_SCORE_WEIGHTS.yinYangBalanced : 0);
 
           scored.push({
@@ -121,6 +198,10 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
     }
   }
 
-  scored.sort((a, b) => b.score - a.score);
-  return scored.slice(0, CANDIDATE_COUNT).map((s) => s.candidate);
+  // 점수 동점자는 이름 두 글자 원획 합이 작은 쪽을 앞세운다(2차 정렬 키, 뜻 판단 아님).
+  // 이것만으로는 동점이 여전히 흔해 selectDiverseCandidates가 실제 다양성을 강제한다.
+  scored.sort(
+    (a, b) => b.score - a.score || totalGivenNameStroke(a.candidate) - totalGivenNameStroke(b.candidate)
+  );
+  return selectDiverseCandidates(scored, CANDIDATE_COUNT);
 }

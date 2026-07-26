@@ -22,7 +22,7 @@ export function getDbClient(): Client {
 }
 
 const HANJA_COLUMNS = `char, readings, stroke_original, stroke_actual, radical, element,
-                 meaning, is_name_allowed, is_forbidden, forbidden_reason, verification_status`;
+                 meaning, is_name_allowed, is_forbidden, forbidden_reason, verification_status, is_common`;
 
 // hanja 테이블 SELECT 결과 한 행을 Hanja 타입으로 매핑한다. getHanjaByChar/getEligibleHanjaPool 공용.
 function rowToHanja(row: Record<string, unknown>): Hanja {
@@ -38,6 +38,7 @@ function rowToHanja(row: Record<string, unknown>): Hanja {
     isForbidden: Boolean(row.is_forbidden),
     forbiddenReason: row.forbidden_reason as string | null,
     verificationStatus: row.verification_status as "confirmed" | "unverified",
+    isCommon: Boolean(row.is_common),
   };
 }
 

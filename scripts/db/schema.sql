@@ -13,9 +13,13 @@ CREATE TABLE IF NOT EXISTS hanja (
   is_forbidden INTEGER NOT NULL DEFAULT 0,     -- 불용문자 여부
   forbidden_reason TEXT,             -- 불용 사유 (nullable)
   verification_status TEXT NOT NULL DEFAULT 'confirmed'
-    CHECK (verification_status IN ('confirmed', 'unverified'))
+    CHECK (verification_status IN ('confirmed', 'unverified')),
     -- confirmed: OCR 결과가 Unihan 공인 한국어 독음과 일치해 교차검증됨
     -- unverified: OCR 신뢰도는 높으나 독립 교차검증은 안 됨 (추후 보강 대상)
+  is_common INTEGER NOT NULL DEFAULT 0
+    -- 교육용 기초한자(Unihan kKoreanEducationHanja, 대한민국 교육부 공식 1,800자) 포함 여부.
+    -- CLAUDE.md 3.6 — 후보 생성 시 "생소한 한자" 억제용 가산점으로만 쓴다. 기존 테이블에는
+    -- migrate-add-is-common.js로 추가했다(이 CREATE TABLE은 신규 설치 기준).
 );
 
 CREATE INDEX IF NOT EXISTS idx_hanja_char ON hanja(char);
