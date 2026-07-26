@@ -16,7 +16,9 @@ export default function SajuReportCard({ elementDistribution, yongsin }: SajuRep
   const [showReason, setShowReason] = useState(false);
 
   return (
-    <section className="mb-8 rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-card)] sm:p-8">
+    <section className="relative mb-8 rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-elevated)] sm:p-8">
+      {/* design.md 4장 — 핵심 카드 상단 액센트 바 */}
+      <div className="-mx-6 -mt-6 mb-5 h-[3px] rounded-t-card bg-gradient-to-r from-brand-400 to-brand-600 sm:-mx-8 sm:-mt-8" />
       <h2 className="mb-5 text-[16px] font-semibold text-text-primary">사주 요약</h2>
 
       <h3 className="mb-2.5 text-[13px] font-semibold text-text-secondary">오행 분포</h3>

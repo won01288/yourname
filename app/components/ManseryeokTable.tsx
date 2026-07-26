@@ -50,7 +50,9 @@ function PillarColumn({ pillar }: { pillar: ManseryeokPillar }) {
 // lib/naming/manseryeok.ts가 결정적으로 계산한 값을 그대로 표시만 한다 (CLAUDE.md 2.1).
 export default function ManseryeokTable({ manseryeok }: ManseryeokTableProps) {
   return (
-    <section className="mb-8 rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-card)] sm:p-8">
+    <section className="relative mb-8 rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-elevated)] sm:p-8">
+      {/* design.md 4장 — 핵심 카드 상단 액센트 바 */}
+      <div className="-mx-6 -mt-6 mb-5 h-[3px] rounded-t-card bg-gradient-to-r from-brand-400 to-brand-600 sm:-mx-8 sm:-mt-8" />
       <h2 className="mb-5 text-[16px] font-semibold text-text-primary">만세력</h2>
       <div className="grid grid-cols-4 gap-2">
         {PILLAR_KEYS.map((key) => (

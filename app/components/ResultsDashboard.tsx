@@ -9,6 +9,8 @@ import SajuStoryCard from "./SajuStoryCard";
 import CandidateTile from "./CandidateTile";
 import CandidateDetail from "./CandidateDetail";
 import LegalNotice from "./LegalNotice";
+import ElementBadge from "./ElementBadge";
+import AmbientBackdrop from "./AmbientBackdrop";
 
 interface ResultsDashboardProps {
   data: NameApiResult;
@@ -25,24 +27,39 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
 
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-8 pt-10">
-      <div className="mb-6 flex items-start justify-between gap-4">
-        <div>
-          <h1 className="text-[22px] font-bold text-text-primary">
-            {surname.hangul}({surname.hanja})씨 사주 작명 리포트
-          </h1>
-          {saju && (
-            <p className="mt-1 text-[13px] text-text-secondary">
-              일간 {saju.day.stem} 기준, {yongsin.strength} 사주로 분석되었습니다.
-            </p>
-          )}
+      {/* design.md 3.6 — 결과 리포트 상단 배경 앰비언트 (이 헤더 영역에만 적용) */}
+      <div className="relative mb-6 overflow-hidden rounded-card">
+        <AmbientBackdrop />
+        <div className="relative flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-[22px] font-bold text-text-primary">
+              {surname.hangul}(<span className="text-brand-600">{surname.hanja}</span>)씨 사주 작명 리포트
+            </h1>
+            {saju && (
+              <p className="mt-1 text-[13px] text-text-secondary">일간 {saju.day.stem} 기준 분석</p>
+            )}
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <span className="rounded-pill bg-brand-50 px-2.5 py-1 text-[12px] font-medium text-brand-800">
+                {yongsin.strength}
+              </span>
+              <span className="text-[12px] text-text-secondary">용신</span>
+              {yongsin.yongsin.map((el) => (
+                <ElementBadge key={el} element={el} compact />
+              ))}
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={onRestart}
+            className="flex shrink-0 items-center gap-1.5 rounded-control border border-border bg-surface px-3.5 py-2 text-[13px] font-medium text-text-primary transition-colors hover:bg-surface-muted"
+          >
+            <svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true" className="shrink-0">
+              <path d="M9 3 A4 4 0 1 1 3 2" fill="none" stroke="currentColor" strokeWidth="1.3" />
+              <path d="M9 1v2.5H6.5" fill="none" stroke="currentColor" strokeWidth="1.3" />
+            </svg>
+            다시 짓기
+          </button>
         </div>
-        <button
-          type="button"
-          onClick={onRestart}
-          className="shrink-0 rounded-control border border-border bg-surface px-3.5 py-2 text-[13px] font-medium text-text-primary transition-colors hover:bg-surface-muted"
-        >
-          다시 짓기
-        </button>
       </div>
 
       {report && <p className="mb-8 text-[15px] leading-8 text-text-primary">{report.summary}</p>}

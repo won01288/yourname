@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import type { NameRequestPayload } from "@/app/lib/name-client";
 import type { Gender } from "@/lib/naming/types";
 
@@ -84,22 +84,32 @@ export default function InputForm({
 
   return (
     <section className="mx-auto w-full max-w-md px-6 pb-24">
-      <div className="rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-card)] sm:p-8">
-        {/* 진행 표시 */}
-        <div className="mb-7 flex items-center gap-2">
+      <div className="relative rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-elevated)] sm:p-8">
+        {/* design.md 4장 — 핵심 카드 상단 액센트 바 */}
+        <div className="-mx-6 -mt-6 mb-7 h-[3px] rounded-t-card bg-gradient-to-r from-brand-400 to-brand-600 sm:-mx-8 sm:-mt-8" />
+
+        {/* 진행 표시 — 번호형 단계 인디케이터 */}
+        <div className="mb-5 flex items-center gap-1.5">
           {STEP_LABELS.map((label, i) => (
-            <div key={label} className="flex flex-1 items-center gap-2">
+            <Fragment key={label}>
               <div
-                className={`h-1.5 flex-1 rounded-pill transition-colors ${
-                  i <= step ? "bg-brand-600" : "bg-surface-muted"
+                className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-pill text-[11px] font-bold transition-colors ${
+                  i <= step ? "bg-brand-600 text-white" : "bg-surface-muted text-text-secondary"
                 }`}
-              />
-            </div>
+              >
+                {i < step ? "✓" : i + 1}
+              </div>
+              {i < STEP_LABELS.length - 1 && (
+                <div
+                  className={`h-[2px] flex-1 rounded-pill transition-colors ${
+                    i < step ? "bg-brand-400" : "bg-border"
+                  }`}
+                />
+              )}
+            </Fragment>
           ))}
         </div>
-        <p className="mb-6 text-[13px] font-medium text-text-secondary">
-          {step + 1} / {STEP_LABELS.length} · {STEP_LABELS[step]}
-        </p>
+        <p className="mb-6 text-[13px] font-medium text-text-secondary">{STEP_LABELS[step]}</p>
 
         {step === 0 && (
           <div className="flex flex-col gap-4">
@@ -111,13 +121,21 @@ export default function InputForm({
                     key={g}
                     type="button"
                     onClick={() => setGender(g)}
-                    className={`flex-1 rounded-control border px-3.5 py-2.5 text-[14px] font-medium transition-colors ${
+                    className={`flex flex-1 items-center justify-center gap-1.5 rounded-control border px-3.5 py-2.5 text-[14px] font-medium transition-colors ${
                       gender === g
                         ? "border-brand-600 bg-brand-50 text-brand-800"
                         : "border-border bg-surface text-text-secondary hover:bg-surface-muted"
                     }`}
                   >
+                    <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" className="shrink-0">
+                      {g === "F" ? (
+                        <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                      ) : (
+                        <rect x="1.5" y="1.5" width="9" height="9" rx="2" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                      )}
+                    </svg>
                     {g === "F" ? "여자" : "남자"}
+                    {gender === g && <span aria-hidden="true">✓</span>}
                   </button>
                 ))}
               </div>
@@ -319,7 +337,7 @@ export default function InputForm({
               type="button"
               disabled={step === 0 ? !step1Valid : !step2Valid}
               onClick={goNext}
-              className="flex-1 rounded-control bg-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:bg-brand-800 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
             >
               다음
             </button>
@@ -328,7 +346,7 @@ export default function InputForm({
               type="button"
               disabled={!step3Valid || submitting}
               onClick={handleSubmit}
-              className="flex-1 rounded-control bg-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:bg-brand-800 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
             >
               {submitting ? "분석 중…" : "이름 짓기 시작"}
             </button>
