@@ -9,25 +9,23 @@ const THEME_EVENT = "yourname-theme-change";
 function readTheme(): Theme {
   const stored = window.localStorage.getItem("theme");
   if (stored === "light" || stored === "dark") return stored;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return "dark";
 }
 
-// design.md 1.2 — 다크모드는 CSS 변수 + data-theme 토글로 전환한다.
-// useSyncExternalStore로 localStorage/matchMedia를 구독해, effect 안에서 setState하는 대신
-// 서버 스냅샷("light" — 레이아웃의 인라인 스크립트가 실제 테마를 하이드레이션 전에 <html>에 반영)과
+// design.md 1.2 — 다크모드는 CSS 변수 + data-theme 토글로 전환한다. 기본 테마는 다크이며,
+// 시스템 설정과 무관하게 사용자가 토글로 라이트를 명시적으로 선택했을 때만 라이트가 된다.
+// useSyncExternalStore로 localStorage를 구독해, effect 안에서 setState하는 대신
+// 서버 스냅샷("dark" — 레이아웃의 인라인 스크립트가 실제 테마를 하이드레이션 전에 <html>에 반영)과
 // 클라이언트 스냅샷을 안전하게 동기화한다.
 function subscribe(callback: () => void) {
-  const media = window.matchMedia("(prefers-color-scheme: dark)");
-  media.addEventListener("change", callback);
   window.addEventListener(THEME_EVENT, callback);
   return () => {
-    media.removeEventListener("change", callback);
     window.removeEventListener(THEME_EVENT, callback);
   };
 }
 
 function getServerSnapshot(): Theme {
-  return "light";
+  return "dark";
 }
 
 function applyTheme(theme: Theme) {
