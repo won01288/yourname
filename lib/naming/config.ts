@@ -207,13 +207,18 @@ export const CANDIDATE_COUNT = 5;
 // 좁아진다 — 그래서 이 둘은 하드 필터가 아니라 가산점(soft score)으로만 반영한다.
 export const CANDIDATE_SCORE_WEIGHTS = {
   // 이름 두 글자 중 자원오행이 용신과 일치하는 글자 수(0~2) × 이 값.
-  wonhaengMatch: 2,
+  // commonHanja와 동일한 가중치로 맞췄다(2026.7.26 재조정) — 용신 보완(자원오행)과 실사용
+  // 친숙도(commonHanja) 둘 다 이 서비스의 핵심 가치라 어느 한쪽이 항상 이기게 두지 않는다.
+  // 두 글자 다 자원오행 일치(6점)는 두 글자 다 흔한 한자(6점)와 동점 — 그 아래 동점자 처리는
+  // buildCandidates의 2차 정렬 키(실사용 빈도 → 원획 합)로 넘어간다.
+  wonhaengMatch: 3,
   // 성+이름 획수의 음양(홀/짝)이 한쪽으로 쏠리지 않으면(전부 홀 또는 전부 짝이 아니면) 가산.
   yinYangBalanced: 1,
   // 이름 두 글자 중 hanja.isCommon(교육용 기초한자 1,800자, CLAUDE.md 3.6·4.1)인 글자 수(0~2) × 이 값.
-  // 가중치를 wonhaengMatch보다 크게 둬서, "용신과는 맞지만 실사용에 거의 안 쓰이는 한자"보다
-  // "친숙한 한자"를 우선하도록 한다 — 4.1의 hanja.element가 33%만 채워진 것과 달리 isCommon은
-  // Unihan 사실 플래그를 그대로 옮긴 값이라 뜻 판단이 아니다(2.1과 충돌하지 않음).
+  // 4.1의 hanja.element가 33%만 채워진 것과 달리 isCommon은 Unihan 사실 플래그를 그대로 옮긴
+  // 값이라 뜻 판단이 아니다(2.1과 충돌하지 않음). 과거엔 wonhaengMatch(2)보다 크게(3) 둬서 항상
+  // 친숙도가 이기도록 했으나(刃/塌 같은 생소한 한자 억제), 자원오행(용신 보완)이 뒷전으로
+  // 밀리는 부작용이 있어 2026.7.26 wonhaengMatch와 동률로 재조정했다 (CLAUDE.md 6장 참고).
   commonHanja: 3,
 } as const;
 

@@ -200,9 +200,11 @@ describe("buildCandidates", () => {
     expect(result[0].hangul).toBe("미가");
   });
 
-  it("isCommon(교육용 기초한자) 가중치가 자원오행 일치보다 우선한다", () => {
-    // 미가: wonhaeng 2*2=4, common 0, 음양균형(strokes 8,5,3 → 부동) +1 = 5.
-    // 범고(帆6+考7): wonhaeng 0, common 2*3=6, 음양균형(strokes 8,6,7 → 부동) +1 = 7 → 더 높아야 한다.
+  it("자원오행 일치와 isCommon(교육용 기초한자) 가중치가 동등하게 반영된다", () => {
+    // 2026.7.26 재조정 이후 wonhaengMatch=commonHanja=3이라 어느 한쪽이 구조적으로 항상
+    // 이기지 않는다. 미가: wonhaeng 2*3=6, common 0, 음양균형(strokes 8,5,3 → 부동) +1 = 7.
+    // 범고(帆6+考7): wonhaeng 0, common 2*3=6, 음양균형(strokes 8,6,7 → 부동) +1 = 7 → 동점.
+    // 동점이므로 실사용 빈도(frequency)가 높은 쪽이 앞선다 — 가중치가 아니라 빈도가 갈랐다는 것을 확인.
     const numerologyTable = makeNumerologyTable([8, 13, 11, 16, 13, 14, 15, 21]);
 
     const result = buildCandidates({
@@ -213,7 +215,7 @@ describe("buildCandidates", () => {
       numerologyTable,
       curatedGivenNames: [
         { hangul: "미가", frequency: 1 },
-        { hangul: "범고", frequency: 1 },
+        { hangul: "범고", frequency: 100 },
       ],
     });
 
