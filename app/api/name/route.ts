@@ -6,6 +6,7 @@ import { getSaju, type BirthInput } from "@/lib/saju";
 import { getSurnameByHangul, getEligibleHanjaPool, getAllNumerology81, getGivenNamesByGender } from "@/lib/db";
 import { aggregateElements } from "@/lib/naming/elements";
 import { deriveYongsin } from "@/lib/naming/yongsin";
+import { buildManseryeok } from "@/lib/naming/manseryeok";
 import { buildCandidates } from "@/lib/naming/candidates";
 import { explainCandidates } from "@/lib/llm/explain";
 import type { Gender } from "@/lib/naming/types";
@@ -75,6 +76,7 @@ export async function POST(request: Request) {
   const saju = await getSaju(body);
   const elementDistribution = aggregateElements(saju);
   const yongsinResult = deriveYongsin(saju, elementDistribution);
+  const manseryeok = buildManseryeok(saju);
 
   const [hanjaPool, numerologyTable, curatedGivenNames] = await Promise.all([
     getEligibleHanjaPool(),
@@ -97,6 +99,7 @@ export async function POST(request: Request) {
           saju,
           elementDistribution,
           yongsin: yongsinResult,
+          manseryeok,
           surname,
           candidates,
         })
@@ -106,6 +109,7 @@ export async function POST(request: Request) {
     saju,
     elementDistribution,
     yongsin: yongsinResult,
+    manseryeok,
     surname,
     candidates,
     report,

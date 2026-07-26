@@ -86,6 +86,53 @@ export const BRANCH_HIDDEN_STEMS: Record<string, { stem: string; days: number }[
   亥: [{ stem: "戊", days: 7 }, { stem: "甲", days: 7 }, { stem: "壬", days: 16 }],
 };
 
+// Phase 6 — 천간/지지 한자의 한글 독음. 만세력 표 표시용 (사실 조회, 유파 판단 아님).
+export const STEM_READING: Record<string, string> = {
+  甲: "갑",
+  乙: "을",
+  丙: "병",
+  丁: "정",
+  戊: "무",
+  己: "기",
+  庚: "경",
+  辛: "신",
+  壬: "임",
+  癸: "계",
+};
+
+export const BRANCH_READING: Record<string, string> = {
+  子: "자",
+  丑: "축",
+  寅: "인",
+  卯: "묘",
+  辰: "진",
+  巳: "사",
+  午: "오",
+  未: "미",
+  申: "신",
+  酉: "유",
+  戌: "술",
+  亥: "해",
+};
+
+// Phase 6 — 60갑자 순서. 천간 10자·지지 12자를 각각 순환시켜 만든다 (공망 계산용).
+export const STEM_SEQUENCE = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"] as const;
+export const BRANCH_SEQUENCE = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"] as const;
+
+// Phase 6 — 천간의 음양. 甲丙戊庚壬=양, 乙丁己辛癸=음 (통설, 진태양시 보정과 무관한 고정 배속).
+export const YANG_STEMS = new Set(["甲", "丙", "戊", "庚", "壬"]);
+
+// Phase 6 — 공망(空亡) 대조표. 60갑자를 10개씩 6개 순(旬)으로 나누고, 각 순마다 짝을 이루지
+// 못하는 지지 2개가 공망이 된다 (표준 대조표, 유파차 없음). 인덱스는 60갑자 순번 ÷ 10.
+export const VOID_BRANCHES_BY_GROUP: [string, string][] = [
+  ["戌", "亥"], // 갑자순 (甲子~癸酉)
+  ["申", "酉"], // 갑술순 (甲戌~癸未)
+  ["午", "未"], // 갑신순 (甲申~癸巳)
+  ["辰", "巳"], // 갑오순 (甲午~癸卯)
+  ["寅", "卯"], // 갑진순 (甲辰~癸丑)
+  ["子", "丑"], // 갑인순 (甲寅~癸亥)
+];
+
 // Phase 2 — 신강/신약 판정: 월지 가중 점수제 (CLAUDE.md 3.3).
 // 비겁+인성 세력 비율(월지 득령 보너스 포함)이 이 값 이상이면 신강, 미만이면 신약.
 export const STRENGTH_THRESHOLD = 0.5;

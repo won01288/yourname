@@ -3,7 +3,9 @@
 import { useState } from "react";
 import type { NameApiResult } from "@/app/lib/name-client";
 import { orderCandidatesByReport, matchReportEntry } from "@/app/lib/match-report";
+import ManseryeokTable from "./ManseryeokTable";
 import SajuReportCard from "./SajuReportCard";
+import SajuStoryCard from "./SajuStoryCard";
 import CandidateTile from "./CandidateTile";
 import CandidateDetail from "./CandidateDetail";
 import LegalNotice from "./LegalNotice";
@@ -15,7 +17,7 @@ interface ResultsDashboardProps {
 
 // design.md 3.1/3.2 — 벤토 그리드 + 점진적 공개로 구성된 결과 리포트.
 export default function ResultsDashboard({ data, onRestart }: ResultsDashboardProps) {
-  const { saju, elementDistribution, yongsin, surname, candidates, report } = data;
+  const { saju, elementDistribution, yongsin, manseryeok, surname, candidates, report } = data;
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const orderedCandidates = orderCandidatesByReport(candidates, report);
@@ -45,7 +47,11 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
 
       {report && <p className="mb-8 text-[15px] leading-8 text-text-primary">{report.summary}</p>}
 
-      <SajuReportCard saju={saju} elementDistribution={elementDistribution} yongsin={yongsin} />
+      <ManseryeokTable manseryeok={manseryeok} />
+
+      <SajuReportCard elementDistribution={elementDistribution} yongsin={yongsin} />
+
+      {report && <SajuStoryCard title={report.sajuStory.title} body={report.sajuStory.body} />}
 
       {candidates.length === 0 ? (
         <section className="rounded-card border border-border bg-surface p-8 text-center shadow-[var(--shadow-card)]">

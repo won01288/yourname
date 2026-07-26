@@ -55,6 +55,35 @@ export interface Hanja {
   verificationStatus: "confirmed" | "unverified";
 }
 
+// Phase 6 — 십신(十神). 일간과 다른 간지의 오행 생극·음양 관계로 결정적으로 계산한다 (manseryeok.ts).
+export type TenGod = "비견" | "겁재" | "식신" | "상관" | "편재" | "정재" | "편관" | "정관" | "편인" | "정인";
+
+// Phase 6 — 만세력 표 한 칸(지장간 하나)의 상세 정보. isMain=true인 항목이 그 지지의 정기(본기)다.
+export interface HiddenStemDetail {
+  stem: string;
+  reading: string;
+  element: Element;
+  days: number;
+  tenGod: TenGod;
+  isMain: boolean;
+}
+
+export interface ManseryeokPillar {
+  label: "년주" | "월주" | "일주" | "시주";
+  stem: { hanja: string; reading: string; element: Element; tenGod: TenGod };
+  branch: { hanja: string; reading: string; element: Element; tenGod: TenGod; isVoid: boolean };
+  hiddenStems: HiddenStemDetail[];
+}
+
+// Phase 6 — 만세력 상세 표 (CLAUDE.md 3.8). 십신·지장간·공망을 결정적으로 계산한 결과.
+export interface Manseryeok {
+  year: ManseryeokPillar;
+  month: ManseryeokPillar;
+  day: ManseryeokPillar;
+  hour: ManseryeokPillar;
+  voidBranches: [string, string];
+}
+
 // DB(surname 테이블, CLAUDE.md 4.2)에서 채운다.
 export interface Surname {
   hangul: string;

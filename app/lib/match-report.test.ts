@@ -37,6 +37,7 @@ describe("matchReportEntry", () => {
   it("hangul이 서로 다른 후보끼리는 절대 서로의 해설과 섞이지 않는다", () => {
     const report: NamingReport = {
       summary: "",
+      sajuStory: { title: "", body: "" },
       candidates: [
         { hangul: "탑인", rank: 2, explanation: "탑인 해설" },
         { hangul: "도인", rank: 1, explanation: "도인 해설" },
@@ -52,6 +53,7 @@ describe("matchReportEntry", () => {
   it("LLM이 성씨를 붙여 3글자로 반환해도(예: 金塔刃) 끝 2글자로 매칭한다", () => {
     const report: NamingReport = {
       summary: "",
+      sajuStory: { title: "", body: "" },
       candidates: [{ hangul: "김탑인", rank: 1, explanation: "탑인 해설" }],
     };
     expect(matchReportEntry(report, "탑인")).toEqual({ rank: 1, explanation: "탑인 해설" });
@@ -71,6 +73,7 @@ describe("orderCandidatesByReport", () => {
     ];
     const report: NamingReport = {
       summary: "",
+      sajuStory: { title: "", body: "" },
       candidates: [
         { hangul: "탑인", rank: 3, explanation: "" },
         { hangul: "도인", rank: 1, explanation: "" },
@@ -90,6 +93,7 @@ describe("orderCandidatesByReport", () => {
     ];
     const report: NamingReport = {
       summary: "",
+      sajuStory: { title: "", body: "" },
       candidates: [
         { hangul: "탑인", rank: 2, explanation: "탑인 전용 해설" },
         { hangul: "도인", rank: 1, explanation: "도인 전용 해설" },
