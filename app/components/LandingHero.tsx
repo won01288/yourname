@@ -9,15 +9,15 @@ export default function LandingHero() {
       title={
         <>
           사주를 읽고, 이름의 이야기를
-          <br />
-          함께 찾습니다
+          <br className="hidden sm:inline" />
+          {" "}함께 찾습니다
         </>
       }
       description={
         <>
           지금 쓰는 이름의 점수를 무료로 확인하거나, 사주 전체를 분석한 전문가 수준의
-          <br />
-          작명 리포트로 완벽한 이름을 지어보세요.
+          <br className="hidden sm:inline" />
+          {" "}작명 리포트로 완벽한 이름을 지어보세요.
         </>
       }
     />

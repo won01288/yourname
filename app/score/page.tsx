@@ -72,8 +72,8 @@ export default function ScorePage() {
             description={
               <>
                 생년월일시와 이미 지어진 이름의 한자를 입력하면, 발음오행·수리사격·자원오행·음양 배열을
-                <br />
-                결정적으로 계산해 점수와 근거를 바로 보여드립니다.
+                <br className="hidden sm:inline" />
+                {" "}결정적으로 계산해 점수와 근거를 바로 보여드립니다.
               </>
             }
           />

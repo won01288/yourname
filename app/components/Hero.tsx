@@ -9,14 +9,15 @@ export default function Hero() {
       title={
         <>
           사주를 깊이 읽고,
-          <br />
-          가장 좋은 이름을 찾습니다
+          <br className="hidden sm:inline" />
+          {" "}가장 좋은 이름을 찾습니다
         </>
       }
       description={
         <>
-          생년월일시를 입력하면 사주를 분석해 용신을 도출하고, <br />
-          발음오행·수리·자원오행을 따져 근거가 분명한 작명 레포트를 제공합니다.
+          생년월일시를 입력하면 사주를 분석해 용신을 도출하고,
+          <br className="hidden sm:inline" />
+          {" "}발음오행·수리·자원오행을 따져 근거가 분명한 작명 레포트를 제공합니다.
         </>
       }
     />
