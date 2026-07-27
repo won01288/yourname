@@ -95,11 +95,22 @@ export function deriveYongsin(saju: Saju, distribution: ElementDistribution): Yo
       ? [outputOf(score.dayMasterElement), officerOf(score.dayMasterElement)]
       : [score.resourceElement, score.supportiveElement];
 
+  // 쉬운 설명 병행 (CLAUDE.md 3.9 원칙과 동일하게, 전문 용어는 살리되 처음 나올 때 괄호로 풀어쓴다).
+  const monthPhrase = score.monthSupportsStrength
+    ? "태어난 달의 지지(월지)도 일간 편이라 힘을 더 보태줘서"
+    : "태어난 달의 지지(월지)는 일간 편이 아니라서";
+  const strengthPhrase = strength === "신강" ? "힘이 강한 편(신강)" : "힘이 약한 편(신약)";
+  const balancePhrase =
+    strength === "신강"
+      ? "기운이 넘치는 사주이니 그 기운을 덜어내거나 눌러줄"
+      : "기운이 부족한 사주이니 그 기운을 채워줄";
+
   const reason =
-    `일간(${saju.day.stem})은 ${withReading(score.dayMasterElement)} 오행이다. ` +
-    `비겁(${withReading(score.supportiveElement)})+인성(${withReading(score.resourceElement)}) 세력 점수 ${score.supportScore.toFixed(2)} / 전체 ${score.totalScore.toFixed(2)}` +
-    `(비율 ${(score.ratio * 100).toFixed(1)}%, 월지 득령 ${score.monthSupportsStrength ? "충족" : "미충족"}) → ${strength} 판정. ` +
-    `${strength === "신강" ? "설기(식상)·극제(관성)" : "생조(인성)·부조(비겁)"} 오행인 ${withReadingList(yongsin)}을(를) 억부용신으로 삼는다.`;
+    `일간(태어난 날의 천간, ${saju.day.stem})은 ${withReading(score.dayMasterElement)} 오행이다. ` +
+    `사주 8글자 중 일간과 같은 오행인 비겁(比劫)과 일간을 도와주는 오행인 인성(印星)의 힘을 합치면 ` +
+    `전체 ${score.totalScore.toFixed(2)} 중 ${score.supportScore.toFixed(2)}(${(score.ratio * 100).toFixed(1)}%)이다. ` +
+    `${monthPhrase}, 일간의 ${strengthPhrase}으로 판단했다. ` +
+    `${balancePhrase} ${withReadingList(yongsin)} 오행을 용신(부족하거나 넘치는 기운을 조절해 균형을 잡아주는 오행)으로 삼는다.`;
 
   return { strength, yongsin, reason };
 }
