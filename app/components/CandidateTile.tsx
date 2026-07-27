@@ -36,7 +36,7 @@ export default function CandidateTile({
     <button
       type="button"
       onClick={onClick}
-      className={`group flex flex-col justify-between rounded-card border p-4 text-left transition-all hover:-translate-y-0.5 ${
+      className={`group flex flex-col justify-between rounded-card border p-4 text-left transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)] ${
         isExpanded
           ? "border-brand-600 bg-brand-50 shadow-[var(--shadow-elevated)]"
           : "border-border bg-surface shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)]"

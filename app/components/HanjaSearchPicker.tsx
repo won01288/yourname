@@ -68,7 +68,7 @@ export default function HanjaSearchPicker({ label, selected, onSelect, onClear }
           <button
             type="button"
             onClick={onClear}
-            className="text-[12px] font-medium text-brand-600 hover:text-brand-800"
+            className="rounded-control px-1.5 py-1 text-[12px] font-medium text-brand-600 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
           >
             다시 찾기
           </button>
@@ -99,13 +99,17 @@ export default function HanjaSearchPicker({ label, selected, onSelect, onClear }
           type="button"
           onClick={handleSearch}
           disabled={loading}
-          className="shrink-0 rounded-control border border-border bg-surface px-4 py-2.5 text-[14px] font-medium text-text-primary transition-colors hover:bg-surface-muted disabled:opacity-50"
+          className="shrink-0 rounded-control border border-border bg-surface px-4 py-3 text-[14px] font-medium text-text-primary transition-colors hover:bg-surface-muted disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
         >
           {loading ? "검색 중…" : "찾기"}
         </button>
       </div>
 
-      {error && <p className="mt-2 text-[12px] text-[var(--status-alert)]">{error}</p>}
+      {error && (
+        <p role="alert" className="mt-2 text-[12px] text-[var(--status-alert)]">
+          {error}
+        </p>
+      )}
 
       {results && (
         <div className="mt-3">
@@ -120,7 +124,7 @@ export default function HanjaSearchPicker({ label, selected, onSelect, onClear }
                   key={h.char}
                   type="button"
                   onClick={() => onSelect({ hangul: searchedReading, hanja: h })}
-                  className="flex items-center gap-3 rounded-control border border-border bg-surface-muted px-3.5 py-3 text-left transition-colors hover:border-brand-400 hover:bg-brand-50"
+                  className="flex items-center gap-3 rounded-control border border-border bg-surface-muted px-3.5 py-3 text-left transition-colors hover:border-brand-400 hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
                 >
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-control bg-surface text-[22px] font-semibold text-text-primary">
                     {h.char}

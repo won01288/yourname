@@ -49,7 +49,7 @@ export function BirthDateFields({
             key={type}
             type="button"
             onClick={() => onIsLunarChange(type === "lunar")}
-            className={`flex-1 rounded-control border px-3.5 py-2.5 text-[14px] font-medium transition-colors ${
+            className={`flex-1 rounded-control border px-3.5 py-3 text-[14px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] ${
               (type === "lunar") === isLunar
                 ? "border-brand-600 bg-brand-50 text-brand-800"
                 : "border-border bg-surface text-text-secondary hover:bg-surface-muted"

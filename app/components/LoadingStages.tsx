@@ -46,7 +46,10 @@ export default function LoadingStages({ stages = DEFAULT_STAGES, isDone, onCompl
   return (
     <section className="mx-auto flex w-full max-w-md flex-col items-center px-6 py-24">
       <div className="w-full rounded-card border border-border bg-surface p-8 shadow-[var(--shadow-card)]">
-        <ul className="flex flex-col gap-4">
+        <p role="status" aria-live="polite" className="sr-only">
+          {stages[index]} ({index + 1}/{stages.length}단계)
+        </p>
+        <ul className="flex flex-col gap-4" aria-hidden="true">
           {stages.map((label, i) => {
             const state = i < index ? "done" : i === index ? "active" : "pending";
             return (

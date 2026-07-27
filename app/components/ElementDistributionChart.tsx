@@ -69,12 +69,18 @@ function pointOnRoundedRect(pct: number, x: number, y: number, width: number, he
 // SVG pathLength로 트랙 전체 길이를 100으로 정규화해, 각 세그먼트의 길이(dasharray)와
 // 시작 위치(dashoffset)를 퍼센트 그대로 쓴다 — 실제 픽셀 둘레를 계산할 필요가 없다.
 export default function ElementDistributionChart({ distribution }: { distribution: ElementDistribution }) {
-  let cumulative = 0;
-  const segments = ORDER.map((el) => {
+  // 각 오행 조각의 누적 시작 위치(prefix sum)를 reduce 누산기로 계산한다 — 렌더 중 바깥
+  // 스코프의 let 변수를 매 순회마다 재대입하는 대신, 매 호출마다 새로 생성되는 reduce
+  // 누산기만 다뤄 react-hooks/immutability(렌더 순수성) 규칙과 충돌하지 않는다.
+  const pcts = ORDER.map((el) => Math.min(100, (distribution[el] / TOTAL) * 100));
+  const starts = pcts.reduce<number[]>((acc, pct, i) => {
+    acc.push(i === 0 ? 0 : acc[i - 1] + pcts[i - 1]);
+    return acc;
+  }, []);
+  const segments = ORDER.map((el, i) => {
     const value = distribution[el];
-    const pct = Math.min(100, (value / TOTAL) * 100);
-    const start = cumulative;
-    cumulative += pct;
+    const pct = pcts[i];
+    const start = starts[i];
     const dashLen = Math.max(pct - GAP, Math.min(pct, MIN_DASH));
     const dashStart = start + (pct - dashLen) / 2;
     const mid = start + pct / 2;
@@ -89,7 +95,7 @@ export default function ElementDistributionChart({ distribution }: { distributio
     <div className="flex flex-col items-center gap-4">
       {/* 가로 여백 없이 카드 폭을 최대한 채우되(w-full), 큰 화면에서는 max-w에서 멈추고
           mx-auto로 가운데 정렬한다. */}
-      <div className="relative aspect-[100/32] w-full max-w-[640px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.14)]">
+      <div className="relative aspect-[100/32] w-full max-w-[640px] drop-shadow-[var(--shadow-chart)]">
         <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className="absolute inset-0 h-full w-full" aria-hidden="true">
           <rect
             x={INSET}

@@ -52,7 +52,7 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
           <button
             type="button"
             onClick={onRestart}
-            className="flex shrink-0 items-center gap-1.5 rounded-control border border-border bg-surface px-3.5 py-2 text-[13px] font-medium text-text-primary transition-colors hover:bg-surface-muted"
+            className="flex min-h-11 shrink-0 items-center gap-1.5 rounded-control border border-border bg-surface px-3.5 py-2 text-[13px] font-medium text-text-primary transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
           >
             <svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true" className="shrink-0">
               <path d="M9 3 A4 4 0 1 1 3 2" fill="none" stroke="currentColor" strokeWidth="1.3" />
@@ -78,6 +78,13 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
             발음오행 상생과 81수리 길격을 모두 만족하는 조합이 현재 한자 풀 안에서 나오지 않았습니다.
             성씨나 태어난 시각을 다시 확인한 뒤 시도해 주세요.
           </p>
+          <button
+            type="button"
+            onClick={onRestart}
+            className="mt-5 inline-flex min-h-11 items-center rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
+          >
+            다시 시도하기
+          </button>
         </section>
       ) : (
         <>

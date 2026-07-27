@@ -88,7 +88,7 @@ export default function InputForm({
   }
 
   return (
-    <section className="mx-auto w-full max-w-md px-6 pb-24">
+    <section className="mx-auto w-full max-w-md px-6 pb-28">
       <div className="relative rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-elevated)] sm:p-8">
         {/* design.md 4장 — 핵심 카드 상단 액센트 바 */}
         <div className="-mx-6 -mt-6 mb-7 h-[3px] rounded-t-card bg-gradient-to-r from-brand-400 to-brand-600 sm:-mx-8 sm:-mt-8" />
@@ -126,7 +126,7 @@ export default function InputForm({
                     key={g}
                     type="button"
                     onClick={() => setGender(g)}
-                    className={`flex flex-1 items-center justify-center gap-1.5 rounded-control border px-3.5 py-2.5 text-[14px] font-medium transition-colors ${
+                    className={`flex flex-1 items-center justify-center gap-1.5 rounded-control border px-3.5 py-3 text-[14px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] ${
                       gender === g
                         ? "border-brand-600 bg-brand-50 text-brand-800"
                         : "border-border bg-surface text-text-secondary hover:bg-surface-muted"
@@ -175,7 +175,7 @@ export default function InputForm({
                       key={hanja}
                       type="button"
                       onClick={() => setSurnameHanja(hanja)}
-                      className={`rounded-control border px-3.5 py-2 text-[15px] transition-colors ${
+                      className={`rounded-control border px-3.5 py-3 text-[15px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] ${
                         surnameHanja === hanja
                           ? "border-brand-600 bg-brand-50 text-brand-800"
                           : "border-border bg-surface text-text-primary hover:bg-surface-muted"
@@ -227,7 +227,7 @@ export default function InputForm({
                 key={count}
                 type="button"
                 onClick={() => setCandidateCount(count)}
-                className={`flex items-center justify-between rounded-control border px-4 py-3 text-left transition-colors ${
+                className={`flex items-center justify-between rounded-control border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] ${
                   candidateCount === count
                     ? "border-brand-600 bg-brand-50"
                     : "border-border bg-surface hover:bg-surface-muted"
@@ -256,17 +256,22 @@ export default function InputForm({
         )}
 
         {errorMessage && (
-          <p className="mt-4 rounded-control bg-[color-mix(in_srgb,var(--element-fire)_12%,transparent)] px-3.5 py-2.5 text-[13px] leading-5 text-[var(--element-fire)]">
+          <p
+            role="alert"
+            className="mt-4 rounded-control bg-[color-mix(in_srgb,var(--status-alert)_12%,transparent)] px-3.5 py-2.5 text-[13px] leading-5 text-[var(--status-alert)]"
+          >
             {errorMessage}
           </p>
         )}
 
-        <div className="mt-7 flex gap-2">
+        {/* 모바일 하단 고정 CTA — 위저드의 유일한 진행 수단이라 스크롤 위치와 무관하게 항상
+            엄지 닿는 위치에 둔다. sm 이상에서는 기존처럼 카드 안 정적 위치로 되돌아간다. */}
+        <div className="fixed inset-x-0 bottom-0 z-30 mx-auto flex w-full max-w-md gap-2 border-t border-border bg-[var(--bg-surface)]/95 px-6 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-7 sm:w-auto sm:max-w-none sm:border-0 sm:bg-transparent sm:px-0 sm:pt-0 sm:pb-0 sm:backdrop-blur-none">
           {step > 0 && (
             <button
               type="button"
               onClick={goBack}
-              className="rounded-control border border-border bg-surface px-4 py-2.5 text-[14px] font-medium text-text-primary transition-colors hover:bg-surface-muted active:scale-[0.98]"
+              className="rounded-control border border-border bg-surface px-4 py-3 text-[14px] font-medium text-text-primary transition-colors hover:bg-surface-muted active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
             >
               이전
             </button>
@@ -276,7 +281,7 @@ export default function InputForm({
               type="button"
               disabled={step === 0 ? !step1Valid : step === 1 ? !step2Valid : !step3Valid}
               onClick={goNext}
-              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-3 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
             >
               다음
             </button>
@@ -285,7 +290,7 @@ export default function InputForm({
               type="button"
               disabled={!step4Valid || submitting}
               onClick={handleSubmit}
-              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-3 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
             >
               {submitting ? "분석 중…" : "이름 짓기 시작"}
             </button>

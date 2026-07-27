@@ -54,7 +54,7 @@ export default function ManseryeokTable({ manseryeok }: ManseryeokTableProps) {
       {/* design.md 4장 — 핵심 카드 상단 액센트 바 */}
       <div className="-mx-6 -mt-6 mb-5 h-[3px] rounded-t-card bg-gradient-to-r from-brand-400 to-brand-600 sm:-mx-8 sm:-mt-8" />
       <h2 className="mb-5 text-[16px] font-semibold text-text-primary">만세력</h2>
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-2">
         {PILLAR_KEYS.map((key) => (
           <PillarColumn key={key} pillar={manseryeok[key]} />
         ))}

@@ -82,7 +82,7 @@ export default function NameScoreForm({
   const stepValid = [step0Valid, step1Valid, step2Valid, step3Valid];
 
   return (
-    <section className="mx-auto w-full max-w-md px-6 pb-24">
+    <section className="mx-auto w-full max-w-md px-6 pb-28">
       <div className="relative rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-elevated)] sm:p-8">
         <div className="-mx-6 -mt-6 mb-7 h-[3px] rounded-t-card bg-gradient-to-r from-brand-400 to-brand-600 sm:-mx-8 sm:-mt-8" />
 
@@ -139,7 +139,7 @@ export default function NameScoreForm({
                       key={hanja}
                       type="button"
                       onClick={() => setSurnameHanja(hanja)}
-                      className={`rounded-control border px-3.5 py-2 text-[15px] transition-colors ${
+                      className={`rounded-control border px-3.5 py-3 text-[15px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] ${
                         surnameHanja === hanja
                           ? "border-brand-600 bg-brand-50 text-brand-800"
                           : "border-border bg-surface text-text-primary hover:bg-surface-muted"
@@ -192,17 +192,22 @@ export default function NameScoreForm({
         )}
 
         {errorMessage && (
-          <p className="mt-4 rounded-control bg-[color-mix(in_srgb,var(--status-alert)_12%,transparent)] px-3.5 py-2.5 text-[13px] leading-5 text-[var(--status-alert)]">
+          <p
+            role="alert"
+            className="mt-4 rounded-control bg-[color-mix(in_srgb,var(--status-alert)_12%,transparent)] px-3.5 py-2.5 text-[13px] leading-5 text-[var(--status-alert)]"
+          >
             {errorMessage}
           </p>
         )}
 
-        <div className="mt-7 flex gap-2">
+        {/* 모바일 하단 고정 CTA — InputForm과 동일한 이유(design.md 참고, 위저드 진행 버튼은
+            스크롤과 무관하게 항상 엄지 닿는 위치에). sm 이상에서는 카드 안 정적 위치. */}
+        <div className="fixed inset-x-0 bottom-0 z-30 mx-auto flex w-full max-w-md gap-2 border-t border-border bg-[var(--bg-surface)]/95 px-6 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-7 sm:w-auto sm:max-w-none sm:border-0 sm:bg-transparent sm:px-0 sm:pt-0 sm:pb-0 sm:backdrop-blur-none">
           {step > 0 && (
             <button
               type="button"
               onClick={goBack}
-              className="rounded-control border border-border bg-surface px-4 py-2.5 text-[14px] font-medium text-text-primary transition-colors hover:bg-surface-muted active:scale-[0.98]"
+              className="rounded-control border border-border bg-surface px-4 py-3 text-[14px] font-medium text-text-primary transition-colors hover:bg-surface-muted active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
             >
               이전
             </button>
@@ -212,7 +217,7 @@ export default function NameScoreForm({
               type="button"
               disabled={!stepValid[step]}
               onClick={goNext}
-              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-3 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
             >
               다음
             </button>
@@ -221,7 +226,7 @@ export default function NameScoreForm({
               type="button"
               disabled={!step3Valid || submitting}
               onClick={handleSubmit}
-              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+              className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-3 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
             >
               {submitting ? "채점 중…" : "점수 확인하기"}
             </button>

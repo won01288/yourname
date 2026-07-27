@@ -61,7 +61,7 @@ export default function ScoreDashboard({ data, onRestart }: ScoreDashboardProps)
           <button
             type="button"
             onClick={onRestart}
-            className="flex shrink-0 items-center gap-1.5 rounded-control border border-border bg-surface px-3.5 py-2 text-[13px] font-medium text-text-primary transition-colors hover:bg-surface-muted"
+            className="flex min-h-11 shrink-0 items-center gap-1.5 rounded-control border border-border bg-surface px-3.5 py-2 text-[13px] font-medium text-text-primary transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
           >
             다시 확인
           </button>
@@ -141,14 +141,17 @@ export default function ScoreDashboard({ data, onRestart }: ScoreDashboardProps)
         <p className="mt-3 text-[13px] leading-6 text-text-secondary">{yongsin.reason}</p>
       </section>
 
-      <section className="relative mb-8 overflow-hidden rounded-card border border-brand-600 bg-brand-50 p-6 text-center sm:p-8">
-        <h2 className="text-[16px] font-semibold text-brand-800">더 완벽한 이름을 원하신다면</h2>
-        <p className="mt-2 text-[13px] leading-6 text-brand-800">
+      {/* design.md 0장 — "무료라서 가벼워 보이지 않게": 업셀 카드도 다른 카드와 같은 중립 배경을
+          쓰고, 브랜드 강조는 상단 액센트 바 하나로만 줘 "이 리포트는 부족하다"는 인상을 주지 않는다. */}
+      <section className="relative mb-8 overflow-hidden rounded-card border border-border bg-surface p-6 text-center shadow-[var(--shadow-card)] sm:p-8">
+        <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-brand-400 to-brand-600" />
+        <h2 className="text-[16px] font-semibold text-text-primary">더 완벽한 이름을 원하신다면</h2>
+        <p className="mt-2 text-[13px] leading-6 text-text-secondary">
           사주 전체를 분석해 용신에 꼭 맞는 이름 후보와 전문가 수준의 상세 해설을 받아보세요.
         </p>
         <Link
           href="/naming"
-          className="mt-4 inline-block rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-5 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105"
+          className="mt-4 inline-flex min-h-11 items-center rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-5 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
         >
           프리미엄 작명 시작하기
         </Link>

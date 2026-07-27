@@ -5,6 +5,7 @@ import PageHero from "./PageHero";
 export default function LandingHero() {
   return (
     <PageHero
+      variant="landing"
       eyebrow="정통 기반 현대식 작명 서비스"
       title={
         <>
