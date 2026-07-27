@@ -58,6 +58,8 @@ export async function getHanjaByChar(char: string): Promise<Hanja | null> {
 // 컬럼이라 json_each로 펼쳐 대조한다. is_name_allowed/is_forbidden로 걸러내지 않는다 — 실제
 // 이름은 등록 목록 밖 한자를 쓸 수도 있으므로, 검색 결과는 전부 보여주고 정렬만 유효한 것을
 // 위로 올린다(프론트에서 인명용 아님/불용 배지로 구분 표시). 9,063행 규모라 인덱스 없이도 충분하다.
+// hun(한글 훈)이 없는 한자는 결과에서 제외한다 — 훈 없이는 사용자가 뜻을 알 수 없어 이름
+// 후보로 고르기 어렵기 때문(2026.7.27, 훈 없는 한자만 배제하는 조건이라 인명용 여부와는 무관).
 export async function getHanjaByReading(reading: string): Promise<Hanja[]> {
   const client = getDbClient();
   const result = await client.execute({
@@ -65,7 +67,7 @@ export async function getHanjaByReading(reading: string): Promise<Hanja[]> {
                  h.meaning, h.is_name_allowed, h.is_forbidden, h.forbidden_reason, h.verification_status,
                  h.is_common, h.hun
           FROM hanja h, json_each(h.readings) je
-          WHERE je.value = ?
+          WHERE je.value = ? AND h.hun IS NOT NULL
           ORDER BY h.is_name_allowed DESC, h.is_forbidden ASC, h.is_common DESC, h.stroke_original ASC`,
     args: [reading],
   });
