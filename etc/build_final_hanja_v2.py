@@ -8,7 +8,7 @@
   수리 계산에 쓸 수 없으므로 이번 적재에서 제외한다(추측하지 않는다).
 - 새 표에 없지만 기존 OCR+Unihan 교차검증에서 확정했던 8자(교육용 기초한자)는
   근거가 이미 있으므로 유지한다.
-- 불용문자 매칭은 기존과 동일하게 noname_1/2.docx 파싱 결과를 사용한다.
+- 불용문자 매칭은 nouse_hanja.csv(parse_nouse_hanja.py 파싱 결과)를 사용한다.
 """
 import json
 
@@ -51,8 +51,12 @@ def main():
         })
 
     for e in kept_exceptions:
-        # 기존 항목 그대로 유지 (이미 Unihan 데이터가 있었던 것들)
+        # 기존 항목 그대로 유지하되, 불용문자 여부는 최신 forbidden 목록으로 다시 판정한다
+        # (그대로 복사만 하면 옛 출처(noname docx)의 stale한 불용 판정이 영구히 남는다)
         e = dict(e)
+        fb = forbidden.get(e["char"])
+        e["isForbidden"] = fb is not None
+        e["forbiddenReason"] = " / ".join(fb["reasons"]) if fb else None
         e["source"] = e.get("source", []) + ["kept_exception"]
         out.append(e)
 

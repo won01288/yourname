@@ -3957,8 +3957,8 @@
   "radicalIndex": 1,
   "meaning": "one; a, an; alone",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "관재구설, 형액, 배우자덕없다, 이혼, 별거, 암, 뇌출혈, 자살, 부도, 병약.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -3975,8 +3975,8 @@
   "radicalIndex": 1,
   "meaning": "male adult; robust, vigorous; 4th heavenly stem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "천간 네 번째라 이름자에 사용하지않음.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -3993,8 +3993,8 @@
   "radicalIndex": 1,
   "meaning": "seven",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "성격급하고 책임감없다, 부도, 구설, 시비.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4047,8 +4047,8 @@
   "radicalIndex": 1,
   "meaning": "three",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "분열, 분쟁, 실패, 구설, 시비, 이혼, 별거, 부도, 재물덕없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4065,8 +4065,8 @@
   "radicalIndex": 1,
   "meaning": "top; superior, highest; go up, send up",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "가정불화, 질병, 하극상, 교도소. / 진실하고 고결한 성질이나 형극, 하극상",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4083,8 +4083,8 @@
   "radicalIndex": 1,
   "meaning": "under, underneath, below; down; inferior; bring down",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "항상 밑으로만 긴다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4120,8 +4120,8 @@
   "radicalIndex": 1,
   "meaning": "no, not; un-; negative prefix",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "되는일이 없다, 항상 불충분하다. / 항상 불충분하고 되는 일이 없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4138,8 +4138,8 @@
   "radicalIndex": 1,
   "meaning": "clown, comedian; second earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "짐승의 이름은 쓰지 않는다. 강한 운명이 작용한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4228,8 +4228,8 @@
   "radicalIndex": 1,
   "meaning": "third; 3rd heavenly stem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 고통, 인덕없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4336,8 +4336,8 @@
   "radicalIndex": 2,
   "meaning": "central; center, middle; in the midst of; hit (target); attain",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "중도좌절, 실패, 구설, 시비, 관재, 이별, 사고, 질병, 고통, 시련.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4627,8 +4627,8 @@
   "radicalIndex": 5,
   "meaning": "second; 2nd heavenly stem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "십간(十干)중 두 번째 을은 이름자에 쓰지 않는다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4645,8 +4645,8 @@
   "radicalIndex": 5,
   "meaning": "nine",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "수의 종말, 무용지물, 퇴보, 이혼, 사망, 단명, 한계, 종말. / 종말을 의미",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4663,8 +4663,8 @@
   "radicalIndex": 5,
   "meaning": "beg; request",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 빌 걸",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4753,8 +4753,8 @@
   "radicalIndex": 5,
   "meaning": "rock; used in Korean names",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불행, 단명, 고난, 고통, 부도, 고독, 불우, 빈곤, 단명. / 하천, 형제 분산, 불우, 빈곤, 단명",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4917,8 +4917,8 @@
   "radicalIndex": 5,
   "meaning": "confusion, state of chaos; create chaos, revolt",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 어지러울 란",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4937,7 +4937,7 @@
   "meaning": "to finish; particle of completed action",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "사물의 종말, 자식이없다. 종말을 암시. / 종말을 암시",
+  "forbiddenReason": "뜻흉함: 마칠 료",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4990,8 +4990,8 @@
   "radicalIndex": 7,
   "meaning": "two; twice",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "병약, 인덕없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5062,8 +5062,8 @@
   "radicalIndex": 7,
   "meaning": "five; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "적이많고, 인덕없다, 이혼, 별거, 병약, 부도.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5208,7 +5208,7 @@
   "meaning": "death, destroyed; lose, perish",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "망할일이 생겨난다.",
+  "forbiddenReason": "뜻흉함: 망할 망",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5261,8 +5261,8 @@
   "radicalIndex": 8,
   "meaning": "twelfth earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "짐승의 이름은 사용하지 않는다, 강한 운으로 작용한다, 팔자기박.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5315,8 +5315,8 @@
   "radicalIndex": 8,
   "meaning": "enjoy",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "누리지 못하고, 대접받지 못한다. 불행.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5515,8 +5515,8 @@
   "radicalIndex": 9,
   "meaning": "humaneness, benevolence, kindness",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "질병, 불행, 재앙, 박복, 고난. / 후덕한 성격이나 박복, 고난, 질병",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5605,8 +5605,8 @@
   "radicalIndex": 9,
   "meaning": "now, today, modern era",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 고독, 고통.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5623,8 +5623,8 @@
   "radicalIndex": 9,
   "meaning": "forerunner, herald, harbinger; to lie between; sea shell; to wear armor",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "성격괴팍, 과부, 부부불길.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5750,7 +5750,7 @@
   "meaning": "Taoist super-being, transcendent, immortal",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "가정불화, 고독, 이별, 재물복없다.",
+  "forbiddenReason": "과도한 격(신성/존귀): 신선 선",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5967,8 +5967,8 @@
   "radicalIndex": 9,
   "meaning": "middle brother; go between, mediator; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고통, 고난, 재물실패, 중도좌절, 실패, 시비, 구설, 관재.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -6201,8 +6201,8 @@
   "radicalIndex": 9,
   "meaning": "third person pronoun; he, she, this, that",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 소심, 인덕없다, 천하게된다, 이혼, 별거, 부도. / 배짱은 크고 마음이 작아 소득이 없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -6490,8 +6490,8 @@
   "radicalIndex": 9,
   "meaning": "extend, stretch out, open up; trust",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불행, 고독, 결과가없다,자손을 극한다. / 발전과 막힘이 잇따라 오고 불행, 고독",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -6941,8 +6941,8 @@
   "radicalIndex": 9,
   "meaning": "Buddha; of Buddhism; merciful person; Buddhist image; the dead (Japanese)",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "과도한 격(신성/존귀): 부처 불",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -7919,8 +7919,8 @@
   "radicalIndex": 9,
   "meaning": "convenience, ease; expedient",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "변, 편으로 두가지 음으로 불려지는 이름은 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -9492,8 +9492,8 @@
   "radicalIndex": 9,
   "meaning": "falsehood, deception; vacation",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 거짓 가",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -10356,8 +10356,8 @@
   "radicalIndex": 9,
   "meaning": "debt, loan, liabilities",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 빚 채",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -10374,8 +10374,8 @@
   "radicalIndex": 9,
   "meaning": "wound, injury; fall ill from",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 상처 상",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -10719,8 +10719,8 @@
   "radicalIndex": 9,
   "meaning": "joy, gladness, delight; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 고난, 단명, 인덕없다, 화류계.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -11134,8 +11134,8 @@
   "radicalIndex": 9,
   "meaning": "hundred million; many",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "0 으로 끝나는 숫자는 피한다. 한계에 왔다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -11806,8 +11806,8 @@
   "radicalIndex": 10,
   "meaning": "first; dollar; origin; head",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "맏이는 무방하나 둘째 이하가 쓰면 장남운세불길, 형제반복, 자손불화. / 형제 자손에 수심",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -11860,8 +11860,8 @@
   "radicalIndex": 10,
   "meaning": "omen; million; mega; also trillion. China = million; Japan and Taiwan = trillion",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "0 으로 끝나는 숫자는 피한다. 한계에 왔다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -11896,8 +11896,8 @@
   "radicalIndex": 10,
   "meaning": "first, former, previous",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "장남이나 장녀는 쓸수가 있다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -11914,8 +11914,8 @@
   "radicalIndex": 10,
   "meaning": "light, brilliant, shine; only",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부모,형제,배우자 덕이없다. 이혼, 별거, 병약, 단명, 풍파, 아버지극해, 경제적 어 려움이 많다, 어두운 심정, 우둔, 재물성패, / 머리는 좋으나 허약, 단명, 재운에 풍파",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -11950,8 +11950,8 @@
   "radicalIndex": 10,
   "meaning": "cash; exchange, barter; weight; trigram ☱; hexagram ䷹",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "매사불성, 병약, 재난, 재앙, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -11986,8 +11986,8 @@
   "radicalIndex": 10,
   "meaning": "rabbit, hare",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "큰재난.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -12276,8 +12276,8 @@
   "radicalIndex": 12,
   "meaning": "eight; all around, all sides",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인내력부족, 고난, 고통, 이혼, 부도, 별거, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -12781,8 +12781,8 @@
   "radicalIndex": 14,
   "meaning": "dark, gloomy, night; deep",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 어두울 명",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -12817,8 +12817,8 @@
   "radicalIndex": 15,
   "meaning": "winter, 11th lunar month",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "관재구설, 파직, 이성문제 불성, 흉사, 자손불화. / 강성, 흉사, 자손 근심",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13401,7 +13401,7 @@
   "meaning": "culprit; murder; bad, sad",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "흉한일이 생긴다.",
+  "forbiddenReason": "뜻흉함: 흉할 흉",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13454,8 +13454,8 @@
   "radicalIndex": 17,
   "meaning": "go out, send out; stand; produce",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "허영심, 배우자덕없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13490,8 +13490,8 @@
   "radicalIndex": 18,
   "meaning": "knife; old coin; measure",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 칼 도",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13544,8 +13544,8 @@
   "radicalIndex": 18,
   "meaning": "divide; small unit of time etc.",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "쪼개진다, 과부, 고독, 이별. / 과부가 많다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13708,8 +13708,8 @@
   "radicalIndex": 18,
   "meaning": "beginning, initial, primary",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불행, 장애, 박약, 고난, 재난. / 끈기가 없고 나태, 고난, 재난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13998,8 +13998,8 @@
   "radicalIndex": 18,
   "meaning": "stab; prick, irritate; prod",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 찌를 자",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -14705,8 +14705,8 @@
   "radicalIndex": 18,
   "meaning": "sword, dagger, saber",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 칼 검",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -15357,8 +15357,8 @@
   "radicalIndex": 19,
   "meaning": "victory; excel, be better than",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "재앙, 실패, 중도좌절, 파란, 고독, 재난. / 활달하나 고독, 재난, 고난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -15611,8 +15611,8 @@
   "radicalIndex": 19,
   "meaning": "meritorious deed; merits; rank",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "매사불성, 부도, 시비, 이혼, 별거, 중 박수 점장이가 많다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16301,8 +16301,8 @@
   "radicalIndex": 24,
   "meaning": "ten, tenth; complete; perfect",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "숫자는 이름에 쓰지 않는다. 한계에왔다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16319,8 +16319,8 @@
   "radicalIndex": 24,
   "meaning": "thousand; many, numerous; very; (Cant.) a cheater, swindler",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "0 으로 끝나는 숫자는 피한다. 한계에 왔다. 혈육덕없다, 불운. / 치밀한 성격, 무덕, 타향살이, 불운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16391,8 +16391,8 @@
   "radicalIndex": 24,
   "meaning": "seventh earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "짐승의 이름은 사용하지 않는다, 강한 운명으로 작용한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16535,8 +16535,8 @@
   "radicalIndex": 24,
   "meaning": "south; southern part; southward",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 과부, 불행, 무당, (남자는 무관) / 남자는 무난하나 여자는 부모덕이 없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16625,8 +16625,8 @@
   "radicalIndex": 25,
   "meaning": "divine; observe; versify",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부부운나쁘다, 무당 점쟁이가 많다, 과부, 이혼, 별거.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16733,8 +16733,8 @@
   "radicalIndex": 26,
   "meaning": "fourth earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "짐승의 글자는 피한다, 강한 운명으로 작용된다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16968,8 +16968,8 @@
   "radicalIndex": 26,
   "meaning": "noble, high officer",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 과부, 이혼, 별거, 고통.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16986,8 +16986,8 @@
   "radicalIndex": 27,
   "meaning": "adversity, difficulty, distress",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 재앙 액",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -18017,8 +18017,8 @@
   "radicalIndex": 30,
   "meaning": "lucky, propitious, good",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "혈육정없다. 이혼, 부도, 불화, 조난, 불성, 굴곡, 천한인품. / 하천, 불화, 조난, 천한 인품으로 유도",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -18198,8 +18198,8 @@
   "radicalIndex": 30,
   "meaning": "sovereign, monarch, ruler, chief, prince",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "과도한 격(신성/존귀): 임금 군",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -18940,8 +18940,8 @@
   "radicalIndex": 30,
   "meaning": "life; destiny, fate, luck; an order, instruction",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "관재구설, 단명, 고독, 이혼, 별거, 고독, 고통, 재액. / 고독, 재액",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -19499,8 +19499,8 @@
   "radicalIndex": 30,
   "meaning": "sad, mournful, pitiful; pity",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 슬플 애",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -19643,8 +19643,8 @@
   "radicalIndex": 30,
   "meaning": "final exclamatory particle",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 고통, 고난,인덕없다. 이사 직장변동많이한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -19807,8 +19807,8 @@
   "radicalIndex": 30,
   "meaning": "weep, cry, wail",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 울 곡",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -20945,8 +20945,8 @@
   "radicalIndex": 30,
   "meaning": "like, love, enjoy; joyful thing",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "슬픔, 고독, 재산망친다, 형제불화, 비애, 파재, 단명, 화류계. / 형제 불화, 자손 수심, 단명",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -21108,8 +21108,8 @@
   "radicalIndex": 30,
   "meaning": "mourning; mourn; funeral",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 죽을 상",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -22899,7 +22899,7 @@
   "meaning": "four",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "남녀공히 병약, 단명, 고통, 고독, 조난. / 조난, 단명",
+  "forbiddenReason": "근현대 신생(발음연상): 넉 사 / 참고: knaming.org: 전통시대엔 인명에 사용됨. 死(죽을 사)와 발음이 같다는 이유로 근현대에 새로 기피 시작. 전통 근거는 약하나 현대 사회통념상 회피율 높음",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23314,8 +23314,8 @@
   "radicalIndex": 31,
   "meaning": "nation, country, nation-state",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 실패, 부도, 불행, 허약, 조난, 요절. / 정신이나 육체 허약, 쇠약, 조난이나 요절",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23494,8 +23494,8 @@
   "radicalIndex": 32,
   "meaning": "be at, in, on; consist in, rest",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "신체허약, 관재구설, 단명, 이혼, 별거, 고통, 고난.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23602,8 +23602,8 @@
   "radicalIndex": 32,
   "meaning": "earth; soil, ground; region",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "매사재액, 조난, 단명, 병고, 재화. / 기초는 좋으나 재액, 조난, 단명",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23928,8 +23928,8 @@
   "radicalIndex": 32,
   "meaning": "earth; feminine, female; trigram ☷; hexagram ䷁",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "우둔, 실패, 좌절, 이혼, 별거, 부도, 두통, 뇌출혈, 범, 토끼띠는 더욱 그러하다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -26616,8 +26616,8 @@
   "radicalIndex": 32,
   "meaning": "grave, mound; bulge; bulging",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 무덤 분",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27088,8 +27088,8 @@
   "radicalIndex": 33,
   "meaning": "ninth heavenly stem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "허약, 부부운불길, 이혼, 별거, 중풍, 재난, 사망.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27196,8 +27196,8 @@
   "radicalIndex": 33,
   "meaning": "old age, long life; lifespan",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "박명, 불행, 단명, 질병, 요절,이혼, 별거, 재물복없다, 부부생리사별. / 단명, 하천",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27268,8 +27268,8 @@
   "radicalIndex": 35,
   "meaning": "summer; great, grand, big",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "만사파란 불성, 고난, 고통, 부도, 뇌출혈. / 파란 곡절, 불성",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27322,8 +27322,8 @@
   "radicalIndex": 36,
   "meaning": "evening, night, dusk; slanted",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "어둠, 불행, 좌절, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27340,8 +27340,8 @@
   "radicalIndex": 36,
   "meaning": "out, outside, external; foreign",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부모형제 부부불길, 재물파산, 병약, 고통, 이혼, 별거.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27502,8 +27502,8 @@
   "radicalIndex": 37,
   "meaning": "big, great, vast, large, high",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "실패, 이혼, 부도, 별거, 동생이쓰면 형이무능, 암, 불치병, 불의사고.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27521,7 +27521,7 @@
   "meaning": "sky, heaven; god, celestial",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "변덕, 관재구설, 재물복없다, 천박, 축첩, 재혼, 이혼, 별거. / 극도로 잘되거나 천하게 된다. 무덕, 빈한",
+  "forbiddenReason": "과도한 격(신성/존귀): 하늘 천 / 참고: 주의: knaming.org에 따르면 '이천보','유명천' 등 하늘을 보좌/따른다는 문맥이면 허용된 실제 인명 사례 있음. 전면 차단보다 조합 문맥 검토 권장",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27538,8 +27538,8 @@
   "radicalIndex": 37,
   "meaning": "very, too, much; big; extreme",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "장남이나 장녀만이 사용할 수가 있다. 동생이 쓰면 형이 망한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27828,8 +27828,8 @@
   "radicalIndex": 37,
   "meaning": "offer; receive; serve; respect",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "남녀공히 인덕없다, 낭비, 고통 고독.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -28283,8 +28283,8 @@
   "radicalIndex": 38,
   "meaning": "woman, girl; feminine; Kangxi radical 38; 10th lunar mansion, determinative star ε Aquarii (Albali)",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "하천, 불의 재난, 산재, 고난, 고독",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -28301,8 +28301,8 @@
   "radicalIndex": 38,
   "meaning": "slave, servant",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 종 노",
   "verificationStatus": "confirmed",
   "source": [
    "unihan_edu",
@@ -28356,8 +28356,8 @@
   "radicalIndex": 38,
   "meaning": "crafty, villainous, false",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 간사할/간음할 간",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -28392,8 +28392,8 @@
   "radicalIndex": 38,
   "meaning": "good, excellent, fine; well",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "주거불안, 실패, 가정불화, 속성속패, 이혼, 별거. / 시종이 다르다. 무산, 고뇌",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -29258,8 +29258,8 @@
   "radicalIndex": 38,
   "meaning": "begin, start; then, only then",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "장남이나 장녀만이 사용할 수가 있다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -29601,7 +29601,7 @@
   "meaning": "adultery, debauchery; debauch",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "간사스런일이 생겨난다. 가정불화, 불성, 재난, 불화.",
+  "forbiddenReason": "뜻흉함: 간사할/간음할 간",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -29636,8 +29636,8 @@
   "radicalIndex": 38,
   "meaning": "brother's child",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "가족관계 호칭: 조카 질",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -29672,8 +29672,8 @@
   "radicalIndex": 38,
   "meaning": "beauty; imperial concubine",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고생, 손해, 자립, 개척, 불운, 결혼후 경제활동해야한다. 남편돕느라 힘빠진다. / 자립, 개척, 고생, 불운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "ocr",
@@ -32171,8 +32171,8 @@
   "radicalIndex": 38,
   "meaning": "enjoy; play, amuse oneself",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 고난, 고통, 부도, 화류계.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -32607,8 +32607,8 @@
   "radicalIndex": 39,
   "meaning": "offspring, child; fruit, seed of; first earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "천박, 가정불화, 불행, 이혼, 별거, 두통, 심장마비, 박약, 고독, 고통, 단명. / 재액, 재앙, 불화, 정신 박약, 축미생은 불용",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -32787,8 +32787,8 @@
   "radicalIndex": 39,
   "meaning": "filial piety, obedience; mourning",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불효, 조실부모, 고생, 고난, 무덕, 단절. / 충직하나 무덕, 고생, 단절, 고난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -32841,8 +32841,8 @@
   "radicalIndex": 39,
   "meaning": "quarter of year; season; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "장남이 쓰면 불길하다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -33256,8 +33256,8 @@
   "radicalIndex": 40,
   "meaning": "complete, finish, settle; whole",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 재난, 장자의 이름에는 쓰나, 동생이 쓰면 형이 망한다. / 강직, 성패 반복, 고독, 고난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -33346,8 +33346,8 @@
   "radicalIndex": 40,
   "meaning": "lineage, ancestry; ancestor, clan",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "장남이나 장녀만이 사용할 수가 있다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -33491,8 +33491,8 @@
   "radicalIndex": 40,
   "meaning": "guest, traveller; customer",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "객사할 수가 있게된다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -33635,8 +33635,8 @@
   "radicalIndex": 40,
   "meaning": "to slaughter; to rule",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "신체허약, 수술, 관재, 액운, 이혼, 별거, 패가망신.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -33653,8 +33653,8 @@
   "radicalIndex": 40,
   "meaning": "injure, harm; destroy, kill",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 해할 해",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -33762,8 +33762,8 @@
   "radicalIndex": 40,
   "meaning": "stop, rest, lodge, stay overnight; constellation",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "숙, 수로 음이 두가지로 되는자는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -33852,8 +33852,8 @@
   "radicalIndex": 40,
   "meaning": "to respect, reverence; respectfully; third earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 병고, 불손, 과격, 申生과 酉生은 사용불가. / 불손, 과격, 고독, 병고, 신유생은 불용",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -33924,8 +33924,8 @@
   "radicalIndex": 40,
   "meaning": "abundant, ample; rich, wealthy",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "비애, 빈천, 천박, 배신, 관재구설, 이혼, 별거, 고독, 부도. / 처음은 좋으나 쇠패, 단명 불운, 여성은 무난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -34178,8 +34178,8 @@
   "radicalIndex": 40,
   "meaning": "real, true, solid, honest",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 고통, 고독, 부도, 과부, 파란, 고독, 남편을 극한다. / 정결한 성격, 단절, 고독, 조난, 불길",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -34378,8 +34378,8 @@
   "radicalIndex": 40,
   "meaning": "treasure, jewel; precious, rare",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 재물없다, 인덕없다, 애정번뇌, 부부운 나쁘다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -34594,8 +34594,8 @@
   "radicalIndex": 41,
   "meaning": "respect, revere, venerate; honor",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "과도한 격(신성/존귀): 높을 존",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -34974,8 +34974,8 @@
   "radicalIndex": 44,
   "meaning": "urine; urinate",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 오줌 뇨",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -35373,8 +35373,8 @@
   "radicalIndex": 46,
   "meaning": "mountain, hill, peak",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 슬픔, 불성, 불화, 부도, 인덕없다, 융통성없다, 고지식. / 고지식, 강직, 불우, 비운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -35897,8 +35897,8 @@
   "radicalIndex": 46,
   "meaning": "mountain peak; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인정없고 잔혹하다, 부부이별.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -36186,8 +36186,8 @@
   "radicalIndex": 46,
   "meaning": "peak, summit; hump of camel",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인덕없다, 낭비, 고통, 고독.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -36204,8 +36204,8 @@
   "radicalIndex": 46,
   "meaning": "peak, summit; hump of camel",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "무너진다, 떨어진다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -37616,8 +37616,8 @@
   "radicalIndex": 46,
   "meaning": "high, steep, precipitous",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 험할 험",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -37923,8 +37923,8 @@
   "radicalIndex": 46,
   "meaning": "cliff, precipice; cave, grotto",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불운, 고난, 고통, 이혼, 별거, 병약, 부도, 인덕없다, 중,무당,점장이가 많다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -37977,8 +37977,8 @@
   "radicalIndex": 47,
   "meaning": "stream, river; flow; boil",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "분산, 실패, 고난, 고독. / 산재, 형제 불목, 고난, 고독",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -38193,8 +38193,8 @@
   "radicalIndex": 49,
   "meaning": "self, oneself; personal, private; 6th heavenly stem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "신체부위의 일부분이라 이름자에 사용하지 않음.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -38229,8 +38229,8 @@
   "radicalIndex": 49,
   "meaning": "sixth earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "짐승의 이름은 사용하지 않는다, 강한 운명으로 작용한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -39186,8 +39186,8 @@
   "radicalIndex": 51,
   "meaning": "flat, level, even; peaceful",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "역경많다, 질병, 잔병치레, 중도좌절, 경솔, 단절, 쇠약. / 평온한 성격이나 경솔, 단절, 쇠약",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -39259,8 +39259,8 @@
   "radicalIndex": 51,
   "meaning": "luck(ily), favor, fortunately",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불행, 질투심, 융통성, 관재구설, 고난, 고통, 단명, 시비에 시달린다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -39619,8 +39619,8 @@
   "radicalIndex": 53,
   "meaning": "7th heavenly stem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "허례, 배우자 복없다, 인덕없다, 고독, 질병, 불구, 수술, 폐질, 이혼, 별거. / 머리는 좋으나 부모덕이 없고 막힘이 많아 고독하고 재운 불리하고 불구, 폐질",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -39872,8 +39872,8 @@
   "radicalIndex": 53,
   "meaning": "peaceful, quiet; happy, healthy",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인덕없다, 실패, 질병, 불구.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -41031,8 +41031,8 @@
   "radicalIndex": 57,
   "meaning": "weak; fragile, delicate",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 약할 약",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -42296,8 +42296,8 @@
   "radicalIndex": 60,
   "meaning": "ethics, morality, virtue",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부모형제덕이 없다. 박덕, 불행, 여성은 부부불화. / 말년 고독",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -42387,8 +42387,8 @@
   "radicalIndex": 61,
   "meaning": "heart; mind, intelligence; soul; 5th lunar mansion, determinative star α Scorpii (Antares)",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인정없다, 매사불성, 병약, 고독, 신체허약, 이혼, 별거, 재물덕없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -42750,8 +42750,8 @@
   "radicalIndex": 61,
   "meaning": "loyalty, devotion, fidelity",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "조난, 단명, 매사장애, 생사극단.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -43114,8 +43114,8 @@
   "radicalIndex": 61,
   "meaning": "anger, rage, passion; angry",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 성낼 노",
   "verificationStatus": "confirmed",
   "source": [
    "unihan_edu",
@@ -43423,8 +43423,8 @@
   "radicalIndex": 61,
   "meaning": "strange, unusual, peculiar",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 기이할 괴",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -44508,8 +44508,8 @@
   "radicalIndex": 61,
   "meaning": "suffer, worry about; suffering",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 근심 환",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -45179,8 +45179,8 @@
   "radicalIndex": 61,
   "meaning": "evil, wicked, bad, foul",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 악할 악",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -45432,8 +45432,8 @@
   "radicalIndex": 61,
   "meaning": "anxiety; to worry about, be anxious",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 시름 수",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -45703,8 +45703,8 @@
   "radicalIndex": 61,
   "meaning": "love, be fond of, like",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "비애, 사랑결여, 이혼, 별거, 박약, 사고, 두통. / 비애, 부부 이별, 성질은 온순하나 가정 불화, 정신박약",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -46246,8 +46246,8 @@
   "radicalIndex": 61,
   "meaning": "long for, desire; admire",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "생각이 짧아진다. 어두운 생각을한다. 망각. 시련.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47854,8 +47854,8 @@
   "radicalIndex": 61,
   "meaning": "love; long for, yearn for; love",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "지나친 생각은 혼란을 가져온다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47908,8 +47908,8 @@
   "radicalIndex": 62,
   "meaning": "5th heavenly stem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "다섯 번째 천간이라 이름자에 사용하지 않는다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47926,8 +47926,8 @@
   "radicalIndex": 62,
   "meaning": "eleventh earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "개같은 삶을 살게된다. 짐승의 이름은 사용하지 않는다, 팔자기박.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47980,8 +47980,8 @@
   "radicalIndex": 62,
   "meaning": "completed, finished, fixed",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이루지 못한다, 고독, 실패. 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -48541,8 +48541,8 @@
   "radicalIndex": 64,
   "meaning": "hand",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "신체부분은 이름에 쓰지 않는다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -50366,8 +50366,8 @@
   "radicalIndex": 64,
   "meaning": "a load carried on the shoulders; to carry",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 실패, 질병, 박약. / 인내력이 부족, 질병",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -50493,8 +50493,8 @@
   "radicalIndex": 64,
   "meaning": "raise, excite, arouse action",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 중도좌절, 건강악화.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -54891,8 +54891,8 @@
   "radicalIndex": 66,
   "meaning": "fast, quick, clever, smart",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "성격날카롭다, 불성, 불행, 단명, 정신박약. 대인관계 장애가 많다. / 성질이 불같고 날카로워 불성, 불화, 정신 박약, 단명운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -55018,7 +55018,7 @@
   "meaning": "be defeated, decline, fail",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "이루지 못한다, 매사불성, 이혼, 단명.",
+  "forbiddenReason": "뜻흉함: 깨뜨릴 패",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -55469,8 +55469,8 @@
   "radicalIndex": 67,
   "meaning": "literature, culture, writing",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부모덕없고, 부부운 장애가 많다. / 부모 부부운 박덕, 시상에 괴로움",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -55812,8 +55812,8 @@
   "radicalIndex": 69,
   "meaning": "new, recent, fresh, modern",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "낡아진다, 만사불성, 고독, 질병, 병약, 단명. 용두사미. / 성질은 온순하나 고독, 고뇌, 병약, 단명",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -56211,8 +56211,8 @@
   "radicalIndex": 72,
   "meaning": "sun; day; daytime",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "중도좌절, 신체허약, 불치병, 불행, 조난, 이혼, 부도, 고독. / 부모덕 없고 깨끗한 성격이나 고독",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -56680,8 +56680,8 @@
   "radicalIndex": 72,
   "meaning": "light of sun; good, proper",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부부불길, 실패, 이혼, 별거, 구설수, 문학 언변 예술 소질많다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -56717,8 +56717,8 @@
   "radicalIndex": 72,
   "meaning": "bright, light, brilliant; clear",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "파란곡절, 불성, 실패, 단명, 굴곡심하다, 불운. / 성품이 온순하고 머리 좋으나 실패, 단명, 굴곡",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -56898,8 +56898,8 @@
   "radicalIndex": 72,
   "meaning": "a star, planet; any point of light; 25th lunar mansion, determinative star α Hydrae (Alphard)",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "만사불운, 고독, 과부, 단명, 시비, 구설, 이혼, 별거, 병약, 고통. 외롭다. 요절. / 꿈은 크나 이루어지지 않아 불행, 단명, 헛수고, 허황",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -56989,8 +56989,8 @@
   "radicalIndex": 72,
   "meaning": "spring; wanton",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "의지박약, 중도좌절, 허영심, 단명, 여자는 이성관계복잡, 이혼, 부도. / 의지 박약, 단절, 고독, 여자는 이성관계 복잡, 배우자운 불길",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -57279,8 +57279,8 @@
   "radicalIndex": 72,
   "meaning": "time, season; era, age, period",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "흥망성쇠, 파란곡절, 기복이심하다, 이혼, 별거, 구설, 재난.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -57910,8 +57910,8 @@
   "radicalIndex": 72,
   "meaning": "crystal; clear, bright; radiant",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "관재구설, 배우자복없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -59415,8 +59415,8 @@
   "radicalIndex": 73,
   "meaning": "more, still further, much more; to change, alter",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "갱, 경으로 음이 두가지로 되는 글자는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -59631,8 +59631,8 @@
   "radicalIndex": 74,
   "meaning": "moon; month; Kangxi radical 74",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 부도, 고독, 불성, 화류계. / 감정 풍부, 낭만적, 의지 박약, 불성, 고독, 호에는 무관",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -59994,8 +59994,8 @@
   "radicalIndex": 75,
   "meaning": "not yet; eighth earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "종말, 흉, 부모형제 덕 없다. 고독. 팔자기박.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -60012,8 +60012,8 @@
   "radicalIndex": 75,
   "meaning": "final, last, end; insignificant",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "배우자 운없다, 신체허약, 이혼, 별거, 고독, 재물파재, 고통, 단명. / 종말, 신고, 고독, 무덕, 부부운 박약",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -60682,8 +60682,8 @@
   "radicalIndex": 75,
   "meaning": "east, eastern, eastward",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부도, 실패, 좌절, 이혼, 별거, 근심, 걱정, 뇌출혈, 고혈압, 닭띠 더욱그렇다. / 단정하나 근심, 걱정, 자존, 수심",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -60865,8 +60865,8 @@
   "radicalIndex": 75,
   "meaning": "pine tree; fir tree",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 재물손실, 박약, 남편건강헤친다. / 투지는 있으나 재운, 박약, 산재, 단명, 고독, 불길",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -61262,8 +61262,8 @@
   "radicalIndex": 75,
   "meaning": "branches, limbs; branch off",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "가정불화, 고독.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -61534,8 +61534,8 @@
   "radicalIndex": 75,
   "meaning": "handle, lever, knob; authority",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 부도, 가정풍파.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -61969,8 +61969,8 @@
   "radicalIndex": 75,
   "meaning": "pillar, post; support; lean on",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "육친덕없다, 파산, 고독, 신음. / 머리는 좋으나 육친 무덕, 파산, 고독, 신음",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -62513,8 +62513,8 @@
   "radicalIndex": 75,
   "meaning": "root, base(d on); foundation",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "신체허약, 부모덕없다, 이혼, 부도, 자녀운도없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -62567,8 +62567,8 @@
   "radicalIndex": 75,
   "meaning": "to cultivate, plant; to care for plants",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 단명, 부도. 이사 직장변동많이한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -62639,8 +62639,8 @@
   "radicalIndex": 75,
   "meaning": "cassia or cinnamon",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 과부, 화류계, 이혼.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -62657,8 +62657,8 @@
   "radicalIndex": 75,
   "meaning": "peach; marriage; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "허영, 고난, 박약, 슬픔, 병고, 이별. / 끈기가 없고 허영, 고난, 이별, 슬픔, 병고",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -63126,8 +63126,8 @@
   "radicalIndex": 75,
   "meaning": "plums; prunes; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "과부, 화류계, 이혼, 별거, 허영, 향락, 이별, 고독, 병고, 바람, 부도. / 의지는 강하나 허영, 향락, 과부, 이별, 슬픔, 고독, 병고",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -64248,8 +64248,8 @@
   "radicalIndex": 75,
   "meaning": "plant, trees, plants; grow",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 부모덕없다, 신체허약, 고독, 과부, 화류계, 인덕없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -65097,8 +65097,8 @@
   "radicalIndex": 75,
   "meaning": "extreme, utmost, furthest, final",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 부도, 부모덕없다, 가난해진다. / 부모덕이 없고 가난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -65494,8 +65494,8 @@
   "radicalIndex": 75,
   "meaning": "glory, honor; flourish, prosper",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "근심걱정, 매사불성, 재난, 재앙, 고독, 고통, 이혼, 별거, 부부불길. / 단정하나 재난, 재앙, 수심",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -68432,8 +68432,8 @@
   "radicalIndex": 76,
   "meaning": "cheat, double-cross, deceive",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 속일 기",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -68918,8 +68918,8 @@
   "radicalIndex": 77,
   "meaning": "military; martial, warlike",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부부, 자녀운 불길, 이혼, 별거, 부도, 고독.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69082,7 +69082,7 @@
   "meaning": "die; dead; death",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "불행, 단명, 이혼, 별거. 죽을일이 생겨난다.",
+  "forbiddenReason": "뜻흉함: 죽을 사",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69153,8 +69153,8 @@
   "radicalIndex": 78,
   "meaning": "misfortune, disaster, calamity",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 재앙 앙",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69225,8 +69225,8 @@
   "radicalIndex": 78,
   "meaning": "different, special, unusual",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 죽일 수 / 참고: 주의: 殊의 본래 훈은 '다를 수'. 원 출처 표기 오류 가능성 있어 DB 반영 전 재검증 권장",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69516,7 +69516,7 @@
   "meaning": "kill, slaughter, murder; hurt; to pare off, reduce, clip",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "허무한 종말. / 허무한 종말",
+  "forbiddenReason": "뜻흉함: 죽일 살",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69695,8 +69695,8 @@
   "radicalIndex": 80,
   "meaning": "mother; female elders; female",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "가족관계 호칭: 어미 모",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69731,8 +69731,8 @@
   "radicalIndex": 80,
   "meaning": "poison, venom; poisonous",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 독 독",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -70523,8 +70523,8 @@
   "radicalIndex": 85,
   "meaning": "filthy, dirty, impure, polluted",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 더러울 오",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -70613,8 +70613,8 @@
   "radicalIndex": 85,
   "meaning": "large river; the Yangzi; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 과부, 화류계.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -71010,8 +71010,8 @@
   "radicalIndex": 85,
   "meaning": "water, irrigate; fertile, rich",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "신체허약, 재물손실, 고독, 과부, 단명, 이혼, 별거.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -71573,8 +71573,8 @@
   "radicalIndex": 85,
   "meaning": "govern, regulate, administer",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "종결, 허무. / 종결, 허무",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -71936,8 +71936,8 @@
   "radicalIndex": 85,
   "meaning": "law, rule, regulation, statute; France, French",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "재해, 재난, 곤궁, 고지식. / 고지식, 재해, 재난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -72135,8 +72135,8 @@
   "radicalIndex": 85,
   "meaning": "cry, sob, weep",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 울 읍",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -72280,8 +72280,8 @@
   "radicalIndex": 85,
   "meaning": "great, exalted, superior; big; hexagram ䷊",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "동생이쓰면 형이 제역할못한다, 중풍, 뇌출혈, 치매, 부도, 욕망과다, 교도소행. / 욕망 과다, 게으르고 흥망의 기복, 불운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -72316,8 +72316,8 @@
   "radicalIndex": 85,
   "meaning": "dive; swim",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 고독, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -72589,8 +72589,8 @@
   "radicalIndex": 85,
   "meaning": "name of a river in Shandong",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "좌절, 실패, 신체허약, 이혼, 별거, 병약, 고통.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -72663,8 +72663,8 @@
   "radicalIndex": 85,
   "meaning": "cave, grotto; ravine; hole",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "동, 통으로 두가지 음으로 되는글자는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -73567,8 +73567,8 @@
   "radicalIndex": 85,
   "meaning": "sea, ocean; maritime",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "기복이심하고 파란곡절이많다, 이혼, 별거, 부도, 교도소. / 파란곡절",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -74435,8 +74435,8 @@
   "radicalIndex": 85,
   "meaning": "good, pure, virtuous, charming",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "독선, 질병, 이혼, 별거, 고독, 단명, 치매, 뇌출혈, 애정관계복잡하다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -74545,8 +74545,8 @@
   "radicalIndex": 85,
   "meaning": "tears; weep, cry",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 눈물 루",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -74781,8 +74781,8 @@
   "radicalIndex": 85,
   "meaning": "obscene, licentious, lewd",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 음란할 음",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -77243,8 +77243,8 @@
   "radicalIndex": 85,
   "meaning": "fill; full, satisfied",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "패가망신, 중반이후 재물문제 고통, 빈곤, 부부운 나쁘다. 후반곤궁. / 초반 부운, 후반 빈곤",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -79384,8 +79384,8 @@
   "radicalIndex": 85,
   "meaning": "muddy, turbid, dirty, filthy",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 흐릴 탁",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -81207,8 +81207,8 @@
   "radicalIndex": 86,
   "meaning": "calamity, disaster, catastrophe",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "재앙이 생겨난다, 사고, 질병, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -81715,8 +81715,8 @@
   "radicalIndex": 86,
   "meaning": "bright, luminous; glorious",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 단명. 사고, 인덕없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -81842,8 +81842,8 @@
   "radicalIndex": 86,
   "meaning": "fiery, violent, vehement, ardent",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "어둠, 암흑, 발전없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -82694,8 +82694,8 @@
   "radicalIndex": 86,
   "meaning": "weld, solder",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "손실, 불우, 실수.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -82803,8 +82803,8 @@
   "radicalIndex": 86,
   "meaning": null,
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 고통.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -83437,8 +83437,8 @@
   "radicalIndex": 86,
   "meaning": "bright, splendid, glorious",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 심장아픔, 시비, 구설, 암, 단명, 부부운 자녀운 불길하다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -83690,8 +83690,8 @@
   "radicalIndex": 86,
   "meaning": "dim light, glimmer; warm, bright",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 고독, 고난, 자녀운없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -84652,8 +84652,8 @@
   "radicalIndex": 87,
   "meaning": "to dispute, fight, contend, strive",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 다툴 쟁",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -84724,8 +84724,8 @@
   "radicalIndex": 88,
   "meaning": "father; Kangxi radical 88",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "가족관계 호칭: 아비 부",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -85121,7 +85121,7 @@
   "meaning": "cow, ox, bull; Kangxi radical 93; 9th lunar mansion, determinative star β Capricorni (Dabih)",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "동물의 이름자는 피한다.",
+  "forbiddenReason": "동물이름(비하): 소 우",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -85557,7 +85557,7 @@
   "meaning": "dog; radical number 94",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "감정짧고 동물같은 생각한다. 동물의 이름자는 피한다.",
+  "forbiddenReason": "동물이름(비하): 개 견",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -85574,8 +85574,8 @@
   "radicalIndex": 94,
   "meaning": "commit crime, violate; criminal",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 범할 범",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -85665,8 +85665,8 @@
   "radicalIndex": 94,
   "meaning": "insane, mad; violent; wild",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 미칠 광",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -85773,8 +85773,8 @@
   "radicalIndex": 94,
   "meaning": "dog, Canis familiaris",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "동물의 이름자는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -86334,8 +86334,8 @@
   "radicalIndex": 94,
   "meaning": "cat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "동물이름(비하): 고양이 묘",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -86896,8 +86896,8 @@
   "radicalIndex": 95,
   "meaning": "deep, profound, abstruse; Kangxi radical 95",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인정없고, 변덕많고, 화류계.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -86971,8 +86971,8 @@
   "radicalIndex": 96,
   "meaning": "jade, precious stone, gem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 과부, 단명, 실패, 남편 자식 출세길 막는다, 불행, 고독. / 쇠패, 산재, 고독, 신음",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -86990,7 +86990,7 @@
   "meaning": "king, ruler; royal; surname",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "모함, 실패.",
+  "forbiddenReason": "과도한 격(신성/존귀): 임금 왕",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -87734,8 +87734,8 @@
   "radicalIndex": 96,
   "meaning": "precious, valuable, rare",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "중도좌절, 과부, 박복, 여자극부, 자손불화, 고독, 고난. / 고집 세고 무덕, 자손운 불길, 고독, 고난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -87970,8 +87970,8 @@
   "radicalIndex": 96,
   "meaning": "precious stone, gem, jewel, pearl",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "신체허약, 부부불길, 애정번뇌.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -88982,8 +88982,8 @@
   "radicalIndex": 96,
   "meaning": "Chinese lute or guitar",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "관재구설, 손재, 파란, 가정풍파, 옥고치름, 과부, 화류계.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -91209,8 +91209,8 @@
   "radicalIndex": 100,
   "meaning": "life, living, lifetime; birth",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "구사일생, 파란만장, 이혼, 부도, 별거, 고통, 인연인덕없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -91462,8 +91462,8 @@
   "radicalIndex": 102,
   "meaning": "armor, shell; fingernails; 1st heavenly stem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "실속없다, 삶이 힘든다, 관재구설, 질병.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -91480,8 +91480,8 @@
   "radicalIndex": 102,
   "meaning": "to state to a superior, report; extend; ninth earthly branch",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "짐승의 이름자는 사용하지 않는다, 팔자기박, 강한 운으로 작용한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -91498,8 +91498,8 @@
   "radicalIndex": 102,
   "meaning": "male, man; son; baron; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "배우자덕없다, 과부, 가정불화.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -91788,8 +91788,8 @@
   "radicalIndex": 102,
   "meaning": "stop, halt; stay, detain, keep",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불성, 불화, 부진의 불운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -92404,8 +92404,8 @@
   "radicalIndex": 104,
   "meaning": "epidemic, plague, pestilence",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 염병 역",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -92657,7 +92657,7 @@
   "meaning": "illness, sickness, disease",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "아플일이 생겨난다. 질병, 단명.",
+  "forbiddenReason": "뜻흉함: 병 병",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -92854,8 +92854,8 @@
   "radicalIndex": 104,
   "meaning": "pain, ache; sorry, sad; bitter",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 아플 통",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -94017,8 +94017,8 @@
   "radicalIndex": 105,
   "meaning": "10th heavenly stem",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "열 번째 천간이라 이름자에 사용하지 않음.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -94089,8 +94089,8 @@
   "radicalIndex": 106,
   "meaning": "one hundred; numerous, many",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "0으로 끝나는 수의 글자는 피한다, 한계에 왔다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -94197,8 +94197,8 @@
   "radicalIndex": 106,
   "meaning": "royal, imperial; ruler, superior",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "과도한 격(신성/존귀): 임금 황",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -94900,8 +94900,8 @@
   "radicalIndex": 108,
   "meaning": "rob, steal; thief, bandit",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 훔칠 도",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -95135,8 +95135,8 @@
   "radicalIndex": 109,
   "meaning": "blind; unperceptive, shortsighted",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 소경 맹",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -95550,8 +95550,8 @@
   "radicalIndex": 109,
   "meaning": "real, actual, true, genuine",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불행, 가짜, 허망, 공허, 재난, 불운. / 성질은 온유하나 재난, 불운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -97156,8 +97156,8 @@
   "radicalIndex": 112,
   "meaning": "stone, rock, mineral; Kangxi radical 112",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고집세다, 중도좌절, 비천, 천격, 실패, 불성, 이혼, 별거, 부도. / 옹고집, 꾀하는 일마다 실패, 박명",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -97556,7 +97556,7 @@
   "meaning": "break, ruin, destroy; rout",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "깨진다, 판란곡절이 많다.",
+  "forbiddenReason": "뜻흉함: 깨질 파",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -99517,8 +99517,8 @@
   "radicalIndex": 113,
   "meaning": "ancestor, forefather; grandfather",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "가족관계 호칭: 조상 조",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -99644,7 +99644,7 @@
   "meaning": "spirit, god, supernatural being",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "무섭고 위험하다. / 무섭고 위험",
+  "forbiddenReason": "과도한 격(신성/존귀): 귀신/신 신",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -99970,8 +99970,8 @@
   "radicalIndex": 113,
   "meaning": "happiness, good fortune, blessing",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불행, 과부, 재난, 복을헤친다, 빈천, 부도, 고독, 이별, 별거, 암, 병약. / 성질이 거칠어져 고난, 재난, 고독, 빈천",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -100225,8 +100225,8 @@
   "radicalIndex": 113,
   "meaning": "social custom; manners; courtesy; rites",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "예의가 없다, 무지하다, 안하무인격이다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -100443,8 +100443,8 @@
   "radicalIndex": 115,
   "meaning": "ear of grain; flowering, luxuriant; refined, elegant, graceful",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "우둔해진다. 명석하지 못하다, 퇴보, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -100533,8 +100533,8 @@
   "radicalIndex": 115,
   "meaning": "grasp, hold; bundle; authority",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 부도, 병약, 고통, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -100570,8 +100570,8 @@
   "radicalIndex": 115,
   "meaning": "autumn, fall; year",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불운, 고독, 이혼, 별거, 단명, 부부정없다. / 정신 박약, 불운, 단명, 고독",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -100642,8 +100642,8 @@
   "radicalIndex": 115,
   "meaning": "empty grain or rice husk, chaff",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 쭉정이 비",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -102881,8 +102881,8 @@
   "radicalIndex": 117,
   "meaning": "child, boy, servant boy; virgin",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "매사불성, 불신, 이혼, 별거, 고독, 구설수, 생각이 어리다. 소견이 좁다. / 막힘, 고독, 고뇌, 우매",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -103062,8 +103062,8 @@
   "radicalIndex": 118,
   "meaning": "bamboo; flute; Kangxi radical 118",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "실패, 좌절, 고독, 박덕, 박복, 식물의 이름자는 피한다. / 불굴의 의지, 박복, 수심",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -103260,8 +103260,8 @@
   "radicalIndex": 118,
   "meaning": "smile, laugh, giggle; snicker",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불운, 불성, 박약, 비애, 불의재난. / 뜻밖의 재앙으로 비참한 운명",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -105446,8 +105446,8 @@
   "radicalIndex": 119,
   "meaning": "powder, face powder; plaster",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "과부, 고독, 이별, 이혼, 별거, 부도, 인덕없다. / 과부가 많다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -106138,8 +106138,8 @@
   "radicalIndex": 120,
   "meaning": "silk; Kangxi radical 120",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 박복. / 극히 적다. 고독, 박복",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -106283,8 +106283,8 @@
   "radicalIndex": 120,
   "meaning": "red, vermillion; blush, flush",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 불운, 단명, 만사불성, 경솔, 이혼, 별거, 화류계. / 경솔, 경박, 고독, 불운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -106573,8 +106573,8 @@
   "radicalIndex": 120,
   "meaning": "in disorder, scattered, tangled",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "과부, 고독, 이별.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -107440,8 +107440,8 @@
   "radicalIndex": 120,
   "meaning": "silk; fine thread; wire; strings",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "관재구설, 재물운이 박하다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -110838,8 +110838,8 @@
   "radicalIndex": 123,
   "meaning": "beautiful, pretty; pleasing",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 팔자기박, 고독, 조난, 병약, 단명, 부부불화, 이별, 허영심, 바람핀다. / 온유하나 허영, 사치, 조난, 비운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -111074,8 +111074,8 @@
   "radicalIndex": 123,
   "meaning": "right conduct, righteousness",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 불행.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -111472,8 +111472,8 @@
   "radicalIndex": 124,
   "meaning": "color green; kingfisher",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "배신, 생리사별.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -113137,8 +113137,8 @@
   "radicalIndex": 130,
   "meaning": "shoulders; to shoulder; bear",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "사람의 신체부위는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -114871,8 +114871,8 @@
   "radicalIndex": 130,
   "meaning": "knee",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "사람의 신체부위는 이름자에 사용하지 않는다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -115904,8 +115904,8 @@
   "radicalIndex": 136,
   "meaning": "dance, posture, prance; brandish",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "무속인이 되거나, 신체허약, 재물낭비.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -116393,8 +116393,8 @@
   "radicalIndex": 138,
   "meaning": "good, virtuous, respectable",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "배짱은 크나 단절운이다. / 배짱은 크나 단절운",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -116989,8 +116989,8 @@
   "radicalIndex": 140,
   "meaning": "fragrance, aroma; perfume",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 과부, 고독, 병약, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -117079,8 +117079,8 @@
   "radicalIndex": 140,
   "meaning": "flower; blossoms",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부부이별, 고독, 단명, 유흥, 패가망신, 화류계. / 온유하나 줏대 없어 유흥, 사치, 패가 망신, 화류계, 하천",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -117550,8 +117550,8 @@
   "radicalIndex": 140,
   "meaning": "bitter; hardship, suffering",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 쓸/괴로울 고",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -117640,8 +117640,8 @@
   "radicalIndex": 140,
   "meaning": "petal, flower, leaf; brave, a hero; England, English",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부부불길, 이혼, 별거, 병약, 고독, 성격거칠다, 인덕없다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -119248,8 +119248,8 @@
   "radicalIndex": 140,
   "meaning": "chrysanthemum",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 이혼, 별거, 고생, 병약, 단명, 불성, 불운, 간질환. / 매우 약하다. 고독과 불운의 연속, 무덕, 박약",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -119519,8 +119519,8 @@
   "radicalIndex": 140,
   "meaning": "flowery; illustrious; Chinese",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 부부운나쁘다, 재난, 화류계.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -119900,8 +119900,8 @@
   "radicalIndex": 114,
   "meaning": "ten thousand; innumerable",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 암, 부도, 병약, 성과가 없다. 한계에 왔다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -121182,8 +121182,8 @@
   "radicalIndex": 140,
   "meaning": "lotus, water lily; paradise",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 과부 ,무당, 화류계, 부도, 병약, 단명, 부부자녀운 나쁘다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123354,8 +123354,8 @@
   "radicalIndex": 140,
   "meaning": "orchid; elegant, graceful",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "변덕, 배우자복없다, 병약, 고독, 이혼, 별거, 고집 , 과부.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123463,8 +123463,8 @@
   "radicalIndex": 141,
   "meaning": "tiger; brave, fierce; surname",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "단명, 고독, 가난, 병약, 교도소, 불손, 과격. 자식덕없다. / 불손, 과격, 고독, 병고, 신유생은 불용",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124095,7 +124095,7 @@
   "meaning": "snake",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "짐승같은 삶을 살게된다. 냉정, 말조심, 재물덕이 없다.",
+  "forbiddenReason": "동물이름(비하): 뱀 사",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125940,8 +125940,8 @@
   "radicalIndex": 142,
   "meaning": "barbarians; barbarous, savage",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 오랑캐 만",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125958,8 +125958,8 @@
   "radicalIndex": 143,
   "meaning": "blood; Kangxi radical 143",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 피 혈",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -126032,8 +126032,8 @@
   "radicalIndex": 144,
   "meaning": "go; walk; move, travel; circulate; Kangxi radical 144",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "항, 행으로 두가지 음으로 불려지는 글자는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -126338,8 +126338,8 @@
   "radicalIndex": 145,
   "meaning": "decline, falter, decrease; weaken",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 쇠할 쇠",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -126843,8 +126843,8 @@
   "radicalIndex": 145,
   "meaning": "cut out; decrease",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 병약, 부도. 이사 직장변동 많이한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -133064,8 +133064,8 @@
   "radicalIndex": 151,
   "meaning": "abundant, lush, bountiful, plenty",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "재산손실, 속패, 있던재산도 다 날려버린다, 자손불화, 파산. / 미약, 재운 자손 불길, 파산",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -133173,7 +133173,7 @@
   "meaning": "small pig, suckling pig; shuffle one's feet",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "동물의 이름자는 피한다.",
+  "forbiddenReason": "동물이름(비하): 돼지 돈",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -133518,8 +133518,8 @@
   "radicalIndex": 154,
   "meaning": "virtuous, chaste, pure; loyal",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인덕없다, 고난.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -133644,8 +133644,8 @@
   "radicalIndex": 154,
   "meaning": "poor, impoverished, needy",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 가난할 빈",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -133662,8 +133662,8 @@
   "radicalIndex": 154,
   "meaning": "goods, commodities, products",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 재화 화 / 참고: 주의: '재화/재물'은 통상 부정적 의미가 아님. 원 출처의 분류 근거 불명확, 제외 검토 권장",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -133825,8 +133825,8 @@
   "radicalIndex": 154,
   "meaning": "expensive, costly, valuable",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 고독, 과부, 불운, 병고, 부모형제덕없다. 재산손실. / 부모덕이 없고 재운과 자손에 불운, 병고",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -135415,8 +135415,8 @@
   "radicalIndex": 157,
   "meaning": "foot; attain, satisfy, enough; Kangxi radical 156",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "사람의 신체부위는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -136970,8 +136970,8 @@
   "radicalIndex": 159,
   "meaning": "cart, vehicle; carry in a cart; Kangxi radical 159",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "차, 거로 음이 두가지로 되는 글자는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -137332,8 +137332,8 @@
   "radicalIndex": 159,
   "meaning": "load; carry; transport, convey",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "재난, 구설수, 병약, 실패. 이사 직장변동 많이 한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -137495,8 +137495,8 @@
   "radicalIndex": 159,
   "meaning": "brightness, luster, brilliance",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "강렬, 부침, 손실, 불우",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -138352,8 +138352,8 @@
   "radicalIndex": 161,
   "meaning": "early morning; fifth earthly branch; Kangxi radical 161",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "짐승의 이름자는 사용하지 않는다, 강한 운명으로 작용한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -138370,8 +138370,8 @@
   "radicalIndex": 161,
   "meaning": "humiliate, insult, abuse",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 욕되게 할 욕",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -139018,8 +139018,8 @@
   "radicalIndex": 162,
   "meaning": "escape, flee; abscond, dodge",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 도망할 도",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -139452,8 +139452,8 @@
   "radicalIndex": 162,
   "meaning": "join, connect; continuous; even",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 과부, 무당, 화류계, 부도, 병약, 단명, 부부자녀운 나쁘다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -139506,8 +139506,8 @@
   "radicalIndex": 162,
   "meaning": "advance, make progress, enter",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고난, 고뇌, 신고(어려움이많다) / 발전이 끊기고 고난, 고뇌, 신고",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -139758,8 +139758,8 @@
   "radicalIndex": 162,
   "meaning": "pass, pass through, go across",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "뭐든지 지나친것은 좋지가않다. 과음, 과식, 과유불급.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -140011,8 +140011,8 @@
   "radicalIndex": 162,
   "meaning": "distant, remote, far; profound",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "재물파산, 건강악화, 이혼, 별거, 고난, 고통, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -142344,8 +142344,8 @@
   "radicalIndex": 164,
   "meaning": "a wine vessel; tenth earthly branch; Kangxi radical 164",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "짐승의 이름자는 사용하지 않는다, 강한 운으로 작용한다. 팔자기박.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -144570,8 +144570,8 @@
   "radicalIndex": 167,
   "meaning": "silver (element 47, Ag); cash, money, wealth",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인덕없다, 기복이 심하다, 파란곡절, 불운, 비운, 재앙, 자살, 고독, 이혼, 별거. / 강직하고 불운, 비운, 재앙",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -145761,8 +145761,8 @@
   "radicalIndex": 167,
   "meaning": "brocade, tapestry; embroidered",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 고생, 불성, 이혼, 별거, 고난, 과부, 화류계, 육친덕없다. / 고독, 고난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -145851,8 +145851,8 @@
   "radicalIndex": 167,
   "meaning": "tin (element 50, Sn); bestow, confer",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 부부운불길, 재물낭비, 부도, 재물덕없다, 수술잦다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -146664,8 +146664,8 @@
   "radicalIndex": 167,
   "meaning": "stove; bright",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인품천박, 재물파산, 이혼, 별거, 고난, 부도.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -146682,8 +146682,8 @@
   "radicalIndex": 167,
   "meaning": "town, market place; suppress",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부모덕없다, 중년재난, 인덕없다, 이혼, 별거, 뇌출혈, 암, 사망.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -147499,8 +147499,8 @@
   "radicalIndex": 167,
   "meaning": "iron (element 26, Fe); strong, solid, firm",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 천대, 불행, 가난, 경제적곤란, 멸시, 불화, 박명. / 영리하나 강기 아집으로 실패, 손재, 고독",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -147715,8 +147715,8 @@
   "radicalIndex": 167,
   "meaning": "mine; mineral, ore",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "안정된 생활어렵다. 고독, 고뇌, 고난. / 막힘이 많고 고독, 고뇌, 고난을 암시",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -148062,8 +148062,8 @@
   "radicalIndex": 168,
   "meaning": "long; length; excel in; leader; Kangxi radical 168",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "중도좌절, 허영, 욕심, 과욕, 불운, 허세, 불행, 동생이 쓰면 형이 망한다. / 허영, 욕심, 과욕, 불운, 허세, 불행",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -149310,8 +149310,8 @@
   "radicalIndex": 170,
   "meaning": "descend, fall, drop; lower, down",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "강, 항으로 음이 두가지로 되는글자는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -149889,8 +149889,8 @@
   "radicalIndex": 170,
   "meaning": "corner, nook, remote place",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부부이별, 부모무덕, 고독, 재난, 타향살이. / 부부 이별, 부모 무덕, 타향살이, 고독, 재난",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -150124,8 +150124,8 @@
   "radicalIndex": 170,
   "meaning": "separate; shield; barricade",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 가로막을 장",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -150851,8 +150851,8 @@
   "radicalIndex": 172,
   "meaning": "difficult, arduous, hard; unable",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 어려울 난",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -150869,8 +150869,8 @@
   "radicalIndex": 173,
   "meaning": "rain; rainy; Kangxi radical 173",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "시비, 구설, 관재, 고난, 이혼, 별거, 고통, 고난, 단명.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -150905,8 +150905,8 @@
   "radicalIndex": 173,
   "meaning": "snow; wipe away shame, avenge",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "속성속패, 불행, 고독, 사업실패. / 처음은 그럴 듯하나 실패, 탄식, 고독",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -150959,8 +150959,8 @@
   "radicalIndex": 173,
   "meaning": "clouds; Yunnan province",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "형제우애없다, 암, 병약, 산재, 재물흩어진다, 단명, 부도, 이혼, 별거.(상호나 아호는 상관없다) / 우애 없고 산재, 호에는 무관",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151359,8 +151359,8 @@
   "radicalIndex": 173,
   "meaning": "frost; crystallized; candied",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "성공이 오래가지 못한다, 용두사미, 단절, 멸실. / 용두사미, 단절, 멸실",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151633,8 +151633,8 @@
   "radicalIndex": 173,
   "meaning": "spirit, soul; spiritual world",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "과도한 격(신성/존귀): 신령 령",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -152551,8 +152551,8 @@
   "radicalIndex": 178,
   "meaning": "fence; surname; Korea",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "박복, 파란곡절, 단명. / 박복, 파란곡절, 단명",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -152965,8 +152965,8 @@
   "radicalIndex": 181,
   "meaning": "obey, submit to, go along with",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고독, 단명, 눈물, 탄식, 불운, 불화, 불길, 남편사망, 부부이별. / 눈물, 탄식, 하천, 중년 불운, 불화, 불길",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -153326,8 +153326,8 @@
   "radicalIndex": 181,
   "meaning": "head; top; chief, first; boss",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "시람의 신체부위는 피한다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -153977,8 +153977,8 @@
   "radicalIndex": 182,
   "meaning": "wind; air; manners, atmosphere; Kangxi radical 182",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "재산파산, 주색잡기, 불안초조. / 어지럽고 불안, 초조",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -154610,8 +154610,8 @@
   "radicalIndex": 184,
   "meaning": "hungry; greedy for; hunger",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 주릴 아",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -155258,8 +155258,8 @@
   "radicalIndex": 186,
   "meaning": "fragrant, sweet-smelling; incense; Kangxi radical 186",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "재물복없다, 생리사별, 이혼, 별거, 자살, 인덕없다, 화류계여자가많다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -155421,8 +155421,8 @@
   "radicalIndex": 186,
   "meaning": "fragrant, aromatic; distant fragrance",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "인덕없다, 이혼, 별거, 자살.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -155458,7 +155458,7 @@
   "meaning": "horse; surname; Kangxi radical 187",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "짐승처럼 비천하다, 경솔, 이성문제 고통, 고독, 병약. / 경솔, 비천",
+  "forbiddenReason": "동물이름(비하): 말 마",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -156925,8 +156925,8 @@
   "radicalIndex": 188,
   "meaning": "bone; skeleton; frame, framework; Kangxi radical 188",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 뼈 골",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -157142,8 +157142,8 @@
   "radicalIndex": 188,
   "meaning": "body; group, class, body, unit",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "신체의 일부는 이름자에 쓰지 않는다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -157919,8 +157919,8 @@
   "radicalIndex": 194,
   "meaning": "ghost; spirit of dead; devil; Kangxi radical 194; 23rd lunar mansion, determinative star θ Cancri",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함: 귀신 귀",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -158173,8 +158173,8 @@
   "radicalIndex": 195,
   "meaning": "fish; surname; Kangxi radical 195",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "동물이름(비하): 물고기 어",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -158210,8 +158210,8 @@
   "radicalIndex": 195,
   "meaning": "foolish, stupid, rash; vulgar",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 고집, 술좋아한다, 방탕.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -159242,8 +159242,8 @@
   "radicalIndex": 196,
   "meaning": "bird; Kangxi radical 196",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "동물이름(비하): 새 조",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -159314,8 +159314,8 @@
   "radicalIndex": 196,
   "meaning": "male phoenix; symbol of joy",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "이혼, 별거, 고독, 가정불화, 독수공방, 자만, 교만.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -160342,8 +160342,8 @@
   "radicalIndex": 196,
   "meaning": "crane; Grus species (various)",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "재물없이 가난하다, 불길, 고독, 박명. / 신수부침이 심하다. 불길, 박명, 비천",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -160488,7 +160488,7 @@
   "meaning": "chicken",
   "isNameAllowed": true,
   "isForbidden": true,
-  "forbiddenReason": "동물의 이름자는 피한다.",
+  "forbiddenReason": "동물이름(비하): 닭 계",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -161722,8 +161722,8 @@
   "radicalIndex": 203,
   "meaning": "silent; quiet, still; dark",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "고난, 신체허약, 이혼, 별거, 부도, 고통.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -161812,8 +161812,8 @@
   "radicalIndex": 203,
   "meaning": "dot, speck, spot; point, degree",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "부부불화, 부모덕없다, 무당 점쟁이가많다, 이혼, 별거, 고통, 고난, 부도.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -162334,8 +162334,8 @@
   "radicalIndex": 208,
   "meaning": "rat, mouse; Kangxi radical 208",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "동물이름(비하): 쥐 서",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -162840,8 +162840,8 @@
   "radicalIndex": 212,
   "meaning": "dragon; Kangxi radical 212",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "불화, 조난, 박명, 자살, 고독, 이혼, 별거, 치매, 중풍, 부도, 허망. / 귀천의 성패 많고 고독, 고난, 戌亥生은 특히 불길",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -162951,8 +162951,8 @@
   "radicalIndex": 213,
   "meaning": "turtle or tortoise; cuckold; Kangxi radical 213",
   "isNameAllowed": true,
-  "isForbidden": true,
-  "forbiddenReason": "지나치게 강직하거나 온순한 성격, 박명하다.",
+  "isForbidden": false,
+  "forbiddenReason": null,
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
