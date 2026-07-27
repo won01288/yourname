@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import NarrativeBlocks from "./NarrativeBlocks";
 
 interface SajuStoryCardProps {
   title: string;
@@ -11,7 +12,6 @@ interface SajuStoryCardProps {
 // 텍스트 자체는 LLM이 쓰지만, 재료가 된 사실(일간·오행 분포·용신·십신)은 전부 코드가 계산했다 (CLAUDE.md 2.3).
 export default function SajuStoryCard({ title, body }: SajuStoryCardProps) {
   const [expanded, setExpanded] = useState(true);
-  const paragraphs = body.split(/\n{2,}/).filter((p) => p.trim().length > 0);
 
   return (
     <section className="mb-8 rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-card)] sm:p-8">
@@ -31,9 +31,7 @@ export default function SajuStoryCard({ title, body }: SajuStoryCardProps) {
 
       {expanded && (
         <div className="animate-accordion-in mt-4 flex flex-col gap-3 border-t border-border pt-4 text-[14px] leading-7 text-text-primary">
-          {paragraphs.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
+          <NarrativeBlocks text={body} />
         </div>
       )}
     </section>

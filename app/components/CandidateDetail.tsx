@@ -1,6 +1,7 @@
 import type { Candidate, Element, Surname } from "@/lib/naming/types";
 import type { HanjaGloss } from "@/lib/llm/explain";
 import ElementBadge from "./ElementBadge";
+import NarrativeBlocks from "./NarrativeBlocks";
 
 interface CandidateDetailProps {
   candidate: Candidate;
@@ -114,7 +115,9 @@ export default function CandidateDetail({
         <section>
           <h3 className="mb-2.5 text-[13px] font-semibold text-text-secondary">종합 해설</h3>
           {explanation ? (
-            <p className="text-[14px] leading-7 text-text-primary">{explanation}</p>
+            <div className="flex flex-col gap-3 text-[14px] leading-7 text-text-primary">
+              <NarrativeBlocks text={explanation} />
+            </div>
           ) : (
             <p className="text-[13px] leading-6 text-text-secondary">
               이 후보는 위 발음오행·자원오행·수리 기준을 모두 통과했습니다. 해설문은 준비되지 않았습니다.
