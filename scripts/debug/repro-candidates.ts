@@ -45,6 +45,7 @@ async function main() {
     hanjaPool,
     numerologyTable,
     curatedGivenNames,
+    candidateCount: 5,
   });
 
   console.log(`\n=== 후보 ${candidates.length}개 ===`);

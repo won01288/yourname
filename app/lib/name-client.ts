@@ -2,6 +2,7 @@
 // lib/naming/ 폴더 규칙(8.1)과 무관한 프론트엔드 전용 코드라 app/ 아래 별도로 둔다.
 
 import type { Candidate, ElementDistribution, Gender, Manseryeok, Saju, Surname, YongsinResult } from "@/lib/naming/types";
+import type { CandidateCount } from "@/lib/naming/config";
 import type { NamingReport } from "@/lib/llm/explain";
 
 export interface NameRequestPayload {
@@ -15,6 +16,8 @@ export interface NameRequestPayload {
   surnameHangul: string;
   surnameHanja?: string;
   gender: Gender;
+  /** 추천받을 이름 개수(3/5/10). CLAUDE.md 3.6(Phase 8) — 후보 개수 선택. */
+  candidateCount: CandidateCount;
 }
 
 export interface NameApiResult {

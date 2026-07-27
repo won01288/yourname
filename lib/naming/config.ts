@@ -202,8 +202,19 @@ export const RADICAL_ELEMENT: Record<number, Element> = {
 // Phase 4에서는 다루지 않는다.
 export const GIVEN_NAME_LENGTH = 2;
 
-// Phase 4 — 최종 추천 후보 개수 (CLAUDE.md 0장 "이름 후보 3~5개").
-export const CANDIDATE_COUNT = 5;
+// Phase 8 — 최종 추천 후보 개수. 사용자가 3/5/10 중 선택한다(CLAUDE.md 3.6 "후보 개수 선택" 확정,
+// 2026.7.27). 예전엔 CANDIDATE_COUNT=5 고정값이었으나, 순위를 없앤 대신(아래 참고) 더 많은 후보를
+// 보고 스스로 고르고 싶어하는 사용자를 위해 개수를 선택지로 열었다.
+export const CANDIDATE_COUNT_OPTIONS = [3, 5, 10] as const;
+export type CandidateCount = (typeof CANDIDATE_COUNT_OPTIONS)[number];
+export const DEFAULT_CANDIDATE_COUNT: CandidateCount = 5;
+
+// Phase 8 — 유사 이름 소프트 필터 임계값(CLAUDE.md 3.6, 2026.7.27). 두 이름(고정 2글자)을 초성·
+// 중성·종성 단위로 비교해 다른 자모 개수가 이 값 이하면 "너무 비슷한 이름"으로 본다(예: 규리/규린은
+// 종성 하나만 달라 불일치 1 → 유사로 판정). similarity.ts의 isSimilarName이 이 값을 기본값으로 쓴다.
+// 완전 차단이 아니라 CANDIDATE_DIVERSITY.stages의 완화 단계를 통해 "최대한 거르되, 후보가 부족하면
+// 허용"하는 정도로만 적용한다.
+export const SIMILAR_NAME_MAX_JAMO_MISMATCH = 1;
 
 // Phase 4 — 후보 하드 필터: 4격(원형이정)이 전부 길수여야 후보로 채택한다.
 // isAuspiciousNumber()는 반길도 흉과 함께 false로 처리하므로(numerology.ts), 4격 중
@@ -237,17 +248,26 @@ export const CANDIDATE_SCORE_WEIGHTS = {
 // 서로 다른 한자인데 발음이 같은 후보가 중복 등장). selectDiverseCandidates가 이 상수들로
 // 점수 동점자 사이에서 다양성을 강제한다. 발음(한글) 중복 금지는 항상 강제하고(같은 이름이
 // 두 번 나오지 않도록), 글자·획수조합 중복 금지는 후보 풀이 부족할 때만 단계적으로 완화한다.
+//
+// Phase 8(2026.7.27) — avoidSimilar 단계 추가: "규리/규린/규나"처럼 자모 하나 차이로 거의 같게
+// 들리는 이름이 한 결과에 함께 나오는 문제(실사용 피드백)에 대응한다. maxCharReuse(글자 자체의
+// 재사용 횟수)만으로는 "글자는 다르지만 소리가 거의 같은" 조합을 못 거르므로, similarity.ts의
+// isSimilarName(자모 단위 유사도)을 별도 차원으로 추가했다. 무조건 차단이 아니라 "최대한 거르되"
+// 후보 풀이 부족하면 완화되도록, 다른 제약과 같은 단계적 relax 구조를 그대로 따른다(마지막 단계는
+// 발음 완전 중복 금지만 남기고 이 필터도 끈다).
 export const CANDIDATE_DIVERSITY = {
-  // 완화 단계. 앞 단계부터 순서대로 시도해 CANDIDATE_COUNT를 채우는 첫 단계를 채택한다.
+  // 완화 단계. 앞 단계부터 순서대로 시도해 요청된 개수(candidateCount)를 채우는 첫 단계를 채택한다.
   // maxCharReuse: 이름 첫 글자/끝 글자 각각이 상위 후보 안에서 몇 번까지 재사용될 수 있는지.
   // maxPerNumerologyBucket: 동일 (원격,형격,이격,정격) 4격(=동일 획수쌍)을 상위 후보가 최대 몇 개
   //   까지 공유할 수 있는지 — 너무 크면 수리사격이 전부 같은 후보만 나온다.
-  // 마지막 단계(Infinity)는 발음(hangul) 중복 금지만 남기는 최종 완화 단계로, 후보 풀이 아주
-  // 작은 희귀 조합에서도 가능한 만큼은 채운다.
+  // avoidSimilar: true면 이미 뽑힌 후보와 자모 유사도(SIMILAR_NAME_MAX_JAMO_MISMATCH 이내)가
+  //   높은 후보를 이 단계에서는 건너뛴다.
+  // 마지막 단계(Infinity/false)는 발음(hangul) 완전 중복 금지만 남기는 최종 완화 단계로, 후보 풀이
+  // 아주 작은 희귀 조합에서도 가능한 만큼은 채운다.
   stages: [
-    { maxCharReuse: 1, maxPerNumerologyBucket: 2 },
-    { maxCharReuse: 2, maxPerNumerologyBucket: 2 },
-    { maxCharReuse: 3, maxPerNumerologyBucket: 3 },
-    { maxCharReuse: Infinity, maxPerNumerologyBucket: Infinity },
+    { maxCharReuse: 1, maxPerNumerologyBucket: 2, avoidSimilar: true },
+    { maxCharReuse: 2, maxPerNumerologyBucket: 2, avoidSimilar: true },
+    { maxCharReuse: 3, maxPerNumerologyBucket: 3, avoidSimilar: true },
+    { maxCharReuse: Infinity, maxPerNumerologyBucket: Infinity, avoidSimilar: false },
   ],
 } as const;

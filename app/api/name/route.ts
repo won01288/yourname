@@ -8,7 +8,9 @@ import { aggregateElements } from "@/lib/naming/elements";
 import { deriveYongsin } from "@/lib/naming/yongsin";
 import { buildManseryeok } from "@/lib/naming/manseryeok";
 import { buildCandidates } from "@/lib/naming/candidates";
+import { CANDIDATE_COUNT_OPTIONS, DEFAULT_CANDIDATE_COUNT, type CandidateCount } from "@/lib/naming/config";
 import { explainCandidates } from "@/lib/llm/explain";
+import { shuffleArray } from "@/app/lib/shuffle";
 import type { Gender } from "@/lib/naming/types";
 
 interface NameRequestBody extends BirthInput {
@@ -18,6 +20,8 @@ interface NameRequestBody extends BirthInput {
   /** CLAUDE.md 3.6 확장 — 이름 후보 풀(given_name 테이블)을 성별에 맞게 고르는 데만 쓰인다.
    * 사주·용신 계산에는 영향을 주지 않는다. */
   gender: Gender;
+  /** Phase 8 — 추천받을 이름 개수(3/5/10). 생략 시 DEFAULT_CANDIDATE_COUNT(5). */
+  candidateCount?: number;
 }
 
 function isValidBirthInput(body: Partial<NameRequestBody>): body is NameRequestBody {
@@ -30,7 +34,8 @@ function isValidBirthInput(body: Partial<NameRequestBody>): body is NameRequestB
     typeof body.isLunar === "boolean" &&
     typeof body.surnameHangul === "string" &&
     body.surnameHangul.length > 0 &&
-    (body.gender === "M" || body.gender === "F")
+    (body.gender === "M" || body.gender === "F") &&
+    (body.candidateCount === undefined || (CANDIDATE_COUNT_OPTIONS as readonly number[]).includes(body.candidateCount))
   );
 }
 
@@ -46,11 +51,14 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "필수 필드가 누락되었습니다. year/month/day/hour/minute/isLunar/surnameHangul/gender(M 또는 F)를 확인하세요.",
+          "필수 필드가 누락되었습니다. year/month/day/hour/minute/isLunar/surnameHangul/gender(M 또는 F)를 확인하고, " +
+          `candidateCount를 지정했다면 ${CANDIDATE_COUNT_OPTIONS.join("/")} 중 하나인지 확인하세요.`,
       },
       { status: 400 }
     );
   }
+
+  const candidateCount: CandidateCount = (body.candidateCount as CandidateCount | undefined) ?? DEFAULT_CANDIDATE_COUNT;
 
   const surnameOptions = await getSurnameByHangul(body.surnameHangul);
   if (surnameOptions.length === 0) {
@@ -84,14 +92,20 @@ export async function POST(request: Request) {
     getGivenNamesByGender(body.gender),
   ]);
 
-  const candidates = buildCandidates({
+  const builtCandidates = buildCandidates({
     surnameStroke: surname.strokeOriginal,
     surnameElement: surname.initialElement,
     yongsin: yongsinResult.yongsin,
     hanjaPool,
     numerologyTable,
     curatedGivenNames,
+    candidateCount,
   });
+
+  // Phase 8 — 더 이상 점수순으로 표시하지 않는다(순위 폐지, CLAUDE.md 3.6). 점수 순서를 그대로
+  // 노출하면 위치만으로 사실상 순위를 매긴 인상을 주고, 앞쪽 후보에 선택이 몰리는 편향이 생긴다.
+  // 화면에 보여줄 순서만 무작위화하고, 이 순서를 LLM 해설·응답 양쪽에 동일하게 사용한다.
+  const candidates = shuffleArray(builtCandidates);
 
   const report =
     candidates.length > 0

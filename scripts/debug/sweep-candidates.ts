@@ -56,6 +56,7 @@ async function main() {
             hanjaPool,
             numerologyTable,
             curatedGivenNames: givenNamesByGender.get(gender) ?? [],
+            candidateCount: 5,
           });
 
           if (candidates.length === 0) zero++;

@@ -105,6 +105,14 @@ export interface Numerology81 {
   description: string | null;
 }
 
+// Phase 8 — 순위를 없앤 대신(CLAUDE.md 3.6 "후보 개수/순위 확정", 2026.7.27) 각 후보가 왜
+// 좋은 후보인지 코드가 결정적으로 계산한 강점 태그. LLM이 만든 판단이 아니라 이미 계산된 값
+// (자원오행 일치·isCommon·음양균형·실사용 빈도)을 그대로 옮긴 사실이라 2.1·2.3과 충돌하지 않는다.
+export interface CandidateHighlight {
+  key: "phoneticFlow" | "numerology" | "wonhaeng" | "common" | "yinYang" | "frequency";
+  label: string;
+}
+
 // TODO(Phase 4): 작명 엔진 출력 후보. LLM은 이 값을 서술만 한다 (CLAUDE.md 2.3).
 export interface Candidate {
   hanja: Hanja[];
@@ -114,6 +122,9 @@ export interface Candidate {
   // Phase 6 확정(3.6) — 이 후보 이름(hangul)의 given_name 테이블 실사용 빈도.
   // 후보 자체가 이제 이 표에서만 나오므로 항상 값이 있다 (db.ts getGivenNamesByGender).
   frequency: number;
+  // Phase 8 — 이 후보의 강점을 부각하는 태그 목록(candidates.ts에서 결정적으로 계산, 3.6 참고).
+  // 순위 대신 각 후보의 장점을 보여주기 위한 것이라 항상 1개 이상 채워진다.
+  highlights: CandidateHighlight[];
 }
 
 // Phase 6 확정(3.6) — 성별에 따라 다른 이름 후보 풀(given_name 테이블)을 쓴다.

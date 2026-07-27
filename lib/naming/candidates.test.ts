@@ -43,6 +43,7 @@ function makeCandidate(hangul: string, chars: [string, string], numerologyNumber
     numerologyNumbers,
     phoneticElements: [],
     frequency: 0,
+    highlights: [],
   };
 }
 
@@ -89,6 +90,23 @@ describe("selectDiverseCandidates", () => {
     expect(bucketCounts).toHaveLength(2);
     expect(result.map((c) => c.hangul)).toContain("사아"); // 버킷 제한으로 빠진 자리를 다른 버킷이 채운다.
   });
+
+  // CLAUDE.md 3.6(Phase 8) — "규리/규린/규나"처럼 자모 하나 차이로 거의 같게 들리는 이름이 한
+  // 결과에 몰리지 않도록 거르는 avoidSimilar 단계 검증. "규리"/"유리"는 첫 글자(규/유)가 달라
+  // maxCharReuse로는 걸러지지 않지만, 자모 불일치가 1(초성만 다름)이라 유사로 판정돼야 한다.
+  it("자모 유사도가 높은 이름은(첫 글자가 달라도) 최대한 거르되, 채워야 하면 완화 단계에서 포함한다", () => {
+    const scored = [
+      { candidate: makeCandidate("규리", ["圭", "李"], [1, 1, 1, 1]), score: 5 },
+      { candidate: makeCandidate("유리", ["柳", "梨"], [2, 2, 2, 2]), score: 5 }, // 규리와 자모 불일치 1
+      { candidate: makeCandidate("성라", ["成", "羅"], [3, 3, 3, 3]), score: 5 },
+    ];
+
+    const limited = selectDiverseCandidates(scored, 2);
+    expect(limited.map((c) => c.hangul)).toEqual(["규리", "성라"]); // 유사한 유리는 2개만 필요하면 제외.
+
+    const full = selectDiverseCandidates(scored, 3);
+    expect(full.map((c) => c.hangul)).toEqual(["규리", "유리", "성라"]); // 3개를 다 채워야 하면 완화되어 포함.
+  });
 });
 
 // Phase 6 확정(3.6 확장) — 이름(hangul) 후보는 curatedGivenNames(성별 given_name 테이블)에 있는
@@ -127,6 +145,7 @@ describe("buildCandidates", () => {
       yongsin: [],
       hanjaPool,
       numerologyTable: ALL_AUSPICIOUS,
+      candidateCount: 5,
       curatedGivenNames: [{ hangul: "미가", frequency: 100 }],
     });
     expect(result.map((c) => c.hangul)).toEqual(["미가"]);
@@ -140,6 +159,7 @@ describe("buildCandidates", () => {
       yongsin: [],
       hanjaPool,
       numerologyTable: ALL_AUSPICIOUS,
+      candidateCount: 5,
       curatedGivenNames: [{ hangul: "가미", frequency: 100 }],
     });
     expect(result).toEqual([]);
@@ -154,6 +174,7 @@ describe("buildCandidates", () => {
       yongsin: [],
       hanjaPool,
       numerologyTable: ALL_AUSPICIOUS,
+      candidateCount: 5,
       curatedGivenNames: [{ hangul: "무구", frequency: 100 }],
     });
     expect(result).toEqual([]);
@@ -170,6 +191,7 @@ describe("buildCandidates", () => {
       yongsin: [],
       hanjaPool,
       numerologyTable,
+      candidateCount: 5,
       curatedGivenNames: [
         { hangul: "미가", frequency: 100 },
         { hangul: "민가", frequency: 100 },
@@ -189,6 +211,7 @@ describe("buildCandidates", () => {
       yongsin: ["水", "木"],
       hanjaPool,
       numerologyTable,
+      candidateCount: 5,
       curatedGivenNames: [
         { hangul: "미가", frequency: 1 },
         { hangul: "민가", frequency: 1 },
@@ -214,6 +237,7 @@ describe("buildCandidates", () => {
       yongsin: ["水", "木"],
       hanjaPool,
       numerologyTable,
+      candidateCount: 5,
       curatedGivenNames: [
         { hangul: "미가", frequency: 1 },
         { hangul: "범고", frequency: 100 },
@@ -234,6 +258,7 @@ describe("buildCandidates", () => {
       yongsin: [],
       hanjaPool,
       numerologyTable,
+      candidateCount: 5,
       curatedGivenNames: [
         { hangul: "민가", frequency: 50 },
         { hangul: "미가", frequency: 200 },
@@ -252,6 +277,7 @@ describe("buildCandidates", () => {
       yongsin: [],
       hanjaPool,
       numerologyTable: ALL_AUSPICIOUS,
+      candidateCount: 5,
       curatedGivenNames: [{ hangul: "미가", frequency: 100 }],
     });
     const count = result.filter((c) => c.hangul === "미가").length;

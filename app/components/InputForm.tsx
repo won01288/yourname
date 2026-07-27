@@ -3,6 +3,7 @@
 import { Fragment, useMemo, useState } from "react";
 import type { NameRequestPayload } from "@/app/lib/name-client";
 import type { Gender } from "@/lib/naming/types";
+import { CANDIDATE_COUNT_OPTIONS, DEFAULT_CANDIDATE_COUNT, type CandidateCount } from "@/lib/naming/config";
 import { BirthDateFields, BirthTimeFields, daysInMonth } from "./BirthDateTimeFields";
 
 interface InputFormProps {
@@ -15,8 +16,14 @@ interface InputFormProps {
   initialValues?: NameRequestPayload | null;
 }
 
-const STEP_LABELS = ["기본 정보", "생년월일", "태어난 시각"];
+const STEP_LABELS = ["기본 정보", "생년월일", "태어난 시각", "추천 개수"];
 const CURRENT_YEAR = new Date().getFullYear();
+
+const CANDIDATE_COUNT_DESCRIPTIONS: Record<CandidateCount, string> = {
+  3: "가장 빠르게 핵심만 훑어보고 싶다면",
+  5: "균형 잡힌 개수로 비교하고 싶다면",
+  10: "폭넓게 비교하며 직접 고르고 싶다면",
+};
 
 export default function InputForm({
   onSubmit,
@@ -30,6 +37,9 @@ export default function InputForm({
   const [gender, setGender] = useState<Gender | null>(initialValues?.gender ?? null);
   const [surnameHangul, setSurnameHangul] = useState(initialValues?.surnameHangul ?? "");
   const [surnameHanja, setSurnameHanja] = useState("");
+  const [candidateCount, setCandidateCount] = useState<CandidateCount>(
+    initialValues?.candidateCount ?? DEFAULT_CANDIDATE_COUNT
+  );
 
   const [isLunar, setIsLunar] = useState(initialValues?.isLunar ?? false);
   const [isLeapMonth, setIsLeapMonth] = useState(initialValues?.isLeapMonth ?? false);
@@ -50,6 +60,7 @@ export default function InputForm({
     gender !== null && surnameHangul.trim().length > 0 && (!surnameOptions || surnameHanja.length > 0);
   const step2Valid = year > 0 && month >= 1 && month <= 12;
   const step3Valid = true;
+  const step4Valid = candidateCount !== null;
 
   function goNext() {
     setStep((s) => Math.min(s + 1, STEP_LABELS.length - 1));
@@ -65,6 +76,7 @@ export default function InputForm({
       gender,
       surnameHangul: surnameHangul.trim(),
       surnameHanja: surnameHanja || undefined,
+      candidateCount,
       isLunar,
       isLeapMonth: isLunar ? isLeapMonth : undefined,
       year,
@@ -205,6 +217,44 @@ export default function InputForm({
           />
         )}
 
+        {step === 3 && (
+          <div className="flex flex-col gap-2">
+            <p className="mb-1 text-[13px] leading-6 text-text-secondary">
+              순위 없이 모든 후보를 각자의 강점과 함께 보여드립니다. 원하는 개수를 선택해 주세요.
+            </p>
+            {CANDIDATE_COUNT_OPTIONS.map((count) => (
+              <button
+                key={count}
+                type="button"
+                onClick={() => setCandidateCount(count)}
+                className={`flex items-center justify-between rounded-control border px-4 py-3 text-left transition-colors ${
+                  candidateCount === count
+                    ? "border-brand-600 bg-brand-50"
+                    : "border-border bg-surface hover:bg-surface-muted"
+                }`}
+              >
+                <span>
+                  <span
+                    className={`block text-[16px] font-semibold ${
+                      candidateCount === count ? "text-brand-800" : "text-text-primary"
+                    }`}
+                  >
+                    {count}개 추천받기
+                  </span>
+                  <span className="mt-0.5 block text-[12px] text-text-secondary">
+                    {CANDIDATE_COUNT_DESCRIPTIONS[count]}
+                  </span>
+                </span>
+                {candidateCount === count && (
+                  <span aria-hidden="true" className="text-brand-600">
+                    ✓
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+        )}
+
         {errorMessage && (
           <p className="mt-4 rounded-control bg-[color-mix(in_srgb,var(--element-fire)_12%,transparent)] px-3.5 py-2.5 text-[13px] leading-5 text-[var(--element-fire)]">
             {errorMessage}
@@ -224,7 +274,7 @@ export default function InputForm({
           {step < STEP_LABELS.length - 1 ? (
             <button
               type="button"
-              disabled={step === 0 ? !step1Valid : !step2Valid}
+              disabled={step === 0 ? !step1Valid : step === 1 ? !step2Valid : !step3Valid}
               onClick={goNext}
               className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
             >
@@ -233,7 +283,7 @@ export default function InputForm({
           ) : (
             <button
               type="button"
-              disabled={!step3Valid || submitting}
+              disabled={!step4Valid || submitting}
               onClick={handleSubmit}
               className="flex-1 rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-4 py-2.5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
             >

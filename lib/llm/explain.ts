@@ -1,6 +1,9 @@
 // CLAUDE.md 8.2 — Phase 5: LLM 설명 계층. saju → db → naming 파이프라인 바깥, 후보가 확정된 뒤에만 호출한다 (2.3, 8.2).
 // lib/naming/의 반대 방향으로만 import한다: 여기서 naming의 타입을 가져다 쓰되, naming은 이 파일을 절대 import하지 않는다.
-// 여기서는 이미 코드가 계산·검증한 사실(용신, 오행 분포, 후보 획수·발음오행)만 Claude에 전달해 해설·순위 제안을 받는다.
+// 여기서는 이미 코드가 계산·검증한 사실(용신, 오행 분포, 후보 획수·발음오행, 강점 태그)만 Claude에 전달해 해설을 받는다.
+// Phase 8(2026.7.27) — 순위(rank)는 더 이상 요청·반환하지 않는다(CLAUDE.md 3.6 "순위 폐지" 결정,
+// 앞쪽 후보에 선택이 몰리는 편향을 막기 위함). 대신 candidates.ts가 계산한 highlights(강점 태그)를
+// 그대로 전달해 해설이 그 사실과 어긋나지 않게 한다.
 // 사주를 세우거나 오행/수리/용신을 판정하지 않는다 — 새 수치나 판정을 만들어내지 않도록 프롬프트로 명시한다 (2.3 역할 경계).
 
 import Anthropic from "@anthropic-ai/sdk";
@@ -29,7 +32,6 @@ export interface NamingReport {
   };
   candidates: Array<{
     hangul: string;
-    rank: number;
     explanation: string;
     hanjaGlosses: HanjaGloss[];
   }>;
@@ -86,7 +88,6 @@ const RESPONSE_SCHEMA = {
         type: "object",
         properties: {
           hangul: { type: "string" },
-          rank: { type: "integer" },
           explanation: {
             type: "string",
             description:
@@ -128,7 +129,7 @@ const RESPONSE_SCHEMA = {
             },
           },
         },
-        required: ["hangul", "rank", "explanation", "hanjaGlosses"],
+        required: ["hangul", "explanation", "hanjaGlosses"],
         additionalProperties: false,
       },
     },
@@ -156,7 +157,8 @@ function buildUserPrompt(input: ExplainCandidatesInput): string {
       const hanjaDetail = c.hanja
         .map((h) => `${h.char}(${h.meaning ?? "뜻풀이 없음"}, 원획 ${h.strokeOriginal}, 자원오행 ${h.element ?? "미배속"})`)
         .join(" ");
-      return `${i + 1}. ${surname.hanja}${c.hangul} — ${hanjaDetail} / 수리(원형이정) ${c.numerologyNumbers.join("-")} / 발음오행 흐름 ${c.phoneticElements.join("→")} / 실사용 빈도 ${c.frequency}(클수록 실제로 많이 쓰이는 이름)`;
+      const highlightDetail = c.highlights.map((h) => h.label).join(" / ");
+      return `${i + 1}. ${surname.hanja}${c.hangul} — ${hanjaDetail} / 수리(원형이정) ${c.numerologyNumbers.join("-")} / 발음오행 흐름 ${c.phoneticElements.join("→")} / 실사용 빈도 ${c.frequency}(클수록 실제로 많이 쓰이는 이름) / 강점 태그: ${highlightDetail}`;
     })
     .join("\n");
 
@@ -229,12 +231,15 @@ sajuStory 작성 지침: 위 [사주]·[만세력 상세]·[오행 분포]·[신
 ⑤ 종합 마무리: 위 네 가지(사주·소리·글자·숫자)가 어떻게 하나의 방향으로 수렴하는지 한 문단으로 정리하고,
    sajuStory에서 쓴 것과 같은 비유 세계관을 다시 불러와 연결지어 맺어라.
 위에 주어진 근거만 언급하고 새 판정을 만들지 마라. 실사용 빈도는 ③이나 ⑤에서 자연스럽게 언급해도 된다.
+각 후보 줄 끝의 "강점 태그"는 이미 코드가 계산한 이 후보만의 두드러진 장점이다 — 없는 태그를 지어내거나
+있는 태그를 부정하지 말고, ①~⑤ 서술 안에 자연스럽게 녹여 언급해라(태그를 그대로 나열하지는 마라).
 
 hanjaGlosses 작성 지침: 각 후보 한자 옆에 제공된 영어 뜻풀이(Unihan 사전 뜻풀이)를 근거로, 그 글자를 옥편에서
 찾았을 때 나올 법한 한 단어 훈(hun)과, 사용자가 읽을 한글 뜻풀이 한 문장(meaningKo)을 써라. 번역이지 새로운
 뜻을 창작하는 것이 아니다 — 주어진 영어 뜻풀이의 범위를 벗어나지 마라.
 
-후보들을 위 explanation을 바탕으로 다시 순위 매겨 rank(1이 최고)를 부여하라.`;
+이 서비스는 후보 간 순위를 매기지 않는다 — rank를 반환하지 말고, 모든 후보를 각자의 강점이 잘 드러나도록
+동등한 비중으로 설명해라. 어느 후보가 "더 낫다"거나 "1순위"라는 식의 비교 우열 표현은 쓰지 마라.`;
 }
 
 // 확정된 후보와 근거만 받아 해설·순위 제안을 생성한다. 사주·오행·용신·수리는 이미 lib/naming/이 계산했고
@@ -247,8 +252,9 @@ export async function explainCandidates(input: ExplainCandidatesInput): Promise<
     max_tokens: 16000,
     system:
       "너는 한국 전통 작명 서비스의 해설 작성자다. 사주 계산, 오행 판정, 용신 도출, 십신·공망 산출, 획수 계산은 " +
-      "이미 코드가 끝냈다. 너는 그 결과만 받아 사용자가 이해하기 쉬운 자연어로 설명하고, 후보 간 순위를 제안하고, " +
-      "이 사람의 사주를 은유적이고 감성적인 톤으로 풀어 쓴 sajuStory를 작성한다. sajuStory와 각 후보 " +
+      "이미 코드가 끝냈다. 너는 그 결과만 받아 사용자가 이해하기 쉬운 자연어로 설명하고, 각 후보의 강점이 " +
+      "고르게 부각되도록 서술하며(순위를 매기거나 우열을 비교하지 않는다), 이 사람의 사주를 은유적이고 " +
+      "감성적인 톤으로 풀어 쓴 sajuStory를 작성한다. sajuStory와 각 후보 " +
       "explanation은 리포트 나열이 아니라 짧은 에세이처럼 읽혀야 하며, 하나의 비유 세계관을 처음부터 끝까지 " +
       "유지하고 서로 연결되어야 한다 — explanation의 마무리는 sajuStory에서 쓴 비유를 다시 불러온다. 두 " +
       "필드 모두 지정된 분량(사용자 메시지 참고)만큼 충분히 길게, 소제목은 항상 \"**소제목**\" 형태의 단독 " +

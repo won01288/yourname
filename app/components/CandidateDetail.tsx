@@ -51,6 +51,23 @@ export default function CandidateDetail({
 
       <div className="flex flex-col gap-6">
         <section>
+          <h3 className="mb-2.5 text-[13px] font-semibold text-text-secondary">이 이름의 강점</h3>
+          <ul className="flex flex-col gap-1.5">
+            {candidate.highlights.map((h) => (
+              <li
+                key={h.key}
+                className="flex items-start gap-2 rounded-control border border-border bg-surface-muted px-3.5 py-2.5 text-[13px] leading-5 text-text-primary"
+              >
+                <span aria-hidden="true" className="mt-0.5 text-brand-600">
+                  ✓
+                </span>
+                {h.label}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
           <h3 className="mb-2.5 text-[13px] font-semibold text-text-secondary">발음오행 흐름</h3>
           <div className="flex flex-wrap items-center gap-1.5">
             {candidate.phoneticElements.map((el, i) => (

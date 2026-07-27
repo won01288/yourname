@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { NameApiResult } from "@/app/lib/name-client";
-import { orderCandidatesByReport, matchReportEntry } from "@/app/lib/match-report";
+import { matchReportEntry } from "@/app/lib/match-report";
 import ManseryeokTable from "./ManseryeokTable";
 import SajuReportCard from "./SajuReportCard";
 import SajuStoryCard from "./SajuStoryCard";
@@ -22,8 +22,9 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
   const { saju, elementDistribution, yongsin, manseryeok, surname, candidates, report } = data;
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  const orderedCandidates = orderCandidatesByReport(candidates, report);
-  const expandedCandidate = expandedIndex !== null ? orderedCandidates[expandedIndex] : null;
+  // Phase 8(2026.7.27) — 순위를 매기지 않는다(CLAUDE.md 3.6). 표시 순서는 API가 응답 시점에 이미
+  // 무작위화해 반환하므로, 여기서 report의 rank로 재정렬하지 않고 candidates 순서를 그대로 쓴다.
+  const expandedCandidate = expandedIndex !== null ? candidates[expandedIndex] : null;
 
   return (
     <div className="mx-auto w-full max-w-3xl px-6 pb-8 pt-10">
@@ -80,15 +81,16 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
         </section>
       ) : (
         <>
-          <h2 className="mb-3 text-[16px] font-semibold text-text-primary">추천 이름 {candidates.length}개</h2>
-          <div className="mb-2 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {orderedCandidates.map((candidate, i) => (
+          <h2 className="mb-1 text-[16px] font-semibold text-text-primary">추천 이름 {candidates.length}개</h2>
+          <p className="mb-3 text-[13px] text-text-secondary">
+            우열을 매기지 않았습니다. 각 이름의 강점을 확인하고 마음에 드는 이름을 골라 보세요.
+          </p>
+          <div className="mb-2 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {candidates.map((candidate, i) => (
               <CandidateTile
                 key={candidate.hangul + i}
                 candidate={candidate}
                 surnameHanja={surname.hanja}
-                rank={i + 1}
-                isFirst={i === 0}
                 isExpanded={expandedIndex === i}
                 hanjaGlosses={matchReportEntry(report, candidate.hangul)?.hanjaGlosses ?? []}
                 onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}

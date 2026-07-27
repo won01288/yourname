@@ -1,23 +1,21 @@
 import type { Candidate } from "@/lib/naming/types";
 import type { HanjaGloss } from "@/lib/llm/explain";
 import ElementBadge from "./ElementBadge";
+import HighlightBadges from "./HighlightBadges";
 
 interface CandidateTileProps {
   candidate: Candidate;
   surnameHanja: string;
-  rank: number;
-  isFirst: boolean;
   isExpanded: boolean;
   hanjaGlosses: HanjaGloss[];
   onClick: () => void;
 }
 
-// design.md 3.1 — 벤토 그리드: 1순위 후보는 큰 타일, 나머지는 작은 타일로 위계를 표현한다.
+// design.md 3.1(Phase 8 갱신) — 순위를 매기지 않으므로(CLAUDE.md 3.6) 모든 타일을 동일한 크기로
+// 배치하고, 대신 각 후보의 강점 배지로 눈에 띄는 지점을 보여준다.
 export default function CandidateTile({
   candidate,
   surnameHanja,
-  rank,
-  isFirst,
   isExpanded,
   hanjaGlosses,
   onClick,
@@ -37,25 +35,17 @@ export default function CandidateTile({
       type="button"
       onClick={onClick}
       className={`group flex flex-col justify-between rounded-card border p-4 text-left transition-all hover:-translate-y-0.5 ${
-        isFirst ? "col-span-2 row-span-2 p-6" : "col-span-1"
-      } ${
         isExpanded
           ? "border-brand-600 bg-brand-50 shadow-[var(--shadow-elevated)]"
           : "border-border bg-surface shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)]"
       }`}
     >
-      <div className="flex items-start justify-between">
-        <span className="rounded-pill bg-surface-muted px-2 py-0.5 text-[11px] font-medium text-text-secondary">
-          {rank}순위
-        </span>
-      </div>
-
-      <div className="mt-3">
-        <p className={`font-semibold text-text-primary ${isFirst ? "text-[28px]" : "text-[20px]"}`}>
+      <div>
+        <p className="text-[20px] font-semibold text-text-primary">
           {surnameHanja}
           {hanjaText}
         </p>
-        <p className={`mt-1 text-text-secondary ${isFirst ? "text-[15px]" : "text-[13px]"}`}>{candidate.hangul}</p>
+        <p className="mt-1 text-[13px] text-text-secondary">{candidate.hangul}</p>
         {glossLine && <p className="mt-0.5 text-[11px] text-text-secondary">{glossLine}</p>}
       </div>
 
@@ -63,6 +53,10 @@ export default function CandidateTile({
         {candidate.hanja.map((h) =>
           h.element ? <ElementBadge key={h.char} element={h.element} compact /> : null
         )}
+      </div>
+
+      <div className="mt-2">
+        <HighlightBadges highlights={candidate.highlights} limit={2} />
       </div>
     </button>
   );
