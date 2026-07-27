@@ -34,6 +34,8 @@ export interface NamingReport {
     hangul: string;
     explanation: string;
     hanjaGlosses: HanjaGloss[];
+    /** 이 후보만의 강점 짧은 구절 3개. 한자 뜻 기반이라 후보마다 소재가 달라야 한다 (아래 스키마 설명 참고). */
+    strengths: string[];
   }>;
 }
 
@@ -128,8 +130,20 @@ const RESPONSE_SCHEMA = {
               additionalProperties: false,
             },
           },
+          strengths: {
+            type: "array",
+            description:
+              "이 후보만의 강점을 짧은 구절 정확히 3개로 표현한 배열. 각 구절은 6~18자 내외의 짧은 " +
+              "어구(완결된 문장이 아니어도 됨)이며, 이 후보 한자 각각이 가진 고유한 뜻(아래 [이름 후보] " +
+              "목록의 뜻풀이)과 그 뜻이 이 사주·용신과 만나는 지점을 최우선 재료로 삼는다. 발음오행 상생·4격 전부 " +
+              "길격처럼 이번 배치의 모든 후보가 공통으로 가진 사실은 다시 쓰지 마라(다른 곳에서 이미 " +
+              "다룬다) — 이 후보에만 해당하는 특징 위주로 써라. 아래 [이름 후보] 목록에 있는 다른 후보들과 " +
+              "소재·표현이 겹치지 않게 하라(여러 후보에 '균형 잡힌'·'조화로운' 같은 같은 형용사를 반복해서 " +
+              "쓰지 마라). 실사용 빈도·인기·몇 명이 쓰는 이름인지는 절대 언급하지 마라.",
+            items: { type: "string" },
+          },
         },
-        required: ["hangul", "explanation", "hanjaGlosses"],
+        required: ["hangul", "explanation", "hanjaGlosses", "strengths"],
         additionalProperties: false,
       },
     },
@@ -157,8 +171,11 @@ function buildUserPrompt(input: ExplainCandidatesInput): string {
       const hanjaDetail = c.hanja
         .map((h) => `${h.char}(${h.meaning ?? "뜻풀이 없음"}, 원획 ${h.strokeOriginal}, 자원오행 ${h.element ?? "미배속"})`)
         .join(" ");
-      const highlightDetail = c.highlights.map((h) => h.label).join(" / ");
-      return `${i + 1}. ${surname.hanja}${c.hangul} — ${hanjaDetail} / 수리(원형이정) ${c.numerologyNumbers.join("-")} / 발음오행 흐름 ${c.phoneticElements.join("→")} / 실사용 빈도 ${c.frequency}(클수록 실제로 많이 쓰이는 이름) / 강점 태그: ${highlightDetail}`;
+      const highlightDetail = c.highlights
+        .filter((h) => h.key !== "frequency")
+        .map((h) => h.label)
+        .join(" / ");
+      return `${i + 1}. ${surname.hanja}${c.hangul} — ${hanjaDetail} / 수리(원형이정) ${c.numerologyNumbers.join("-")} / 발음오행 흐름 ${c.phoneticElements.join("→")} / 강점 태그: ${highlightDetail}`;
     })
     .join("\n");
 
@@ -230,13 +247,21 @@ sajuStory 작성 지침: 위 [사주]·[만세력 상세]·[오행 분포]·[신
    시기를 뜻하는지 설명하고 "이 시기들이 고르게 좋다"는 것의 실질적 의미를 비유로 풀어라.
 ⑤ 종합 마무리: 위 네 가지(사주·소리·글자·숫자)가 어떻게 하나의 방향으로 수렴하는지 한 문단으로 정리하고,
    sajuStory에서 쓴 것과 같은 비유 세계관을 다시 불러와 연결지어 맺어라.
-위에 주어진 근거만 언급하고 새 판정을 만들지 마라. 실사용 빈도는 ③이나 ⑤에서 자연스럽게 언급해도 된다.
+위에 주어진 근거만 언급하고 새 판정을 만들지 마라. 실사용 빈도·인기·몇 명이 쓰는 이름인지는 summary·
+sajuStory·explanation·strengths 어디에서도 언급하지 마라.
 각 후보 줄 끝의 "강점 태그"는 이미 코드가 계산한 이 후보만의 두드러진 장점이다 — 없는 태그를 지어내거나
 있는 태그를 부정하지 말고, ①~⑤ 서술 안에 자연스럽게 녹여 언급해라(태그를 그대로 나열하지는 마라).
 
 hanjaGlosses 작성 지침: 각 후보 한자 옆에 제공된 영어 뜻풀이(Unihan 사전 뜻풀이)를 근거로, 그 글자를 옥편에서
 찾았을 때 나올 법한 한 단어 훈(hun)과, 사용자가 읽을 한글 뜻풀이 한 문장(meaningKo)을 써라. 번역이지 새로운
 뜻을 창작하는 것이 아니다 — 주어진 영어 뜻풀이의 범위를 벗어나지 마라.
+
+strengths 작성 지침: 이 후보만의 강점을 짧은 구절 정확히 3개로 써라(각 6~18자 내외, 완결된 문장이 아니어도
+된다 — 태그에 가까운 짧은 어구). 이 후보의 한자 각각이 가진 고유한 뜻과 그 뜻이 이 사주·용신과 만나는
+지점을 최우선 재료로 삼고, 발음오행 상생·4격 전부 길격처럼 이번 배치 후보 전원이 공통으로 가진 사실은
+다시 쓰지 마라(다른 섹션에서 이미 보여준다). 위 [이름 후보] 목록에 있는 다른 후보들의 strengths와 소재·
+표현이 겹치지 않게 하라 — 여러 후보에 같은 형용사(예: "균형 잡힌", "조화로운")를 반복해서 쓰지 마라.
+실사용 빈도·인기·몇 명이 쓰는 이름인지는 절대 언급하지 마라.
 
 이 서비스는 후보 간 순위를 매기지 않는다 — rank를 반환하지 말고, 모든 후보를 각자의 강점이 잘 드러나도록
 동등한 비중으로 설명해라. 어느 후보가 "더 낫다"거나 "1순위"라는 식의 비교 우열 표현은 쓰지 마라.`;
@@ -254,7 +279,9 @@ export async function explainCandidates(input: ExplainCandidatesInput): Promise<
       "너는 한국 전통 작명 서비스의 해설 작성자다. 사주 계산, 오행 판정, 용신 도출, 십신·공망 산출, 획수 계산은 " +
       "이미 코드가 끝냈다. 너는 그 결과만 받아 사용자가 이해하기 쉬운 자연어로 설명하고, 각 후보의 강점이 " +
       "고르게 부각되도록 서술하며(순위를 매기거나 우열을 비교하지 않는다), 이 사람의 사주를 은유적이고 " +
-      "감성적인 톤으로 풀어 쓴 sajuStory를 작성한다. sajuStory와 각 후보 " +
+      "감성적인 톤으로 풀어 쓴 sajuStory를 작성한다. 각 후보의 strengths는 그 후보 한자의 고유한 뜻에 " +
+      "뿌리를 두어 다른 후보와 소재·표현이 겹치지 않게 쓴다(실사용 빈도·인기는 언급하지 않는다). " +
+      "sajuStory와 각 후보 " +
       "explanation은 리포트 나열이 아니라 짧은 에세이처럼 읽혀야 하며, 하나의 비유 세계관을 처음부터 끝까지 " +
       "유지하고 서로 연결되어야 한다 — explanation의 마무리는 sajuStory에서 쓴 비유를 다시 불러온다. 두 " +
       "필드 모두 지정된 분량(사용자 메시지 참고)만큼 충분히 길게, 소제목은 항상 \"**소제목**\" 형태의 단독 " +

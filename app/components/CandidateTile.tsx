@@ -8,6 +8,7 @@ interface CandidateTileProps {
   surnameHanja: string;
   isExpanded: boolean;
   hanjaGlosses: HanjaGloss[];
+  strengths: string[];
   onClick: () => void;
 }
 
@@ -18,6 +19,7 @@ export default function CandidateTile({
   surnameHanja,
   isExpanded,
   hanjaGlosses,
+  strengths,
   onClick,
 }: CandidateTileProps) {
   const hanjaText = candidate.hanja.map((h) => h.char).join("");
@@ -56,7 +58,7 @@ export default function CandidateTile({
       </div>
 
       <div className="mt-2">
-        <HighlightBadges highlights={candidate.highlights} limit={2} />
+        <HighlightBadges strengths={strengths} limit={2} />
       </div>
     </button>
   );

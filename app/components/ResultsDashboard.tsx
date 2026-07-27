@@ -93,6 +93,7 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
                 surnameHanja={surname.hanja}
                 isExpanded={expandedIndex === i}
                 hanjaGlosses={matchReportEntry(report, candidate.hangul)?.hanjaGlosses ?? []}
+                strengths={matchReportEntry(report, candidate.hangul)?.strengths ?? []}
                 onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
               />
             ))}
@@ -106,6 +107,7 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
                 yongsin={yongsin.yongsin}
                 explanation={matchReportEntry(report, expandedCandidate.hangul)?.explanation ?? null}
                 hanjaGlosses={matchReportEntry(report, expandedCandidate.hangul)?.hanjaGlosses ?? []}
+                strengths={matchReportEntry(report, expandedCandidate.hangul)?.strengths ?? []}
                 onClose={() => setExpandedIndex(null)}
               />
             </div>

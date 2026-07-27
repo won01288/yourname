@@ -13,24 +13,24 @@ describe("matchReportEntry", () => {
       summary: "",
       sajuStory: { title: "", body: "" },
       candidates: [
-        { hangul: "탑인", explanation: "탑인 해설", hanjaGlosses: [] },
-        { hangul: "도인", explanation: "도인 해설", hanjaGlosses: [] },
-        { hangul: "타인", explanation: "타인 해설", hanjaGlosses: [] },
+        { hangul: "탑인", explanation: "탑인 해설", hanjaGlosses: [], strengths: [] },
+        { hangul: "도인", explanation: "도인 해설", hanjaGlosses: [], strengths: [] },
+        { hangul: "타인", explanation: "타인 해설", hanjaGlosses: [], strengths: [] },
       ],
     };
 
-    expect(matchReportEntry(report, "탑인")).toEqual({ explanation: "탑인 해설", hanjaGlosses: [] });
-    expect(matchReportEntry(report, "도인")).toEqual({ explanation: "도인 해설", hanjaGlosses: [] });
-    expect(matchReportEntry(report, "타인")).toEqual({ explanation: "타인 해설", hanjaGlosses: [] });
+    expect(matchReportEntry(report, "탑인")).toEqual({ explanation: "탑인 해설", hanjaGlosses: [], strengths: [] });
+    expect(matchReportEntry(report, "도인")).toEqual({ explanation: "도인 해설", hanjaGlosses: [], strengths: [] });
+    expect(matchReportEntry(report, "타인")).toEqual({ explanation: "타인 해설", hanjaGlosses: [], strengths: [] });
   });
 
   it("LLM이 성씨를 붙여 3글자로 반환해도(예: 金塔刃) 끝 2글자로 매칭한다", () => {
     const report: NamingReport = {
       summary: "",
       sajuStory: { title: "", body: "" },
-      candidates: [{ hangul: "김탑인", explanation: "탑인 해설", hanjaGlosses: [] }],
+      candidates: [{ hangul: "김탑인", explanation: "탑인 해설", hanjaGlosses: [], strengths: [] }],
     };
-    expect(matchReportEntry(report, "탑인")).toEqual({ explanation: "탑인 해설", hanjaGlosses: [] });
+    expect(matchReportEntry(report, "탑인")).toEqual({ explanation: "탑인 해설", hanjaGlosses: [], strengths: [] });
   });
 
   it("report가 없으면 null을 반환한다", () => {
@@ -49,6 +49,7 @@ describe("matchReportEntry", () => {
             { char: "規", hun: "법", meaningKo: "규칙과 법도를 뜻하는 글자" },
             { char: "李", hun: "오얏", meaningKo: "자두나무를 뜻하며 흔히 성씨로도 쓰이는 글자" },
           ],
+          strengths: [],
         },
       ],
     };

@@ -9,6 +9,7 @@ interface CandidateDetailProps {
   yongsin: Element[];
   explanation: string | null;
   hanjaGlosses: HanjaGloss[];
+  strengths: string[];
   onClose: () => void;
 }
 
@@ -21,6 +22,7 @@ export default function CandidateDetail({
   yongsin,
   explanation,
   hanjaGlosses,
+  strengths,
   onClose,
 }: CandidateDetailProps) {
   const hanjaText = candidate.hanja.map((h) => h.char).join("");
@@ -52,19 +54,23 @@ export default function CandidateDetail({
       <div className="flex flex-col gap-6">
         <section>
           <h3 className="mb-2.5 text-[13px] font-semibold text-text-secondary">이 이름의 강점</h3>
-          <ul className="flex flex-col gap-1.5">
-            {candidate.highlights.map((h) => (
-              <li
-                key={h.key}
-                className="flex items-start gap-2 rounded-control border border-border bg-surface-muted px-3.5 py-2.5 text-[13px] leading-5 text-text-primary"
-              >
-                <span aria-hidden="true" className="mt-0.5 text-brand-600">
-                  ✓
-                </span>
-                {h.label}
-              </li>
-            ))}
-          </ul>
+          {strengths.length > 0 ? (
+            <ul className="flex flex-col gap-1.5">
+              {strengths.map((s, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-2 rounded-control border border-border bg-surface-muted px-3.5 py-2.5 text-[13px] leading-5 text-text-primary"
+                >
+                  <span aria-hidden="true" className="mt-0.5 text-brand-600">
+                    ✓
+                  </span>
+                  {s}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-[13px] leading-6 text-text-secondary">강점 설명은 준비되지 않았습니다.</p>
+          )}
         </section>
 
         <section>

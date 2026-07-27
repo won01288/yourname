@@ -107,17 +107,22 @@ export async function POST(request: Request) {
   // 화면에 보여줄 순서만 무작위화하고, 이 순서를 LLM 해설·응답 양쪽에 동일하게 사용한다.
   const candidates = shuffleArray(builtCandidates);
 
-  const report =
-    candidates.length > 0
-      ? await explainCandidates({
-          saju,
-          elementDistribution,
-          yongsin: yongsinResult,
-          manseryeok,
-          surname,
-          candidates,
-        })
-      : null;
+  let report = null;
+  if (candidates.length > 0) {
+    try {
+      report = await explainCandidates({
+        saju,
+        elementDistribution,
+        yongsin: yongsinResult,
+        manseryeok,
+        surname,
+        candidates,
+      });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      return NextResponse.json({ error: `해설 생성 중 오류가 발생했습니다: ${message}` }, { status: 502 });
+    }
+  }
 
   return NextResponse.json({
     saju,

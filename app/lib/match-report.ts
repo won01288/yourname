@@ -3,6 +3,7 @@ import type { HanjaGloss, NamingReport } from "@/lib/llm/explain";
 export interface ReportEntry {
   explanation: string;
   hanjaGlosses: HanjaGloss[];
+  strengths: string[];
 }
 
 // LLM이 반환하는 hangul이 이름 두 글자만인지 성을 포함하는지 확정할 수 없어(explain.ts 프롬프트가
@@ -14,5 +15,7 @@ export interface ReportEntry {
 export function matchReportEntry(report: NamingReport | null, candidateHangul: string): ReportEntry | null {
   if (!report) return null;
   const found = report.candidates.find((c) => c.hangul === candidateHangul || c.hangul.endsWith(candidateHangul));
-  return found ? { explanation: found.explanation, hanjaGlosses: found.hanjaGlosses } : null;
+  return found
+    ? { explanation: found.explanation, hanjaGlosses: found.hanjaGlosses, strengths: found.strengths }
+    : null;
 }
