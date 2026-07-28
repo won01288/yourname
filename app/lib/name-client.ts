@@ -33,11 +33,12 @@ export interface NameApiResult {
 export interface NameApiError {
   error: string;
   options?: string[];
+  code?: string;
 }
 
 export type NameApiOutcome =
   | { ok: true; data: NameApiResult }
-  | { ok: false; error: string; surnameOptions?: string[] };
+  | { ok: false; error: string; surnameOptions?: string[]; authRequired?: boolean };
 
 export async function submitNaming(payload: NameRequestPayload): Promise<NameApiOutcome> {
   let response: Response;
@@ -62,6 +63,10 @@ export async function submitNaming(payload: NameRequestPayload): Promise<NameApi
       ok: false,
       error: body.error ?? `요청이 실패했습니다. (${response.status})`,
       surnameOptions: body.options,
+      // 로그인 베타 — 서버가 401 + AUTH_REQUIRED로 응답하면(클라이언트 사전 체크를 건너뛰고
+      // 직접 호출했거나, 제출 도중 세션이 만료된 드문 경우) 일반 에러 배너 대신 로그인 필요
+      // 모달로 수렴시키기 위한 플래그.
+      authRequired: response.status === 401 && body.code === "AUTH_REQUIRED",
     };
   }
 

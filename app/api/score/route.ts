@@ -9,6 +9,8 @@ import { aggregateElements } from "@/lib/naming/elements";
 import { deriveYongsin } from "@/lib/naming/yongsin";
 import { buildManseryeok } from "@/lib/naming/manseryeok";
 import { scoreName } from "@/lib/naming/score";
+import { getCurrentUser } from "@/lib/auth";
+import { saveScoreResult } from "@/lib/db-auth";
 
 interface GivenNameSyllable {
   hangul: string;
@@ -112,7 +114,7 @@ export async function POST(request: Request) {
     );
   }
 
-  return NextResponse.json({
+  const responseBody = {
     saju,
     elementDistribution,
     yongsin: yongsinResult,
@@ -120,5 +122,18 @@ export async function POST(request: Request) {
     surname,
     givenName: [hanja1, hanja2],
     score,
-  });
+  };
+
+  // 로그인 베타 — 로그인 상태일 때만 자동 저장한다(별도 "저장" 버튼 없음). 게스트는 지금처럼
+  // 무저장/무이력. 저장 실패가 채점 결과 응답 자체를 막으면 안 되므로 best-effort로 처리한다.
+  const currentUser = await getCurrentUser();
+  if (currentUser) {
+    try {
+      await saveScoreResult(currentUser.id, body, responseBody);
+    } catch (err) {
+      console.error("score_result 저장 실패:", err);
+    }
+  }
+
+  return NextResponse.json(responseBody);
 }

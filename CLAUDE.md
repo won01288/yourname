@@ -28,6 +28,17 @@
 
 ---
 
+### 0.2 로그인/마이페이지 베타 (Phase 9 확정, 2026.7.28)
+
+카카오/구글/네이버 소셜 로그인은 사업자 등록 완료 후 별도로 붙일 예정이라, 그 전 단계로 **이메일+비밀번호만 지원하는 베타 로그인**을 먼저 도입했다. 로그인의 유일한 목적은 "조회한 결과를 나중에 다시 볼 수 있게" 하는 것이다.
+
+- **`/score`(무료)**: 로그인 없이 지금처럼 완전히 이용 가능. 로그인 상태일 때만 결과가 **자동 저장**된다(별도 "저장" 버튼 없음). 게스트는 저장·이력 없음.
+- **`/naming`(프리미엄)**: 위저드 화면 자체는 비로그인도 볼 수 있지만, **최종 제출 버튼을 누르면 로그인 필요 안내**가 뜨고 API 호출 자체가 막힌다. 실제 보안 경계는 `app/api/name/route.ts`의 401(로그인 없이 호출 시 DB 조회·LLM 호출 전에 즉시 차단)이고, 클라이언트 모달(`AuthRequiredModal.tsx`)은 UX일 뿐이다.
+- **보관 정책**: 이름 점수 확인 결과는 **영구 저장**(사용자가 원하면 개별 삭제). 작명 결과는 **생성 후 30일간**만 재조회 가능 — 별도 정리 배치/크론 없이 조회 시점 SQL `WHERE expires_at > CURRENT_TIMESTAMP` 필터로만 처리한다(문제가 실제로 생기기 전엔 인프라를 늘리지 않는다는 8.3 원칙).
+- **인증 방식**: 비밀번호는 Node 내장 `crypto`(scrypt)로 해시하며, 새 라이브러리 의존성을 추가하지 않았다(`lib/auth.ts`). 세션은 JWT가 아니라 **DB-backed opaque 토큰**이다 — 쿠키엔 랜덤 원본 토큰을, DB(`session.id`)엔 그 SHA-256 해시만 저장해 DB가 유출돼도 세션을 재사용할 수 없게 했다. 이 방식은 새 시크릿 env var가 필요 없고 로그아웃 즉시 무효화가 가능하다.
+- **비밀번호 재설정·이메일 인증은 이번 베타 범위 밖**이다(이메일 발송 인프라 자체가 없음) — 6장 미결정 사항 참고.
+- 데이터 모델은 4.7, 코드 위치는 8.2를 참고.
+
 ## 1. 기술 스택 (확정)
 
 | 영역 | 선택 | 비고 |
@@ -283,6 +294,17 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 
 채점(3.10)은 `hanja`/`surname`/`numerology_81` 기존 테이블만 조회하며, 새 테이블이나 컬럼을 추가하지 않는다. `lib/db.ts`에 `getHanjaByReading(reading)`(한글 음 → 한자 후보 목록, `json_each(readings)`로 조회)만 추가했다 — `readings` 컬럼에 인덱스는 없지만 9,063행 규모라 풀스캔으로도 충분하다.
 
+### 4.7 user / session / score_result / naming_result (로그인 베타, Phase 9 확정, 2026.7.28)
+
+| 테이블 | 컬럼 | 설명 |
+|---|---|---|
+| `user` | id, email(UNIQUE), password_hash, created_at | `password_hash`는 `"scrypt:v1:<saltHex>:<hashHex>"` 형식(0.2 참고). |
+| `session` | id, user_id, created_at, expires_at | `id`엔 원본 토큰이 아니라 **SHA-256 해시**만 저장(0.2 참고). `expires_at`은 INSERT 시 `datetime('now','+30 days')`로 SQL이 계산. |
+| `score_result` | id, user_id, request_payload(JSON), result(JSON), created_at | 무료 서비스 결과. `result`는 `ScoreApiResult`를 그대로 직렬화 — 재계산 없이 화면 재현 가능. 영구 보관, 삭제는 `DELETE /api/history/score/[id]`. |
+| `naming_result` | id, user_id, request_payload(JSON), result(JSON), created_at, expires_at | 프리미엄 결과. `result`엔 비용이 든 LLM `report`까지 포함 — 재열람 시 LLM을 다시 호출하지 않기 위해 verbatim 저장. `expires_at`도 INSERT 시 `datetime('now','+30 days')`로 계산, 조회 시 이 조건으로 필터링(별도 삭제 기능 없음).
+
+기존 4테이블(hanja/surname/numerology_81/given_name)과 동일하게 **FK 제약을 쓰지 않는다** — 소유권은 매 조회 SQL의 `WHERE ... AND user_id = ?`(+ 필요시 `expires_at` 조건)로 강제한다. `lib/db.ts`(읽기 전용 참조 데이터)와 성격이 달라 쓰기 전용 접근 함수는 신규 `lib/db-auth.ts`로 분리했다(8.2 참고).
+
 ---
 
 ## 5. 개발 로드맵
@@ -295,6 +317,7 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 - [x] **Phase 6 — 프론트/UX + 마무리**: `design.md` 기준 입력 폼(단계별 위저드)·결과 리포트(벤토 그리드 + 점진적 공개)·다크모드·법적 고지 1차 구현 완료. 베타 실사용 중 발견된 작명 엔진 버그(후보 다양성 부재, 3.6 참고)를 수정하고 `is_common` 컬럼을 추가해 한자 친숙도를 개선했다. 이후 사용자가 제공한 실사용 이름 표로 이름 후보 풀 자체를 자유 조합에서 큐레이션 목록 기반으로 전환했다(3.7, `given_name` 테이블) — 성별(`gender`) 입력이 이제 실제로 쓰여 입력 폼에 추가됨. 결과 화면의 디테일 부족 피드백에 대응해 만세력 상세 표(십신·지장간·공망, `lib/naming/manseryeok.ts`, 3.8)와 LLM 기반 사주풀이 감성 해설(`sajuStory`, 3.8)을 추가했다. 이어서 후보 한자의 훈음·한글 뜻풀이 표시(`hanjaGlosses`, 3.9), 종합 해설의 파이프라인 근거 서술 확장, 오행 한자 "한자(음)" 병기 규칙(3.9)을 추가했다.
 - [ ] **Phase 7 — 무료 "이름 점수 확인" 서비스 + 라우팅 분리 (진행 중, 2026.7.26)**: 서비스를 두 티어(0.1)로 분리했다. 라우팅을 처음 도입해 `/`(랜딩, 두 서비스 카드)·`/naming`(기존 유료 위저드+결과, 파일만 이동)·`/score`(신규 무료)로 나눴다. 채점 로직(`lib/naming/score.ts`, 3.10)을 순수 함수로 신설하고 `app/api/score/route.ts`에서 LLM 없이 조립했다(`explainCandidates` 미호출). "한자 찾기"(`getHanjaByReading`, `/api/hanja-search`, `HanjaSearchPicker.tsx`)를 신설했다. `InputForm`과 `NameScoreForm`이 처음부터 동시에 필요로 하는 생년월일시 입력을 `BirthDateTimeFields.tsx`로 공유 추출했고(8.3), `LoadingStages`를 stages prop 받는 범용 컴포넌트로 일반화했다. `candidates.ts`의 `isYinYangBalanced`를 `score.ts`로 옮겨 생성·채점 양쪽이 공유한다. vitest(`score.test.ts`, 5×5 상생/비화/역상생/상극 분류 전수 검증 포함)·tsc·eslint 통과 확인. 남은 것: 브라우저 실기 확인(design.md 검증 절차), 실제 결제 게이트 연동(현재 "유료"는 개념뿐, 6장 참고).
 - [x] **Phase 8 — 프리미엄 작명 후보 개수 선택 · 순위 폐지 · 유사 이름 소프트 필터 (2026.7.27)**: 3.6.1 참고. `CANDIDATE_COUNT_OPTIONS=[3,5,10]`로 후보 개수를 선택형으로 바꿨고(`InputForm`·`/api/name`), LLM `rank` 필드를 제거해 순위를 없앤 대신 결정적으로 계산되는 강점 태그(`Candidate.highlights`)를 신설해 벤토 타일을 동일 크기로 통일했다(`HighlightBadges.tsx`, `CandidateDetail.tsx`). 표시 순서는 `app/lib/shuffle.ts`로 응답 직전 무작위화한다. `lib/naming/similarity.ts`(자모 단위 유사도)로 "규리/규린/규나"류 이름이 한 결과에 몰리는 것을 완화 단계별 소프트 필터(`CANDIDATE_DIVERSITY.stages.avoidSimilar`)로 최대한 거른다. vitest(`similarity.test.ts`, `candidates.test.ts` 갱신)·tsc 통과 확인.
+- [x] **Phase 9 — 로그인(이메일/비밀번호) 베타 + 마이페이지 (2026.7.28)**: 0.2·4.7 참고. `lib/auth.ts`(비밀번호 scrypt 해시, DB-backed opaque 세션)·`lib/db-auth.ts`(user/session/score_result/naming_result CRUD) 신설, `app/api/auth/{signup,login,logout}` 라우트 추가. `app/api/name/route.ts`는 최상단 401 게이트(로그인 필수) + 성공 시 `naming_result` best-effort 저장을 추가했고, `app/api/score/route.ts`는 게이트 없이 로그인 상태일 때만 자동 저장하도록 했다. `app/naming/page.tsx`를 Server Component로 바꾸고 기존 위저드 로직은 `NamingWizardClient.tsx`로 옮겨, 비로그인 최종 제출 시 `AuthRequiredModal`을 띄우고 `sessionStorage`로 입력값을 보존했다가 로그인 후 `/naming?resume=1`에서 복원한다(폼 재입력 방지). `Nav.tsx`는 이미 Server Component였음을 확인하고 `async` 전환 후 `getCurrentUser()`를 직접 호출해 로그인 상태별 링크(로그인/회원가입 ↔ 마이페이지/로그아웃)를 표시한다 — 이로 인해 Nav를 포함한 모든 라우트가 정적 프리렌더링에서 동적 렌더링으로 바뀌는 트레이드오프를 받아들였다. `app/mypage/*` 페이지에서 저장된 결과를 `ScoreDashboard`/`ResultsDashboard`(신규 `restartLabel` prop으로 문구만 다르게)로 그대로 재현한다. `GET /api/history/*` 같은 조회용 API는 만들지 않고 마이페이지 Server Component가 `lib/db-auth.ts`를 직접 호출하며, 클라이언트 인터랙션이 필요한 삭제(`DELETE /api/history/score/[id]`)만 API로 뒀다(8.3). vitest(`lib/auth.test.ts`, 해시/세션 토큰 유일성)·tsc·eslint 통과 확인.
 
 ---
 
@@ -321,7 +344,8 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 - **성씨 테이블 확장 (2026.7.28, 30개 → 100개/102행으로 완료)**: `etc/korean_sung.hwp` 기준 상위 100개 성씨로 확장했다(4.4 참고). 남은 갭: 이 100개 밖의 희귀 성씨·이체자(예: 100위 밖 성씨, 흔치 않은 한자 표기)는 여전히 없다. (`오행배속표.hwp`의 "성씨" 목록은 분류 근거가 불명확해 채택하지 않았음 — 기존 판단 유지.) 복성(남궁 외 제갈·황보·선우 등)은 이번 표에 남궁 하나만 포함되어 있어, 다른 복성이 필요해지면 별도 출처 확인이 필요하다.
 - **4격(원격·형격·이격·정격) 계산의 이름 1글자 보정**: 현재 `calcSagyeok`은 이름이 1글자면 형격=이격이 되는 단순 합산만 적용. 일부 유파는 가상 획수를 더하는 보정을 쓰므로 검수 후 결정.
 - **이름 점수 확인 서비스(3.10)의 1글자·3글자 이상 이름 미지원**: `GIVEN_NAME_LENGTH=2`와 같은 이유로 채점도 두 글자만 받는다. 위 4격 1글자 보정이 확정되면 함께 확장 검토.
-- **유료 서비스 실제 결제 게이트**: 코드베이스에 결제 시스템 자체가 없다(0.1) — `/naming`은 개념상 "프리미엄"일 뿐 기술적으로는 열려 있다. 실제 과금·로그인이 필요해지면 별도 결정.
+- **유료 서비스 실제 결제 게이트**: 코드베이스에 결제 시스템 자체가 없다(0.1) — `/naming`은 로그인(Phase 9, 0.2)은 필수가 됐지만 실제 과금은 아직 없어 개념상 "프리미엄"일 뿐 기술적으로는 로그인만 하면 열려 있다. 실제 결제 연동은 별도 결정.
+- **로그인 베타의 의도적 제외 항목 (0.2, Phase 9)**: 비밀번호 재설정(이메일 발송 인프라 없음 — 문의 시 운영자가 수동으로 `password_hash` 갱신), 이메일 소유권 인증, 가입/로그인 rate limit(Vercel Firewall/WAF 레벨에서 거는 게 더 정확하다고 판단해 앱 코드에서는 보류). 소셜 로그인(카카오/구글/네이버)은 사업자 등록 완료 후 별도 작업.
 
 ---
 
@@ -353,7 +377,9 @@ yourname/                 ← 프로젝트 루트 (CLAUDE.md 위치)
 │  │  ├─ similarity.ts← 이름 두 글자 간 자모 유사도 판정 — 유사 이름 소프트 필터용 (3.6.1, Phase 8)
 │  │  └─ score.ts     ← 이름 채점(등급 판정) — 무료 전용 (3.10, Phase 7)
 │  ├─ saju.ts         ← @fullstackfamily/manseryeok 를 감싸 Saju 타입 반환
-│  └─ db.ts           ← Turso 접속 + 조회 함수 (한자·성씨·수리·한자 음 검색)
+│  ├─ db.ts           ← Turso 접속 + 조회 함수 (한자·성씨·수리·한자 음 검색, 읽기 전용 참조 데이터)
+│  ├─ auth.ts         ← 로그인 베타(Phase 9): 비밀번호 scrypt 해시, DB-backed 세션 발급/조회 (0.2)
+│  └─ db-auth.ts      ← user/session/score_result/naming_result CRUD (getDbClient는 db.ts에서 재사용)
 │
 ├─ scripts/db/        ← Turso 스키마 적용 + 참조 데이터 적재 스크립트 (1회성, Next 앱과 무관)
 │  ├─ schema.sql, apply-schema.js
@@ -361,17 +387,23 @@ yourname/                 ← 프로젝트 루트 (CLAUDE.md 위치)
 │  └─ data/           ← 적재용 JSON (final_hanja.json, given_names.json 등). 원본 가공 과정은 etc/ 참고.
 │
 ├─ app/page.tsx           ← 랜딩(두 서비스 카드로 분기, 계산 로직 없음)
-├─ app/naming/page.tsx    ← 유료 위저드+결과 화면 (구 app/page.tsx)
-├─ app/score/page.tsx     ← 무료 위저드+결과 화면 (Phase 7)
-├─ app/api/name/route.ts  ← saju·db·naming(candidates)·llm 순서대로 호출. 계산 로직 없음.
-├─ app/api/score/route.ts ← saju·db·naming(score) 순서대로 호출. LLM 미호출.
+├─ app/naming/page.tsx    ← 서버 컴포넌트(로그인 여부만 확인) + app/naming/NamingWizardClient.tsx(위저드 본체)
+├─ app/score/page.tsx     ← 무료 위저드+결과 화면 (Phase 7, 로그인 게이트 없음)
+├─ app/login/page.tsx, app/signup/page.tsx ← 로그인/회원가입 (Phase 9)
+├─ app/mypage/page.tsx    ← 저장된 결과 목록(점수 확인 영구·작명 30일 이내), 로그인 필수
+├─ app/mypage/score/[id]/page.tsx, app/mypage/naming/[id]/page.tsx ← 저장된 결과 상세(ScoreDashboard/ResultsDashboard 재사용)
+├─ app/api/name/route.ts  ← 로그인 게이트(401) → saju·db·naming(candidates)·llm 순서대로 호출 → naming_result 저장. 계산 로직 없음.
+├─ app/api/score/route.ts ← saju·db·naming(score) 순서대로 호출(LLM 미호출) → 로그인 시 score_result 저장.
+├─ app/api/auth/{signup,login,logout}/route.ts ← 회원가입/로그인/로그아웃 (Phase 9)
+├─ app/api/history/score/[id]/route.ts ← 저장된 점수 결과 삭제(DELETE) 전용
 └─ app/api/hanja-search/route.ts ← "한자 찾기" 조회 전용, 계산 없음.
 ```
 
 - `lib/naming/` 안의 파일들은 서로는 import해도 되지만, 폴더 밖(Next/Turso/SDK)은 절대 import하지 않는다.
-- `saju.ts`, `db.ts`는 외부 라이브러리·DB를 감싸는 얇은 모듈. "계층"이 아니라 그냥 파일 하나씩이다.
+- `saju.ts`, `db.ts`, `auth.ts`, `db-auth.ts`는 외부 라이브러리·DB를 감싸는 얇은 모듈. "계층"이 아니라 그냥 파일 하나씩이다. `db.ts`(읽기 전용 참조 데이터)와 `db-auth.ts`(쓰기가 잦은 사용자 생성 데이터)는 성격이 달라 분리했다(Phase 9).
 - 파이프라인 조립(팔자 → 오행 → 용신 → DB 조회 → 필터 → 순위)은 처음엔 `route.ts` 안에서 직접 한다.
 - LLM 호출은 이 파이프라인 **바깥**, 후보가 확정된 뒤에만 붙인다.
+- 마이페이지의 목록/상세 조회처럼 소비자가 Server Component뿐인 경우, 굳이 `GET /api/history/*` 같은 조회 API를 만들지 않고 `lib/db-auth.ts`를 페이지에서 직접 호출한다(8.3) — 클라이언트 인터랙션이 실제로 필요한 삭제만 API로 둔다.
 
 ### 8.3 언제 구조를 더 나눌 것인가 (판단 기준)
 

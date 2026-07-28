@@ -1,81 +1,10 @@
-"use client";
+import NamingWizardClient from "./NamingWizardClient";
+import { getCurrentUser } from "@/lib/auth";
 
-import { useCallback, useRef, useState } from "react";
-import Hero from "@/app/components/Hero";
-import InputForm from "@/app/components/InputForm";
-import LoadingStages from "@/app/components/LoadingStages";
-import ResultsDashboard from "@/app/components/ResultsDashboard";
-import { submitNaming, type NameApiResult, type NameRequestPayload } from "@/app/lib/name-client";
-
-type Stage = "form" | "loading" | "result";
-
-export default function Home() {
-  const [stage, setStage] = useState<Stage>("form");
-  const [submitting, setSubmitting] = useState(false);
-  const [requestDone, setRequestDone] = useState(false);
-  const [lastPayload, setLastPayload] = useState<NameRequestPayload | null>(null);
-  const [surnameOptions, setSurnameOptions] = useState<string[] | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [result, setResult] = useState<NameApiResult | null>(null);
-  const pendingResult = useRef<NameApiResult | null>(null);
-
-  const handleSubmit = useCallback(async (payload: NameRequestPayload) => {
-    setLastPayload(payload);
-    setErrorMessage(null);
-    setSubmitting(true);
-    setRequestDone(false);
-    setStage("loading");
-
-    const outcome = await submitNaming(payload);
-    setSubmitting(false);
-
-    if (!outcome.ok) {
-      setStage("form");
-      setErrorMessage(outcome.error);
-      setSurnameOptions(outcome.surnameOptions ?? null);
-      return;
-    }
-
-    setSurnameOptions(null);
-    pendingResult.current = outcome.data;
-    setRequestDone(true);
-  }, []);
-
-  const handleLoadingComplete = useCallback(() => {
-    if (pendingResult.current) {
-      setResult(pendingResult.current);
-      setStage("result");
-    }
-  }, []);
-
-  const handleRestart = useCallback(() => {
-    setResult(null);
-    setSurnameOptions(null);
-    setErrorMessage(null);
-    setLastPayload(null);
-    setRequestDone(false);
-    pendingResult.current = null;
-    setStage("form");
-  }, []);
-
-  return (
-    <main className="flex flex-1 flex-col">
-      {stage === "form" && (
-        <>
-          <Hero />
-          <InputForm
-            onSubmit={handleSubmit}
-            submitting={submitting}
-            surnameOptions={surnameOptions}
-            errorMessage={errorMessage}
-            initialValues={lastPayload}
-          />
-        </>
-      )}
-
-      {stage === "loading" && <LoadingStages isDone={requestDone} onComplete={handleLoadingComplete} />}
-
-      {stage === "result" && result && <ResultsDashboard data={result} onRestart={handleRestart} />}
-    </main>
-  );
+// 로그인 베타 — 위저드 화면 자체는 비로그인도 볼 수 있지만, 최종 제출은 로그인이 필요하다
+// (app/api/name/route.ts가 401로 실제 강제). 여기서는 서버에서 로그인 여부만 확인해 클라이언트
+// 위저드에 prop으로 내려준다.
+export default async function NamingPage() {
+  const user = await getCurrentUser();
+  return <NamingWizardClient isLoggedIn={Boolean(user)} />;
 }

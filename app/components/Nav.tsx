@@ -1,8 +1,15 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import LogoutButton from "./LogoutButton";
+import { getCurrentUser } from "@/lib/auth";
 
 // design.md 3.4 — 글래스모피즘은 상단 고정 내비게이션과 모달에만 적용한다.
-export default function Nav() {
+// 로그인 베타 — Nav는 Server Component라 getCurrentUser()를 직접 호출한다(레이아웃을 거쳐
+// prop으로 내려줄 필요 없음). 단, cookies()를 읽으므로 이 Nav를 포함한 모든 라우트가
+// 정적 프리렌더링에서 동적 렌더링으로 바뀐다 — 지금은 체감 영향이 작아 받아들이는 트레이드오프.
+export default async function Nav() {
+  const user = await getCurrentUser();
+
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-[var(--glass-bg)] backdrop-blur-[var(--glass-blur)]">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-2 px-4 sm:px-6">
@@ -33,6 +40,32 @@ export default function Nav() {
             <span className="sm:hidden">작명</span>
             <span className="hidden sm:inline">프리미엄 작명</span>
           </Link>
+          {user ? (
+            <>
+              <Link
+                href="/mypage"
+                className="flex min-h-11 items-center rounded-control px-2.5 text-[13px] font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
+              >
+                마이페이지
+              </Link>
+              <LogoutButton />
+            </>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="flex min-h-11 items-center rounded-control px-2.5 text-[13px] font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
+              >
+                로그인
+              </Link>
+              <Link
+                href="/signup"
+                className="flex min-h-11 items-center rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-3 text-[13px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
+              >
+                회원가입
+              </Link>
+            </>
+          )}
           <ThemeToggle />
         </nav>
       </div>

@@ -11,6 +11,8 @@ import AmbientBackdrop from "./AmbientBackdrop";
 interface ScoreDashboardProps {
   data: ScoreApiResult;
   onRestart: () => void;
+  /** 마이페이지에서 저장된 결과를 다시 볼 때 "다시 확인" 대신 쓸 라벨. 생략 시 기존 문구(하위호환). */
+  restartLabel?: string;
 }
 
 const GRADE_DESCRIPTION: Record<string, string> = {
@@ -42,7 +44,7 @@ function CategoryBar({ label, points, maxPoints, applicable }: { label: string; 
 }
 
 // design.md — 무료 서비스 결과 화면. LLM 산문이 없으므로 수치·배지 중심으로 전문성을 표현한다.
-export default function ScoreDashboard({ data, onRestart }: ScoreDashboardProps) {
+export default function ScoreDashboard({ data, onRestart, restartLabel }: ScoreDashboardProps) {
   const { saju, elementDistribution, yongsin, manseryeok, surname, givenName, score } = data;
   const hanjaText = givenName.map((h) => h.char).join("");
   const hangulText = givenName.map((h) => h.readings[0] ?? h.char).join("");
@@ -63,7 +65,7 @@ export default function ScoreDashboard({ data, onRestart }: ScoreDashboardProps)
             onClick={onRestart}
             className="flex min-h-11 shrink-0 items-center gap-1.5 rounded-control border border-border bg-surface px-3.5 py-2 text-[13px] font-medium text-text-primary transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
           >
-            다시 확인
+            {restartLabel ?? "다시 확인"}
           </button>
         </div>
       </div>

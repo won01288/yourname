@@ -12,6 +12,8 @@ import { CANDIDATE_COUNT_OPTIONS, DEFAULT_CANDIDATE_COUNT, type CandidateCount }
 import { explainCandidates } from "@/lib/llm/explain";
 import { shuffleArray } from "@/app/lib/shuffle";
 import type { Gender } from "@/lib/naming/types";
+import { getCurrentUser } from "@/lib/auth";
+import { saveNamingResult } from "@/lib/db-auth";
 
 interface NameRequestBody extends BirthInput {
   surnameHangul: string;
@@ -40,6 +42,14 @@ function isValidBirthInput(body: Partial<NameRequestBody>): body is NameRequestB
 }
 
 export async function POST(request: Request) {
+  // 로그인 베타 — 프리미엄 작명은 로그인 필수(무료 /score와 달리). 가장 비싼 단계(LLM 호출)는
+  // 물론 DB 조회조차 하기 전에 막아, 미인증 요청이 어떤 비용도 유발하지 않게 한다. 클라이언트의
+  // 사전 모달은 UX일 뿐이고, 이 401이 실제 보안 경계다.
+  const currentUser = await getCurrentUser();
+  if (!currentUser) {
+    return NextResponse.json({ error: "로그인이 필요합니다.", code: "AUTH_REQUIRED" }, { status: 401 });
+  }
+
   let body: Partial<NameRequestBody>;
   try {
     body = await request.json();
@@ -124,7 +134,7 @@ export async function POST(request: Request) {
     }
   }
 
-  return NextResponse.json({
+  const responseBody = {
     saju,
     elementDistribution,
     yongsin: yongsinResult,
@@ -132,5 +142,15 @@ export async function POST(request: Request) {
     surname,
     candidates,
     report,
-  });
+  };
+
+  // best-effort 저장 — 이미 비용을 지불해 생성된 LLM 결과를 저장 실패 때문에 사용자가 못 받는
+  // 일이 없도록, 저장이 실패해도 정상 응답은 그대로 반환한다(30일 재조회는 CLAUDE.md 신규 결정).
+  try {
+    await saveNamingResult(currentUser.id, body, responseBody);
+  } catch (err) {
+    console.error("naming_result 저장 실패:", err);
+  }
+
+  return NextResponse.json(responseBody);
 }

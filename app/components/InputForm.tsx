@@ -14,6 +14,12 @@ interface InputFormProps {
   errorMessage: string | null;
   /** 성씨 한자 재선택 등으로 폼이 재마운트될 때 이전에 입력했던 값을 복원한다. */
   initialValues?: NameRequestPayload | null;
+  /** 로그인 베타 — 프리미엄 작명은 로그인이 필요하다. 서버(app/api/name/route.ts)의 401이
+   * 실제 보안 경계이고, 이 prop은 UX 목적(제출 자체를 막고 안내)일 뿐이다. */
+  isLoggedIn: boolean;
+  /** isLoggedIn이 false일 때 최종 제출 대신 호출된다. 지금까지 입력한 값을 그대로 넘겨,
+   * 로그인 후 이어서 제출할 수 있게 한다(부모가 sessionStorage에 보관). */
+  onLoginRequired: (payload: NameRequestPayload) => void;
 }
 
 const STEP_LABELS = ["기본 정보", "생년월일", "태어난 시각", "추천 개수"];
@@ -31,6 +37,8 @@ export default function InputForm({
   surnameOptions,
   errorMessage,
   initialValues,
+  isLoggedIn,
+  onLoginRequired,
 }: InputFormProps) {
   const [step, setStep] = useState(0);
 
@@ -72,7 +80,7 @@ export default function InputForm({
 
   function handleSubmit() {
     if (!gender) return; // step1Valid가 이전 단계에서 이미 강제하므로 도달하지 않는다.
-    onSubmit({
+    const payload: NameRequestPayload = {
       gender,
       surnameHangul: surnameHangul.trim(),
       surnameHanja: surnameHanja || undefined,
@@ -84,7 +92,14 @@ export default function InputForm({
       day: effectiveDay,
       hour: timeUnknown ? 12 : hour,
       minute: timeUnknown ? 0 : minute,
-    });
+    };
+    // 로그인 베타 — 비로그인 상태면 API를 호출하지 않고(비용 방지) 로그인 안내로 대신한다.
+    // 서버도 독립적으로 401을 강제하므로 이 체크는 UX용 사전 차단일 뿐이다.
+    if (!isLoggedIn) {
+      onLoginRequired(payload);
+      return;
+    }
+    onSubmit(payload);
   }
 
   return (

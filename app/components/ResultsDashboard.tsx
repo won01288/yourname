@@ -15,10 +15,13 @@ import AmbientBackdrop from "./AmbientBackdrop";
 interface ResultsDashboardProps {
   data: NameApiResult;
   onRestart: () => void;
+  /** 마이페이지에서 저장된 결과를 다시 볼 때 "다시 짓기"/"다시 시도하기" 대신 쓸 라벨.
+   * 생략 시 기존 문구 그대로(하위호환) — 위저드 맥락에서는 "다시 시작"으로 읽혀야 맞다. */
+  restartLabel?: string;
 }
 
 // design.md 3.1/3.2 — 벤토 그리드 + 점진적 공개로 구성된 결과 리포트.
-export default function ResultsDashboard({ data, onRestart }: ResultsDashboardProps) {
+export default function ResultsDashboard({ data, onRestart, restartLabel }: ResultsDashboardProps) {
   const { saju, elementDistribution, yongsin, manseryeok, surname, candidates, report } = data;
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -58,7 +61,7 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
               <path d="M9 3 A4 4 0 1 1 3 2" fill="none" stroke="currentColor" strokeWidth="1.3" />
               <path d="M9 1v2.5H6.5" fill="none" stroke="currentColor" strokeWidth="1.3" />
             </svg>
-            다시 짓기
+            {restartLabel ?? "다시 짓기"}
           </button>
         </div>
       </div>
@@ -83,7 +86,7 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
             onClick={onRestart}
             className="mt-5 inline-flex min-h-11 items-center rounded-control bg-gradient-to-r from-brand-400 to-brand-600 px-5 text-[14px] font-medium text-white shadow-[var(--shadow-brand-glow)] transition-all hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
           >
-            다시 시도하기
+            {restartLabel ?? "다시 시도하기"}
           </button>
         </section>
       ) : (
