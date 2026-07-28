@@ -129,8 +129,7 @@ export default function ScoreDashboard({ data, onRestart }: ScoreDashboardProps)
       <section className="relative mb-8 rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-elevated)] sm:p-8">
         <div className="-mx-6 -mt-6 mb-5 h-[3px] rounded-t-card bg-gradient-to-r from-brand-400 to-brand-600 sm:-mx-8 sm:-mt-8" />
         <h2 className="mb-5 text-[16px] font-semibold text-text-primary">사주 요약</h2>
-        <h3 className="mb-2.5 text-[13px] font-semibold text-text-secondary">오행 분포</h3>
-        <ElementDistributionChart distribution={elementDistribution} />
+        <ElementDistributionChart distribution={elementDistribution} dayStem={saju?.day.stem} />
         <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-border pt-5">
           <span className="rounded-pill bg-brand-50 px-2.5 py-1 text-[12px] font-medium text-brand-800">{yongsin.strength}</span>
           <span className="text-[13px] text-text-secondary">용신</span>

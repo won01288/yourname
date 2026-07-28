@@ -67,7 +67,7 @@ export default function ResultsDashboard({ data, onRestart }: ResultsDashboardPr
 
       <ManseryeokTable manseryeok={manseryeok} />
 
-      <SajuReportCard elementDistribution={elementDistribution} yongsin={yongsin} />
+      <SajuReportCard elementDistribution={elementDistribution} yongsin={yongsin} dayStem={saju?.day.stem} />
 
       {report && <SajuStoryCard title={report.sajuStory.title} body={report.sajuStory.body} />}
 

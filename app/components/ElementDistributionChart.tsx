@@ -1,172 +1,217 @@
-import type { ElementDistribution, Element } from "@/lib/naming/types";
-import { ELEMENT_LABEL, elementColor, elementTintStyle } from "@/app/lib/element-style";
+"use client";
 
-const ORDER: Element[] = ["木", "火", "土", "金", "水"];
+import { useId } from "react";
+import type { ElementDistribution, Element } from "@/lib/naming/types";
+import { STEM_ELEMENT, ELEMENT_READING } from "@/lib/naming/config";
+import { elementColor } from "@/app/lib/element-style";
+
 const TOTAL = 8; // CLAUDE.md 3.3.1 — 지장간 가중치 정규화로 오행 분포 총합은 항상 8.
 
-// 가로형 라운드 사각형 "도넛" 트랙의 SVG 좌표계. rx가 높이의 절반보다 작아 평평한 변이 남는
-// 라운드 사각형이 되도록 잡았다(완전히 둥글면 알약/필 형태가 되어 버림).
-const VIEW_W = 100;
-const VIEW_H = 32;
-const INSET = 5;
-const RX = 7;
-const STROKE_WIDTH = 13;
-const RECT_X = INSET;
-const RECT_Y = INSET;
-const RECT_W = VIEW_W - INSET * 2;
-const RECT_H = VIEW_H - INSET * 2;
+// 오행을 오각형 꼭짓점에 배치하는 고정 순서. 인접한 두 오행(i → i+1)이 상생(木生火·火生土·
+// 土生金·金生水·水生木) 관계이고, 한 칸 건너(i → i+2)가 상극(木剋土·火剋金·土剋水·金剋木·
+// 水剋火) 관계가 되도록 잡은 순서라 임의로 바꾸면 화살표 방향이 실제 오행 이론과 어긋난다.
+const PENTAGON_ORDER: Element[] = ["木", "火", "土", "金", "水"];
 
-// 세그먼트 사이 여백(둘레 길이 대비 %, pathLength=100 기준). 여백만큼 dash를 줄이고 슬롯
-// 중앙에 배치해, strokeLinecap="round"로 끝을 둥글려도 이웃과 자연스럽게 떨어져 보인다.
-const GAP = 1.6;
-// 비중이 아주 작은 오행(예: 0.3/8)도 완전히 사라지지 않도록 보장하는 최소 dash 길이.
-const MIN_DASH = 0.8;
-// 세그먼트 위에 라벨을 직접 얹을 수 있는 최소 비중(%). 이보다 작은 조각은 라벨을 넣을
-// 자리가 안 나오므로, 링 아래 범례 칩으로 뺀다. 라벨을 "오행명 / 퍼센트" 두 줄로 쌓아
-// 폭을 좁혀둔 덕에, 한 줄로 나란히 쓸 때보다 더 작은 조각에도 들어갈 수 있다.
-const INLINE_LABEL_THRESHOLD = 8;
+const VIEW_W = 320;
+const VIEW_H = 300;
+const CX = 160;
+const CY = 160;
+const RADIUS = 98;
+const NODE_R = 38;
+const NODE_GAP = 3; // 원 테두리와 화살표 시작/끝 사이 여백
 
-// 라운드 사각형 둘레 위에서, 시작점(경로 시작 = 상단 변의 rx만큼 오른쪽 지점)부터
-// 시계 방향으로 pct%(0~100) 만큼 이동한 지점의 좌표를 구한다. SVG의 stroke-dasharray가
-// 실제로 그 둘레를 따라가는 방식과 동일한 순서(윗변 → 우상단 모서리 → 오른쪽 변 → …)로
-// 계산하는 순수 함수라, 세그먼트 중간 지점에 라벨을 얹을 때 별도 DOM 측정 없이 쓸 수 있다.
-function pointOnRoundedRect(pct: number, x: number, y: number, width: number, height: number, r: number) {
-  const straightW = width - 2 * r;
-  const straightH = height - 2 * r;
-  const arcLen = (Math.PI * r) / 2;
-  const total = 2 * straightW + 2 * straightH + 4 * arcLen;
-  let d = ((pct % 100) / 100) * total;
-
-  if (d <= straightW) return { x: x + r + d, y };
-  d -= straightW;
-  if (d <= arcLen) {
-    const theta = -Math.PI / 2 + (d / arcLen) * (Math.PI / 2);
-    return { x: x + width - r + r * Math.cos(theta), y: y + r + r * Math.sin(theta) };
-  }
-  d -= arcLen;
-  if (d <= straightH) return { x: x + width, y: y + r + d };
-  d -= straightH;
-  if (d <= arcLen) {
-    const theta = (d / arcLen) * (Math.PI / 2);
-    return { x: x + width - r + r * Math.cos(theta), y: y + height - r + r * Math.sin(theta) };
-  }
-  d -= arcLen;
-  if (d <= straightW) return { x: x + width - r - d, y: y + height };
-  d -= straightW;
-  if (d <= arcLen) {
-    const theta = Math.PI / 2 + (d / arcLen) * (Math.PI / 2);
-    return { x: x + r + r * Math.cos(theta), y: y + height - r + r * Math.sin(theta) };
-  }
-  d -= arcLen;
-  if (d <= straightH) return { x, y: y + height - r - d };
-  d -= straightH;
-  const theta = Math.PI + (d / arcLen) * (Math.PI / 2);
-  return { x: x + r + r * Math.cos(theta), y: y + r + r * Math.sin(theta) };
+function nodePosition(index: number) {
+  const angle = (-90 + index * 72) * (Math.PI / 180);
+  return { x: CX + RADIUS * Math.cos(angle), y: CY + RADIUS * Math.sin(angle) };
 }
 
-// design.md 3.2 — 사주 요약 오행 분포 시각화. 라운드 사각형 도넛 하나를 오행 5개 비율만큼
-// 색으로 나누어 채운다(원형 도넛과 같은 논리 — 세그먼트 5개가 이어 붙어 링 전체를 이룸).
-// SVG pathLength로 트랙 전체 길이를 100으로 정규화해, 각 세그먼트의 길이(dasharray)와
-// 시작 위치(dashoffset)를 퍼센트 그대로 쓴다 — 실제 픽셀 둘레를 계산할 필요가 없다.
-export default function ElementDistributionChart({ distribution }: { distribution: ElementDistribution }) {
-  // 각 오행 조각의 누적 시작 위치(prefix sum)를 reduce 누산기로 계산한다 — 렌더 중 바깥
-  // 스코프의 let 변수를 매 순회마다 재대입하는 대신, 매 호출마다 새로 생성되는 reduce
-  // 누산기만 다뤄 react-hooks/immutability(렌더 순수성) 규칙과 충돌하지 않는다.
-  const pcts = ORDER.map((el) => Math.min(100, (distribution[el] / TOTAL) * 100));
-  const starts = pcts.reduce<number[]>((acc, pct, i) => {
-    acc.push(i === 0 ? 0 : acc[i - 1] + pcts[i - 1]);
-    return acc;
-  }, []);
-  const segments = ORDER.map((el, i) => {
-    const value = distribution[el];
-    const pct = pcts[i];
-    const start = starts[i];
-    const dashLen = Math.max(pct - GAP, Math.min(pct, MIN_DASH));
-    const dashStart = start + (pct - dashLen) / 2;
-    const mid = start + pct / 2;
-    const showInline = pct >= INLINE_LABEL_THRESHOLD;
-    const point = showInline ? pointOnRoundedRect(mid, RECT_X, RECT_Y, RECT_W, RECT_H, RX) : null;
-    return { el, value, pct, dashLen, dashStart, showInline, point };
-  });
+const POSITIONS = PENTAGON_ORDER.map((_, i) => nodePosition(i));
 
-  const legendItems = segments.filter((s) => !s.showInline);
+// 두 노드 중심을 잇는 선분을 양끝 원의 반지름(+여백)만큼 안쪽으로 당겨, 화살표가 원 위에
+// 겹치지 않고 테두리 바로 바깥에서 시작·끝나도록 만든다.
+function trimmedEdge(from: { x: number; y: number }, to: { x: number; y: number }) {
+  const dx = to.x - from.x;
+  const dy = to.y - from.y;
+  const dist = Math.hypot(dx, dy);
+  const ux = dx / dist;
+  const uy = dy / dist;
+  return {
+    start: { x: from.x + ux * (NODE_R + NODE_GAP), y: from.y + uy * (NODE_R + NODE_GAP) },
+    end: { x: to.x - ux * (NODE_R + NODE_GAP), y: to.y - uy * (NODE_R + NODE_GAP) },
+  };
+}
+
+interface ElementDistributionChartProps {
+  distribution: ElementDistribution;
+  // 사주 요약 헤더의 "일간: 戊(토)" 배지와 일간 오행 노드 강조용. 없으면 배지·강조를 생략한다.
+  dayStem?: string;
+}
+
+// design.md 3.2 — 사주 요약 오행 분포 시각화. 오각형 꼭짓점에 오행 5개를 배치하고, 인접
+// 꼭짓점을 잇는 실선 화살표로 상생(生) 순환을, 한 칸 건너 잇는 점선 화살표로 상극(剋)
+// 관계를 함께 보여준다. 노드 안 퍼센트는 오행 분포(총합 8) 그대로이고, 생/극 화살표는
+// 오행 이론 자체의 고정된 순환 구조를 그리는 장식이라 사주마다 방향이 달라지지 않는다.
+export default function ElementDistributionChart({ distribution, dayStem }: ElementDistributionChartProps) {
+  const uid = useId();
+  const dayMasterElement = dayStem ? STEM_ELEMENT[dayStem] : undefined;
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      {/* 가로 여백 없이 카드 폭을 최대한 채우되(w-full), 큰 화면에서는 max-w에서 멈추고
-          mx-auto로 가운데 정렬한다. */}
-      <div className="relative aspect-[100/32] w-full max-w-[640px] drop-shadow-[var(--shadow-chart)]">
-        <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className="absolute inset-0 h-full w-full" aria-hidden="true">
-          <rect
-            x={INSET}
-            y={INSET}
-            width={RECT_W}
-            height={RECT_H}
-            rx={RX}
-            ry={RX}
-            fill="none"
-            stroke="var(--bg-surface-muted)"
-            strokeWidth={STROKE_WIDTH}
-            pathLength={100}
-          />
-          {segments.map(({ el, dashLen, dashStart }) => (
-            <rect
-              key={el}
-              x={INSET}
-              y={INSET}
-              width={RECT_W}
-              height={RECT_H}
-              rx={RX}
-              ry={RX}
-              fill="none"
-              stroke={elementColor(el)}
-              strokeWidth={STROKE_WIDTH}
-              strokeLinecap="round"
-              pathLength={100}
-              strokeDasharray={`${dashLen} ${100 - dashLen}`}
-              strokeDashoffset={-dashStart}
-              className="transition-[stroke-dasharray,stroke-dashoffset] duration-700 ease-out"
-            />
-          ))}
-        </svg>
-        {/* 자리가 넉넉한 조각은 그 조각 한가운데에 라벨을 직접 얹는다. 색 조각 위에 놓이는
-            라벨이라 흰색 배경 칩을 따로 두지 않고 흰 글씨를 바로 얹는다(옅은 텍스트
-            그림자만으로 밝은 오행색 위에서도 읽히게 한다) — 조각 밖으로 빠지는 나머지만
-            아래에서 기존 틴트 배지 범례를 그대로 쓴다. */}
-        {segments.map(
-          ({ el, pct, showInline, point }) =>
-            showInline &&
-            point && (
-              <span
-                key={el}
-                className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center leading-none text-white"
-                style={{
-                  left: `${(point.x / VIEW_W) * 100}%`,
-                  top: `${(point.y / VIEW_H) * 100}%`,
-                  textShadow: "0 1px 2px rgba(0,0,0,0.35)",
-                }}
-              >
-                <span className="text-[11px] font-semibold sm:text-[13px]">{ELEMENT_LABEL[el]}</span>
-                <span className="mt-0.5 text-[11px] font-bold tabular-nums sm:text-[13px]">{Math.round(pct)}%</span>
-              </span>
-            )
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center justify-between gap-2">
+        <h3 className="text-[13px] font-semibold text-text-secondary">오행 (생/극)</h3>
+        {dayMasterElement && dayStem && (
+          <p className="text-[12px] text-text-secondary">
+            일간: <span className="font-semibold text-text-primary">{dayStem}</span>{" "}
+            <span>({ELEMENT_READING[dayMasterElement]})</span>
+          </p>
         )}
       </div>
-      {/* 자리가 안 나서 링 위에 못 얹은 나머지는 지금처럼 아래 범례에 표시한다. */}
-      {legendItems.length > 0 && (
-        <div className="flex flex-wrap justify-center gap-2">
-          {legendItems.map(({ el, pct }) => (
-            <span
-              key={el}
-              className="inline-flex items-center gap-1.5 rounded-pill px-2.5 py-1 text-[12px] font-medium"
-              style={elementTintStyle(el)}
+
+      <div className="relative mx-auto w-full max-w-[320px] drop-shadow-[var(--shadow-chart)]" style={{ aspectRatio: `${VIEW_W} / ${VIEW_H}` }}>
+        <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className="h-full w-full" aria-hidden="true">
+          <defs>
+            <marker
+              id={`${uid}-arrow-saeng`}
+              viewBox="0 0 8 8"
+              refX="8"
+              refY="4"
+              markerWidth="7"
+              markerHeight="7"
+              markerUnits="userSpaceOnUse"
+              orient="auto"
             >
-              <span>{ELEMENT_LABEL[el]}</span>
-              <span className="font-semibold tabular-nums">{Math.round(pct)}%</span>
-            </span>
-          ))}
-        </div>
-      )}
+              <path d="M0,1 L8,4 L0,7 Z" fill="var(--text-secondary)" fillOpacity={0.85} />
+            </marker>
+            <marker
+              id={`${uid}-arrow-keuk`}
+              viewBox="0 0 8 8"
+              refX="8"
+              refY="4"
+              markerWidth="7"
+              markerHeight="7"
+              markerUnits="userSpaceOnUse"
+              orient="auto"
+            >
+              <path d="M0,1 L8,4 L0,7 Z" fill="var(--text-secondary)" fillOpacity={0.55} />
+            </marker>
+          </defs>
+
+          {/* 상극(剋) — 한 칸 건너 노드를 잇는 점선 화살표, 오각별(pentagram) 형태 */}
+          {PENTAGON_ORDER.map((_, i) => {
+            const { start, end } = trimmedEdge(POSITIONS[i], POSITIONS[(i + 2) % 5]);
+            return (
+              <line
+                key={`keuk-${i}`}
+                x1={start.x}
+                y1={start.y}
+                x2={end.x}
+                y2={end.y}
+                stroke="var(--text-secondary)"
+                strokeOpacity={0.55}
+                strokeWidth={1.4}
+                strokeDasharray="4 3"
+                markerEnd={`url(#${uid}-arrow-keuk)`}
+              />
+            );
+          })}
+
+          {/* 상생(生) — 인접 노드를 잇는 실선 화살표, 오각형 둘레 */}
+          {PENTAGON_ORDER.map((_, i) => {
+            const { start, end } = trimmedEdge(POSITIONS[i], POSITIONS[(i + 1) % 5]);
+            return (
+              <line
+                key={`saeng-${i}`}
+                x1={start.x}
+                y1={start.y}
+                x2={end.x}
+                y2={end.y}
+                stroke="var(--text-secondary)"
+                strokeOpacity={0.8}
+                strokeWidth={2}
+                markerEnd={`url(#${uid}-arrow-saeng)`}
+              />
+            );
+          })}
+
+          {/* 노드 — 오행별 원. 테두리는 오행색, 내부는 그 오행이 오행 분포(총합 8)에서 차지하는
+              비율만큼 원 안쪽 바닥부터 같은 오행색으로 채운다(수위계/배터리 게이지와 같은 방식) —
+              나머지는 뉴트럴 배경(design.md 1.5)으로 남아 "채워진 만큼"이 한눈에 보인다. 일간과
+              같은 오행의 노드는 채우기와 별개로 바깥쪽에 --glow-amber 강조 링을 하나 더 둘러
+              "이 사주의 일간이 여기 속한다"는 사실을 표시한다(새 판정이 아니라 이미 계산된
+              dayStem→오행 매핑을 그대로 표시). */}
+          {PENTAGON_ORDER.map((el, i) => {
+            const pos = POSITIONS[i];
+            const ratio = Math.min(1, distribution[el] / TOTAL);
+            const pct = Math.round(ratio * 100);
+            const isDayMaster = el === dayMasterElement;
+            const fillR = NODE_R - 3; // 테두리 두께만큼 안쪽으로 들여, 채우기가 테두리를 침범하지 않게 한다.
+            const fillHeight = fillR * 2 * ratio;
+            return (
+              <g key={el}>
+                {isDayMaster && (
+                  <circle cx={pos.x} cy={pos.y} r={NODE_R + 5} fill="none" stroke="var(--glow-amber)" strokeWidth={2.5} />
+                )}
+                <clipPath id={`${uid}-clip-${i}`}>
+                  <circle cx={pos.x} cy={pos.y} r={fillR} />
+                </clipPath>
+                <circle cx={pos.x} cy={pos.y} r={NODE_R} fill="var(--bg-surface-muted)" stroke={elementColor(el)} strokeWidth={4.5} />
+                {fillHeight > 0 && (
+                  <rect
+                    x={pos.x - fillR}
+                    y={pos.y + fillR - fillHeight}
+                    width={fillR * 2}
+                    height={fillHeight}
+                    fill={elementColor(el)}
+                    opacity={0.9}
+                    clipPath={`url(#${uid}-clip-${i})`}
+                  />
+                )}
+                <text
+                  x={pos.x}
+                  y={pos.y - 3}
+                  textAnchor="middle"
+                  fill="var(--text-primary)"
+                  paintOrder="stroke"
+                  stroke="var(--bg-surface-muted)"
+                  strokeWidth={3}
+                  strokeLinejoin="round"
+                  className="text-[15px] font-semibold"
+                >
+                  {ELEMENT_READING[el]}
+                </text>
+                <text
+                  x={pos.x}
+                  y={pos.y + 15}
+                  textAnchor="middle"
+                  fill="var(--text-primary)"
+                  paintOrder="stroke"
+                  stroke="var(--bg-surface-muted)"
+                  strokeWidth={3}
+                  strokeLinejoin="round"
+                  className="text-[12px] font-medium tabular-nums"
+                >
+                  {pct}%
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+
+      <div className="flex items-center justify-center gap-5 text-[12px] text-text-secondary">
+        <span className="flex items-center gap-1.5">
+          <svg width="20" height="8" viewBox="0 0 20 8" aria-hidden="true">
+            <line x1="0" y1="4" x2="20" y2="4" stroke="var(--text-secondary)" strokeOpacity={0.8} strokeWidth={2} />
+          </svg>
+          생(生)
+        </span>
+        <span className="flex items-center gap-1.5">
+          <svg width="20" height="8" viewBox="0 0 20 8" aria-hidden="true">
+            <line x1="0" y1="4" x2="20" y2="4" stroke="var(--text-secondary)" strokeOpacity={0.55} strokeWidth={1.4} strokeDasharray="4 3" />
+          </svg>
+          극(剋)
+        </span>
+      </div>
     </div>
   );
 }
