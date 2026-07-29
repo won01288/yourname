@@ -8,6 +8,7 @@
 
 import Anthropic from "@anthropic-ai/sdk";
 import type { Candidate, ElementDistribution, Manseryeok, Saju, Surname, YongsinResult } from "@/lib/naming/types";
+import { ELEMENT_DISTRIBUTION_TOTAL } from "@/lib/naming/config";
 
 let client: Anthropic | null = null;
 
@@ -152,6 +153,12 @@ const RESPONSE_SCHEMA = {
   additionalProperties: false,
 } as const;
 
+// 오행 분포(총합 8)를 화면(ElementDistributionChart)과 동일한 반올림 % 값으로 변환 — LLM에는
+// 원값(예: 2.40) 대신 이 값만 노출해, 사주풀이 산문에 "2.40" 같은 생수치가 등장하지 않게 한다.
+function elementPercent(value: number): number {
+  return Math.round((value / ELEMENT_DISTRIBUTION_TOTAL) * 100);
+}
+
 function buildUserPrompt(input: ExplainCandidatesInput): string {
   const { saju, elementDistribution, yongsin, manseryeok, surname, candidates } = input;
 
@@ -188,8 +195,9 @@ function buildUserPrompt(input: ExplainCandidatesInput): string {
 ${manseryeokLines}
 (괄호는 일간 ${saju.day.stem} 기준 십신. [공망]이 붙은 지지는 이 사주의 공망에 해당한다.)
 
-[오행 분포 (총합 8)]
-木 ${elementDistribution.木.toFixed(2)} 火 ${elementDistribution.火.toFixed(2)} 土 ${elementDistribution.土.toFixed(2)} 金 ${elementDistribution.金.toFixed(2)} 水 ${elementDistribution.水.toFixed(2)}
+[오행 분포 (비율, 반올림 %)]
+木 ${elementPercent(elementDistribution.木)}% 火 ${elementPercent(elementDistribution.火)}% 土 ${elementPercent(elementDistribution.土)}% 金 ${elementPercent(elementDistribution.金)}% 水 ${elementPercent(elementDistribution.水)}%
+(오행 분포를 숫자로 언급할 때는 반드시 위 %만 써라 — "2.40"처럼 지장간 가중치 합산 원값을 그대로 쓰지 마라.)
 
 [신강/신약 및 용신]
 ${yongsin.strength} — 용신: ${yongsin.yongsin.join("·")}

@@ -2,10 +2,10 @@
 
 import { useId } from "react";
 import type { ElementDistribution, Element } from "@/lib/naming/types";
-import { STEM_ELEMENT, ELEMENT_READING } from "@/lib/naming/config";
+import { STEM_ELEMENT, ELEMENT_READING, ELEMENT_DISTRIBUTION_TOTAL } from "@/lib/naming/config";
 import { elementColor } from "@/app/lib/element-style";
 
-const TOTAL = 8; // CLAUDE.md 3.3.1 — 지장간 가중치 정규화로 오행 분포 총합은 항상 8.
+const TOTAL = ELEMENT_DISTRIBUTION_TOTAL;
 
 // 오행을 오각형 꼭짓점에 배치하는 고정 순서. 인접한 두 오행(i → i+1)이 상생(木生火·火生土·
 // 土生金·金生水·水生木) 관계이고, 한 칸 건너(i → i+2)가 상극(木剋土·火剋金·土剋水·金剋木·

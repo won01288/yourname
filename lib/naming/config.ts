@@ -46,6 +46,9 @@ export const STROKE_RULE = "original" as const;
 // TODO(미결정, CLAUDE.md 6장): 조후용신 우선 적용 임계값 확정 필요.
 export const YONGSIN_STRATEGY = "eokbu-primary" as const;
 
+// CLAUDE.md 3.3.1 — 지장간 가중치를 일수 비례로 정규화해, 오행 분포(ElementDistribution) 총합은 항상 8이 된다.
+export const ELEMENT_DISTRIBUTION_TOTAL = 8;
+
 // Phase 2 — 천간(天干) 10자 → 오행. 한자 키.
 export const STEM_ELEMENT: Record<string, Element> = {
   甲: "木",

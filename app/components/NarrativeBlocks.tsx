@@ -17,7 +17,10 @@ export default function NarrativeBlocks({ text }: NarrativeBlocksProps) {
         const match = block.trim().match(BOLD_LINE);
         if (match) {
           return (
-            <h3 key={i} className="text-[14px] font-semibold text-text-primary">
+            <h3 key={i} className="flex items-center gap-1.5 text-[14px] font-semibold text-text-primary">
+              <span aria-hidden className="text-brand-600">
+                ✦
+              </span>
               {match[1]}
             </h3>
           );
