@@ -26,7 +26,8 @@ interface ResultsDashboardProps {
 // design.md 3.1/3.2 — 벤토 그리드 + 점진적 공개로 구성된 결과 리포트.
 export default function ResultsDashboard({ data, onRestart, restartLabel, searchPayload }: ResultsDashboardProps) {
   const { saju, elementDistribution, yongsin, manseryeok, surname, candidates, report } = data;
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  // 처음 제시할 때부터 첫 번째 후보를 활성화해, 클릭하면 상세가 열린다는 걸 바로 보여준다.
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(candidates.length > 0 ? 0 : null);
 
   // Phase 8(2026.7.27) — 순위를 매기지 않는다(CLAUDE.md 3.6). 표시 순서는 API가 응답 시점에 이미
   // 무작위화해 반환하므로, 여기서 report의 rank로 재정렬하지 않고 candidates 순서를 그대로 쓴다.

@@ -36,12 +36,26 @@ export default function CandidateTile({
     <button
       type="button"
       onClick={onClick}
-      className={`group flex flex-col justify-between rounded-card border p-4 text-left transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)] ${
+      className={`group relative flex flex-col justify-between rounded-card border p-4 text-left transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)] ${
         isExpanded
-          ? "border-brand-600 bg-brand-50 shadow-[var(--shadow-elevated)]"
+          ? "border-brand-600 bg-gradient-to-br from-brand-50 to-surface shadow-[var(--shadow-brand-glow)]"
           : "border-border bg-surface shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)]"
       }`}
     >
+      {isExpanded && (
+        <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-brand-600 text-white shadow-[var(--shadow-card)]">
+          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+            <path
+              d="M1.5 5 L4 7.5 L8.5 2"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+      )}
       <div>
         <p className="text-[20px] font-semibold text-text-primary">
           {surnameHanja}

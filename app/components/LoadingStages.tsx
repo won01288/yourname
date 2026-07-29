@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import AmbientBackdrop from "./AmbientBackdrop";
 
 // design.md 3.3 — 실제 결정적 파이프라인(CLAUDE.md 2장) 단계를 그대로 보여주는 스테이지형 로딩.
 // stages를 prop으로 받는 범용 컴포넌트다 — 유료(/naming)와 무료(/score)는 실제로 거치는 파이프라인
@@ -43,27 +44,49 @@ export default function LoadingStages({ stages = DEFAULT_STAGES, isDone, onCompl
     }
   }, [index, isDone, onComplete, stages.length]);
 
+  const progress = ((index + 1) / stages.length) * 100;
+
   return (
-    <section className="mx-auto flex w-full max-w-md flex-col items-center px-6 py-24">
-      <div className="w-full rounded-card border border-border bg-surface p-8 shadow-[var(--shadow-card)]">
+    <section className="relative mx-auto flex w-full max-w-md flex-col items-center overflow-hidden px-6 py-24">
+      {/* 카드 내부가 아니라 카드 뒤 배경에만 앰비언트를 둔다 — AmbientBackdrop.tsx 사용 원칙 준수 */}
+      <AmbientBackdrop />
+      <div className="relative w-full rounded-card border border-border bg-surface p-8 shadow-[var(--shadow-elevated)]">
         <p role="status" aria-live="polite" className="sr-only">
           {stages[index]} ({index + 1}/{stages.length}단계)
         </p>
+
+        <div className="mb-6 text-center">
+          <h2 className="text-[17px] font-semibold text-text-primary">결과를 준비하고 있어요</h2>
+          <p className="mt-1 text-[13px] text-text-secondary">실제 계산 과정을 그대로 보여드릴게요</p>
+        </div>
+
+        <div className="mb-6 h-1.5 w-full overflow-hidden rounded-full bg-surface-muted" aria-hidden="true">
+          <div
+            className="h-full rounded-full bg-gradient-to-r from-brand-400 to-brand-600 transition-[width] duration-500 ease-out"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
         <ul className="flex flex-col gap-4" aria-hidden="true">
           {stages.map((label, i) => {
             const state = i < index ? "done" : i === index ? "active" : "pending";
             return (
               <li key={label} className="flex items-center gap-3">
-                <span
-                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[11px] transition-colors ${
-                    state === "done"
-                      ? "border-brand-600 bg-brand-600 text-white"
-                      : state === "active"
-                        ? "border-brand-600 text-brand-600"
-                        : "border-border text-text-secondary"
-                  }`}
-                >
-                  {state === "done" ? "✓" : i + 1}
+                <span className="relative flex h-5 w-5 shrink-0 items-center justify-center">
+                  {state === "active" && (
+                    <span className="absolute h-full w-full animate-ping rounded-full bg-brand-400 opacity-50" />
+                  )}
+                  <span
+                    className={`relative flex h-5 w-5 items-center justify-center rounded-full border text-[11px] transition-colors ${
+                      state === "done"
+                        ? "border-brand-600 bg-brand-600 text-white"
+                        : state === "active"
+                          ? "border-brand-600 bg-surface text-brand-600"
+                          : "border-border text-text-secondary"
+                    }`}
+                  >
+                    {state === "done" ? "✓" : i + 1}
+                  </span>
                 </span>
                 <span
                   className={`text-[14px] transition-colors ${
