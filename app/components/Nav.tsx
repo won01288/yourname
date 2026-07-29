@@ -17,36 +17,48 @@ export default async function Nav() {
           href="/"
           className="flex shrink-0 items-center gap-2 rounded-control text-[17px] font-semibold tracking-tight text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" className="shrink-0">
+          <svg width="26" height="26" viewBox="0 0 20 20" aria-hidden="true" className="shrink-0">
             <circle cx="10" cy="10" r="8.2" fill="none" stroke="var(--brand-600)" strokeWidth="1.7" />
             <path d="M10 3.2 Q14.8 10 10 16.8" fill="none" stroke="var(--brand-600)" strokeWidth="1.7" />
           </svg>
           {/* 좁은 화면(360px대)에서 워드마크+링크 2개+토글이 한 줄에 빡빡해지지 않도록,
-              가장 덜 중요한 워드마크 텍스트부터 숨긴다. */}
+              가장 덜 중요한 워드마크 텍스트부터 숨긴다. 대신 아이콘 자체를 키워(20→26px) 텍스트가
+              없어도 홈 버튼의 존재감이 nav 항목들에 밀리지 않게 한다. */}
           <span className="hidden xs:inline">유어네임</span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">
           <Link
             href="/score"
-            className="flex min-h-11 items-center rounded-control px-2.5 text-[13px] font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
+            className="flex min-h-11 flex-col items-center justify-center rounded-control px-2 text-center font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)] sm:px-2.5"
           >
-            <span className="sm:hidden">점수 확인</span>
-            <span className="hidden sm:inline">이름 점수 확인</span>
+            {/* 모바일에선 "점수 확인" 한 줄 축약 대신 서비스명 "이름점수"를 의미 단위로 2줄에 나눠 보여준다. */}
+            <span className="flex flex-col items-center text-[11px] leading-[1.2] sm:hidden">
+              <span>이름</span>
+              <span>점수</span>
+            </span>
+            <span className="hidden text-[13px] sm:inline">이름 점수 확인</span>
           </Link>
           <Link
             href="/naming"
-            className="flex min-h-11 items-center rounded-control px-2.5 text-[13px] font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
+            className="flex min-h-11 flex-col items-center justify-center rounded-control px-2 text-center font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)] sm:px-2.5"
           >
-            <span className="sm:hidden">작명</span>
-            <span className="hidden sm:inline">프리미엄 작명</span>
+            <span className="flex flex-col items-center text-[11px] leading-[1.2] sm:hidden">
+              <span>프리미엄</span>
+              <span>작명</span>
+            </span>
+            <span className="hidden text-[13px] sm:inline">프리미엄 작명</span>
           </Link>
           {user ? (
             <>
               <Link
                 href="/mypage"
-                className="flex min-h-11 items-center rounded-control px-2.5 text-[13px] font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
+                className="flex min-h-11 flex-col items-center justify-center rounded-control px-2 text-center font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)] sm:px-2.5"
               >
-                마이페이지
+                <span className="flex flex-col items-center text-[11px] leading-[1.2] sm:hidden">
+                  <span>마이</span>
+                  <span>페이지</span>
+                </span>
+                <span className="hidden text-[13px] sm:inline">마이페이지</span>
               </Link>
               <LogoutButton />
             </>
