@@ -11,14 +11,14 @@ const PILLAR_KEYS: Array<keyof Pick<Manseryeok, "hour" | "day" | "month" | "year
 function PillarColumn({ pillar }: { pillar: ManseryeokPillar }) {
   return (
     <div className="flex min-w-0 flex-col items-center gap-1 sm:gap-2">
-      <p className="truncate text-[9px] font-medium text-text-secondary sm:text-[11px]">{pillar.label}</p>
+      <p className="truncate text-[10px] font-medium text-text-secondary sm:text-[11px]">{pillar.label}</p>
 
       <div
         className="w-full rounded-control py-1.5 text-center sm:py-3"
         style={elementTintStyle(pillar.stem.element)}
       >
-        <p className="text-[16px] font-semibold leading-none sm:text-[22px]">{pillar.stem.hanja}</p>
-        <p className="mt-1 truncate px-0.5 text-[8px] opacity-80 sm:mt-1.5 sm:text-[11px]">
+        <p className="text-[21px] font-semibold leading-none sm:text-[22px]">{pillar.stem.hanja}</p>
+        <p className="mt-1 truncate px-0.5 text-[12px] opacity-80 sm:mt-1.5">
           {pillar.stem.reading} · {pillar.stem.tenGod}
         </p>
       </div>
@@ -32,8 +32,8 @@ function PillarColumn({ pillar }: { pillar: ManseryeokPillar }) {
             공망
           </span>
         )}
-        <p className="text-[16px] font-semibold leading-none sm:text-[22px]">{pillar.branch.hanja}</p>
-        <p className="mt-1 truncate px-0.5 text-[8px] opacity-80 sm:mt-1.5 sm:text-[11px]">
+        <p className="text-[21px] font-semibold leading-none sm:text-[22px]">{pillar.branch.hanja}</p>
+        <p className="mt-1 truncate px-0.5 text-[12px] opacity-80 sm:mt-1.5">
           {pillar.branch.reading} · {pillar.branch.tenGod}
         </p>
       </div>
@@ -42,7 +42,7 @@ function PillarColumn({ pillar }: { pillar: ManseryeokPillar }) {
         {pillar.hiddenStems.map((h) => (
           <p
             key={h.stem}
-            className={`truncate text-center text-[8px] leading-4 sm:text-[11px] sm:leading-5 ${h.isMain ? "font-semibold text-text-primary" : "text-text-secondary"}`}
+            className={`truncate text-center text-[12px] leading-5 ${h.isMain ? "font-semibold text-text-primary" : "text-text-secondary"}`}
           >
             {h.stem}({h.reading}) {h.tenGod}
           </p>
