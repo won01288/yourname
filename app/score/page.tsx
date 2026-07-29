@@ -91,7 +91,9 @@ export default function ScorePage() {
         <LoadingStages stages={SCORE_LOADING_STAGES} isDone={requestDone} onComplete={handleLoadingComplete} />
       )}
 
-      {stage === "result" && result && <ScoreDashboard data={result} onRestart={handleRestart} />}
+      {stage === "result" && result && (
+        <ScoreDashboard data={result} onRestart={handleRestart} searchPayload={lastPayload} />
+      )}
     </main>
   );
 }

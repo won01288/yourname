@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { getNamingResultById } from "@/lib/db-auth";
-import type { NameApiResult } from "@/app/lib/name-client";
+import type { NameApiResult, NameRequestPayload } from "@/app/lib/name-client";
 import NamingDetailClient from "./NamingDetailClient";
 
 export default async function MyPageNamingDetail({ params }: { params: Promise<{ id: string }> }) {
@@ -25,5 +25,6 @@ export default async function MyPageNamingDetail({ params }: { params: Promise<{
   }
 
   const data = JSON.parse(row.result) as NameApiResult;
-  return <NamingDetailClient data={data} />;
+  const requestPayload = JSON.parse(row.requestPayload) as NameRequestPayload;
+  return <NamingDetailClient data={data} requestPayload={requestPayload} />;
 }

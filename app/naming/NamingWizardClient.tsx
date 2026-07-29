@@ -115,7 +115,9 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
 
       {stage === "loading" && <LoadingStages isDone={requestDone} onComplete={handleLoadingComplete} />}
 
-      {stage === "result" && result && <ResultsDashboard data={result} onRestart={handleRestart} />}
+      {stage === "result" && result && (
+        <ResultsDashboard data={result} onRestart={handleRestart} searchPayload={lastPayload} />
+      )}
 
       {showAuthModal && (
         <AuthRequiredModal

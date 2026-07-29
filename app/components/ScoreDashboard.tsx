@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import type { ScoreApiResult } from "@/app/lib/score-client";
+import type { ScoreApiResult, ScoreRequestPayload } from "@/app/lib/score-client";
+import { formatBirthLine } from "@/app/lib/search-summary";
 import ManseryeokTable from "./ManseryeokTable";
 import ElementBadge from "./ElementBadge";
 import ElementDistributionChart from "./ElementDistributionChart";
@@ -13,6 +14,8 @@ interface ScoreDashboardProps {
   onRestart: () => void;
   /** 마이페이지에서 저장된 결과를 다시 볼 때 "다시 확인" 대신 쓸 라벨. 생략 시 기존 문구(하위호환). */
   restartLabel?: string;
+  /** 사용자가 실제로 제출한 검색 조건. 상단 요약 줄 표시용 — 없으면(하위호환) 요약을 생략한다. */
+  searchPayload?: ScoreRequestPayload | null;
 }
 
 const GRADE_DESCRIPTION: Record<string, string> = {
@@ -44,7 +47,7 @@ function CategoryBar({ label, points, maxPoints, applicable }: { label: string; 
 }
 
 // design.md — 무료 서비스 결과 화면. LLM 산문이 없으므로 수치·배지 중심으로 전문성을 표현한다.
-export default function ScoreDashboard({ data, onRestart, restartLabel }: ScoreDashboardProps) {
+export default function ScoreDashboard({ data, onRestart, restartLabel, searchPayload }: ScoreDashboardProps) {
   const { saju, elementDistribution, yongsin, manseryeok, surname, givenName, score } = data;
   const hanjaText = givenName.map((h) => h.char).join("");
   const hangulText = givenName.map((h) => h.readings[0] ?? h.char).join("");
@@ -59,6 +62,11 @@ export default function ScoreDashboard({ data, onRestart, restartLabel }: ScoreD
               {surname.hangul}(<span className="text-brand-600">{surname.hanja}</span>){hanjaText} 이름 점수
             </h1>
             {saju && <p className="mt-1 text-[13px] text-text-secondary">일간 {saju.day.stem} 기준 분석</p>}
+            {searchPayload && (
+              <p className="mt-2 text-[12px] text-text-secondary">
+                검색 조건 · {formatBirthLine(searchPayload)}
+              </p>
+            )}
           </div>
           <button
             type="button"

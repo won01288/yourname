@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import type { NameApiResult } from "@/app/lib/name-client";
+import type { NameApiResult, NameRequestPayload } from "@/app/lib/name-client";
 import { matchReportEntry } from "@/app/lib/match-report";
+import { formatBirthLine, formatGenderLabel } from "@/app/lib/search-summary";
 import ManseryeokTable from "./ManseryeokTable";
 import SajuReportCard from "./SajuReportCard";
 import SajuStoryCard from "./SajuStoryCard";
@@ -18,10 +19,12 @@ interface ResultsDashboardProps {
   /** 마이페이지에서 저장된 결과를 다시 볼 때 "다시 짓기"/"다시 시도하기" 대신 쓸 라벨.
    * 생략 시 기존 문구 그대로(하위호환) — 위저드 맥락에서는 "다시 시작"으로 읽혀야 맞다. */
   restartLabel?: string;
+  /** 사용자가 실제로 제출한 검색 조건. 상단 요약 줄 표시용 — 없으면(하위호환) 요약을 생략한다. */
+  searchPayload?: NameRequestPayload | null;
 }
 
 // design.md 3.1/3.2 — 벤토 그리드 + 점진적 공개로 구성된 결과 리포트.
-export default function ResultsDashboard({ data, onRestart, restartLabel }: ResultsDashboardProps) {
+export default function ResultsDashboard({ data, onRestart, restartLabel, searchPayload }: ResultsDashboardProps) {
   const { saju, elementDistribution, yongsin, manseryeok, surname, candidates, report } = data;
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -41,6 +44,11 @@ export default function ResultsDashboard({ data, onRestart, restartLabel }: Resu
             </h1>
             {saju && (
               <p className="mt-1 text-[13px] text-text-secondary">일간 {saju.day.stem} 기준 분석</p>
+            )}
+            {searchPayload && (
+              <p className="mt-2 text-[12px] text-text-secondary">
+                검색 조건 · {formatBirthLine(searchPayload)} · {formatGenderLabel(searchPayload.gender)}
+              </p>
             )}
             <div className="mt-3 flex flex-wrap items-center gap-2">
               <span className="rounded-pill bg-brand-50 px-2.5 py-1 text-[12px] font-medium text-brand-800">

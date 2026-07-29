@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { getScoreResultById } from "@/lib/db-auth";
-import type { ScoreApiResult } from "@/app/lib/score-client";
+import type { ScoreApiResult, ScoreRequestPayload } from "@/app/lib/score-client";
 import ScoreDetailClient from "./ScoreDetailClient";
 
 export default async function MyPageScoreDetail({ params }: { params: Promise<{ id: string }> }) {
@@ -25,5 +25,6 @@ export default async function MyPageScoreDetail({ params }: { params: Promise<{ 
   }
 
   const data = JSON.parse(row.result) as ScoreApiResult;
-  return <ScoreDetailClient data={data} />;
+  const requestPayload = JSON.parse(row.requestPayload) as ScoreRequestPayload;
+  return <ScoreDetailClient data={data} requestPayload={requestPayload} />;
 }
