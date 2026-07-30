@@ -23,42 +23,37 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
   const [submitting, setSubmitting] = useState(false);
   const [requestDone, setRequestDone] = useState(false);
   // 로그인 후 /naming?resume=1로 돌아온 경우, 모달을 띄우기 직전 sessionStorage에 저장해둔
-  // 입력값을 초기 상태로 복원한다 — 4단계 위저드를 처음부터 다시 채우게 하지 않기 위함.
-  // effect에서 setState하는 대신 lazy initializer로 마운트 시 1회만 계산한다.
-  // 2026.7.30 — 이 초기화 함수는 반드시 순수해야 한다(읽기만, 삭제는 하지 않음). 예전엔 여기서
-  // sessionStorage.removeItem까지 같이 했는데, 개발 모드(Strict Mode)가 진단 목적으로 초기화
-  // 함수를 두 번 호출하면 두 번째 호출이 이미 지워진 값을 읽어 null을 반환하고, React가 그 마지막
-  // 결과를 실제 state로 채택해 복원이 항상 실패하는 실사용 버그가 있었다(로그인/회원가입 후
-  // 위저드가 빈 채로 뜸). 삭제는 아래 useEffect로 분리했다.
-  const [lastPayload, setLastPayload] = useState<NameRequestPayload | null>(() => {
-    if (typeof window === "undefined") return null;
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("resume") !== "1") return null;
-    const raw = sessionStorage.getItem(PENDING_NAMING_KEY);
-    if (!raw) return null;
-    try {
-      return JSON.parse(raw) as NameRequestPayload;
-    } catch {
-      return null;
-    }
-  });
+  // 입력값을 복원하고, 마지막으로 있던 단계(4단계, 제출 버튼이 있던 화면)로 바로 이동시킨다 —
+  // 4단계 위저드를 처음부터 다시 채우거나 다시 넘기게 하지 않기 위함이다.
+  // 2026.7.30 — 두 state 모두 SSR과 동일한 기본값(null/false)으로 시작해야 한다. lazy
+  // initializer로 마운트 시점에 곧바로 window/sessionStorage를 읽어 복원했더니, 서버는 항상
+  // 0단계로 그리는데 클라이언트 첫 렌더는 이미 마지막 단계로 그려 트리 구조 자체가 달라지고
+  // React가 "Hydration failed"로 전체 트리를 재생성하는 문제가 있었다(콘솔에서 실제 확인).
+  // 대신 아래 useEffect에서만 복원한다 — 마운트 후(hydration 완료 후) 실행되므로 하이드레이션과
+  // 무관한 평범한 state 갱신이 된다. 이 effect는 데이터를 찾았을 때만 setState하므로, Strict
+  // Mode가 진단 목적으로 두 번 호출해도 안전하다(두 번째 호출은 이미 지워진 값을 읽어 아무것도
+  // 하지 않을 뿐, 첫 번째 호출이 예약한 state 갱신을 되돌리지 않는다).
+  const [lastPayload, setLastPayload] = useState<NameRequestPayload | null>(null);
+  const [resumeToLastStep, setResumeToLastStep] = useState(false);
 
-  // 마운트 후 정확히 한 번만 실행되는 부수효과에서 삭제한다 — Strict Mode가 이 effect 자체를
-  // 두 번 실행해도 removeItem은 멱등이라 안전하다(두 번째 호출은 이미 없는 키를 지우는 것뿐).
   useEffect(() => {
-    if (new URLSearchParams(window.location.search).get("resume") === "1") {
-      sessionStorage.removeItem(PENDING_NAMING_KEY);
+    if (new URLSearchParams(window.location.search).get("resume") !== "1") return;
+    const raw = sessionStorage.getItem(PENDING_NAMING_KEY);
+    sessionStorage.removeItem(PENDING_NAMING_KEY);
+    if (!raw) return;
+    let payload: NameRequestPayload;
+    try {
+      payload = JSON.parse(raw) as NameRequestPayload;
+    } catch {
+      return; // 파싱 실패 시 복원하지 않고 빈 폼으로 진행한다.
     }
+    // sessionStorage(외부 시스템)를 마운트 시 1회 동기화하는 것이라 setState가 effect 본문에
+    // 있을 수밖에 없다 — 페이지 로드 이후 이 값이 바뀌는 걸 감지할 이벤트가 없어(같은 탭 안
+    // 리다이렉트로만 채워짐) 구독형 패턴으로 바꿀 수 없다.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setLastPayload(payload);
+    setResumeToLastStep(true);
   }, []);
-  // 로그인 후 이어서 제출하는 흐름에서는 입력값 복원뿐 아니라 마지막으로 있던 단계(4단계, 제출
-  // 버튼이 있던 화면)로 바로 돌아가야 "이름 짓기 시작"을 다시 누르기만 하면 된다(2026.7.30 요청).
-  // 로그인 요청은 항상 마지막 단계에서만 발생하므로(InputForm 최종 제출 버튼) true로 고정해도
-  // 안전하다. 이 값은 첫 제출 시도 후에는 더 이상 의미가 없어 doSubmit에서 false로 되돌린다 —
-  // 성씨 한자 재선택처럼 0단계로 돌아가야 하는 이후의 재마운트에는 영향을 주지 않기 위함이다.
-  const [resumeToLastStep, setResumeToLastStep] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false;
-    return new URLSearchParams(window.location.search).get("resume") === "1";
-  });
   const [surnameOptions, setSurnameOptions] = useState<string[] | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [result, setResult] = useState<NameApiResult | null>(null);
@@ -125,6 +120,11 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
         <>
           <Hero />
           <InputForm
+            // resume 복원이 마운트 이후(effect)에 끝나므로, 복원이 막 끝난 그 순간 key를 바꿔
+            // InputForm을 한 번 새로 마운트시킨다 — useState 초기값은 최초 렌더에만 쓰이므로, 이미
+            // 마운트된 인스턴스는 나중에 바뀐 initialValues/initialStep prop을 반영하지 못한다.
+            // 이 리마운트는 하이드레이션이 끝난 뒤 일어나는 순수 클라이언트 갱신이라 안전하다.
+            key={resumeToLastStep ? "resumed" : "fresh"}
             onSubmit={doSubmit}
             submitting={submitting}
             surnameOptions={surnameOptions}
@@ -137,7 +137,14 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
         </>
       )}
 
-      {stage === "loading" && <LoadingStages isDone={requestDone} onComplete={handleLoadingComplete} />}
+      {stage === "loading" && (
+        <LoadingStages
+          isDone={requestDone}
+          onComplete={handleLoadingComplete}
+          longFinalStage
+          candidateCount={lastPayload?.candidateCount}
+        />
+      )}
 
       {stage === "result" && result && (
         <ResultsDashboard data={result} onRestart={handleRestart} searchPayload={lastPayload} />
