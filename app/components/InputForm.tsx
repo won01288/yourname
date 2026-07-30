@@ -20,9 +20,14 @@ interface InputFormProps {
   /** isLoggedIn이 false일 때 최종 제출 대신 호출된다. 지금까지 입력한 값을 그대로 넘겨,
    * 로그인 후 이어서 제출할 수 있게 한다(부모가 sessionStorage에 보관). */
   onLoginRequired: (payload: NameRequestPayload) => void;
+  /** 로그인 후 이어서 제출하는 흐름(resume)에서만 마지막 단계로 바로 이동시키기 위해 쓴다.
+   * 생략하면 항상 0단계(기본 정보)부터 시작한다 — 성씨 한자 재선택처럼 처음부터 다시 확인해야
+   * 하는 경우와 구분하기 위함(2026.7.30). */
+  initialStep?: number;
 }
 
 const STEP_LABELS = ["기본 정보", "생년월일", "태어난 시각", "추천 개수"];
+export const NAMING_WIZARD_LAST_STEP = STEP_LABELS.length - 1;
 const CURRENT_YEAR = new Date().getFullYear();
 
 const CANDIDATE_COUNT_DESCRIPTIONS: Record<CandidateCount, string> = {
@@ -39,8 +44,9 @@ export default function InputForm({
   initialValues,
   isLoggedIn,
   onLoginRequired,
+  initialStep,
 }: InputFormProps) {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(initialStep ?? 0);
 
   const [gender, setGender] = useState<Gender | null>(initialValues?.gender ?? null);
   const [surnameHangul, setSurnameHangul] = useState(initialValues?.surnameHangul ?? "");
