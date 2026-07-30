@@ -13,7 +13,10 @@ import { ELEMENT_DISTRIBUTION_TOTAL } from "@/lib/naming/config";
 let client: Anthropic | null = null;
 
 function getClient(): Anthropic {
-  if (!client) client = new Anthropic();
+  // 2026.7.30 — Anthropic 콘솔 로그로 확인된 순간적 5xx(토큰 집계조차 없이 즉시 실패)가 SDK 기본
+  // maxRetries(2)로도 다 소진돼 사용자에게 노출된 사례가 있어, 재시도 횟수를 늘렸다(SDK가 5xx/429에
+  // 자동으로 지수 백오프 재시도).
+  if (!client) client = new Anthropic({ maxRetries: 4 });
   return client;
 }
 

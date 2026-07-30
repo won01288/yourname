@@ -271,12 +271,20 @@ export default function InputForm({
         )}
 
         {errorMessage && (
-          <p
-            role="alert"
-            className="mt-4 rounded-control bg-[color-mix(in_srgb,var(--status-alert)_12%,transparent)] px-3.5 py-2.5 text-[13px] leading-5 text-[var(--status-alert)]"
-          >
-            {errorMessage}
-          </p>
+          <div className="mt-4 flex flex-col gap-2 rounded-control bg-[color-mix(in_srgb,var(--status-alert)_12%,transparent)] px-3.5 py-2.5">
+            <p role="alert" className="text-[13px] leading-5 text-[var(--status-alert)]">
+              {errorMessage}
+            </p>
+            {/* 해설 생성(LLM) 호출은 Anthropic 서버 쪽 순간적 오류로도 실패할 수 있음이 확인돼(2026.7.30),
+                입력을 처음부터 다시 채우지 않고 같은 값으로 바로 재요청할 수 있게 한다. */}
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="self-start rounded-control border border-[var(--status-alert)] px-3 py-1.5 text-[12px] font-medium text-[var(--status-alert)] transition-colors hover:bg-[color-mix(in_srgb,var(--status-alert)_18%,transparent)]"
+            >
+              다시 시도
+            </button>
+          </div>
         )}
 
         {/* 모바일 하단 고정 CTA — 위저드의 유일한 진행 수단이라 스크롤 위치와 무관하게 항상
