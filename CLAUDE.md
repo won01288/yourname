@@ -39,6 +39,23 @@
 - **비밀번호 재설정·이메일 인증은 이번 베타 범위 밖**이다(이메일 발송 인프라 자체가 없음) — 6장 미결정 사항 참고.
 - 데이터 모델은 4.7, 코드 위치는 8.2를 참고.
 
+### 0.3 SNS 로그인 (Phase 10 확정, 2026.7.31 — 같은 날 구글 제거)
+
+사업자 등록이 완료되어, 0.2에서 "사업자 등록 완료 후 별도 작업"으로 미뤄뒀던 소셜 로그인을 붙였다. 처음엔 구글·카카오·네이버 세 곳을 붙였으나, 같은 날 **구글 연동을 제거**해 현재는 **카카오/네이버만** 지원한다.
+
+- **라이브러리**: `next-auth`(Auth.js) v5(beta) — v5 beta에 카카오·네이버 OAuth 프로바이더가 이미 내장되어 있어(각 사별로 별도 라이브러리를 안 붙여도 됨), 별도 프로바이더 구현이 필요 없었다. Next.js 16 App Router와 호환되는 최신 메이저(v5)를 택했다 — v4는 App Router 지원이 레거시 방식(`getServerSession` + `authOptions` 중복 전달)이라 배제.
+- **경계 원칙 — next-auth는 OAuth 처리 전용**: 이메일/비밀번호 로그인(0.2, DB-backed opaque 세션)은 전혀 바꾸지 않았다. next-auth는 각 제공자와의 OAuth 핸드셰이크(토큰 교환, CSRF/PKCE 방어)만 담당하고, 그 결과(내부 회원 id)를 JWT 세션에 실어 `lib/auth.ts`의 `getCurrentUser()`가 커스텀 쿠키 세션과 합쳐 하나의 `AuthUser`로 반환한다. 이 함수 하나만 확장했기 때문에 `/naming`·`/score` 게이트, 마이페이지, 관리자 판별(`isAdminUser`) 등 나머지 코드는 로그인 방식이 무엇이었는지 전혀 몰라도 된다.
+- **DB 추가(둘 다 기존 데이터에 영향 없는 추가형, FK 없음 — 기존 관례와 동일)**:
+  - `oauth_account`(provider, provider_account_id, user_id) — 어떤 소셜 계정이 어떤 회원과 연결되는지. **이메일이 아니라 각 제공자의 불변 고유 식별자(카카오 id·네이버 response.id)를 기준으로 매칭**한다 — 카카오는 이메일 제공에 별도 심사(사업자 등록과는 별개)가 필요해 이메일이 아예 없을 수 있기 때문.
+  - `user.display_name`(nullable) — 소셜 닉네임. 이메일/비밀번호 가입자는 NULL로 남는다. 마이페이지 인사말은 `displayName ?? email`로 표시.
+- **계정 자동 연동**: OAuth 프로필의 이메일이 기존 `user.email`과 일치하면 자동으로 같은 계정에 연결한다(카카오/네이버 모두 검증된 이메일만 내려주므로 안전한 가정으로 판단). 최초 로그인이면 새 `user` 행을 만든다.
+- **비밀번호 없는 계정 처리**: OAuth 전용으로 생성된 `user` 행도 `password_hash NOT NULL` 제약은 그대로 지킨다 — `"oauth:v1:<provider>"` 형식의 sentinel 값을 넣는데, `verifyPassword()`가 `parts[0] !== "scrypt"`에서 즉시 false를 반환하므로 이 값으로는 이메일/비밀번호 로그인이 절대 성립하지 않는다. 컬럼 자체를 nullable로 바꾸는(SQLite 테이블 재작성이 필요한) 마이그레이션을 피하기 위한 선택.
+- **카카오 이메일 미제공 시**: 이메일 없이 가입하면 `"kakao_<id>@no-email.yourname.internal"` 형식의 합성 placeholder를 `user.email`에 저장한다(UNIQUE·NOT NULL 제약 유지). 실제 이메일이 아니므로 마이페이지 등에는 `display_name`(닉네임)을 우선 표시해 이 값이 사용자 눈에 띄지 않게 한다.
+- **세션 구현 — 하이브리드**: next-auth는 자체 JWT 세션(자체 쿠키)을 그대로 쓰고, 우리 쿠키(0.2)를 대체하거나 브릿지하지 않는다. `getCurrentUser()`가 "커스텀 쿠키 우선 확인 → 없으면 next-auth 세션 확인"의 순서로 통합한다. 로그아웃(`/api/auth/logout`)도 두 세션을 모두 정리한다.
+- **코드 위치**: `lib/oauth.ts`(next-auth 설정, providers·jwt/session 콜백), `app/api/auth/[...nextauth]/route.ts`(handlers 노출), `next-auth.d.ts`(Session/JWT 타입 보강), `app/components/SocialLoginButtons.tsx`(로그인/회원가입 페이지의 카카오·네이버 버튼 — Server Action으로 `signIn()` 호출, 클라이언트 JS 불필요).
+- **환경변수**: `AUTH_SECRET`(JWT 서명/암호화 키, 무작위 생성), `KAKAO_CLIENT_ID/SECRET`, `NAVER_CLIENT_ID/SECRET`. 콜백 URI는 `/api/auth/callback/{kakao|naver}` 형식으로 각 콘솔에 등록해야 한다. 값이 비어 있으면 버튼을 눌러도 인증 실패로 이어질 뿐 다른 기능에 영향은 없다.
+- **구글 제거 (2026.7.31)**: `lib/oauth.ts`의 `Google` 프로바이더·`lib/db-auth.ts`의 `OAuthProfile.provider` 유니온·`SocialLoginButtons.tsx`의 구글 버튼·`.env.local(.example)`의 `GOOGLE_CLIENT_ID/SECRET`을 모두 제거했다. `oauth_account.provider`의 SQLite `CHECK` 제약도 `scripts/db/schema.sql`에서 `('kakao', 'naver')`로 좁혔다 — 단, 이 파일은 fresh install(새 DB에 최초 적용)에만 쓰이므로, 이미 적용된 운영 Turso DB의 기존 `CHECK` 제약(`'google'` 포함)은 소급 변경되지 않는다. SQLite는 `ALTER TABLE`로 `CHECK` 제약을 바로 못 바꾸고 테이블 재작성이 필요한데, 애초에 `GOOGLE_CLIENT_ID/SECRET`이 발급 전이라 `provider='google'` 행이 존재할 수 없으므로 굳이 이 마이그레이션을 하지 않았다 — 값 자체가 도달 불가능해졌을 뿐 실질적 위험은 없다.
+
 ## 1. 기술 스택 (확정)
 
 | 영역 | 선택 | 비고 |
@@ -299,8 +316,9 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 
 | 테이블 | 컬럼 | 설명 |
 |---|---|---|
-| `user` | id, email(UNIQUE), password_hash, created_at | `password_hash`는 `"scrypt:v1:<saltHex>:<hashHex>"` 형식(0.2 참고). |
-| `session` | id, user_id, created_at, expires_at | `id`엔 원본 토큰이 아니라 **SHA-256 해시**만 저장(0.2 참고). `expires_at`은 INSERT 시 `datetime('now','+30 days')`로 SQL이 계산. |
+| `user` | id, email(UNIQUE), password_hash, display_name, created_at | `password_hash`는 `"scrypt:v1:<saltHex>:<hashHex>"` 형식(0.2 참고), SNS 전용 계정은 `"oauth:v1:<provider>"` sentinel(0.3 참고). `display_name`은 소셜 닉네임(nullable, Phase 10). |
+| `session` | id, user_id, created_at, expires_at | `id`엔 원본 토큰이 아니라 **SHA-256 해시**만 저장(0.2 참고). `expires_at`은 INSERT 시 `datetime('now','+30 days')`로 SQL이 계산. 이메일/비밀번호 로그인 전용 — SNS 로그인은 next-auth 자체 JWT 세션을 쓴다(0.3). |
+| `oauth_account` | id, user_id, provider, provider_account_id, created_at | SNS 로그인(0.3, Phase 10) — 어떤 소셜 계정이 어떤 회원과 연결되는지. `UNIQUE(provider, provider_account_id)`. |
 | `score_result` | id, user_id, request_payload(JSON), result(JSON), created_at | 무료 서비스 결과. `result`는 `ScoreApiResult`를 그대로 직렬화 — 재계산 없이 화면 재현 가능. 영구 보관, 삭제는 `DELETE /api/history/score/[id]`. |
 | `naming_result` | id, user_id, request_payload(JSON), result(JSON), created_at, expires_at | 프리미엄 결과. `result`엔 비용이 든 LLM `report`까지 포함 — 재열람 시 LLM을 다시 호출하지 않기 위해 verbatim 저장. `expires_at`도 INSERT 시 `datetime('now','+30 days')`로 계산, 조회 시 이 조건으로 필터링(별도 삭제 기능 없음).
 
@@ -319,6 +337,7 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 - [ ] **Phase 7 — 무료 "이름 점수 확인" 서비스 + 라우팅 분리 (진행 중, 2026.7.26)**: 서비스를 두 티어(0.1)로 분리했다. 라우팅을 처음 도입해 `/`(랜딩, 두 서비스 카드)·`/naming`(기존 유료 위저드+결과, 파일만 이동)·`/score`(신규 무료)로 나눴다. 채점 로직(`lib/naming/score.ts`, 3.10)을 순수 함수로 신설하고 `app/api/score/route.ts`에서 LLM 없이 조립했다(`explainCandidates` 미호출). "한자 찾기"(`getHanjaByReading`, `/api/hanja-search`, `HanjaSearchPicker.tsx`)를 신설했다. `InputForm`과 `NameScoreForm`이 처음부터 동시에 필요로 하는 생년월일시 입력을 `BirthDateTimeFields.tsx`로 공유 추출했고(8.3), `LoadingStages`를 stages prop 받는 범용 컴포넌트로 일반화했다. `candidates.ts`의 `isYinYangBalanced`를 `score.ts`로 옮겨 생성·채점 양쪽이 공유한다. vitest(`score.test.ts`, 5×5 상생/비화/역상생/상극 분류 전수 검증 포함)·tsc·eslint 통과 확인. 남은 것: 브라우저 실기 확인(design.md 검증 절차), 실제 결제 게이트 연동(현재 "유료"는 개념뿐, 6장 참고).
 - [x] **Phase 8 — 프리미엄 작명 후보 개수 선택 · 순위 폐지 · 유사 이름 소프트 필터 (2026.7.27)**: 3.6.1 참고. `CANDIDATE_COUNT_OPTIONS=[3,5,10]`로 후보 개수를 선택형으로 바꿨고(`InputForm`·`/api/name`), LLM `rank` 필드를 제거해 순위를 없앤 대신 결정적으로 계산되는 강점 태그(`Candidate.highlights`)를 신설해 벤토 타일을 동일 크기로 통일했다(`HighlightBadges.tsx`, `CandidateDetail.tsx`). 표시 순서는 `app/lib/shuffle.ts`로 응답 직전 무작위화한다. `lib/naming/similarity.ts`(자모 단위 유사도)로 "규리/규린/규나"류 이름이 한 결과에 몰리는 것을 완화 단계별 소프트 필터(`CANDIDATE_DIVERSITY.stages.avoidSimilar`)로 최대한 거른다. vitest(`similarity.test.ts`, `candidates.test.ts` 갱신)·tsc 통과 확인.
 - [x] **Phase 9 — 로그인(이메일/비밀번호) 베타 + 마이페이지 (2026.7.28)**: 0.2·4.7 참고. `lib/auth.ts`(비밀번호 scrypt 해시, DB-backed opaque 세션)·`lib/db-auth.ts`(user/session/score_result/naming_result CRUD) 신설, `app/api/auth/{signup,login,logout}` 라우트 추가. `app/api/name/route.ts`는 최상단 401 게이트(로그인 필수) + 성공 시 `naming_result` best-effort 저장을 추가했고, `app/api/score/route.ts`는 게이트 없이 로그인 상태일 때만 자동 저장하도록 했다. `app/naming/page.tsx`를 Server Component로 바꾸고 기존 위저드 로직은 `NamingWizardClient.tsx`로 옮겨, 비로그인 최종 제출 시 `AuthRequiredModal`을 띄우고 `sessionStorage`로 입력값을 보존했다가 로그인 후 `/naming?resume=1`에서 복원한다(폼 재입력 방지). `Nav.tsx`는 이미 Server Component였음을 확인하고 `async` 전환 후 `getCurrentUser()`를 직접 호출해 로그인 상태별 링크(로그인/회원가입 ↔ 마이페이지/로그아웃)를 표시한다 — 이로 인해 Nav를 포함한 모든 라우트가 정적 프리렌더링에서 동적 렌더링으로 바뀌는 트레이드오프를 받아들였다. `app/mypage/*` 페이지에서 저장된 결과를 `ScoreDashboard`/`ResultsDashboard`(신규 `restartLabel` prop으로 문구만 다르게)로 그대로 재현한다. `GET /api/history/*` 같은 조회용 API는 만들지 않고 마이페이지 Server Component가 `lib/db-auth.ts`를 직접 호출하며, 클라이언트 인터랙션이 필요한 삭제(`DELETE /api/history/score/[id]`)만 API로 뒀다(8.3). vitest(`lib/auth.test.ts`, 해시/세션 토큰 유일성)·tsc·eslint 통과 확인.
+- [x] **Phase 10 — SNS 로그인(카카오/네이버, 최초엔 구글 포함) (2026.7.31)**: 0.3·4.7 참고. 사업자 등록 완료로 0.2에서 미뤄뒀던 소셜 로그인을 붙였다. `next-auth`(Auth.js v5 beta) 설치, `lib/oauth.ts`에 구글/카카오/네이버 프로바이더와 jwt/session 콜백을 설정해 `lib/db-auth.ts`의 신규 `findOrCreateOAuthUser`(provider_account_id 기준 매칭, 이메일 일치 시 자동 연동)로 우리 `user` 테이블과 연결한다. `oauth_account` 테이블 신설, `user.display_name` 컬럼 추가(둘 다 스키마 마이그레이션, 기존 데이터 영향 없음). `lib/auth.ts`의 `getCurrentUser()`가 커스텀 쿠키 세션 다음으로 next-auth JWT 세션을 확인하도록 확장 — 이 한 지점만 넓혀 `/naming`·`/score`·마이페이지·관리자 판별 등 나머지 코드는 변경 없이 그대로 동작한다. `app/api/auth/[...nextauth]/route.ts`(handlers 노출), `app/components/SocialLoginButtons.tsx`(Server Action 기반 로그인 버튼, 로그인/회원가입 페이지에 배치), `next-auth.d.ts`(타입 보강) 추가. 로그아웃은 커스텀 세션과 next-auth 세션을 모두 정리한다. tsc·eslint·vitest(81개, `lib/auth.test.ts`에 `./oauth` 스텁 추가 — next-auth가 next/server를 불러와 순수 Node 테스트 환경과 맞지 않아 db-auth와 동일하게 모킹) 통과 확인. **같은 날 구글 연동 제거**(0.3 "구글 제거" 참고) — 이후 지원 제공자는 카카오/네이버 둘뿐이다. 각 제공자 앱 등록·Client ID/Secret 발급은 사용자가 직접 진행.
 
 ---
 
@@ -346,7 +365,8 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 - **4격(원격·형격·이격·정격) 계산의 이름 1글자 보정**: 현재 `calcSagyeok`은 이름이 1글자면 형격=이격이 되는 단순 합산만 적용. 일부 유파는 가상 획수를 더하는 보정을 쓰므로 검수 후 결정.
 - **이름 점수 확인 서비스(3.10)의 1글자·3글자 이상 이름 미지원**: `GIVEN_NAME_LENGTH=2`와 같은 이유로 채점도 두 글자만 받는다. 위 4격 1글자 보정이 확정되면 함께 확장 검토.
 - **유료 서비스 실제 결제 게이트**: 코드베이스에 결제 시스템 자체가 없다(0.1) — `/naming`은 로그인(Phase 9, 0.2)은 필수가 됐지만 실제 과금은 아직 없어 개념상 "프리미엄"일 뿐 기술적으로는 로그인만 하면 열려 있다. 실제 결제 연동은 별도 결정.
-- **로그인 베타의 의도적 제외 항목 (0.2, Phase 9)**: 비밀번호 재설정(이메일 발송 인프라 없음 — 문의 시 운영자가 수동으로 `password_hash` 갱신), 이메일 소유권 인증, 가입/로그인 rate limit(Vercel Firewall/WAF 레벨에서 거는 게 더 정확하다고 판단해 앱 코드에서는 보류). 소셜 로그인(카카오/구글/네이버)은 사업자 등록 완료 후 별도 작업.
+- **로그인 베타의 의도적 제외 항목 (0.2, Phase 9)**: 비밀번호 재설정(이메일 발송 인프라 없음 — 문의 시 운영자가 수동으로 `password_hash` 갱신), 이메일 소유권 인증, 가입/로그인 rate limit(Vercel Firewall/WAF 레벨에서 거는 게 더 정확하다고 판단해 앱 코드에서는 보류). 소셜 로그인(카카오/네이버)은 Phase 10(0.3)에서 완료.
+- **SNS 로그인(0.3, Phase 10)의 남은 갭**: 카카오는 이메일 동의 항목이 카카오 측 별도 심사 대상이라, 심사 전에는 이메일 없이 닉네임만 받을 수 있다(현재는 placeholder 이메일 + display_name으로 처리, 7장 참고). OAuth 프로필 이메일이 기존 계정과 일치하면 자동 연동하는데, 이는 두 제공자 모두 이메일을 검증된 값으로만 내려준다는 전제에 기반한 판단이다 — 이 전제가 깨지는 사례(예: 제공자 정책 변경)가 확인되면 재검토 필요. 계정 연결 해제(특정 소셜 계정만 분리)·복수 소셜 계정 연결 UI는 아직 없음.
 
 ---
 
@@ -379,8 +399,11 @@ yourname/                 ← 프로젝트 루트 (CLAUDE.md 위치)
 │  │  └─ score.ts     ← 이름 채점(등급 판정) — 무료 전용 (3.10, Phase 7)
 │  ├─ saju.ts         ← @fullstackfamily/manseryeok 를 감싸 Saju 타입 반환
 │  ├─ db.ts           ← Turso 접속 + 조회 함수 (한자·성씨·수리·한자 음 검색, 읽기 전용 참조 데이터)
-│  ├─ auth.ts         ← 로그인 베타(Phase 9): 비밀번호 scrypt 해시, DB-backed 세션 발급/조회 (0.2)
-│  └─ db-auth.ts      ← user/session/score_result/naming_result CRUD (getDbClient는 db.ts에서 재사용)
+│  ├─ auth.ts         ← 로그인 베타(Phase 9): 비밀번호 scrypt 해시, DB-backed 세션 발급/조회 (0.2).
+│  │                     getCurrentUser()가 oauth.ts의 next-auth 세션도 함께 확인한다(0.3).
+│  ├─ db-auth.ts      ← user/session/score_result/naming_result/oauth_account CRUD (getDbClient는 db.ts에서 재사용)
+│  └─ oauth.ts        ← SNS 로그인(Phase 10): next-auth(Auth.js v5) 설정 — 카카오/네이버 프로바이더,
+│                        jwt/session 콜백에서 db-auth.ts의 findOrCreateOAuthUser 연동 (0.3)
 │
 ├─ scripts/db/        ← Turso 스키마 적용 + 참조 데이터 적재 스크립트 (1회성, Next 앱과 무관)
 │  ├─ schema.sql, apply-schema.js
@@ -396,6 +419,8 @@ yourname/                 ← 프로젝트 루트 (CLAUDE.md 위치)
 ├─ app/api/name/route.ts  ← 로그인 게이트(401) → saju·db·naming(candidates)·llm 순서대로 호출 → naming_result 저장. 계산 로직 없음.
 ├─ app/api/score/route.ts ← saju·db·naming(score) 순서대로 호출(LLM 미호출) → 로그인 시 score_result 저장.
 ├─ app/api/auth/{signup,login,logout}/route.ts ← 회원가입/로그인/로그아웃 (Phase 9)
+├─ app/api/auth/[...nextauth]/route.ts ← SNS 로그인(카카오/네이버) OAuth 핸들러 (Phase 10, 0.3)
+├─ next-auth.d.ts         ← next-auth Session/JWT 타입 보강 (내부 회원 id·닉네임 필드, 0.3)
 ├─ app/api/history/score/[id]/route.ts ← 저장된 점수 결과 삭제(DELETE) 전용
 └─ app/api/hanja-search/route.ts ← "한자 찾기" 조회 전용, 계산 없음.
 ```

@@ -65,8 +65,13 @@ CREATE INDEX IF NOT EXISTS idx_given_name_gender ON given_name(gender);
 -- 기존 4테이블처럼 FK 제약은 쓰지 않고, 소유권은 매 쿼리의 WHERE user_id = ?로 강제한다.
 CREATE TABLE IF NOT EXISTS user (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  email TEXT NOT NULL UNIQUE,        -- 저장 전 소문자/trim 정규화(애플리케이션 레벨)
-  password_hash TEXT NOT NULL,       -- "scrypt:v1:<saltHex>:<hashHex>" (버전 접두어로 향후 파라미터 변경 대비)
+  email TEXT NOT NULL UNIQUE,        -- 저장 전 소문자/trim 정규화(애플리케이션 레벨). 소셜 로그인이 이메일을
+                                      -- 제공하지 않으면(카카오 이메일 미동의 등) 합성 placeholder를 저장한다.
+  password_hash TEXT NOT NULL,       -- "scrypt:v1:<saltHex>:<hashHex>" (버전 접두어로 향후 파라미터 변경 대비).
+                                      -- 소셜 로그인 전용 계정은 "oauth:v1:<provider>" 형식의 sentinel을 저장한다
+                                      -- (verifyPassword가 parts[0]!=="scrypt"에서 바로 false를 반환해 로그인 불가 —
+                                      -- password_hash NOT NULL 제약을 유지하면서 별도 마이그레이션 없이 처리).
+  display_name TEXT,                 -- 소셜 로그인 닉네임(nullable). 이메일/비밀번호 가입자는 NULL로 남는다.
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -78,6 +83,25 @@ CREATE TABLE IF NOT EXISTS session (
 );
 
 CREATE INDEX IF NOT EXISTS idx_session_user_id ON session(user_id);
+
+-- SNS 로그인(카카오/네이버) — 어떤 소셜 계정이 어떤 회원(user.id)과 연결되는지 저장한다.
+-- next-auth(Auth.js)는 OAuth 처리 전용으로만 쓰고, 세션 자체는 여전히 session 테이블(위)의
+-- DB-backed opaque 토큰이 담당하지 않는다는 점에 유의 — OAuth 로그인은 next-auth의 JWT 세션을
+-- 그대로 쓰되, 그 JWT 안에 이 테이블로 찾은 user.id를 실어 getCurrentUser()가 두 로그인 방식을
+-- 하나의 AuthUser로 합쳐 반환한다(lib/auth.ts). provider_account_id는 각 제공자가 발급하는
+-- 고유하고 불변인 회원 식별자(카카오 id, 네이버 response.id) — 이메일이 아니라 이 값을
+-- 기준으로 매칭해야, 이메일 제공 여부와 무관하게(카카오는 이메일 동의가 별도 심사 대상) 항상
+-- 동일 계정으로 재로그인된다. 이메일이 일치하는 기존 계정이 있으면 자동으로 연결한다(findOrCreateOAuthUser).
+CREATE TABLE IF NOT EXISTS oauth_account (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  provider TEXT NOT NULL CHECK (provider IN ('kakao', 'naver')),
+  provider_account_id TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(provider, provider_account_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_oauth_account_user_id ON oauth_account(user_id);
 
 -- 무료 "이름 점수 확인" 결과. 영구 보관, 사용자가 원하면 개별 삭제 가능(하드 삭제).
 CREATE TABLE IF NOT EXISTS score_result (

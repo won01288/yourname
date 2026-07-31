@@ -4,6 +4,7 @@
 import crypto from "node:crypto";
 import { cookies } from "next/headers";
 import { createSessionRow, deleteSessionRow, getSessionWithUser, type AuthUser } from "./db-auth";
+import { auth as getOAuthSession } from "./oauth";
 
 export type { AuthUser } from "./db-auth";
 
@@ -87,12 +88,27 @@ export async function deleteSession(token: string): Promise<void> {
   await deleteSessionRow(hashToken(token));
 }
 
-// Server Component/Route Handler 공용 헬퍼. 쿠키가 없으면 DB 조회 없이 즉시 null.
+// Server Component/Route Handler 공용 헬퍼. 이메일/비밀번호(커스텀 쿠키)를 먼저 확인하고, 없으면
+// SNS 로그인(next-auth JWT 세션, lib/oauth.ts)을 확인한다 — 두 로그인 방식을 이 함수 하나로 합쳐
+// 반환하므로, 호출부(naming/score 게이트, 마이페이지, 관리자 판별 등)는 로그인 방식을 구분할 필요가 없다.
 export async function getCurrentUser(): Promise<AuthUser | null> {
   const store = await cookies();
   const token = store.get(SESSION_COOKIE_NAME)?.value;
-  if (!token) return null;
-  return getSessionUser(token);
+  if (token) {
+    const user = await getSessionUser(token);
+    if (user) return user;
+  }
+
+  const oauthSession = await getOAuthSession();
+  if (oauthSession?.user?.id) {
+    return {
+      id: Number(oauthSession.user.id),
+      email: oauthSession.user.email ?? "",
+      displayName: oauthSession.user.displayName,
+    };
+  }
+
+  return null;
 }
 
 // 관리자 판별 — 정식 출시 전 프리미엄 작명 접근 제한(임시 게이트)용. user 테이블에 별도 컬럼을

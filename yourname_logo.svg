@@ -1,0 +1,13 @@
+<svg width="304" height="140" viewBox="0 0 304 140" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>유어네임 로고</title>
+  <desc>다크 배경에 보라색 테두리를 가진 알약 형태 배지 로고, 왼쪽에 초승달과 원이 겹친 아이콘, 오른쪽에 유어네임 텍스트, 좌우상하 여백이 균등하게 조정됨</desc>
+
+  <rect x="10" y="10" width="284" height="120" rx="60" fill="#1B1A22" stroke="#8B7FE8" stroke-width="2.5"/>
+
+  <g transform="translate(74, 70)">
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#8B7FE8" stroke-width="2.5"/>
+    <path d="M 12 -19 A 23 23 0 1 0 12 19 A 17.5 17.5 0 1 1 12 -19 Z" fill="#8B7FE8"/>
+  </g>
+
+  <text x="126" y="83" font-family="Pretendard, 'Apple SD Gothic Neo', sans-serif" font-size="36" font-weight="700" fill="#F4F1E8" letter-spacing="0.5">유어네임</text>
+</svg>

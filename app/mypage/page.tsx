@@ -51,7 +51,11 @@ export default async function MyPage() {
 
   return (
     <main className="flex flex-1 flex-col">
-      <PageHero eyebrow="마이페이지" title="저장된 결과" description={`${user.email} 계정으로 저장된 결과입니다.`} />
+      <PageHero
+        eyebrow="마이페이지"
+        title="저장된 결과"
+        description={`${user.displayName ?? user.email} 계정으로 저장된 결과입니다.`}
+      />
 
       <section className="mx-auto w-full max-w-2xl px-6 pb-8">
         <div className="relative mb-8 rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-elevated)] sm:p-8">

@@ -8,6 +8,8 @@ import { getDbClient } from "./db";
 export interface AuthUser {
   id: number;
   email: string;
+  /** 소셜 로그인 닉네임(nullable). 이메일/비밀번호로만 가입한 계정은 undefined. */
+  displayName?: string;
 }
 
 export interface ScoreResultRow {
@@ -39,12 +41,83 @@ export async function createUser(email: string, passwordHash: string): Promise<A
 export async function getUserByEmail(email: string): Promise<(AuthUser & { passwordHash: string }) | null> {
   const client = getDbClient();
   const result = await client.execute({
-    sql: `SELECT id, email, password_hash FROM user WHERE email = ?`,
+    sql: `SELECT id, email, password_hash, display_name FROM user WHERE email = ?`,
     args: [email],
   });
   if (result.rows.length === 0) return null;
   const row = result.rows[0];
-  return { id: row.id as number, email: row.email as string, passwordHash: row.password_hash as string };
+  return {
+    id: row.id as number,
+    email: row.email as string,
+    passwordHash: row.password_hash as string,
+    displayName: (row.display_name as string | null) ?? undefined,
+  };
+}
+
+// SNS 로그인(카카오/네이버) — next-auth(lib/oauth.ts)의 jwt 콜백이 OAuth 첫 로그인 시 호출한다.
+// provider_account_id(각 제공자의 불변 고유 식별자)를 기준으로 매칭한다 — 이메일이 아니라 이 값을
+// 기준으로 삼아야, 카카오처럼 이메일 동의가 별도 심사 대상이라 이메일이 없을 수 있는 경우에도
+// 항상 동일 계정으로 재로그인된다. 이미 연결된 계정이 없고 이메일이 일치하는 기존 계정이 있으면
+// (예: 이메일/비밀번호로 먼저 가입한 계정) 자동으로 연결한다 — 두 제공자 모두 이메일을 검증된
+// 값으로만 내려주므로 안전한 가정이다.
+export interface OAuthProfile {
+  provider: "kakao" | "naver";
+  providerAccountId: string;
+  email: string | null;
+  displayName: string | null;
+}
+
+export async function findOrCreateOAuthUser(profile: OAuthProfile): Promise<AuthUser> {
+  const client = getDbClient();
+
+  const linked = await client.execute({
+    sql: `SELECT u.id, u.email, u.display_name FROM oauth_account oa
+          JOIN user u ON u.id = oa.user_id
+          WHERE oa.provider = ? AND oa.provider_account_id = ?`,
+    args: [profile.provider, profile.providerAccountId],
+  });
+  if (linked.rows.length > 0) {
+    const row = linked.rows[0];
+    return {
+      id: row.id as number,
+      email: row.email as string,
+      displayName: (row.display_name as string | null) ?? undefined,
+    };
+  }
+
+  let userId: number;
+  let userEmail: string;
+  let userDisplayName: string | null;
+
+  const existingByEmail = profile.email
+    ? await client.execute({ sql: `SELECT id, email, display_name FROM user WHERE email = ?`, args: [profile.email] })
+    : null;
+
+  if (existingByEmail && existingByEmail.rows.length > 0) {
+    const row = existingByEmail.rows[0];
+    userId = row.id as number;
+    userEmail = row.email as string;
+    userDisplayName = row.display_name as string | null;
+  } else {
+    // password_hash NOT NULL 제약을 지키면서, "scrypt:"로 시작하지 않아 verifyPassword()가 항상
+    // false를 반환하는 sentinel 값을 넣는다 — 이 계정은 이메일/비밀번호로는 로그인할 수 없다.
+    const passwordHash = `oauth:v1:${profile.provider}`;
+    const email = profile.email ?? `${profile.provider}_${profile.providerAccountId}@no-email.yourname.internal`;
+    const created = await client.execute({
+      sql: `INSERT INTO user (email, password_hash, display_name) VALUES (?, ?, ?)`,
+      args: [email, passwordHash, profile.displayName],
+    });
+    userId = Number(created.lastInsertRowid);
+    userEmail = email;
+    userDisplayName = profile.displayName;
+  }
+
+  await client.execute({
+    sql: `INSERT INTO oauth_account (user_id, provider, provider_account_id) VALUES (?, ?, ?)`,
+    args: [userId, profile.provider, profile.providerAccountId],
+  });
+
+  return { id: userId, email: userEmail, displayName: userDisplayName ?? undefined };
 }
 
 // session 테이블 ----------------------------------------------------------
@@ -64,14 +137,18 @@ export async function createSessionRow(hashedToken: string, userId: number): Pro
 export async function getSessionWithUser(hashedToken: string): Promise<AuthUser | null> {
   const client = getDbClient();
   const result = await client.execute({
-    sql: `SELECT u.id, u.email FROM session s
+    sql: `SELECT u.id, u.email, u.display_name FROM session s
           JOIN user u ON u.id = s.user_id
           WHERE s.id = ? AND s.expires_at > CURRENT_TIMESTAMP`,
     args: [hashedToken],
   });
   if (result.rows.length === 0) return null;
   const row = result.rows[0];
-  return { id: row.id as number, email: row.email as string };
+  return {
+    id: row.id as number,
+    email: row.email as string,
+    displayName: (row.display_name as string | null) ?? undefined,
+  };
 }
 
 export async function deleteSessionRow(hashedToken: string): Promise<void> {

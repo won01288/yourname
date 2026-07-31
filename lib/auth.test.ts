@@ -8,6 +8,15 @@ vi.mock("./db-auth", () => ({
   getSessionWithUser: vi.fn().mockResolvedValue(null),
 }));
 
+// SNS 로그인(lib/oauth.ts)은 next-auth를 통해 next/server를 불러오는데, 이는 Next.js 빌드/개발
+// 파이프라인 밖(vitest의 순수 Node 환경)에서는 해석되지 않는다. 이 테스트는 getCurrentUser()를
+// 쓰지 않으므로(비밀번호 해시·세션 토큰 생성만 검증) 실제 구현 대신 빈 스텁으로 충분하다.
+vi.mock("./oauth", () => ({
+  auth: vi.fn().mockResolvedValue(null),
+  signIn: vi.fn(),
+  signOut: vi.fn(),
+}));
+
 const { hashPassword, verifyPassword, createSession } = await import("./auth");
 
 describe("hashPassword / verifyPassword", () => {
