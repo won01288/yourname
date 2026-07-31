@@ -94,3 +94,21 @@ export async function getCurrentUser(): Promise<AuthUser | null> {
   if (!token) return null;
   return getSessionUser(token);
 }
+
+// 관리자 판별 — 정식 출시 전 프리미엄 작명 접근 제한(임시 게이트)용. user 테이블에 별도 컬럼을
+// 추가하는 DB 마이그레이션 대신, Vercel 환경변수 ADMIN_EMAILS(쉼표 구분)에 등록된 이메일로 로그인한
+// 계정만 관리자로 취급한다 — 되돌리기 쉽고(환경변수만 바꾸면 됨) 출시 전 임시 조치에 적합하다.
+function getAdminEmails(): Set<string> {
+  const raw = process.env.ADMIN_EMAILS ?? "";
+  return new Set(
+    raw
+      .split(",")
+      .map((email) => email.trim().toLowerCase())
+      .filter((email) => email.length > 0)
+  );
+}
+
+export function isAdminUser(user: Pick<AuthUser, "email"> | null): boolean {
+  if (!user) return false;
+  return getAdminEmails().has(user.email.toLowerCase());
+}
