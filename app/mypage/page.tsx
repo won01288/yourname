@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { listNamingResultsByUser, listScoreResultsByUser } from "@/lib/db-auth";
+import { getUserById, listNamingResultsByUser, listScoreResultsByUser } from "@/lib/db-auth";
 import type { ScoreApiResult } from "@/app/lib/score-client";
 import type { NameApiResult } from "@/app/lib/name-client";
 import SavedScoreList, { type SavedScoreItem } from "@/app/components/SavedScoreList";
 import PageHero from "@/app/components/PageHero";
+import AccountDeleteSection from "@/app/components/AccountDeleteSection";
 
 function formatDate(iso: string): string {
   const date = new Date(iso.includes("T") ? iso : `${iso.replace(" ", "T")}Z`);
@@ -22,10 +23,12 @@ export default async function MyPage() {
     redirect("/login?next=/mypage");
   }
 
-  const [scoreRows, namingRows] = await Promise.all([
+  const [scoreRows, namingRows, userRow] = await Promise.all([
     listScoreResultsByUser(user.id),
     listNamingResultsByUser(user.id),
+    getUserById(user.id),
   ]);
+  const isPasswordAccount = userRow?.passwordHash.startsWith("scrypt:") ?? false;
 
   const scoreItems: SavedScoreItem[] = scoreRows.map((row) => {
     const result = JSON.parse(row.result) as ScoreApiResult;
@@ -89,6 +92,8 @@ export default async function MyPage() {
             </div>
           )}
         </div>
+
+        <AccountDeleteSection isPasswordAccount={isPasswordAccount} />
       </section>
     </main>
   );

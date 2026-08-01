@@ -54,6 +54,22 @@ export async function getUserByEmail(email: string): Promise<(AuthUser & { passw
   };
 }
 
+export async function getUserById(id: number): Promise<(AuthUser & { passwordHash: string }) | null> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `SELECT id, email, password_hash, display_name FROM user WHERE id = ?`,
+    args: [id],
+  });
+  if (result.rows.length === 0) return null;
+  const row = result.rows[0];
+  return {
+    id: row.id as number,
+    email: row.email as string,
+    passwordHash: row.password_hash as string,
+    displayName: (row.display_name as string | null) ?? undefined,
+  };
+}
+
 // SNS 로그인(카카오/네이버) — next-auth(lib/oauth.ts)의 jwt 콜백이 OAuth 첫 로그인 시 호출한다.
 // provider_account_id(각 제공자의 불변 고유 식별자)를 기준으로 매칭한다 — 이메일이 아니라 이 값을
 // 기준으로 삼아야, 카카오처럼 이메일 동의가 별도 심사 대상이라 이메일이 없을 수 있는 경우에도
@@ -157,6 +173,23 @@ export async function deleteSessionRow(hashedToken: string): Promise<void> {
     sql: `DELETE FROM session WHERE id = ?`,
     args: [hashedToken],
   });
+}
+
+// 회원 탈퇴 — FK 제약이 없어(4.7) 연관 테이블을 직접 정리해야 한다. 하나의 트랜잭션(batch)으로
+// 묶어 일부만 삭제되는 상태가 남지 않게 한다. user 행을 마지막에 지워야 다른 테이블 삭제 중
+// user_id 참조가 무의미해지지 않는다(순서 자체가 정합성에 영향을 주진 않지만 가독성을 위해 유지).
+export async function deleteUserAccount(userId: number): Promise<void> {
+  const client = getDbClient();
+  await client.batch(
+    [
+      { sql: `DELETE FROM session WHERE user_id = ?`, args: [userId] },
+      { sql: `DELETE FROM oauth_account WHERE user_id = ?`, args: [userId] },
+      { sql: `DELETE FROM score_result WHERE user_id = ?`, args: [userId] },
+      { sql: `DELETE FROM naming_result WHERE user_id = ?`, args: [userId] },
+      { sql: `DELETE FROM user WHERE id = ?`, args: [userId] },
+    ],
+    "write"
+  );
 }
 
 // score_result 테이블 ------------------------------------------------------
