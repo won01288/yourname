@@ -72,6 +72,10 @@ CREATE TABLE IF NOT EXISTS user (
                                       -- (verifyPassword가 parts[0]!=="scrypt"에서 바로 false를 반환해 로그인 불가 —
                                       -- password_hash NOT NULL 제약을 유지하면서 별도 마이그레이션 없이 처리).
   display_name TEXT,                 -- 소셜 로그인 닉네임(nullable). 이메일/비밀번호 가입자는 NULL로 남는다.
+  phone TEXT,                        -- 소셜 로그인 시 제공자가 내려준 휴대전화번호(nullable). 네이버 response.mobile /
+                                      -- 카카오 kakao_account.phone_number 원문 그대로 저장, 가공하지 않는다.
+  real_name TEXT,                    -- 네이버가 제공하는 "회원이름"(실명, nullable). 카카오는 실명 제공 항목이 없어
+                                      -- 항상 NULL. display_name(닉네임)과는 별개 값.
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 

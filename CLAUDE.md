@@ -55,6 +55,10 @@
 - **코드 위치**: `lib/oauth.ts`(next-auth 설정, providers·jwt/session 콜백), `app/api/auth/[...nextauth]/route.ts`(handlers 노출), `next-auth.d.ts`(Session/JWT 타입 보강), `app/components/SocialLoginButtons.tsx`(로그인/회원가입 페이지의 카카오·네이버 버튼 — Server Action으로 `signIn()` 호출, 클라이언트 JS 불필요).
 - **환경변수**: `AUTH_SECRET`(JWT 서명/암호화 키, 무작위 생성), `KAKAO_CLIENT_ID/SECRET`, `NAVER_CLIENT_ID/SECRET`. 콜백 URI는 `/api/auth/callback/{kakao|naver}` 형식으로 각 콘솔에 등록해야 한다. 값이 비어 있으면 버튼을 눌러도 인증 실패로 이어질 뿐 다른 기능에 영향은 없다.
 - **구글 제거 (2026.7.31)**: `lib/oauth.ts`의 `Google` 프로바이더·`lib/db-auth.ts`의 `OAuthProfile.provider` 유니온·`SocialLoginButtons.tsx`의 구글 버튼·`.env.local(.example)`의 `GOOGLE_CLIENT_ID/SECRET`을 모두 제거했다. `oauth_account.provider`의 SQLite `CHECK` 제약도 `scripts/db/schema.sql`에서 `('kakao', 'naver')`로 좁혔다 — 단, 이 파일은 fresh install(새 DB에 최초 적용)에만 쓰이므로, 이미 적용된 운영 Turso DB의 기존 `CHECK` 제약(`'google'` 포함)은 소급 변경되지 않는다. SQLite는 `ALTER TABLE`로 `CHECK` 제약을 바로 못 바꾸고 테이블 재작성이 필요한데, 애초에 `GOOGLE_CLIENT_ID/SECRET`이 발급 전이라 `provider='google'` 행이 존재할 수 없으므로 굳이 이 마이그레이션을 하지 않았다 — 값 자체가 도달 불가능해졌을 뿐 실질적 위험은 없다.
+- **이메일/닉네임 파싱 버그 수정 + 휴대전화번호·네이버 실명 저장 추가 (2026.8.1)**: 관리자 회원관리 화면(아래 참고)에서 네이버로 가입한 계정의 이메일이 실제 네이버 이메일이 아니라 합성 placeholder(`naver_<id>@no-email.yourname.internal`)로 저장된 것이 발견됐다. **원인**: `lib/oauth.ts`의 `jwt` 콜백이 `profile.email`/`profile.name`을 평평한(flat) 구조로 읽고 있었는데, next-auth가 콜백에 넘기는 `profile`은 provider의 `profile()` 매핑을 거치기 **전의 원본(raw) userinfo 응답**이다 — 네이버는 `{response: {id, email, name, nickname, mobile, ...}}`, 카카오는 `{kakao_account: {email, phone_number, profile: {nickname}}}` 형태로 실제 값이 한 단계 안에 중첩되어 있어, `profile.email`/`profile.name`은 두 제공자 모두 **항상 undefined**였다. 즉 이메일 동의를 정상적으로 받았어도 코드가 못 읽어 매번 placeholder가 생성됐다 — 카카오로 가입한 기존 계정들도 동일한 버그를 겪었을 가능성이 높다. **수정**: raw `profile`을 직접 파싱하는 대신, provider의 `profile()` 매핑을 이미 거쳐 표준 형태(`{id, name, email, image}`)로 넘어오는 `user` 콜백 파라미터를 이메일·닉네임의 출처로 쓰도록 바꿨다(`lib/oauth.ts`) — provider별 원본 중첩 구조를 우리 코드가 직접 알 필요가 없어져 더 안전하다.
+  - **신규 수집 항목**: 위 조사 중 네이버 개발자센터에 "회원이름"·"휴대전화번호"가 필수 동의 항목으로 이미 설정되어 있었는데도 이 두 값이 애초에 수집·저장되지 않는다는 것도 함께 확인됐다(코드가 읽지도, DB 컬럼도 없었음 — 버그가 아니라 미구현). 사용자 확인 후 `user` 테이블에 `phone`(네이버 `response.mobile` / 카카오 `kakao_account.phone_number` 원문)·`real_name`(네이버 `response.name`, 회원이름/실명 — 카카오는 실명 제공 항목이 없어 항상 NULL) 컬럼을 추가했다. `display_name`(닉네임)과는 별개 값이다. 마이그레이션: `scripts/db/migrate-add-user-phone-realname.js`(ALTER TABLE, 멱등).
+  - **기존 데이터 자동 정정**: 버그 수정 이전에 만들어진 계정(placeholder 이메일 등)은 코드만 고쳐서는 그대로 남는다 — `findOrCreateOAuthUser`(`lib/db-auth.ts`)가 이미 연결된 계정이면 저장된 값을 그대로 반환하고 갱신하지 않았기 때문이다. 사용자 결정에 따라 **매 로그인마다 최신 값으로 동기화**하도록 바꿨다: `displayName`/`phone`/`realName`은 `COALESCE`로 갱신(제공자가 이번 요청에 값을 안 내려줬다고 기존 확보 값을 지우지 않음), `email`은 달라졌을 때만 UPDATE하되 다른 계정이 이미 그 이메일을 쓰고 있어 UNIQUE 제약과 충돌하면(극히 드문 경우) 조용히 건너뛴다 — 그 정도로 로그인 자체를 막지 않기 위함이다. 즉 이미 가입된 사용자도 **다음 로그인 시** placeholder 이메일이 실제 이메일로 자동 교체된다.
+  - **관리자 회원관리 화면 신설**: `ADMIN_EMAILS`(6장·`lib/auth.ts` `isAdminUser`)로 로그인한 관리자만 `/admin/users`에서 전체 회원의 가입 시 수집 정보(이메일·가입 방식·닉네임·회원이름·휴대전화번호·연결된 소셜 계정과 `provider_account_id`)를 그대로 나열해 볼 수 있다. 새 판정·집계를 만들지 않고 `user`/`oauth_account` 테이블 값을 그대로 옮기는 조회 전용 화면이다(`lib/db-auth.ts` `listAllUsersForAdmin`). 이 화면 자체가 이번 버그를 발견한 경로였다.
 
 ## 1. 기술 스택 (확정)
 
@@ -316,7 +320,7 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 
 | 테이블 | 컬럼 | 설명 |
 |---|---|---|
-| `user` | id, email(UNIQUE), password_hash, display_name, created_at | `password_hash`는 `"scrypt:v1:<saltHex>:<hashHex>"` 형식(0.2 참고), SNS 전용 계정은 `"oauth:v1:<provider>"` sentinel(0.3 참고). `display_name`은 소셜 닉네임(nullable, Phase 10). |
+| `user` | id, email(UNIQUE), password_hash, display_name, phone, real_name, created_at | `password_hash`는 `"scrypt:v1:<saltHex>:<hashHex>"` 형식(0.2 참고), SNS 전용 계정은 `"oauth:v1:<provider>"` sentinel(0.3 참고). `display_name`은 소셜 닉네임(nullable, Phase 10). `phone`(소셜 로그인 시 제공자가 내려준 휴대전화번호)·`real_name`(네이버 "회원이름"/실명, 카카오는 항상 NULL)은 0.3 "이메일/닉네임 파싱 버그 수정" 항목에서 추가(nullable). |
 | `session` | id, user_id, created_at, expires_at | `id`엔 원본 토큰이 아니라 **SHA-256 해시**만 저장(0.2 참고). `expires_at`은 INSERT 시 `datetime('now','+30 days')`로 SQL이 계산. 이메일/비밀번호 로그인 전용 — SNS 로그인은 next-auth 자체 JWT 세션을 쓴다(0.3). |
 | `oauth_account` | id, user_id, provider, provider_account_id, created_at | SNS 로그인(0.3, Phase 10) — 어떤 소셜 계정이 어떤 회원과 연결되는지. `UNIQUE(provider, provider_account_id)`. |
 | `score_result` | id, user_id, request_payload(JSON), result(JSON), created_at | 무료 서비스 결과. `result`는 `ScoreApiResult`를 그대로 직렬화 — 재계산 없이 화면 재현 가능. 영구 보관, 삭제는 `DELETE /api/history/score/[id]`. |
@@ -422,7 +426,8 @@ yourname/                 ← 프로젝트 루트 (CLAUDE.md 위치)
 ├─ app/api/auth/[...nextauth]/route.ts ← SNS 로그인(카카오/네이버) OAuth 핸들러 (Phase 10, 0.3)
 ├─ next-auth.d.ts         ← next-auth Session/JWT 타입 보강 (내부 회원 id·닉네임 필드, 0.3)
 ├─ app/api/history/score/[id]/route.ts ← 저장된 점수 결과 삭제(DELETE) 전용
-└─ app/api/hanja-search/route.ts ← "한자 찾기" 조회 전용, 계산 없음.
+├─ app/api/hanja-search/route.ts ← "한자 찾기" 조회 전용, 계산 없음.
+└─ app/admin/users/page.tsx ← 관리자 전용(ADMIN_EMAILS) 회원관리 조회 화면 (2026.8.1, 0.3 "관리자 회원관리 화면 신설" 참고)
 ```
 
 - `lib/naming/` 안의 파일들은 서로는 import해도 되지만, 폴더 밖(Next/Turso/SDK)은 절대 import하지 않는다.

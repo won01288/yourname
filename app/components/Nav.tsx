@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import LogoutButton from "./LogoutButton";
-import { getCurrentUser } from "@/lib/auth";
+import { getCurrentUser, isAdminUser } from "@/lib/auth";
 
 // design.md 3.4 — 글래스모피즘은 상단 고정 내비게이션과 모달에만 적용한다.
 // 로그인 베타 — Nav는 Server Component라 getCurrentUser()를 직접 호출한다(레이아웃을 거쳐
@@ -51,6 +51,18 @@ export default async function Nav() {
             </span>
             <span className="hidden text-[13px] sm:inline">프리미엄 작명</span>
           </Link>
+          {isAdminUser(user) && (
+            <Link
+              href="/admin/users"
+              className="flex min-h-11 flex-col items-center justify-center rounded-control px-2 text-center font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)] sm:px-2.5"
+            >
+              <span className="flex flex-col items-center text-[11px] leading-[1.2] sm:hidden">
+                <span>회원</span>
+                <span>관리</span>
+              </span>
+              <span className="hidden text-[13px] sm:inline">회원관리</span>
+            </Link>
+          )}
           {user ? (
             <>
               <Link

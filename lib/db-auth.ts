@@ -81,6 +81,27 @@ export interface OAuthProfile {
   providerAccountId: string;
   email: string | null;
   displayName: string | null;
+  /** 네이버 response.mobile / 카카오 kakao_account.phone_number 원문. 미제공/미동의 시 null. */
+  phone: string | null;
+  /** 네이버가 제공하는 "회원이름"(실명). 카카오는 실명 제공 항목이 없어 항상 null. */
+  realName: string | null;
+}
+
+// 닉네임/휴대전화/실명은 매 로그인마다 COALESCE로 동기화한다 — 제공자가 이번 요청에 값을 안
+// 내려줬다고 기존에 확보한 값을 지우지 않기 위해서다(null이면 기존 값 유지, 값이 있으면 갱신).
+async function syncOAuthProfileFields(
+  client: ReturnType<typeof getDbClient>,
+  userId: number,
+  profile: Pick<OAuthProfile, "displayName" | "phone" | "realName">
+): Promise<void> {
+  await client.execute({
+    sql: `UPDATE user SET
+            display_name = COALESCE(?, display_name),
+            phone = COALESCE(?, phone),
+            real_name = COALESCE(?, real_name)
+          WHERE id = ?`,
+    args: [profile.displayName, profile.phone, profile.realName, userId],
+  });
 }
 
 export async function findOrCreateOAuthUser(profile: OAuthProfile): Promise<AuthUser> {
@@ -94,11 +115,26 @@ export async function findOrCreateOAuthUser(profile: OAuthProfile): Promise<Auth
   });
   if (linked.rows.length > 0) {
     const row = linked.rows[0];
-    return {
-      id: row.id as number,
-      email: row.email as string,
-      displayName: (row.display_name as string | null) ?? undefined,
-    };
+    const userId = row.id as number;
+    let email = row.email as string;
+    let displayName = (row.display_name as string | null) ?? undefined;
+
+    // 이번 로그인에서 파싱된 이메일이 기존 저장값(예: 과거 파싱 버그로 만들어진 placeholder)과
+    // 다르면 최신 값으로 갱신한다. 다른 계정이 이미 그 이메일을 쓰고 있어 UNIQUE 제약과
+    // 충돌하는 극히 드문 경우엔 조용히 건너뛴다 — 그 정도로 로그인 자체를 막을 이유는 없다.
+    if (profile.email && profile.email !== email) {
+      try {
+        await client.execute({ sql: `UPDATE user SET email = ? WHERE id = ?`, args: [profile.email, userId] });
+        email = profile.email;
+      } catch (err) {
+        if (!String((err as Error).message ?? err).includes("UNIQUE")) throw err;
+      }
+    }
+
+    await syncOAuthProfileFields(client, userId, profile);
+    if (profile.displayName) displayName = profile.displayName;
+
+    return { id: userId, email, displayName };
   }
 
   let userId: number;
@@ -114,14 +150,16 @@ export async function findOrCreateOAuthUser(profile: OAuthProfile): Promise<Auth
     userId = row.id as number;
     userEmail = row.email as string;
     userDisplayName = row.display_name as string | null;
+    await syncOAuthProfileFields(client, userId, profile);
+    if (profile.displayName) userDisplayName = profile.displayName;
   } else {
     // password_hash NOT NULL 제약을 지키면서, "scrypt:"로 시작하지 않아 verifyPassword()가 항상
     // false를 반환하는 sentinel 값을 넣는다 — 이 계정은 이메일/비밀번호로는 로그인할 수 없다.
     const passwordHash = `oauth:v1:${profile.provider}`;
     const email = profile.email ?? `${profile.provider}_${profile.providerAccountId}@no-email.yourname.internal`;
     const created = await client.execute({
-      sql: `INSERT INTO user (email, password_hash, display_name) VALUES (?, ?, ?)`,
-      args: [email, passwordHash, profile.displayName],
+      sql: `INSERT INTO user (email, password_hash, display_name, phone, real_name) VALUES (?, ?, ?, ?, ?)`,
+      args: [email, passwordHash, profile.displayName, profile.phone, profile.realName],
     });
     userId = Number(created.lastInsertRowid);
     userEmail = email;
@@ -190,6 +228,69 @@ export async function deleteUserAccount(userId: number): Promise<void> {
     ],
     "write"
   );
+}
+
+// 관리자 회원관리 화면 전용 (ADMIN_EMAILS, lib/auth.ts isAdminUser) ---------------------------
+// 가입 시/소셜 로그인 시 실제로 입력·수집된 원본 값을 그대로 나열하기 위한 조회. 새 판정이나
+// 집계를 만들지 않고 user/oauth_account 두 테이블을 그대로 옮겨 화면에서 매칭한다.
+
+export interface AdminOAuthAccountRow {
+  provider: "kakao" | "naver";
+  providerAccountId: string;
+  createdAt: string;
+}
+
+export interface AdminUserRow {
+  id: number;
+  email: string;
+  /** password_hash 원문 그대로 — "scrypt:..."면 이메일/비밀번호 가입, "oauth:v1:<provider>"면 SNS 전용 가입. */
+  passwordHash: string;
+  displayName: string | null;
+  /** 소셜 로그인 시 제공자가 내려준 휴대전화번호(nullable). */
+  phone: string | null;
+  /** 네이버 "회원이름"(실명, nullable). 카카오는 항상 null. */
+  realName: string | null;
+  createdAt: string;
+  oauthAccounts: AdminOAuthAccountRow[];
+}
+
+export async function listAllUsersForAdmin(): Promise<AdminUserRow[]> {
+  const client = getDbClient();
+  const [usersResult, oauthResult] = await Promise.all([
+    client.execute(
+      `SELECT id, email, password_hash, display_name, phone, real_name, created_at FROM user ORDER BY created_at DESC`
+    ),
+    client.execute(
+      `SELECT user_id, provider, provider_account_id, created_at FROM oauth_account ORDER BY created_at ASC`
+    ),
+  ]);
+
+  const oauthByUserId = new Map<number, AdminOAuthAccountRow[]>();
+  for (const row of oauthResult.rows) {
+    const userId = row.user_id as number;
+    const entry: AdminOAuthAccountRow = {
+      provider: row.provider as "kakao" | "naver",
+      providerAccountId: row.provider_account_id as string,
+      createdAt: row.created_at as string,
+    };
+    const list = oauthByUserId.get(userId);
+    if (list) list.push(entry);
+    else oauthByUserId.set(userId, [entry]);
+  }
+
+  return usersResult.rows.map((row) => {
+    const id = row.id as number;
+    return {
+      id,
+      email: row.email as string,
+      passwordHash: row.password_hash as string,
+      displayName: row.display_name as string | null,
+      phone: row.phone as string | null,
+      realName: row.real_name as string | null,
+      createdAt: row.created_at as string,
+      oauthAccounts: oauthByUserId.get(id) ?? [],
+    };
+  });
 }
 
 // score_result 테이블 ------------------------------------------------------

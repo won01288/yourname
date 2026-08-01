@@ -12,6 +12,33 @@ import Kakao from "next-auth/providers/kakao";
 import Naver from "next-auth/providers/naver";
 import { findOrCreateOAuthUser } from "./db-auth";
 
+// jwt 콜백이 받는 `profile`은 next-auth가 각 provider의 profile() 매핑을 거치기 전의 원본(raw)
+// userinfo 응답이다 — 네이버는 {response: {id, email, name, nickname, mobile, ...}}, 카카오는
+// {kakao_account: {email, phone_number, profile: {nickname}}} 형태로 실제 값이 한 단계 안에
+// 중첩되어 있다. 휴대전화번호·네이버 실명(회원이름)은 provider의 profile() 매핑에도 없는 값이라
+// (이메일/닉네임과 달리) 원본에서 직접 꺼내야 한다.
+function extractExtraProfileFields(
+  provider: "kakao" | "naver",
+  profile: unknown
+): { phone: string | null; realName: string | null } {
+  if (!profile || typeof profile !== "object") return { phone: null, realName: null };
+  const raw = profile as Record<string, unknown>;
+
+  if (provider === "naver") {
+    const response = raw.response as Record<string, unknown> | undefined;
+    return {
+      phone: (response?.mobile as string | undefined) ?? null,
+      realName: (response?.name as string | undefined) ?? null,
+    };
+  }
+
+  const kakaoAccount = raw.kakao_account as Record<string, unknown> | undefined;
+  return {
+    phone: (kakaoAccount?.phone_number as string | undefined) ?? null,
+    realName: null, // 카카오는 실명(회원이름) 제공 항목 자체가 없다.
+  };
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   // Vercel 등 리버스 프록시 뒤에서 호스트 헤더를 신뢰해야 콜백 URL을 올바르게 계산한다.
   trustHost: true,
@@ -27,18 +54,26 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   ],
   session: { strategy: "jwt" },
   callbacks: {
-    async jwt({ token, account, profile }) {
-      // account/profile은 최초 로그인 콜백에서만 채워진다(이후 세션 갱신 시엔 token만 전달됨).
+    async jwt({ token, account, profile, user }) {
+      // account/profile/user는 최초 로그인 콜백에서만 채워진다(이후 세션 갱신 시엔 token만 전달됨).
+      // 이메일/닉네임은 raw profile을 직접 파싱하지 않고, provider의 profile() 매핑을 이미 거친
+      // `user`(표준 {id, name, email, image} 형태)를 쓴다 — raw profile은 provider마다 이메일이
+      // 중첩된 위치가 달라(네이버 response.email, 카카오 kakao_account.email) 예전엔 이 값을
+      // 직접 읽다가 항상 undefined가 되어 이메일 동의를 받고도 placeholder만 저장되는 버그가 있었다.
+      // 휴대전화번호·네이버 실명은 `user`에 없는 값이라 raw profile에서 별도로 꺼낸다.
       if (account && (account.provider === "kakao" || account.provider === "naver")) {
-        const user = await findOrCreateOAuthUser({
+        const { phone, realName } = extractExtraProfileFields(account.provider, profile);
+        const oauthUser = await findOrCreateOAuthUser({
           provider: account.provider,
           providerAccountId: account.providerAccountId,
-          email: profile?.email ?? null,
-          displayName: (profile?.name as string | undefined) ?? null,
+          email: user?.email ?? null,
+          displayName: user?.name ?? null,
+          phone,
+          realName,
         });
-        token.internalUserId = user.id;
-        token.internalEmail = user.email;
-        token.internalDisplayName = user.displayName ?? null;
+        token.internalUserId = oauthUser.id;
+        token.internalEmail = oauthUser.email;
+        token.internalDisplayName = oauthUser.displayName ?? null;
       }
       return token;
     },
