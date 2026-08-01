@@ -1,34 +1,58 @@
-// CLAUDE.md 8.2 — Phase 4/6: 용신 + 성씨 제약으로 이름 후보를 만든다. 순수 함수만. 외부 import 금지.
-// 규칙 근거: CLAUDE.md 3.1(발음오행)·3.2(원획)·3.3(용신)·3.4(음양)·3.5(자원오행)·3.6(후보 생성), 4.3(81수리).
+// CLAUDE.md 8.2 — Phase 4/6/11: 용신 + 성씨 제약으로 이름 후보를 만든다. 순수 함수만. 외부 import 금지.
+// 규칙 근거: CLAUDE.md 3.1(발음오행)·3.2(원획)·3.3(용신)·3.4(음양)·3.5(자원오행)·3.6(후보 생성)·
+// 3.6.4(하드필터 재설계), 4.3(81수리).
 // DB 조회는 db.ts가 하고, 여기서는 이미 조회된 데이터(한자 풀, 81수리표, 이름 후보 풀)만 받아
 // 필터·점수화한다.
 //
 // Phase 6 확정(3.6 확장, 2026.7.26) — 이름(hangul) 후보는 자유 조합이 아니라 사용자가 제공한
 // etc/korean_name.xlsx(성별별 실사용 이름 표)의 A열에 있는 이름만 후보로 삼는다. 한자 자유 조합
-// 방식은 "존재하지 않는 이름"을 만들어낼 위험이 있었다(예: 塌刃). curatedGivenNames를 순회하며
-// 그 이름의 두 음절에 대해 발음오행 하드 필터를 먼저 걸고, 통과한 이름에 한해서만 실제 한자
-// 조합(원획·수리·자원오행)을 찾는다.
+// 방식은 "존재하지 않는 이름"을 만들어낼 위험이 있었다(예: 塌刃).
+//
+// Phase 11 재설계(3.6.4, 2026.8.1) — 이전에는 curatedGivenNames를 순회하며 그 이름의 두 음절에
+// 대해 발음오행 순방향 상생 하드 필터를 먼저 걸고, 통과한 이름에 한해서만 4격 전부 길수인 한자
+// 조합을 찾았다. 실사용 검증 결과 이 이중 하드 필터가 score.ts(3.10, 무료 채점 서비스)가 이미
+// 정의해둔 "상극만 나쁘고 비화·역상생은 절반짜리"라는 등급 체계보다 훨씬 엄격해서(사실상 총점
+// 95점 이상만 통과), 박씨 같은 일부 성씨는 통과 풀이 7개까지 줄어드는 문제가 있었다. 이제 두
+// 하드 필터를 score.ts의 scoreName() 총점 기준(config.ts CANDIDATE_MIN_TOTAL_SCORE=90, S등급)
+// 하나로 대체했다 — 채점(score.ts)과 생성(candidates.ts)이 같은 등급 기준을 공유한다.
 
-import type { Element, Hanja, Numerology81, Candidate, CandidateHighlight, GivenNameEntry } from "./types";
+import type {
+  Element,
+  Hanja,
+  Numerology81,
+  Candidate,
+  CandidateHighlight,
+  GivenNameEntry,
+  ElementDistribution,
+} from "./types";
 import {
   SANGSAENG_ORDER,
   GIVEN_NAME_LENGTH,
   CANDIDATE_SCORE_WEIGHTS,
   CANDIDATE_DIVERSITY,
+  CANDIDATE_MIN_TOTAL_SCORE,
+  RANDOM_SELECTION_POOL,
   SIMILAR_NAME_MAX_JAMO_MISMATCH,
+  ELEMENT_DISTRIBUTION_TOTAL,
 } from "./config";
-import { getElementForSyllable, isPhoneticSangsaeng } from "./phonetic";
-import { calcSagyeok, isAuspiciousNumber, type Sagyeok } from "./numerology";
-import { isYinYangBalanced } from "./score";
+import { getElementForSyllable } from "./phonetic";
+import { calcSagyeok, type Sagyeok } from "./numerology";
+import { isYinYangBalanced, scoreName, scorePhoneticFlow, classifyPhoneticLink } from "./score";
 import { isSimilarName } from "./similarity";
+
+// 3.6.4 — score.ts 발음오행 배점(상생15·비화/역상생7.5)에서, 링크 2개 중 하나는 반드시 상생이어야
+// 총점 90에 도달할 수 있는 최소값(상생15+비화/역상생7.5=22.5). buildCandidates의 사전 가지치기용.
+const MIN_PHONETIC_POINTS_FOR_GATE = 22.5;
 
 function nextElement(element: Element): Element {
   const index = SANGSAENG_ORDER.indexOf(element);
   return SANGSAENG_ORDER[(index + 1) % SANGSAENG_ORDER.length];
 }
 
-// 성 초성 오행 → 이름 각 글자에 요구되는 발음오행. 순방향 상생만 길로 보므로(phonetic.ts),
-// 성의 오행이 정해지면 이름 글자별 요구 오행은 유일하게 하나로 정해진다.
+// 성 초성 오행 뒤로 순방향 상생만 이어지는 "이상적" 체인. Phase 11부터는 하드 필터로 쓰지
+// 않는다(3.6.4) — 이제 이 이상적 체인과 다르더라도(비화·역상생 최대 1개) 총점 90점 이상이면
+// 통과할 수 있다. requiredPhoneticElements 자체는 테스트(순방향 상생 체인 생성 로직 검증)와
+// 문서적 참조용으로 남겨둔다.
 export function requiredPhoneticElements(surnameElement: Element, nameLength: number): Element[] {
   const result: Element[] = [];
   let current = surnameElement;
@@ -55,8 +79,32 @@ function groupBySyllable(pool: Hanja[]): Map<string, Hanja[]> {
 
 // 자원오행이 용신과 일치하는 한자 수를 센다. element가 NULL이면 이 기준을 건너뛴다
 // (CLAUDE.md 3.5 — 불일치로 취급하지 않고, "이 기준으로는 판단하지 않음"으로 취급).
+// 강점 배지(buildHighlights)의 "일치 여부" 표시용 — 매치가 있었다는 사실만 필요할 때 쓴다.
 function countWonhaengMatches(hanjaList: Hanja[], yongsin: Element[]): number {
   return hanjaList.filter((h) => h.element !== null && yongsin.includes(h.element)).length;
+}
+
+// CLAUDE.md 3.6.3 — 자원오행 매치를 연속 점수로 계산한다. countWonhaengMatches(이진 카운트)와
+// 달리 (1) 주용신(yongsin[0])/보조용신(yongsin[1]) 차등 가중과 (2) 오행분포 부족량 비례 가중을
+// 결합한다. 두 축 모두 이미 계산된 값(용신 도출 순서, 오행분포 수치)을 조합할 뿐 새 판정을
+// 만들지 않는다(2.1). element가 NULL인 한자는 여전히 0점(3.5 "판단 보류" 원칙 유지).
+function wonhaengScore(hanjaList: Hanja[], yongsin: Element[], distribution: ElementDistribution): number {
+  const avgPerElement = ELEMENT_DISTRIBUTION_TOTAL / 5;
+  return hanjaList.reduce((sum, h) => {
+    if (h.element === null) return sum;
+
+    const positionWeight =
+      h.element === yongsin[0]
+        ? CANDIDATE_SCORE_WEIGHTS.wonhaengPrimaryWeight
+        : h.element === yongsin[1]
+          ? CANDIDATE_SCORE_WEIGHTS.wonhaengSecondaryWeight
+          : 0;
+    if (positionWeight === 0) return sum;
+
+    // 0(평균 이상 이미 채워짐) ~ 1(사주에 이 오행이 전혀 없음) 사이로 정규화.
+    const shortageRatio = Math.max(0, avgPerElement - distribution[h.element]) / avgPerElement;
+    return sum + positionWeight * (1 + shortageRatio);
+  }, 0);
 }
 
 // 교육용 기초한자(hanja.isCommon)인 글자 수를 센다 (CLAUDE.md 3.6 — "생소한 한자" 억제용 가산점).
@@ -81,14 +129,21 @@ interface Realization {
   score: number;
 }
 
-// 정해진 두 음절(listA×listB)에서, 4격 하드 필터를 통과하는 조합 중 점수가 가장 높은 하나를 고른다.
-// 같은 이름(hangul)에 대해 여러 한자 조합이 나올 수 있어(예: "민"=民/旻/珉…), 하나의 후보로
-// 대표시키기 위해 최고점 한 조합만 남긴다 — 그래야 이 함수를 호출하는 쪽에서 이름별 중복이 생기지 않는다.
+// 정해진 두 음절(listA×listB)에서, score.ts 총점(scoreName)이 CANDIDATE_MIN_TOTAL_SCORE 이상인
+// 조합 중 점수가 가장 높은 하나를 고른다(3.6.4 — 발음오행 순방향 상생·4격 전부 길수라는 이중
+// 하드 필터를 총점 기준 하나로 대체). 같은 이름(hangul)에 대해 여러 한자 조합이 나올 수 있어
+// (예: "민"=民/旻/珉…), 하나의 후보로 대표시키기 위해 최고점 한 조합만 남긴다 — 그래야 이 함수를
+// 호출하는 쪽에서 이름별 중복이 생기지 않는다. 게이트를 통과한 조합들 사이의 순위는 여전히
+// 기존 내부 가중치(자원오행 3.6.3·친숙한 한자·음양균형)로 매긴다 — score.ts의 scoreWonhaeng은
+// 이진 매치라 3.6.3의 주/보조 용신 차등·부족량 비례가 없어 순위 결정력이 더 약하기 때문이다.
 function bestRealization(
   listA: Hanja[],
   listB: Hanja[],
   surnameStroke: number,
+  surnameElement: Element,
+  givenSyllables: [string, string],
   yongsin: Element[],
+  distribution: ElementDistribution,
   numerologyTable: Map<number, Numerology81>
 ): Realization | null {
   let best: Realization | null = null;
@@ -98,16 +153,21 @@ function bestRealization(
       if (h1.char === h2.char) continue; // 이름 두 글자가 같은 한자인 조합은 제외.
 
       const sagyeok = calcSagyeok(surnameStroke, [h1.strokeOriginal, h2.strokeOriginal]);
-      const allAuspicious = [sagyeok.won, sagyeok.hyeong, sagyeok.i, sagyeok.jeong].every((n) =>
-        isAuspiciousNumber(numerologyTable.get(n)?.fortune ?? "")
-      );
-      if (!allAuspicious) continue;
+
+      const gate = scoreName({
+        surnameElement,
+        surnameStroke,
+        givenSyllables,
+        givenHanja: [h1, h2],
+        yongsin,
+        numerologyTable,
+      });
+      if (gate.totalScore < CANDIDATE_MIN_TOTAL_SCORE) continue;
 
       const balanced = isYinYangBalanced([surnameStroke, h1.strokeOriginal, h2.strokeOriginal]);
-      const wonhaengMatches = countWonhaengMatches([h1, h2], yongsin);
       const commonMatches = countCommonHanja([h1, h2]);
       const score =
-        wonhaengMatches * CANDIDATE_SCORE_WEIGHTS.wonhaengMatch +
+        wonhaengScore([h1, h2], yongsin, distribution) +
         commonMatches * CANDIDATE_SCORE_WEIGHTS.commonHanja +
         (balanced ? CANDIDATE_SCORE_WEIGHTS.yinYangBalanced : 0);
 
@@ -181,10 +241,46 @@ export function selectDiverseCandidates(
   return best;
 }
 
+// Fisher-Yates. random은 [0,1) 난수 생성기를 주입받는다 — 실사용은 Math.random, 테스트는 고정
+// 시퀀스를 주입해 결과를 재현 가능하게 한다(CLAUDE.md 8.4, "순수 함수는 테스트로 고정"과 양립).
+function shuffle<T>(items: T[], random: () => number): T[] {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+// CLAUDE.md 3.6.5(Phase 12, 2026.8.1) — 점수순 최상위만 그대로 뽑으면 같은 주용신(사주 핵심
+// 요구)을 가진 사람들끼리 top5가 거의 겹친다는 게 실측으로 확인됐다(무작위 사주 200개 쌍 비교:
+// 주용신이 같으면 72.7%가 4개 이상 겹침). 게이트(90점) 통과 풀 크기에 따라 상위 일정 비율
+// 안에서 무작위로 뽑도록 바꾼다 — 풀이 작을수록(품질 편차가 클 수 있으므로) 비율을 넓게, 클수록
+// 좁게 잡는다(config.ts RANDOM_SELECTION_POOL). 상위 비율 밖으로는 무작위화하지 않고 점수순
+// 그대로 이어붙여, 상위 비율만으로 candidateCount를 못 채우는 작은 풀에서도 최대한 채운다.
+export function buildRandomizedSelectionPool(
+  scored: Array<{ candidate: Candidate; score: number }>,
+  candidateCount: number,
+  random: () => number
+): Array<{ candidate: Candidate; score: number }> {
+  const percent =
+    scored.length >= RANDOM_SELECTION_POOL.poolSizeThreshold
+      ? RANDOM_SELECTION_POOL.largePoolTopPercent
+      : RANDOM_SELECTION_POOL.smallPoolTopPercent;
+  const topCount = Math.min(scored.length, Math.max(candidateCount, Math.ceil(scored.length * percent)));
+
+  const top = scored.slice(0, topCount);
+  const rest = scored.slice(topCount);
+  return [...shuffle(top, random), ...rest];
+}
+
 export interface BuildCandidatesInput {
   surnameStroke: number;
   surnameElement: Element;
   yongsin: Element[];
+  /** 오행 분포(elements.ts aggregateElements 결과). 자원오행 점수 산정 시 "이 오행이 사주에
+   * 얼마나 부족한지"를 wonhaengScore의 가중치로 쓴다(CLAUDE.md 3.6.3). */
+  distribution: ElementDistribution;
   /** 인명용 & 불용문자 아님으로 이미 필터링된 한자 풀 (db.ts getEligibleHanjaPool). */
   hanjaPool: Hanja[];
   /** 1~81 전체 (db.ts getAllNumerology81). */
@@ -194,6 +290,9 @@ export interface BuildCandidatesInput {
   curatedGivenNames: GivenNameEntry[];
   /** 최종 반환할 후보 개수. 3/5/10 중 사용자가 선택한다 (config.ts CANDIDATE_COUNT_OPTIONS, Phase 8). */
   candidateCount: number;
+  /** [0,1) 난수 생성기. 상위 비율 안 무작위 선택(3.6.5)에 쓰인다. 생략 시 Math.random.
+   * 테스트에서는 고정 시퀀스를 주입해 재현 가능한 결과를 검증한다. */
+  random?: () => number;
 }
 
 // 배열의 중앙값(짝수 개면 아래쪽 값). highlights의 "실사용 빈도 상위권" 판정 기준으로 쓴다.
@@ -203,20 +302,31 @@ function medianOf(numbers: number[]): number {
   return sorted[Math.floor((sorted.length - 1) / 2)];
 }
 
-// CLAUDE.md 3.6(Phase 8) — 순위 대신 각 후보의 강점을 보여주기 위한 태그. 전부 이미 계산된 사실의
-// 조회/집계일 뿐 새 판정이 아니다(2.1). 앞의 두 항목(발음오행 상생·수리사격 길격)은 buildCandidates의
-// 하드 필터를 통과한 모든 후보가 공통으로 만족하는 사실이라 항상 포함하고, 나머지는 후보마다 다른
-// 값이 있을 때만 조건부로 추가한다.
+// CLAUDE.md 3.6(Phase 8)·3.6.4(Phase 11) — 순위 대신 각 후보의 강점을 보여주기 위한 태그. 전부
+// 이미 계산된 사실의 조회/집계일 뿐 새 판정이 아니다(2.1). Phase 11부터는 발음오행 순방향 상생·
+// 4격 전부 길격이 더 이상 "통과한 모든 후보가 공통으로 만족하는 사실"이 아니므로(총점 90점 기준
+// 하드 필터로 바뀌어 비화·역상생·반길이 섞인 후보도 통과할 수 있다, 3.6.4) 이 둘도 다른 항목처럼
+// 실제로 참일 때만 조건부로 추가한다 — 없는 사실을 있다고 표시하지 않기 위함(2.1).
 function buildHighlights(
   candidate: Candidate,
   surnameStroke: number,
   yongsin: Element[],
+  numerologyTable: Map<number, Numerology81>,
   medianFrequencyInBatch: number
 ): CandidateHighlight[] {
-  const highlights: CandidateHighlight[] = [
-    { key: "phoneticFlow", label: "성과 이름의 발음오행이 처음부터 끝까지 상생으로 흐름" },
-    { key: "numerology", label: "수리사격(원형이정) 4격이 모두 길격" },
-  ];
+  const highlights: CandidateHighlight[] = [];
+
+  const phoneticGrades = candidate.phoneticElements
+    .slice(0, -1)
+    .map((el, i) => classifyPhoneticLink(el, candidate.phoneticElements[i + 1]));
+  if (phoneticGrades.every((grade) => grade === "상생")) {
+    highlights.push({ key: "phoneticFlow", label: "성과 이름의 발음오행이 처음부터 끝까지 상생으로 흐름" });
+  }
+
+  const gyeokFortunes = candidate.numerologyNumbers.map((n) => numerologyTable.get(n)?.fortune ?? "흉");
+  if (gyeokFortunes.every((fortune) => fortune === "길")) {
+    highlights.push({ key: "numerology", label: "수리사격(원형이정) 4격이 모두 길격" });
+  }
 
   const wonhaengCount = countWonhaengMatches(candidate.hanja, yongsin);
   if (wonhaengCount === 2) {
@@ -240,21 +350,24 @@ function buildHighlights(
   return highlights;
 }
 
-// 용신 + 성씨 제약으로 이름 후보를 생성해 점수순 상위 candidateCount개를 반환한다.
-// 이름(hangul) 자체는 curatedGivenNames에 있는 것만 쓴다. 하드 필터: 발음오행 순방향 상생(3.1)
-// + 4격 전부 길수(3.6). 가산점: 자원오행 일치(3.5) + 친숙한 한자(3.6) + 음양 균형(3.4).
-// 동점자는 이름의 실사용 빈도(frequency)가 높은 쪽을 우선한다.
+// 용신 + 성씨 제약으로 이름 후보를 생성해 candidateCount개를 반환한다. 이름(hangul) 자체는
+// curatedGivenNames에 있는 것만 쓴다. 하드 필터(3.6.4): score.ts scoreName() 총점이
+// CANDIDATE_MIN_TOTAL_SCORE(90) 이상. 게이트 통과 후 내부 순위: 자원오행 일치(3.5·3.6.3) +
+// 친숙한 한자(3.6) + 음양 균형(3.4). 동점자는 이름의 실사용 빈도(frequency)가 높은 쪽을 우선한다.
+// 최종 선택은 이 순위 최상위를 그대로 쓰지 않고, 게이트 통과 풀 크기에 따른 상위 비율 안에서
+// 무작위로 뽑는다(3.6.5) — 같은 주용신을 가진 사용자끼리 결과가 거의 겹치는 문제 완화.
 export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
-  const { surnameStroke, surnameElement, yongsin, hanjaPool, numerologyTable, curatedGivenNames, candidateCount } =
-    input;
-
-  const requiredElements = requiredPhoneticElements(surnameElement, GIVEN_NAME_LENGTH);
-  const phoneticElements = [surnameElement, ...requiredElements];
-  if (!isPhoneticSangsaeng(phoneticElements)) {
-    // requiredPhoneticElements가 항상 순방향 상생이 되도록 구성하므로 이 분기는 도달하지 않는다.
-    // (isPhoneticSangsaeng을 실제로 사용해 두 함수의 일관성을 테스트로 고정하기 위한 안전장치.)
-    return [];
-  }
+  const {
+    surnameStroke,
+    surnameElement,
+    yongsin,
+    distribution,
+    hanjaPool,
+    numerologyTable,
+    curatedGivenNames,
+    candidateCount,
+    random = Math.random,
+  } = input;
 
   const syllableIndex = groupBySyllable(hanjaPool);
   const scored: Array<{ candidate: Candidate; score: number }> = [];
@@ -270,14 +383,28 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
       continue; // 한글 완성형 음절이 아닌 값이 섞여 있으면 건너뛴다 (판정 불가).
     }
 
-    const matchesRequired = syllableElements.every((el, i) => el === requiredElements[i]);
-    if (!matchesRequired) continue;
+    // 3.6.4 성능 최적화 — 발음오행 점수는 한자 선택과 무관하게 이름(성+음절)만으로 정해진다.
+    // 90점 게이트에 도달하려면 발음오행 링크 2개(성→음절1, 음절1→음절2) 중 상극은 하나도 없고
+    // 비화/역상생도 최대 1개까지만 허용돼야 한다(config.ts CANDIDATE_MIN_TOTAL_SCORE 주석 참고) —
+    // 그 미만이면 나머지(수리40·자원20·음양10)가 전부 만점이어도 총점이 90을 못 넘는다. 한자
+    // 조합 전수탐색(및 매 조합 scoreName 호출) 전에 이 값으로 미리 걸러 불필요한 계산을 피한다.
+    const phoneticPoints = scorePhoneticFlow([surnameElement, ...syllableElements]).points;
+    if (phoneticPoints < MIN_PHONETIC_POINTS_FOR_GATE) continue;
 
     const listA = syllableIndex.get(syllables[0]) ?? [];
     const listB = syllableIndex.get(syllables[1]) ?? [];
     if (listA.length === 0 || listB.length === 0) continue;
 
-    const realization = bestRealization(listA, listB, surnameStroke, yongsin, numerologyTable);
+    const realization = bestRealization(
+      listA,
+      listB,
+      surnameStroke,
+      surnameElement,
+      [syllables[0], syllables[1]],
+      yongsin,
+      distribution,
+      numerologyTable
+    );
     if (!realization) continue;
 
     scored.push({
@@ -290,7 +417,9 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
           realization.sagyeok.i,
           realization.sagyeok.jeong,
         ],
-        phoneticElements,
+        // 3.6.4 — 더 이상 모든 후보가 같은 "이상적" 체인을 공유하지 않으므로, 이 후보의 실제
+        // 발음오행 체인(성 + 이 이름의 실제 두 음절 오행)을 그대로 담는다.
+        phoneticElements: [surnameElement, ...syllableElements],
         frequency: entry.frequency,
         highlights: [], // 최종 다양성 선택 뒤(medianFrequency 계산 후) buildHighlights로 채운다.
       },
@@ -308,7 +437,8 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
       b.candidate.frequency - a.candidate.frequency ||
       totalGivenNameStroke(a.candidate) - totalGivenNameStroke(b.candidate)
   );
-  const picked = selectDiverseCandidates(scored, candidateCount);
+  const randomizedPool = buildRandomizedSelectionPool(scored, candidateCount, random);
+  const picked = selectDiverseCandidates(randomizedPool, candidateCount);
 
   // CLAUDE.md 3.6(Phase 8) — 순위 대신 각 후보의 강점을 부각한다. "실사용 빈도 상위권" 판정은 이번에
   // 실제로 반환되는 후보들끼리 비교해야 의미가 있으므로(다른 회차 결과와 비교하는 값이 아니다),
@@ -316,6 +446,6 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
   const medianFrequencyInBatch = medianOf(picked.map((c) => c.frequency));
   return picked.map((candidate) => ({
     ...candidate,
-    highlights: buildHighlights(candidate, surnameStroke, yongsin, medianFrequencyInBatch),
+    highlights: buildHighlights(candidate, surnameStroke, yongsin, numerologyTable, medianFrequencyInBatch),
   }));
 }

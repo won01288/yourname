@@ -42,6 +42,7 @@ async function main() {
     surnameStroke: surname.strokeOriginal,
     surnameElement: surname.initialElement,
     yongsin: yongsinResult.yongsin,
+    distribution,
     hanjaPool,
     numerologyTable,
     curatedGivenNames,
