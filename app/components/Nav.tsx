@@ -17,9 +17,12 @@ export default async function Nav() {
           href="/"
           className="flex shrink-0 items-center gap-2 rounded-control text-[17px] font-semibold tracking-tight text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
         >
-          <svg width="26" height="26" viewBox="0 0 20 20" aria-hidden="true" className="shrink-0">
-            <circle cx="10" cy="10" r="8.2" fill="none" stroke="var(--brand-600)" strokeWidth="1.7" />
-            <path d="M10 3.2 Q14.8 10 10 16.8" fill="none" stroke="var(--brand-600)" strokeWidth="1.7" />
+          <svg width="26" height="26" viewBox="-30 -30 60 60" aria-hidden="true" className="shrink-0">
+            <circle cx="0" cy="0" r="30" fill="none" stroke="var(--brand-600)" strokeWidth="2.5" />
+            <path
+              d="M 12 -19 A 23 23 0 1 0 12 19 A 17.5 17.5 0 1 1 12 -19 Z"
+              fill="var(--brand-600)"
+            />
           </svg>
           {/* 좁은 화면(360px대)에서 워드마크+링크 2개+토글이 한 줄에 빡빡해지지 않도록,
               가장 덜 중요한 워드마크 텍스트부터 숨긴다. 대신 아이콘 자체를 키워(20→26px) 텍스트가
