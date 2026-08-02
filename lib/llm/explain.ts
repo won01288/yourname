@@ -283,9 +283,11 @@ strengths 작성 지침: 이 후보만의 강점을 짧은 구절 정확히 3개
 export async function explainCandidates(input: ExplainCandidatesInput): Promise<NamingReport> {
   const anthropic = getClient();
 
-  const response = await anthropic.messages.create({
+  // max_tokens가 SDK의 non-streaming 상한(약 21,333, 128000 * 10분/60분)을 넘으면
+  // anthropic.messages.create()가 요청도 보내지 않고 즉시 에러를 던진다 — 스트리밍 필수.
+  const response = await anthropic.messages.stream({
     model: "claude-opus-4-8",
-    max_tokens: 16000,
+    max_tokens: 25000,
     system:
       "너는 한국 전통 작명 서비스의 해설 작성자다. 사주 계산, 오행 판정, 용신 도출, 십신·공망 산출, 획수 계산은 " +
       "이미 코드가 끝냈다. 너는 그 결과만 받아 사용자가 이해하기 쉬운 자연어로 설명하고, 각 후보의 강점이 " +
@@ -306,7 +308,7 @@ export async function explainCandidates(input: ExplainCandidatesInput): Promise<
         schema: RESPONSE_SCHEMA,
       },
     },
-  });
+  }).finalMessage();
 
   const textBlock = response.content.find((block): block is Anthropic.TextBlock => block.type === "text");
   if (!textBlock) {
