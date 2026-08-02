@@ -105,11 +105,16 @@ export async function POST(request: Request) {
   const yongsinResult = deriveYongsin(saju, elementDistribution);
   const manseryeok = buildManseryeok(saju);
 
-  const [hanjaPool, numerologyTable, curatedGivenNames] = await Promise.all([
+  const oppositeGender: Gender = body.gender === "M" ? "F" : "M";
+  const [hanjaPool, numerologyTable, curatedGivenNames, oppositeGenderGivenNames] = await Promise.all([
     getEligibleHanjaPool(),
     getAllNumerology81(),
     getGivenNamesByGender(body.gender),
+    getGivenNamesByGender(oppositeGender),
   ]);
+  // CLAUDE.md 3.6.6(Phase 13) — 반대 성별 쪽에서 훨씬 더 흔한 이름을 후보에서 제외하기 위한
+  // hangul → frequency 조회 맵.
+  const oppositeGenderFrequency = new Map(oppositeGenderGivenNames.map((n) => [n.hangul, n.frequency]));
 
   const builtCandidates = buildCandidates({
     surnameStroke: surname.strokeOriginal,
@@ -120,6 +125,7 @@ export async function POST(request: Request) {
     numerologyTable,
     curatedGivenNames,
     candidateCount,
+    oppositeGenderFrequency,
   });
 
   // Phase 8 — 더 이상 점수순으로 표시하지 않는다(순위 폐지, CLAUDE.md 3.6). 점수 순서를 그대로

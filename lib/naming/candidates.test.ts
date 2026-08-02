@@ -1,5 +1,11 @@
 import { describe, it, expect } from "vitest";
-import { requiredPhoneticElements, buildCandidates, selectDiverseCandidates, buildRandomizedSelectionPool } from "./candidates";
+import {
+  requiredPhoneticElements,
+  buildCandidates,
+  selectDiverseCandidates,
+  buildRandomizedSelectionPool,
+  isCrossGenderSkewed,
+} from "./candidates";
 import { isPhoneticSangsaeng } from "./phonetic";
 import type { Candidate, Element, ElementDistribution, Hanja, Numerology81 } from "./types";
 
@@ -434,5 +440,73 @@ describe("buildCandidates", () => {
     });
     const count = result.filter((c) => c.hangul === "미가").length;
     expect(count).toBeLessThanOrEqual(1);
+  });
+
+  it("반대 성별 빈도가 CROSS_GENDER_FREQUENCY_RATIO배 이상이면 게이트를 통과해도 제외한다 (3.6.6)", () => {
+    // 미가는 yongsin=["水","木"]+ALL_AUSPICIOUS로 게이트를 확실히 통과하는 조합(위 테스트들과 동일).
+    // 반대 성별 쪽 빈도(200)가 이 성별 빈도(100)의 정확히 2배 → CROSS_GENDER_FREQUENCY_RATIO(2)
+    // 조건을 만족해 제외되어야 한다.
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: ["水", "木"],
+      distribution: NEUTRAL_DISTRIBUTION,
+      hanjaPool,
+      numerologyTable: ALL_AUSPICIOUS,
+      candidateCount: 5,
+      random: NO_SHUFFLE,
+      curatedGivenNames: [{ hangul: "미가", frequency: 100 }],
+      oppositeGenderFrequency: new Map([["미가", 200]]),
+    });
+    expect(result).toEqual([]);
+  });
+
+  it("반대 성별 빈도가 2배 미만이면 제외하지 않는다", () => {
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: ["水", "木"],
+      distribution: NEUTRAL_DISTRIBUTION,
+      hanjaPool,
+      numerologyTable: ALL_AUSPICIOUS,
+      candidateCount: 5,
+      random: NO_SHUFFLE,
+      curatedGivenNames: [{ hangul: "미가", frequency: 100 }],
+      oppositeGenderFrequency: new Map([["미가", 199]]),
+    });
+    expect(result.map((c) => c.hangul)).toEqual(["미가"]);
+  });
+
+  it("oppositeGenderFrequency를 생략하면(기본 빈 Map) 필터를 적용하지 않는다", () => {
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: ["水", "木"],
+      distribution: NEUTRAL_DISTRIBUTION,
+      hanjaPool,
+      numerologyTable: ALL_AUSPICIOUS,
+      candidateCount: 5,
+      random: NO_SHUFFLE,
+      curatedGivenNames: [{ hangul: "미가", frequency: 100 }],
+    });
+    expect(result.map((c) => c.hangul)).toEqual(["미가"]);
+  });
+});
+
+describe("isCrossGenderSkewed", () => {
+  it("반대 성별 빈도가 없으면(undefined) false", () => {
+    expect(isCrossGenderSkewed(100, undefined)).toBe(false);
+  });
+
+  it("반대 성별 빈도가 정확히 2배면 true (경계값)", () => {
+    expect(isCrossGenderSkewed(100, 200)).toBe(true);
+  });
+
+  it("반대 성별 빈도가 2배 미만이면 false", () => {
+    expect(isCrossGenderSkewed(100, 199)).toBe(false);
+  });
+
+  it("반대 성별 빈도가 2배를 크게 넘으면 true", () => {
+    expect(isCrossGenderSkewed(10, 5000)).toBe(true);
   });
 });

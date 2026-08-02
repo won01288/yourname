@@ -307,3 +307,11 @@ export const RANDOM_SELECTION_POOL = {
   smallPoolTopPercent: 0.3,
   largePoolTopPercent: 0.2,
 } as const;
+
+// CLAUDE.md 3.6.6(Phase 13, 2026.8.2) — 게이트를 통과한 이름이라도 반대 성별 쪽에서 훨씬 더
+// 흔하게 쓰이면(예: 남아로 "도연"을 추천했는데 실제로는 여아 이름으로 압도적으로 많이 쓰임)
+// 추천에서 제외한다. given_name.frequency(반대 성별)가 이 이름(검색한 성별)의 frequency보다
+// 이 배수 이상이면 제외. 실측(scripts/debug/cross-gender-filter-check.ts, 김·이·박·서 × 사주
+// 3개 × 성별 2종): 게이트 통과 13,276건 중 1,815건(13.7%) 제거, 가장 좁은 케이스(박씨 F)도
+// 88~89개가 남아 후보 개수 최대 옵션(10개, 3.6.1)보다 훨씬 여유가 있음을 확인했다.
+export const CROSS_GENDER_FREQUENCY_RATIO = 2;

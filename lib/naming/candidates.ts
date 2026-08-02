@@ -34,6 +34,7 @@ import {
   RANDOM_SELECTION_POOL,
   SIMILAR_NAME_MAX_JAMO_MISMATCH,
   ELEMENT_DISTRIBUTION_TOTAL,
+  CROSS_GENDER_FREQUENCY_RATIO,
 } from "./config";
 import { getElementForSyllable } from "./phonetic";
 import { calcSagyeok, type Sagyeok } from "./numerology";
@@ -43,6 +44,14 @@ import { isSimilarName } from "./similarity";
 // 3.6.4 — score.ts 발음오행 배점(상생15·비화/역상생7.5)에서, 링크 2개 중 하나는 반드시 상생이어야
 // 총점 90에 도달할 수 있는 최소값(상생15+비화/역상생7.5=22.5). buildCandidates의 사전 가지치기용.
 const MIN_PHONETIC_POINTS_FOR_GATE = 22.5;
+
+// CLAUDE.md 3.6.6(Phase 13) — 반대 성별 쪽에서 이 이름이 CROSS_GENDER_FREQUENCY_RATIO배 이상
+// 더 흔하면 true(제외 대상). 반대 성별 given_name에 아예 없는 이름(undefined)은 비교 대상이
+// 아니므로 false. 순수 수치 비교이며 뜻 판단이 아니다(2.1과 충돌하지 않음).
+export function isCrossGenderSkewed(ownFrequency: number, oppositeFrequency: number | undefined): boolean {
+  if (oppositeFrequency === undefined) return false;
+  return oppositeFrequency >= ownFrequency * CROSS_GENDER_FREQUENCY_RATIO;
+}
 
 function nextElement(element: Element): Element {
   const index = SANGSAENG_ORDER.indexOf(element);
@@ -288,6 +297,10 @@ export interface BuildCandidatesInput {
   /** 성별에 맞는 실사용 이름(한글) 후보 풀 전체 (db.ts getGivenNamesByGender). 이 목록에 있는
    * 이름만 후보로 나올 수 있다 — 한자 자유 조합은 하지 않는다 (CLAUDE.md 3.6 확장). */
   curatedGivenNames: GivenNameEntry[];
+  /** 반대 성별 given_name의 hangul → frequency 맵 (CLAUDE.md 3.6.6, Phase 13). 이 이름이 반대
+   * 성별 쪽에서 CROSS_GENDER_FREQUENCY_RATIO배 이상 더 흔하면 후보에서 제외한다. 생략 시(기본
+   * 빈 Map) 이 필터를 적용하지 않는다 — random과 동일하게 옵셔널 + 안전한 기본값 패턴. */
+  oppositeGenderFrequency?: Map<string, number>;
   /** 최종 반환할 후보 개수. 3/5/10 중 사용자가 선택한다 (config.ts CANDIDATE_COUNT_OPTIONS, Phase 8). */
   candidateCount: number;
   /** [0,1) 난수 생성기. 상위 비율 안 무작위 선택(3.6.5)에 쓰인다. 생략 시 Math.random.
@@ -367,6 +380,7 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
     curatedGivenNames,
     candidateCount,
     random = Math.random,
+    oppositeGenderFrequency = new Map<string, number>(),
   } = input;
 
   const syllableIndex = groupBySyllable(hanjaPool);
@@ -374,6 +388,11 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
 
   for (const entry of curatedGivenNames) {
     if (entry.hangul.length !== GIVEN_NAME_LENGTH) continue; // 방어적 — 데이터 계층에서 이미 걸러짐.
+
+    // CLAUDE.md 3.6.6(Phase 13) — 반대 성별 쪽에서 훨씬 더 흔한 이름은 한자 탐색 전에 건너뛴다
+    // (실사용 성별 인상과 어긋나는 추천 방지). 한자 조합과 무관하게 이름(hangul)만으로 정해지므로
+    // 다른 사전 가지치기와 마찬가지로 여기서 가장 먼저 걸러 불필요한 계산을 피한다.
+    if (isCrossGenderSkewed(entry.frequency, oppositeGenderFrequency.get(entry.hangul))) continue;
 
     const syllables = Array.from(entry.hangul);
     let syllableElements: Element[];
