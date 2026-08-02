@@ -391,6 +391,32 @@ describe("buildCandidates", () => {
     expect(result[0].hangul).toBe("미가");
   });
 
+  it("isFeatured 이름은 소폭 가산점(CANDIDATE_SCORE_WEIGHTS.featured)으로 실사용 빈도 열세를 뒤집을 수 있다", () => {
+    // 위 테스트와 같은 설정(둘 다 내부 순위 점수 3점 동점)이되, 이번엔 frequency를 반대로 줘서
+    // "미가"(빈도 50)가 "민가"(빈도 200)보다 훨씬 낮다 — isFeatured 없이는 민가가 이겨야 한다.
+    // 미가에 isFeatured: true를 주면 featured 가산점(+1)만큼 점수가 4로 올라 3점인 민가를 앞선다.
+    // 2026.8.2 given_name 재구성(기존 상위 300 + namechart.kr 신규 풀 상위 500)의 "약간의
+    // 가중치" 요구사항을 고정하는 테스트.
+    const numerologyTable = makeNumerologyTable([8, 13, 11, 16, 7, 12, 11, 15]);
+
+    const result = buildCandidates({
+      surnameStroke,
+      surnameElement,
+      yongsin: ["木"],
+      distribution: NEUTRAL_DISTRIBUTION,
+      hanjaPool,
+      numerologyTable,
+      candidateCount: 5,
+      random: NO_SHUFFLE,
+      curatedGivenNames: [
+        { hangul: "민가", frequency: 200 },
+        { hangul: "미가", frequency: 50, isFeatured: true },
+      ],
+    });
+
+    expect(result[0].hangul).toBe("미가");
+  });
+
   it("같은 이름(hangul)에 여러 한자 조합이 가능해도 최고점 하나만 후보로 남긴다", () => {
     // "미가"는 美+佳 조합 하나뿐이지만(현재 풀 기준), 만약 여러 조합이 있어도 결과에는
     // 이 이름이 한 번만 나와야 한다(발음 중복 방지, CLAUDE.md 3.6). yongsin은 게이트(3.6.4)를

@@ -122,12 +122,13 @@ export async function getNumerology81(number: number): Promise<Numerology81 | nu
 export async function getGivenNamesByGender(gender: Gender): Promise<GivenNameEntry[]> {
   const client = getDbClient();
   const result = await client.execute({
-    sql: `SELECT hangul, frequency FROM given_name WHERE gender = ?`,
+    sql: `SELECT hangul, frequency, is_featured FROM given_name WHERE gender = ?`,
     args: [gender],
   });
   return result.rows.map((row) => ({
     hangul: row.hangul as string,
     frequency: row.frequency as number,
+    isFeatured: Boolean(row.is_featured),
   }));
 }
 

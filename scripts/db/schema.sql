@@ -45,15 +45,18 @@ CREATE TABLE IF NOT EXISTS numerology_81 (
   description TEXT                   -- 해설
 );
 
--- CLAUDE.md 3.6 확장(2026.7.26) — 사용자 제공 etc/korean_name.xlsx(성별별 실사용 이름 상위 표)의
--- A열(이름)만을 후보 생성의 이름 후보 풀로 쓴다. 자유 조합이 아니라 이 표에 있는 한글 이름만 후보로
--- 나올 수 있다. 원본 시트에는 1~4글자가 섞여 있었으나, GIVEN_NAME_LENGTH=2 제약에 맞춰 2글자만
--- 적재한다(재현: etc/parse_korean_names.py).
+-- CLAUDE.md 3.6 확장(2026.7.26) — 후보 생성의 이름 후보 풀. 자유 조합이 아니라 이 표에 있는
+-- 한글 이름만 후보로 나올 수 있다. GIVEN_NAME_LENGTH=2 제약에 맞춰 2글자만 적재한다.
+-- 2026.8.2 재구성 — 기존 korean_name.xlsx 상위 300개(남녀 각) + namechart.kr 2020~2026 기반
+-- 신규 풀을 합쳤다(재현: etc/build_final_given_names.py). is_featured는 그 재구성 시 "추천 시
+-- 약간의 가중치를 줄 이름"(기존 상위 300개 전부 + 신규 풀 상위 500개)을 표시한다
+-- (lib/naming/candidates.ts CANDIDATE_SCORE_WEIGHTS.featured 참고).
 CREATE TABLE IF NOT EXISTS given_name (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   hangul TEXT NOT NULL,              -- 한글 이름 2글자, 예: "서준"
   gender TEXT NOT NULL CHECK (gender IN ('M', 'F')),
   frequency INTEGER NOT NULL,        -- 원본 표의 실사용 빈도(순위 아님, 클수록 많이 쓰임)
+  is_featured INTEGER NOT NULL DEFAULT 0, -- 추천 시 약간의 가중치를 줄 이름인지(0/1)
   UNIQUE(hangul, gender)
 );
 

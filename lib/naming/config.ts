@@ -257,6 +257,11 @@ export const CANDIDATE_SCORE_WEIGHTS = {
   // 4.1의 hanja.element가 33%만 채워진 것과 달리 isCommon은 Unihan 사실 플래그를 그대로 옮긴
   // 값이라 뜻 판단이 아니다(2.1과 충돌하지 않음).
   commonHanja: 3,
+  // 2026.8.2 — given_name.is_featured(기존 상위 300개 + namechart.kr 신규 풀 상위 500개, 남녀 각)
+  // 이름에 얹는 소폭 가산점. "약간의 가중치"로 90점 게이트 통과 풀 안에서 순위를 조금 올려
+  // 상위 비율 무작위 선택(3.6.5)에 더 자주 들어가게 할 뿐, 다른 항목(wonhaeng 최대 6·commonHanja
+  // 최대 6)보다 훨씬 작게 잡아 지배적이지 않게 한다.
+  featured: 1,
 } as const;
 
 // Phase 6 — 후보 다양성 선택 (CLAUDE.md 3.6). 하드 필터(발음오행 상생 + 4격 길수)를 통과한 조합이

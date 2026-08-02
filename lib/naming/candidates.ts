@@ -423,7 +423,9 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
         frequency: entry.frequency,
         highlights: [], // 최종 다양성 선택 뒤(medianFrequency 계산 후) buildHighlights로 채운다.
       },
-      score: realization.score,
+      // 2026.8.2 — featured 이름(entry.isFeatured)에 소폭 가산점을 더해 90점 게이트 통과 풀
+      // 안에서 순위를 살짝 올린다(config.ts CANDIDATE_SCORE_WEIGHTS.featured).
+      score: realization.score + (entry.isFeatured ? CANDIDATE_SCORE_WEIGHTS.featured : 0),
     });
   }
 

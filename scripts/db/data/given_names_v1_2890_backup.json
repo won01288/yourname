@@ -1,0 +1,14452 @@
+[
+ {
+  "hangul": "서윤",
+  "gender": "F",
+  "frequency": 43278
+ },
+ {
+  "hangul": "서연",
+  "gender": "F",
+  "frequency": 40407
+ },
+ {
+  "hangul": "지우",
+  "gender": "F",
+  "frequency": 36859
+ },
+ {
+  "hangul": "하윤",
+  "gender": "F",
+  "frequency": 35486
+ },
+ {
+  "hangul": "서현",
+  "gender": "F",
+  "frequency": 32732
+ },
+ {
+  "hangul": "하은",
+  "gender": "F",
+  "frequency": 32306
+ },
+ {
+  "hangul": "민서",
+  "gender": "F",
+  "frequency": 30738
+ },
+ {
+  "hangul": "지유",
+  "gender": "F",
+  "frequency": 30324
+ },
+ {
+  "hangul": "윤서",
+  "gender": "F",
+  "frequency": 29105
+ },
+ {
+  "hangul": "수아",
+  "gender": "F",
+  "frequency": 26693
+ },
+ {
+  "hangul": "지아",
+  "gender": "F",
+  "frequency": 26625
+ },
+ {
+  "hangul": "채원",
+  "gender": "F",
+  "frequency": 26608
+ },
+ {
+  "hangul": "서아",
+  "gender": "F",
+  "frequency": 25303
+ },
+ {
+  "hangul": "지안",
+  "gender": "F",
+  "frequency": 24695
+ },
+ {
+  "hangul": "지민",
+  "gender": "F",
+  "frequency": 24666
+ },
+ {
+  "hangul": "지윤",
+  "gender": "F",
+  "frequency": 23877
+ },
+ {
+  "hangul": "은서",
+  "gender": "F",
+  "frequency": 23780
+ },
+ {
+  "hangul": "다은",
+  "gender": "F",
+  "frequency": 23763
+ },
+ {
+  "hangul": "하린",
+  "gender": "F",
+  "frequency": 23761
+ },
+ {
+  "hangul": "예린",
+  "gender": "F",
+  "frequency": 22073
+ },
+ {
+  "hangul": "예은",
+  "gender": "F",
+  "frequency": 21722
+ },
+ {
+  "hangul": "소율",
+  "gender": "F",
+  "frequency": 21572
+ },
+ {
+  "hangul": "유나",
+  "gender": "F",
+  "frequency": 20383
+ },
+ {
+  "hangul": "소윤",
+  "gender": "F",
+  "frequency": 20066
+ },
+ {
+  "hangul": "수빈",
+  "gender": "F",
+  "frequency": 19982
+ },
+ {
+  "hangul": "예원",
+  "gender": "F",
+  "frequency": 19259
+ },
+ {
+  "hangul": "지원",
+  "gender": "F",
+  "frequency": 18852
+ },
+ {
+  "hangul": "시아",
+  "gender": "F",
+  "frequency": 18619
+ },
+ {
+  "hangul": "아린",
+  "gender": "F",
+  "frequency": 18600
+ },
+ {
+  "hangul": "시은",
+  "gender": "F",
+  "frequency": 18512
+ },
+ {
+  "hangul": "채은",
+  "gender": "F",
+  "frequency": 18257
+ },
+ {
+  "hangul": "윤아",
+  "gender": "F",
+  "frequency": 18050
+ },
+ {
+  "hangul": "예나",
+  "gender": "F",
+  "frequency": 17701
+ },
+ {
+  "hangul": "유진",
+  "gender": "F",
+  "frequency": 17694
+ },
+ {
+  "hangul": "아윤",
+  "gender": "F",
+  "frequency": 17144
+ },
+ {
+  "hangul": "예서",
+  "gender": "F",
+  "frequency": 16322
+ },
+ {
+  "hangul": "유주",
+  "gender": "F",
+  "frequency": 16157
+ },
+ {
+  "hangul": "하율",
+  "gender": "F",
+  "frequency": 15746
+ },
+ {
+  "hangul": "연우",
+  "gender": "F",
+  "frequency": 15735
+ },
+ {
+  "hangul": "가은",
+  "gender": "F",
+  "frequency": 15622
+ },
+ {
+  "hangul": "주아",
+  "gender": "F",
+  "frequency": 15341
+ },
+ {
+  "hangul": "다인",
+  "gender": "F",
+  "frequency": 15030
+ },
+ {
+  "hangul": "예진",
+  "gender": "F",
+  "frequency": 14767
+ },
+ {
+  "hangul": "서영",
+  "gender": "F",
+  "frequency": 14589
+ },
+ {
+  "hangul": "연서",
+  "gender": "F",
+  "frequency": 14513
+ },
+ {
+  "hangul": "민지",
+  "gender": "F",
+  "frequency": 14496
+ },
+ {
+  "hangul": "서우",
+  "gender": "F",
+  "frequency": 14470
+ },
+ {
+  "hangul": "아인",
+  "gender": "F",
+  "frequency": 14212
+ },
+ {
+  "hangul": "나은",
+  "gender": "F",
+  "frequency": 14109
+ },
+ {
+  "hangul": "수민",
+  "gender": "F",
+  "frequency": 13967
+ },
+ {
+  "hangul": "서하",
+  "gender": "F",
+  "frequency": 13885
+ },
+ {
+  "hangul": "채윤",
+  "gender": "F",
+  "frequency": 13870
+ },
+ {
+  "hangul": "수연",
+  "gender": "F",
+  "frequency": 13831
+ },
+ {
+  "hangul": "서은",
+  "gender": "F",
+  "frequency": 13699
+ },
+ {
+  "hangul": "채아",
+  "gender": "F",
+  "frequency": 13482
+ },
+ {
+  "hangul": "서율",
+  "gender": "F",
+  "frequency": 13352
+ },
+ {
+  "hangul": "시연",
+  "gender": "F",
+  "frequency": 13224
+ },
+ {
+  "hangul": "나윤",
+  "gender": "F",
+  "frequency": 13141
+ },
+ {
+  "hangul": "하연",
+  "gender": "F",
+  "frequency": 13089
+ },
+ {
+  "hangul": "지율",
+  "gender": "F",
+  "frequency": 12739
+ },
+ {
+  "hangul": "다연",
+  "gender": "F",
+  "frequency": 12705
+ },
+ {
+  "hangul": "이서",
+  "gender": "F",
+  "frequency": 12557
+ },
+ {
+  "hangul": "현서",
+  "gender": "F",
+  "frequency": 12175
+ },
+ {
+  "hangul": "유빈",
+  "gender": "F",
+  "frequency": 11591
+ },
+ {
+  "hangul": "소은",
+  "gender": "F",
+  "frequency": 11547
+ },
+ {
+  "hangul": "다현",
+  "gender": "F",
+  "frequency": 11446
+ },
+ {
+  "hangul": "서진",
+  "gender": "F",
+  "frequency": 11371
+ },
+ {
+  "hangul": "사랑",
+  "gender": "F",
+  "frequency": 11015
+ },
+ {
+  "hangul": "예지",
+  "gender": "F",
+  "frequency": 10985
+ },
+ {
+  "hangul": "세아",
+  "gender": "F",
+  "frequency": 10882
+ },
+ {
+  "hangul": "수현",
+  "gender": "F",
+  "frequency": 10814
+ },
+ {
+  "hangul": "나연",
+  "gender": "F",
+  "frequency": 10683
+ },
+ {
+  "hangul": "은채",
+  "gender": "F",
+  "frequency": 10542
+ },
+ {
+  "hangul": "지은",
+  "gender": "F",
+  "frequency": 10394
+ },
+ {
+  "hangul": "다윤",
+  "gender": "F",
+  "frequency": 10173
+ },
+ {
+  "hangul": "시현",
+  "gender": "F",
+  "frequency": 10065
+ },
+ {
+  "hangul": "예빈",
+  "gender": "F",
+  "frequency": 9924
+ },
+ {
+  "hangul": "주하",
+  "gender": "F",
+  "frequency": 9653
+ },
+ {
+  "hangul": "유하",
+  "gender": "F",
+  "frequency": 9624
+ },
+ {
+  "hangul": "채린",
+  "gender": "F",
+  "frequency": 9598
+ },
+ {
+  "hangul": "지수",
+  "gender": "F",
+  "frequency": 9539
+ },
+ {
+  "hangul": "다온",
+  "gender": "F",
+  "frequency": 9506
+ },
+ {
+  "hangul": "민주",
+  "gender": "F",
+  "frequency": 9398
+ },
+ {
+  "hangul": "윤지",
+  "gender": "F",
+  "frequency": 9286
+ },
+ {
+  "hangul": "소민",
+  "gender": "F",
+  "frequency": 9266
+ },
+ {
+  "hangul": "소연",
+  "gender": "F",
+  "frequency": 9223
+ },
+ {
+  "hangul": "지현",
+  "gender": "F",
+  "frequency": 9199
+ },
+ {
+  "hangul": "소이",
+  "gender": "F",
+  "frequency": 9135
+ },
+ {
+  "hangul": "승아",
+  "gender": "F",
+  "frequency": 9067
+ },
+ {
+  "hangul": "하영",
+  "gender": "F",
+  "frequency": 8929
+ },
+ {
+  "hangul": "윤슬",
+  "gender": "F",
+  "frequency": 8868
+ },
+ {
+  "hangul": "리아",
+  "gender": "F",
+  "frequency": 8854
+ },
+ {
+  "hangul": "혜원",
+  "gender": "F",
+  "frequency": 8743
+ },
+ {
+  "hangul": "세은",
+  "gender": "F",
+  "frequency": 8619
+ },
+ {
+  "hangul": "재이",
+  "gender": "F",
+  "frequency": 8579
+ },
+ {
+  "hangul": "민아",
+  "gender": "F",
+  "frequency": 8476
+ },
+ {
+  "hangul": "아현",
+  "gender": "F",
+  "frequency": 8399
+ },
+ {
+  "hangul": "서희",
+  "gender": "F",
+  "frequency": 8379
+ },
+ {
+  "hangul": "나현",
+  "gender": "F",
+  "frequency": 8334
+ },
+ {
+  "hangul": "도연",
+  "gender": "F",
+  "frequency": 8322
+ },
+ {
+  "hangul": "아영",
+  "gender": "F",
+  "frequency": 8269
+ },
+ {
+  "hangul": "채이",
+  "gender": "F",
+  "frequency": 8115
+ },
+ {
+  "hangul": "규리",
+  "gender": "F",
+  "frequency": 8072
+ },
+ {
+  "hangul": "연아",
+  "gender": "F",
+  "frequency": 7676
+ },
+ {
+  "hangul": "민채",
+  "gender": "F",
+  "frequency": 7601
+ },
+ {
+  "hangul": "가윤",
+  "gender": "F",
+  "frequency": 7551
+ },
+ {
+  "hangul": "시윤",
+  "gender": "F",
+  "frequency": 7413
+ },
+ {
+  "hangul": "주은",
+  "gender": "F",
+  "frequency": 7209
+ },
+ {
+  "hangul": "지연",
+  "gender": "F",
+  "frequency": 7186
+ },
+ {
+  "hangul": "태희",
+  "gender": "F",
+  "frequency": 7161
+ },
+ {
+  "hangul": "설아",
+  "gender": "F",
+  "frequency": 7072
+ },
+ {
+  "hangul": "예림",
+  "gender": "F",
+  "frequency": 7064
+ },
+ {
+  "hangul": "윤하",
+  "gender": "F",
+  "frequency": 6908
+ },
+ {
+  "hangul": "유정",
+  "gender": "F",
+  "frequency": 6903
+ },
+ {
+  "hangul": "로아",
+  "gender": "F",
+  "frequency": 6879
+ },
+ {
+  "hangul": "정원",
+  "gender": "F",
+  "frequency": 6868
+ },
+ {
+  "hangul": "소현",
+  "gender": "F",
+  "frequency": 6717
+ },
+ {
+  "hangul": "라희",
+  "gender": "F",
+  "frequency": 6691
+ },
+ {
+  "hangul": "보민",
+  "gender": "F",
+  "frequency": 6612
+ },
+ {
+  "hangul": "하늘",
+  "gender": "F",
+  "frequency": 6571
+ },
+ {
+  "hangul": "세연",
+  "gender": "F",
+  "frequency": 6509
+ },
+ {
+  "hangul": "수진",
+  "gender": "F",
+  "frequency": 6488
+ },
+ {
+  "hangul": "민정",
+  "gender": "F",
+  "frequency": 6435
+ },
+ {
+  "hangul": "하나",
+  "gender": "F",
+  "frequency": 6367
+ },
+ {
+  "hangul": "나경",
+  "gender": "F",
+  "frequency": 6311
+ },
+ {
+  "hangul": "현지",
+  "gender": "F",
+  "frequency": 6285
+ },
+ {
+  "hangul": "태리",
+  "gender": "F",
+  "frequency": 6251
+ },
+ {
+  "hangul": "가현",
+  "gender": "F",
+  "frequency": 6242
+ },
+ {
+  "hangul": "지효",
+  "gender": "F",
+  "frequency": 6225
+ },
+ {
+  "hangul": "가온",
+  "gender": "F",
+  "frequency": 6137
+ },
+ {
+  "hangul": "민경",
+  "gender": "F",
+  "frequency": 6104
+ },
+ {
+  "hangul": "이현",
+  "gender": "F",
+  "frequency": 6104
+ },
+ {
+  "hangul": "한별",
+  "gender": "F",
+  "frequency": 6026
+ },
+ {
+  "hangul": "예슬",
+  "gender": "F",
+  "frequency": 6022
+ },
+ {
+  "hangul": "태린",
+  "gender": "F",
+  "frequency": 5964
+ },
+ {
+  "hangul": "은지",
+  "gender": "F",
+  "frequency": 5944
+ },
+ {
+  "hangul": "도아",
+  "gender": "F",
+  "frequency": 5937
+ },
+ {
+  "hangul": "가연",
+  "gender": "F",
+  "frequency": 5937
+ },
+ {
+  "hangul": "소희",
+  "gender": "F",
+  "frequency": 5908
+ },
+ {
+  "hangul": "채연",
+  "gender": "F",
+  "frequency": 5898
+ },
+ {
+  "hangul": "단아",
+  "gender": "F",
+  "frequency": 5887
+ },
+ {
+  "hangul": "이나",
+  "gender": "F",
+  "frequency": 5854
+ },
+ {
+  "hangul": "하진",
+  "gender": "F",
+  "frequency": 5799
+ },
+ {
+  "hangul": "하랑",
+  "gender": "F",
+  "frequency": 5725
+ },
+ {
+  "hangul": "현아",
+  "gender": "F",
+  "frequency": 5625
+ },
+ {
+  "hangul": "은솔",
+  "gender": "F",
+  "frequency": 5620
+ },
+ {
+  "hangul": "채민",
+  "gender": "F",
+  "frequency": 5593
+ },
+ {
+  "hangul": "은유",
+  "gender": "F",
+  "frequency": 5543
+ },
+ {
+  "hangul": "유리",
+  "gender": "F",
+  "frequency": 5536
+ },
+ {
+  "hangul": "다솜",
+  "gender": "F",
+  "frequency": 5499
+ },
+ {
+  "hangul": "이솔",
+  "gender": "F",
+  "frequency": 5485
+ },
+ {
+  "hangul": "유림",
+  "gender": "F",
+  "frequency": 5405
+ },
+ {
+  "hangul": "예주",
+  "gender": "F",
+  "frequency": 5351
+ },
+ {
+  "hangul": "효주",
+  "gender": "F",
+  "frequency": 5344
+ },
+ {
+  "hangul": "다희",
+  "gender": "F",
+  "frequency": 5274
+ },
+ {
+  "hangul": "다빈",
+  "gender": "F",
+  "frequency": 5271
+ },
+ {
+  "hangul": "혜린",
+  "gender": "F",
+  "frequency": 5217
+ },
+ {
+  "hangul": "지온",
+  "gender": "F",
+  "frequency": 5189
+ },
+ {
+  "hangul": "유민",
+  "gender": "F",
+  "frequency": 5188
+ },
+ {
+  "hangul": "태연",
+  "gender": "F",
+  "frequency": 5145
+ },
+ {
+  "hangul": "주연",
+  "gender": "F",
+  "frequency": 5111
+ },
+ {
+  "hangul": "루아",
+  "gender": "F",
+  "frequency": 5102
+ },
+ {
+  "hangul": "은우",
+  "gender": "F",
+  "frequency": 5088
+ },
+ {
+  "hangul": "시온",
+  "gender": "F",
+  "frequency": 5076
+ },
+ {
+  "hangul": "가영",
+  "gender": "F",
+  "frequency": 4996
+ },
+ {
+  "hangul": "하람",
+  "gender": "F",
+  "frequency": 4981
+ },
+ {
+  "hangul": "혜인",
+  "gender": "F",
+  "frequency": 4941
+ },
+ {
+  "hangul": "고은",
+  "gender": "F",
+  "frequency": 4898
+ },
+ {
+  "hangul": "해인",
+  "gender": "F",
+  "frequency": 4867
+ },
+ {
+  "hangul": "태은",
+  "gender": "F",
+  "frequency": 4862
+ },
+ {
+  "hangul": "민하",
+  "gender": "F",
+  "frequency": 4812
+ },
+ {
+  "hangul": "아진",
+  "gender": "F",
+  "frequency": 4800
+ },
+ {
+  "hangul": "아라",
+  "gender": "F",
+  "frequency": 4798
+ },
+ {
+  "hangul": "다혜",
+  "gender": "F",
+  "frequency": 4751
+ },
+ {
+  "hangul": "재인",
+  "gender": "F",
+  "frequency": 4750
+ },
+ {
+  "hangul": "유이",
+  "gender": "F",
+  "frequency": 4725
+ },
+ {
+  "hangul": "예솔",
+  "gender": "F",
+  "frequency": 4710
+ },
+ {
+  "hangul": "해나",
+  "gender": "F",
+  "frequency": 4705
+ },
+ {
+  "hangul": "지혜",
+  "gender": "F",
+  "frequency": 4665
+ },
+ {
+  "hangul": "유은",
+  "gender": "F",
+  "frequency": 4653
+ },
+ {
+  "hangul": "이안",
+  "gender": "F",
+  "frequency": 4635
+ },
+ {
+  "hangul": "수인",
+  "gender": "F",
+  "frequency": 4567
+ },
+ {
+  "hangul": "승연",
+  "gender": "F",
+  "frequency": 4564
+ },
+ {
+  "hangul": "나율",
+  "gender": "F",
+  "frequency": 4557
+ },
+ {
+  "hangul": "채영",
+  "gender": "F",
+  "frequency": 4535
+ },
+ {
+  "hangul": "라온",
+  "gender": "F",
+  "frequency": 4517
+ },
+ {
+  "hangul": "수정",
+  "gender": "F",
+  "frequency": 4496
+ },
+ {
+  "hangul": "지영",
+  "gender": "F",
+  "frequency": 4484
+ },
+ {
+  "hangul": "도은",
+  "gender": "F",
+  "frequency": 4474
+ },
+ {
+  "hangul": "서인",
+  "gender": "F",
+  "frequency": 4458
+ },
+ {
+  "hangul": "주원",
+  "gender": "F",
+  "frequency": 4450
+ },
+ {
+  "hangul": "서빈",
+  "gender": "F",
+  "frequency": 4433
+ },
+ {
+  "hangul": "은별",
+  "gender": "F",
+  "frequency": 4417
+ },
+ {
+  "hangul": "가빈",
+  "gender": "F",
+  "frequency": 4395
+ },
+ {
+  "hangul": "수지",
+  "gender": "F",
+  "frequency": 4389
+ },
+ {
+  "hangul": "도희",
+  "gender": "F",
+  "frequency": 4375
+ },
+ {
+  "hangul": "리안",
+  "gender": "F",
+  "frequency": 4299
+ },
+ {
+  "hangul": "하리",
+  "gender": "F",
+  "frequency": 4279
+ },
+ {
+  "hangul": "슬아",
+  "gender": "F",
+  "frequency": 4202
+ },
+ {
+  "hangul": "지후",
+  "gender": "F",
+  "frequency": 4189
+ },
+ {
+  "hangul": "은재",
+  "gender": "F",
+  "frequency": 4169
+ },
+ {
+  "hangul": "다율",
+  "gender": "F",
+  "frequency": 4152
+ },
+ {
+  "hangul": "채현",
+  "gender": "F",
+  "frequency": 4134
+ },
+ {
+  "hangul": "나영",
+  "gender": "F",
+  "frequency": 4101
+ },
+ {
+  "hangul": "소영",
+  "gender": "F",
+  "frequency": 4070
+ },
+ {
+  "hangul": "연재",
+  "gender": "F",
+  "frequency": 4057
+ },
+ {
+  "hangul": "한나",
+  "gender": "F",
+  "frequency": 4055
+ },
+ {
+  "hangul": "세빈",
+  "gender": "F",
+  "frequency": 4006
+ },
+ {
+  "hangul": "소미",
+  "gender": "F",
+  "frequency": 3993
+ },
+ {
+  "hangul": "다영",
+  "gender": "F",
+  "frequency": 3969
+ },
+ {
+  "hangul": "리원",
+  "gender": "F",
+  "frequency": 3960
+ },
+ {
+  "hangul": "세린",
+  "gender": "F",
+  "frequency": 3945
+ },
+ {
+  "hangul": "서원",
+  "gender": "F",
+  "frequency": 3919
+ },
+ {
+  "hangul": "보미",
+  "gender": "F",
+  "frequency": 3891
+ },
+ {
+  "hangul": "주희",
+  "gender": "F",
+  "frequency": 3875
+ },
+ {
+  "hangul": "보경",
+  "gender": "F",
+  "frequency": 3852
+ },
+ {
+  "hangul": "채빈",
+  "gender": "F",
+  "frequency": 3839
+ },
+ {
+  "hangul": "시우",
+  "gender": "F",
+  "frequency": 3838
+ },
+ {
+  "hangul": "아연",
+  "gender": "F",
+  "frequency": 3808
+ },
+ {
+  "hangul": "예담",
+  "gender": "F",
+  "frequency": 3782
+ },
+ {
+  "hangul": "세인",
+  "gender": "F",
+  "frequency": 3778
+ },
+ {
+  "hangul": "지호",
+  "gender": "F",
+  "frequency": 3764
+ },
+ {
+  "hangul": "다원",
+  "gender": "F",
+  "frequency": 3709
+ },
+ {
+  "hangul": "정민",
+  "gender": "F",
+  "frequency": 3705
+ },
+ {
+  "hangul": "정윤",
+  "gender": "F",
+  "frequency": 3688
+ },
+ {
+  "hangul": "하온",
+  "gender": "F",
+  "frequency": 3675
+ },
+ {
+  "hangul": "효린",
+  "gender": "F",
+  "frequency": 3662
+ },
+ {
+  "hangul": "예인",
+  "gender": "F",
+  "frequency": 3657
+ },
+ {
+  "hangul": "은빈",
+  "gender": "F",
+  "frequency": 3655
+ },
+ {
+  "hangul": "소정",
+  "gender": "F",
+  "frequency": 3628
+ },
+ {
+  "hangul": "채희",
+  "gender": "F",
+  "frequency": 3576
+ },
+ {
+  "hangul": "제이",
+  "gender": "F",
+  "frequency": 3556
+ },
+ {
+  "hangul": "라윤",
+  "gender": "F",
+  "frequency": 3539
+ },
+ {
+  "hangul": "재희",
+  "gender": "F",
+  "frequency": 3527
+ },
+ {
+  "hangul": "하음",
+  "gender": "F",
+  "frequency": 3509
+ },
+ {
+  "hangul": "연주",
+  "gender": "F",
+  "frequency": 3467
+ },
+ {
+  "hangul": "다경",
+  "gender": "F",
+  "frequency": 3441
+ },
+ {
+  "hangul": "서정",
+  "gender": "F",
+  "frequency": 3426
+ },
+ {
+  "hangul": "태이",
+  "gender": "F",
+  "frequency": 3420
+ },
+ {
+  "hangul": "정연",
+  "gender": "F",
+  "frequency": 3396
+ },
+ {
+  "hangul": "해린",
+  "gender": "F",
+  "frequency": 3378
+ },
+ {
+  "hangul": "서린",
+  "gender": "F",
+  "frequency": 3352
+ },
+ {
+  "hangul": "나린",
+  "gender": "F",
+  "frequency": 3321
+ },
+ {
+  "hangul": "가을",
+  "gender": "F",
+  "frequency": 3311
+ },
+ {
+  "hangul": "새봄",
+  "gender": "F",
+  "frequency": 3299
+ },
+ {
+  "hangul": "연지",
+  "gender": "F",
+  "frequency": 3285
+ },
+ {
+  "hangul": "준희",
+  "gender": "F",
+  "frequency": 3278
+ },
+ {
+  "hangul": "유안",
+  "gender": "F",
+  "frequency": 3263
+ },
+ {
+  "hangul": "지인",
+  "gender": "F",
+  "frequency": 3256
+ },
+ {
+  "hangul": "미소",
+  "gender": "F",
+  "frequency": 3247
+ },
+ {
+  "hangul": "은율",
+  "gender": "F",
+  "frequency": 3245
+ },
+ {
+  "hangul": "온유",
+  "gender": "F",
+  "frequency": 3218
+ },
+ {
+  "hangul": "라엘",
+  "gender": "F",
+  "frequency": 3215
+ },
+ {
+  "hangul": "은비",
+  "gender": "F",
+  "frequency": 3214
+ },
+ {
+  "hangul": "유라",
+  "gender": "F",
+  "frequency": 3204
+ },
+ {
+  "hangul": "채율",
+  "gender": "F",
+  "frequency": 3194
+ },
+ {
+  "hangul": "효은",
+  "gender": "F",
+  "frequency": 3181
+ },
+ {
+  "hangul": "하엘",
+  "gender": "F",
+  "frequency": 3154
+ },
+ {
+  "hangul": "하민",
+  "gender": "F",
+  "frequency": 3153
+ },
+ {
+  "hangul": "은하",
+  "gender": "F",
+  "frequency": 3133
+ },
+ {
+  "hangul": "희원",
+  "gender": "F",
+  "frequency": 3108
+ },
+ {
+  "hangul": "아름",
+  "gender": "F",
+  "frequency": 3081
+ },
+ {
+  "hangul": "윤주",
+  "gender": "F",
+  "frequency": 3055
+ },
+ {
+  "hangul": "가인",
+  "gender": "F",
+  "frequency": 3049
+ },
+ {
+  "hangul": "리나",
+  "gender": "F",
+  "frequency": 3026
+ },
+ {
+  "hangul": "선우",
+  "gender": "F",
+  "frequency": 3007
+ },
+ {
+  "hangul": "소담",
+  "gender": "F",
+  "frequency": 2997
+ },
+ {
+  "hangul": "윤채",
+  "gender": "F",
+  "frequency": 2980
+ },
+ {
+  "hangul": "은수",
+  "gender": "F",
+  "frequency": 2970
+ },
+ {
+  "hangul": "재은",
+  "gender": "F",
+  "frequency": 2945
+ },
+ {
+  "hangul": "혜민",
+  "gender": "F",
+  "frequency": 2936
+ },
+ {
+  "hangul": "제인",
+  "gender": "F",
+  "frequency": 2919
+ },
+ {
+  "hangul": "혜윤",
+  "gender": "F",
+  "frequency": 2904
+ },
+ {
+  "hangul": "은혜",
+  "gender": "F",
+  "frequency": 2899
+ },
+ {
+  "hangul": "혜진",
+  "gender": "F",
+  "frequency": 2899
+ },
+ {
+  "hangul": "하루",
+  "gender": "F",
+  "frequency": 2895
+ },
+ {
+  "hangul": "연수",
+  "gender": "F",
+  "frequency": 2892
+ },
+ {
+  "hangul": "아율",
+  "gender": "F",
+  "frequency": 2860
+ },
+ {
+  "hangul": "단비",
+  "gender": "F",
+  "frequency": 2839
+ },
+ {
+  "hangul": "하빈",
+  "gender": "F",
+  "frequency": 2773
+ },
+ {
+  "hangul": "서이",
+  "gender": "F",
+  "frequency": 2766
+ },
+ {
+  "hangul": "민솔",
+  "gender": "F",
+  "frequency": 2743
+ },
+ {
+  "hangul": "소원",
+  "gender": "F",
+  "frequency": 2734
+ },
+ {
+  "hangul": "효원",
+  "gender": "F",
+  "frequency": 2717
+ },
+ {
+  "hangul": "현진",
+  "gender": "F",
+  "frequency": 2684
+ },
+ {
+  "hangul": "세희",
+  "gender": "F",
+  "frequency": 2681
+ },
+ {
+  "hangul": "민영",
+  "gender": "F",
+  "frequency": 2673
+ },
+ {
+  "hangul": "혜빈",
+  "gender": "F",
+  "frequency": 2672
+ },
+ {
+  "hangul": "은설",
+  "gender": "F",
+  "frequency": 2655
+ },
+ {
+  "hangul": "여원",
+  "gender": "F",
+  "frequency": 2602
+ },
+ {
+  "hangul": "세영",
+  "gender": "F",
+  "frequency": 2597
+ },
+ {
+  "hangul": "정현",
+  "gender": "F",
+  "frequency": 2590
+ },
+ {
+  "hangul": "윤진",
+  "gender": "F",
+  "frequency": 2569
+ },
+ {
+  "hangul": "도경",
+  "gender": "F",
+  "frequency": 2554
+ },
+ {
+  "hangul": "하임",
+  "gender": "F",
+  "frequency": 2532
+ },
+ {
+  "hangul": "여진",
+  "gender": "F",
+  "frequency": 2505
+ },
+ {
+  "hangul": "가람",
+  "gender": "F",
+  "frequency": 2503
+ },
+ {
+  "hangul": "다정",
+  "gender": "F",
+  "frequency": 2502
+ },
+ {
+  "hangul": "혜리",
+  "gender": "F",
+  "frequency": 2501
+ },
+ {
+  "hangul": "진서",
+  "gender": "F",
+  "frequency": 2497
+ },
+ {
+  "hangul": "정은",
+  "gender": "F",
+  "frequency": 2469
+ },
+ {
+  "hangul": "진아",
+  "gender": "F",
+  "frequency": 2463
+ },
+ {
+  "hangul": "유경",
+  "gender": "F",
+  "frequency": 2454
+ },
+ {
+  "hangul": "은성",
+  "gender": "F",
+  "frequency": 2448
+ },
+ {
+  "hangul": "다예",
+  "gender": "F",
+  "frequency": 2443
+ },
+ {
+  "hangul": "라임",
+  "gender": "F",
+  "frequency": 2442
+ },
+ {
+  "hangul": "주현",
+  "gender": "F",
+  "frequency": 2421
+ },
+ {
+  "hangul": "시하",
+  "gender": "F",
+  "frequency": 2419
+ },
+ {
+  "hangul": "연희",
+  "gender": "F",
+  "frequency": 2379
+ },
+ {
+  "hangul": "현주",
+  "gender": "F",
+  "frequency": 2367
+ },
+ {
+  "hangul": "해솔",
+  "gender": "F",
+  "frequency": 2366
+ },
+ {
+  "hangul": "현정",
+  "gender": "F",
+  "frequency": 2361
+ },
+ {
+  "hangul": "아림",
+  "gender": "F",
+  "frequency": 2325
+ },
+ {
+  "hangul": "이진",
+  "gender": "F",
+  "frequency": 2319
+ },
+ {
+  "hangul": "다미",
+  "gender": "F",
+  "frequency": 2311
+ },
+ {
+  "hangul": "혜림",
+  "gender": "F",
+  "frequency": 2283
+ },
+ {
+  "hangul": "윤솔",
+  "gender": "F",
+  "frequency": 2280
+ },
+ {
+  "hangul": "효민",
+  "gender": "F",
+  "frequency": 2278
+ },
+ {
+  "hangul": "시원",
+  "gender": "F",
+  "frequency": 2257
+ },
+ {
+  "hangul": "가희",
+  "gender": "F",
+  "frequency": 2246
+ },
+ {
+  "hangul": "예온",
+  "gender": "F",
+  "frequency": 2240
+ },
+ {
+  "hangul": "규빈",
+  "gender": "F",
+  "frequency": 2229
+ },
+ {
+  "hangul": "재아",
+  "gender": "F",
+  "frequency": 2227
+ },
+ {
+  "hangul": "지예",
+  "gender": "F",
+  "frequency": 2226
+ },
+ {
+  "hangul": "주영",
+  "gender": "F",
+  "frequency": 2218
+ },
+ {
+  "hangul": "소유",
+  "gender": "F",
+  "frequency": 2212
+ },
+ {
+  "hangul": "시율",
+  "gender": "F",
+  "frequency": 2193
+ },
+ {
+  "hangul": "가율",
+  "gender": "F",
+  "frequency": 2161
+ },
+ {
+  "hangul": "다민",
+  "gender": "F",
+  "frequency": 2159
+ },
+ {
+  "hangul": "희주",
+  "gender": "F",
+  "frequency": 2153
+ },
+ {
+  "hangul": "지희",
+  "gender": "F",
+  "frequency": 2153
+ },
+ {
+  "hangul": "시안",
+  "gender": "F",
+  "frequency": 2148
+ },
+ {
+  "hangul": "우리",
+  "gender": "F",
+  "frequency": 2135
+ },
+ {
+  "hangul": "려원",
+  "gender": "F",
+  "frequency": 2126
+ },
+ {
+  "hangul": "하정",
+  "gender": "F",
+  "frequency": 2117
+ },
+ {
+  "hangul": "로하",
+  "gender": "F",
+  "frequency": 2116
+ },
+ {
+  "hangul": "수영",
+  "gender": "F",
+  "frequency": 2115
+ },
+ {
+  "hangul": "리하",
+  "gender": "F",
+  "frequency": 2103
+ },
+ {
+  "hangul": "선아",
+  "gender": "F",
+  "frequency": 2085
+ },
+ {
+  "hangul": "혜주",
+  "gender": "F",
+  "frequency": 2081
+ },
+ {
+  "hangul": "루나",
+  "gender": "F",
+  "frequency": 2075
+ },
+ {
+  "hangul": "이수",
+  "gender": "F",
+  "frequency": 2074
+ },
+ {
+  "hangul": "효빈",
+  "gender": "F",
+  "frequency": 2073
+ },
+ {
+  "hangul": "은아",
+  "gender": "F",
+  "frequency": 2060
+ },
+ {
+  "hangul": "우주",
+  "gender": "F",
+  "frequency": 2025
+ },
+ {
+  "hangul": "도이",
+  "gender": "F",
+  "frequency": 2021
+ },
+ {
+  "hangul": "시영",
+  "gender": "F",
+  "frequency": 1983
+ },
+ {
+  "hangul": "지오",
+  "gender": "F",
+  "frequency": 1981
+ },
+ {
+  "hangul": "하경",
+  "gender": "F",
+  "frequency": 1980
+ },
+ {
+  "hangul": "별하",
+  "gender": "F",
+  "frequency": 1976
+ },
+ {
+  "hangul": "은진",
+  "gender": "F",
+  "frequency": 1969
+ },
+ {
+  "hangul": "승희",
+  "gender": "F",
+  "frequency": 1963
+ },
+ {
+  "hangul": "나희",
+  "gender": "F",
+  "frequency": 1958
+ },
+ {
+  "hangul": "윤희",
+  "gender": "F",
+  "frequency": 1949
+ },
+ {
+  "hangul": "서안",
+  "gender": "F",
+  "frequency": 1940
+ },
+ {
+  "hangul": "규린",
+  "gender": "F",
+  "frequency": 1933
+ },
+ {
+  "hangul": "선유",
+  "gender": "F",
+  "frequency": 1932
+ },
+ {
+  "hangul": "하이",
+  "gender": "F",
+  "frequency": 1929
+ },
+ {
+  "hangul": "루리",
+  "gender": "F",
+  "frequency": 1915
+ },
+ {
+  "hangul": "라율",
+  "gender": "F",
+  "frequency": 1900
+ },
+ {
+  "hangul": "로희",
+  "gender": "F",
+  "frequency": 1887
+ },
+ {
+  "hangul": "혜나",
+  "gender": "F",
+  "frequency": 1882
+ },
+ {
+  "hangul": "여름",
+  "gender": "F",
+  "frequency": 1853
+ },
+ {
+  "hangul": "효정",
+  "gender": "F",
+  "frequency": 1847
+ },
+ {
+  "hangul": "인서",
+  "gender": "F",
+  "frequency": 1835
+ },
+ {
+  "hangul": "희진",
+  "gender": "F",
+  "frequency": 1834
+ },
+ {
+  "hangul": "해원",
+  "gender": "F",
+  "frequency": 1820
+ },
+ {
+  "hangul": "예리",
+  "gender": "F",
+  "frequency": 1819
+ },
+ {
+  "hangul": "윤정",
+  "gender": "F",
+  "frequency": 1807
+ },
+ {
+  "hangul": "효진",
+  "gender": "F",
+  "frequency": 1799
+ },
+ {
+  "hangul": "성은",
+  "gender": "F",
+  "frequency": 1788
+ },
+ {
+  "hangul": "정인",
+  "gender": "F",
+  "frequency": 1783
+ },
+ {
+  "hangul": "아정",
+  "gender": "F",
+  "frequency": 1769
+ },
+ {
+  "hangul": "승현",
+  "gender": "F",
+  "frequency": 1760
+ },
+ {
+  "hangul": "하늬",
+  "gender": "F",
+  "frequency": 1756
+ },
+ {
+  "hangul": "라은",
+  "gender": "F",
+  "frequency": 1756
+ },
+ {
+  "hangul": "루다",
+  "gender": "F",
+  "frequency": 1738
+ },
+ {
+  "hangul": "채하",
+  "gender": "F",
+  "frequency": 1737
+ },
+ {
+  "hangul": "영은",
+  "gender": "F",
+  "frequency": 1713
+ },
+ {
+  "hangul": "세현",
+  "gender": "F",
+  "frequency": 1705
+ },
+ {
+  "hangul": "유담",
+  "gender": "F",
+  "frequency": 1700
+ },
+ {
+  "hangul": "인아",
+  "gender": "F",
+  "frequency": 1696
+ },
+ {
+  "hangul": "송현",
+  "gender": "F",
+  "frequency": 1693
+ },
+ {
+  "hangul": "보영",
+  "gender": "F",
+  "frequency": 1692
+ },
+ {
+  "hangul": "영서",
+  "gender": "F",
+  "frequency": 1688
+ },
+ {
+  "hangul": "은영",
+  "gender": "F",
+  "frequency": 1687
+ },
+ {
+  "hangul": "규림",
+  "gender": "F",
+  "frequency": 1678
+ },
+ {
+  "hangul": "로은",
+  "gender": "F",
+  "frequency": 1676
+ },
+ {
+  "hangul": "다솔",
+  "gender": "F",
+  "frequency": 1676
+ },
+ {
+  "hangul": "아란",
+  "gender": "F",
+  "frequency": 1672
+ },
+ {
+  "hangul": "이담",
+  "gender": "F",
+  "frequency": 1668
+ },
+ {
+  "hangul": "아리",
+  "gender": "F",
+  "frequency": 1662
+ },
+ {
+  "hangul": "유현",
+  "gender": "F",
+  "frequency": 1649
+ },
+ {
+  "hangul": "도윤",
+  "gender": "F",
+  "frequency": 1649
+ },
+ {
+  "hangul": "이레",
+  "gender": "F",
+  "frequency": 1648
+ },
+ {
+  "hangul": "선율",
+  "gender": "F",
+  "frequency": 1647
+ },
+ {
+  "hangul": "민희",
+  "gender": "F",
+  "frequency": 1644
+ },
+ {
+  "hangul": "희서",
+  "gender": "F",
+  "frequency": 1642
+ },
+ {
+  "hangul": "담희",
+  "gender": "F",
+  "frequency": 1628
+ },
+ {
+  "hangul": "수린",
+  "gender": "F",
+  "frequency": 1587
+ },
+ {
+  "hangul": "민선",
+  "gender": "F",
+  "frequency": 1586
+ },
+ {
+  "hangul": "해윤",
+  "gender": "F",
+  "frequency": 1549
+ },
+ {
+  "hangul": "소예",
+  "gender": "F",
+  "frequency": 1543
+ },
+ {
+  "hangul": "승주",
+  "gender": "F",
+  "frequency": 1542
+ },
+ {
+  "hangul": "가원",
+  "gender": "F",
+  "frequency": 1541
+ },
+ {
+  "hangul": "유미",
+  "gender": "F",
+  "frequency": 1530
+ },
+ {
+  "hangul": "다해",
+  "gender": "F",
+  "frequency": 1520
+ },
+ {
+  "hangul": "윤설",
+  "gender": "F",
+  "frequency": 1511
+ },
+ {
+  "hangul": "빛나",
+  "gender": "F",
+  "frequency": 1501
+ },
+ {
+  "hangul": "효림",
+  "gender": "F",
+  "frequency": 1501
+ },
+ {
+  "hangul": "이은",
+  "gender": "F",
+  "frequency": 1499
+ },
+ {
+  "hangul": "도영",
+  "gender": "F",
+  "frequency": 1492
+ },
+ {
+  "hangul": "희수",
+  "gender": "F",
+  "frequency": 1484
+ },
+ {
+  "hangul": "제니",
+  "gender": "F",
+  "frequency": 1483
+ },
+ {
+  "hangul": "하라",
+  "gender": "F",
+  "frequency": 1468
+ },
+ {
+  "hangul": "선영",
+  "gender": "F",
+  "frequency": 1462
+ },
+ {
+  "hangul": "희연",
+  "gender": "F",
+  "frequency": 1452
+ },
+ {
+  "hangul": "아람",
+  "gender": "F",
+  "frequency": 1442
+ },
+ {
+  "hangul": "해리",
+  "gender": "F",
+  "frequency": 1439
+ },
+ {
+  "hangul": "정아",
+  "gender": "F",
+  "frequency": 1439
+ },
+ {
+  "hangul": "수안",
+  "gender": "F",
+  "frequency": 1433
+ },
+ {
+  "hangul": "지나",
+  "gender": "F",
+  "frequency": 1424
+ },
+ {
+  "hangul": "한비",
+  "gender": "F",
+  "frequency": 1401
+ },
+ {
+  "hangul": "여울",
+  "gender": "F",
+  "frequency": 1400
+ },
+ {
+  "hangul": "초아",
+  "gender": "F",
+  "frequency": 1398
+ },
+ {
+  "hangul": "서유",
+  "gender": "F",
+  "frequency": 1390
+ },
+ {
+  "hangul": "세나",
+  "gender": "F",
+  "frequency": 1378
+ },
+ {
+  "hangul": "예람",
+  "gender": "F",
+  "frequency": 1373
+ },
+ {
+  "hangul": "설하",
+  "gender": "F",
+  "frequency": 1353
+ },
+ {
+  "hangul": "여은",
+  "gender": "F",
+  "frequency": 1352
+ },
+ {
+  "hangul": "하원",
+  "gender": "F",
+  "frequency": 1348
+ },
+ {
+  "hangul": "나예",
+  "gender": "F",
+  "frequency": 1343
+ },
+ {
+  "hangul": "세하",
+  "gender": "F",
+  "frequency": 1341
+ },
+ {
+  "hangul": "세령",
+  "gender": "F",
+  "frequency": 1338
+ },
+ {
+  "hangul": "서경",
+  "gender": "F",
+  "frequency": 1335
+ },
+ {
+  "hangul": "은정",
+  "gender": "F",
+  "frequency": 1330
+ },
+ {
+  "hangul": "예랑",
+  "gender": "F",
+  "frequency": 1325
+ },
+ {
+  "hangul": "혜연",
+  "gender": "F",
+  "frequency": 1323
+ },
+ {
+  "hangul": "송연",
+  "gender": "F",
+  "frequency": 1320
+ },
+ {
+  "hangul": "다겸",
+  "gender": "F",
+  "frequency": 1312
+ },
+ {
+  "hangul": "은주",
+  "gender": "F",
+  "frequency": 1296
+ },
+ {
+  "hangul": "예윤",
+  "gender": "F",
+  "frequency": 1291
+ },
+ {
+  "hangul": "수하",
+  "gender": "F",
+  "frequency": 1284
+ },
+ {
+  "hangul": "하선",
+  "gender": "F",
+  "frequency": 1278
+ },
+ {
+  "hangul": "누리",
+  "gender": "F",
+  "frequency": 1275
+ },
+ {
+  "hangul": "조이",
+  "gender": "F",
+  "frequency": 1267
+ },
+ {
+  "hangul": "세진",
+  "gender": "F",
+  "frequency": 1263
+ },
+ {
+  "hangul": "이설",
+  "gender": "F",
+  "frequency": 1262
+ },
+ {
+  "hangul": "윤영",
+  "gender": "F",
+  "frequency": 1261
+ },
+ {
+  "hangul": "나원",
+  "gender": "F",
+  "frequency": 1250
+ },
+ {
+  "hangul": "다나",
+  "gender": "F",
+  "frequency": 1247
+ },
+ {
+  "hangul": "세라",
+  "gender": "F",
+  "frequency": 1241
+ },
+ {
+  "hangul": "예령",
+  "gender": "F",
+  "frequency": 1237
+ },
+ {
+  "hangul": "이엘",
+  "gender": "F",
+  "frequency": 1236
+ },
+ {
+  "hangul": "예봄",
+  "gender": "F",
+  "frequency": 1224
+ },
+ {
+  "hangul": "이솜",
+  "gender": "F",
+  "frequency": 1213
+ },
+ {
+  "hangul": "안나",
+  "gender": "F",
+  "frequency": 1211
+ },
+ {
+  "hangul": "도하",
+  "gender": "F",
+  "frequency": 1202
+ },
+ {
+  "hangul": "제나",
+  "gender": "F",
+  "frequency": 1196
+ },
+ {
+  "hangul": "진주",
+  "gender": "F",
+  "frequency": 1187
+ },
+ {
+  "hangul": "예영",
+  "gender": "F",
+  "frequency": 1185
+ },
+ {
+  "hangul": "경민",
+  "gender": "F",
+  "frequency": 1173
+ },
+ {
+  "hangul": "태인",
+  "gender": "F",
+  "frequency": 1173
+ },
+ {
+  "hangul": "혜정",
+  "gender": "F",
+  "frequency": 1166
+ },
+ {
+  "hangul": "시유",
+  "gender": "F",
+  "frequency": 1147
+ },
+ {
+  "hangul": "아랑",
+  "gender": "F",
+  "frequency": 1142
+ },
+ {
+  "hangul": "진희",
+  "gender": "F",
+  "frequency": 1142
+ },
+ {
+  "hangul": "나라",
+  "gender": "F",
+  "frequency": 1118
+ },
+ {
+  "hangul": "태경",
+  "gender": "F",
+  "frequency": 1115
+ },
+ {
+  "hangul": "수경",
+  "gender": "F",
+  "frequency": 1109
+ },
+ {
+  "hangul": "세이",
+  "gender": "F",
+  "frequency": 1106
+ },
+ {
+  "hangul": "해온",
+  "gender": "F",
+  "frequency": 1097
+ },
+ {
+  "hangul": "율아",
+  "gender": "F",
+  "frequency": 1096
+ },
+ {
+  "hangul": "민진",
+  "gender": "F",
+  "frequency": 1095
+ },
+ {
+  "hangul": "아민",
+  "gender": "F",
+  "frequency": 1089
+ },
+ {
+  "hangul": "인영",
+  "gender": "F",
+  "frequency": 1078
+ },
+ {
+  "hangul": "보현",
+  "gender": "F",
+  "frequency": 1077
+ },
+ {
+  "hangul": "예현",
+  "gender": "F",
+  "frequency": 1076
+ },
+ {
+  "hangul": "서온",
+  "gender": "F",
+  "frequency": 1071
+ },
+ {
+  "hangul": "미나",
+  "gender": "F",
+  "frequency": 1067
+ },
+ {
+  "hangul": "로이",
+  "gender": "F",
+  "frequency": 1061
+ },
+ {
+  "hangul": "채안",
+  "gender": "F",
+  "frequency": 1059
+ },
+ {
+  "hangul": "성연",
+  "gender": "F",
+  "frequency": 1050
+ },
+ {
+  "hangul": "정빈",
+  "gender": "F",
+  "frequency": 1049
+ },
+ {
+  "hangul": "가민",
+  "gender": "F",
+  "frequency": 1049
+ },
+ {
+  "hangul": "연진",
+  "gender": "F",
+  "frequency": 1042
+ },
+ {
+  "hangul": "희윤",
+  "gender": "F",
+  "frequency": 1040
+ },
+ {
+  "hangul": "한솔",
+  "gender": "F",
+  "frequency": 1039
+ },
+ {
+  "hangul": "주이",
+  "gender": "F",
+  "frequency": 1037
+ },
+ {
+  "hangul": "승은",
+  "gender": "F",
+  "frequency": 1033
+ },
+ {
+  "hangul": "사라",
+  "gender": "F",
+  "frequency": 1027
+ },
+ {
+  "hangul": "유아",
+  "gender": "F",
+  "frequency": 1025
+ },
+ {
+  "hangul": "이랑",
+  "gender": "F",
+  "frequency": 1020
+ },
+ {
+  "hangul": "나래",
+  "gender": "F",
+  "frequency": 1014
+ },
+ {
+  "hangul": "경은",
+  "gender": "F",
+  "frequency": 1012
+ },
+ {
+  "hangul": "유솔",
+  "gender": "F",
+  "frequency": 1009
+ },
+ {
+  "hangul": "민설",
+  "gender": "F",
+  "frequency": 1006
+ },
+ {
+  "hangul": "규원",
+  "gender": "F",
+  "frequency": 1001
+ },
+ {
+  "hangul": "희정",
+  "gender": "F",
+  "frequency": 992
+ },
+ {
+  "hangul": "린아",
+  "gender": "F",
+  "frequency": 987
+ },
+ {
+  "hangul": "로운",
+  "gender": "F",
+  "frequency": 978
+ },
+ {
+  "hangul": "재연",
+  "gender": "F",
+  "frequency": 973
+ },
+ {
+  "hangul": "규민",
+  "gender": "F",
+  "frequency": 957
+ },
+ {
+  "hangul": "채령",
+  "gender": "F",
+  "frequency": 938
+ },
+ {
+  "hangul": "태림",
+  "gender": "F",
+  "frequency": 937
+ },
+ {
+  "hangul": "세윤",
+  "gender": "F",
+  "frequency": 935
+ },
+ {
+  "hangul": "리우",
+  "gender": "F",
+  "frequency": 933
+ },
+ {
+  "hangul": "샛별",
+  "gender": "F",
+  "frequency": 923
+ },
+ {
+  "hangul": "혜은",
+  "gender": "F",
+  "frequency": 912
+ },
+ {
+  "hangul": "초은",
+  "gender": "F",
+  "frequency": 910
+ },
+ {
+  "hangul": "라원",
+  "gender": "F",
+  "frequency": 903
+ },
+ {
+  "hangul": "채유",
+  "gender": "F",
+  "frequency": 898
+ },
+ {
+  "hangul": "주혜",
+  "gender": "F",
+  "frequency": 898
+ },
+ {
+  "hangul": "송이",
+  "gender": "F",
+  "frequency": 894
+ },
+ {
+  "hangul": "지선",
+  "gender": "F",
+  "frequency": 894
+ },
+ {
+  "hangul": "보라",
+  "gender": "F",
+  "frequency": 891
+ },
+ {
+  "hangul": "재윤",
+  "gender": "F",
+  "frequency": 887
+ },
+ {
+  "hangul": "혜영",
+  "gender": "F",
+  "frequency": 882
+ },
+ {
+  "hangul": "나온",
+  "gender": "F",
+  "frequency": 876
+ },
+ {
+  "hangul": "기쁨",
+  "gender": "F",
+  "frequency": 871
+ },
+ {
+  "hangul": "슬기",
+  "gender": "F",
+  "frequency": 870
+ },
+ {
+  "hangul": "보윤",
+  "gender": "F",
+  "frequency": 867
+ },
+ {
+  "hangul": "연후",
+  "gender": "F",
+  "frequency": 855
+ },
+ {
+  "hangul": "성아",
+  "gender": "F",
+  "frequency": 855
+ },
+ {
+  "hangul": "예하",
+  "gender": "F",
+  "frequency": 850
+ },
+ {
+  "hangul": "설희",
+  "gender": "F",
+  "frequency": 849
+ },
+ {
+  "hangul": "유희",
+  "gender": "F",
+  "frequency": 849
+ },
+ {
+  "hangul": "주빈",
+  "gender": "F",
+  "frequency": 839
+ },
+ {
+  "hangul": "보람",
+  "gender": "F",
+  "frequency": 838
+ },
+ {
+  "hangul": "고운",
+  "gender": "F",
+  "frequency": 834
+ },
+ {
+  "hangul": "미주",
+  "gender": "F",
+  "frequency": 830
+ },
+ {
+  "hangul": "세림",
+  "gender": "F",
+  "frequency": 826
+ },
+ {
+  "hangul": "루하",
+  "gender": "F",
+  "frequency": 821
+ },
+ {
+  "hangul": "혜령",
+  "gender": "F",
+  "frequency": 821
+ },
+ {
+  "hangul": "진영",
+  "gender": "F",
+  "frequency": 814
+ },
+ {
+  "hangul": "나엘",
+  "gender": "F",
+  "frequency": 813
+ },
+ {
+  "hangul": "이재",
+  "gender": "F",
+  "frequency": 812
+ },
+ {
+  "hangul": "채림",
+  "gender": "F",
+  "frequency": 807
+ },
+ {
+  "hangul": "승하",
+  "gender": "F",
+  "frequency": 805
+ },
+ {
+  "hangul": "율리",
+  "gender": "F",
+  "frequency": 800
+ },
+ {
+  "hangul": "소망",
+  "gender": "F",
+  "frequency": 799
+ },
+ {
+  "hangul": "예안",
+  "gender": "F",
+  "frequency": 796
+ },
+ {
+  "hangul": "도담",
+  "gender": "F",
+  "frequency": 795
+ },
+ {
+  "hangul": "시언",
+  "gender": "F",
+  "frequency": 794
+ },
+ {
+  "hangul": "은송",
+  "gender": "F",
+  "frequency": 792
+ },
+ {
+  "hangul": "도현",
+  "gender": "F",
+  "frequency": 788
+ },
+ {
+  "hangul": "지애",
+  "gender": "F",
+  "frequency": 787
+ },
+ {
+  "hangul": "호연",
+  "gender": "F",
+  "frequency": 783
+ },
+ {
+  "hangul": "새별",
+  "gender": "F",
+  "frequency": 779
+ },
+ {
+  "hangul": "윤경",
+  "gender": "F",
+  "frequency": 773
+ },
+ {
+  "hangul": "율희",
+  "gender": "F",
+  "frequency": 771
+ },
+ {
+  "hangul": "시호",
+  "gender": "F",
+  "frequency": 769
+ },
+ {
+  "hangul": "라현",
+  "gender": "F",
+  "frequency": 767
+ },
+ {
+  "hangul": "소진",
+  "gender": "F",
+  "frequency": 762
+ },
+ {
+  "hangul": "한결",
+  "gender": "F",
+  "frequency": 758
+ },
+ {
+  "hangul": "율하",
+  "gender": "F",
+  "frequency": 758
+ },
+ {
+  "hangul": "리윤",
+  "gender": "F",
+  "frequency": 754
+ },
+ {
+  "hangul": "아은",
+  "gender": "F",
+  "frequency": 750
+ },
+ {
+  "hangul": "연두",
+  "gender": "F",
+  "frequency": 748
+ },
+ {
+  "hangul": "다엘",
+  "gender": "F",
+  "frequency": 747
+ },
+ {
+  "hangul": "서후",
+  "gender": "F",
+  "frequency": 747
+ },
+ {
+  "hangul": "리온",
+  "gender": "F",
+  "frequency": 744
+ },
+ {
+  "hangul": "가령",
+  "gender": "F",
+  "frequency": 741
+ },
+ {
+  "hangul": "나혜",
+  "gender": "F",
+  "frequency": 741
+ },
+ {
+  "hangul": "은호",
+  "gender": "F",
+  "frequency": 738
+ },
+ {
+  "hangul": "보빈",
+  "gender": "F",
+  "frequency": 738
+ },
+ {
+  "hangul": "민재",
+  "gender": "F",
+  "frequency": 738
+ },
+ {
+  "hangul": "은결",
+  "gender": "F",
+  "frequency": 736
+ },
+ {
+  "hangul": "효인",
+  "gender": "F",
+  "frequency": 735
+ },
+ {
+  "hangul": "제아",
+  "gender": "F",
+  "frequency": 734
+ },
+ {
+  "hangul": "영주",
+  "gender": "F",
+  "frequency": 733
+ },
+ {
+  "hangul": "보아",
+  "gender": "F",
+  "frequency": 733
+ },
+ {
+  "hangul": "민유",
+  "gender": "F",
+  "frequency": 731
+ },
+ {
+  "hangul": "현경",
+  "gender": "F",
+  "frequency": 731
+ },
+ {
+  "hangul": "레아",
+  "gender": "F",
+  "frequency": 729
+ },
+ {
+  "hangul": "선하",
+  "gender": "F",
+  "frequency": 725
+ },
+ {
+  "hangul": "채리",
+  "gender": "F",
+  "frequency": 722
+ },
+ {
+  "hangul": "세민",
+  "gender": "F",
+  "frequency": 720
+ },
+ {
+  "hangul": "하림",
+  "gender": "F",
+  "frequency": 716
+ },
+ {
+  "hangul": "혜지",
+  "gender": "F",
+  "frequency": 714
+ },
+ {
+  "hangul": "예승",
+  "gender": "F",
+  "frequency": 712
+ },
+ {
+  "hangul": "예음",
+  "gender": "F",
+  "frequency": 710
+ },
+ {
+  "hangul": "담이",
+  "gender": "F",
+  "frequency": 698
+ },
+ {
+  "hangul": "태영",
+  "gender": "F",
+  "frequency": 693
+ },
+ {
+  "hangul": "세온",
+  "gender": "F",
+  "frequency": 689
+ },
+ {
+  "hangul": "하니",
+  "gender": "F",
+  "frequency": 688
+ },
+ {
+  "hangul": "루비",
+  "gender": "F",
+  "frequency": 688
+ },
+ {
+  "hangul": "세정",
+  "gender": "F",
+  "frequency": 685
+ },
+ {
+  "hangul": "유연",
+  "gender": "F",
+  "frequency": 679
+ },
+ {
+  "hangul": "은희",
+  "gender": "F",
+  "frequency": 674
+ },
+ {
+  "hangul": "엘리",
+  "gender": "F",
+  "frequency": 670
+ },
+ {
+  "hangul": "하솜",
+  "gender": "F",
+  "frequency": 670
+ },
+ {
+  "hangul": "소빈",
+  "gender": "F",
+  "frequency": 667
+ },
+ {
+  "hangul": "이봄",
+  "gender": "F",
+  "frequency": 666
+ },
+ {
+  "hangul": "규연",
+  "gender": "F",
+  "frequency": 663
+ },
+ {
+  "hangul": "은경",
+  "gender": "F",
+  "frequency": 661
+ },
+ {
+  "hangul": "서주",
+  "gender": "F",
+  "frequency": 659
+ },
+ {
+  "hangul": "나겸",
+  "gender": "F",
+  "frequency": 659
+ },
+ {
+  "hangul": "보연",
+  "gender": "F",
+  "frequency": 658
+ },
+ {
+  "hangul": "선민",
+  "gender": "F",
+  "frequency": 658
+ },
+ {
+  "hangul": "이든",
+  "gender": "F",
+  "frequency": 652
+ },
+ {
+  "hangul": "예율",
+  "gender": "F",
+  "frequency": 646
+ },
+ {
+  "hangul": "주윤",
+  "gender": "F",
+  "frequency": 645
+ },
+ {
+  "hangul": "보은",
+  "gender": "F",
+  "frequency": 641
+ },
+ {
+  "hangul": "미래",
+  "gender": "F",
+  "frequency": 641
+ },
+ {
+  "hangul": "연정",
+  "gender": "F",
+  "frequency": 640
+ },
+ {
+  "hangul": "지언",
+  "gender": "F",
+  "frequency": 639
+ },
+ {
+  "hangul": "이음",
+  "gender": "F",
+  "frequency": 636
+ },
+ {
+  "hangul": "주안",
+  "gender": "F",
+  "frequency": 633
+ },
+ {
+  "hangul": "하솔",
+  "gender": "F",
+  "frequency": 633
+ },
+ {
+  "hangul": "바다",
+  "gender": "F",
+  "frequency": 631
+ },
+ {
+  "hangul": "나림",
+  "gender": "F",
+  "frequency": 631
+ },
+ {
+  "hangul": "보나",
+  "gender": "F",
+  "frequency": 630
+ },
+ {
+  "hangul": "효리",
+  "gender": "F",
+  "frequency": 628
+ },
+ {
+  "hangul": "우림",
+  "gender": "F",
+  "frequency": 626
+ },
+ {
+  "hangul": "예설",
+  "gender": "F",
+  "frequency": 626
+ },
+ {
+  "hangul": "송희",
+  "gender": "F",
+  "frequency": 626
+ },
+ {
+  "hangul": "하현",
+  "gender": "F",
+  "frequency": 626
+ },
+ {
+  "hangul": "재원",
+  "gender": "F",
+  "frequency": 625
+ },
+ {
+  "hangul": "희선",
+  "gender": "F",
+  "frequency": 625
+ },
+ {
+  "hangul": "소을",
+  "gender": "F",
+  "frequency": 624
+ },
+ {
+  "hangul": "윤이",
+  "gender": "F",
+  "frequency": 622
+ },
+ {
+  "hangul": "세경",
+  "gender": "F",
+  "frequency": 620
+ },
+ {
+  "hangul": "이정",
+  "gender": "F",
+  "frequency": 619
+ },
+ {
+  "hangul": "은교",
+  "gender": "F",
+  "frequency": 614
+ },
+ {
+  "hangul": "영채",
+  "gender": "F",
+  "frequency": 611
+ },
+ {
+  "hangul": "지음",
+  "gender": "F",
+  "frequency": 611
+ },
+ {
+  "hangul": "희은",
+  "gender": "F",
+  "frequency": 607
+ },
+ {
+  "hangul": "지빈",
+  "gender": "F",
+  "frequency": 602
+ },
+ {
+  "hangul": "한서",
+  "gender": "F",
+  "frequency": 599
+ },
+ {
+  "hangul": "루미",
+  "gender": "F",
+  "frequency": 599
+ },
+ {
+  "hangul": "나리",
+  "gender": "F",
+  "frequency": 597
+ },
+ {
+  "hangul": "세리",
+  "gender": "F",
+  "frequency": 595
+ },
+ {
+  "hangul": "새론",
+  "gender": "F",
+  "frequency": 588
+ },
+ {
+  "hangul": "재영",
+  "gender": "F",
+  "frequency": 587
+ },
+ {
+  "hangul": "지서",
+  "gender": "F",
+  "frequency": 587
+ },
+ {
+  "hangul": "현희",
+  "gender": "F",
+  "frequency": 587
+ },
+ {
+  "hangul": "혜율",
+  "gender": "F",
+  "frequency": 584
+ },
+ {
+  "hangul": "희재",
+  "gender": "F",
+  "frequency": 584
+ },
+ {
+  "hangul": "그린",
+  "gender": "F",
+  "frequency": 584
+ },
+ {
+  "hangul": "승민",
+  "gender": "F",
+  "frequency": 582
+ },
+ {
+  "hangul": "소울",
+  "gender": "F",
+  "frequency": 582
+ },
+ {
+  "hangul": "재경",
+  "gender": "F",
+  "frequency": 581
+ },
+ {
+  "hangul": "채경",
+  "gender": "F",
+  "frequency": 579
+ },
+ {
+  "hangul": "강희",
+  "gender": "F",
+  "frequency": 576
+ },
+ {
+  "hangul": "민교",
+  "gender": "F",
+  "frequency": 575
+ },
+ {
+  "hangul": "주미",
+  "gender": "F",
+  "frequency": 574
+ },
+ {
+  "hangul": "수희",
+  "gender": "F",
+  "frequency": 573
+ },
+ {
+  "hangul": "하령",
+  "gender": "F",
+  "frequency": 570
+ },
+ {
+  "hangul": "예솜",
+  "gender": "F",
+  "frequency": 569
+ },
+ {
+  "hangul": "지이",
+  "gender": "F",
+  "frequency": 568
+ },
+ {
+  "hangul": "세원",
+  "gender": "F",
+  "frequency": 567
+ },
+ {
+  "hangul": "세미",
+  "gender": "F",
+  "frequency": 563
+ },
+ {
+  "hangul": "희영",
+  "gender": "F",
+  "frequency": 561
+ },
+ {
+  "hangul": "하얀",
+  "gender": "F",
+  "frequency": 560
+ },
+ {
+  "hangul": "애린",
+  "gender": "F",
+  "frequency": 556
+ },
+ {
+  "hangul": "도원",
+  "gender": "F",
+  "frequency": 555
+ },
+ {
+  "hangul": "리예",
+  "gender": "F",
+  "frequency": 555
+ },
+ {
+  "hangul": "선주",
+  "gender": "F",
+  "frequency": 552
+ },
+ {
+  "hangul": "샤론",
+  "gender": "F",
+  "frequency": 552
+ },
+ {
+  "hangul": "해민",
+  "gender": "F",
+  "frequency": 551
+ },
+ {
+  "hangul": "민송",
+  "gender": "F",
+  "frequency": 543
+ },
+ {
+  "hangul": "승혜",
+  "gender": "F",
+  "frequency": 542
+ },
+ {
+  "hangul": "윤우",
+  "gender": "F",
+  "frequency": 542
+ },
+ {
+  "hangul": "민혜",
+  "gender": "F",
+  "frequency": 541
+ },
+ {
+  "hangul": "유영",
+  "gender": "F",
+  "frequency": 541
+ },
+ {
+  "hangul": "혜선",
+  "gender": "F",
+  "frequency": 541
+ },
+ {
+  "hangul": "혜성",
+  "gender": "F",
+  "frequency": 539
+ },
+ {
+  "hangul": "아빈",
+  "gender": "F",
+  "frequency": 539
+ },
+ {
+  "hangul": "수미",
+  "gender": "F",
+  "frequency": 537
+ },
+ {
+  "hangul": "윤선",
+  "gender": "F",
+  "frequency": 537
+ },
+ {
+  "hangul": "연경",
+  "gender": "F",
+  "frequency": 537
+ },
+ {
+  "hangul": "루희",
+  "gender": "F",
+  "frequency": 536
+ },
+ {
+  "hangul": "은선",
+  "gender": "F",
+  "frequency": 536
+ },
+ {
+  "hangul": "예소",
+  "gender": "F",
+  "frequency": 535
+ },
+ {
+  "hangul": "태윤",
+  "gender": "F",
+  "frequency": 533
+ },
+ {
+  "hangul": "경빈",
+  "gender": "F",
+  "frequency": 533
+ },
+ {
+  "hangul": "유선",
+  "gender": "F",
+  "frequency": 533
+ },
+ {
+  "hangul": "미진",
+  "gender": "F",
+  "frequency": 532
+ },
+ {
+  "hangul": "인혜",
+  "gender": "F",
+  "frequency": 529
+ },
+ {
+  "hangul": "예성",
+  "gender": "F",
+  "frequency": 529
+ },
+ {
+  "hangul": "선빈",
+  "gender": "F",
+  "frequency": 528
+ },
+ {
+  "hangul": "보배",
+  "gender": "F",
+  "frequency": 527
+ },
+ {
+  "hangul": "성현",
+  "gender": "F",
+  "frequency": 525
+ },
+ {
+  "hangul": "려은",
+  "gender": "F",
+  "frequency": 525
+ },
+ {
+  "hangul": "이슬",
+  "gender": "F",
+  "frequency": 520
+ },
+ {
+  "hangul": "근영",
+  "gender": "F",
+  "frequency": 519
+ },
+ {
+  "hangul": "이지",
+  "gender": "F",
+  "frequency": 518
+ },
+ {
+  "hangul": "단하",
+  "gender": "F",
+  "frequency": 517
+ },
+ {
+  "hangul": "윤빈",
+  "gender": "F",
+  "frequency": 517
+ },
+ {
+  "hangul": "다애",
+  "gender": "F",
+  "frequency": 516
+ },
+ {
+  "hangul": "호정",
+  "gender": "F",
+  "frequency": 516
+ },
+ {
+  "hangul": "정안",
+  "gender": "F",
+  "frequency": 513
+ },
+ {
+  "hangul": "혜수",
+  "gender": "F",
+  "frequency": 510
+ },
+ {
+  "hangul": "혜서",
+  "gender": "F",
+  "frequency": 509
+ },
+ {
+  "hangul": "성희",
+  "gender": "F",
+  "frequency": 508
+ },
+ {
+  "hangul": "현영",
+  "gender": "F",
+  "frequency": 508
+ },
+ {
+  "hangul": "선미",
+  "gender": "F",
+  "frequency": 507
+ },
+ {
+  "hangul": "슬비",
+  "gender": "F",
+  "frequency": 507
+ },
+ {
+  "hangul": "단희",
+  "gender": "F",
+  "frequency": 505
+ },
+ {
+  "hangul": "경원",
+  "gender": "F",
+  "frequency": 502
+ },
+ {
+  "hangul": "리현",
+  "gender": "F",
+  "frequency": 501
+ },
+ {
+  "hangul": "이주",
+  "gender": "F",
+  "frequency": 497
+ },
+ {
+  "hangul": "선혜",
+  "gender": "F",
+  "frequency": 494
+ },
+ {
+  "hangul": "정하",
+  "gender": "F",
+  "frequency": 493
+ },
+ {
+  "hangul": "민소",
+  "gender": "F",
+  "frequency": 493
+ },
+ {
+  "hangul": "예희",
+  "gender": "F",
+  "frequency": 491
+ },
+ {
+  "hangul": "유원",
+  "gender": "F",
+  "frequency": 489
+ },
+ {
+  "hangul": "초원",
+  "gender": "F",
+  "frequency": 488
+ },
+ {
+  "hangul": "혜미",
+  "gender": "F",
+  "frequency": 488
+ },
+ {
+  "hangul": "봄이",
+  "gender": "F",
+  "frequency": 487
+ },
+ {
+  "hangul": "푸름",
+  "gender": "F",
+  "frequency": 485
+ },
+ {
+  "hangul": "래아",
+  "gender": "F",
+  "frequency": 485
+ },
+ {
+  "hangul": "진솔",
+  "gender": "F",
+  "frequency": 484
+ },
+ {
+  "hangul": "하담",
+  "gender": "F",
+  "frequency": 483
+ },
+ {
+  "hangul": "설현",
+  "gender": "F",
+  "frequency": 481
+ },
+ {
+  "hangul": "준서",
+  "gender": "F",
+  "frequency": 480
+ },
+ {
+  "hangul": "솔희",
+  "gender": "F",
+  "frequency": 479
+ },
+ {
+  "hangul": "미정",
+  "gender": "F",
+  "frequency": 479
+ },
+ {
+  "hangul": "로라",
+  "gender": "F",
+  "frequency": 479
+ },
+ {
+  "hangul": "리유",
+  "gender": "F",
+  "frequency": 479
+ },
+ {
+  "hangul": "정음",
+  "gender": "F",
+  "frequency": 478
+ },
+ {
+  "hangul": "연화",
+  "gender": "F",
+  "frequency": 475
+ },
+ {
+  "hangul": "규나",
+  "gender": "F",
+  "frequency": 473
+ },
+ {
+  "hangul": "선희",
+  "gender": "F",
+  "frequency": 472
+ },
+ {
+  "hangul": "리사",
+  "gender": "F",
+  "frequency": 471
+ },
+ {
+  "hangul": "이린",
+  "gender": "F",
+  "frequency": 471
+ },
+ {
+  "hangul": "솔빈",
+  "gender": "F",
+  "frequency": 468
+ },
+ {
+  "hangul": "윤비",
+  "gender": "F",
+  "frequency": 467
+ },
+ {
+  "hangul": "수윤",
+  "gender": "F",
+  "frequency": 465
+ },
+ {
+  "hangul": "유지",
+  "gender": "F",
+  "frequency": 465
+ },
+ {
+  "hangul": "은세",
+  "gender": "F",
+  "frequency": 465
+ },
+ {
+  "hangul": "한슬",
+  "gender": "F",
+  "frequency": 464
+ },
+ {
+  "hangul": "서령",
+  "gender": "F",
+  "frequency": 463
+ },
+ {
+  "hangul": "아원",
+  "gender": "F",
+  "frequency": 463
+ },
+ {
+  "hangul": "정희",
+  "gender": "F",
+  "frequency": 461
+ },
+ {
+  "hangul": "진하",
+  "gender": "F",
+  "frequency": 461
+ },
+ {
+  "hangul": "해빈",
+  "gender": "F",
+  "frequency": 460
+ },
+ {
+  "hangul": "소리",
+  "gender": "F",
+  "frequency": 459
+ },
+ {
+  "hangul": "연하",
+  "gender": "F",
+  "frequency": 458
+ },
+ {
+  "hangul": "해담",
+  "gender": "F",
+  "frequency": 456
+ },
+ {
+  "hangul": "초희",
+  "gender": "F",
+  "frequency": 455
+ },
+ {
+  "hangul": "조은",
+  "gender": "F",
+  "frequency": 454
+ },
+ {
+  "hangul": "해이",
+  "gender": "F",
+  "frequency": 452
+ },
+ {
+  "hangul": "이연",
+  "gender": "F",
+  "frequency": 452
+ },
+ {
+  "hangul": "해주",
+  "gender": "F",
+  "frequency": 452
+ },
+ {
+  "hangul": "소라",
+  "gender": "F",
+  "frequency": 451
+ },
+ {
+  "hangul": "솔비",
+  "gender": "F",
+  "frequency": 450
+ },
+ {
+  "hangul": "규은",
+  "gender": "F",
+  "frequency": 450
+ },
+ {
+  "hangul": "어진",
+  "gender": "F",
+  "frequency": 450
+ },
+ {
+  "hangul": "가림",
+  "gender": "F",
+  "frequency": 450
+ },
+ {
+  "hangul": "신비",
+  "gender": "F",
+  "frequency": 447
+ },
+ {
+  "hangul": "소하",
+  "gender": "F",
+  "frequency": 446
+ },
+ {
+  "hangul": "주리",
+  "gender": "F",
+  "frequency": 444
+ },
+ {
+  "hangul": "지솔",
+  "gender": "F",
+  "frequency": 444
+ },
+ {
+  "hangul": "유린",
+  "gender": "F",
+  "frequency": 440
+ },
+ {
+  "hangul": "효서",
+  "gender": "F",
+  "frequency": 439
+ },
+ {
+  "hangul": "레나",
+  "gender": "F",
+  "frequency": 439
+ },
+ {
+  "hangul": "건희",
+  "gender": "F",
+  "frequency": 438
+ },
+ {
+  "hangul": "소혜",
+  "gender": "F",
+  "frequency": 435
+ },
+ {
+  "hangul": "채인",
+  "gender": "F",
+  "frequency": 434
+ },
+ {
+  "hangul": "시후",
+  "gender": "F",
+  "frequency": 432
+ },
+ {
+  "hangul": "초이",
+  "gender": "F",
+  "frequency": 432
+ },
+ {
+  "hangul": "솔민",
+  "gender": "F",
+  "frequency": 432
+ },
+ {
+  "hangul": "효연",
+  "gender": "F",
+  "frequency": 431
+ },
+ {
+  "hangul": "나나",
+  "gender": "F",
+  "frequency": 431
+ },
+ {
+  "hangul": "다운",
+  "gender": "F",
+  "frequency": 429
+ },
+ {
+  "hangul": "유비",
+  "gender": "F",
+  "frequency": 426
+ },
+ {
+  "hangul": "영인",
+  "gender": "F",
+  "frequency": 424
+ },
+ {
+  "hangul": "하유",
+  "gender": "F",
+  "frequency": 423
+ },
+ {
+  "hangul": "다올",
+  "gender": "F",
+  "frequency": 423
+ },
+ {
+  "hangul": "금비",
+  "gender": "F",
+  "frequency": 422
+ },
+ {
+  "hangul": "유니",
+  "gender": "F",
+  "frequency": 420
+ },
+ {
+  "hangul": "정서",
+  "gender": "F",
+  "frequency": 420
+ },
+ {
+  "hangul": "혜승",
+  "gender": "F",
+  "frequency": 414
+ },
+ {
+  "hangul": "라연",
+  "gender": "F",
+  "frequency": 414
+ },
+ {
+  "hangul": "송하",
+  "gender": "F",
+  "frequency": 413
+ },
+ {
+  "hangul": "원영",
+  "gender": "F",
+  "frequency": 413
+ },
+ {
+  "hangul": "환희",
+  "gender": "F",
+  "frequency": 412
+ },
+ {
+  "hangul": "해진",
+  "gender": "F",
+  "frequency": 412
+ },
+ {
+  "hangul": "해림",
+  "gender": "F",
+  "frequency": 412
+ },
+ {
+  "hangul": "찬희",
+  "gender": "F",
+  "frequency": 411
+ },
+ {
+  "hangul": "우정",
+  "gender": "F",
+  "frequency": 410
+ },
+ {
+  "hangul": "현채",
+  "gender": "F",
+  "frequency": 410
+ },
+ {
+  "hangul": "다슬",
+  "gender": "F",
+  "frequency": 409
+ },
+ {
+  "hangul": "엘라",
+  "gender": "F",
+  "frequency": 408
+ },
+ {
+  "hangul": "은후",
+  "gender": "F",
+  "frequency": 408
+ },
+ {
+  "hangul": "모아",
+  "gender": "F",
+  "frequency": 408
+ },
+ {
+  "hangul": "서형",
+  "gender": "F",
+  "frequency": 405
+ },
+ {
+  "hangul": "효경",
+  "gender": "F",
+  "frequency": 404
+ },
+ {
+  "hangul": "혜온",
+  "gender": "F",
+  "frequency": 402
+ },
+ {
+  "hangul": "의진",
+  "gender": "F",
+  "frequency": 401
+ },
+ {
+  "hangul": "현이",
+  "gender": "F",
+  "frequency": 401
+ },
+ {
+  "hangul": "리엘",
+  "gender": "F",
+  "frequency": 398
+ },
+ {
+  "hangul": "희나",
+  "gender": "F",
+  "frequency": 398
+ },
+ {
+  "hangul": "신영",
+  "gender": "F",
+  "frequency": 397
+ },
+ {
+  "hangul": "유온",
+  "gender": "F",
+  "frequency": 396
+ },
+ {
+  "hangul": "수림",
+  "gender": "F",
+  "frequency": 395
+ },
+ {
+  "hangul": "주예",
+  "gender": "F",
+  "frequency": 395
+ },
+ {
+  "hangul": "희우",
+  "gender": "F",
+  "frequency": 395
+ },
+ {
+  "hangul": "한빛",
+  "gender": "F",
+  "frequency": 393
+ },
+ {
+  "hangul": "경서",
+  "gender": "F",
+  "frequency": 392
+ },
+ {
+  "hangul": "솔아",
+  "gender": "F",
+  "frequency": 391
+ },
+ {
+  "hangul": "우진",
+  "gender": "F",
+  "frequency": 391
+ },
+ {
+  "hangul": "해율",
+  "gender": "F",
+  "frequency": 391
+ },
+ {
+  "hangul": "미경",
+  "gender": "F",
+  "frequency": 391
+ },
+ {
+  "hangul": "원희",
+  "gender": "F",
+  "frequency": 390
+ },
+ {
+  "hangul": "은조",
+  "gender": "F",
+  "frequency": 388
+ },
+ {
+  "hangul": "다흰",
+  "gender": "F",
+  "frequency": 387
+ },
+ {
+  "hangul": "서림",
+  "gender": "F",
+  "frequency": 386
+ },
+ {
+  "hangul": "상아",
+  "gender": "F",
+  "frequency": 385
+ },
+ {
+  "hangul": "은미",
+  "gender": "F",
+  "frequency": 385
+ },
+ {
+  "hangul": "솔이",
+  "gender": "F",
+  "frequency": 385
+ },
+ {
+  "hangul": "새나",
+  "gender": "F",
+  "frequency": 384
+ },
+ {
+  "hangul": "예준",
+  "gender": "F",
+  "frequency": 382
+ },
+ {
+  "hangul": "혜경",
+  "gender": "F",
+  "frequency": 381
+ },
+ {
+  "hangul": "리은",
+  "gender": "F",
+  "frequency": 381
+ },
+ {
+  "hangul": "효재",
+  "gender": "F",
+  "frequency": 380
+ },
+ {
+  "hangul": "단우",
+  "gender": "F",
+  "frequency": 379
+ },
+ {
+  "hangul": "유화",
+  "gender": "F",
+  "frequency": 377
+ },
+ {
+  "hangul": "겨울",
+  "gender": "F",
+  "frequency": 376
+ },
+ {
+  "hangul": "새롬",
+  "gender": "F",
+  "frequency": 376
+ },
+ {
+  "hangul": "은효",
+  "gender": "F",
+  "frequency": 376
+ },
+ {
+  "hangul": "선화",
+  "gender": "F",
+  "frequency": 376
+ },
+ {
+  "hangul": "가린",
+  "gender": "F",
+  "frequency": 376
+ },
+ {
+  "hangul": "선경",
+  "gender": "F",
+  "frequency": 375
+ },
+ {
+  "hangul": "승미",
+  "gender": "F",
+  "frequency": 375
+ },
+ {
+  "hangul": "규아",
+  "gender": "F",
+  "frequency": 374
+ },
+ {
+  "hangul": "신혜",
+  "gender": "F",
+  "frequency": 373
+ },
+ {
+  "hangul": "승유",
+  "gender": "F",
+  "frequency": 373
+ },
+ {
+  "hangul": "채온",
+  "gender": "F",
+  "frequency": 372
+ },
+ {
+  "hangul": "소린",
+  "gender": "F",
+  "frequency": 371
+ },
+ {
+  "hangul": "연제",
+  "gender": "F",
+  "frequency": 371
+ },
+ {
+  "hangul": "인하",
+  "gender": "F",
+  "frequency": 370
+ },
+ {
+  "hangul": "가경",
+  "gender": "F",
+  "frequency": 369
+ },
+ {
+  "hangul": "화영",
+  "gender": "F",
+  "frequency": 367
+ },
+ {
+  "hangul": "채언",
+  "gender": "F",
+  "frequency": 367
+ },
+ {
+  "hangul": "조안",
+  "gender": "F",
+  "frequency": 366
+ },
+ {
+  "hangul": "율이",
+  "gender": "F",
+  "frequency": 366
+ },
+ {
+  "hangul": "여정",
+  "gender": "F",
+  "frequency": 364
+ },
+ {
+  "hangul": "윤성",
+  "gender": "F",
+  "frequency": 364
+ },
+ {
+  "hangul": "채우",
+  "gender": "F",
+  "frequency": 364
+ },
+ {
+  "hangul": "윤재",
+  "gender": "F",
+  "frequency": 363
+ },
+ {
+  "hangul": "이룸",
+  "gender": "F",
+  "frequency": 363
+ },
+ {
+  "hangul": "솔지",
+  "gender": "F",
+  "frequency": 363
+ },
+ {
+  "hangul": "다유",
+  "gender": "F",
+  "frequency": 362
+ },
+ {
+  "hangul": "이원",
+  "gender": "F",
+  "frequency": 361
+ },
+ {
+  "hangul": "예선",
+  "gender": "F",
+  "frequency": 361
+ },
+ {
+  "hangul": "지운",
+  "gender": "F",
+  "frequency": 361
+ },
+ {
+  "hangul": "재나",
+  "gender": "F",
+  "frequency": 360
+ },
+ {
+  "hangul": "해은",
+  "gender": "F",
+  "frequency": 359
+ },
+ {
+  "hangul": "진경",
+  "gender": "F",
+  "frequency": 358
+ },
+ {
+  "hangul": "은총",
+  "gender": "F",
+  "frequency": 358
+ },
+ {
+  "hangul": "노을",
+  "gender": "F",
+  "frequency": 357
+ },
+ {
+  "hangul": "규희",
+  "gender": "F",
+  "frequency": 357
+ },
+ {
+  "hangul": "은민",
+  "gender": "F",
+  "frequency": 354
+ },
+ {
+  "hangul": "해랑",
+  "gender": "F",
+  "frequency": 354
+ },
+ {
+  "hangul": "희경",
+  "gender": "F",
+  "frequency": 354
+ },
+ {
+  "hangul": "상은",
+  "gender": "F",
+  "frequency": 354
+ },
+ {
+  "hangul": "애리",
+  "gender": "F",
+  "frequency": 353
+ },
+ {
+  "hangul": "수예",
+  "gender": "F",
+  "frequency": 353
+ },
+ {
+  "hangul": "루빈",
+  "gender": "F",
+  "frequency": 352
+ },
+ {
+  "hangul": "승빈",
+  "gender": "F",
+  "frequency": 351
+ },
+ {
+  "hangul": "마리",
+  "gender": "F",
+  "frequency": 346
+ },
+ {
+  "hangul": "제희",
+  "gender": "F",
+  "frequency": 346
+ },
+ {
+  "hangul": "예송",
+  "gender": "F",
+  "frequency": 345
+ },
+ {
+  "hangul": "벼리",
+  "gender": "F",
+  "frequency": 344
+ },
+ {
+  "hangul": "민슬",
+  "gender": "F",
+  "frequency": 344
+ },
+ {
+  "hangul": "규비",
+  "gender": "F",
+  "frequency": 343
+ },
+ {
+  "hangul": "진이",
+  "gender": "F",
+  "frequency": 343
+ },
+ {
+  "hangul": "영현",
+  "gender": "F",
+  "frequency": 342
+ },
+ {
+  "hangul": "시엘",
+  "gender": "F",
+  "frequency": 340
+ },
+ {
+  "hangul": "혜준",
+  "gender": "F",
+  "frequency": 339
+ },
+ {
+  "hangul": "해슬",
+  "gender": "F",
+  "frequency": 338
+ },
+ {
+  "hangul": "미우",
+  "gender": "F",
+  "frequency": 338
+ },
+ {
+  "hangul": "다니",
+  "gender": "F",
+  "frequency": 337
+ },
+ {
+  "hangul": "초연",
+  "gender": "F",
+  "frequency": 337
+ },
+ {
+  "hangul": "찬미",
+  "gender": "F",
+  "frequency": 336
+ },
+ {
+  "hangul": "해서",
+  "gender": "F",
+  "frequency": 335
+ },
+ {
+  "hangul": "미연",
+  "gender": "F",
+  "frequency": 335
+ },
+ {
+  "hangul": "경아",
+  "gender": "F",
+  "frequency": 335
+ },
+ {
+  "hangul": "태현",
+  "gender": "F",
+  "frequency": 334
+ },
+ {
+  "hangul": "현수",
+  "gender": "F",
+  "frequency": 333
+ },
+ {
+  "hangul": "성주",
+  "gender": "F",
+  "frequency": 331
+ },
+ {
+  "hangul": "주언",
+  "gender": "F",
+  "frequency": 330
+ },
+ {
+  "hangul": "민성",
+  "gender": "F",
+  "frequency": 329
+ },
+ {
+  "hangul": "미서",
+  "gender": "F",
+  "frequency": 329
+ },
+ {
+  "hangul": "도혜",
+  "gender": "F",
+  "frequency": 328
+ },
+ {
+  "hangul": "승원",
+  "gender": "F",
+  "frequency": 328
+ },
+ {
+  "hangul": "하슬",
+  "gender": "F",
+  "frequency": 324
+ },
+ {
+  "hangul": "해연",
+  "gender": "F",
+  "frequency": 324
+ },
+ {
+  "hangul": "진유",
+  "gender": "F",
+  "frequency": 322
+ },
+ {
+  "hangul": "한울",
+  "gender": "F",
+  "frequency": 322
+ },
+ {
+  "hangul": "미영",
+  "gender": "F",
+  "frequency": 321
+ },
+ {
+  "hangul": "도유",
+  "gender": "F",
+  "frequency": 319
+ },
+ {
+  "hangul": "이소",
+  "gender": "F",
+  "frequency": 319
+ },
+ {
+  "hangul": "연호",
+  "gender": "F",
+  "frequency": 318
+ },
+ {
+  "hangul": "현선",
+  "gender": "F",
+  "frequency": 316
+ },
+ {
+  "hangul": "나빈",
+  "gender": "F",
+  "frequency": 315
+ },
+ {
+  "hangul": "한율",
+  "gender": "F",
+  "frequency": 314
+ },
+ {
+  "hangul": "자윤",
+  "gender": "F",
+  "frequency": 314
+ },
+ {
+  "hangul": "해든",
+  "gender": "F",
+  "frequency": 313
+ },
+ {
+  "hangul": "조아",
+  "gender": "F",
+  "frequency": 311
+ },
+ {
+  "hangul": "수애",
+  "gender": "F",
+  "frequency": 310
+ },
+ {
+  "hangul": "성윤",
+  "gender": "F",
+  "frequency": 310
+ },
+ {
+  "hangul": "세율",
+  "gender": "F",
+  "frequency": 310
+ },
+ {
+  "hangul": "수은",
+  "gender": "F",
+  "frequency": 308
+ },
+ {
+  "hangul": "영지",
+  "gender": "F",
+  "frequency": 307
+ },
+ {
+  "hangul": "영아",
+  "gender": "F",
+  "frequency": 307
+ },
+ {
+  "hangul": "청아",
+  "gender": "F",
+  "frequency": 307
+ },
+ {
+  "hangul": "서혜",
+  "gender": "F",
+  "frequency": 306
+ },
+ {
+  "hangul": "은제",
+  "gender": "F",
+  "frequency": 304
+ },
+ {
+  "hangul": "리율",
+  "gender": "F",
+  "frequency": 304
+ },
+ {
+  "hangul": "현민",
+  "gender": "F",
+  "frequency": 301
+ },
+ {
+  "hangul": "우희",
+  "gender": "F",
+  "frequency": 300
+ },
+ {
+  "hangul": "동희",
+  "gender": "F",
+  "frequency": 300
+ },
+ {
+  "hangul": "혜담",
+  "gender": "F",
+  "frequency": 300
+ },
+ {
+  "hangul": "승윤",
+  "gender": "F",
+  "frequency": 300
+ },
+ {
+  "hangul": "예경",
+  "gender": "F",
+  "frequency": 299
+ },
+ {
+  "hangul": "승리",
+  "gender": "F",
+  "frequency": 299
+ },
+ {
+  "hangul": "윤혜",
+  "gender": "F",
+  "frequency": 299
+ },
+ {
+  "hangul": "성경",
+  "gender": "F",
+  "frequency": 298
+ },
+ {
+  "hangul": "소운",
+  "gender": "F",
+  "frequency": 297
+ },
+ {
+  "hangul": "린하",
+  "gender": "F",
+  "frequency": 296
+ },
+ {
+  "hangul": "여빈",
+  "gender": "F",
+  "frequency": 296
+ },
+ {
+  "hangul": "현비",
+  "gender": "F",
+  "frequency": 296
+ },
+ {
+  "hangul": "미현",
+  "gender": "F",
+  "frequency": 295
+ },
+ {
+  "hangul": "송아",
+  "gender": "F",
+  "frequency": 295
+ },
+ {
+  "hangul": "이로",
+  "gender": "F",
+  "frequency": 295
+ },
+ {
+  "hangul": "우빈",
+  "gender": "F",
+  "frequency": 294
+ },
+ {
+  "hangul": "래은",
+  "gender": "F",
+  "frequency": 294
+ },
+ {
+  "hangul": "인애",
+  "gender": "F",
+  "frequency": 294
+ },
+ {
+  "hangul": "승지",
+  "gender": "F",
+  "frequency": 294
+ },
+ {
+  "hangul": "다을",
+  "gender": "F",
+  "frequency": 292
+ },
+ {
+  "hangul": "하서",
+  "gender": "F",
+  "frequency": 292
+ },
+ {
+  "hangul": "보름",
+  "gender": "F",
+  "frequency": 290
+ },
+ {
+  "hangul": "다봄",
+  "gender": "F",
+  "frequency": 290
+ },
+ {
+  "hangul": "경희",
+  "gender": "F",
+  "frequency": 290
+ },
+ {
+  "hangul": "미선",
+  "gender": "F",
+  "frequency": 288
+ },
+ {
+  "hangul": "규미",
+  "gender": "F",
+  "frequency": 287
+ },
+ {
+  "hangul": "한아",
+  "gender": "F",
+  "frequency": 287
+ },
+ {
+  "hangul": "서휘",
+  "gender": "F",
+  "frequency": 287
+ },
+ {
+  "hangul": "소명",
+  "gender": "F",
+  "frequency": 286
+ },
+ {
+  "hangul": "노아",
+  "gender": "F",
+  "frequency": 286
+ },
+ {
+  "hangul": "루이",
+  "gender": "F",
+  "frequency": 283
+ },
+ {
+  "hangul": "미유",
+  "gender": "F",
+  "frequency": 282
+ },
+ {
+  "hangul": "혜솔",
+  "gender": "F",
+  "frequency": 282
+ },
+ {
+  "hangul": "새아",
+  "gender": "F",
+  "frequency": 281
+ },
+ {
+  "hangul": "준영",
+  "gender": "F",
+  "frequency": 281
+ },
+ {
+  "hangul": "도예",
+  "gender": "F",
+  "frequency": 281
+ },
+ {
+  "hangul": "비주",
+  "gender": "F",
+  "frequency": 280
+ },
+ {
+  "hangul": "설린",
+  "gender": "F",
+  "frequency": 278
+ },
+ {
+  "hangul": "인경",
+  "gender": "F",
+  "frequency": 278
+ },
+ {
+  "hangul": "정화",
+  "gender": "F",
+  "frequency": 276
+ },
+ {
+  "hangul": "준이",
+  "gender": "F",
+  "frequency": 274
+ },
+ {
+  "hangul": "담비",
+  "gender": "F",
+  "frequency": 273
+ },
+ {
+  "hangul": "보겸",
+  "gender": "F",
+  "frequency": 272
+ },
+ {
+  "hangul": "희지",
+  "gender": "F",
+  "frequency": 272
+ },
+ {
+  "hangul": "설리",
+  "gender": "F",
+  "frequency": 271
+ },
+ {
+  "hangul": "명주",
+  "gender": "F",
+  "frequency": 271
+ },
+ {
+  "hangul": "솔미",
+  "gender": "F",
+  "frequency": 269
+ },
+ {
+  "hangul": "희율",
+  "gender": "F",
+  "frequency": 269
+ },
+ {
+  "hangul": "자은",
+  "gender": "F",
+  "frequency": 269
+ },
+ {
+  "hangul": "노엘",
+  "gender": "F",
+  "frequency": 268
+ },
+ {
+  "hangul": "이영",
+  "gender": "F",
+  "frequency": 266
+ },
+ {
+  "hangul": "보리",
+  "gender": "F",
+  "frequency": 264
+ },
+ {
+  "hangul": "예정",
+  "gender": "F",
+  "frequency": 263
+ },
+ {
+  "hangul": "하주",
+  "gender": "F",
+  "frequency": 262
+ },
+ {
+  "hangul": "리연",
+  "gender": "F",
+  "frequency": 262
+ },
+ {
+  "hangul": "설화",
+  "gender": "F",
+  "frequency": 260
+ },
+ {
+  "hangul": "명지",
+  "gender": "F",
+  "frequency": 259
+ },
+ {
+  "hangul": "재린",
+  "gender": "F",
+  "frequency": 258
+ },
+ {
+  "hangul": "자인",
+  "gender": "F",
+  "frequency": 258
+ },
+ {
+  "hangul": "채운",
+  "gender": "F",
+  "frequency": 258
+ },
+ {
+  "hangul": "이경",
+  "gender": "F",
+  "frequency": 258
+ },
+ {
+  "hangul": "은찬",
+  "gender": "F",
+  "frequency": 258
+ },
+ {
+  "hangul": "유채",
+  "gender": "F",
+  "frequency": 256
+ },
+ {
+  "hangul": "여경",
+  "gender": "F",
+  "frequency": 256
+ },
+ {
+  "hangul": "하봄",
+  "gender": "F",
+  "frequency": 256
+ },
+ {
+  "hangul": "준아",
+  "gender": "F",
+  "frequency": 254
+ },
+ {
+  "hangul": "경진",
+  "gender": "F",
+  "frequency": 253
+ },
+ {
+  "hangul": "예닮",
+  "gender": "F",
+  "frequency": 253
+ },
+ {
+  "hangul": "은빛",
+  "gender": "F",
+  "frequency": 251
+ },
+ {
+  "hangul": "우영",
+  "gender": "F",
+  "frequency": 250
+ },
+ {
+  "hangul": "윤별",
+  "gender": "F",
+  "frequency": 250
+ },
+ {
+  "hangul": "차윤",
+  "gender": "F",
+  "frequency": 249
+ },
+ {
+  "hangul": "지향",
+  "gender": "F",
+  "frequency": 249
+ },
+ {
+  "hangul": "경미",
+  "gender": "F",
+  "frequency": 249
+ },
+ {
+  "hangul": "지해",
+  "gender": "F",
+  "frequency": 248
+ },
+ {
+  "hangul": "미지",
+  "gender": "F",
+  "frequency": 248
+ },
+ {
+  "hangul": "한희",
+  "gender": "F",
+  "frequency": 248
+ },
+ {
+  "hangul": "초윤",
+  "gender": "F",
+  "frequency": 248
+ },
+ {
+  "hangul": "상희",
+  "gender": "F",
+  "frequency": 248
+ },
+ {
+  "hangul": "혜슬",
+  "gender": "F",
+  "frequency": 247
+ },
+ {
+  "hangul": "예니",
+  "gender": "F",
+  "frequency": 247
+ },
+ {
+  "hangul": "명서",
+  "gender": "F",
+  "frequency": 246
+ },
+ {
+  "hangul": "효선",
+  "gender": "F",
+  "frequency": 246
+ },
+ {
+  "hangul": "아미",
+  "gender": "F",
+  "frequency": 246
+ },
+ {
+  "hangul": "예본",
+  "gender": "F",
+  "frequency": 243
+ },
+ {
+  "hangul": "설윤",
+  "gender": "F",
+  "frequency": 243
+ },
+ {
+  "hangul": "리호",
+  "gender": "F",
+  "frequency": 242
+ },
+ {
+  "hangul": "아온",
+  "gender": "F",
+  "frequency": 242
+ },
+ {
+  "hangul": "한이",
+  "gender": "F",
+  "frequency": 242
+ },
+ {
+  "hangul": "세화",
+  "gender": "F",
+  "frequency": 241
+ },
+ {
+  "hangul": "명진",
+  "gender": "F",
+  "frequency": 241
+ },
+ {
+  "hangul": "채나",
+  "gender": "F",
+  "frequency": 239
+ },
+ {
+  "hangul": "윤미",
+  "gender": "F",
+  "frequency": 239
+ },
+ {
+  "hangul": "유란",
+  "gender": "F",
+  "frequency": 239
+ },
+ {
+  "hangul": "주엘",
+  "gender": "F",
+  "frequency": 238
+ },
+ {
+  "hangul": "애나",
+  "gender": "F",
+  "frequency": 238
+ },
+ {
+  "hangul": "우경",
+  "gender": "F",
+  "frequency": 237
+ },
+ {
+  "hangul": "이윤",
+  "gender": "F",
+  "frequency": 236
+ },
+ {
+  "hangul": "아희",
+  "gender": "F",
+  "frequency": 236
+ },
+ {
+  "hangul": "우연",
+  "gender": "F",
+  "frequency": 235
+ },
+ {
+  "hangul": "다진",
+  "gender": "F",
+  "frequency": 235
+ },
+ {
+  "hangul": "라나",
+  "gender": "F",
+  "frequency": 233
+ },
+ {
+  "hangul": "효담",
+  "gender": "F",
+  "frequency": 233
+ },
+ {
+  "hangul": "예아",
+  "gender": "F",
+  "frequency": 233
+ },
+ {
+  "hangul": "하을",
+  "gender": "F",
+  "frequency": 233
+ },
+ {
+  "hangul": "유엘",
+  "gender": "F",
+  "frequency": 232
+ },
+ {
+  "hangul": "윤나",
+  "gender": "F",
+  "frequency": 232
+ },
+ {
+  "hangul": "이빈",
+  "gender": "F",
+  "frequency": 232
+ },
+ {
+  "hangul": "자영",
+  "gender": "F",
+  "frequency": 230
+ },
+ {
+  "hangul": "채정",
+  "gender": "F",
+  "frequency": 230
+ },
+ {
+  "hangul": "나정",
+  "gender": "F",
+  "frequency": 229
+ },
+ {
+  "hangul": "효아",
+  "gender": "F",
+  "frequency": 229
+ },
+ {
+  "hangul": "주비",
+  "gender": "F",
+  "frequency": 229
+ },
+ {
+  "hangul": "로윤",
+  "gender": "F",
+  "frequency": 229
+ },
+ {
+  "hangul": "해수",
+  "gender": "F",
+  "frequency": 228
+ },
+ {
+  "hangul": "혜안",
+  "gender": "F",
+  "frequency": 228
+ },
+ {
+  "hangul": "민결",
+  "gender": "F",
+  "frequency": 228
+ },
+ {
+  "hangul": "영선",
+  "gender": "F",
+  "frequency": 227
+ },
+ {
+  "hangul": "다비",
+  "gender": "F",
+  "frequency": 227
+ },
+ {
+  "hangul": "자연",
+  "gender": "F",
+  "frequency": 226
+ },
+ {
+  "hangul": "송은",
+  "gender": "F",
+  "frequency": 226
+ },
+ {
+  "hangul": "우린",
+  "gender": "F",
+  "frequency": 224
+ },
+ {
+  "hangul": "수련",
+  "gender": "F",
+  "frequency": 224
+ },
+ {
+  "hangul": "별이",
+  "gender": "F",
+  "frequency": 223
+ },
+ {
+  "hangul": "성민",
+  "gender": "F",
+  "frequency": 223
+ },
+ {
+  "hangul": "나령",
+  "gender": "F",
+  "frequency": 222
+ },
+ {
+  "hangul": "예연",
+  "gender": "F",
+  "frequency": 221
+ },
+ {
+  "hangul": "하란",
+  "gender": "F",
+  "frequency": 220
+ },
+ {
+  "hangul": "새은",
+  "gender": "F",
+  "frequency": 219
+ },
+ {
+  "hangul": "이루",
+  "gender": "F",
+  "frequency": 219
+ },
+ {
+  "hangul": "설빈",
+  "gender": "F",
+  "frequency": 219
+ },
+ {
+  "hangul": "비아",
+  "gender": "F",
+  "frequency": 218
+ },
+ {
+  "hangul": "효영",
+  "gender": "F",
+  "frequency": 218
+ },
+ {
+  "hangul": "가흔",
+  "gender": "F",
+  "frequency": 218
+ },
+ {
+  "hangul": "믿음",
+  "gender": "F",
+  "frequency": 217
+ },
+ {
+  "hangul": "정미",
+  "gender": "F",
+  "frequency": 217
+ },
+ {
+  "hangul": "교은",
+  "gender": "F",
+  "frequency": 217
+ },
+ {
+  "hangul": "수화",
+  "gender": "F",
+  "frequency": 217
+ },
+ {
+  "hangul": "서로",
+  "gender": "F",
+  "frequency": 216
+ },
+ {
+  "hangul": "연이",
+  "gender": "F",
+  "frequency": 216
+ },
+ {
+  "hangul": "성빈",
+  "gender": "F",
+  "frequency": 216
+ },
+ {
+  "hangul": "해봄",
+  "gender": "F",
+  "frequency": 216
+ },
+ {
+  "hangul": "예라",
+  "gender": "F",
+  "frequency": 216
+ },
+ {
+  "hangul": "수이",
+  "gender": "F",
+  "frequency": 215
+ },
+ {
+  "hangul": "호은",
+  "gender": "F",
+  "frequency": 214
+ },
+ {
+  "hangul": "가예",
+  "gender": "F",
+  "frequency": 214
+ },
+ {
+  "hangul": "시진",
+  "gender": "F",
+  "frequency": 214
+ },
+ {
+  "hangul": "이유",
+  "gender": "F",
+  "frequency": 213
+ },
+ {
+  "hangul": "리혜",
+  "gender": "F",
+  "frequency": 213
+ },
+ {
+  "hangul": "승효",
+  "gender": "F",
+  "frequency": 213
+ },
+ {
+  "hangul": "영미",
+  "gender": "F",
+  "frequency": 213
+ },
+ {
+  "hangul": "효우",
+  "gender": "F",
+  "frequency": 213
+ },
+ {
+  "hangul": "휘서",
+  "gender": "F",
+  "frequency": 212
+ },
+ {
+  "hangul": "라영",
+  "gender": "F",
+  "frequency": 212
+ },
+ {
+  "hangul": "하울",
+  "gender": "F",
+  "frequency": 212
+ },
+ {
+  "hangul": "미르",
+  "gender": "F",
+  "frequency": 210
+ },
+ {
+  "hangul": "지니",
+  "gender": "F",
+  "frequency": 210
+ },
+ {
+  "hangul": "소아",
+  "gender": "F",
+  "frequency": 210
+ },
+ {
+  "hangul": "미희",
+  "gender": "F",
+  "frequency": 210
+ },
+ {
+  "hangul": "아임",
+  "gender": "F",
+  "frequency": 210
+ },
+ {
+  "hangul": "은샘",
+  "gender": "F",
+  "frequency": 210
+ },
+ {
+  "hangul": "가언",
+  "gender": "F",
+  "frequency": 209
+ },
+ {
+  "hangul": "라경",
+  "gender": "F",
+  "frequency": 209
+ },
+ {
+  "hangul": "이도",
+  "gender": "F",
+  "frequency": 209
+ },
+ {
+  "hangul": "솔하",
+  "gender": "F",
+  "frequency": 209
+ },
+ {
+  "hangul": "승비",
+  "gender": "F",
+  "frequency": 209
+ },
+ {
+  "hangul": "희온",
+  "gender": "F",
+  "frequency": 208
+ },
+ {
+  "hangul": "희엘",
+  "gender": "F",
+  "frequency": 208
+ },
+ {
+  "hangul": "주경",
+  "gender": "F",
+  "frequency": 207
+ },
+ {
+  "hangul": "여민",
+  "gender": "F",
+  "frequency": 206
+ },
+ {
+  "hangul": "새하",
+  "gender": "F",
+  "frequency": 206
+ },
+ {
+  "hangul": "현하",
+  "gender": "F",
+  "frequency": 206
+ },
+ {
+  "hangul": "하언",
+  "gender": "F",
+  "frequency": 206
+ },
+ {
+  "hangul": "태율",
+  "gender": "F",
+  "frequency": 206
+ },
+ {
+  "hangul": "은소",
+  "gender": "F",
+  "frequency": 205
+ },
+ {
+  "hangul": "부경",
+  "gender": "F",
+  "frequency": 204
+ },
+ {
+  "hangul": "단이",
+  "gender": "F",
+  "frequency": 204
+ },
+ {
+  "hangul": "새벽",
+  "gender": "F",
+  "frequency": 204
+ },
+ {
+  "hangul": "성하",
+  "gender": "F",
+  "frequency": 204
+ },
+ {
+  "hangul": "유슬",
+  "gender": "F",
+  "frequency": 203
+ },
+ {
+  "hangul": "화연",
+  "gender": "F",
+  "frequency": 203
+ },
+ {
+  "hangul": "로미",
+  "gender": "F",
+  "frequency": 202
+ },
+ {
+  "hangul": "하예",
+  "gender": "F",
+  "frequency": 201
+ },
+ {
+  "hangul": "슬빈",
+  "gender": "F",
+  "frequency": 201
+ },
+ {
+  "hangul": "차은",
+  "gender": "F",
+  "frequency": 200
+ },
+ {
+  "hangul": "문정",
+  "gender": "F",
+  "frequency": 200
+ },
+ {
+  "hangul": "신우",
+  "gender": "F",
+  "frequency": 199
+ },
+ {
+  "hangul": "라빈",
+  "gender": "F",
+  "frequency": 199
+ },
+ {
+  "hangul": "동은",
+  "gender": "F",
+  "frequency": 199
+ },
+ {
+  "hangul": "태미",
+  "gender": "F",
+  "frequency": 199
+ },
+ {
+  "hangul": "엘린",
+  "gender": "F",
+  "frequency": 198
+ },
+ {
+  "hangul": "해영",
+  "gender": "F",
+  "frequency": 198
+ },
+ {
+  "hangul": "래인",
+  "gender": "F",
+  "frequency": 197
+ },
+ {
+  "hangul": "서담",
+  "gender": "F",
+  "frequency": 197
+ },
+ {
+  "hangul": "미리",
+  "gender": "F",
+  "frequency": 195
+ },
+ {
+  "hangul": "지형",
+  "gender": "F",
+  "frequency": 195
+ },
+ {
+  "hangul": "다린",
+  "gender": "F",
+  "frequency": 195
+ },
+ {
+  "hangul": "사나",
+  "gender": "F",
+  "frequency": 195
+ },
+ {
+  "hangul": "윤화",
+  "gender": "F",
+  "frequency": 194
+ },
+ {
+  "hangul": "혜랑",
+  "gender": "F",
+  "frequency": 194
+ },
+ {
+  "hangul": "제은",
+  "gender": "F",
+  "frequency": 193
+ },
+ {
+  "hangul": "동주",
+  "gender": "F",
+  "frequency": 193
+ },
+ {
+  "hangul": "아엘",
+  "gender": "F",
+  "frequency": 193
+ },
+ {
+  "hangul": "연오",
+  "gender": "F",
+  "frequency": 193
+ },
+ {
+  "hangul": "서호",
+  "gender": "F",
+  "frequency": 192
+ },
+ {
+  "hangul": "예별",
+  "gender": "F",
+  "frequency": 191
+ },
+ {
+  "hangul": "현승",
+  "gender": "F",
+  "frequency": 191
+ },
+ {
+  "hangul": "성원",
+  "gender": "F",
+  "frequency": 191
+ },
+ {
+  "hangul": "성미",
+  "gender": "F",
+  "frequency": 191
+ },
+ {
+  "hangul": "강은",
+  "gender": "F",
+  "frequency": 191
+ },
+ {
+  "hangul": "에린",
+  "gender": "F",
+  "frequency": 190
+ },
+ {
+  "hangul": "미솔",
+  "gender": "F",
+  "frequency": 189
+ },
+ {
+  "hangul": "채미",
+  "gender": "F",
+  "frequency": 189
+ },
+ {
+  "hangul": "미송",
+  "gender": "F",
+  "frequency": 188
+ },
+ {
+  "hangul": "이령",
+  "gender": "F",
+  "frequency": 188
+ },
+ {
+  "hangul": "지완",
+  "gender": "F",
+  "frequency": 188
+ },
+ {
+  "hangul": "근아",
+  "gender": "F",
+  "frequency": 188
+ },
+ {
+  "hangul": "상미",
+  "gender": "F",
+  "frequency": 187
+ },
+ {
+  "hangul": "유설",
+  "gender": "F",
+  "frequency": 186
+ },
+ {
+  "hangul": "푸른",
+  "gender": "F",
+  "frequency": 186
+ },
+ {
+  "hangul": "재니",
+  "gender": "F",
+  "frequency": 186
+ },
+ {
+  "hangul": "혜아",
+  "gender": "F",
+  "frequency": 186
+ },
+ {
+  "hangul": "초현",
+  "gender": "F",
+  "frequency": 186
+ },
+ {
+  "hangul": "다교",
+  "gender": "F",
+  "frequency": 186
+ },
+ {
+  "hangul": "나언",
+  "gender": "F",
+  "frequency": 186
+ },
+ {
+  "hangul": "요원",
+  "gender": "F",
+  "frequency": 185
+ },
+ {
+  "hangul": "윤민",
+  "gender": "F",
+  "frequency": 185
+ },
+ {
+  "hangul": "두나",
+  "gender": "F",
+  "frequency": 185
+ },
+ {
+  "hangul": "아령",
+  "gender": "F",
+  "frequency": 184
+ },
+ {
+  "hangul": "로나",
+  "gender": "F",
+  "frequency": 183
+ },
+ {
+  "hangul": "해니",
+  "gender": "F",
+  "frequency": 183
+ },
+ {
+  "hangul": "다안",
+  "gender": "F",
+  "frequency": 183
+ },
+ {
+  "hangul": "마음",
+  "gender": "F",
+  "frequency": 183
+ },
+ {
+  "hangul": "라이",
+  "gender": "F",
+  "frequency": 183
+ },
+ {
+  "hangul": "미성",
+  "gender": "F",
+  "frequency": 182
+ },
+ {
+  "hangul": "가비",
+  "gender": "F",
+  "frequency": 181
+ },
+ {
+  "hangul": "예다",
+  "gender": "F",
+  "frequency": 181
+ },
+ {
+  "hangul": "리라",
+  "gender": "F",
+  "frequency": 181
+ },
+ {
+  "hangul": "다하",
+  "gender": "F",
+  "frequency": 180
+ },
+ {
+  "hangul": "보림",
+  "gender": "F",
+  "frequency": 180
+ },
+ {
+  "hangul": "나인",
+  "gender": "F",
+  "frequency": 180
+ },
+ {
+  "hangul": "로지",
+  "gender": "F",
+  "frequency": 180
+ },
+ {
+  "hangul": "다임",
+  "gender": "F",
+  "frequency": 180
+ },
+ {
+  "hangul": "재민",
+  "gender": "F",
+  "frequency": 179
+ },
+ {
+  "hangul": "다울",
+  "gender": "F",
+  "frequency": 179
+ },
+ {
+  "hangul": "미아",
+  "gender": "F",
+  "frequency": 178
+ },
+ {
+  "hangul": "혜교",
+  "gender": "F",
+  "frequency": 178
+ },
+ {
+  "hangul": "유람",
+  "gender": "F",
+  "frequency": 178
+ },
+ {
+  "hangul": "선재",
+  "gender": "F",
+  "frequency": 178
+ },
+ {
+  "hangul": "시예",
+  "gender": "F",
+  "frequency": 177
+ },
+ {
+  "hangul": "기연",
+  "gender": "F",
+  "frequency": 177
+ },
+ {
+  "hangul": "희민",
+  "gender": "F",
+  "frequency": 177
+ },
+ {
+  "hangul": "이선",
+  "gender": "F",
+  "frequency": 176
+ },
+ {
+  "hangul": "경림",
+  "gender": "F",
+  "frequency": 176
+ },
+ {
+  "hangul": "미란",
+  "gender": "F",
+  "frequency": 176
+ },
+ {
+  "hangul": "선정",
+  "gender": "F",
+  "frequency": 176
+ },
+ {
+  "hangul": "진선",
+  "gender": "F",
+  "frequency": 176
+ },
+ {
+  "hangul": "태라",
+  "gender": "F",
+  "frequency": 175
+ },
+ {
+  "hangul": "그림",
+  "gender": "F",
+  "frequency": 175
+ },
+ {
+  "hangul": "효윤",
+  "gender": "F",
+  "frequency": 175
+ },
+ {
+  "hangul": "보담",
+  "gender": "F",
+  "frequency": 175
+ },
+ {
+  "hangul": "단영",
+  "gender": "F",
+  "frequency": 175
+ },
+ {
+  "hangul": "송윤",
+  "gender": "F",
+  "frequency": 174
+ },
+ {
+  "hangul": "혜란",
+  "gender": "F",
+  "frequency": 174
+ },
+ {
+  "hangul": "현유",
+  "gender": "F",
+  "frequency": 173
+ },
+ {
+  "hangul": "주애",
+  "gender": "F",
+  "frequency": 173
+ },
+ {
+  "hangul": "지성",
+  "gender": "F",
+  "frequency": 173
+ },
+ {
+  "hangul": "영경",
+  "gender": "F",
+  "frequency": 173
+ },
+ {
+  "hangul": "승이",
+  "gender": "F",
+  "frequency": 173
+ },
+ {
+  "hangul": "나우",
+  "gender": "F",
+  "frequency": 172
+ },
+ {
+  "hangul": "해령",
+  "gender": "F",
+  "frequency": 172
+ },
+ {
+  "hangul": "문주",
+  "gender": "F",
+  "frequency": 172
+ },
+ {
+  "hangul": "열음",
+  "gender": "F",
+  "frequency": 171
+ },
+ {
+  "hangul": "희아",
+  "gender": "F",
+  "frequency": 171
+ },
+ {
+  "hangul": "원정",
+  "gender": "F",
+  "frequency": 171
+ },
+ {
+  "hangul": "단미",
+  "gender": "F",
+  "frequency": 171
+ },
+ {
+  "hangul": "도율",
+  "gender": "F",
+  "frequency": 171
+ },
+ {
+  "hangul": "정우",
+  "gender": "F",
+  "frequency": 171
+ },
+ {
+  "hangul": "은새",
+  "gender": "F",
+  "frequency": 171
+ },
+ {
+  "hangul": "은담",
+  "gender": "F",
+  "frequency": 171
+ },
+ {
+  "hangul": "선예",
+  "gender": "F",
+  "frequency": 170
+ },
+ {
+  "hangul": "정혜",
+  "gender": "F",
+  "frequency": 170
+ },
+ {
+  "hangul": "초롱",
+  "gender": "F",
+  "frequency": 170
+ },
+ {
+  "hangul": "한봄",
+  "gender": "F",
+  "frequency": 169
+ },
+ {
+  "hangul": "인희",
+  "gender": "F",
+  "frequency": 168
+ },
+ {
+  "hangul": "윤수",
+  "gender": "F",
+  "frequency": 168
+ },
+ {
+  "hangul": "영원",
+  "gender": "F",
+  "frequency": 168
+ },
+ {
+  "hangul": "영빈",
+  "gender": "F",
+  "frequency": 167
+ },
+ {
+  "hangul": "문경",
+  "gender": "F",
+  "frequency": 167
+ },
+ {
+  "hangul": "라헬",
+  "gender": "F",
+  "frequency": 167
+ },
+ {
+  "hangul": "찬비",
+  "gender": "F",
+  "frequency": 166
+ },
+ {
+  "hangul": "경현",
+  "gender": "F",
+  "frequency": 166
+ },
+ {
+  "hangul": "현빈",
+  "gender": "F",
+  "frequency": 166
+ },
+ {
+  "hangul": "하희",
+  "gender": "F",
+  "frequency": 165
+ },
+ {
+  "hangul": "한설",
+  "gender": "F",
+  "frequency": 165
+ },
+ {
+  "hangul": "윤소",
+  "gender": "F",
+  "frequency": 165
+ },
+ {
+  "hangul": "의정",
+  "gender": "F",
+  "frequency": 164
+ },
+ {
+  "hangul": "경화",
+  "gender": "F",
+  "frequency": 164
+ },
+ {
+  "hangul": "현솔",
+  "gender": "F",
+  "frequency": 163
+ },
+ {
+  "hangul": "새온",
+  "gender": "F",
+  "frequency": 163
+ },
+ {
+  "hangul": "래나",
+  "gender": "F",
+  "frequency": 163
+ },
+ {
+  "hangul": "자민",
+  "gender": "F",
+  "frequency": 162
+ },
+ {
+  "hangul": "해밀",
+  "gender": "F",
+  "frequency": 162
+ },
+ {
+  "hangul": "태유",
+  "gender": "F",
+  "frequency": 162
+ },
+ {
+  "hangul": "인선",
+  "gender": "F",
+  "frequency": 161
+ },
+ {
+  "hangul": "이율",
+  "gender": "F",
+  "frequency": 161
+ },
+ {
+  "hangul": "재현",
+  "gender": "F",
+  "frequency": 161
+ },
+ {
+  "hangul": "영희",
+  "gender": "F",
+  "frequency": 161
+ },
+ {
+  "hangul": "미령",
+  "gender": "F",
+  "frequency": 160
+ },
+ {
+  "hangul": "원경",
+  "gender": "F",
+  "frequency": 160
+ },
+ {
+  "hangul": "나운",
+  "gender": "F",
+  "frequency": 159
+ },
+ {
+  "hangul": "원지",
+  "gender": "F",
+  "frequency": 159
+ },
+ {
+  "hangul": "주향",
+  "gender": "F",
+  "frequency": 158
+ },
+ {
+  "hangul": "민수",
+  "gender": "F",
+  "frequency": 157
+ },
+ {
+  "hangul": "소휘",
+  "gender": "F",
+  "frequency": 157
+ },
+ {
+  "hangul": "가이",
+  "gender": "F",
+  "frequency": 157
+ },
+ {
+  "hangul": "명희",
+  "gender": "F",
+  "frequency": 157
+ },
+ {
+  "hangul": "설이",
+  "gender": "F",
+  "frequency": 156
+ },
+ {
+  "hangul": "송주",
+  "gender": "F",
+  "frequency": 156
+ },
+ {
+  "hangul": "영진",
+  "gender": "F",
+  "frequency": 156
+ },
+ {
+  "hangul": "재하",
+  "gender": "F",
+  "frequency": 156
+ },
+ {
+  "hangul": "아로",
+  "gender": "F",
+  "frequency": 156
+ },
+ {
+  "hangul": "혜윰",
+  "gender": "F",
+  "frequency": 156
+ },
+ {
+  "hangul": "가혜",
+  "gender": "F",
+  "frequency": 155
+ },
+ {
+  "hangul": "설연",
+  "gender": "F",
+  "frequency": 155
+ },
+ {
+  "hangul": "라혜",
+  "gender": "F",
+  "frequency": 155
+ },
+ {
+  "hangul": "태령",
+  "gender": "F",
+  "frequency": 154
+ },
+ {
+  "hangul": "소언",
+  "gender": "F",
+  "frequency": 153
+ },
+ {
+  "hangul": "수혜",
+  "gender": "F",
+  "frequency": 153
+ },
+ {
+  "hangul": "인지",
+  "gender": "F",
+  "frequency": 153
+ },
+ {
+  "hangul": "루안",
+  "gender": "F",
+  "frequency": 153
+ },
+ {
+  "hangul": "정효",
+  "gender": "F",
+  "frequency": 152
+ },
+ {
+  "hangul": "로빈",
+  "gender": "F",
+  "frequency": 152
+ },
+ {
+  "hangul": "신유",
+  "gender": "F",
+  "frequency": 151
+ },
+ {
+  "hangul": "은겸",
+  "gender": "F",
+  "frequency": 151
+ },
+ {
+  "hangul": "경주",
+  "gender": "F",
+  "frequency": 151
+ },
+ {
+  "hangul": "해정",
+  "gender": "F",
+  "frequency": 150
+ },
+ {
+  "hangul": "보예",
+  "gender": "F",
+  "frequency": 150
+ },
+ {
+  "hangul": "예란",
+  "gender": "F",
+  "frequency": 150
+ },
+ {
+  "hangul": "라라",
+  "gender": "F",
+  "frequency": 150
+ },
+ {
+  "hangul": "송민",
+  "gender": "F",
+  "frequency": 149
+ },
+ {
+  "hangul": "별아",
+  "gender": "F",
+  "frequency": 149
+ },
+ {
+  "hangul": "성혜",
+  "gender": "F",
+  "frequency": 149
+ },
+ {
+  "hangul": "민승",
+  "gender": "F",
+  "frequency": 149
+ },
+ {
+  "hangul": "제연",
+  "gender": "F",
+  "frequency": 148
+ },
+ {
+  "hangul": "명은",
+  "gender": "F",
+  "frequency": 148
+ },
+ {
+  "hangul": "라하",
+  "gender": "F",
+  "frequency": 148
+ },
+ {
+  "hangul": "규영",
+  "gender": "F",
+  "frequency": 147
+ },
+ {
+  "hangul": "라예",
+  "gender": "F",
+  "frequency": 147
+ },
+ {
+  "hangul": "희라",
+  "gender": "F",
+  "frequency": 146
+ },
+ {
+  "hangul": "화정",
+  "gender": "F",
+  "frequency": 146
+ },
+ {
+  "hangul": "라미",
+  "gender": "F",
+  "frequency": 146
+ },
+ {
+  "hangul": "여린",
+  "gender": "F",
+  "frequency": 146
+ },
+ {
+  "hangul": "아솔",
+  "gender": "F",
+  "frequency": 145
+ },
+ {
+  "hangul": "한음",
+  "gender": "F",
+  "frequency": 145
+ },
+ {
+  "hangul": "영화",
+  "gender": "F",
+  "frequency": 145
+ },
+ {
+  "hangul": "희현",
+  "gender": "F",
+  "frequency": 144
+ },
+ {
+  "hangul": "규진",
+  "gender": "F",
+  "frequency": 144
+ },
+ {
+  "hangul": "아루",
+  "gender": "F",
+  "frequency": 144
+ },
+ {
+  "hangul": "서예",
+  "gender": "F",
+  "frequency": 144
+ },
+ {
+  "hangul": "수원",
+  "gender": "F",
+  "frequency": 143
+ },
+ {
+  "hangul": "다움",
+  "gender": "F",
+  "frequency": 143
+ },
+ {
+  "hangul": "초하",
+  "gender": "F",
+  "frequency": 143
+ },
+ {
+  "hangul": "엠마",
+  "gender": "F",
+  "frequency": 142
+ },
+ {
+  "hangul": "기은",
+  "gender": "F",
+  "frequency": 141
+ },
+ {
+  "hangul": "해아",
+  "gender": "F",
+  "frequency": 141
+ },
+ {
+  "hangul": "현송",
+  "gender": "F",
+  "frequency": 141
+ },
+ {
+  "hangul": "채서",
+  "gender": "F",
+  "frequency": 141
+ },
+ {
+  "hangul": "하송",
+  "gender": "F",
+  "frequency": 141
+ },
+ {
+  "hangul": "신애",
+  "gender": "F",
+  "frequency": 141
+ },
+ {
+  "hangul": "우아",
+  "gender": "F",
+  "frequency": 141
+ },
+ {
+  "hangul": "류아",
+  "gender": "F",
+  "frequency": 140
+ },
+ {
+  "hangul": "혜현",
+  "gender": "F",
+  "frequency": 140
+ },
+ {
+  "hangul": "은오",
+  "gender": "F",
+  "frequency": 140
+ },
+ {
+  "hangul": "나봄",
+  "gender": "F",
+  "frequency": 140
+ },
+ {
+  "hangul": "신아",
+  "gender": "F",
+  "frequency": 140
+ },
+ {
+  "hangul": "예강",
+  "gender": "F",
+  "frequency": 139
+ },
+ {
+  "hangul": "성령",
+  "gender": "F",
+  "frequency": 139
+ },
+ {
+  "hangul": "희망",
+  "gender": "F",
+  "frequency": 139
+ },
+ {
+  "hangul": "선진",
+  "gender": "F",
+  "frequency": 139
+ },
+ {
+  "hangul": "이온",
+  "gender": "F",
+  "frequency": 139
+ },
+ {
+  "hangul": "유송",
+  "gender": "F",
+  "frequency": 138
+ },
+ {
+  "hangul": "그루",
+  "gender": "F",
+  "frequency": 138
+ },
+ {
+  "hangul": "리지",
+  "gender": "F",
+  "frequency": 137
+ },
+ {
+  "hangul": "인화",
+  "gender": "F",
+  "frequency": 137
+ },
+ {
+  "hangul": "서화",
+  "gender": "F",
+  "frequency": 136
+ },
+ {
+  "hangul": "지담",
+  "gender": "F",
+  "frequency": 136
+ },
+ {
+  "hangul": "교빈",
+  "gender": "F",
+  "frequency": 136
+ },
+ {
+  "hangul": "혜라",
+  "gender": "F",
+  "frequency": 136
+ },
+ {
+  "hangul": "아경",
+  "gender": "F",
+  "frequency": 136
+ },
+ {
+  "hangul": "유인",
+  "gender": "F",
+  "frequency": 136
+ },
+ {
+  "hangul": "효나",
+  "gender": "F",
+  "frequency": 136
+ },
+ {
+  "hangul": "맑음",
+  "gender": "F",
+  "frequency": 136
+ },
+ {
+  "hangul": "화진",
+  "gender": "F",
+  "frequency": 136
+ },
+ {
+  "hangul": "엘림",
+  "gender": "F",
+  "frequency": 135
+ },
+ {
+  "hangul": "태양",
+  "gender": "F",
+  "frequency": 135
+ },
+ {
+  "hangul": "미혜",
+  "gender": "F",
+  "frequency": 135
+ },
+ {
+  "hangul": "진리",
+  "gender": "F",
+  "frequency": 135
+ },
+ {
+  "hangul": "영민",
+  "gender": "F",
+  "frequency": 135
+ },
+ {
+  "hangul": "열매",
+  "gender": "F",
+  "frequency": 134
+ },
+ {
+  "hangul": "문영",
+  "gender": "F",
+  "frequency": 134
+ },
+ {
+  "hangul": "경연",
+  "gender": "F",
+  "frequency": 134
+ },
+ {
+  "hangul": "서언",
+  "gender": "F",
+  "frequency": 134
+ },
+ {
+  "hangul": "향기",
+  "gender": "F",
+  "frequency": 133
+ },
+ {
+  "hangul": "재서",
+  "gender": "F",
+  "frequency": 132
+ },
+ {
+  "hangul": "나임",
+  "gender": "F",
+  "frequency": 132
+ },
+ {
+  "hangul": "서효",
+  "gender": "F",
+  "frequency": 132
+ },
+ {
+  "hangul": "민제",
+  "gender": "F",
+  "frequency": 132
+ },
+ {
+  "hangul": "호경",
+  "gender": "F",
+  "frequency": 132
+ },
+ {
+  "hangul": "애진",
+  "gender": "F",
+  "frequency": 131
+ },
+ {
+  "hangul": "보희",
+  "gender": "F",
+  "frequency": 131
+ },
+ {
+  "hangul": "미화",
+  "gender": "F",
+  "frequency": 131
+ },
+ {
+  "hangul": "나음",
+  "gender": "F",
+  "frequency": 131
+ },
+ {
+  "hangul": "채담",
+  "gender": "F",
+  "frequency": 131
+ },
+ {
+  "hangul": "주민",
+  "gender": "F",
+  "frequency": 130
+ },
+ {
+  "hangul": "승채",
+  "gender": "F",
+  "frequency": 130
+ },
+ {
+  "hangul": "민이",
+  "gender": "F",
+  "frequency": 130
+ },
+ {
+  "hangul": "채진",
+  "gender": "F",
+  "frequency": 130
+ },
+ {
+  "hangul": "리애",
+  "gender": "F",
+  "frequency": 130
+ },
+ {
+  "hangul": "하미",
+  "gender": "F",
+  "frequency": 130
+ },
+ {
+  "hangul": "승언",
+  "gender": "F",
+  "frequency": 129
+ },
+ {
+  "hangul": "장미",
+  "gender": "F",
+  "frequency": 129
+ },
+ {
+  "hangul": "한주",
+  "gender": "F",
+  "frequency": 129
+ },
+ {
+  "hangul": "화음",
+  "gender": "F",
+  "frequency": 129
+ },
+ {
+  "hangul": "담은",
+  "gender": "F",
+  "frequency": 129
+ },
+ {
+  "hangul": "채니",
+  "gender": "F",
+  "frequency": 128
+ },
+ {
+  "hangul": "은해",
+  "gender": "F",
+  "frequency": 128
+ },
+ {
+  "hangul": "인주",
+  "gender": "F",
+  "frequency": 128
+ },
+ {
+  "hangul": "윤송",
+  "gender": "F",
+  "frequency": 128
+ },
+ {
+  "hangul": "효령",
+  "gender": "F",
+  "frequency": 128
+ },
+ {
+  "hangul": "여림",
+  "gender": "F",
+  "frequency": 127
+ },
+ {
+  "hangul": "인우",
+  "gender": "F",
+  "frequency": 127
+ },
+ {
+  "hangul": "수리",
+  "gender": "F",
+  "frequency": 127
+ },
+ {
+  "hangul": "새미",
+  "gender": "F",
+  "frequency": 127
+ },
+ {
+  "hangul": "다언",
+  "gender": "F",
+  "frequency": 126
+ },
+ {
+  "hangul": "이아",
+  "gender": "F",
+  "frequency": 126
+ },
+ {
+  "hangul": "우인",
+  "gender": "F",
+  "frequency": 126
+ },
+ {
+  "hangul": "지승",
+  "gender": "F",
+  "frequency": 126
+ },
+ {
+  "hangul": "현화",
+  "gender": "F",
+  "frequency": 125
+ },
+ {
+  "hangul": "화윤",
+  "gender": "F",
+  "frequency": 125
+ },
+ {
+  "hangul": "우현",
+  "gender": "F",
+  "frequency": 125
+ },
+ {
+  "hangul": "이제",
+  "gender": "F",
+  "frequency": 124
+ },
+ {
+  "hangul": "마린",
+  "gender": "F",
+  "frequency": 124
+ },
+ {
+  "hangul": "해미",
+  "gender": "F",
+  "frequency": 124
+ },
+ {
+  "hangul": "단유",
+  "gender": "F",
+  "frequency": 124
+ },
+ {
+  "hangul": "재령",
+  "gender": "F",
+  "frequency": 123
+ },
+ {
+  "hangul": "미루",
+  "gender": "F",
+  "frequency": 123
+ },
+ {
+  "hangul": "호윤",
+  "gender": "F",
+  "frequency": 123
+ },
+ {
+  "hangul": "여주",
+  "gender": "F",
+  "frequency": 123
+ },
+ {
+  "hangul": "나형",
+  "gender": "F",
+  "frequency": 122
+ },
+ {
+  "hangul": "이라",
+  "gender": "F",
+  "frequency": 122
+ },
+ {
+  "hangul": "재빈",
+  "gender": "F",
+  "frequency": 122
+ },
+ {
+  "hangul": "애림",
+  "gender": "F",
+  "frequency": 122
+ },
+ {
+  "hangul": "남주",
+  "gender": "F",
+  "frequency": 122
+ },
+ {
+  "hangul": "나진",
+  "gender": "F",
+  "frequency": 121
+ },
+ {
+  "hangul": "호수",
+  "gender": "F",
+  "frequency": 120
+ },
+ {
+  "hangul": "소람",
+  "gender": "F",
+  "frequency": 120
+ },
+ {
+  "hangul": "민별",
+  "gender": "F",
+  "frequency": 119
+ },
+ {
+  "hangul": "경윤",
+  "gender": "F",
+  "frequency": 119
+ },
+ {
+  "hangul": "휘연",
+  "gender": "F",
+  "frequency": 119
+ },
+ {
+  "hangul": "희림",
+  "gender": "F",
+  "frequency": 119
+ },
+ {
+  "hangul": "태하",
+  "gender": "F",
+  "frequency": 118
+ },
+ {
+  "hangul": "규랑",
+  "gender": "F",
+  "frequency": 118
+ },
+ {
+  "hangul": "송원",
+  "gender": "F",
+  "frequency": 118
+ },
+ {
+  "hangul": "은애",
+  "gender": "F",
+  "frequency": 118
+ },
+ {
+  "hangul": "수향",
+  "gender": "F",
+  "frequency": 118
+ },
+ {
+  "hangul": "류경",
+  "gender": "F",
+  "frequency": 117
+ },
+ {
+  "hangul": "별희",
+  "gender": "F",
+  "frequency": 117
+ },
+ {
+  "hangul": "근혜",
+  "gender": "F",
+  "frequency": 116
+ },
+ {
+  "hangul": "릴리",
+  "gender": "F",
+  "frequency": 116
+ },
+ {
+  "hangul": "정언",
+  "gender": "F",
+  "frequency": 116
+ },
+ {
+  "hangul": "혜련",
+  "gender": "F",
+  "frequency": 115
+ },
+ {
+  "hangul": "미림",
+  "gender": "F",
+  "frequency": 115
+ },
+ {
+  "hangul": "산들",
+  "gender": "F",
+  "frequency": 115
+ },
+ {
+  "hangul": "민형",
+  "gender": "F",
+  "frequency": 115
+ },
+ {
+  "hangul": "이채",
+  "gender": "F",
+  "frequency": 114
+ },
+ {
+  "hangul": "세랑",
+  "gender": "F",
+  "frequency": 114
+ },
+ {
+  "hangul": "하별",
+  "gender": "F",
+  "frequency": 114
+ },
+ {
+  "hangul": "새이",
+  "gender": "F",
+  "frequency": 114
+ },
+ {
+  "hangul": "아나",
+  "gender": "F",
+  "frequency": 114
+ },
+ {
+  "hangul": "희령",
+  "gender": "F",
+  "frequency": 114
+ },
+ {
+  "hangul": "채움",
+  "gender": "F",
+  "frequency": 113
+ },
+ {
+  "hangul": "수비",
+  "gender": "F",
+  "frequency": 113
+ },
+ {
+  "hangul": "남경",
+  "gender": "F",
+  "frequency": 113
+ },
+ {
+  "hangul": "희승",
+  "gender": "F",
+  "frequency": 113
+ },
+ {
+  "hangul": "미향",
+  "gender": "F",
+  "frequency": 113
+ },
+ {
+  "hangul": "소나",
+  "gender": "F",
+  "frequency": 113
+ },
+ {
+  "hangul": "해성",
+  "gender": "F",
+  "frequency": 112
+ },
+ {
+  "hangul": "오름",
+  "gender": "F",
+  "frequency": 112
+ },
+ {
+  "hangul": "민율",
+  "gender": "F",
+  "frequency": 112
+ },
+ {
+  "hangul": "로율",
+  "gender": "F",
+  "frequency": 112
+ },
+ {
+  "hangul": "선후",
+  "gender": "F",
+  "frequency": 112
+ },
+ {
+  "hangul": "유신",
+  "gender": "F",
+  "frequency": 111
+ },
+ {
+  "hangul": "민효",
+  "gender": "F",
+  "frequency": 111
+ },
+ {
+  "hangul": "제린",
+  "gender": "F",
+  "frequency": 111
+ },
+ {
+  "hangul": "나민",
+  "gender": "F",
+  "frequency": 111
+ },
+ {
+  "hangul": "나루",
+  "gender": "F",
+  "frequency": 111
+ },
+ {
+  "hangul": "리진",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "새린",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "리영",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "유겸",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "수완",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "경린",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "루시",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "지홍",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "사야",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "사빈",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "희성",
+  "gender": "F",
+  "frequency": 110
+ },
+ {
+  "hangul": "신희",
+  "gender": "F",
+  "frequency": 109
+ },
+ {
+  "hangul": "윤조",
+  "gender": "F",
+  "frequency": 109
+ },
+ {
+  "hangul": "지한",
+  "gender": "F",
+  "frequency": 109
+ },
+ {
+  "hangul": "윤담",
+  "gender": "F",
+  "frequency": 109
+ },
+ {
+  "hangul": "규담",
+  "gender": "F",
+  "frequency": 109
+ },
+ {
+  "hangul": "보혜",
+  "gender": "F",
+  "frequency": 109
+ },
+ {
+  "hangul": "효현",
+  "gender": "F",
+  "frequency": 109
+ },
+ {
+  "hangul": "리서",
+  "gender": "F",
+  "frequency": 108
+ },
+ {
+  "hangul": "려진",
+  "gender": "F",
+  "frequency": 108
+ },
+ {
+  "hangul": "민화",
+  "gender": "F",
+  "frequency": 108
+ },
+ {
+  "hangul": "라인",
+  "gender": "F",
+  "frequency": 108
+ },
+ {
+  "hangul": "유수",
+  "gender": "F",
+  "frequency": 108
+ },
+ {
+  "hangul": "명빈",
+  "gender": "F",
+  "frequency": 108
+ },
+ {
+  "hangul": "미수",
+  "gender": "F",
+  "frequency": 108
+ },
+ {
+  "hangul": "소호",
+  "gender": "F",
+  "frequency": 108
+ },
+ {
+  "hangul": "주화",
+  "gender": "F",
+  "frequency": 108
+ },
+ {
+  "hangul": "동화",
+  "gender": "F",
+  "frequency": 107
+ },
+ {
+  "hangul": "민조",
+  "gender": "F",
+  "frequency": 107
+ },
+ {
+  "hangul": "은슬",
+  "gender": "F",
+  "frequency": 106
+ },
+ {
+  "hangul": "규현",
+  "gender": "F",
+  "frequency": 106
+ },
+ {
+  "hangul": "서준",
+  "gender": "M",
+  "frequency": 44813
+ },
+ {
+  "hangul": "민준",
+  "gender": "M",
+  "frequency": 43516
+ },
+ {
+  "hangul": "도윤",
+  "gender": "M",
+  "frequency": 39638
+ },
+ {
+  "hangul": "시우",
+  "gender": "M",
+  "frequency": 35881
+ },
+ {
+  "hangul": "하준",
+  "gender": "M",
+  "frequency": 35085
+ },
+ {
+  "hangul": "예준",
+  "gender": "M",
+  "frequency": 34705
+ },
+ {
+  "hangul": "지호",
+  "gender": "M",
+  "frequency": 32333
+ },
+ {
+  "hangul": "주원",
+  "gender": "M",
+  "frequency": 31567
+ },
+ {
+  "hangul": "도현",
+  "gender": "M",
+  "frequency": 28211
+ },
+ {
+  "hangul": "지후",
+  "gender": "M",
+  "frequency": 27715
+ },
+ {
+  "hangul": "준우",
+  "gender": "M",
+  "frequency": 27148
+ },
+ {
+  "hangul": "준서",
+  "gender": "M",
+  "frequency": 25820
+ },
+ {
+  "hangul": "우진",
+  "gender": "M",
+  "frequency": 25241
+ },
+ {
+  "hangul": "건우",
+  "gender": "M",
+  "frequency": 25086
+ },
+ {
+  "hangul": "선우",
+  "gender": "M",
+  "frequency": 24953
+ },
+ {
+  "hangul": "현우",
+  "gender": "M",
+  "frequency": 24795
+ },
+ {
+  "hangul": "지훈",
+  "gender": "M",
+  "frequency": 23481
+ },
+ {
+  "hangul": "유준",
+  "gender": "M",
+  "frequency": 23048
+ },
+ {
+  "hangul": "은우",
+  "gender": "M",
+  "frequency": 22623
+ },
+ {
+  "hangul": "연우",
+  "gender": "M",
+  "frequency": 21919
+ },
+ {
+  "hangul": "이준",
+  "gender": "M",
+  "frequency": 21207
+ },
+ {
+  "hangul": "서진",
+  "gender": "M",
+  "frequency": 20985
+ },
+ {
+  "hangul": "시윤",
+  "gender": "M",
+  "frequency": 19223
+ },
+ {
+  "hangul": "민재",
+  "gender": "M",
+  "frequency": 18436
+ },
+ {
+  "hangul": "정우",
+  "gender": "M",
+  "frequency": 17919
+ },
+ {
+  "hangul": "현준",
+  "gender": "M",
+  "frequency": 17870
+ },
+ {
+  "hangul": "윤우",
+  "gender": "M",
+  "frequency": 17775
+ },
+ {
+  "hangul": "수호",
+  "gender": "M",
+  "frequency": 16971
+ },
+ {
+  "hangul": "지우",
+  "gender": "M",
+  "frequency": 15953
+ },
+ {
+  "hangul": "유찬",
+  "gender": "M",
+  "frequency": 15865
+ },
+ {
+  "hangul": "이안",
+  "gender": "M",
+  "frequency": 15657
+ },
+ {
+  "hangul": "승우",
+  "gender": "M",
+  "frequency": 15452
+ },
+ {
+  "hangul": "지환",
+  "gender": "M",
+  "frequency": 14768
+ },
+ {
+  "hangul": "승현",
+  "gender": "M",
+  "frequency": 14459
+ },
+ {
+  "hangul": "준혁",
+  "gender": "M",
+  "frequency": 14132
+ },
+ {
+  "hangul": "진우",
+  "gender": "M",
+  "frequency": 13730
+ },
+ {
+  "hangul": "시후",
+  "gender": "M",
+  "frequency": 13632
+ },
+ {
+  "hangul": "승민",
+  "gender": "M",
+  "frequency": 13138
+ },
+ {
+  "hangul": "민성",
+  "gender": "M",
+  "frequency": 12525
+ },
+ {
+  "hangul": "수현",
+  "gender": "M",
+  "frequency": 12490
+ },
+ {
+  "hangul": "지원",
+  "gender": "M",
+  "frequency": 12454
+ },
+ {
+  "hangul": "우주",
+  "gender": "M",
+  "frequency": 12336
+ },
+ {
+  "hangul": "은호",
+  "gender": "M",
+  "frequency": 12224
+ },
+ {
+  "hangul": "준영",
+  "gender": "M",
+  "frequency": 12184
+ },
+ {
+  "hangul": "지한",
+  "gender": "M",
+  "frequency": 11958
+ },
+ {
+  "hangul": "재윤",
+  "gender": "M",
+  "frequency": 11834
+ },
+ {
+  "hangul": "시현",
+  "gender": "M",
+  "frequency": 11831
+ },
+ {
+  "hangul": "태윤",
+  "gender": "M",
+  "frequency": 11700
+ },
+ {
+  "hangul": "한결",
+  "gender": "M",
+  "frequency": 11307
+ },
+ {
+  "hangul": "지안",
+  "gender": "M",
+  "frequency": 11261
+ },
+ {
+  "hangul": "시온",
+  "gender": "M",
+  "frequency": 11067
+ },
+ {
+  "hangul": "서우",
+  "gender": "M",
+  "frequency": 10899
+ },
+ {
+  "hangul": "윤호",
+  "gender": "M",
+  "frequency": 10707
+ },
+ {
+  "hangul": "이현",
+  "gender": "M",
+  "frequency": 10648
+ },
+ {
+  "hangul": "시원",
+  "gender": "M",
+  "frequency": 10607
+ },
+ {
+  "hangul": "은찬",
+  "gender": "M",
+  "frequency": 10437
+ },
+ {
+  "hangul": "하진",
+  "gender": "M",
+  "frequency": 10374
+ },
+ {
+  "hangul": "민우",
+  "gender": "M",
+  "frequency": 9986
+ },
+ {
+  "hangul": "재원",
+  "gender": "M",
+  "frequency": 9926
+ },
+ {
+  "hangul": "도하",
+  "gender": "M",
+  "frequency": 9841
+ },
+ {
+  "hangul": "동현",
+  "gender": "M",
+  "frequency": 9803
+ },
+ {
+  "hangul": "우빈",
+  "gender": "M",
+  "frequency": 9756
+ },
+ {
+  "hangul": "로운",
+  "gender": "M",
+  "frequency": 9689
+ },
+ {
+  "hangul": "민규",
+  "gender": "M",
+  "frequency": 9623
+ },
+ {
+  "hangul": "민찬",
+  "gender": "M",
+  "frequency": 9486
+ },
+ {
+  "hangul": "재민",
+  "gender": "M",
+  "frequency": 9358
+ },
+ {
+  "hangul": "하율",
+  "gender": "M",
+  "frequency": 9244
+ },
+ {
+  "hangul": "윤재",
+  "gender": "M",
+  "frequency": 9132
+ },
+ {
+  "hangul": "태오",
+  "gender": "M",
+  "frequency": 8994
+ },
+ {
+  "hangul": "지율",
+  "gender": "M",
+  "frequency": 8899
+ },
+ {
+  "hangul": "준호",
+  "gender": "M",
+  "frequency": 8833
+ },
+ {
+  "hangul": "하민",
+  "gender": "M",
+  "frequency": 8647
+ },
+ {
+  "hangul": "지민",
+  "gender": "M",
+  "frequency": 8465
+ },
+ {
+  "hangul": "태민",
+  "gender": "M",
+  "frequency": 8453
+ },
+ {
+  "hangul": "재현",
+  "gender": "M",
+  "frequency": 8407
+ },
+ {
+  "hangul": "민호",
+  "gender": "M",
+  "frequency": 8349
+ },
+ {
+  "hangul": "성민",
+  "gender": "M",
+  "frequency": 8312
+ },
+ {
+  "hangul": "현서",
+  "gender": "M",
+  "frequency": 8304
+ },
+ {
+  "hangul": "승준",
+  "gender": "M",
+  "frequency": 8289
+ },
+ {
+  "hangul": "이든",
+  "gender": "M",
+  "frequency": 8248
+ },
+ {
+  "hangul": "성현",
+  "gender": "M",
+  "frequency": 8180
+ },
+ {
+  "hangul": "하람",
+  "gender": "M",
+  "frequency": 8114
+ },
+ {
+  "hangul": "예성",
+  "gender": "M",
+  "frequency": 8020
+ },
+ {
+  "hangul": "지성",
+  "gender": "M",
+  "frequency": 7933
+ },
+ {
+  "hangul": "태현",
+  "gender": "M",
+  "frequency": 7883
+ },
+ {
+  "hangul": "다온",
+  "gender": "M",
+  "frequency": 7782
+ },
+ {
+  "hangul": "태양",
+  "gender": "M",
+  "frequency": 7765
+ },
+ {
+  "hangul": "규민",
+  "gender": "M",
+  "frequency": 7723
+ },
+ {
+  "hangul": "민혁",
+  "gender": "M",
+  "frequency": 7636
+ },
+ {
+  "hangul": "윤성",
+  "gender": "M",
+  "frequency": 7626
+ },
+ {
+  "hangul": "성준",
+  "gender": "M",
+  "frequency": 7571
+ },
+ {
+  "hangul": "주안",
+  "gender": "M",
+  "frequency": 7488
+ },
+ {
+  "hangul": "도훈",
+  "gender": "M",
+  "frequency": 7448
+ },
+ {
+  "hangul": "지오",
+  "gender": "M",
+  "frequency": 7408
+ },
+ {
+  "hangul": "정민",
+  "gender": "M",
+  "frequency": 7402
+ },
+ {
+  "hangul": "도영",
+  "gender": "M",
+  "frequency": 7369
+ },
+ {
+  "hangul": "은성",
+  "gender": "M",
+  "frequency": 7353
+ },
+ {
+  "hangul": "주호",
+  "gender": "M",
+  "frequency": 7239
+ },
+ {
+  "hangul": "예찬",
+  "gender": "M",
+  "frequency": 7221
+ },
+ {
+  "hangul": "준수",
+  "gender": "M",
+  "frequency": 7053
+ },
+ {
+  "hangul": "준희",
+  "gender": "M",
+  "frequency": 7041
+ },
+ {
+  "hangul": "도율",
+  "gender": "M",
+  "frequency": 6816
+ },
+ {
+  "hangul": "태준",
+  "gender": "M",
+  "frequency": 6650
+ },
+ {
+  "hangul": "민석",
+  "gender": "M",
+  "frequency": 6635
+ },
+ {
+  "hangul": "도준",
+  "gender": "M",
+  "frequency": 6610
+ },
+ {
+  "hangul": "하랑",
+  "gender": "M",
+  "frequency": 6585
+ },
+ {
+  "hangul": "강민",
+  "gender": "M",
+  "frequency": 6519
+ },
+ {
+  "hangul": "지완",
+  "gender": "M",
+  "frequency": 6366
+ },
+ {
+  "hangul": "시율",
+  "gender": "M",
+  "frequency": 6321
+ },
+ {
+  "hangul": "재하",
+  "gender": "M",
+  "frequency": 6229
+ },
+ {
+  "hangul": "준성",
+  "gender": "M",
+  "frequency": 6097
+ },
+ {
+  "hangul": "승원",
+  "gender": "M",
+  "frequency": 6064
+ },
+ {
+  "hangul": "승호",
+  "gender": "M",
+  "frequency": 6041
+ },
+ {
+  "hangul": "시안",
+  "gender": "M",
+  "frequency": 6023
+ },
+ {
+  "hangul": "정현",
+  "gender": "M",
+  "frequency": 5972
+ },
+ {
+  "hangul": "서율",
+  "gender": "M",
+  "frequency": 5958
+ },
+ {
+  "hangul": "라온",
+  "gender": "M",
+  "frequency": 5957
+ },
+ {
+  "hangul": "우현",
+  "gender": "M",
+  "frequency": 5920
+ },
+ {
+  "hangul": "현수",
+  "gender": "M",
+  "frequency": 5913
+ },
+ {
+  "hangul": "성빈",
+  "gender": "M",
+  "frequency": 5907
+ },
+ {
+  "hangul": "시훈",
+  "gender": "M",
+  "frequency": 5873
+ },
+ {
+  "hangul": "단우",
+  "gender": "M",
+  "frequency": 5872
+ },
+ {
+  "hangul": "유안",
+  "gender": "M",
+  "frequency": 5750
+ },
+ {
+  "hangul": "하온",
+  "gender": "M",
+  "frequency": 5748
+ },
+ {
+  "hangul": "도원",
+  "gender": "M",
+  "frequency": 5624
+ },
+ {
+  "hangul": "시완",
+  "gender": "M",
+  "frequency": 5601
+ },
+ {
+  "hangul": "이한",
+  "gender": "M",
+  "frequency": 5588
+ },
+ {
+  "hangul": "민서",
+  "gender": "M",
+  "frequency": 5539
+ },
+ {
+  "hangul": "주환",
+  "gender": "M",
+  "frequency": 5418
+ },
+ {
+  "hangul": "건희",
+  "gender": "M",
+  "frequency": 5371
+ },
+ {
+  "hangul": "정후",
+  "gender": "M",
+  "frequency": 5369
+ },
+ {
+  "hangul": "원준",
+  "gender": "M",
+  "frequency": 5356
+ },
+ {
+  "hangul": "연준",
+  "gender": "M",
+  "frequency": 5295
+ },
+ {
+  "hangul": "도경",
+  "gender": "M",
+  "frequency": 5288
+ },
+ {
+  "hangul": "서후",
+  "gender": "M",
+  "frequency": 5283
+ },
+ {
+  "hangul": "온유",
+  "gender": "M",
+  "frequency": 5238
+ },
+ {
+  "hangul": "정원",
+  "gender": "M",
+  "frequency": 5235
+ },
+ {
+  "hangul": "민수",
+  "gender": "M",
+  "frequency": 5234
+ },
+ {
+  "hangul": "정훈",
+  "gender": "M",
+  "frequency": 5183
+ },
+ {
+  "hangul": "동하",
+  "gender": "M",
+  "frequency": 5108
+ },
+ {
+  "hangul": "유건",
+  "gender": "M",
+  "frequency": 5108
+ },
+ {
+  "hangul": "승윤",
+  "gender": "M",
+  "frequency": 5068
+ },
+ {
+  "hangul": "주영",
+  "gender": "M",
+  "frequency": 5011
+ },
+ {
+  "hangul": "시환",
+  "gender": "M",
+  "frequency": 4987
+ },
+ {
+  "hangul": "현민",
+  "gender": "M",
+  "frequency": 4974
+ },
+ {
+  "hangul": "서호",
+  "gender": "M",
+  "frequency": 4942
+ },
+ {
+  "hangul": "민건",
+  "gender": "M",
+  "frequency": 4930
+ },
+ {
+  "hangul": "유현",
+  "gender": "M",
+  "frequency": 4898
+ },
+ {
+  "hangul": "가온",
+  "gender": "M",
+  "frequency": 4896
+ },
+ {
+  "hangul": "민기",
+  "gender": "M",
+  "frequency": 4871
+ },
+ {
+  "hangul": "승빈",
+  "gender": "M",
+  "frequency": 4827
+ },
+ {
+  "hangul": "경민",
+  "gender": "M",
+  "frequency": 4807
+ },
+ {
+  "hangul": "현성",
+  "gender": "M",
+  "frequency": 4796
+ },
+ {
+  "hangul": "재준",
+  "gender": "M",
+  "frequency": 4781
+ },
+ {
+  "hangul": "세현",
+  "gender": "M",
+  "frequency": 4753
+ },
+ {
+  "hangul": "하늘",
+  "gender": "M",
+  "frequency": 4746
+ },
+ {
+  "hangul": "태율",
+  "gender": "M",
+  "frequency": 4737
+ },
+ {
+  "hangul": "호준",
+  "gender": "M",
+  "frequency": 4701
+ },
+ {
+  "hangul": "태훈",
+  "gender": "M",
+  "frequency": 4643
+ },
+ {
+  "hangul": "도겸",
+  "gender": "M",
+  "frequency": 4624
+ },
+ {
+  "hangul": "선호",
+  "gender": "M",
+  "frequency": 4592
+ },
+ {
+  "hangul": "태영",
+  "gender": "M",
+  "frequency": 4574
+ },
+ {
+  "hangul": "재훈",
+  "gender": "M",
+  "frequency": 4541
+ },
+ {
+  "hangul": "태하",
+  "gender": "M",
+  "frequency": 4496
+ },
+ {
+  "hangul": "태경",
+  "gender": "M",
+  "frequency": 4463
+ },
+ {
+  "hangul": "찬영",
+  "gender": "M",
+  "frequency": 4416
+ },
+ {
+  "hangul": "동건",
+  "gender": "M",
+  "frequency": 4413
+ },
+ {
+  "hangul": "범준",
+  "gender": "M",
+  "frequency": 4407
+ },
+ {
+  "hangul": "재이",
+  "gender": "M",
+  "frequency": 4363
+ },
+ {
+  "hangul": "도진",
+  "gender": "M",
+  "frequency": 4355
+ },
+ {
+  "hangul": "하윤",
+  "gender": "M",
+  "frequency": 4341
+ },
+ {
+  "hangul": "지혁",
+  "gender": "M",
+  "frequency": 4338
+ },
+ {
+  "hangul": "세준",
+  "gender": "M",
+  "frequency": 4294
+ },
+ {
+  "hangul": "현진",
+  "gender": "M",
+  "frequency": 4291
+ },
+ {
+  "hangul": "윤찬",
+  "gender": "M",
+  "frequency": 4277
+ },
+ {
+  "hangul": "성윤",
+  "gender": "M",
+  "frequency": 4262
+ },
+ {
+  "hangul": "서원",
+  "gender": "M",
+  "frequency": 4257
+ },
+ {
+  "hangul": "시호",
+  "gender": "M",
+  "frequency": 4255
+ },
+ {
+  "hangul": "연호",
+  "gender": "M",
+  "frequency": 4237
+ },
+ {
+  "hangul": "재영",
+  "gender": "M",
+  "frequency": 4213
+ },
+ {
+  "hangul": "영준",
+  "gender": "M",
+  "frequency": 4211
+ },
+ {
+  "hangul": "태이",
+  "gender": "M",
+  "frequency": 4208
+ },
+ {
+  "hangul": "찬우",
+  "gender": "M",
+  "frequency": 4189
+ },
+ {
+  "hangul": "태호",
+  "gender": "M",
+  "frequency": 4185
+ },
+ {
+  "hangul": "지운",
+  "gender": "M",
+  "frequency": 4171
+ },
+ {
+  "hangul": "주혁",
+  "gender": "M",
+  "frequency": 4166
+ },
+ {
+  "hangul": "현승",
+  "gender": "M",
+  "frequency": 4156
+ },
+ {
+  "hangul": "로이",
+  "gender": "M",
+  "frequency": 4150
+ },
+ {
+  "hangul": "동윤",
+  "gender": "M",
+  "frequency": 4124
+ },
+ {
+  "hangul": "윤후",
+  "gender": "M",
+  "frequency": 4075
+ },
+ {
+  "hangul": "건호",
+  "gender": "M",
+  "frequency": 4068
+ },
+ {
+  "hangul": "승재",
+  "gender": "M",
+  "frequency": 4062
+ },
+ {
+  "hangul": "우성",
+  "gender": "M",
+  "frequency": 4056
+ },
+ {
+  "hangul": "상현",
+  "gender": "M",
+  "frequency": 4048
+ },
+ {
+  "hangul": "유진",
+  "gender": "M",
+  "frequency": 4047
+ },
+ {
+  "hangul": "승훈",
+  "gender": "M",
+  "frequency": 4013
+ },
+ {
+  "hangul": "찬희",
+  "gender": "M",
+  "frequency": 4000
+ },
+ {
+  "hangul": "규빈",
+  "gender": "M",
+  "frequency": 3962
+ },
+ {
+  "hangul": "주한",
+  "gender": "M",
+  "frequency": 3857
+ },
+ {
+  "hangul": "은율",
+  "gender": "M",
+  "frequency": 3847
+ },
+ {
+  "hangul": "재희",
+  "gender": "M",
+  "frequency": 3845
+ },
+ {
+  "hangul": "성훈",
+  "gender": "M",
+  "frequency": 3796
+ },
+ {
+  "hangul": "수혁",
+  "gender": "M",
+  "frequency": 3791
+ },
+ {
+  "hangul": "수민",
+  "gender": "M",
+  "frequency": 3756
+ },
+ {
+  "hangul": "승찬",
+  "gender": "M",
+  "frequency": 3753
+ },
+ {
+  "hangul": "태우",
+  "gender": "M",
+  "frequency": 3750
+ },
+ {
+  "hangul": "현호",
+  "gender": "M",
+  "frequency": 3749
+ },
+ {
+  "hangul": "우찬",
+  "gender": "M",
+  "frequency": 3727
+ },
+ {
+  "hangul": "재우",
+  "gender": "M",
+  "frequency": 3725
+ },
+ {
+  "hangul": "우준",
+  "gender": "M",
+  "frequency": 3683
+ },
+ {
+  "hangul": "동욱",
+  "gender": "M",
+  "frequency": 3682
+ },
+ {
+  "hangul": "현빈",
+  "gender": "M",
+  "frequency": 3621
+ },
+ {
+  "hangul": "하성",
+  "gender": "M",
+  "frequency": 3618
+ },
+ {
+  "hangul": "주완",
+  "gender": "M",
+  "frequency": 3612
+ },
+ {
+  "hangul": "태인",
+  "gender": "M",
+  "frequency": 3594
+ },
+ {
+  "hangul": "시헌",
+  "gender": "M",
+  "frequency": 3590
+ },
+ {
+  "hangul": "효준",
+  "gender": "M",
+  "frequency": 3568
+ },
+ {
+  "hangul": "강우",
+  "gender": "M",
+  "frequency": 3557
+ },
+ {
+  "hangul": "이도",
+  "gender": "M",
+  "frequency": 3540
+ },
+ {
+  "hangul": "강현",
+  "gender": "M",
+  "frequency": 3531
+ },
+ {
+  "hangul": "준후",
+  "gender": "M",
+  "frequency": 3526
+ },
+ {
+  "hangul": "아준",
+  "gender": "M",
+  "frequency": 3515
+ },
+ {
+  "hangul": "주현",
+  "gender": "M",
+  "frequency": 3510
+ },
+ {
+  "hangul": "우영",
+  "gender": "M",
+  "frequency": 3475
+ },
+ {
+  "hangul": "유민",
+  "gender": "M",
+  "frequency": 3468
+ },
+ {
+  "hangul": "상윤",
+  "gender": "M",
+  "frequency": 3432
+ },
+ {
+  "hangul": "동우",
+  "gender": "M",
+  "frequency": 3425
+ },
+ {
+  "hangul": "준석",
+  "gender": "M",
+  "frequency": 3408
+ },
+ {
+  "hangul": "유빈",
+  "gender": "M",
+  "frequency": 3400
+ },
+ {
+  "hangul": "성우",
+  "gender": "M",
+  "frequency": 3393
+ },
+ {
+  "hangul": "도연",
+  "gender": "M",
+  "frequency": 3390
+ },
+ {
+  "hangul": "재혁",
+  "gender": "M",
+  "frequency": 3373
+ },
+ {
+  "hangul": "지용",
+  "gender": "M",
+  "frequency": 3361
+ },
+ {
+  "hangul": "형준",
+  "gender": "M",
+  "frequency": 3359
+ },
+ {
+  "hangul": "윤서",
+  "gender": "M",
+  "frequency": 3348
+ },
+ {
+  "hangul": "아인",
+  "gender": "M",
+  "frequency": 3337
+ },
+ {
+  "hangul": "인우",
+  "gender": "M",
+  "frequency": 3320
+ },
+ {
+  "hangul": "은준",
+  "gender": "M",
+  "frequency": 3317
+ },
+ {
+  "hangul": "원우",
+  "gender": "M",
+  "frequency": 3314
+ },
+ {
+  "hangul": "진호",
+  "gender": "M",
+  "frequency": 3246
+ },
+ {
+  "hangul": "신우",
+  "gender": "M",
+  "frequency": 3205
+ },
+ {
+  "hangul": "용준",
+  "gender": "M",
+  "frequency": 3153
+ },
+ {
+  "hangul": "이찬",
+  "gender": "M",
+  "frequency": 3142
+ },
+ {
+  "hangul": "승후",
+  "gender": "M",
+  "frequency": 3114
+ },
+ {
+  "hangul": "규현",
+  "gender": "M",
+  "frequency": 3112
+ },
+ {
+  "hangul": "호진",
+  "gender": "M",
+  "frequency": 3097
+ },
+ {
+  "hangul": "석현",
+  "gender": "M",
+  "frequency": 3089
+ },
+ {
+  "hangul": "동준",
+  "gender": "M",
+  "frequency": 3082
+ },
+ {
+  "hangul": "지웅",
+  "gender": "M",
+  "frequency": 3062
+ },
+ {
+  "hangul": "해준",
+  "gender": "M",
+  "frequency": 3055
+ },
+ {
+  "hangul": "준형",
+  "gender": "M",
+  "frequency": 3053
+ },
+ {
+  "hangul": "상우",
+  "gender": "M",
+  "frequency": 2987
+ },
+ {
+  "hangul": "서윤",
+  "gender": "M",
+  "frequency": 2982
+ },
+ {
+  "hangul": "지온",
+  "gender": "M",
+  "frequency": 2976
+ },
+ {
+  "hangul": "재율",
+  "gender": "M",
+  "frequency": 2949
+ },
+ {
+  "hangul": "승유",
+  "gender": "M",
+  "frequency": 2944
+ },
+ {
+  "hangul": "진혁",
+  "gender": "M",
+  "frequency": 2915
+ },
+ {
+  "hangul": "민결",
+  "gender": "M",
+  "frequency": 2856
+ },
+ {
+  "hangul": "재호",
+  "gender": "M",
+  "frequency": 2847
+ },
+ {
+  "hangul": "선율",
+  "gender": "M",
+  "frequency": 2846
+ },
+ {
+  "hangul": "하루",
+  "gender": "M",
+  "frequency": 2834
+ },
+ {
+  "hangul": "동훈",
+  "gender": "M",
+  "frequency": 2833
+ },
+ {
+  "hangul": "승환",
+  "gender": "M",
+  "frequency": 2822
+ },
+ {
+  "hangul": "은혁",
+  "gender": "M",
+  "frequency": 2816
+ },
+ {
+  "hangul": "혜성",
+  "gender": "M",
+  "frequency": 2806
+ },
+ {
+  "hangul": "대현",
+  "gender": "M",
+  "frequency": 2787
+ },
+ {
+  "hangul": "유하",
+  "gender": "M",
+  "frequency": 2784
+ },
+ {
+  "hangul": "은수",
+  "gender": "M",
+  "frequency": 2779
+ },
+ {
+  "hangul": "진서",
+  "gender": "M",
+  "frequency": 2743
+ },
+ {
+  "hangul": "세훈",
+  "gender": "M",
+  "frequency": 2733
+ },
+ {
+  "hangul": "유성",
+  "gender": "M",
+  "frequency": 2730
+ },
+ {
+  "hangul": "승주",
+  "gender": "M",
+  "frequency": 2729
+ },
+ {
+  "hangul": "여준",
+  "gender": "M",
+  "frequency": 2724
+ },
+ {
+  "hangul": "영민",
+  "gender": "M",
+  "frequency": 2715
+ },
+ {
+  "hangul": "종현",
+  "gender": "M",
+  "frequency": 2714
+ },
+ {
+  "hangul": "정빈",
+  "gender": "M",
+  "frequency": 2710
+ },
+ {
+  "hangul": "성원",
+  "gender": "M",
+  "frequency": 2705
+ },
+ {
+  "hangul": "준원",
+  "gender": "M",
+  "frequency": 2691
+ },
+ {
+  "hangul": "윤건",
+  "gender": "M",
+  "frequency": 2671
+ },
+ {
+  "hangul": "영우",
+  "gender": "M",
+  "frequency": 2669
+ },
+ {
+  "hangul": "태건",
+  "gender": "M",
+  "frequency": 2655
+ },
+ {
+  "hangul": "요한",
+  "gender": "M",
+  "frequency": 2643
+ },
+ {
+  "hangul": "노아",
+  "gender": "M",
+  "frequency": 2630
+ },
+ {
+  "hangul": "도건",
+  "gender": "M",
+  "frequency": 2629
+ },
+ {
+  "hangul": "채민",
+  "gender": "M",
+  "frequency": 2626
+ },
+ {
+  "hangul": "준현",
+  "gender": "M",
+  "frequency": 2609
+ },
+ {
+  "hangul": "우재",
+  "gender": "M",
+  "frequency": 2609
+ },
+ {
+  "hangul": "건후",
+  "gender": "M",
+  "frequency": 2603
+ },
+ {
+  "hangul": "태환",
+  "gender": "M",
+  "frequency": 2599
+ },
+ {
+  "hangul": "도운",
+  "gender": "M",
+  "frequency": 2591
+ },
+ {
+  "hangul": "한율",
+  "gender": "M",
+  "frequency": 2584
+ },
+ {
+  "hangul": "현석",
+  "gender": "M",
+  "frequency": 2582
+ },
+ {
+  "hangul": "태성",
+  "gender": "M",
+  "frequency": 2549
+ },
+ {
+  "hangul": "유담",
+  "gender": "M",
+  "frequency": 2536
+ },
+ {
+  "hangul": "서빈",
+  "gender": "M",
+  "frequency": 2530
+ },
+ {
+  "hangul": "상민",
+  "gender": "M",
+  "frequency": 2514
+ },
+ {
+  "hangul": "호연",
+  "gender": "M",
+  "frequency": 2491
+ },
+ {
+  "hangul": "시준",
+  "gender": "M",
+  "frequency": 2490
+ },
+ {
+  "hangul": "리안",
+  "gender": "M",
+  "frequency": 2489
+ },
+ {
+  "hangul": "다원",
+  "gender": "M",
+  "frequency": 2466
+ },
+ {
+  "hangul": "한울",
+  "gender": "M",
+  "frequency": 2458
+ },
+ {
+  "hangul": "동혁",
+  "gender": "M",
+  "frequency": 2455
+ },
+ {
+  "hangul": "희찬",
+  "gender": "M",
+  "frequency": 2444
+ },
+ {
+  "hangul": "동규",
+  "gender": "M",
+  "frequency": 2389
+ },
+ {
+  "hangul": "준범",
+  "gender": "M",
+  "frequency": 2388
+ },
+ {
+  "hangul": "우혁",
+  "gender": "M",
+  "frequency": 2387
+ },
+ {
+  "hangul": "성진",
+  "gender": "M",
+  "frequency": 2385
+ },
+ {
+  "hangul": "로건",
+  "gender": "M",
+  "frequency": 2366
+ },
+ {
+  "hangul": "윤수",
+  "gender": "M",
+  "frequency": 2365
+ },
+ {
+  "hangul": "건율",
+  "gender": "M",
+  "frequency": 2351
+ },
+ {
+  "hangul": "은재",
+  "gender": "M",
+  "frequency": 2347
+ },
+ {
+  "hangul": "서하",
+  "gender": "M",
+  "frequency": 2345
+ },
+ {
+  "hangul": "서현",
+  "gender": "M",
+  "frequency": 2340
+ },
+ {
+  "hangul": "해솔",
+  "gender": "M",
+  "frequency": 2338
+ },
+ {
+  "hangul": "희준",
+  "gender": "M",
+  "frequency": 2326
+ },
+ {
+  "hangul": "주형",
+  "gender": "M",
+  "frequency": 2316
+ },
+ {
+  "hangul": "찬민",
+  "gender": "M",
+  "frequency": 2303
+ },
+ {
+  "hangul": "찬율",
+  "gender": "M",
+  "frequency": 2278
+ },
+ {
+  "hangul": "세윤",
+  "gender": "M",
+  "frequency": 2252
+ },
+ {
+  "hangul": "정호",
+  "gender": "M",
+  "frequency": 2252
+ },
+ {
+  "hangul": "가람",
+  "gender": "M",
+  "frequency": 2234
+ },
+ {
+  "hangul": "세진",
+  "gender": "M",
+  "frequency": 2216
+ },
+ {
+  "hangul": "태원",
+  "gender": "M",
+  "frequency": 2209
+ },
+ {
+  "hangul": "민제",
+  "gender": "M",
+  "frequency": 2200
+ },
+ {
+  "hangul": "환희",
+  "gender": "M",
+  "frequency": 2196
+ },
+ {
+  "hangul": "경준",
+  "gender": "M",
+  "frequency": 2191
+ },
+ {
+  "hangul": "태웅",
+  "gender": "M",
+  "frequency": 2190
+ },
+ {
+  "hangul": "이수",
+  "gender": "M",
+  "frequency": 2171
+ },
+ {
+  "hangul": "연후",
+  "gender": "M",
+  "frequency": 2171
+ },
+ {
+  "hangul": "인성",
+  "gender": "M",
+  "frequency": 2149
+ },
+ {
+  "hangul": "성호",
+  "gender": "M",
+  "frequency": 2147
+ },
+ {
+  "hangul": "준민",
+  "gender": "M",
+  "frequency": 2146
+ },
+ {
+  "hangul": "해성",
+  "gender": "M",
+  "frequency": 2144
+ },
+ {
+  "hangul": "민승",
+  "gender": "M",
+  "frequency": 2136
+ },
+ {
+  "hangul": "진영",
+  "gender": "M",
+  "frequency": 2135
+ },
+ {
+  "hangul": "승혁",
+  "gender": "M",
+  "frequency": 2134
+ },
+ {
+  "hangul": "상준",
+  "gender": "M",
+  "frequency": 2132
+ },
+ {
+  "hangul": "하빈",
+  "gender": "M",
+  "frequency": 2128
+ },
+ {
+  "hangul": "승헌",
+  "gender": "M",
+  "frequency": 2127
+ },
+ {
+  "hangul": "정윤",
+  "gender": "M",
+  "frequency": 2121
+ },
+ {
+  "hangul": "재성",
+  "gender": "M",
+  "frequency": 2089
+ },
+ {
+  "hangul": "윤준",
+  "gender": "M",
+  "frequency": 2062
+ },
+ {
+  "hangul": "희성",
+  "gender": "M",
+  "frequency": 2043
+ },
+ {
+  "hangul": "주성",
+  "gender": "M",
+  "frequency": 2033
+ },
+ {
+  "hangul": "승기",
+  "gender": "M",
+  "frequency": 2033
+ },
+ {
+  "hangul": "성재",
+  "gender": "M",
+  "frequency": 2022
+ },
+ {
+  "hangul": "규원",
+  "gender": "M",
+  "frequency": 2012
+ },
+ {
+  "hangul": "선재",
+  "gender": "M",
+  "frequency": 2011
+ },
+ {
+  "hangul": "호영",
+  "gender": "M",
+  "frequency": 2007
+ },
+ {
+  "hangul": "은후",
+  "gender": "M",
+  "frequency": 2006
+ },
+ {
+  "hangul": "이담",
+  "gender": "M",
+  "frequency": 2000
+ },
+ {
+  "hangul": "한별",
+  "gender": "M",
+  "frequency": 1994
+ },
+ {
+  "hangul": "인호",
+  "gender": "M",
+  "frequency": 1982
+ },
+ {
+  "hangul": "주하",
+  "gender": "M",
+  "frequency": 1975
+ },
+ {
+  "hangul": "현규",
+  "gender": "M",
+  "frequency": 1969
+ },
+ {
+  "hangul": "리우",
+  "gender": "M",
+  "frequency": 1963
+ },
+ {
+  "hangul": "시영",
+  "gender": "M",
+  "frequency": 1961
+ },
+ {
+  "hangul": "지윤",
+  "gender": "M",
+  "frequency": 1956
+ },
+ {
+  "hangul": "준하",
+  "gender": "M",
+  "frequency": 1951
+ },
+ {
+  "hangul": "지섭",
+  "gender": "M",
+  "frequency": 1928
+ },
+ {
+  "hangul": "강준",
+  "gender": "M",
+  "frequency": 1896
+ },
+ {
+  "hangul": "진욱",
+  "gender": "M",
+  "frequency": 1895
+ },
+ {
+  "hangul": "세민",
+  "gender": "M",
+  "frequency": 1861
+ },
+ {
+  "hangul": "동연",
+  "gender": "M",
+  "frequency": 1855
+ },
+ {
+  "hangul": "현욱",
+  "gender": "M",
+  "frequency": 1852
+ },
+ {
+  "hangul": "우석",
+  "gender": "M",
+  "frequency": 1846
+ },
+ {
+  "hangul": "정환",
+  "gender": "M",
+  "frequency": 1842
+ },
+ {
+  "hangul": "로하",
+  "gender": "M",
+  "frequency": 1842
+ },
+ {
+  "hangul": "시언",
+  "gender": "M",
+  "frequency": 1833
+ },
+ {
+  "hangul": "서안",
+  "gender": "M",
+  "frequency": 1821
+ },
+ {
+  "hangul": "수빈",
+  "gender": "M",
+  "frequency": 1821
+ },
+ {
+  "hangul": "찬혁",
+  "gender": "M",
+  "frequency": 1815
+ },
+ {
+  "hangul": "창민",
+  "gender": "M",
+  "frequency": 1812
+ },
+ {
+  "hangul": "도형",
+  "gender": "M",
+  "frequency": 1803
+ },
+ {
+  "hangul": "한솔",
+  "gender": "M",
+  "frequency": 1802
+ },
+ {
+  "hangul": "준기",
+  "gender": "M",
+  "frequency": 1781
+ },
+ {
+  "hangul": "예건",
+  "gender": "M",
+  "frequency": 1775
+ },
+ {
+  "hangul": "지석",
+  "gender": "M",
+  "frequency": 1762
+ },
+ {
+  "hangul": "성찬",
+  "gender": "M",
+  "frequency": 1760
+ },
+ {
+  "hangul": "한준",
+  "gender": "M",
+  "frequency": 1754
+ },
+ {
+  "hangul": "지수",
+  "gender": "M",
+  "frequency": 1746
+ },
+ {
+  "hangul": "민후",
+  "gender": "M",
+  "frequency": 1734
+ },
+ {
+  "hangul": "도헌",
+  "gender": "M",
+  "frequency": 1721
+ },
+ {
+  "hangul": "영훈",
+  "gender": "M",
+  "frequency": 1718
+ },
+ {
+  "hangul": "명준",
+  "gender": "M",
+  "frequency": 1710
+ },
+ {
+  "hangul": "건하",
+  "gender": "M",
+  "frequency": 1703
+ },
+ {
+  "hangul": "주헌",
+  "gender": "M",
+  "frequency": 1695
+ },
+ {
+  "hangul": "태연",
+  "gender": "M",
+  "frequency": 1693
+ },
+ {
+  "hangul": "기현",
+  "gender": "M",
+  "frequency": 1693
+ },
+ {
+  "hangul": "준휘",
+  "gender": "M",
+  "frequency": 1676
+ },
+ {
+  "hangul": "상훈",
+  "gender": "M",
+  "frequency": 1661
+ },
+ {
+  "hangul": "도빈",
+  "gender": "M",
+  "frequency": 1655
+ },
+ {
+  "hangul": "재형",
+  "gender": "M",
+  "frequency": 1651
+ },
+ {
+  "hangul": "재인",
+  "gender": "M",
+  "frequency": 1647
+ },
+ {
+  "hangul": "민율",
+  "gender": "M",
+  "frequency": 1645
+ },
+ {
+  "hangul": "리한",
+  "gender": "M",
+  "frequency": 1630
+ },
+ {
+  "hangul": "시형",
+  "gender": "M",
+  "frequency": 1629
+ },
+ {
+  "hangul": "은결",
+  "gender": "M",
+  "frequency": 1627
+ },
+ {
+  "hangul": "재용",
+  "gender": "M",
+  "frequency": 1627
+ },
+ {
+  "hangul": "호윤",
+  "gender": "M",
+  "frequency": 1612
+ },
+ {
+  "hangul": "해인",
+  "gender": "M",
+  "frequency": 1611
+ },
+ {
+  "hangul": "주찬",
+  "gender": "M",
+  "frequency": 1606
+ },
+ {
+  "hangul": "예담",
+  "gender": "M",
+  "frequency": 1603
+ },
+ {
+  "hangul": "태규",
+  "gender": "M",
+  "frequency": 1592
+ },
+ {
+  "hangul": "상원",
+  "gender": "M",
+  "frequency": 1592
+ },
+ {
+  "hangul": "기범",
+  "gender": "M",
+  "frequency": 1591
+ },
+ {
+  "hangul": "진성",
+  "gender": "M",
+  "frequency": 1584
+ },
+ {
+  "hangul": "동민",
+  "gender": "M",
+  "frequency": 1570
+ },
+ {
+  "hangul": "서한",
+  "gender": "M",
+  "frequency": 1569
+ },
+ {
+  "hangul": "승연",
+  "gender": "M",
+  "frequency": 1564
+ },
+ {
+  "hangul": "현재",
+  "gender": "M",
+  "frequency": 1552
+ },
+ {
+  "hangul": "수환",
+  "gender": "M",
+  "frequency": 1547
+ },
+ {
+  "hangul": "영재",
+  "gender": "M",
+  "frequency": 1545
+ },
+ {
+  "hangul": "이진",
+  "gender": "M",
+  "frequency": 1532
+ },
+ {
+  "hangul": "태희",
+  "gender": "M",
+  "frequency": 1526
+ },
+ {
+  "hangul": "영진",
+  "gender": "M",
+  "frequency": 1526
+ },
+ {
+  "hangul": "유호",
+  "gender": "M",
+  "frequency": 1526
+ },
+ {
+  "hangul": "유신",
+  "gender": "M",
+  "frequency": 1520
+ },
+ {
+  "hangul": "동원",
+  "gender": "M",
+  "frequency": 1519
+ },
+ {
+  "hangul": "승범",
+  "gender": "M",
+  "frequency": 1517
+ },
+ {
+  "hangul": "동호",
+  "gender": "M",
+  "frequency": 1514
+ },
+ {
+  "hangul": "찬유",
+  "gender": "M",
+  "frequency": 1504
+ },
+ {
+  "hangul": "지헌",
+  "gender": "M",
+  "frequency": 1498
+ },
+ {
+  "hangul": "건영",
+  "gender": "M",
+  "frequency": 1492
+ },
+ {
+  "hangul": "준모",
+  "gender": "M",
+  "frequency": 1475
+ },
+ {
+  "hangul": "재범",
+  "gender": "M",
+  "frequency": 1468
+ },
+ {
+  "hangul": "한빈",
+  "gender": "M",
+  "frequency": 1465
+ },
+ {
+  "hangul": "유겸",
+  "gender": "M",
+  "frequency": 1438
+ },
+ {
+  "hangul": "이재",
+  "gender": "M",
+  "frequency": 1437
+ },
+ {
+  "hangul": "석준",
+  "gender": "M",
+  "frequency": 1412
+ },
+ {
+  "hangul": "민욱",
+  "gender": "M",
+  "frequency": 1400
+ },
+ {
+  "hangul": "한서",
+  "gender": "M",
+  "frequency": 1400
+ },
+ {
+  "hangul": "연재",
+  "gender": "M",
+  "frequency": 1397
+ },
+ {
+  "hangul": "태빈",
+  "gender": "M",
+  "frequency": 1395
+ },
+ {
+  "hangul": "재환",
+  "gender": "M",
+  "frequency": 1393
+ },
+ {
+  "hangul": "리호",
+  "gender": "M",
+  "frequency": 1381
+ },
+ {
+  "hangul": "연수",
+  "gender": "M",
+  "frequency": 1380
+ },
+ {
+  "hangul": "도균",
+  "gender": "M",
+  "frequency": 1378
+ },
+ {
+  "hangul": "찬빈",
+  "gender": "M",
+  "frequency": 1377
+ },
+ {
+  "hangul": "수찬",
+  "gender": "M",
+  "frequency": 1366
+ },
+ {
+  "hangul": "준환",
+  "gender": "M",
+  "frequency": 1361
+ },
+ {
+  "hangul": "재빈",
+  "gender": "M",
+  "frequency": 1361
+ },
+ {
+  "hangul": "다율",
+  "gender": "M",
+  "frequency": 1355
+ },
+ {
+  "hangul": "채우",
+  "gender": "M",
+  "frequency": 1353
+ },
+ {
+  "hangul": "진원",
+  "gender": "M",
+  "frequency": 1348
+ },
+ {
+  "hangul": "유승",
+  "gender": "M",
+  "frequency": 1346
+ },
+ {
+  "hangul": "상혁",
+  "gender": "M",
+  "frequency": 1338
+ },
+ {
+  "hangul": "영찬",
+  "gender": "M",
+  "frequency": 1331
+ },
+ {
+  "hangul": "근우",
+  "gender": "M",
+  "frequency": 1326
+ },
+ {
+  "hangul": "의준",
+  "gender": "M",
+  "frequency": 1324
+ },
+ {
+  "hangul": "희재",
+  "gender": "M",
+  "frequency": 1323
+ },
+ {
+  "hangul": "제이",
+  "gender": "M",
+  "frequency": 1320
+ },
+ {
+  "hangul": "재욱",
+  "gender": "M",
+  "frequency": 1318
+ },
+ {
+  "hangul": "준상",
+  "gender": "M",
+  "frequency": 1310
+ },
+ {
+  "hangul": "성욱",
+  "gender": "M",
+  "frequency": 1307
+ },
+ {
+  "hangul": "준이",
+  "gender": "M",
+  "frequency": 1305
+ },
+ {
+  "hangul": "경훈",
+  "gender": "M",
+  "frequency": 1305
+ },
+ {
+  "hangul": "시하",
+  "gender": "M",
+  "frequency": 1303
+ },
+ {
+  "hangul": "동주",
+  "gender": "M",
+  "frequency": 1294
+ },
+ {
+  "hangul": "동환",
+  "gender": "M",
+  "frequency": 1288
+ },
+ {
+  "hangul": "대한",
+  "gender": "M",
+  "frequency": 1286
+ },
+ {
+  "hangul": "하겸",
+  "gender": "M",
+  "frequency": 1284
+ },
+ {
+  "hangul": "은규",
+  "gender": "M",
+  "frequency": 1281
+ },
+ {
+  "hangul": "찬호",
+  "gender": "M",
+  "frequency": 1280
+ },
+ {
+  "hangul": "선준",
+  "gender": "M",
+  "frequency": 1273
+ },
+ {
+  "hangul": "지현",
+  "gender": "M",
+  "frequency": 1266
+ },
+ {
+  "hangul": "윤혁",
+  "gender": "M",
+  "frequency": 1263
+ },
+ {
+  "hangul": "강윤",
+  "gender": "M",
+  "frequency": 1261
+ },
+ {
+  "hangul": "형우",
+  "gender": "M",
+  "frequency": 1255
+ },
+ {
+  "hangul": "지유",
+  "gender": "M",
+  "frequency": 1253
+ },
+ {
+  "hangul": "도담",
+  "gender": "M",
+  "frequency": 1251
+ },
+ {
+  "hangul": "종혁",
+  "gender": "M",
+  "frequency": 1247
+ },
+ {
+  "hangul": "윤제",
+  "gender": "M",
+  "frequency": 1247
+ },
+ {
+  "hangul": "리온",
+  "gender": "M",
+  "frequency": 1244
+ },
+ {
+  "hangul": "승규",
+  "gender": "M",
+  "frequency": 1244
+ },
+ {
+  "hangul": "보겸",
+  "gender": "M",
+  "frequency": 1240
+ },
+ {
+  "hangul": "재연",
+  "gender": "M",
+  "frequency": 1234
+ },
+ {
+  "hangul": "유한",
+  "gender": "M",
+  "frequency": 1227
+ },
+ {
+  "hangul": "지욱",
+  "gender": "M",
+  "frequency": 1222
+ },
+ {
+  "hangul": "성주",
+  "gender": "M",
+  "frequency": 1218
+ },
+ {
+  "hangul": "혁준",
+  "gender": "M",
+  "frequency": 1202
+ },
+ {
+  "hangul": "준오",
+  "gender": "M",
+  "frequency": 1200
+ },
+ {
+  "hangul": "규진",
+  "gender": "M",
+  "frequency": 1200
+ },
+ {
+  "hangul": "동휘",
+  "gender": "M",
+  "frequency": 1197
+ },
+ {
+  "hangul": "범수",
+  "gender": "M",
+  "frequency": 1197
+ },
+ {
+  "hangul": "수영",
+  "gender": "M",
+  "frequency": 1187
+ },
+ {
+  "hangul": "재경",
+  "gender": "M",
+  "frequency": 1184
+ },
+ {
+  "hangul": "성하",
+  "gender": "M",
+  "frequency": 1177
+ },
+ {
+  "hangul": "창현",
+  "gender": "M",
+  "frequency": 1175
+ },
+ {
+  "hangul": "은석",
+  "gender": "M",
+  "frequency": 1175
+ },
+ {
+  "hangul": "태겸",
+  "gender": "M",
+  "frequency": 1174
+ },
+ {
+  "hangul": "인준",
+  "gender": "M",
+  "frequency": 1173
+ },
+ {
+  "hangul": "세영",
+  "gender": "M",
+  "frequency": 1172
+ },
+ {
+  "hangul": "주언",
+  "gender": "M",
+  "frequency": 1171
+ },
+ {
+  "hangul": "해온",
+  "gender": "M",
+  "frequency": 1166
+ },
+ {
+  "hangul": "성연",
+  "gender": "M",
+  "frequency": 1165
+ },
+ {
+  "hangul": "이삭",
+  "gender": "M",
+  "frequency": 1159
+ },
+ {
+  "hangul": "병준",
+  "gender": "M",
+  "frequency": 1158
+ },
+ {
+  "hangul": "로한",
+  "gender": "M",
+  "frequency": 1156
+ },
+ {
+  "hangul": "태완",
+  "gender": "M",
+  "frequency": 1154
+ },
+ {
+  "hangul": "윤석",
+  "gender": "M",
+  "frequency": 1149
+ },
+ {
+  "hangul": "채운",
+  "gender": "M",
+  "frequency": 1147
+ },
+ {
+  "hangul": "태욱",
+  "gender": "M",
+  "frequency": 1145
+ },
+ {
+  "hangul": "영광",
+  "gender": "M",
+  "frequency": 1141
+ },
+ {
+  "hangul": "경빈",
+  "gender": "M",
+  "frequency": 1140
+ },
+ {
+  "hangul": "채훈",
+  "gender": "M",
+  "frequency": 1135
+ },
+ {
+  "hangul": "정혁",
+  "gender": "M",
+  "frequency": 1132
+ },
+ {
+  "hangul": "미르",
+  "gender": "M",
+  "frequency": 1132
+ },
+ {
+  "hangul": "희원",
+  "gender": "M",
+  "frequency": 1131
+ },
+ {
+  "hangul": "우림",
+  "gender": "M",
+  "frequency": 1130
+ },
+ {
+  "hangul": "관우",
+  "gender": "M",
+  "frequency": 1129
+ },
+ {
+  "hangul": "성환",
+  "gender": "M",
+  "frequency": 1127
+ },
+ {
+  "hangul": "민영",
+  "gender": "M",
+  "frequency": 1123
+ },
+ {
+  "hangul": "종윤",
+  "gender": "M",
+  "frequency": 1119
+ },
+ {
+  "hangul": "태형",
+  "gender": "M",
+  "frequency": 1118
+ },
+ {
+  "hangul": "준용",
+  "gender": "M",
+  "frequency": 1118
+ },
+ {
+  "hangul": "로빈",
+  "gender": "M",
+  "frequency": 1110
+ },
+ {
+  "hangul": "유환",
+  "gender": "M",
+  "frequency": 1100
+ },
+ {
+  "hangul": "정욱",
+  "gender": "M",
+  "frequency": 1095
+ },
+ {
+  "hangul": "태온",
+  "gender": "M",
+  "frequency": 1091
+ },
+ {
+  "hangul": "혜준",
+  "gender": "M",
+  "frequency": 1079
+ },
+ {
+  "hangul": "우민",
+  "gender": "M",
+  "frequency": 1064
+ },
+ {
+  "hangul": "승하",
+  "gender": "M",
+  "frequency": 1060
+ },
+ {
+  "hangul": "현중",
+  "gender": "M",
+  "frequency": 1059
+ },
+ {
+  "hangul": "찬서",
+  "gender": "M",
+  "frequency": 1057
+ },
+ {
+  "hangul": "원재",
+  "gender": "M",
+  "frequency": 1056
+ },
+ {
+  "hangul": "이건",
+  "gender": "M",
+  "frequency": 1055
+ },
+ {
+  "hangul": "종우",
+  "gender": "M",
+  "frequency": 1052
+ },
+ {
+  "hangul": "선후",
+  "gender": "M",
+  "frequency": 1040
+ },
+ {
+  "hangul": "의찬",
+  "gender": "M",
+  "frequency": 1039
+ },
+ {
+  "hangul": "진수",
+  "gender": "M",
+  "frequency": 1038
+ },
+ {
+  "hangul": "루이",
+  "gender": "M",
+  "frequency": 1033
+ },
+ {
+  "hangul": "강희",
+  "gender": "M",
+  "frequency": 1031
+ },
+ {
+  "hangul": "희수",
+  "gender": "M",
+  "frequency": 1026
+ },
+ {
+  "hangul": "영웅",
+  "gender": "M",
+  "frequency": 1025
+ },
+ {
+  "hangul": "형진",
+  "gender": "M",
+  "frequency": 1024
+ },
+ {
+  "hangul": "승진",
+  "gender": "M",
+  "frequency": 1023
+ },
+ {
+  "hangul": "재헌",
+  "gender": "M",
+  "frequency": 1023
+ },
+ {
+  "hangul": "대윤",
+  "gender": "M",
+  "frequency": 1012
+ },
+ {
+  "hangul": "시혁",
+  "gender": "M",
+  "frequency": 1010
+ },
+ {
+  "hangul": "영빈",
+  "gender": "M",
+  "frequency": 1006
+ },
+ {
+  "hangul": "이환",
+  "gender": "M",
+  "frequency": 1005
+ },
+ {
+  "hangul": "예훈",
+  "gender": "M",
+  "frequency": 1003
+ },
+ {
+  "hangul": "태헌",
+  "gender": "M",
+  "frequency": 1000
+ },
+ {
+  "hangul": "요셉",
+  "gender": "M",
+  "frequency": 993
+ },
+ {
+  "hangul": "종민",
+  "gender": "M",
+  "frequency": 991
+ },
+ {
+  "hangul": "하담",
+  "gender": "M",
+  "frequency": 989
+ },
+ {
+  "hangul": "민겸",
+  "gender": "M",
+  "frequency": 988
+ },
+ {
+  "hangul": "호성",
+  "gender": "M",
+  "frequency": 986
+ },
+ {
+  "hangul": "우리",
+  "gender": "M",
+  "frequency": 984
+ },
+ {
+  "hangul": "아론",
+  "gender": "M",
+  "frequency": 982
+ },
+ {
+  "hangul": "해찬",
+  "gender": "M",
+  "frequency": 978
+ },
+ {
+  "hangul": "용우",
+  "gender": "M",
+  "frequency": 977
+ },
+ {
+  "hangul": "우솔",
+  "gender": "M",
+  "frequency": 976
+ },
+ {
+  "hangul": "승리",
+  "gender": "M",
+  "frequency": 976
+ },
+ {
+  "hangul": "찬솔",
+  "gender": "M",
+  "frequency": 975
+ },
+ {
+  "hangul": "범진",
+  "gender": "M",
+  "frequency": 972
+ },
+ {
+  "hangul": "다겸",
+  "gender": "M",
+  "frequency": 972
+ },
+ {
+  "hangul": "이레",
+  "gender": "M",
+  "frequency": 971
+ },
+ {
+  "hangul": "은유",
+  "gender": "M",
+  "frequency": 970
+ },
+ {
+  "hangul": "민형",
+  "gender": "M",
+  "frequency": 969
+ },
+ {
+  "hangul": "경원",
+  "gender": "M",
+  "frequency": 968
+ },
+ {
+  "hangul": "하엘",
+  "gender": "M",
+  "frequency": 967
+ },
+ {
+  "hangul": "의진",
+  "gender": "M",
+  "frequency": 967
+ },
+ {
+  "hangul": "윤오",
+  "gender": "M",
+  "frequency": 967
+ },
+ {
+  "hangul": "다민",
+  "gender": "M",
+  "frequency": 966
+ },
+ {
+  "hangul": "용현",
+  "gender": "M",
+  "frequency": 966
+ },
+ {
+  "hangul": "도은",
+  "gender": "M",
+  "frequency": 966
+ },
+ {
+  "hangul": "석민",
+  "gender": "M",
+  "frequency": 963
+ },
+ {
+  "hangul": "영현",
+  "gender": "M",
+  "frequency": 962
+ },
+ {
+  "hangul": "해든",
+  "gender": "M",
+  "frequency": 961
+ },
+ {
+  "hangul": "정연",
+  "gender": "M",
+  "frequency": 956
+ },
+ {
+  "hangul": "이서",
+  "gender": "M",
+  "frequency": 952
+ },
+ {
+  "hangul": "정인",
+  "gender": "M",
+  "frequency": 952
+ },
+ {
+  "hangul": "인서",
+  "gender": "M",
+  "frequency": 949
+ },
+ {
+  "hangul": "세인",
+  "gender": "M",
+  "frequency": 949
+ },
+ {
+  "hangul": "민섭",
+  "gender": "M",
+  "frequency": 947
+ },
+ {
+  "hangul": "리오",
+  "gender": "M",
+  "frequency": 942
+ },
+ {
+  "hangul": "건민",
+  "gender": "M",
+  "frequency": 941
+ },
+ {
+  "hangul": "수안",
+  "gender": "M",
+  "frequency": 938
+ },
+ {
+  "hangul": "승수",
+  "gender": "M",
+  "frequency": 933
+ },
+ {
+  "hangul": "상욱",
+  "gender": "M",
+  "frequency": 932
+ },
+ {
+  "hangul": "상진",
+  "gender": "M",
+  "frequency": 931
+ },
+ {
+  "hangul": "명진",
+  "gender": "M",
+  "frequency": 931
+ },
+ {
+  "hangul": "원호",
+  "gender": "M",
+  "frequency": 930
+ },
+ {
+  "hangul": "재후",
+  "gender": "M",
+  "frequency": 928
+ },
+ {
+  "hangul": "동후",
+  "gender": "M",
+  "frequency": 924
+ },
+ {
+  "hangul": "원석",
+  "gender": "M",
+  "frequency": 924
+ },
+ {
+  "hangul": "다훈",
+  "gender": "M",
+  "frequency": 924
+ },
+ {
+  "hangul": "다현",
+  "gender": "M",
+  "frequency": 914
+ },
+ {
+  "hangul": "현태",
+  "gender": "M",
+  "frequency": 911
+ },
+ {
+  "hangul": "지홍",
+  "gender": "M",
+  "frequency": 905
+ },
+ {
+  "hangul": "원빈",
+  "gender": "M",
+  "frequency": 905
+ },
+ {
+  "hangul": "대호",
+  "gender": "M",
+  "frequency": 905
+ },
+ {
+  "hangul": "형주",
+  "gender": "M",
+  "frequency": 904
+ },
+ {
+  "hangul": "다엘",
+  "gender": "M",
+  "frequency": 904
+ },
+ {
+  "hangul": "진후",
+  "gender": "M",
+  "frequency": 898
+ },
+ {
+  "hangul": "슬우",
+  "gender": "M",
+  "frequency": 898
+ },
+ {
+  "hangul": "태균",
+  "gender": "M",
+  "frequency": 896
+ },
+ {
+  "hangul": "제민",
+  "gender": "M",
+  "frequency": 894
+ },
+ {
+  "hangul": "기훈",
+  "gender": "M",
+  "frequency": 890
+ },
+ {
+  "hangul": "지승",
+  "gender": "M",
+  "frequency": 889
+ },
+ {
+  "hangul": "종원",
+  "gender": "M",
+  "frequency": 887
+ },
+ {
+  "hangul": "시유",
+  "gender": "M",
+  "frequency": 886
+ },
+ {
+  "hangul": "현도",
+  "gender": "M",
+  "frequency": 886
+ },
+ {
+  "hangul": "시운",
+  "gender": "M",
+  "frequency": 885
+ },
+ {
+  "hangul": "기윤",
+  "gender": "M",
+  "frequency": 885
+ },
+ {
+  "hangul": "동희",
+  "gender": "M",
+  "frequency": 884
+ },
+ {
+  "hangul": "호현",
+  "gender": "M",
+  "frequency": 880
+ },
+ {
+  "hangul": "제하",
+  "gender": "M",
+  "frequency": 879
+ },
+ {
+  "hangul": "종훈",
+  "gender": "M",
+  "frequency": 874
+ },
+ {
+  "hangul": "태산",
+  "gender": "M",
+  "frequency": 874
+ },
+ {
+  "hangul": "재아",
+  "gender": "M",
+  "frequency": 872
+ },
+ {
+  "hangul": "재웅",
+  "gender": "M",
+  "frequency": 862
+ },
+ {
+  "hangul": "의현",
+  "gender": "M",
+  "frequency": 861
+ },
+ {
+  "hangul": "준규",
+  "gender": "M",
+  "frequency": 859
+ },
+ {
+  "hangul": "준표",
+  "gender": "M",
+  "frequency": 857
+ },
+ {
+  "hangul": "진현",
+  "gender": "M",
+  "frequency": 857
+ },
+ {
+  "hangul": "이솔",
+  "gender": "M",
+  "frequency": 856
+ },
+ {
+  "hangul": "강빈",
+  "gender": "M",
+  "frequency": 856
+ },
+ {
+  "hangul": "경호",
+  "gender": "M",
+  "frequency": 854
+ },
+ {
+  "hangul": "보성",
+  "gender": "M",
+  "frequency": 853
+ },
+ {
+  "hangul": "민국",
+  "gender": "M",
+  "frequency": 851
+ },
+ {
+  "hangul": "윤상",
+  "gender": "M",
+  "frequency": 848
+ },
+ {
+  "hangul": "다빈",
+  "gender": "M",
+  "frequency": 843
+ },
+ {
+  "hangul": "채호",
+  "gender": "M",
+  "frequency": 839
+ },
+ {
+  "hangul": "정준",
+  "gender": "M",
+  "frequency": 839
+ },
+ {
+  "hangul": "루다",
+  "gender": "M",
+  "frequency": 838
+ },
+ {
+  "hangul": "주빈",
+  "gender": "M",
+  "frequency": 831
+ },
+ {
+  "hangul": "선유",
+  "gender": "M",
+  "frequency": 828
+ },
+ {
+  "hangul": "동균",
+  "gender": "M",
+  "frequency": 826
+ },
+ {
+  "hangul": "대영",
+  "gender": "M",
+  "frequency": 824
+ },
+ {
+  "hangul": "태주",
+  "gender": "M",
+  "frequency": 822
+ },
+ {
+  "hangul": "어진",
+  "gender": "M",
+  "frequency": 820
+ },
+ {
+  "hangul": "하원",
+  "gender": "M",
+  "frequency": 819
+ },
+ {
+  "hangul": "영서",
+  "gender": "M",
+  "frequency": 817
+ },
+ {
+  "hangul": "진석",
+  "gender": "M",
+  "frequency": 812
+ },
+ {
+  "hangul": "동영",
+  "gender": "M",
+  "frequency": 812
+ },
+ {
+  "hangul": "강인",
+  "gender": "M",
+  "frequency": 811
+ },
+ {
+  "hangul": "서온",
+  "gender": "M",
+  "frequency": 811
+ },
+ {
+  "hangul": "효재",
+  "gender": "M",
+  "frequency": 811
+ },
+ {
+  "hangul": "도한",
+  "gender": "M",
+  "frequency": 810
+ },
+ {
+  "hangul": "동근",
+  "gender": "M",
+  "frequency": 809
+ },
+ {
+  "hangul": "정진",
+  "gender": "M",
+  "frequency": 808
+ },
+ {
+  "hangul": "레오",
+  "gender": "M",
+  "frequency": 804
+ },
+ {
+  "hangul": "세찬",
+  "gender": "M",
+  "frequency": 803
+ },
+ {
+  "hangul": "승욱",
+  "gender": "M",
+  "frequency": 802
+ },
+ {
+  "hangul": "형민",
+  "gender": "M",
+  "frequency": 797
+ },
+ {
+  "hangul": "동진",
+  "gender": "M",
+  "frequency": 796
+ },
+ {
+  "hangul": "예승",
+  "gender": "M",
+  "frequency": 793
+ },
+ {
+  "hangul": "범서",
+  "gender": "M",
+  "frequency": 791
+ },
+ {
+  "hangul": "근호",
+  "gender": "M",
+  "frequency": 790
+ },
+ {
+  "hangul": "성율",
+  "gender": "M",
+  "frequency": 790
+ },
+ {
+  "hangul": "태유",
+  "gender": "M",
+  "frequency": 790
+ },
+ {
+  "hangul": "슬찬",
+  "gender": "M",
+  "frequency": 789
+ },
+ {
+  "hangul": "재승",
+  "gender": "M",
+  "frequency": 788
+ },
+ {
+  "hangul": "태은",
+  "gender": "M",
+  "frequency": 788
+ },
+ {
+  "hangul": "대성",
+  "gender": "M",
+  "frequency": 788
+ },
+ {
+  "hangul": "도엽",
+  "gender": "M",
+  "frequency": 787
+ },
+ {
+  "hangul": "수인",
+  "gender": "M",
+  "frequency": 786
+ },
+ {
+  "hangul": "태서",
+  "gender": "M",
+  "frequency": 783
+ },
+ {
+  "hangul": "승언",
+  "gender": "M",
+  "frequency": 782
+ },
+ {
+  "hangul": "정운",
+  "gender": "M",
+  "frequency": 776
+ },
+ {
+  "hangul": "도혁",
+  "gender": "M",
+  "frequency": 776
+ },
+ {
+  "hangul": "용진",
+  "gender": "M",
+  "frequency": 772
+ },
+ {
+  "hangul": "효민",
+  "gender": "M",
+  "frequency": 770
+ },
+ {
+  "hangul": "지형",
+  "gender": "M",
+  "frequency": 770
+ },
+ {
+  "hangul": "민균",
+  "gender": "M",
+  "frequency": 769
+ },
+ {
+  "hangul": "제현",
+  "gender": "M",
+  "frequency": 768
+ },
+ {
+  "hangul": "경환",
+  "gender": "M",
+  "frequency": 766
+ },
+ {
+  "hangul": "제윤",
+  "gender": "M",
+  "frequency": 766
+ },
+ {
+  "hangul": "진하",
+  "gender": "M",
+  "frequency": 765
+ },
+ {
+  "hangul": "규태",
+  "gender": "M",
+  "frequency": 765
+ },
+ {
+  "hangul": "윤기",
+  "gender": "M",
+  "frequency": 761
+ },
+ {
+  "hangul": "진형",
+  "gender": "M",
+  "frequency": 760
+ },
+ {
+  "hangul": "필립",
+  "gender": "M",
+  "frequency": 760
+ },
+ {
+  "hangul": "로윤",
+  "gender": "M",
+  "frequency": 759
+ },
+ {
+  "hangul": "대원",
+  "gender": "M",
+  "frequency": 758
+ },
+ {
+  "hangul": "이헌",
+  "gender": "M",
+  "frequency": 755
+ },
+ {
+  "hangul": "한빛",
+  "gender": "M",
+  "frequency": 755
+ },
+ {
+  "hangul": "두현",
+  "gender": "M",
+  "frequency": 754
+ },
+ {
+  "hangul": "태진",
+  "gender": "M",
+  "frequency": 753
+ },
+ {
+  "hangul": "도언",
+  "gender": "M",
+  "frequency": 750
+ },
+ {
+  "hangul": "정안",
+  "gender": "M",
+  "frequency": 749
+ },
+ {
+  "hangul": "민철",
+  "gender": "M",
+  "frequency": 749
+ },
+ {
+  "hangul": "선빈",
+  "gender": "M",
+  "frequency": 748
+ },
+ {
+  "hangul": "준엽",
+  "gender": "M",
+  "frequency": 746
+ },
+ {
+  "hangul": "채준",
+  "gender": "M",
+  "frequency": 746
+ },
+ {
+  "hangul": "시진",
+  "gender": "M",
+  "frequency": 746
+ },
+ {
+  "hangul": "이루",
+  "gender": "M",
+  "frequency": 744
+ },
+ {
+  "hangul": "무진",
+  "gender": "M",
+  "frequency": 743
+ },
+ {
+  "hangul": "서훈",
+  "gender": "M",
+  "frequency": 741
+ },
+ {
+  "hangul": "태후",
+  "gender": "M",
+  "frequency": 738
+ },
+ {
+  "hangul": "선민",
+  "gender": "M",
+  "frequency": 737
+ },
+ {
+  "hangul": "수한",
+  "gender": "M",
+  "frequency": 736
+ },
+ {
+  "hangul": "정수",
+  "gender": "M",
+  "frequency": 735
+ },
+ {
+  "hangul": "도환",
+  "gender": "M",
+  "frequency": 734
+ },
+ {
+  "hangul": "희우",
+  "gender": "M",
+  "frequency": 733
+ },
+ {
+  "hangul": "혁진",
+  "gender": "M",
+  "frequency": 731
+ },
+ {
+  "hangul": "영호",
+  "gender": "M",
+  "frequency": 720
+ },
+ {
+  "hangul": "채윤",
+  "gender": "M",
+  "frequency": 718
+ },
+ {
+  "hangul": "채환",
+  "gender": "M",
+  "frequency": 718
+ },
+ {
+  "hangul": "태강",
+  "gender": "M",
+  "frequency": 717
+ },
+ {
+  "hangul": "세환",
+  "gender": "M",
+  "frequency": 716
+ },
+ {
+  "hangul": "건형",
+  "gender": "M",
+  "frequency": 714
+ },
+ {
+  "hangul": "도우",
+  "gender": "M",
+  "frequency": 714
+ },
+ {
+  "hangul": "해담",
+  "gender": "M",
+  "frequency": 712
+ },
+ {
+  "hangul": "민교",
+  "gender": "M",
+  "frequency": 711
+ },
+ {
+  "hangul": "용재",
+  "gender": "M",
+  "frequency": 709
+ },
+ {
+  "hangul": "정재",
+  "gender": "M",
+  "frequency": 708
+ },
+ {
+  "hangul": "준섭",
+  "gender": "M",
+  "frequency": 708
+ },
+ {
+  "hangul": "리환",
+  "gender": "M",
+  "frequency": 706
+ },
+ {
+  "hangul": "세빈",
+  "gender": "M",
+  "frequency": 705
+ },
+ {
+  "hangul": "기준",
+  "gender": "M",
+  "frequency": 704
+ },
+ {
+  "hangul": "승완",
+  "gender": "M",
+  "frequency": 702
+ },
+ {
+  "hangul": "경현",
+  "gender": "M",
+  "frequency": 702
+ },
+ {
+  "hangul": "세원",
+  "gender": "M",
+  "frequency": 698
+ },
+ {
+  "hangul": "강호",
+  "gender": "M",
+  "frequency": 696
+ },
+ {
+  "hangul": "기찬",
+  "gender": "M",
+  "frequency": 695
+ },
+ {
+  "hangul": "주훈",
+  "gender": "M",
+  "frequency": 694
+ },
+ {
+  "hangul": "규연",
+  "gender": "M",
+  "frequency": 693
+ },
+ {
+  "hangul": "기태",
+  "gender": "M",
+  "frequency": 692
+ },
+ {
+  "hangul": "민하",
+  "gender": "M",
+  "frequency": 692
+ },
+ {
+  "hangul": "수오",
+  "gender": "M",
+  "frequency": 692
+ },
+ {
+  "hangul": "선규",
+  "gender": "M",
+  "frequency": 690
+ },
+ {
+  "hangul": "보민",
+  "gender": "M",
+  "frequency": 688
+ },
+ {
+  "hangul": "진규",
+  "gender": "M",
+  "frequency": 686
+ },
+ {
+  "hangul": "석훈",
+  "gender": "M",
+  "frequency": 683
+ },
+ {
+  "hangul": "하운",
+  "gender": "M",
+  "frequency": 677
+ },
+ {
+  "hangul": "현웅",
+  "gender": "M",
+  "frequency": 675
+ },
+ {
+  "hangul": "동빈",
+  "gender": "M",
+  "frequency": 674
+ },
+ {
+  "hangul": "승엽",
+  "gender": "M",
+  "frequency": 673
+ },
+ {
+  "hangul": "성운",
+  "gender": "M",
+  "frequency": 669
+ },
+ {
+  "hangul": "태혁",
+  "gender": "M",
+  "frequency": 667
+ },
+ {
+  "hangul": "원영",
+  "gender": "M",
+  "frequency": 664
+ },
+ {
+  "hangul": "원진",
+  "gender": "M",
+  "frequency": 660
+ },
+ {
+  "hangul": "보현",
+  "gender": "M",
+  "frequency": 660
+ },
+ {
+  "hangul": "해원",
+  "gender": "M",
+  "frequency": 658
+ },
+ {
+  "hangul": "인혁",
+  "gender": "M",
+  "frequency": 656
+ },
+ {
+  "hangul": "래원",
+  "gender": "M",
+  "frequency": 654
+ },
+ {
+  "hangul": "하음",
+  "gender": "M",
+  "frequency": 653
+ },
+ {
+  "hangul": "믿음",
+  "gender": "M",
+  "frequency": 653
+ },
+ {
+  "hangul": "호수",
+  "gender": "M",
+  "frequency": 653
+ },
+ {
+  "hangul": "강산",
+  "gender": "M",
+  "frequency": 652
+ },
+ {
+  "hangul": "재완",
+  "gender": "M",
+  "frequency": 650
+ },
+ {
+  "hangul": "재진",
+  "gender": "M",
+  "frequency": 649
+ },
+ {
+  "hangul": "석원",
+  "gender": "M",
+  "frequency": 649
+ },
+ {
+  "hangul": "채현",
+  "gender": "M",
+  "frequency": 649
+ },
+ {
+  "hangul": "희윤",
+  "gender": "M",
+  "frequency": 649
+ },
+ {
+  "hangul": "승한",
+  "gender": "M",
+  "frequency": 645
+ },
+ {
+  "hangul": "세온",
+  "gender": "M",
+  "frequency": 644
+ },
+ {
+  "hangul": "효성",
+  "gender": "M",
+  "frequency": 643
+ },
+ {
+  "hangul": "이겸",
+  "gender": "M",
+  "frequency": 642
+ },
+ {
+  "hangul": "윤민",
+  "gender": "M",
+  "frequency": 641
+ },
+ {
+  "hangul": "성혁",
+  "gender": "M",
+  "frequency": 636
+ },
+ {
+  "hangul": "승효",
+  "gender": "M",
+  "frequency": 635
+ },
+ {
+  "hangul": "정한",
+  "gender": "M",
+  "frequency": 632
+ },
+ {
+  "hangul": "규호",
+  "gender": "M",
+  "frequency": 630
+ },
+ {
+  "hangul": "병찬",
+  "gender": "M",
+  "frequency": 627
+ },
+ {
+  "hangul": "도유",
+  "gender": "M",
+  "frequency": 627
+ },
+ {
+  "hangul": "채원",
+  "gender": "M",
+  "frequency": 627
+ },
+ {
+  "hangul": "건휘",
+  "gender": "M",
+  "frequency": 625
+ },
+ {
+  "hangul": "윤겸",
+  "gender": "M",
+  "frequency": 625
+ },
+ {
+  "hangul": "광현",
+  "gender": "M",
+  "frequency": 624
+ },
+ {
+  "hangul": "루하",
+  "gender": "M",
+  "frequency": 624
+ },
+ {
+  "hangul": "무빈",
+  "gender": "M",
+  "frequency": 623
+ },
+ {
+  "hangul": "윤빈",
+  "gender": "M",
+  "frequency": 622
+ },
+ {
+  "hangul": "한성",
+  "gender": "M",
+  "frequency": 621
+ },
+ {
+  "hangul": "성규",
+  "gender": "M",
+  "frequency": 619
+ },
+ {
+  "hangul": "바다",
+  "gender": "M",
+  "frequency": 617
+ },
+ {
+  "hangul": "선웅",
+  "gender": "M",
+  "frequency": 616
+ },
+ {
+  "hangul": "효원",
+  "gender": "M",
+  "frequency": 612
+ },
+ {
+  "hangul": "누리",
+  "gender": "M",
+  "frequency": 610
+ },
+ {
+  "hangul": "서찬",
+  "gender": "M",
+  "frequency": 605
+ },
+ {
+  "hangul": "상연",
+  "gender": "M",
+  "frequency": 604
+ },
+ {
+  "hangul": "유석",
+  "gender": "M",
+  "frequency": 601
+ },
+ {
+  "hangul": "주윤",
+  "gender": "M",
+  "frequency": 601
+ },
+ {
+  "hangul": "서환",
+  "gender": "M",
+  "frequency": 600
+ },
+ {
+  "hangul": "대훈",
+  "gender": "M",
+  "frequency": 600
+ },
+ {
+  "hangul": "로아",
+  "gender": "M",
+  "frequency": 598
+ },
+ {
+  "hangul": "현종",
+  "gender": "M",
+  "frequency": 598
+ },
+ {
+  "hangul": "영후",
+  "gender": "M",
+  "frequency": 596
+ },
+ {
+  "hangul": "현율",
+  "gender": "M",
+  "frequency": 595
+ },
+ {
+  "hangul": "예현",
+  "gender": "M",
+  "frequency": 593
+ },
+ {
+  "hangul": "종호",
+  "gender": "M",
+  "frequency": 591
+ },
+ {
+  "hangul": "태수",
+  "gender": "M",
+  "frequency": 590
+ },
+ {
+  "hangul": "희승",
+  "gender": "M",
+  "frequency": 588
+ },
+ {
+  "hangul": "범석",
+  "gender": "M",
+  "frequency": 587
+ },
+ {
+  "hangul": "건욱",
+  "gender": "M",
+  "frequency": 586
+ },
+ {
+  "hangul": "강훈",
+  "gender": "M",
+  "frequency": 586
+ },
+ {
+  "hangul": "진율",
+  "gender": "M",
+  "frequency": 585
+ },
+ {
+  "hangul": "석진",
+  "gender": "M",
+  "frequency": 584
+ },
+ {
+  "hangul": "해민",
+  "gender": "M",
+  "frequency": 582
+ },
+ {
+  "hangul": "동화",
+  "gender": "M",
+  "frequency": 581
+ },
+ {
+  "hangul": "도후",
+  "gender": "M",
+  "frequency": 581
+ },
+ {
+  "hangul": "서인",
+  "gender": "M",
+  "frequency": 580
+ },
+ {
+  "hangul": "정헌",
+  "gender": "M",
+  "frequency": 580
+ },
+ {
+  "hangul": "유근",
+  "gender": "M",
+  "frequency": 580
+ },
+ {
+  "hangul": "강유",
+  "gender": "M",
+  "frequency": 579
+ },
+ {
+  "hangul": "성수",
+  "gender": "M",
+  "frequency": 578
+ },
+ {
+  "hangul": "용민",
+  "gender": "M",
+  "frequency": 577
+ },
+ {
+  "hangul": "솔민",
+  "gender": "M",
+  "frequency": 575
+ },
+ {
+  "hangul": "현기",
+  "gender": "M",
+  "frequency": 574
+ },
+ {
+  "hangul": "은오",
+  "gender": "M",
+  "frequency": 571
+ },
+ {
+  "hangul": "윤슬",
+  "gender": "M",
+  "frequency": 570
+ },
+ {
+  "hangul": "형석",
+  "gender": "M",
+  "frequency": 570
+ },
+ {
+  "hangul": "용훈",
+  "gender": "M",
+  "frequency": 567
+ },
+ {
+  "hangul": "찬휘",
+  "gender": "M",
+  "frequency": 566
+ },
+ {
+  "hangul": "태용",
+  "gender": "M",
+  "frequency": 563
+ },
+ {
+  "hangul": "재서",
+  "gender": "M",
+  "frequency": 563
+ },
+ {
+  "hangul": "이로",
+  "gender": "M",
+  "frequency": 563
+ },
+ {
+  "hangul": "예강",
+  "gender": "M",
+  "frequency": 562
+ },
+ {
+  "hangul": "하영",
+  "gender": "M",
+  "frequency": 561
+ },
+ {
+  "hangul": "세연",
+  "gender": "M",
+  "frequency": 561
+ },
+ {
+  "hangul": "은기",
+  "gender": "M",
+  "frequency": 559
+ },
+ {
+  "hangul": "용하",
+  "gender": "M",
+  "frequency": 558
+ },
+ {
+  "hangul": "동율",
+  "gender": "M",
+  "frequency": 558
+ },
+ {
+  "hangul": "현오",
+  "gender": "M",
+  "frequency": 558
+ },
+ {
+  "hangul": "해윤",
+  "gender": "M",
+  "frequency": 557
+ },
+ {
+  "hangul": "경태",
+  "gender": "M",
+  "frequency": 556
+ },
+ {
+  "hangul": "하임",
+  "gender": "M",
+  "frequency": 554
+ },
+ {
+  "hangul": "찬웅",
+  "gender": "M",
+  "frequency": 552
+ },
+ {
+  "hangul": "채완",
+  "gender": "M",
+  "frequency": 552
+ },
+ {
+  "hangul": "무성",
+  "gender": "M",
+  "frequency": 552
+ },
+ {
+  "hangul": "세하",
+  "gender": "M",
+  "frequency": 549
+ },
+ {
+  "hangul": "모건",
+  "gender": "M",
+  "frequency": 549
+ },
+ {
+  "hangul": "희건",
+  "gender": "M",
+  "frequency": 548
+ },
+ {
+  "hangul": "승운",
+  "gender": "M",
+  "frequency": 547
+ },
+ {
+  "hangul": "이산",
+  "gender": "M",
+  "frequency": 547
+ },
+ {
+  "hangul": "다윤",
+  "gender": "M",
+  "frequency": 547
+ },
+ {
+  "hangul": "은총",
+  "gender": "M",
+  "frequency": 547
+ },
+ {
+  "hangul": "예한",
+  "gender": "M",
+  "frequency": 547
+ },
+ {
+  "hangul": "민근",
+  "gender": "M",
+  "frequency": 546
+ },
+ {
+  "hangul": "지상",
+  "gender": "M",
+  "frequency": 546
+ },
+ {
+  "hangul": "규성",
+  "gender": "M",
+  "frequency": 546
+ },
+ {
+  "hangul": "민솔",
+  "gender": "M",
+  "frequency": 546
+ },
+ {
+  "hangul": "재유",
+  "gender": "M",
+  "frequency": 545
+ },
+ {
+  "hangul": "신후",
+  "gender": "M",
+  "frequency": 545
+ },
+ {
+  "hangul": "찬이",
+  "gender": "M",
+  "frequency": 544
+ },
+ {
+  "hangul": "태랑",
+  "gender": "M",
+  "frequency": 543
+ },
+ {
+  "hangul": "세종",
+  "gender": "M",
+  "frequency": 542
+ },
+ {
+  "hangul": "영인",
+  "gender": "M",
+  "frequency": 541
+ },
+ {
+  "hangul": "상빈",
+  "gender": "M",
+  "frequency": 540
+ },
+ {
+  "hangul": "찬형",
+  "gender": "M",
+  "frequency": 539
+ },
+ {
+  "hangul": "민상",
+  "gender": "M",
+  "frequency": 539
+ },
+ {
+  "hangul": "인하",
+  "gender": "M",
+  "frequency": 539
+ },
+ {
+  "hangul": "효찬",
+  "gender": "M",
+  "frequency": 538
+ },
+ {
+  "hangul": "현찬",
+  "gender": "M",
+  "frequency": 535
+ },
+ {
+  "hangul": "서형",
+  "gender": "M",
+  "frequency": 534
+ },
+ {
+  "hangul": "인후",
+  "gender": "M",
+  "frequency": 534
+ },
+ {
+  "hangul": "호빈",
+  "gender": "M",
+  "frequency": 533
+ },
+ {
+  "hangul": "상호",
+  "gender": "M",
+  "frequency": 533
+ },
+ {
+  "hangul": "채율",
+  "gender": "M",
+  "frequency": 531
+ },
+ {
+  "hangul": "마루",
+  "gender": "M",
+  "frequency": 530
+ },
+ {
+  "hangul": "도휘",
+  "gender": "M",
+  "frequency": 530
+ },
+ {
+  "hangul": "경록",
+  "gender": "M",
+  "frequency": 529
+ },
+ {
+  "hangul": "지찬",
+  "gender": "M",
+  "frequency": 527
+ },
+ {
+  "hangul": "리원",
+  "gender": "M",
+  "frequency": 526
+ },
+ {
+  "hangul": "주용",
+  "gender": "M",
+  "frequency": 526
+ },
+ {
+  "hangul": "지효",
+  "gender": "M",
+  "frequency": 524
+ },
+ {
+  "hangul": "장우",
+  "gender": "M",
+  "frequency": 524
+ },
+ {
+  "hangul": "테오",
+  "gender": "M",
+  "frequency": 522
+ },
+ {
+  "hangul": "가을",
+  "gender": "M",
+  "frequency": 522
+ },
+ {
+  "hangul": "민권",
+  "gender": "M",
+  "frequency": 518
+ },
+ {
+  "hangul": "용찬",
+  "gender": "M",
+  "frequency": 518
+ },
+ {
+  "hangul": "경찬",
+  "gender": "M",
+  "frequency": 518
+ },
+ {
+  "hangul": "원희",
+  "gender": "M",
+  "frequency": 517
+ },
+ {
+  "hangul": "유온",
+  "gender": "M",
+  "frequency": 516
+ },
+ {
+  "hangul": "윤환",
+  "gender": "M",
+  "frequency": 516
+ },
+ {
+  "hangul": "진환",
+  "gender": "M",
+  "frequency": 515
+ },
+ {
+  "hangul": "동해",
+  "gender": "M",
+  "frequency": 511
+ },
+ {
+  "hangul": "해진",
+  "gender": "M",
+  "frequency": 510
+ },
+ {
+  "hangul": "효빈",
+  "gender": "M",
+  "frequency": 508
+ },
+ {
+  "hangul": "재홍",
+  "gender": "M",
+  "frequency": 507
+ },
+ {
+  "hangul": "세호",
+  "gender": "M",
+  "frequency": 505
+ },
+ {
+  "hangul": "우형",
+  "gender": "M",
+  "frequency": 505
+ },
+ {
+  "hangul": "기원",
+  "gender": "M",
+  "frequency": 504
+ },
+ {
+  "hangul": "대연",
+  "gender": "M",
+  "frequency": 503
+ },
+ {
+  "hangul": "수완",
+  "gender": "M",
+  "frequency": 503
+ },
+ {
+  "hangul": "준식",
+  "gender": "M",
+  "frequency": 502
+ },
+ {
+  "hangul": "강율",
+  "gender": "M",
+  "frequency": 501
+ },
+ {
+  "hangul": "태한",
+  "gender": "M",
+  "frequency": 499
+ },
+ {
+  "hangul": "인수",
+  "gender": "M",
+  "frequency": 497
+ },
+ {
+  "hangul": "태리",
+  "gender": "M",
+  "frequency": 497
+ },
+ {
+  "hangul": "예온",
+  "gender": "M",
+  "frequency": 495
+ },
+ {
+  "hangul": "해율",
+  "gender": "M",
+  "frequency": 495
+ },
+ {
+  "hangul": "규담",
+  "gender": "M",
+  "frequency": 494
+ },
+ {
+  "hangul": "도완",
+  "gender": "M",
+  "frequency": 493
+ },
+ {
+  "hangul": "하울",
+  "gender": "M",
+  "frequency": 493
+ },
+ {
+  "hangul": "병현",
+  "gender": "M",
+  "frequency": 493
+ },
+ {
+  "hangul": "다인",
+  "gender": "M",
+  "frequency": 490
+ },
+ {
+  "hangul": "유원",
+  "gender": "M",
+  "frequency": 488
+ },
+ {
+  "hangul": "태운",
+  "gender": "M",
+  "frequency": 485
+ },
+ {
+  "hangul": "석우",
+  "gender": "M",
+  "frequency": 484
+ },
+ {
+  "hangul": "호재",
+  "gender": "M",
+  "frequency": 483
+ },
+ {
+  "hangul": "경모",
+  "gender": "M",
+  "frequency": 482
+ },
+ {
+  "hangul": "한겸",
+  "gender": "M",
+  "frequency": 481
+ },
+ {
+  "hangul": "인찬",
+  "gender": "M",
+  "frequency": 481
+ },
+ {
+  "hangul": "준아",
+  "gender": "M",
+  "frequency": 479
+ },
+ {
+  "hangul": "이원",
+  "gender": "M",
+  "frequency": 479
+ },
+ {
+  "hangul": "영주",
+  "gender": "M",
+  "frequency": 479
+ },
+ {
+  "hangul": "리후",
+  "gender": "M",
+  "frequency": 477
+ },
+ {
+  "hangul": "동찬",
+  "gender": "M",
+  "frequency": 477
+ },
+ {
+  "hangul": "규범",
+  "gender": "M",
+  "frequency": 477
+ },
+ {
+  "hangul": "시연",
+  "gender": "M",
+  "frequency": 476
+ },
+ {
+  "hangul": "동은",
+  "gender": "M",
+  "frequency": 476
+ },
+ {
+  "hangul": "유노",
+  "gender": "M",
+  "frequency": 474
+ },
+ {
+  "hangul": "하승",
+  "gender": "M",
+  "frequency": 474
+ },
+ {
+  "hangul": "휘성",
+  "gender": "M",
+  "frequency": 474
+ },
+ {
+  "hangul": "세웅",
+  "gender": "M",
+  "frequency": 474
+ },
+ {
+  "hangul": "이언",
+  "gender": "M",
+  "frequency": 473
+ },
+ {
+  "hangul": "태림",
+  "gender": "M",
+  "frequency": 471
+ },
+ {
+  "hangul": "진유",
+  "gender": "M",
+  "frequency": 471
+ },
+ {
+  "hangul": "요엘",
+  "gender": "M",
+  "frequency": 469
+ },
+ {
+  "hangul": "인규",
+  "gender": "M",
+  "frequency": 468
+ },
+ {
+  "hangul": "루안",
+  "gender": "M",
+  "frequency": 468
+ },
+ {
+  "hangul": "상헌",
+  "gender": "M",
+  "frequency": 468
+ },
+ {
+  "hangul": "서완",
+  "gender": "M",
+  "frequency": 468
+ },
+ {
+  "hangul": "제우",
+  "gender": "M",
+  "frequency": 468
+ },
+ {
+  "hangul": "진모",
+  "gender": "M",
+  "frequency": 467
+ },
+ {
+  "hangul": "병훈",
+  "gender": "M",
+  "frequency": 467
+ },
+ {
+  "hangul": "영환",
+  "gender": "M",
+  "frequency": 467
+ },
+ {
+  "hangul": "중현",
+  "gender": "M",
+  "frequency": 466
+ },
+ {
+  "hangul": "대경",
+  "gender": "M",
+  "frequency": 465
+ },
+ {
+  "hangul": "용빈",
+  "gender": "M",
+  "frequency": 465
+ },
+ {
+  "hangul": "도아",
+  "gender": "M",
+  "frequency": 465
+ },
+ {
+  "hangul": "영석",
+  "gender": "M",
+  "frequency": 464
+ },
+ {
+  "hangul": "종하",
+  "gender": "M",
+  "frequency": 462
+ },
+ {
+  "hangul": "다호",
+  "gender": "M",
+  "frequency": 462
+ },
+ {
+  "hangul": "성은",
+  "gender": "M",
+  "frequency": 460
+ },
+ {
+  "hangul": "광민",
+  "gender": "M",
+  "frequency": 460
+ },
+ {
+  "hangul": "연성",
+  "gender": "M",
+  "frequency": 458
+ },
+ {
+  "hangul": "승건",
+  "gender": "M",
+  "frequency": 455
+ },
+ {
+  "hangul": "명재",
+  "gender": "M",
+  "frequency": 453
+ },
+ {
+  "hangul": "강후",
+  "gender": "M",
+  "frequency": 453
+ },
+ {
+  "hangul": "호민",
+  "gender": "M",
+  "frequency": 453
+ },
+ {
+  "hangul": "휘준",
+  "gender": "M",
+  "frequency": 452
+ },
+ {
+  "hangul": "아진",
+  "gender": "M",
+  "frequency": 452
+ },
+ {
+  "hangul": "기주",
+  "gender": "M",
+  "frequency": 451
+ },
+ {
+  "hangul": "민구",
+  "gender": "M",
+  "frequency": 450
+ },
+ {
+  "hangul": "은상",
+  "gender": "M",
+  "frequency": 449
+ },
+ {
+  "hangul": "성후",
+  "gender": "M",
+  "frequency": 449
+ },
+ {
+  "hangul": "경수",
+  "gender": "M",
+  "frequency": 449
+ },
+ {
+  "hangul": "이강",
+  "gender": "M",
+  "frequency": 448
+ },
+ {
+  "hangul": "주연",
+  "gender": "M",
+  "frequency": 447
+ },
+ {
+  "hangul": "윤하",
+  "gender": "M",
+  "frequency": 447
+ },
+ {
+  "hangul": "서혁",
+  "gender": "M",
+  "frequency": 446
+ },
+ {
+  "hangul": "대환",
+  "gender": "M",
+  "frequency": 445
+ },
+ {
+  "hangul": "호찬",
+  "gender": "M",
+  "frequency": 442
+ },
+ {
+  "hangul": "제원",
+  "gender": "M",
+  "frequency": 440
+ },
+ {
+  "hangul": "찬욱",
+  "gender": "M",
+  "frequency": 440
+ },
+ {
+  "hangul": "재겸",
+  "gender": "M",
+  "frequency": 440
+ },
+ {
+  "hangul": "장현",
+  "gender": "M",
+  "frequency": 440
+ },
+ {
+  "hangul": "진웅",
+  "gender": "M",
+  "frequency": 439
+ },
+ {
+  "hangul": "여름",
+  "gender": "M",
+  "frequency": 438
+ },
+ {
+  "hangul": "지빈",
+  "gender": "M",
+  "frequency": 438
+ },
+ {
+  "hangul": "시찬",
+  "gender": "M",
+  "frequency": 438
+ },
+ {
+  "hangul": "현후",
+  "gender": "M",
+  "frequency": 437
+ },
+ {
+  "hangul": "호원",
+  "gender": "M",
+  "frequency": 436
+ },
+ {
+  "hangul": "세혁",
+  "gender": "M",
+  "frequency": 434
+ },
+ {
+  "hangul": "규하",
+  "gender": "M",
+  "frequency": 433
+ },
+ {
+  "hangul": "세율",
+  "gender": "M",
+  "frequency": 433
+ },
+ {
+  "hangul": "제훈",
+  "gender": "M",
+  "frequency": 432
+ },
+ {
+  "hangul": "동완",
+  "gender": "M",
+  "frequency": 432
+ },
+ {
+  "hangul": "대희",
+  "gender": "M",
+  "frequency": 431
+ },
+ {
+  "hangul": "대건",
+  "gender": "M",
+  "frequency": 431
+ },
+ {
+  "hangul": "재석",
+  "gender": "M",
+  "frequency": 430
+ },
+ {
+  "hangul": "서로",
+  "gender": "M",
+  "frequency": 430
+ },
+ {
+  "hangul": "준한",
+  "gender": "M",
+  "frequency": 429
+ },
+ {
+  "hangul": "무경",
+  "gender": "M",
+  "frequency": 427
+ },
+ {
+  "hangul": "상율",
+  "gender": "M",
+  "frequency": 426
+ },
+ {
+  "hangul": "다운",
+  "gender": "M",
+  "frequency": 426
+ },
+ {
+  "hangul": "라현",
+  "gender": "M",
+  "frequency": 425
+ },
+ {
+  "hangul": "이룬",
+  "gender": "M",
+  "frequency": 424
+ },
+ {
+  "hangul": "건웅",
+  "gender": "M",
+  "frequency": 424
+ },
+ {
+  "hangul": "해강",
+  "gender": "M",
+  "frequency": 423
+ },
+ {
+  "hangul": "산하",
+  "gender": "M",
+  "frequency": 423
+ },
+ {
+  "hangul": "라윤",
+  "gender": "M",
+  "frequency": 423
+ },
+ {
+  "hangul": "준명",
+  "gender": "M",
+  "frequency": 422
+ },
+ {
+  "hangul": "동헌",
+  "gender": "M",
+  "frequency": 422
+ },
+ {
+  "hangul": "찬규",
+  "gender": "M",
+  "frequency": 422
+ },
+ {
+  "hangul": "홍준",
+  "gender": "M",
+  "frequency": 421
+ },
+ {
+  "hangul": "다준",
+  "gender": "M",
+  "frequency": 420
+ },
+ {
+  "hangul": "상후",
+  "gender": "M",
+  "frequency": 420
+ },
+ {
+  "hangul": "이룸",
+  "gender": "M",
+  "frequency": 420
+ },
+ {
+  "hangul": "리현",
+  "gender": "M",
+  "frequency": 420
+ },
+ {
+  "hangul": "동재",
+  "gender": "M",
+  "frequency": 419
+ },
+ {
+  "hangul": "세헌",
+  "gender": "M",
+  "frequency": 419
+ },
+ {
+  "hangul": "치우",
+  "gender": "M",
+  "frequency": 418
+ },
+ {
+  "hangul": "지태",
+  "gender": "M",
+  "frequency": 417
+ },
+ {
+  "hangul": "다올",
+  "gender": "M",
+  "frequency": 416
+ },
+ {
+  "hangul": "예환",
+  "gender": "M",
+  "frequency": 415
+ },
+ {
+  "hangul": "현동",
+  "gender": "M",
+  "frequency": 415
+ },
+ {
+  "hangul": "진오",
+  "gender": "M",
+  "frequency": 415
+ },
+ {
+  "hangul": "원혁",
+  "gender": "M",
+  "frequency": 414
+ },
+ {
+  "hangul": "준재",
+  "gender": "M",
+  "frequency": 414
+ },
+ {
+  "hangul": "현제",
+  "gender": "M",
+  "frequency": 413
+ },
+ {
+  "hangul": "휘찬",
+  "gender": "M",
+  "frequency": 413
+ },
+ {
+  "hangul": "다솔",
+  "gender": "M",
+  "frequency": 412
+ },
+ {
+  "hangul": "예안",
+  "gender": "M",
+  "frequency": 411
+ },
+ {
+  "hangul": "민환",
+  "gender": "M",
+  "frequency": 411
+ },
+ {
+  "hangul": "용호",
+  "gender": "M",
+  "frequency": 408
+ },
+ {
+  "hangul": "이선",
+  "gender": "M",
+  "frequency": 407
+ },
+ {
+  "hangul": "장원",
+  "gender": "M",
+  "frequency": 407
+ },
+ {
+  "hangul": "라엘",
+  "gender": "M",
+  "frequency": 406
+ },
+ {
+  "hangul": "재휘",
+  "gender": "M",
+  "frequency": 405
+ },
+ {
+  "hangul": "성모",
+  "gender": "M",
+  "frequency": 405
+ },
+ {
+  "hangul": "석빈",
+  "gender": "M",
+  "frequency": 404
+ },
+ {
+  "hangul": "근영",
+  "gender": "M",
+  "frequency": 404
+ },
+ {
+  "hangul": "규환",
+  "gender": "M",
+  "frequency": 403
+ },
+ {
+  "hangul": "현모",
+  "gender": "M",
+  "frequency": 401
+ },
+ {
+  "hangul": "준경",
+  "gender": "M",
+  "frequency": 401
+ },
+ {
+  "hangul": "수하",
+  "gender": "M",
+  "frequency": 400
+ },
+ {
+  "hangul": "윤형",
+  "gender": "M",
+  "frequency": 399
+ },
+ {
+  "hangul": "동엽",
+  "gender": "M",
+  "frequency": 397
+ },
+ {
+  "hangul": "세한",
+  "gender": "M",
+  "frequency": 396
+ },
+ {
+  "hangul": "우경",
+  "gender": "M",
+  "frequency": 395
+ },
+ {
+  "hangul": "지범",
+  "gender": "M",
+  "frequency": 394
+ },
+ {
+  "hangul": "경진",
+  "gender": "M",
+  "frequency": 394
+ },
+ {
+  "hangul": "태범",
+  "gender": "M",
+  "frequency": 394
+ },
+ {
+  "hangul": "담우",
+  "gender": "M",
+  "frequency": 394
+ },
+ {
+  "hangul": "도이",
+  "gender": "M",
+  "frequency": 394
+ },
+ {
+  "hangul": "아성",
+  "gender": "M",
+  "frequency": 393
+ },
+ {
+  "hangul": "루빈",
+  "gender": "M",
+  "frequency": 393
+ },
+ {
+  "hangul": "기환",
+  "gender": "M",
+  "frequency": 392
+ },
+ {
+  "hangul": "준빈",
+  "gender": "M",
+  "frequency": 391
+ },
+ {
+  "hangul": "은택",
+  "gender": "M",
+  "frequency": 391
+ },
+ {
+  "hangul": "창우",
+  "gender": "M",
+  "frequency": 391
+ },
+ {
+  "hangul": "사랑",
+  "gender": "M",
+  "frequency": 390
+ },
+ {
+  "hangul": "현식",
+  "gender": "M",
+  "frequency": 389
+ },
+ {
+  "hangul": "우겸",
+  "gender": "M",
+  "frequency": 386
+ },
+ {
+  "hangul": "무겸",
+  "gender": "M",
+  "frequency": 386
+ },
+ {
+  "hangul": "하경",
+  "gender": "M",
+  "frequency": 386
+ },
+ {
+  "hangul": "건아",
+  "gender": "M",
+  "frequency": 385
+ },
+ {
+  "hangul": "우람",
+  "gender": "M",
+  "frequency": 385
+ },
+ {
+  "hangul": "규영",
+  "gender": "M",
+  "frequency": 384
+ },
+ {
+  "hangul": "하언",
+  "gender": "M",
+  "frequency": 382
+ },
+ {
+  "hangul": "범규",
+  "gender": "M",
+  "frequency": 381
+ },
+ {
+  "hangul": "기민",
+  "gender": "M",
+  "frequency": 381
+ },
+ {
+  "hangul": "석주",
+  "gender": "M",
+  "frequency": 380
+ },
+ {
+  "hangul": "소망",
+  "gender": "M",
+  "frequency": 379
+ },
+ {
+  "hangul": "원규",
+  "gender": "M",
+  "frequency": 378
+ },
+ {
+  "hangul": "송현",
+  "gender": "M",
+  "frequency": 377
+ },
+ {
+  "hangul": "원찬",
+  "gender": "M",
+  "frequency": 376
+ },
+ {
+  "hangul": "승제",
+  "gender": "M",
+  "frequency": 376
+ },
+ {
+  "hangul": "화랑",
+  "gender": "M",
+  "frequency": 376
+ },
+ {
+  "hangul": "민용",
+  "gender": "M",
+  "frequency": 376
+ },
+ {
+  "hangul": "영수",
+  "gender": "M",
+  "frequency": 375
+ },
+ {
+  "hangul": "라율",
+  "gender": "M",
+  "frequency": 374
+ },
+ {
+  "hangul": "윤태",
+  "gender": "M",
+  "frequency": 372
+ },
+ {
+  "hangul": "명훈",
+  "gender": "M",
+  "frequency": 372
+ },
+ {
+  "hangul": "윤규",
+  "gender": "M",
+  "frequency": 372
+ },
+ {
+  "hangul": "재운",
+  "gender": "M",
+  "frequency": 371
+ },
+ {
+  "hangul": "수겸",
+  "gender": "M",
+  "frequency": 371
+ },
+ {
+  "hangul": "창희",
+  "gender": "M",
+  "frequency": 370
+ },
+ {
+  "hangul": "영욱",
+  "gender": "M",
+  "frequency": 369
+ },
+ {
+  "hangul": "동인",
+  "gender": "M",
+  "frequency": 369
+ },
+ {
+  "hangul": "재한",
+  "gender": "M",
+  "frequency": 368
+ },
+ {
+  "hangul": "민식",
+  "gender": "M",
+  "frequency": 368
+ },
+ {
+  "hangul": "현섭",
+  "gender": "M",
+  "frequency": 368
+ },
+ {
+  "hangul": "연석",
+  "gender": "M",
+  "frequency": 368
+ },
+ {
+  "hangul": "노엘",
+  "gender": "M",
+  "frequency": 367
+ },
+ {
+  "hangul": "성범",
+  "gender": "M",
+  "frequency": 367
+ },
+ {
+  "hangul": "우연",
+  "gender": "M",
+  "frequency": 366
+ },
+ {
+  "hangul": "은빈",
+  "gender": "M",
+  "frequency": 366
+ },
+ {
+  "hangul": "권우",
+  "gender": "M",
+  "frequency": 366
+ },
+ {
+  "hangul": "정찬",
+  "gender": "M",
+  "frequency": 366
+ },
+ {
+  "hangul": "윤결",
+  "gender": "M",
+  "frequency": 366
+ },
+ {
+  "hangul": "유섭",
+  "gender": "M",
+  "frequency": 366
+ },
+ {
+  "hangul": "강혁",
+  "gender": "M",
+  "frequency": 365
+ },
+ {
+  "hangul": "다윗",
+  "gender": "M",
+  "frequency": 364
+ },
+ {
+  "hangul": "민범",
+  "gender": "M",
+  "frequency": 363
+ },
+ {
+  "hangul": "준연",
+  "gender": "M",
+  "frequency": 363
+ },
+ {
+  "hangul": "윤승",
+  "gender": "M",
+  "frequency": 362
+ },
+ {
+  "hangul": "정하",
+  "gender": "M",
+  "frequency": 362
+ },
+ {
+  "hangul": "승휘",
+  "gender": "M",
+  "frequency": 361
+ },
+ {
+  "hangul": "태휘",
+  "gender": "M",
+  "frequency": 361
+ },
+ {
+  "hangul": "민종",
+  "gender": "M",
+  "frequency": 361
+ },
+ {
+  "hangul": "아민",
+  "gender": "M",
+  "frequency": 359
+ },
+ {
+  "hangul": "래오",
+  "gender": "M",
+  "frequency": 359
+ },
+ {
+  "hangul": "상엽",
+  "gender": "M",
+  "frequency": 358
+ },
+ {
+  "hangul": "창준",
+  "gender": "M",
+  "frequency": 357
+ },
+ {
+  "hangul": "가빈",
+  "gender": "M",
+  "frequency": 357
+ },
+ {
+  "hangul": "훈민",
+  "gender": "M",
+  "frequency": 356
+ },
+ {
+  "hangul": "용주",
+  "gender": "M",
+  "frequency": 356
+ },
+ {
+  "hangul": "재찬",
+  "gender": "M",
+  "frequency": 356
+ },
+ {
+  "hangul": "해랑",
+  "gender": "M",
+  "frequency": 356
+ },
+ {
+  "hangul": "은섭",
+  "gender": "M",
+  "frequency": 355
+ },
+ {
+  "hangul": "이랑",
+  "gender": "M",
+  "frequency": 354
+ },
+ {
+  "hangul": "시오",
+  "gender": "M",
+  "frequency": 354
+ },
+ {
+  "hangul": "한영",
+  "gender": "M",
+  "frequency": 353
+ },
+ {
+  "hangul": "건이",
+  "gender": "M",
+  "frequency": 353
+ },
+ {
+  "hangul": "재익",
+  "gender": "M",
+  "frequency": 353
+ },
+ {
+  "hangul": "루한",
+  "gender": "M",
+  "frequency": 353
+ },
+ {
+  "hangul": "로원",
+  "gender": "M",
+  "frequency": 352
+ },
+ {
+  "hangul": "형찬",
+  "gender": "M",
+  "frequency": 352
+ },
+ {
+  "hangul": "선오",
+  "gender": "M",
+  "frequency": 351
+ },
+ {
+  "hangul": "종찬",
+  "gender": "M",
+  "frequency": 351
+ },
+ {
+  "hangul": "준열",
+  "gender": "M",
+  "frequency": 351
+ },
+ {
+  "hangul": "윤섭",
+  "gender": "M",
+  "frequency": 351
+ },
+ {
+  "hangul": "석호",
+  "gender": "M",
+  "frequency": 350
+ },
+ {
+  "hangul": "로현",
+  "gender": "M",
+  "frequency": 350
+ },
+ {
+  "hangul": "별하",
+  "gender": "M",
+  "frequency": 349
+ },
+ {
+  "hangul": "혁주",
+  "gender": "M",
+  "frequency": 348
+ },
+ {
+  "hangul": "찬준",
+  "gender": "M",
+  "frequency": 348
+ },
+ {
+  "hangul": "재오",
+  "gender": "M",
+  "frequency": 347
+ },
+ {
+  "hangul": "종빈",
+  "gender": "M",
+  "frequency": 347
+ },
+ {
+  "hangul": "석영",
+  "gender": "M",
+  "frequency": 347
+ },
+ {
+  "hangul": "도일",
+  "gender": "M",
+  "frequency": 346
+ },
+ {
+  "hangul": "선욱",
+  "gender": "M",
+  "frequency": 346
+ },
+ {
+  "hangul": "남우",
+  "gender": "M",
+  "frequency": 346
+ },
+ {
+  "hangul": "권율",
+  "gender": "M",
+  "frequency": 346
+ },
+ {
+  "hangul": "희상",
+  "gender": "M",
+  "frequency": 345
+ },
+ {
+  "hangul": "형빈",
+  "gender": "M",
+  "frequency": 345
+ },
+ {
+  "hangul": "진명",
+  "gender": "M",
+  "frequency": 344
+ },
+ {
+  "hangul": "제희",
+  "gender": "M",
+  "frequency": 344
+ },
+ {
+  "hangul": "소율",
+  "gender": "M",
+  "frequency": 344
+ },
+ {
+  "hangul": "한음",
+  "gender": "M",
+  "frequency": 344
+ },
+ {
+  "hangul": "시한",
+  "gender": "M",
+  "frequency": 343
+ },
+ {
+  "hangul": "래현",
+  "gender": "M",
+  "frequency": 343
+ },
+ {
+  "hangul": "진용",
+  "gender": "M",
+  "frequency": 342
+ },
+ {
+  "hangul": "동운",
+  "gender": "M",
+  "frequency": 342
+ },
+ {
+  "hangul": "민강",
+  "gender": "M",
+  "frequency": 341
+ },
+ {
+  "hangul": "수원",
+  "gender": "M",
+  "frequency": 341
+ },
+ {
+  "hangul": "희도",
+  "gender": "M",
+  "frequency": 340
+ },
+ {
+  "hangul": "은겸",
+  "gender": "M",
+  "frequency": 340
+ },
+ {
+  "hangul": "대겸",
+  "gender": "M",
+  "frequency": 339
+ },
+ {
+  "hangul": "리건",
+  "gender": "M",
+  "frequency": 338
+ },
+ {
+  "hangul": "희민",
+  "gender": "M",
+  "frequency": 338
+ },
+ {
+  "hangul": "유완",
+  "gender": "M",
+  "frequency": 337
+ },
+ {
+  "hangul": "민채",
+  "gender": "M",
+  "frequency": 337
+ },
+ {
+  "hangul": "윤진",
+  "gender": "M",
+  "frequency": 337
+ },
+ {
+  "hangul": "진솔",
+  "gender": "M",
+  "frequency": 336
+ },
+ {
+  "hangul": "창빈",
+  "gender": "M",
+  "frequency": 335
+ },
+ {
+  "hangul": "기성",
+  "gender": "M",
+  "frequency": 335
+ },
+ {
+  "hangul": "기영",
+  "gender": "M",
+  "frequency": 335
+ },
+ {
+  "hangul": "일우",
+  "gender": "M",
+  "frequency": 334
+ },
+ {
+  "hangul": "라원",
+  "gender": "M",
+  "frequency": 334
+ },
+ {
+  "hangul": "다한",
+  "gender": "M",
+  "frequency": 334
+ },
+ {
+  "hangul": "지산",
+  "gender": "M",
+  "frequency": 333
+ },
+ {
+  "hangul": "예율",
+  "gender": "M",
+  "frequency": 333
+ },
+ {
+  "hangul": "승희",
+  "gender": "M",
+  "frequency": 332
+ },
+ {
+  "hangul": "보검",
+  "gender": "M",
+  "frequency": 331
+ },
+ {
+  "hangul": "남준",
+  "gender": "M",
+  "frequency": 331
+ },
+ {
+  "hangul": "이엘",
+  "gender": "M",
+  "frequency": 330
+ },
+ {
+  "hangul": "성용",
+  "gender": "M",
+  "frequency": 330
+ },
+ {
+  "hangul": "희율",
+  "gender": "M",
+  "frequency": 330
+ },
+ {
+  "hangul": "종인",
+  "gender": "M",
+  "frequency": 330
+ },
+ {
+  "hangul": "민중",
+  "gender": "M",
+  "frequency": 328
+ },
+ {
+  "hangul": "승율",
+  "gender": "M",
+  "frequency": 328
+ },
+ {
+  "hangul": "형욱",
+  "gender": "M",
+  "frequency": 326
+ },
+ {
+  "hangul": "동한",
+  "gender": "M",
+  "frequency": 324
+ },
+ {
+  "hangul": "유주",
+  "gender": "M",
+  "frequency": 324
+ },
+ {
+  "hangul": "백호",
+  "gender": "M",
+  "frequency": 324
+ },
+ {
+  "hangul": "아람",
+  "gender": "M",
+  "frequency": 323
+ },
+ {
+  "hangul": "원율",
+  "gender": "M",
+  "frequency": 322
+ },
+ {
+  "hangul": "제영",
+  "gender": "M",
+  "frequency": 322
+ },
+ {
+  "hangul": "민현",
+  "gender": "M",
+  "frequency": 322
+ },
+ {
+  "hangul": "창훈",
+  "gender": "M",
+  "frequency": 322
+ },
+ {
+  "hangul": "지담",
+  "gender": "M",
+  "frequency": 322
+ },
+ {
+  "hangul": "승표",
+  "gender": "M",
+  "frequency": 321
+ },
+ {
+  "hangul": "규찬",
+  "gender": "M",
+  "frequency": 321
+ },
+ {
+  "hangul": "윤도",
+  "gender": "M",
+  "frequency": 321
+ },
+ {
+  "hangul": "우인",
+  "gender": "M",
+  "frequency": 321
+ },
+ {
+  "hangul": "하균",
+  "gender": "M",
+  "frequency": 321
+ },
+ {
+  "hangul": "태정",
+  "gender": "M",
+  "frequency": 320
+ },
+ {
+  "hangul": "유태",
+  "gender": "M",
+  "frequency": 320
+ },
+ {
+  "hangul": "휘서",
+  "gender": "M",
+  "frequency": 320
+ },
+ {
+  "hangul": "예람",
+  "gender": "M",
+  "frequency": 319
+ },
+ {
+  "hangul": "연서",
+  "gender": "M",
+  "frequency": 319
+ },
+ {
+  "hangul": "병우",
+  "gender": "M",
+  "frequency": 317
+ },
+ {
+  "hangul": "민주",
+  "gender": "M",
+  "frequency": 317
+ },
+ {
+  "hangul": "신유",
+  "gender": "M",
+  "frequency": 316
+ },
+ {
+  "hangul": "준선",
+  "gender": "M",
+  "frequency": 316
+ },
+ {
+  "hangul": "승오",
+  "gender": "M",
+  "frequency": 316
+ },
+ {
+  "hangul": "종욱",
+  "gender": "M",
+  "frequency": 316
+ },
+ {
+  "hangul": "리암",
+  "gender": "M",
+  "frequency": 316
+ },
+ {
+  "hangul": "건률",
+  "gender": "M",
+  "frequency": 316
+ },
+ {
+  "hangul": "승용",
+  "gender": "M",
+  "frequency": 314
+ },
+ {
+  "hangul": "경윤",
+  "gender": "M",
+  "frequency": 314
+ },
+ {
+  "hangul": "주은",
+  "gender": "M",
+  "frequency": 313
+ },
+ {
+  "hangul": "서휘",
+  "gender": "M",
+  "frequency": 313
+ },
+ {
+  "hangul": "하현",
+  "gender": "M",
+  "frequency": 312
+ },
+ {
+  "hangul": "정율",
+  "gender": "M",
+  "frequency": 312
+ },
+ {
+  "hangul": "노을",
+  "gender": "M",
+  "frequency": 311
+ },
+ {
+  "hangul": "강찬",
+  "gender": "M",
+  "frequency": 311
+ },
+ {
+  "hangul": "유수",
+  "gender": "M",
+  "frequency": 311
+ },
+ {
+  "hangul": "래온",
+  "gender": "M",
+  "frequency": 310
+ },
+ {
+  "hangul": "석환",
+  "gender": "M",
+  "frequency": 310
+ },
+ {
+  "hangul": "시욱",
+  "gender": "M",
+  "frequency": 310
+ },
+ {
+  "hangul": "진헌",
+  "gender": "M",
+  "frequency": 309
+ },
+ {
+  "hangul": "수형",
+  "gender": "M",
+  "frequency": 308
+ },
+ {
+  "hangul": "수윤",
+  "gender": "M",
+  "frequency": 308
+ },
+ {
+  "hangul": "지언",
+  "gender": "M",
+  "frequency": 308
+ },
+ {
+  "hangul": "동률",
+  "gender": "M",
+  "frequency": 306
+ },
+ {
+  "hangul": "형규",
+  "gender": "M",
+  "frequency": 305
+ },
+ {
+  "hangul": "병민",
+  "gender": "M",
+  "frequency": 305
+ },
+ {
+  "hangul": "정완",
+  "gender": "M",
+  "frequency": 304
+ },
+ {
+  "hangul": "성제",
+  "gender": "M",
+  "frequency": 304
+ },
+ {
+  "hangul": "재상",
+  "gender": "M",
+  "frequency": 304
+ },
+ {
+  "hangul": "수연",
+  "gender": "M",
+  "frequency": 304
+ },
+ {
+  "hangul": "병윤",
+  "gender": "M",
+  "frequency": 304
+ },
+ {
+  "hangul": "남규",
+  "gender": "M",
+  "frequency": 301
+ },
+ {
+  "hangul": "호건",
+  "gender": "M",
+  "frequency": 301
+ },
+ {
+  "hangul": "태석",
+  "gender": "M",
+  "frequency": 300
+ },
+ {
+  "hangul": "병호",
+  "gender": "M",
+  "frequency": 300
+ },
+ {
+  "hangul": "에녹",
+  "gender": "M",
+  "frequency": 300
+ },
+ {
+  "hangul": "태언",
+  "gender": "M",
+  "frequency": 300
+ },
+ {
+  "hangul": "유상",
+  "gender": "M",
+  "frequency": 300
+ },
+ {
+  "hangul": "지명",
+  "gender": "M",
+  "frequency": 300
+ },
+ {
+  "hangul": "한주",
+  "gender": "M",
+  "frequency": 299
+ },
+ {
+  "hangul": "주승",
+  "gender": "M",
+  "frequency": 299
+ },
+ {
+  "hangul": "호경",
+  "gender": "M",
+  "frequency": 299
+ },
+ {
+  "hangul": "은솔",
+  "gender": "M",
+  "frequency": 299
+ },
+ {
+  "hangul": "범찬",
+  "gender": "M",
+  "frequency": 299
+ },
+ {
+  "hangul": "한선",
+  "gender": "M",
+  "frequency": 299
+ },
+ {
+  "hangul": "운찬",
+  "gender": "M",
+  "frequency": 298
+ },
+ {
+  "hangul": "준승",
+  "gender": "M",
+  "frequency": 298
+ },
+ {
+  "hangul": "은서",
+  "gender": "M",
+  "frequency": 297
+ },
+ {
+  "hangul": "찬열",
+  "gender": "M",
+  "frequency": 297
+ },
+ {
+  "hangul": "연오",
+  "gender": "M",
+  "frequency": 297
+ },
+ {
+  "hangul": "준홍",
+  "gender": "M",
+  "frequency": 297
+ },
+ {
+  "hangul": "효승",
+  "gender": "M",
+  "frequency": 296
+ },
+ {
+  "hangul": "하림",
+  "gender": "M",
+  "frequency": 295
+ },
+ {
+  "hangul": "윤솔",
+  "gender": "M",
+  "frequency": 294
+ },
+ {
+  "hangul": "찬수",
+  "gender": "M",
+  "frequency": 291
+ },
+ {
+  "hangul": "민유",
+  "gender": "M",
+  "frequency": 290
+ },
+ {
+  "hangul": "민진",
+  "gender": "M",
+  "frequency": 290
+ },
+ {
+  "hangul": "문성",
+  "gender": "M",
+  "frequency": 290
+ },
+ {
+  "hangul": "용성",
+  "gender": "M",
+  "frequency": 289
+ },
+ {
+  "hangul": "우정",
+  "gender": "M",
+  "frequency": 289
+ },
+ {
+  "hangul": "규혁",
+  "gender": "M",
+  "frequency": 289
+ },
+ {
+  "hangul": "태승",
+  "gender": "M",
+  "frequency": 288
+ },
+ {
+  "hangul": "주율",
+  "gender": "M",
+  "frequency": 288
+ },
+ {
+  "hangul": "우제",
+  "gender": "M",
+  "frequency": 287
+ },
+ {
+  "hangul": "현겸",
+  "gender": "M",
+  "frequency": 287
+ },
+ {
+  "hangul": "영원",
+  "gender": "M",
+  "frequency": 287
+ },
+ {
+  "hangul": "태일",
+  "gender": "M",
+  "frequency": 286
+ },
+ {
+  "hangul": "푸름",
+  "gender": "M",
+  "frequency": 286
+ },
+ {
+  "hangul": "동권",
+  "gender": "M",
+  "frequency": 285
+ },
+ {
+  "hangul": "영하",
+  "gender": "M",
+  "frequency": 284
+ },
+ {
+  "hangul": "명현",
+  "gender": "M",
+  "frequency": 284
+ },
+ {
+  "hangul": "태섭",
+  "gender": "M",
+  "frequency": 283
+ },
+ {
+  "hangul": "호승",
+  "gender": "M",
+  "frequency": 282
+ },
+ {
+  "hangul": "예하",
+  "gender": "M",
+  "frequency": 282
+ },
+ {
+  "hangul": "영운",
+  "gender": "M",
+  "frequency": 281
+ },
+ {
+  "hangul": "찬주",
+  "gender": "M",
+  "frequency": 281
+ },
+ {
+  "hangul": "보석",
+  "gender": "M",
+  "frequency": 280
+ },
+ {
+  "hangul": "효석",
+  "gender": "M",
+  "frequency": 280
+ },
+ {
+  "hangul": "승안",
+  "gender": "M",
+  "frequency": 280
+ },
+ {
+  "hangul": "승모",
+  "gender": "M",
+  "frequency": 279
+ },
+ {
+  "hangul": "상범",
+  "gender": "M",
+  "frequency": 279
+ },
+ {
+  "hangul": "무현",
+  "gender": "M",
+  "frequency": 278
+ },
+ {
+  "hangul": "주엽",
+  "gender": "M",
+  "frequency": 278
+ },
+ {
+  "hangul": "병주",
+  "gender": "M",
+  "frequency": 278
+ },
+ {
+  "hangul": "서언",
+  "gender": "M",
+  "frequency": 278
+ },
+ {
+  "hangul": "성균",
+  "gender": "M",
+  "frequency": 278
+ },
+ {
+  "hangul": "순우",
+  "gender": "M",
+  "frequency": 277
+ },
+ {
+  "hangul": "현택",
+  "gender": "M",
+  "frequency": 277
+ },
+ {
+  "hangul": "채빈",
+  "gender": "M",
+  "frequency": 277
+ },
+ {
+  "hangul": "단율",
+  "gender": "M",
+  "frequency": 276
+ },
+ {
+  "hangul": "찬현",
+  "gender": "M",
+  "frequency": 275
+ },
+ {
+  "hangul": "태근",
+  "gender": "M",
+  "frequency": 275
+ },
+ {
+  "hangul": "도민",
+  "gender": "M",
+  "frequency": 274
+ },
+ {
+  "hangul": "우승",
+  "gender": "M",
+  "frequency": 274
+ },
+ {
+  "hangul": "나율",
+  "gender": "M",
+  "frequency": 273
+ },
+ {
+  "hangul": "경우",
+  "gender": "M",
+  "frequency": 273
+ },
+ {
+  "hangul": "승균",
+  "gender": "M",
+  "frequency": 273
+ },
+ {
+  "hangul": "의성",
+  "gender": "M",
+  "frequency": 272
+ },
+ {
+  "hangul": "현채",
+  "gender": "M",
+  "frequency": 272
+ },
+ {
+  "hangul": "찬슬",
+  "gender": "M",
+  "frequency": 272
+ },
+ {
+  "hangul": "한민",
+  "gender": "M",
+  "frequency": 272
+ },
+ {
+  "hangul": "정규",
+  "gender": "M",
+  "frequency": 271
+ },
+ {
+  "hangul": "예겸",
+  "gender": "M",
+  "frequency": 271
+ },
+ {
+  "hangul": "승철",
+  "gender": "M",
+  "frequency": 270
+ },
+ {
+  "hangul": "예호",
+  "gender": "M",
+  "frequency": 270
+ },
+ {
+  "hangul": "무영",
+  "gender": "M",
+  "frequency": 270
+ },
+ {
+  "hangul": "보승",
+  "gender": "M",
+  "frequency": 269
+ },
+ {
+  "hangul": "루오",
+  "gender": "M",
+  "frequency": 268
+ },
+ {
+  "hangul": "경률",
+  "gender": "M",
+  "frequency": 268
+ },
+ {
+  "hangul": "은률",
+  "gender": "M",
+  "frequency": 268
+ },
+ {
+  "hangul": "제준",
+  "gender": "M",
+  "frequency": 267
+ },
+ {
+  "hangul": "채성",
+  "gender": "M",
+  "frequency": 267
+ },
+ {
+  "hangul": "경서",
+  "gender": "M",
+  "frequency": 267
+ },
+ {
+  "hangul": "유재",
+  "gender": "M",
+  "frequency": 267
+ },
+ {
+  "hangul": "신율",
+  "gender": "M",
+  "frequency": 266
+ },
+ {
+  "hangul": "한희",
+  "gender": "M",
+  "frequency": 266
+ },
+ {
+  "hangul": "건오",
+  "gender": "M",
+  "frequency": 266
+ },
+ {
+  "hangul": "찬진",
+  "gender": "M",
+  "frequency": 266
+ },
+ {
+  "hangul": "찬후",
+  "gender": "M",
+  "frequency": 265
+ },
+ {
+  "hangul": "재은",
+  "gender": "M",
+  "frequency": 265
+ },
+ {
+  "hangul": "종환",
+  "gender": "M",
+  "frequency": 265
+ },
+ {
+  "hangul": "민오",
+  "gender": "M",
+  "frequency": 264
+ },
+ {
+  "hangul": "종연",
+  "gender": "M",
+  "frequency": 264
+ },
+ {
+  "hangul": "라준",
+  "gender": "M",
+  "frequency": 264
+ },
+ {
+  "hangul": "재온",
+  "gender": "M",
+  "frequency": 264
+ },
+ {
+  "hangul": "성일",
+  "gender": "M",
+  "frequency": 263
+ },
+ {
+  "hangul": "형서",
+  "gender": "M",
+  "frequency": 263
+ },
+ {
+  "hangul": "수훈",
+  "gender": "M",
+  "frequency": 263
+ },
+ {
+  "hangul": "한승",
+  "gender": "M",
+  "frequency": 262
+ },
+ {
+  "hangul": "동언",
+  "gender": "M",
+  "frequency": 262
+ },
+ {
+  "hangul": "문수",
+  "gender": "M",
+  "frequency": 262
+ },
+ {
+  "hangul": "승태",
+  "gender": "M",
+  "frequency": 262
+ },
+ {
+  "hangul": "우담",
+  "gender": "M",
+  "frequency": 261
+ },
+ {
+  "hangul": "주오",
+  "gender": "M",
+  "frequency": 261
+ },
+ {
+  "hangul": "신혁",
+  "gender": "M",
+  "frequency": 261
+ },
+ {
+  "hangul": "보경",
+  "gender": "M",
+  "frequency": 261
+ },
+ {
+  "hangul": "종범",
+  "gender": "M",
+  "frequency": 260
+ },
+ {
+  "hangul": "준일",
+  "gender": "M",
+  "frequency": 260
+ },
+ {
+  "hangul": "기웅",
+  "gender": "M",
+  "frequency": 260
+ },
+ {
+  "hangul": "호석",
+  "gender": "M",
+  "frequency": 259
+ },
+ {
+  "hangul": "준태",
+  "gender": "M",
+  "frequency": 259
+ },
+ {
+  "hangul": "찬용",
+  "gender": "M",
+  "frequency": 259
+ },
+ {
+  "hangul": "건혁",
+  "gender": "M",
+  "frequency": 259
+ },
+ {
+  "hangul": "동수",
+  "gender": "M",
+  "frequency": 259
+ },
+ {
+  "hangul": "석찬",
+  "gender": "M",
+  "frequency": 258
+ },
+ {
+  "hangul": "세운",
+  "gender": "M",
+  "frequency": 258
+ },
+ {
+  "hangul": "하선",
+  "gender": "M",
+  "frequency": 258
+ },
+ {
+  "hangul": "이연",
+  "gender": "M",
+  "frequency": 257
+ },
+ {
+  "hangul": "수성",
+  "gender": "M",
+  "frequency": 256
+ },
+ {
+  "hangul": "백현",
+  "gender": "M",
+  "frequency": 255
+ },
+ {
+  "hangul": "한이",
+  "gender": "M",
+  "frequency": 255
+ },
+ {
+  "hangul": "이음",
+  "gender": "M",
+  "frequency": 254
+ },
+ {
+  "hangul": "효진",
+  "gender": "M",
+  "frequency": 254
+ },
+ {
+  "hangul": "하솔",
+  "gender": "M",
+  "frequency": 253
+ },
+ {
+  "hangul": "태린",
+  "gender": "M",
+  "frequency": 253
+ },
+ {
+  "hangul": "율찬",
+  "gender": "M",
+  "frequency": 253
+ },
+ {
+  "hangul": "윤범",
+  "gender": "M",
+  "frequency": 253
+ },
+ {
+  "hangul": "성헌",
+  "gender": "M",
+  "frequency": 252
+ },
+ {
+  "hangul": "나단",
+  "gender": "M",
+  "frequency": 252
+ },
+ {
+  "hangul": "병욱",
+  "gender": "M",
+  "frequency": 252
+ },
+ {
+  "hangul": "현근",
+  "gender": "M",
+  "frequency": 251
+ },
+ {
+  "hangul": "석희",
+  "gender": "M",
+  "frequency": 251
+ },
+ {
+  "hangul": "준겸",
+  "gender": "M",
+  "frequency": 251
+ },
+ {
+  "hangul": "소울",
+  "gender": "M",
+  "frequency": 250
+ },
+ {
+  "hangul": "기백",
+  "gender": "M",
+  "frequency": 250
+ },
+ {
+  "hangul": "명호",
+  "gender": "M",
+  "frequency": 249
+ },
+ {
+  "hangul": "진표",
+  "gender": "M",
+  "frequency": 249
+ },
+ {
+  "hangul": "지음",
+  "gender": "M",
+  "frequency": 249
+ },
+ {
+  "hangul": "수범",
+  "gender": "M",
+  "frequency": 249
+ },
+ {
+  "hangul": "병헌",
+  "gender": "M",
+  "frequency": 249
+ },
+ {
+  "hangul": "성태",
+  "gender": "M",
+  "frequency": 249
+ },
+ {
+  "hangul": "상운",
+  "gender": "M",
+  "frequency": 248
+ },
+ {
+  "hangul": "규헌",
+  "gender": "M",
+  "frequency": 247
+ },
+ {
+  "hangul": "성한",
+  "gender": "M",
+  "frequency": 246
+ },
+ {
+  "hangul": "희서",
+  "gender": "M",
+  "frequency": 245
+ },
+ {
+  "hangul": "시열",
+  "gender": "M",
+  "frequency": 244
+ },
+ {
+  "hangul": "동유",
+  "gender": "M",
+  "frequency": 244
+ },
+ {
+  "hangul": "채혁",
+  "gender": "M",
+  "frequency": 243
+ },
+ {
+  "hangul": "민창",
+  "gender": "M",
+  "frequency": 243
+ },
+ {
+  "hangul": "상은",
+  "gender": "M",
+  "frequency": 242
+ },
+ {
+  "hangul": "부건",
+  "gender": "M",
+  "frequency": 242
+ },
+ {
+  "hangul": "찬윤",
+  "gender": "M",
+  "frequency": 242
+ },
+ {
+  "hangul": "현구",
+  "gender": "M",
+  "frequency": 242
+ },
+ {
+  "hangul": "윤철",
+  "gender": "M",
+  "frequency": 242
+ },
+ {
+  "hangul": "명규",
+  "gender": "M",
+  "frequency": 241
+ },
+ {
+  "hangul": "우섭",
+  "gender": "M",
+  "frequency": 241
+ },
+ {
+  "hangul": "교빈",
+  "gender": "M",
+  "frequency": 241
+ },
+ {
+  "hangul": "경욱",
+  "gender": "M",
+  "frequency": 240
+ },
+ {
+  "hangul": "재건",
+  "gender": "M",
+  "frequency": 239
+ },
+ {
+  "hangul": "윤영",
+  "gender": "M",
+  "frequency": 239
+ },
+ {
+  "hangul": "서헌",
+  "gender": "M",
+  "frequency": 239
+ },
+ {
+  "hangul": "형원",
+  "gender": "M",
+  "frequency": 238
+ },
+ {
+  "hangul": "주열",
+  "gender": "M",
+  "frequency": 238
+ },
+ {
+  "hangul": "재정",
+  "gender": "M",
+  "frequency": 238
+ },
+ {
+  "hangul": "기호",
+  "gender": "M",
+  "frequency": 238
+ },
+ {
+  "hangul": "규한",
+  "gender": "M",
+  "frequency": 237
+ },
+ {
+  "hangul": "정효",
+  "gender": "M",
+  "frequency": 237
+ },
+ {
+  "hangul": "용수",
+  "gender": "M",
+  "frequency": 237
+ },
+ {
+  "hangul": "부겸",
+  "gender": "M",
+  "frequency": 236
+ },
+ {
+  "hangul": "연욱",
+  "gender": "M",
+  "frequency": 236
+ },
+ {
+  "hangul": "주명",
+  "gender": "M",
+  "frequency": 236
+ },
+ {
+  "hangul": "새벽",
+  "gender": "M",
+  "frequency": 236
+ },
+ {
+  "hangul": "도희",
+  "gender": "M",
+  "frequency": 235
+ },
+ {
+  "hangul": "수용",
+  "gender": "M",
+  "frequency": 235
+ },
+ {
+  "hangul": "하린",
+  "gender": "M",
+  "frequency": 234
+ },
+ {
+  "hangul": "민관",
+  "gender": "M",
+  "frequency": 234
+ },
+ {
+  "hangul": "진한",
+  "gender": "M",
+  "frequency": 233
+ },
+ {
+  "hangul": "지인",
+  "gender": "M",
+  "frequency": 233
+ },
+ {
+  "hangul": "준협",
+  "gender": "M",
+  "frequency": 233
+ },
+ {
+  "hangul": "정주",
+  "gender": "M",
+  "frequency": 232
+ },
+ {
+  "hangul": "서담",
+  "gender": "M",
+  "frequency": 231
+ },
+ {
+  "hangul": "주온",
+  "gender": "M",
+  "frequency": 231
+ },
+ {
+  "hangul": "수아",
+  "gender": "M",
+  "frequency": 231
+ },
+ {
+  "hangul": "차민",
+  "gender": "M",
+  "frequency": 231
+ },
+ {
+  "hangul": "보근",
+  "gender": "M",
+  "frequency": 231
+ },
+ {
+  "hangul": "근형",
+  "gender": "M",
+  "frequency": 230
+ },
+ {
+  "hangul": "지구",
+  "gender": "M",
+  "frequency": 230
+ },
+ {
+  "hangul": "명우",
+  "gender": "M",
+  "frequency": 230
+ },
+ {
+  "hangul": "힘찬",
+  "gender": "M",
+  "frequency": 229
+ },
+ {
+  "hangul": "희제",
+  "gender": "M",
+  "frequency": 229
+ },
+ {
+  "hangul": "윤식",
+  "gender": "M",
+  "frequency": 229
+ },
+ {
+  "hangul": "종석",
+  "gender": "M",
+  "frequency": 229
+ },
+ {
+  "hangul": "용희",
+  "gender": "M",
+  "frequency": 229
+ },
+ {
+  "hangul": "영윤",
+  "gender": "M",
+  "frequency": 229
+ },
+ {
+  "hangul": "희태",
+  "gender": "M",
+  "frequency": 229
+ },
+ {
+  "hangul": "카이",
+  "gender": "M",
+  "frequency": 228
+ },
+ {
+  "hangul": "태관",
+  "gender": "M",
+  "frequency": 228
+ },
+ {
+  "hangul": "철민",
+  "gender": "M",
+  "frequency": 228
+ },
+ {
+  "hangul": "이정",
+  "gender": "M",
+  "frequency": 227
+ },
+ {
+  "hangul": "이윤",
+  "gender": "M",
+  "frequency": 227
+ },
+ {
+  "hangul": "오현",
+  "gender": "M",
+  "frequency": 227
+ },
+ {
+  "hangul": "준헌",
+  "gender": "M",
+  "frequency": 227
+ },
+ {
+  "hangul": "장호",
+  "gender": "M",
+  "frequency": 227
+ },
+ {
+  "hangul": "근후",
+  "gender": "M",
+  "frequency": 226
+ },
+ {
+  "hangul": "준화",
+  "gender": "M",
+  "frequency": 226
+ },
+ {
+  "hangul": "정범",
+  "gender": "M",
+  "frequency": 226
+ },
+ {
+  "hangul": "강한",
+  "gender": "M",
+  "frequency": 226
+ },
+ {
+  "hangul": "연규",
+  "gender": "M",
+  "frequency": 225
+ },
+ {
+  "hangul": "하은",
+  "gender": "M",
+  "frequency": 225
+ },
+ {
+  "hangul": "담율",
+  "gender": "M",
+  "frequency": 224
+ },
+ {
+  "hangul": "기연",
+  "gender": "M",
+  "frequency": 224
+ },
+ {
+  "hangul": "찬하",
+  "gender": "M",
+  "frequency": 223
+ },
+ {
+  "hangul": "기율",
+  "gender": "M",
+  "frequency": 223
+ },
+ {
+  "hangul": "해수",
+  "gender": "M",
+  "frequency": 223
+ },
+ {
+  "hangul": "주민",
+  "gender": "M",
+  "frequency": 222
+ },
+ {
+  "hangul": "율호",
+  "gender": "M",
+  "frequency": 221
+ },
+ {
+  "hangul": "유솔",
+  "gender": "M",
+  "frequency": 221
+ },
+ {
+  "hangul": "재언",
+  "gender": "M",
+  "frequency": 221
+ },
+ {
+  "hangul": "정석",
+  "gender": "M",
+  "frequency": 221
+ },
+ {
+  "hangul": "호림",
+  "gender": "M",
+  "frequency": 221
+ },
+ {
+  "hangul": "아율",
+  "gender": "M",
+  "frequency": 221
+ },
+ {
+  "hangul": "혜찬",
+  "gender": "M",
+  "frequency": 220
+ },
+ {
+  "hangul": "태권",
+  "gender": "M",
+  "frequency": 220
+ },
+ {
+  "hangul": "설민",
+  "gender": "M",
+  "frequency": 220
+ },
+ {
+  "hangul": "담현",
+  "gender": "M",
+  "frequency": 220
+ },
+ {
+  "hangul": "창윤",
+  "gender": "M",
+  "frequency": 220
+ },
+ {
+  "hangul": "예서",
+  "gender": "M",
+  "frequency": 220
+ },
+ {
+  "hangul": "연승",
+  "gender": "M",
+  "frequency": 220
+ },
+ {
+  "hangul": "진홍",
+  "gender": "M",
+  "frequency": 219
+ },
+ {
+  "hangul": "리윤",
+  "gender": "M",
+  "frequency": 219
+ },
+ {
+  "hangul": "채하",
+  "gender": "M",
+  "frequency": 219
+ },
+ {
+  "hangul": "승일",
+  "gender": "M",
+  "frequency": 219
+ },
+ {
+  "hangul": "세형",
+  "gender": "M",
+  "frequency": 218
+ },
+ {
+  "hangul": "휘영",
+  "gender": "M",
+  "frequency": 218
+ },
+ {
+  "hangul": "우원",
+  "gender": "M",
+  "frequency": 218
+ },
+ {
+  "hangul": "세중",
+  "gender": "M",
+  "frequency": 218
+ },
+ {
+  "hangul": "시아",
+  "gender": "M",
+  "frequency": 218
+ },
+ {
+  "hangul": "대웅",
+  "gender": "M",
+  "frequency": 216
+ },
+ {
+  "hangul": "선진",
+  "gender": "M",
+  "frequency": 216
+ },
+ {
+  "hangul": "명성",
+  "gender": "M",
+  "frequency": 216
+ },
+ {
+  "hangul": "서유",
+  "gender": "M",
+  "frequency": 215
+ },
+ {
+  "hangul": "재선",
+  "gender": "M",
+  "frequency": 215
+ },
+ {
+  "hangul": "연제",
+  "gender": "M",
+  "frequency": 215
+ },
+ {
+  "hangul": "서겸",
+  "gender": "M",
+  "frequency": 215
+ },
+ {
+  "hangul": "명환",
+  "gender": "M",
+  "frequency": 215
+ },
+ {
+  "hangul": "산들",
+  "gender": "M",
+  "frequency": 215
+ },
+ {
+  "hangul": "건준",
+  "gender": "M",
+  "frequency": 215
+ }
+]

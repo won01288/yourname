@@ -137,6 +137,9 @@ export type Gender = "M" | "F";
 export interface GivenNameEntry {
   hangul: string;
   frequency: number;
+  // 2026.8.2 — 추천 시 약간의 가중치를 줄 이름인지(기존 상위 300개 + 신규 풀 상위 500개,
+  // etc/build_final_given_names.py). 생략 시 false로 취급(기존 테스트 mock 호환).
+  isFeatured?: boolean;
 }
 
 // Phase 7 — 이름 점수 확인 서비스(CLAUDE.md 3.10). 이미 정해진 이름을 채점한다 — 후보 생성(Candidate)과
