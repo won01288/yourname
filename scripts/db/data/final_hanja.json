@@ -46,8 +46,8 @@
   "radicalIndex": 9,
   "meaning": "to have one's heart won; to submit, admire, etc. sincerely and willingly, (interchangeable 懾) to fear; to dread; to be scared of",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): dread / 참고: to have one's heart won; to submit, admire, etc. sincerely and willingly, (interchangeable 懾) to fear; to dread; to be scared of",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -408,8 +408,8 @@
   "radicalIndex": 38,
   "meaning": "a word to designate woman, a word of revile used to call a woman",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): revile / 참고: a word to designate woman, a word of revile used to call a woman",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -661,8 +661,8 @@
   "radicalIndex": 61,
   "meaning": "(ancient form of 恕) to forgive; to pardon, (ancient form 怒) anger; wrath; indignation; rage",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anger / 참고: (ancient form of 恕) to forgive; to pardon, (ancient form 怒) anger; wrath; indignation; rage",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -715,8 +715,8 @@
   "radicalIndex": 61,
   "meaning": "disappointed; to fail in attaining one's purpose; to be disappointed in attaining the ambitions, to be surprised; to be amazed; to marvel, to think; to consider; to ponder; to contemplate, to expect or hope with eagerness, a credit, straightforward; faithful and upright, to reprimand; to discipline; to punish",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): punish / 참고: disappointed; to fail in attaining one's purpose; to be disappointed in attaining the ambitions, to be surprised; to be amazed; to marvel, to think; to consider; to ponder; to contemplate, to expect or hope with eagerness, a credit, straightforward; faithful and upright, to reprimand; to discipline; to punish",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -860,8 +860,8 @@
   "radicalIndex": 61,
   "meaning": "to exaggerate; exaggeration, arrogant; showing wild imagination; preposterously fantastic, without ambition; discourage",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): arrogant / 참고: to exaggerate; exaggeration, arrogant; showing wild imagination; preposterously fantastic, without ambition; discourage",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -915,8 +915,8 @@
   "radicalIndex": 61,
   "meaning": "(same as 愋) talented; intelligent; wise wisdom; knowledge, to resent; to hate, to regret",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): resent / 참고: (same as 愋) talented; intelligent; wise wisdom; knowledge, to resent; to hate, to regret",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -1529,8 +1529,8 @@
   "radicalIndex": 76,
   "meaning": "glad; joyful; happy, avaricious; greedy, cold",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): greedy / 참고: glad; joyful; happy, avaricious; greedy, cold",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -2738,8 +2738,8 @@
   "radicalIndex": 130,
   "meaning": "dim moon, dark; obscure, stupid; ignorant, to cheat; to hide the truth, to cover up; to hide, plump; fleshy",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): cheat / 참고: dim moon, dark; obscure, stupid; ignorant, to cheat; to hide the truth, to cover up; to hide, plump; fleshy",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -2903,8 +2903,8 @@
   "radicalIndex": 148,
   "meaning": "horns, middle of the horn, (same as 歹) bad; wicked; depraved; vicious",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): wicked / 참고: horns, middle of the horn, (same as 歹) bad; wicked; depraved; vicious",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -2957,8 +2957,8 @@
   "radicalIndex": 149,
   "meaning": "(same as 咒) to curse; to swear",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): curse / 참고: (same as 咒) to curse; to swear",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -3029,8 +3029,8 @@
   "radicalIndex": 149,
   "meaning": "to think of; to remember (someone), to read out aloud, loquacious, guttural sound, noise; uproar; turmoil",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): turmoil / 참고: to think of; to remember (someone), to read out aloud, loquacious, guttural sound, noise; uproar; turmoil",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -3066,8 +3066,8 @@
   "radicalIndex": 149,
   "meaning": "(same as 謾) to deceive, to scorn; to disdain",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): deceive / 참고: (same as 謾) to deceive, to scorn; to disdain",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -3102,8 +3102,8 @@
   "radicalIndex": 149,
   "meaning": "to follow; to comply with, to refute; to rebuke; to accuse",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rebuke / 참고: to follow; to comply with, to refute; to rebuke; to accuse",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -3123,8 +3123,8 @@
   "radicalIndex": 149,
   "meaning": "(ancient form) chaos; distraction; confusion, confused, continuous; uninterrupted; to tie together, to manage",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): confusion / 참고: (ancient form) chaos; distraction; confusion, confused, continuous; uninterrupted; to tie together, to manage",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -4591,8 +4591,8 @@
   "radicalIndex": 4,
   "meaning": "rebel; crafty, shrewd",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rebel / 참고: rebel; crafty, shrewd",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -5569,8 +5569,8 @@
   "radicalIndex": 9,
   "meaning": "enemy, hate, hatred, enmity",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): hatred / 참고: enemy, hate, hatred, enmity",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -6165,8 +6165,8 @@
   "radicalIndex": 9,
   "meaning": "nervous, fearful",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): fearful / 참고: nervous, fearful",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -7176,8 +7176,8 @@
   "radicalIndex": 9,
   "meaning": "depend upon; support; go against; (variant deceive)",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): deceive / 참고: depend upon; support; go against; (variant deceive)",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -8931,8 +8931,8 @@
   "radicalIndex": 9,
   "meaning": "stubborn, obstinate, intransigent; firm",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 딱딱할 / 참고: 매칭 키워드: 딱딱할",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -10701,8 +10701,8 @@
   "radicalIndex": 9,
   "meaning": "slave, servant, I",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): slave / 참고: slave, servant, I",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -11606,8 +11606,8 @@
   "radicalIndex": 9,
   "meaning": "obstinate; stupid; uneven; mix",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): stupid / 참고: obstinate; stupid; uneven; mix",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -12149,8 +12149,8 @@
   "radicalIndex": 10,
   "meaning": "fearful, cautious, wary",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): fearful / 참고: fearful, cautious, wary",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -12727,8 +12727,8 @@
   "radicalIndex": 14,
   "meaning": "burial mound, mausoleum; grand",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 무덤 / 참고: 매칭 키워드: 무덤",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13671,8 +13671,8 @@
   "radicalIndex": 18,
   "meaning": "cutting off feet as form of punishment",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): punishment / 참고: cutting off feet as form of punishment",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13762,8 +13762,8 @@
   "radicalIndex": 18,
   "meaning": "take by force, coerce; disaster",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disaster / 참고: take by force, coerce; disaster",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13780,8 +13780,8 @@
   "radicalIndex": 18,
   "meaning": "disaster, misfortune; coerce",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disaster / 참고: disaster, misfortune; coerce",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -13799,8 +13799,8 @@
   "radicalIndex": 18,
   "meaning": "gains, advantage, profit, merit",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 날카로울 / 참고: 매칭 키워드: 날카로울",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -14505,8 +14505,8 @@
   "radicalIndex": 18,
   "meaning": "sharpen; carefully, thorough",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 낫 / 참고: 매칭 키워드: 낫",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -14578,8 +14578,8 @@
   "radicalIndex": 18,
   "meaning": "rob, plunder; slice off; fast",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rob / 참고: rob, plunder; slice off; fast",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -14978,8 +14978,8 @@
   "radicalIndex": 19,
   "meaning": "take by force, coerce; disaster",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disaster / 참고: take by force, coerce; disaster",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -15503,8 +15503,8 @@
   "radicalIndex": 19,
   "meaning": "destroy, exterminate, annihilate",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): destroy / 참고: destroy, exterminate, annihilate",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16011,8 +16011,8 @@
   "radicalIndex": 21,
   "meaning": "spoon; surname",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 숟가락 / 참고: 매칭 키워드: 숟가락",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -16155,8 +16155,8 @@
   "radicalIndex": 22,
   "meaning": "a coffin containing a corpse",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): corpse / 참고: a coffin containing a corpse",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -17131,8 +17131,8 @@
   "radicalIndex": 27,
   "meaning": "mingle with; toilet, lavatory",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 뒷간 / 참고: 매칭 키워드: 뒷간",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -18487,8 +18487,8 @@
   "radicalIndex": 30,
   "meaning": "'OM'; bellow; (Cant.) dull, stupid",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): stupid / 참고: 'OM'; bellow; (Cant.) dull, stupid",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -18778,8 +18778,8 @@
   "radicalIndex": 30,
   "meaning": "curse, damn, incantation",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): curse / 참고: curse, damn, incantation",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -18832,8 +18832,8 @@
   "radicalIndex": 30,
   "meaning": "to slander, revile",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): revile / 참고: to slander, revile",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -19571,8 +19571,8 @@
   "radicalIndex": 30,
   "meaning": "coax; beguile, cheat, deceive",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): deceive / 참고: coax; beguile, cheat, deceive",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -19897,8 +19897,8 @@
   "radicalIndex": 30,
   "meaning": "choke (with grief)",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): grief / 참고: choke (with grief)",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -20042,8 +20042,8 @@
   "radicalIndex": 30,
   "meaning": "weep or sob; grieve",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): grieve / 참고: weep or sob; grieve",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -20295,8 +20295,8 @@
   "radicalIndex": 30,
   "meaning": "speaking evil; gobbling sound made by ducks",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): evil / 참고: speaking evil; gobbling sound made by ducks",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -20331,8 +20331,8 @@
   "radicalIndex": 30,
   "meaning": "gnaw; (Cant.) to shout, yell, scold",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): scold / 참고: gnaw; (Cant.) to shout, yell, scold",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -20368,8 +20368,8 @@
   "radicalIndex": 30,
   "meaning": "to peck; (Cant.) to slander",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): slander / 참고: to peck; (Cant.) to slander",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -21270,8 +21270,8 @@
   "radicalIndex": 30,
   "meaning": "eat seeds; reproach; loquacious",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): reproach / 참고: eat seeds; reproach; loquacious",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -22318,8 +22318,8 @@
   "radicalIndex": 30,
   "meaning": "swallow, gulp down; greedy",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): greedy / 참고: swallow, gulp down; greedy",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -22753,8 +22753,8 @@
   "radicalIndex": 30,
   "meaning": "be noisy; treat with contempt",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): contempt / 참고: be noisy; treat with contempt",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23042,8 +23042,8 @@
   "radicalIndex": 31,
   "meaning": "inveigle, decoy; cheat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): cheat / 참고: inveigle, decoy; cheat",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23097,8 +23097,8 @@
   "radicalIndex": 31,
   "meaning": "prison, enclosure",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): prison / 참고: prison, enclosure",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23187,8 +23187,8 @@
   "radicalIndex": 31,
   "meaning": "pig-sty; privy",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 뒷간 / 참고: 매칭 키워드: 뒷간",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23296,8 +23296,8 @@
   "radicalIndex": 31,
   "meaning": "rest room",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 뒷간 / 참고: 매칭 키워드: 뒷간",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23820,8 +23820,8 @@
   "radicalIndex": 32,
   "meaning": "collapse; landslide",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): collapse / 참고: collapse; landslide",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -23856,8 +23856,8 @@
   "radicalIndex": 32,
   "meaning": "rotten, spoilt, bad, broken down",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rotten / 참고: rotten, spoilt, bad, broken down",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -24325,8 +24325,8 @@
   "radicalIndex": 32,
   "meaning": "a field; used in place names",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 항아리 / 참고: 매칭 키워드: 항아리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -24721,8 +24721,8 @@
   "radicalIndex": 32,
   "meaning": "castle; city, town; municipality",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 보루 / 참고: 매칭 키워드: 보루",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -25136,8 +25136,8 @@
   "radicalIndex": 32,
   "meaning": "cave, hole",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 굴뚝 / 참고: 매칭 키워드: 굴뚝",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -25767,8 +25767,8 @@
   "radicalIndex": 32,
   "meaning": "grave, tomb, cemetery",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 무덤 / 참고: 매칭 키워드: 무덤",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -25785,8 +25785,8 @@
   "radicalIndex": 32,
   "meaning": "fall in ruins, collapse",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): collapse / 참고: fall in ruins, collapse",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -25984,8 +25984,8 @@
   "radicalIndex": 32,
   "meaning": "stop up, block, seal, cork; pass, frontier; fortress",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 변방 / 참고: 매칭 키워드: 변방",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -26364,8 +26364,8 @@
   "radicalIndex": 32,
   "meaning": "grave, tomb",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 무덤 / 참고: 매칭 키워드: 무덤",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -26814,8 +26814,8 @@
   "radicalIndex": 32,
   "meaning": "press; oppress; crush; pressure",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): oppress / 참고: press; oppress; crush; pressure",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -27592,8 +27592,8 @@
   "radicalIndex": 37,
   "meaning": "young, fresh-looking; die young",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): die / 참고: young, fresh-looking; die young",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -28136,8 +28136,8 @@
   "radicalIndex": 37,
   "meaning": "take by force, rob, snatch",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rob / 참고: take by force, rob, snatch",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -28190,8 +28190,8 @@
   "radicalIndex": 37,
   "meaning": "red; anger; ire; surname",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anger / 참고: red; anger; ire; surname",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -28226,8 +28226,8 @@
   "radicalIndex": 37,
   "meaning": "anger",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anger / 참고: anger",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -28446,8 +28446,8 @@
   "radicalIndex": 38,
   "meaning": "absurd, foolish, reckless; false",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): foolish / 참고: absurd, foolish, reckless; false",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -28554,8 +28554,8 @@
   "radicalIndex": 38,
   "meaning": "jealous, envious",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): jealous / 참고: jealous, envious",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -28842,8 +28842,8 @@
   "radicalIndex": 38,
   "meaning": "jealous, envious",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): jealous / 참고: jealous, envious",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -31212,8 +31212,8 @@
   "radicalIndex": 38,
   "meaning": "lust after, act indecently; lewd",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): lewd / 참고: lust after, act indecently; lewd",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -31230,8 +31230,8 @@
   "radicalIndex": 38,
   "meaning": "be jealous of, be envious",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): jealous / 참고: be jealous of, be envious",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -32442,8 +32442,8 @@
   "radicalIndex": 38,
   "meaning": "frolic, play with; flirt with; (Cant.) angry",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): angry / 참고: frolic, play with; flirt with; (Cant.) angry",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -33075,8 +33075,8 @@
   "radicalIndex": 39,
   "meaning": "misfortune; sin, evil",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): evil / 참고: misfortune; sin, evil",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -34504,8 +34504,8 @@
   "radicalIndex": 41,
   "meaning": "subdue, destroy, overcome",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): destroy / 참고: subdue, destroy, overcome",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -34846,8 +34846,8 @@
   "radicalIndex": 44,
   "meaning": "corpse; to impersonate the dead; to preside; Kangxi radical 44",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): dead / 참고: corpse; to impersonate the dead; to preside; Kangxi radical 44",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -35010,8 +35010,8 @@
   "radicalIndex": 44,
   "meaning": "break wind; fart; buttocks",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생리현상(자동스캔): 방귀 / 참고: 매칭 키워드: 방귀",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -38410,8 +38410,8 @@
   "radicalIndex": 50,
   "meaning": null,
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 걸레 / 참고: 매칭 키워드: 걸레",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -40707,8 +40707,8 @@
   "radicalIndex": 55,
   "meaning": "evil, wrong, bad; criminal",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): evil / 참고: evil, wrong, bad; criminal",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -40761,8 +40761,8 @@
   "radicalIndex": 56,
   "meaning": "to kill one's superior",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): kill / 참고: to kill one's superior",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -41699,8 +41699,8 @@
   "radicalIndex": 60,
   "meaning": "go, advance; to; die",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): die / 참고: go, advance; to; die",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -42496,8 +42496,8 @@
   "radicalIndex": 61,
   "meaning": "jealous, envious; fear",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): jealous / 참고: jealous, envious; fear",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -43133,8 +43133,8 @@
   "radicalIndex": 61,
   "meaning": "a disease resembling neurosis",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disease / 참고: a disease resembling neurosis",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -43278,8 +43278,8 @@
   "radicalIndex": 61,
   "meaning": "to grieve; sorrowful",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): grieve / 참고: to grieve; sorrowful",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -43405,8 +43405,8 @@
   "radicalIndex": 61,
   "meaning": "shy, timid, bashful; look ashamed",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): timid / 참고: shy, timid, bashful; look ashamed",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -43441,8 +43441,8 @@
   "radicalIndex": 61,
   "meaning": "lacking in courage, afraid",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): afraid / 참고: lacking in courage, afraid",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -43477,8 +43477,8 @@
   "radicalIndex": 61,
   "meaning": "be anxious, be grieved, be sad",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anxious / 참고: be anxious, be grieved, be sad",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -44689,8 +44689,8 @@
   "radicalIndex": 61,
   "meaning": "fearful, apprehensive, perturbed",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): fearful / 참고: fearful, apprehensive, perturbed",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -44725,8 +44725,8 @@
   "radicalIndex": 61,
   "meaning": "grieve, mourn, lament; grieved",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): grieve / 참고: grieve, mourn, lament; grieved",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -44798,8 +44798,8 @@
   "radicalIndex": 61,
   "meaning": "long for; hungry",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): hungry / 참고: long for; hungry",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -44925,8 +44925,8 @@
   "radicalIndex": 61,
   "meaning": "avaricious; greedy cold",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): greedy / 참고: avaricious; greedy cold",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -45270,8 +45270,8 @@
   "radicalIndex": 61,
   "meaning": "afraid, apprehensive, nervous",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): afraid / 참고: afraid, apprehensive, nervous",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -45288,8 +45288,8 @@
   "radicalIndex": 61,
   "meaning": "fearful, afraid, anxious, nervous",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anxious / 참고: fearful, afraid, anxious, nervous",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -45306,8 +45306,8 @@
   "radicalIndex": 61,
   "meaning": "wriggle; stupid; silly; fat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): stupid / 참고: wriggle; stupid; silly; fat",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -45414,8 +45414,8 @@
   "radicalIndex": 61,
   "meaning": "to change one's countenance, be anxious; to blush",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anxious / 참고: to change one's countenance, be anxious; to blush",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -45739,8 +45739,8 @@
   "radicalIndex": 61,
   "meaning": "timid, apprehensive",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): timid / 참고: timid, apprehensive",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -45975,8 +45975,8 @@
   "radicalIndex": 61,
   "meaning": "anger, wrath, hatred, enmity",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): hatred / 참고: anger, wrath, hatred, enmity",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -46102,8 +46102,8 @@
   "radicalIndex": 61,
   "meaning": "to resent; contended; satisfied",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): resent / 참고: to resent; contended; satisfied",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -46264,8 +46264,8 @@
   "radicalIndex": 61,
   "meaning": "sad, pitiful, wretched; cruel",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): cruel / 참고: sad, pitiful, wretched; cruel",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -46318,8 +46318,8 @@
   "radicalIndex": 61,
   "meaning": "do evil in secret; evil, vice",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): evil / 참고: do evil in secret; evil, vice",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -46336,8 +46336,8 @@
   "radicalIndex": 61,
   "meaning": "sadness, grief; mourn; be moved",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): grief / 참고: sadness, grief; mourn; be moved",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -46607,8 +46607,8 @@
   "radicalIndex": 61,
   "meaning": "fear; terrified, fearful; fear",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): fearful / 참고: fear; terrified, fearful; fear",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -46788,8 +46788,8 @@
   "radicalIndex": 61,
   "meaning": "foolish, stupid, dull, silly",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): foolish / 참고: foolish, stupid, dull, silly",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47005,8 +47005,8 @@
   "radicalIndex": 61,
   "meaning": "dread, shrink from, shirk, fear",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): dread / 참고: dread, shrink from, shirk, fear",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47023,8 +47023,8 @@
   "radicalIndex": 61,
   "meaning": "resent, hate; indignant",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): resent / 참고: resent, hate; indignant",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47113,8 +47113,8 @@
   "radicalIndex": 61,
   "meaning": "pity, sympathize with, grieve for",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): grieve / 참고: pity, sympathize with, grieve for",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47329,8 +47329,8 @@
   "radicalIndex": 61,
   "meaning": "anxious, distressed",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anxious / 참고: anxious, distressed",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47491,8 +47491,8 @@
   "radicalIndex": 61,
   "meaning": "be afraid of, be awed by, be in awe",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): afraid / 참고: be afraid of, be awed by, be in awe",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47599,8 +47599,8 @@
   "radicalIndex": 61,
   "meaning": "be sick at heart, sorrowful, sad",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): sick / 참고: be sick at heart, sorrowful, sad",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47690,8 +47690,8 @@
   "radicalIndex": 61,
   "meaning": "punish, reprimand; warn",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): punish / 참고: punish, reprimand; warn",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47781,8 +47781,8 @@
   "radicalIndex": 61,
   "meaning": "fear, be afraid of, dread",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): afraid / 참고: fear, be afraid of, dread",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47890,8 +47890,8 @@
   "radicalIndex": 62,
   "meaning": "halberd, spear, lance; rad. 62",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -47944,8 +47944,8 @@
   "radicalIndex": 62,
   "meaning": "defend borders, guard frontiers",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 수자리 / 참고: 매칭 키워드: 수자리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -48106,8 +48106,8 @@
   "radicalIndex": 62,
   "meaning": "subjugate, subdue, quell; kill",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): kill / 참고: subjugate, subdue, quell; kill",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -48324,8 +48324,8 @@
   "radicalIndex": 62,
   "meaning": "a halberd",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -49568,8 +49568,8 @@
   "radicalIndex": 64,
   "meaning": "lean on; post; prod; ridicule",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): ridicule / 참고: lean on; post; prod; ridicule",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -49604,8 +49604,8 @@
   "radicalIndex": 64,
   "meaning": "to break up, split apart, rip open; to destroy",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): destroy / 참고: to break up, split apart, rip open; to destroy",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -49932,8 +49932,8 @@
   "radicalIndex": 64,
   "meaning": "stupid, clumsy, crude; convention",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): stupid / 참고: stupid, clumsy, crude; convention",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -50130,8 +50130,8 @@
   "radicalIndex": 64,
   "meaning": "torture and interrogate; hit",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): torture / 참고: torture and interrogate; hit",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -51580,8 +51580,8 @@
   "radicalIndex": 64,
   "meaning": "rob, ransack, plunder; pass by",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rob / 참고: rob, ransack, plunder; pass by",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -52246,8 +52246,8 @@
   "radicalIndex": 64,
   "meaning": "make fun of, ridicule",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): ridicule / 참고: make fun of, ridicule",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -52300,8 +52300,8 @@
   "radicalIndex": 64,
   "meaning": "knock; pick out; ridicule",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): ridicule / 참고: knock; pick out; ridicule",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -52660,8 +52660,8 @@
   "radicalIndex": 64,
   "meaning": "plunder, rob, take by force",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rob / 참고: plunder, rob, take by force",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -52933,8 +52933,8 @@
   "radicalIndex": 64,
   "meaning": "destroy, break, injure",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): destroy / 참고: destroy, break, injure",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -53550,8 +53550,8 @@
   "radicalIndex": 64,
   "meaning": "flog, whip; chastise; (Cant.) classifier for places; a tart (from the English 'tart')",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): flog / 참고: flog, whip; chastise; (Cant.) classifier for places; a tart (from the English 'tart')",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -55071,8 +55071,8 @@
   "radicalIndex": 66,
   "meaning": "break, destroy; broken, tattered",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): destroy / 참고: break, destroy; broken, tattered",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -55704,8 +55704,8 @@
   "radicalIndex": 69,
   "meaning": "to scold, upbraid, accuse, reproach",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): scold / 참고: to scold, upbraid, accuse, reproach",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -55740,8 +55740,8 @@
   "radicalIndex": 69,
   "meaning": "axe, hatchet; chop, hew",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 도끼 / 참고: 매칭 키워드: 도끼",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -56319,8 +56319,8 @@
   "radicalIndex": 72,
   "meaning": "drought; dry; dry land",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 가물 / 참고: 매칭 키워드: 가물",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -60192,8 +60192,8 @@
   "radicalIndex": 75,
   "meaning": "decayed, rotten; rot, decay",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): decay / 참고: decayed, rotten; rot, decay",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -60792,8 +60792,8 @@
   "radicalIndex": 75,
   "meaning": "to kill; a spear",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): kill / 참고: to kill; a spear",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -60937,8 +60937,8 @@
   "radicalIndex": 75,
   "meaning": "useless, in vain; bent, crooked",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): vain / 참고: useless, in vain; bent, crooked",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -61571,8 +61571,8 @@
   "radicalIndex": 75,
   "meaning": "holly",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 방망이 / 참고: 매칭 키워드: 방망이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -61896,8 +61896,8 @@
   "radicalIndex": 75,
   "meaning": "coffin which contains corpse",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): corpse / 참고: coffin which contains corpse",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -63270,8 +63270,8 @@
   "radicalIndex": 75,
   "meaning": "an owl; thus, something evil",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): evil / 참고: an owl; thus, something evil",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -63652,8 +63652,8 @@
   "radicalIndex": 75,
   "meaning": "stick, cudgel; scoundrel",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 몽둥이 / 참고: 매칭 키워드: 몽둥이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -63688,8 +63688,8 @@
   "radicalIndex": 75,
   "meaning": "stick, club, truncheon; hit",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 몽둥이 / 참고: 매칭 키워드: 몽둥이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -63886,8 +63886,8 @@
   "radicalIndex": 75,
   "meaning": "tally or wooden pass",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -64266,8 +64266,8 @@
   "radicalIndex": 75,
   "meaning": "hammer, mallet; vertebra",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 쇠몽둥이 / 참고: 매칭 키워드: 쇠몽둥이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -65747,8 +65747,8 @@
   "radicalIndex": 75,
   "meaning": "wither; withered, rotten, dead",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): dead / 참고: wither; withered, rotten, dead",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -65765,8 +65765,8 @@
   "radicalIndex": 75,
   "meaning": "tray; turn, rotate; search",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 쟁반 / 참고: 매칭 키워드: 쟁반",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -65801,8 +65801,8 @@
   "radicalIndex": 75,
   "meaning": "spear, lance",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -65837,8 +65837,8 @@
   "radicalIndex": 75,
   "meaning": "hammer, mallet; strike, beat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 몽둥이 / 참고: 매칭 키워드: 몽둥이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -65855,8 +65855,8 @@
   "radicalIndex": 75,
   "meaning": "spear, lance; gun, rifle",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -67557,8 +67557,8 @@
   "radicalIndex": 75,
   "meaning": "block of wood; blockhead; stupid",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): stupid / 참고: block of wood; blockhead; stupid",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -68215,8 +68215,8 @@
   "radicalIndex": 76,
   "meaning": "owe, lack, be deficient; Kangxi radical 76",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생리현상(자동스캔): 하품 / 참고: 매칭 키워드: 하품",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69117,8 +69117,8 @@
   "radicalIndex": 78,
   "meaning": "die young, die prematurely",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): die / 참고: die young, die prematurely",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69387,8 +69387,8 @@
   "radicalIndex": 78,
   "meaning": "a stiff corpse",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): corpse / 참고: a stiff corpse",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69406,8 +69406,8 @@
   "radicalIndex": 78,
   "meaning": "dress corpse for burial",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): corpse / 참고: dress corpse for burial",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69460,8 +69460,8 @@
   "radicalIndex": 79,
   "meaning": "name of old weapon; kill; rad. 79",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): kill / 참고: name of old weapon; kill; rad. 79",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69587,8 +69587,8 @@
   "radicalIndex": 79,
   "meaning": "destroy, ruin, injure; slander",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): destroy / 참고: destroy, ruin, injure; slander",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69605,8 +69605,8 @@
   "radicalIndex": 79,
   "meaning": "destroy",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): destroy / 참고: destroy",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -69839,8 +69839,8 @@
   "radicalIndex": 81,
   "meaning": "cunning; greedy; crafty",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): greedy / 참고: cunning; greedy; crafty",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -70505,8 +70505,8 @@
   "radicalIndex": 85,
   "meaning": "filthy, dirty, impure, polluted",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): filthy / 참고: filthy, dirty, impure, polluted",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -70794,8 +70794,8 @@
   "radicalIndex": 85,
   "meaning": "excessive; scour, wash out",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 미끄러울 / 참고: 매칭 키워드: 미끄러울",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -71120,8 +71120,8 @@
   "radicalIndex": 85,
   "meaning": "chaotic, confused; turbid, murky",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): chaotic / 참고: chaotic, confused; turbid, murky",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -71483,8 +71483,8 @@
   "radicalIndex": 85,
   "meaning": "foul and poisonous in confusion; out of harmony",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): confusion / 참고: foul and poisonous in confusion; out of harmony",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -71735,8 +71735,8 @@
   "radicalIndex": 85,
   "meaning": "licentious, libertine, dissipated",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): licentious / 참고: licentious, libertine, dissipated",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -72262,8 +72262,8 @@
   "radicalIndex": 85,
   "meaning": "destroy, eliminate; perish",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): destroy / 참고: destroy, eliminate; perish",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -76845,8 +76845,8 @@
   "radicalIndex": 85,
   "meaning": "downpour; river in Shaanxi",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 장마 / 참고: 매칭 키워드: 장마",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -77588,8 +77588,8 @@
   "radicalIndex": 85,
   "meaning": "soak, steep; sodden, soaked; rotten; foam, froth",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rotten / 참고: soak, steep; sodden, soaked; rotten; foam, froth",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -78714,8 +78714,8 @@
   "radicalIndex": 85,
   "meaning": "astringent; harsh; uneven, rough",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 떫을 / 참고: 매칭 키워드: 떫을",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -79550,8 +79550,8 @@
   "radicalIndex": 85,
   "meaning": "wet, moist, humid, damp; an illness",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): illness / 참고: wet, moist, humid, damp; an illness",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -81225,8 +81225,8 @@
   "radicalIndex": 86,
   "meaning": "calamity, disaster, catastrophe",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): calamity / 참고: calamity, disaster, catastrophe",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -81915,8 +81915,8 @@
   "radicalIndex": 86,
   "meaning": "crow, rook, raven; black, dark",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 까마귀 / 참고: 매칭 키워드: 까마귀",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -82477,8 +82477,8 @@
   "radicalIndex": 86,
   "meaning": "burned, scorched; anxious, vexed",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anxious / 참고: burned, scorched; anxious, vexed",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -84616,8 +84616,8 @@
   "radicalIndex": 87,
   "meaning": "claw, nail, talon; animal feet",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-신체부위(자동스캔): 손톱 / 참고: 매칭 키워드: 손톱",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -85193,8 +85193,8 @@
   "radicalIndex": 93,
   "meaning": "prison; stable, pen; secure",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): prison / 참고: prison; stable, pen; secure",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -85737,8 +85737,8 @@
   "radicalIndex": 94,
   "meaning": "fox",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 여우 / 참고: 매칭 키워드: 여우",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -85827,8 +85827,8 @@
   "radicalIndex": 94,
   "meaning": "animal name",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 오소리 / 참고: 매칭 키워드: 오소리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -85991,8 +85991,8 @@
   "radicalIndex": 94,
   "meaning": "wolf",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 이리 / 참고: 매칭 키워드: 이리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -86009,8 +86009,8 @@
   "radicalIndex": 94,
   "meaning": "a legendary animal with short forelegs which rode a wolf",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 이리 / 참고: 매칭 키워드: 이리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -86154,8 +86154,8 @@
   "radicalIndex": 94,
   "meaning": "fierce-looking, ferocious",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): ferocious / 참고: fierce-looking, ferocious",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -86460,8 +86460,8 @@
   "radicalIndex": 94,
   "meaning": "prison, jail; case; lawsuit",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): prison / 참고: prison, jail; case; lawsuit",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -86568,8 +86568,8 @@
   "radicalIndex": 94,
   "meaning": "collapse",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): collapse / 참고: collapse",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -86733,8 +86733,8 @@
   "radicalIndex": 94,
   "meaning": "ferocious appearance; hideous",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): ferocious / 참고: ferocious appearance; hideous",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -90813,8 +90813,8 @@
   "radicalIndex": 97,
   "meaning": "melon, gourd, cucumber; Kangxi radical 97",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 오이 / 참고: 매칭 키워드: 오이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -90903,8 +90903,8 @@
   "radicalIndex": 98,
   "meaning": "earthen jar; jar for ashes",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 항아리 / 참고: 매칭 키워드: 항아리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -91101,8 +91101,8 @@
   "radicalIndex": 98,
   "meaning": "earthen jar; jar for ashes",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 항아리 / 참고: 매칭 키워드: 항아리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -92332,8 +92332,8 @@
   "radicalIndex": 104,
   "meaning": "chronic disease, chronic illness; sorrow",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disease / 참고: chronic disease, chronic illness; sorrow",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -92494,8 +92494,8 @@
   "radicalIndex": 104,
   "meaning": "flaw, fault, defect; disease",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disease / 참고: flaw, fault, defect; disease",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -92584,8 +92584,8 @@
   "radicalIndex": 104,
   "meaning": "illness, disease, sickness; to hate",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disease / 참고: illness, disease, sickness; to hate",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -92674,8 +92674,8 @@
   "radicalIndex": 104,
   "meaning": "disease, illness, ailment",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disease / 참고: disease, illness, ailment",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -92981,8 +92981,8 @@
   "radicalIndex": 104,
   "meaning": "pock-marked; leprosy; measles",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): leprosy / 참고: pock-marked; leprosy; measles",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -93000,8 +93000,8 @@
   "radicalIndex": 104,
   "meaning": "pock-marked; leprosy; measles",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): leprosy / 참고: pock-marked; leprosy; measles",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -93018,8 +93018,8 @@
   "radicalIndex": 104,
   "meaning": "foolish, stupid, dumb, silly",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): foolish / 참고: foolish, stupid, dumb, silly",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -93072,8 +93072,8 @@
   "radicalIndex": 104,
   "meaning": "chronic disease",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disease / 참고: chronic disease",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -93198,8 +93198,8 @@
   "radicalIndex": 104,
   "meaning": "crazy, insane, mentally ill",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): insane / 참고: crazy, insane, mentally ill",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -93252,8 +93252,8 @@
   "radicalIndex": 104,
   "meaning": "asthma; disease of the bowels",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disease / 참고: asthma; disease of the bowels",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -93288,8 +93288,8 @@
   "radicalIndex": 104,
   "meaning": "epidemic, plague, pestilence",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): plague / 참고: epidemic, plague, pestilence",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -93873,8 +93873,8 @@
   "radicalIndex": 104,
   "meaning": "leprosy, scabies, mange; shoddy",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): leprosy / 참고: leprosy, scabies, mange; shoddy",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -95514,8 +95514,8 @@
   "radicalIndex": 109,
   "meaning": "disease of the eyes; crime, fault",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disease / 참고: disease of the eyes; crime, fault",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -96343,8 +96343,8 @@
   "radicalIndex": 109,
   "meaning": "glare with anger",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anger / 참고: glare with anger",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -96722,8 +96722,8 @@
   "radicalIndex": 109,
   "meaning": "blind; blind musician; stupid",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): stupid / 참고: blind; blind musician; stupid",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -96758,8 +96758,8 @@
   "radicalIndex": 109,
   "meaning": "stupid, ignorant; blind",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): stupid / 참고: stupid, ignorant; blind",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -96776,8 +96776,8 @@
   "radicalIndex": 109,
   "meaning": "an angry glare; to open the eyes with anger",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): angry / 참고: an angry glare; to open the eyes with anger",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -96904,8 +96904,8 @@
   "radicalIndex": 110,
   "meaning": "spear, lance; Kangxi radical 110",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -96958,8 +96958,8 @@
   "radicalIndex": 110,
   "meaning": null,
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 호미 / 참고: 매칭 키워드: 호미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -97428,8 +97428,8 @@
   "radicalIndex": 112,
   "meaning": "stockade, fort, military outpost; brothel",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 울타리 / 참고: 매칭 키워드: 울타리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -99463,8 +99463,8 @@
   "radicalIndex": 113,
   "meaning": "exorcise, remove evil; clean",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): evil / 참고: exorcise, remove evil; clean",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -99661,8 +99661,8 @@
   "radicalIndex": 113,
   "meaning": "evil spirit; evil influence",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): evil / 참고: evil spirit; evil influence",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -99934,8 +99934,8 @@
   "radicalIndex": 113,
   "meaning": "misfortune, calamity, disaster",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): calamity / 참고: misfortune, calamity, disaster",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -103441,8 +103441,8 @@
   "radicalIndex": 118,
   "meaning": "foolish, stupid, dull; awkward",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): foolish / 참고: foolish, stupid, dull; awkward",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -103694,8 +103694,8 @@
   "radicalIndex": 118,
   "meaning": "bamboo basket or chest",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 광주리 / 참고: 매칭 키워드: 광주리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -104198,8 +104198,8 @@
   "radicalIndex": 118,
   "meaning": "horse whip; flog",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): flog / 참고: horse whip; flog",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -104288,8 +104288,8 @@
   "radicalIndex": 118,
   "meaning": "chopsticks",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 젓가락 / 참고: 매칭 키워드: 젓가락",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -105356,8 +105356,8 @@
   "radicalIndex": 118,
   "meaning": "bamboo or wooden fence; hedge",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 울타리 / 참고: 매칭 키워드: 울타리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -105483,8 +105483,8 @@
   "radicalIndex": 119,
   "meaning": "lees, dregs, sediments left after distilling liquor",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 지게미 / 참고: 매칭 키워드: 지게미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -105501,8 +105501,8 @@
   "radicalIndex": 119,
   "meaning": "rough, thick, course; rude",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 거칠 / 참고: 매칭 키워드: 거칠",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -105974,8 +105974,8 @@
   "radicalIndex": 119,
   "meaning": "sediment, dregs; pickle",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 지게미 / 참고: 매칭 키워드: 지게미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -106573,8 +106573,8 @@
   "radicalIndex": 120,
   "meaning": "in disorder, scattered, tangled",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disorder / 참고: in disorder, scattered, tangled",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -106591,8 +106591,8 @@
   "radicalIndex": 120,
   "meaning": "confused, in disorder; numerous",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disorder / 참고: confused, in disorder; numerous",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -109626,8 +109626,8 @@
   "radicalIndex": 120,
   "meaning": "noose; death by hanging; tie, bind",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): death / 참고: noose; death by hanging; tie, bind",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -109807,8 +109807,8 @@
   "radicalIndex": 120,
   "meaning": "knot; blemish, flaw, wicked",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): wicked / 참고: knot; blemish, flaw, wicked",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -110061,8 +110061,8 @@
   "radicalIndex": 121,
   "meaning": "earthenware jug, crock; cistern",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 항아리 / 참고: 매칭 키워드: 항아리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -110296,8 +110296,8 @@
   "radicalIndex": 122,
   "meaning": "net; deceive; libel; negative",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): deceive / 참고: net; deceive; libel; negative",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -110476,8 +110476,8 @@
   "radicalIndex": 122,
   "meaning": "crime, sin, vice; evil; hardship",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): crime / 참고: crime, sin, vice; evil; hardship",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -110602,8 +110602,8 @@
   "radicalIndex": 122,
   "meaning": "penalty, fine; punish, penalize",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): punish / 참고: penalty, fine; punish, penalize",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -112032,8 +112032,8 @@
   "radicalIndex": 127,
   "meaning": "handle of plow; plow; Kangxi radical 127",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 쟁기 / 참고: 매칭 키워드: 쟁기",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -112194,8 +112194,8 @@
   "radicalIndex": 127,
   "meaning": "plow side by side; team of two",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 쟁기 / 참고: 매칭 키워드: 쟁기",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -112267,8 +112267,8 @@
   "radicalIndex": 128,
   "meaning": "ear; merely, only; handle; Kangxi radical 128",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-신체부위(자동스캔): 귀 / 참고: 매칭 키워드: 귀",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -113895,8 +113895,8 @@
   "radicalIndex": 130,
   "meaning": "neck",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-신체부위(자동스캔): 배꼽 / 참고: 매칭 키워드: 배꼽",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -113967,8 +113967,8 @@
   "radicalIndex": 130,
   "meaning": "shinbone; calf of leg",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-신체부위(자동스캔): 정강이 / 참고: 매칭 키워드: 정강이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -114238,8 +114238,8 @@
   "radicalIndex": 130,
   "meaning": "armpit",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-신체부위(자동스캔): 겨드랑이 / 참고: 매칭 키워드: 겨드랑이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -114346,8 +114346,8 @@
   "radicalIndex": 130,
   "meaning": "calf; avoid; be ill; wither",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): wither / 참고: calf; avoid; be ill; wither",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -115214,8 +115214,8 @@
   "radicalIndex": 130,
   "meaning": "abdominal area of crab; navel",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-신체부위(자동스캔): 배꼽 / 참고: 매칭 키워드: 배꼽",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -117405,8 +117405,8 @@
   "radicalIndex": 140,
   "meaning": "small, petty; harsh, rigorous",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 매울 / 참고: 매칭 키워드: 매울",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -117874,8 +117874,8 @@
   "radicalIndex": 140,
   "meaning": "eggplant",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 가지 / 참고: 매칭 키워드: 가지",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -118487,8 +118487,8 @@
   "radicalIndex": 140,
   "meaning": "wasteland, desert; uncultivated",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 거칠 / 참고: 매칭 키워드: 거칠",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -118976,8 +118976,8 @@
   "radicalIndex": 140,
   "meaning": "weeds, tares; undesirable, evil",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): evil / 참고: weeds, tares; undesirable, evil",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -119357,8 +119357,8 @@
   "radicalIndex": 140,
   "meaning": "turnip",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 무 / 참고: 매칭 키워드: 무",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -119628,8 +119628,8 @@
   "radicalIndex": 140,
   "meaning": "salted or pickled vegetables",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 김치 / 참고: 매칭 키워드: 김치",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -119846,8 +119846,8 @@
   "radicalIndex": 140,
   "meaning": "wither, wilt",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): wither / 참고: wither, wilt",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -120298,8 +120298,8 @@
   "radicalIndex": 140,
   "meaning": "bottle-gourd",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 마늘 / 참고: 매칭 키워드: 마늘",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -120460,8 +120460,8 @@
   "radicalIndex": 140,
   "meaning": "meat diet; strong smelling",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 매운 채소 / 참고: 매칭 키워드: 매운 채소",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -122285,8 +122285,8 @@
   "radicalIndex": 140,
   "meaning": "ginger",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 생강 / 참고: 매칭 키워드: 생강",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -122755,8 +122755,8 @@
   "radicalIndex": 140,
   "meaning": "disregard, slight, disdain",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): disdain / 참고: disregard, slight, disdain",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123409,8 +123409,8 @@
   "radicalIndex": 140,
   "meaning": "type of creeping plant; turnip",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 무 / 참고: 매칭 키워드: 무",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123572,8 +123572,8 @@
   "radicalIndex": 141,
   "meaning": "to capture, imprison, seize; a prison",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): imprison / 참고: to capture, imprison, seize; a prison",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123590,8 +123590,8 @@
   "radicalIndex": 141,
   "meaning": "concerned about, anxious, worried",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anxious / 참고: concerned about, anxious, worried",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123788,8 +123788,8 @@
   "radicalIndex": 142,
   "meaning": "mosquito; gnat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 모기 / 참고: 매칭 키워드: 모기",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123806,8 +123806,8 @@
   "radicalIndex": 142,
   "meaning": "gnat, mosquito",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 모기 / 참고: 매칭 키워드: 모기",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123860,8 +123860,8 @@
   "radicalIndex": 142,
   "meaning": "earthworm",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 지렁이 / 참고: 매칭 키워드: 지렁이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123878,8 +123878,8 @@
   "radicalIndex": 142,
   "meaning": "centipede",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 지네 / 참고: 매칭 키워드: 지네",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123896,8 +123896,8 @@
   "radicalIndex": 142,
   "meaning": "flea; louse",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 벼룩 / 참고: 매칭 키워드: 벼룩",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -123968,8 +123968,8 @@
   "radicalIndex": 142,
   "meaning": "earthworm",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 지렁이 / 참고: 매칭 키워드: 지렁이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124076,8 +124076,8 @@
   "radicalIndex": 142,
   "meaning": "maggots",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 구더기 / 참고: 매칭 키워드: 구더기",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124275,8 +124275,8 @@
   "radicalIndex": 142,
   "meaning": "cricket, locust; anxious",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anxious / 참고: cricket, locust; anxious",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124293,8 +124293,8 @@
   "radicalIndex": 142,
   "meaning": null,
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 귀뚜라미 / 참고: 매칭 키워드: 귀뚜라미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124311,8 +124311,8 @@
   "radicalIndex": 142,
   "meaning": "leech",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 거머리 / 참고: 매칭 키워드: 거머리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124473,8 +124473,8 @@
   "radicalIndex": 142,
   "meaning": "centipede",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 지네 / 참고: 매칭 키워드: 지네",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124781,8 +124781,8 @@
   "radicalIndex": 142,
   "meaning": "dragonfly",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 귀뚜라미 / 참고: 매칭 키워드: 귀뚜라미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124853,8 +124853,8 @@
   "radicalIndex": 142,
   "meaning": "scorpion",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 전갈 / 참고: 매칭 키워드: 전갈",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124907,8 +124907,8 @@
   "radicalIndex": 142,
   "meaning": "bat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 박쥐 / 참고: 매칭 키워드: 박쥐",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -124943,8 +124943,8 @@
   "radicalIndex": 142,
   "meaning": "bat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 박쥐 / 참고: 매칭 키워드: 박쥐",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125087,8 +125087,8 @@
   "radicalIndex": 142,
   "meaning": "snail",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 달팽이 / 참고: 매칭 키워드: 달팽이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125397,8 +125397,8 @@
   "radicalIndex": 142,
   "meaning": "cricket",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 귀뚜라미 / 참고: 매칭 키워드: 귀뚜라미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125469,8 +125469,8 @@
   "radicalIndex": 142,
   "meaning": "cricket",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 귀뚜라미 / 참고: 매칭 키워드: 귀뚜라미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125667,8 +125667,8 @@
   "radicalIndex": 142,
   "meaning": "toad",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 두꺼비 / 참고: 매칭 키워드: 두꺼비",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125703,8 +125703,8 @@
   "radicalIndex": 142,
   "meaning": "flies",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 파리 / 참고: 매칭 키워드: 파리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125721,8 +125721,8 @@
   "radicalIndex": 142,
   "meaning": "scorpion",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 전갈 / 참고: 매칭 키워드: 전갈",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125813,8 +125813,8 @@
   "radicalIndex": 142,
   "meaning": "wood-boring insect; bore into wood",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-부식노화(자동스캔): 좀먹을 / 참고: 매칭 키워드: 좀먹을",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -125831,8 +125831,8 @@
   "radicalIndex": 142,
   "meaning": "wriggle; stupid; silly; fat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): stupid / 참고: wriggle; stupid; silly; fat",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -126013,8 +126013,8 @@
   "radicalIndex": 143,
   "meaning": "smear, slander; defile",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): slander / 참고: smear, slander; defile",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -128347,8 +128347,8 @@
   "radicalIndex": 147,
   "meaning": "covet, long for, desire",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): covet / 참고: covet, long for, desire",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -128835,8 +128835,8 @@
   "radicalIndex": 149,
   "meaning": "obituary; give notice of death",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): death / 참고: obituary; give notice of death",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -128907,8 +128907,8 @@
   "radicalIndex": 149,
   "meaning": "inquire; ask; examine; reproach",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): reproach / 참고: inquire; ask; examine; reproach",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -128997,8 +128997,8 @@
   "radicalIndex": 149,
   "meaning": "deceive, cheat; arrogant",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): deceive / 참고: deceive, cheat; arrogant",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -129539,8 +129539,8 @@
   "radicalIndex": 149,
   "meaning": "to curse; to swear an oath incantations",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): curse / 참고: to curse; to swear an oath incantations",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -129593,8 +129593,8 @@
   "radicalIndex": 149,
   "meaning": "cheat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): cheat / 참고: cheat",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -129720,8 +129720,8 @@
   "radicalIndex": 149,
   "meaning": "curse; swear, pledge",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): curse / 참고: curse; swear, pledge",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -130153,8 +130153,8 @@
   "radicalIndex": 149,
   "meaning": "error, mistake; deceive, mislead",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): deceive / 참고: error, mistake; deceive, mislead",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -130190,8 +130190,8 @@
   "radicalIndex": 149,
   "meaning": "eulogize, praise the dead",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): dead / 참고: eulogize, praise the dead",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -130208,8 +130208,8 @@
   "radicalIndex": 149,
   "meaning": "execute, kill, put to death; punish",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): death / 참고: execute, kill, put to death; punish",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -130532,8 +130532,8 @@
   "radicalIndex": 149,
   "meaning": "make false accusation; defame",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): defame / 참고: make false accusation; defame",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -130860,8 +130860,8 @@
   "radicalIndex": 149,
   "meaning": "to cheat",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): cheat / 참고: to cheat",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -131997,8 +131997,8 @@
   "radicalIndex": 149,
   "meaning": "charge, blame; disgrace; demote; punish",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): punish / 참고: charge, blame; disgrace; demote; punish",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -132070,8 +132070,8 @@
   "radicalIndex": 149,
   "meaning": "slander; to revile; huge; big",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): revile / 참고: slander; to revile; huge; big",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -132250,8 +132250,8 @@
   "radicalIndex": 149,
   "meaning": "ridicule, jeer, mock; inspect",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): mock / 참고: ridicule, jeer, mock; inspect",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -132413,8 +132413,8 @@
   "radicalIndex": 149,
   "meaning": "clamor, noise, din; slander",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): slander / 참고: clamor, noise, din; slander",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -133046,8 +133046,8 @@
   "radicalIndex": 151,
   "meaning": "fermented beans",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 메주 / 참고: 매칭 키워드: 메주",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -133226,8 +133226,8 @@
   "radicalIndex": 152,
   "meaning": "pig, hog",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 멧돼지 / 참고: 매칭 키워드: 멧돼지",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -133336,8 +133336,8 @@
   "radicalIndex": 153,
   "meaning": "wolf; cruel, wicked, mean",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): wicked / 참고: wolf; cruel, wicked, mean",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -136030,8 +136030,8 @@
   "radicalIndex": 157,
   "meaning": "ankle",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-신체부위(자동스캔): 복사뼈 / 참고: 매칭 키워드: 복사뼈",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -136246,8 +136246,8 @@
   "radicalIndex": 157,
   "meaning": "trample under foot, tread on",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): trample / 참고: trample under foot, tread on",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -136408,8 +136408,8 @@
   "radicalIndex": 157,
   "meaning": "urgent, suddenly; grieve, lament",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): grieve / 참고: urgent, suddenly; grieve, lament",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -136552,8 +136552,8 @@
   "radicalIndex": 157,
   "meaning": "stumble, fall down; trample",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): trample / 참고: stumble, fall down; trample",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -138040,8 +138040,8 @@
   "radicalIndex": 159,
   "meaning": "envy; hate, dislike; resentment",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): resentment / 참고: envy; hate, dislike; resentment",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -138187,8 +138187,8 @@
   "radicalIndex": 160,
   "meaning": "crime, criminal offense",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): crime / 참고: crime, criminal offense",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -138243,8 +138243,8 @@
   "radicalIndex": 160,
   "meaning": "peppery, pungent, hot; cruel",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): cruel / 참고: peppery, pungent, hot; cruel",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -138946,8 +138946,8 @@
   "radicalIndex": 162,
   "meaning": "to be the first to begin a quarrel",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): quarrel / 참고: to be the first to begin a quarrel",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -139054,8 +139054,8 @@
   "radicalIndex": 162,
   "meaning": "disobey, rebel; rebel, traitor",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rebel / 참고: disobey, rebel; rebel, traitor",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -139342,8 +139342,8 @@
   "radicalIndex": 162,
   "meaning": "pass away; die",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): die / 참고: pass away; die",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -139524,8 +139524,8 @@
   "radicalIndex": 162,
   "meaning": "argue, quarrel, squabble; far",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): quarrel / 참고: argue, quarrel, squabble; far",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -140173,8 +140173,8 @@
   "radicalIndex": 162,
   "meaning": "deceive, hide, conceal; flee; hexagram ䷠",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): deceive / 참고: deceive, hide, conceal; flee; hexagram ䷠",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -141458,8 +141458,8 @@
   "radicalIndex": 163,
   "meaning": "outer part (of a city); surname",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 성곽 / 참고: 매칭 키워드: 성곽",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -143122,8 +143122,8 @@
   "radicalIndex": 164,
   "meaning": "smear with blood in sacrifice; rift, quarrel",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): quarrel / 참고: smear with blood in sacrifice; rift, quarrel",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -143361,8 +143361,8 @@
   "radicalIndex": 167,
   "meaning": "nail, spike; pursue closely",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -143433,8 +143433,8 @@
   "radicalIndex": 167,
   "meaning": "samarium (element 62, Sm); to swing a sickle to cut (grass or wheat)",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 낫 / 참고: 매칭 키워드: 낫",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -143685,8 +143685,8 @@
   "radicalIndex": 167,
   "meaning": "an ax; a hatchet",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 도끼 / 참고: 매칭 키워드: 도끼",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -143703,8 +143703,8 @@
   "radicalIndex": 167,
   "meaning": "blunt, obtuse; dull; flat; dull-witted",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 무딜 / 참고: 매칭 키워드: 무딜",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -143775,8 +143775,8 @@
   "radicalIndex": 167,
   "meaning": "spear; (Cant.) to cut, slice; grass-shears",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -143830,8 +143830,8 @@
   "radicalIndex": 167,
   "meaning": null,
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -144227,8 +144227,8 @@
   "radicalIndex": 167,
   "meaning": "hoe; eradicate, eliminate",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 호미 / 참고: 매칭 키워드: 호미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -144372,8 +144372,8 @@
   "radicalIndex": 167,
   "meaning": "broad-axe, a battle axe, halberd",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 도끼 / 참고: 매칭 키워드: 도끼",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -144858,8 +144858,8 @@
   "radicalIndex": 167,
   "meaning": "sharp, keen, acute, pointed",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 날카로울 / 참고: 매칭 키워드: 날카로울",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -145200,8 +145200,8 @@
   "radicalIndex": 167,
   "meaning": "hoe; eradicate",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 호미 / 참고: 매칭 키워드: 호미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -145743,8 +145743,8 @@
   "radicalIndex": 167,
   "meaning": "hoe",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 호미 / 참고: 매칭 키워드: 호미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -145923,8 +145923,8 @@
   "radicalIndex": 167,
   "meaning": "spoon, key",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 숟가락 / 참고: 매칭 키워드: 숟가락",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -146429,8 +146429,8 @@
   "radicalIndex": 167,
   "meaning": "sickle",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 낫 / 참고: 매칭 키워드: 낫",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -146592,8 +146592,8 @@
   "radicalIndex": 167,
   "meaning": "hoe; mattock",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생활용품(자동스캔): 호미 / 참고: 매칭 키워드: 호미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -146773,8 +146773,8 @@
   "radicalIndex": 167,
   "meaning": "chain, wire, cable; chain, shack",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 쇠사슬 / 참고: 매칭 키워드: 쇠사슬",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -147081,8 +147081,8 @@
   "radicalIndex": 167,
   "meaning": "a short spear",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-무기흉기(자동스캔): 창 / 참고: 매칭 키워드: 창",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -148839,8 +148839,8 @@
   "radicalIndex": 169,
   "meaning": "flash; flashing; steal look",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): steal / 참고: flash; flashing; steal look",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -149689,8 +149689,8 @@
   "radicalIndex": 170,
   "meaning": "frontier, border",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-지리행정(자동스캔): 변방 / 참고: 매칭 키워드: 변방",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -150034,8 +150034,8 @@
   "radicalIndex": 170,
   "meaning": "fall, slip; let fall; die",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): die / 참고: fall, slip; let fall; die",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -150305,8 +150305,8 @@
   "radicalIndex": 170,
   "meaning": "to destroy; to overthrow",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): destroy / 참고: to destroy; to overthrow",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151124,8 +151124,8 @@
   "radicalIndex": 173,
   "meaning": "a sudden peal of thunder",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 벼락 / 참고: 매칭 키워드: 벼락",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151142,8 +151142,8 @@
   "radicalIndex": 173,
   "meaning": "shake, quake, tremor; excite; trigram ☳; hexagram ䷲",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 벼락 / 참고: 매칭 키워드: 벼락",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151304,8 +151304,8 @@
   "radicalIndex": 173,
   "meaning": null,
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 장마 / 참고: 매칭 키워드: 장마",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151323,8 +151323,8 @@
   "radicalIndex": 173,
   "meaning": "long spell of rain, copious rain",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 장마 / 참고: 매칭 키워드: 장마",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151359,8 +151359,8 @@
   "radicalIndex": 173,
   "meaning": "frost; crystallized; candied",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 서리 / 참고: 매칭 키워드: 서리",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151449,8 +151449,8 @@
   "radicalIndex": 173,
   "meaning": "long and heavy rain",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 장마 / 참고: 매칭 키워드: 장마",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151541,8 +151541,8 @@
   "radicalIndex": 173,
   "meaning": "thunder, crashing thunder",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 벼락 / 참고: 매칭 키워드: 벼락",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151578,8 +151578,8 @@
   "radicalIndex": 173,
   "meaning": "thunderclap, crashing thunder",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-거친자연현상(자동스캔): 벼락 / 참고: 매칭 키워드: 벼락",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -151939,8 +151939,8 @@
   "radicalIndex": 176,
   "meaning": "timid, shy, bashful",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): timid / 참고: timid, shy, bashful",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -152371,8 +152371,8 @@
   "radicalIndex": 177,
   "meaning": "whip; whip; string of firecrackers",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): whip / 참고: whip; whip; string of firecrackers",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -152677,8 +152677,8 @@
   "radicalIndex": 179,
   "meaning": "scallion, leek; Kangxi radical 179",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 부추 / 참고: 매칭 키워드: 부추",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -153001,8 +153001,8 @@
   "radicalIndex": 181,
   "meaning": "grieved; anxious",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): anxious / 참고: grieved; anxious",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -155060,8 +155060,8 @@
   "radicalIndex": 184,
   "meaning": "spoiled, rotten, sour",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rotten / 참고: spoiled, rotten, sour",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -155240,8 +155240,8 @@
   "radicalIndex": 185,
   "meaning": "cut off left ear; tally dead enemy",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): dead / 참고: cut off left ear; tally dead enemy",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -156019,8 +156019,8 @@
   "radicalIndex": 187,
   "meaning": "a fierce horse; to rage, run wild",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): rage / 참고: a fierce horse; to rage, run wild",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -157015,8 +157015,8 @@
   "radicalIndex": 188,
   "meaning": "bone; skeleton; corpse",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): corpse / 참고: bone; skeleton; corpse",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -157233,8 +157233,8 @@
   "radicalIndex": 190,
   "meaning": "to shave the head as a punishment; to prune",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): punishment / 참고: to shave the head as a punishment; to prune",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -157739,8 +157739,8 @@
   "radicalIndex": 191,
   "meaning": "quarrel; dispute hotly",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): quarrel / 참고: quarrel; dispute hotly",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -157775,8 +157775,8 @@
   "radicalIndex": 191,
   "meaning": "feud, fight, quarrel",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): quarrel / 참고: feud, fight, quarrel",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -158137,8 +158137,8 @@
   "radicalIndex": 194,
   "meaning": "demon, evil spirits; magic power",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): evil / 참고: demon, evil spirits; magic power",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -158210,8 +158210,8 @@
   "radicalIndex": 195,
   "meaning": "foolish, stupid, rash; vulgar",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): foolish / 참고: foolish, stupid, rash; vulgar",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -158408,8 +158408,8 @@
   "radicalIndex": 195,
   "meaning": "seasoned rice mixed with fish or vegetables",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 젓갈 / 참고: 매칭 키워드: 젓갈",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -160397,8 +160397,8 @@
   "radicalIndex": 196,
   "meaning": "the owl",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 올빼미 / 참고: 매칭 키워드: 올빼미",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -161014,8 +161014,8 @@
   "radicalIndex": 197,
   "meaning": "salty, briny; salted; pickled",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-감각촉감(자동스캔): 짤 / 참고: 매칭 키워드: 짤",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -161468,8 +161468,8 @@
   "radicalIndex": 199,
   "meaning": "yeast, leaven; surname",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-음식식물(자동스캔): 누룩 / 참고: 매칭 키워드: 누룩",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -161938,8 +161938,8 @@
   "radicalIndex": 203,
   "meaning": "mold, mildew; bacteria, fungi",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-부식노화(자동스캔): 곰팡이 / 참고: 매칭 키워드: 곰팡이",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -162100,8 +162100,8 @@
   "radicalIndex": 205,
   "meaning": null,
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 두꺼비 / 참고: 매칭 키워드: 두꺼비",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -162352,8 +162352,8 @@
   "radicalIndex": 208,
   "meaning": "a variety of mole",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-동물(자동스캔): 두더지 / 참고: 매칭 키워드: 두더지",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -162478,8 +162478,8 @@
   "radicalIndex": 209,
   "meaning": "nose; first; Kangxi radical 209",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-신체부위(자동스캔): 코 / 참고: 매칭 키워드: 코",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -162496,8 +162496,8 @@
   "radicalIndex": 209,
   "meaning": "snore loudly",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "이름뜻어색함-생리현상(자동스캔): 코골 / 참고: 매칭 키워드: 코골",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -162604,8 +162604,8 @@
   "radicalIndex": 211,
   "meaning": "gums (of the teeth); to dispute",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): dispute / 참고: gums (of the teeth); to dispute",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"
@@ -162785,8 +162785,8 @@
   "radicalIndex": 211,
   "meaning": "tooth decay",
   "isNameAllowed": true,
-  "isForbidden": false,
-  "forbiddenReason": null,
+  "isForbidden": true,
+  "forbiddenReason": "뜻흉함(자동스캔-영문): decay / 참고: tooth decay",
   "verificationStatus": "confirmed",
   "source": [
    "court_list_docx"

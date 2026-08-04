@@ -2961,5 +2961,2773 @@
    "현대속어연상: 방아 찧을",
    "참고: 고전적 뜻(곡식 찧기) 자체는 중립적이나 '방아 찧다'가 현대 구어에서 성행위를 가리키는 은어로 쓰여 이름에 부적합"
   ]
+ },
+ {
+  "char": "㜯",
+  "reading": "희",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): revile",
+   "참고: a word to designate woman, a word of revile used to call a woman"
+  ]
+ },
+ {
+  "char": "㤞",
+  "reading": "탁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): punish",
+   "참고: disappointed; to fail in attaining one's purpose; to be disappointed in attaining the ambitions, to be surprised; to be amazed; to marvel, to think; to consider; to ponder; to contemplate, to expect or hope with eagerness, a credit, straightforward; faithful and upright, to reprimand; to discipline; to punish"
+  ]
+ },
+ {
+  "char": "㦥",
+  "reading": "헌",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): resent",
+   "참고: (same as 愋) talented; intelligent; wise wisdom; knowledge, to resent; to hate, to regret"
+  ]
+ },
+ {
+  "char": "䑃",
+  "reading": "몽",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): cheat",
+   "참고: dim moon, dark; obscure, stupid; ignorant, to cheat; to hide the truth, to cover up; to hide, plump; fleshy"
+  ]
+ },
+ {
+  "char": "䚟",
+  "reading": "대",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): wicked",
+   "참고: horns, middle of the horn, (same as 歹) bad; wicked; depraved; vicious"
+  ]
+ },
+ {
+  "char": "䛆",
+  "reading": "주",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): curse",
+   "참고: (same as 咒) to curse; to swear"
+  ]
+ },
+ {
+  "char": "䛲",
+  "reading": "면",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): deceive",
+   "참고: (same as 謾) to deceive, to scorn; to disdain"
+  ]
+ },
+ {
+  "char": "䜅",
+  "reading": "유",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rebuke",
+   "참고: to follow; to comply with, to refute; to rebuke; to accuse"
+  ]
+ },
+ {
+  "char": "仇",
+  "reading": "구",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): hatred",
+   "참고: enemy, hate, hatred, enmity"
+  ]
+ },
+ {
+  "char": "佹",
+  "reading": "궤",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): deceive",
+   "참고: depend upon; support; go against; (variant deceive)"
+  ]
+ },
+ {
+  "char": "僕",
+  "reading": "복",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): slave",
+   "참고: slave, servant, I"
+  ]
+ },
+ {
+  "char": "刖",
+  "reading": "월",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): punishment",
+   "참고: cutting off feet as form of punishment"
+  ]
+ },
+ {
+  "char": "刦",
+  "reading": "겁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disaster",
+   "참고: take by force, coerce; disaster"
+  ]
+ },
+ {
+  "char": "刧",
+  "reading": "겁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disaster",
+   "참고: disaster, misfortune; coerce"
+  ]
+ },
+ {
+  "char": "剽",
+  "reading": "표",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rob",
+   "참고: rob, plunder; slice off; fast"
+  ]
+ },
+ {
+  "char": "劫",
+  "reading": "겁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disaster",
+   "참고: take by force, coerce; disaster"
+  ]
+ },
+ {
+  "char": "勦",
+  "reading": "초",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): destroy",
+   "참고: destroy, exterminate, annihilate"
+  ]
+ },
+ {
+  "char": "匶",
+  "reading": "구",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): corpse",
+   "참고: a coffin containing a corpse"
+  ]
+ },
+ {
+  "char": "呪",
+  "reading": "주",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): curse",
+   "참고: curse, damn, incantation"
+  ]
+ },
+ {
+  "char": "呰",
+  "reading": "자",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): revile",
+   "참고: to slander, revile"
+  ]
+ },
+ {
+  "char": "哄",
+  "reading": "홍",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): deceive",
+   "참고: coax; beguile, cheat, deceive"
+  ]
+ },
+ {
+  "char": "唼",
+  "reading": "삽",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): evil",
+   "참고: speaking evil; gobbling sound made by ducks"
+  ]
+ },
+ {
+  "char": "啀",
+  "reading": "애",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): scold",
+   "참고: gnaw; (Cant.) to shout, yell, scold"
+  ]
+ },
+ {
+  "char": "啄",
+  "reading": "탁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): slander",
+   "참고: to peck; (Cant.) to slander"
+  ]
+ },
+ {
+  "char": "嗑",
+  "reading": "합",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): reproach",
+   "참고: eat seeds; reproach; loquacious"
+  ]
+ },
+ {
+  "char": "囮",
+  "reading": "와",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): cheat",
+   "참고: inveigle, decoy; cheat"
+  ]
+ },
+ {
+  "char": "囹",
+  "reading": "령/영",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): prison",
+   "참고: prison, enclosure"
+  ]
+ },
+ {
+  "char": "壓",
+  "reading": "압",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): oppress",
+   "참고: press; oppress; crush; pressure"
+  ]
+ },
+ {
+  "char": "夭",
+  "reading": "요",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): die",
+   "참고: young, fresh-looking; die young"
+  ]
+ },
+ {
+  "char": "奪",
+  "reading": "탈",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rob",
+   "참고: take by force, rob, snatch"
+  ]
+ },
+ {
+  "char": "媟",
+  "reading": "설",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): lewd",
+   "참고: lust after, act indecently; lewd"
+  ]
+ },
+ {
+  "char": "孼",
+  "reading": "얼",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): evil",
+   "참고: misfortune; sin, evil"
+  ]
+ },
+ {
+  "char": "尅",
+  "reading": "극",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): destroy",
+   "참고: subdue, destroy, overcome"
+  ]
+ },
+ {
+  "char": "尸",
+  "reading": "시",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): dead",
+   "참고: corpse; to impersonate the dead; to preside; Kangxi radical 44"
+  ]
+ },
+ {
+  "char": "弊",
+  "reading": "폐",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): evil",
+   "참고: evil, wrong, bad; criminal"
+  ]
+ },
+ {
+  "char": "弒",
+  "reading": "시",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): kill",
+   "참고: to kill one's superior"
+  ]
+ },
+ {
+  "char": "徂",
+  "reading": "조",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): die",
+   "참고: go, advance; to; die"
+  ]
+ },
+ {
+  "char": "怔",
+  "reading": "정",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disease",
+   "참고: a disease resembling neurosis"
+  ]
+ },
+ {
+  "char": "愾",
+  "reading": "개",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): hatred",
+   "참고: anger, wrath, hatred, enmity"
+  ]
+ },
+ {
+  "char": "慊",
+  "reading": "겸",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): resent",
+   "참고: to resent; contended; satisfied"
+  ]
+ },
+ {
+  "char": "慘",
+  "reading": "참",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): cruel",
+   "참고: sad, pitiful, wretched; cruel"
+  ]
+ },
+ {
+  "char": "慝",
+  "reading": "특",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): evil",
+   "참고: do evil in secret; evil, vice"
+  ]
+ },
+ {
+  "char": "憤",
+  "reading": "분",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): resent",
+   "참고: resent, hate; indignant"
+  ]
+ },
+ {
+  "char": "懣",
+  "reading": "문",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): sick",
+   "참고: be sick at heart, sorrowful, sad"
+  ]
+ },
+ {
+  "char": "懲",
+  "reading": "징",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): punish",
+   "참고: punish, reprimand; warn"
+  ]
+ },
+ {
+  "char": "戡",
+  "reading": "감",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): kill",
+   "참고: subjugate, subdue, quell; kill"
+  ]
+ },
+ {
+  "char": "拆",
+  "reading": "탁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): destroy",
+   "참고: to break up, split apart, rip open; to destroy"
+  ]
+ },
+ {
+  "char": "拷",
+  "reading": "고",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): torture",
+   "참고: torture and interrogate; hit"
+  ]
+ },
+ {
+  "char": "掠",
+  "reading": "략/약",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rob",
+   "참고: rob, ransack, plunder; pass by"
+  ]
+ },
+ {
+  "char": "搶",
+  "reading": "창",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rob",
+   "참고: plunder, rob, take by force"
+  ]
+ },
+ {
+  "char": "摧",
+  "reading": "최",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): destroy",
+   "참고: destroy, break, injure"
+  ]
+ },
+ {
+  "char": "撻",
+  "reading": "달",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): flog",
+   "참고: flog, whip; chastise; (Cant.) classifier for places; a tart (from the English 'tart')"
+  ]
+ },
+ {
+  "char": "敝",
+  "reading": "폐",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): destroy",
+   "참고: break, destroy; broken, tattered"
+  ]
+ },
+ {
+  "char": "斥",
+  "reading": "척",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): scold",
+   "참고: to scold, upbraid, accuse, reproach"
+  ]
+ },
+ {
+  "char": "杸",
+  "reading": "대/수",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): kill",
+   "참고: to kill; a spear"
+  ]
+ },
+ {
+  "char": "柩",
+  "reading": "구",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): corpse",
+   "참고: coffin which contains corpse"
+  ]
+ },
+ {
+  "char": "梟",
+  "reading": "효",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): evil",
+   "참고: an owl; thus, something evil"
+  ]
+ },
+ {
+  "char": "槁",
+  "reading": "고",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): dead",
+   "참고: wither; withered, rotten, dead"
+  ]
+ },
+ {
+  "char": "殀",
+  "reading": "요",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): die",
+   "참고: die young, die prematurely"
+  ]
+ },
+ {
+  "char": "殭",
+  "reading": "강",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): corpse",
+   "참고: a stiff corpse"
+  ]
+ },
+ {
+  "char": "殮",
+  "reading": "렴/염",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): corpse",
+   "참고: dress corpse for burial"
+  ]
+ },
+ {
+  "char": "殳",
+  "reading": "수",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): kill",
+   "참고: name of old weapon; kill; rad. 79"
+  ]
+ },
+ {
+  "char": "毀",
+  "reading": "훼",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): destroy",
+   "참고: destroy, ruin, injure; slander"
+  ]
+ },
+ {
+  "char": "毁",
+  "reading": "훼",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): destroy",
+   "참고: destroy"
+  ]
+ },
+ {
+  "char": "汙",
+  "reading": "오",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): filthy",
+   "참고: filthy, dirty, impure, polluted"
+  ]
+ },
+ {
+  "char": "泆",
+  "reading": "일",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): licentious",
+   "참고: licentious, libertine, dissipated"
+  ]
+ },
+ {
+  "char": "泯",
+  "reading": "민",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): destroy",
+   "참고: destroy, eliminate; perish"
+  ]
+ },
+ {
+  "char": "濕",
+  "reading": "습",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): illness",
+   "참고: wet, moist, humid, damp; an illness"
+  ]
+ },
+ {
+  "char": "灾",
+  "reading": "재",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): calamity",
+   "참고: calamity, disaster, catastrophe"
+  ]
+ },
+ {
+  "char": "牢",
+  "reading": "뇌/뢰",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): prison",
+   "참고: prison; stable, pen; secure"
+  ]
+ },
+ {
+  "char": "猙",
+  "reading": "쟁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): ferocious",
+   "참고: fierce-looking, ferocious"
+  ]
+ },
+ {
+  "char": "獄",
+  "reading": "옥",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): prison",
+   "참고: prison, jail; case; lawsuit"
+  ]
+ },
+ {
+  "char": "獰",
+  "reading": "녕/영",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): ferocious",
+   "참고: ferocious appearance; hideous"
+  ]
+ },
+ {
+  "char": "疚",
+  "reading": "구",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disease",
+   "참고: chronic disease, chronic illness; sorrow"
+  ]
+ },
+ {
+  "char": "疵",
+  "reading": "자",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disease",
+   "참고: flaw, fault, defect; disease"
+  ]
+ },
+ {
+  "char": "疾",
+  "reading": "질",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disease",
+   "참고: illness, disease, sickness; to hate"
+  ]
+ },
+ {
+  "char": "症",
+  "reading": "증",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disease",
+   "참고: disease, illness, ailment"
+  ]
+ },
+ {
+  "char": "痲",
+  "reading": "마",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): leprosy",
+   "참고: pock-marked; leprosy; measles"
+  ]
+ },
+ {
+  "char": "痳",
+  "reading": "림/임",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): leprosy",
+   "참고: pock-marked; leprosy; measles"
+  ]
+ },
+ {
+  "char": "痼",
+  "reading": "고",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disease",
+   "참고: chronic disease"
+  ]
+ },
+ {
+  "char": "瘋",
+  "reading": "풍",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): insane",
+   "참고: crazy, insane, mentally ill"
+  ]
+ },
+ {
+  "char": "瘕",
+  "reading": "하",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disease",
+   "참고: asthma; disease of the bowels"
+  ]
+ },
+ {
+  "char": "瘟",
+  "reading": "온",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): plague",
+   "참고: epidemic, plague, pestilence"
+  ]
+ },
+ {
+  "char": "癩",
+  "reading": "나/라",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): leprosy",
+   "참고: leprosy, scabies, mange; shoddy"
+  ]
+ },
+ {
+  "char": "眚",
+  "reading": "생",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disease",
+   "참고: disease of the eyes; crime, fault"
+  ]
+ },
+ {
+  "char": "祓",
+  "reading": "불",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): evil",
+   "참고: exorcise, remove evil; clean"
+  ]
+ },
+ {
+  "char": "祟",
+  "reading": "수",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): evil",
+   "참고: evil spirit; evil influence"
+  ]
+ },
+ {
+  "char": "禍",
+  "reading": "화",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): calamity",
+   "참고: misfortune, calamity, disaster"
+  ]
+ },
+ {
+  "char": "箠",
+  "reading": "추",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): flog",
+   "참고: horse whip; flog"
+  ]
+ },
+ {
+  "char": "繯",
+  "reading": "현",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): death",
+   "참고: noose; death by hanging; tie, bind"
+  ]
+ },
+ {
+  "char": "纇",
+  "reading": "뇌/뢰",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): wicked",
+   "참고: knot; blemish, flaw, wicked"
+  ]
+ },
+ {
+  "char": "罔",
+  "reading": "망",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): deceive",
+   "참고: net; deceive; libel; negative"
+  ]
+ },
+ {
+  "char": "罪",
+  "reading": "죄",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): crime",
+   "참고: crime, sin, vice; evil; hardship"
+  ]
+ },
+ {
+  "char": "罸",
+  "reading": "벌",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): punish",
+   "참고: penalty, fine; punish, penalize"
+  ]
+ },
+ {
+  "char": "莠",
+  "reading": "유",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): evil",
+   "참고: weeds, tares; undesirable, evil"
+  ]
+ },
+ {
+  "char": "虜",
+  "reading": "노/로",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): imprison",
+   "참고: to capture, imprison, seize; a prison"
+  ]
+ },
+ {
+  "char": "衊",
+  "reading": "멸",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): slander",
+   "참고: smear, slander; defile"
+  ]
+ },
+ {
+  "char": "訃",
+  "reading": "부",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): death",
+   "참고: obituary; give notice of death"
+  ]
+ },
+ {
+  "char": "訊",
+  "reading": "신",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): reproach",
+   "참고: inquire; ask; examine; reproach"
+  ]
+ },
+ {
+  "char": "訑",
+  "reading": "이",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): deceive",
+   "참고: deceive, cheat; arrogant"
+  ]
+ },
+ {
+  "char": "詋",
+  "reading": "주",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): curse",
+   "참고: to curse; to swear an oath incantations"
+  ]
+ },
+ {
+  "char": "詑",
+  "reading": "타",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): cheat",
+   "참고: cheat"
+  ]
+ },
+ {
+  "char": "詛",
+  "reading": "저",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): curse",
+   "참고: curse; swear, pledge"
+  ]
+ },
+ {
+  "char": "詿",
+  "reading": "괘",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): deceive",
+   "참고: error, mistake; deceive, mislead"
+  ]
+ },
+ {
+  "char": "誄",
+  "reading": "뇌/뢰",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): dead",
+   "참고: eulogize, praise the dead"
+  ]
+ },
+ {
+  "char": "誅",
+  "reading": "주",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): death",
+   "참고: execute, kill, put to death; punish"
+  ]
+ },
+ {
+  "char": "誣",
+  "reading": "무",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): defame",
+   "참고: make false accusation; defame"
+  ]
+ },
+ {
+  "char": "諆",
+  "reading": "기",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): cheat",
+   "참고: to cheat"
+  ]
+ },
+ {
+  "char": "謫",
+  "reading": "적",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): punish",
+   "참고: charge, blame; disgrace; demote; punish"
+  ]
+ },
+ {
+  "char": "謷",
+  "reading": "오",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): revile",
+   "참고: slander; to revile; huge; big"
+  ]
+ },
+ {
+  "char": "譟",
+  "reading": "조",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): slander",
+   "참고: clamor, noise, din; slander"
+  ]
+ },
+ {
+  "char": "豺",
+  "reading": "시",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): wicked",
+   "참고: wolf; cruel, wicked, mean"
+  ]
+ },
+ {
+  "char": "蹂",
+  "reading": "유",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): trample",
+   "참고: trample under foot, tread on"
+  ]
+ },
+ {
+  "char": "蹶",
+  "reading": "궐",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): trample",
+   "참고: stumble, fall down; trample"
+  ]
+ },
+ {
+  "char": "轝",
+  "reading": "여",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): resentment",
+   "참고: envy; hate, dislike; resentment"
+  ]
+ },
+ {
+  "char": "辜",
+  "reading": "고",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): crime",
+   "참고: crime, criminal offense"
+  ]
+ },
+ {
+  "char": "辣",
+  "reading": "날/랄",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): cruel",
+   "참고: peppery, pungent, hot; cruel"
+  ]
+ },
+ {
+  "char": "逝",
+  "reading": "서",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): die",
+   "참고: pass away; die"
+  ]
+ },
+ {
+  "char": "遯",
+  "reading": "둔",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): deceive",
+   "참고: deceive, hide, conceal; flee; hexagram ䷠"
+  ]
+ },
+ {
+  "char": "闚",
+  "reading": "규",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): steal",
+   "참고: flash; flashing; steal look"
+  ]
+ },
+ {
+  "char": "隕",
+  "reading": "운",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): die",
+   "참고: fall, slip; let fall; die"
+  ]
+ },
+ {
+  "char": "隳",
+  "reading": "휴",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): destroy",
+   "참고: to destroy; to overthrow"
+  ]
+ },
+ {
+  "char": "鞭",
+  "reading": "편",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): whip",
+   "참고: whip; whip; string of firecrackers"
+  ]
+ },
+ {
+  "char": "馘",
+  "reading": "괵",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): dead",
+   "참고: cut off left ear; tally dead enemy"
+  ]
+ },
+ {
+  "char": "骼",
+  "reading": "격",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): corpse",
+   "참고: bone; skeleton; corpse"
+  ]
+ },
+ {
+  "char": "髡",
+  "reading": "곤",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): punishment",
+   "참고: to shave the head as a punishment; to prune"
+  ]
+ },
+ {
+  "char": "魔",
+  "reading": "마",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): evil",
+   "참고: demon, evil spirits; magic power"
+  ]
+ },
+ {
+  "char": "㒤",
+  "reading": "섭",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): dread",
+   "참고: to have one's heart won; to submit, admire, etc. sincerely and willingly, (interchangeable 懾) to fear; to dread; to be scared of"
+  ]
+ },
+ {
+  "char": "㣽",
+  "reading": "서",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anger",
+   "참고: (ancient form of 恕) to forgive; to pardon, (ancient form 怒) anger; wrath; indignation; rage"
+  ]
+ },
+ {
+  "char": "㦆",
+  "reading": "하",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): arrogant",
+   "참고: to exaggerate; exaggeration, arrogant; showing wild imagination; preposterously fantastic, without ambition; discourage"
+  ]
+ },
+ {
+  "char": "㰫",
+  "reading": "참",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): greedy",
+   "참고: glad; joyful; happy, avaricious; greedy, cold"
+  ]
+ },
+ {
+  "char": "䛘",
+  "reading": "임",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): turmoil",
+   "참고: to think of; to remember (someone), to read out aloud, loquacious, guttural sound, noise; uproar; turmoil"
+  ]
+ },
+ {
+  "char": "䜌",
+  "reading": "난/란/련/연",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): confusion",
+   "참고: (ancient form) chaos; distraction; confusion, confused, continuous; uninterrupted; to tie together, to manage"
+  ]
+ },
+ {
+  "char": "乖",
+  "reading": "괴",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rebel",
+   "참고: rebel; crafty, shrewd"
+  ]
+ },
+ {
+  "char": "伈",
+  "reading": "심",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): fearful",
+   "참고: nervous, fearful"
+  ]
+ },
+ {
+  "char": "儳",
+  "reading": "참",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): stupid",
+   "참고: obstinate; stupid; uneven; mix"
+  ]
+ },
+ {
+  "char": "兢",
+  "reading": "긍",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): fearful",
+   "참고: fearful, cautious, wary"
+  ]
+ },
+ {
+  "char": "吽",
+  "reading": "후",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): stupid",
+   "참고: 'OM'; bellow; (Cant.) dull, stupid"
+  ]
+ },
+ {
+  "char": "哽",
+  "reading": "경",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): grief",
+   "참고: choke (with grief)"
+  ]
+ },
+ {
+  "char": "唏",
+  "reading": "희",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): grieve",
+   "참고: weep or sob; grieve"
+  ]
+ },
+ {
+  "char": "噲",
+  "reading": "쾌",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): greedy",
+   "참고: swallow, gulp down; greedy"
+  ]
+ },
+ {
+  "char": "囂",
+  "reading": "효",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): contempt",
+   "참고: be noisy; treat with contempt"
+  ]
+ },
+ {
+  "char": "坍",
+  "reading": "담",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): collapse",
+   "참고: collapse; landslide"
+  ]
+ },
+ {
+  "char": "坏",
+  "reading": "배",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rotten",
+   "참고: rotten, spoilt, bad, broken down"
+  ]
+ },
+ {
+  "char": "塌",
+  "reading": "탑",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): collapse",
+   "참고: fall in ruins, collapse"
+  ]
+ },
+ {
+  "char": "奭",
+  "reading": "석",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anger",
+   "참고: red; anger; ire; surname"
+  ]
+ },
+ {
+  "char": "奰",
+  "reading": "비",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anger",
+   "참고: anger"
+  ]
+ },
+ {
+  "char": "妄",
+  "reading": "망",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): foolish",
+   "참고: absurd, foolish, reckless; false"
+  ]
+ },
+ {
+  "char": "妒",
+  "reading": "투",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): jealous",
+   "참고: jealous, envious"
+  ]
+ },
+ {
+  "char": "妬",
+  "reading": "투",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): jealous",
+   "참고: jealous, envious"
+  ]
+ },
+ {
+  "char": "媢",
+  "reading": "모",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): jealous",
+   "참고: be jealous of, be envious"
+  ]
+ },
+ {
+  "char": "嬲",
+  "reading": "뇨/요",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): angry",
+   "참고: frolic, play with; flirt with; (Cant.) angry"
+  ]
+ },
+ {
+  "char": "忌",
+  "reading": "기",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): jealous",
+   "참고: jealous, envious; fear"
+  ]
+ },
+ {
+  "char": "怞",
+  "reading": "추",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): grieve",
+   "참고: to grieve; sorrowful"
+  ]
+ },
+ {
+  "char": "怩",
+  "reading": "니/이",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): timid",
+   "참고: shy, timid, bashful; look ashamed"
+  ]
+ },
+ {
+  "char": "怯",
+  "reading": "겁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): afraid",
+   "참고: lacking in courage, afraid"
+  ]
+ },
+ {
+  "char": "怲",
+  "reading": "병",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anxious",
+   "참고: be anxious, be grieved, be sad"
+  ]
+ },
+ {
+  "char": "悸",
+  "reading": "계",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): fearful",
+   "참고: fearful, apprehensive, perturbed"
+  ]
+ },
+ {
+  "char": "悼",
+  "reading": "도",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): grieve",
+   "참고: grieve, mourn, lament; grieved"
+  ]
+ },
+ {
+  "char": "惄",
+  "reading": "녁/역",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): hungry",
+   "참고: long for; hungry"
+  ]
+ },
+ {
+  "char": "惏",
+  "reading": "남/람",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): greedy",
+   "참고: avaricious; greedy cold"
+  ]
+ },
+ {
+  "char": "惴",
+  "reading": "췌",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): afraid",
+   "참고: afraid, apprehensive, nervous"
+  ]
+ },
+ {
+  "char": "惶",
+  "reading": "황",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anxious",
+   "참고: fearful, afraid, anxious, nervous"
+  ]
+ },
+ {
+  "char": "惷",
+  "reading": "준",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): stupid",
+   "참고: wriggle; stupid; silly; fat"
+  ]
+ },
+ {
+  "char": "愀",
+  "reading": "초",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anxious",
+   "참고: to change one's countenance, be anxious; to blush"
+  ]
+ },
+ {
+  "char": "愞",
+  "reading": "난",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): timid",
+   "참고: timid, apprehensive"
+  ]
+ },
+ {
+  "char": "慟",
+  "reading": "통",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): grief",
+   "참고: sadness, grief; mourn; be moved"
+  ]
+ },
+ {
+  "char": "慴",
+  "reading": "습",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): fearful",
+   "참고: fear; terrified, fearful; fear"
+  ]
+ },
+ {
+  "char": "憃",
+  "reading": "용",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): foolish",
+   "참고: foolish, stupid, dull, silly"
+  ]
+ },
+ {
+  "char": "憚",
+  "reading": "탄",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): dread",
+   "참고: dread, shrink from, shirk, fear"
+  ]
+ },
+ {
+  "char": "憫",
+  "reading": "민",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): grieve",
+   "참고: pity, sympathize with, grieve for"
+  ]
+ },
+ {
+  "char": "懁",
+  "reading": "환",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anxious",
+   "참고: anxious, distressed"
+  ]
+ },
+ {
+  "char": "懍",
+  "reading": "름",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): afraid",
+   "참고: be afraid of, be awed by, be in awe"
+  ]
+ },
+ {
+  "char": "懼",
+  "reading": "구",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): afraid",
+   "참고: fear, be afraid of, dread"
+  ]
+ },
+ {
+  "char": "拄",
+  "reading": "주",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): ridicule",
+   "참고: lean on; post; prod; ridicule"
+  ]
+ },
+ {
+  "char": "拙",
+  "reading": "졸",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): stupid",
+   "참고: stupid, clumsy, crude; convention"
+  ]
+ },
+ {
+  "char": "揶",
+  "reading": "야",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): ridicule",
+   "참고: make fun of, ridicule"
+  ]
+ },
+ {
+  "char": "搉",
+  "reading": "각",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): ridicule",
+   "참고: knock; pick out; ridicule"
+  ]
+ },
+ {
+  "char": "朽",
+  "reading": "후",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): decay",
+   "참고: decayed, rotten; rot, decay"
+  ]
+ },
+ {
+  "char": "枉",
+  "reading": "왕",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): vain",
+   "참고: useless, in vain; bent, crooked"
+  ]
+ },
+ {
+  "char": "檮",
+  "reading": "도",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): stupid",
+   "참고: block of wood; blockhead; stupid"
+  ]
+ },
+ {
+  "char": "毚",
+  "reading": "참",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): greedy",
+   "참고: cunning; greedy; crafty"
+  ]
+ },
+ {
+  "char": "沌",
+  "reading": "돈",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): chaotic",
+   "참고: chaotic, confused; turbid, murky"
+  ]
+ },
+ {
+  "char": "沴",
+  "reading": "려/전",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): confusion",
+   "참고: foul and poisonous in confusion; out of harmony"
+  ]
+ },
+ {
+  "char": "漚",
+  "reading": "구",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rotten",
+   "참고: soak, steep; sodden, soaked; rotten; foam, froth"
+  ]
+ },
+ {
+  "char": "焦",
+  "reading": "초",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anxious",
+   "참고: burned, scorched; anxious, vexed"
+  ]
+ },
+ {
+  "char": "獘",
+  "reading": "폐",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): collapse",
+   "참고: collapse"
+  ]
+ },
+ {
+  "char": "痴",
+  "reading": "치",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): foolish",
+   "참고: foolish, stupid, dumb, silly"
+  ]
+ },
+ {
+  "char": "瞋",
+  "reading": "진",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anger",
+   "참고: glare with anger"
+  ]
+ },
+ {
+  "char": "瞽",
+  "reading": "고",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): stupid",
+   "참고: blind; blind musician; stupid"
+  ]
+ },
+ {
+  "char": "矇",
+  "reading": "몽",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): stupid",
+   "참고: stupid, ignorant; blind"
+  ]
+ },
+ {
+  "char": "矉",
+  "reading": "빈",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): angry",
+   "참고: an angry glare; to open the eyes with anger"
+  ]
+ },
+ {
+  "char": "笨",
+  "reading": "분",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): foolish",
+   "참고: foolish, stupid, dull; awkward"
+  ]
+ },
+ {
+  "char": "紛",
+  "reading": "분",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disorder",
+   "참고: in disorder, scattered, tangled"
+  ]
+ },
+ {
+  "char": "紜",
+  "reading": "운",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disorder",
+   "참고: confused, in disorder; numerous"
+  ]
+ },
+ {
+  "char": "腓",
+  "reading": "비",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): wither",
+   "참고: calf; avoid; be ill; wither"
+  ]
+ },
+ {
+  "char": "萎",
+  "reading": "위",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): wither",
+   "참고: wither, wilt"
+  ]
+ },
+ {
+  "char": "藐",
+  "reading": "묘",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): disdain",
+   "참고: disregard, slight, disdain"
+  ]
+ },
+ {
+  "char": "虞",
+  "reading": "우",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anxious",
+   "참고: concerned about, anxious, worried"
+  ]
+ },
+ {
+  "char": "蛩",
+  "reading": "공",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anxious",
+   "참고: cricket, locust; anxious"
+  ]
+ },
+ {
+  "char": "蠢",
+  "reading": "준",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): stupid",
+   "참고: wriggle; stupid; silly; fat"
+  ]
+ },
+ {
+  "char": "覬",
+  "reading": "기",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): covet",
+   "참고: covet, long for, desire"
+  ]
+ },
+ {
+  "char": "譏",
+  "reading": "기",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): mock",
+   "참고: ridicule, jeer, mock; inspect"
+  ]
+ },
+ {
+  "char": "蹙",
+  "reading": "축",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): grieve",
+   "참고: urgent, suddenly; grieve, lament"
+  ]
+ },
+ {
+  "char": "迿",
+  "reading": "준",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): quarrel",
+   "참고: to be the first to begin a quarrel"
+  ]
+ },
+ {
+  "char": "逆",
+  "reading": "역",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rebel",
+   "참고: disobey, rebel; rebel, traitor"
+  ]
+ },
+ {
+  "char": "逴",
+  "reading": "탁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): quarrel",
+   "참고: argue, quarrel, squabble; far"
+  ]
+ },
+ {
+  "char": "釁",
+  "reading": "흔",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): quarrel",
+   "참고: smear with blood in sacrifice; rift, quarrel"
+  ]
+ },
+ {
+  "char": "靦",
+  "reading": "전",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): timid",
+   "참고: timid, shy, bashful"
+  ]
+ },
+ {
+  "char": "頊",
+  "reading": "욱",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): anxious",
+   "참고: grieved; anxious"
+  ]
+ },
+ {
+  "char": "饐",
+  "reading": "의",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rotten",
+   "참고: spoiled, rotten, sour"
+  ]
+ },
+ {
+  "char": "駻",
+  "reading": "한",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): rage",
+   "참고: a fierce horse; to rage, run wild"
+  ]
+ },
+ {
+  "char": "鬧",
+  "reading": "뇨/요",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): quarrel",
+   "참고: quarrel; dispute hotly"
+  ]
+ },
+ {
+  "char": "鬩",
+  "reading": "혁",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): quarrel",
+   "참고: feud, fight, quarrel"
+  ]
+ },
+ {
+  "char": "魯",
+  "reading": "노/로",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): foolish",
+   "참고: foolish, stupid, rash; vulgar"
+  ]
+ },
+ {
+  "char": "齗",
+  "reading": "은",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): dispute",
+   "참고: gums (of the teeth); to dispute"
+  ]
+ },
+ {
+  "char": "齲",
+  "reading": "우",
+  "reasons": [
+   "뜻흉함(자동스캔-영문): decay",
+   "참고: tooth decay"
+  ]
+ },
+ {
+  "char": "烏",
+  "reading": "오",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 까마귀",
+   "참고: 매칭 키워드: 까마귀"
+  ]
+ },
+ {
+  "char": "狐",
+  "reading": "호",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 여우",
+   "참고: 매칭 키워드: 여우"
+  ]
+ },
+ {
+  "char": "狢",
+  "reading": "학",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 오소리",
+   "참고: 매칭 키워드: 오소리"
+  ]
+ },
+ {
+  "char": "狼",
+  "reading": "낭/랑",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 이리",
+   "참고: 매칭 키워드: 이리"
+  ]
+ },
+ {
+  "char": "狽",
+  "reading": "패",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 이리",
+   "참고: 매칭 키워드: 이리"
+  ]
+ },
+ {
+  "char": "蚊",
+  "reading": "문",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 모기",
+   "참고: 매칭 키워드: 모기"
+  ]
+ },
+ {
+  "char": "蚋",
+  "reading": "예",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 모기",
+   "참고: 매칭 키워드: 모기"
+  ]
+ },
+ {
+  "char": "蚓",
+  "reading": "인",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 지렁이",
+   "참고: 매칭 키워드: 지렁이"
+  ]
+ },
+ {
+  "char": "蚣",
+  "reading": "공",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 지네",
+   "참고: 매칭 키워드: 지네"
+  ]
+ },
+ {
+  "char": "蚤",
+  "reading": "조",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 벼룩",
+   "참고: 매칭 키워드: 벼룩"
+  ]
+ },
+ {
+  "char": "蚯",
+  "reading": "구",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 지렁이",
+   "참고: 매칭 키워드: 지렁이"
+  ]
+ },
+ {
+  "char": "蛆",
+  "reading": "저",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 구더기",
+   "참고: 매칭 키워드: 구더기"
+  ]
+ },
+ {
+  "char": "蛬",
+  "reading": "공",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 귀뚜라미",
+   "참고: 매칭 키워드: 귀뚜라미"
+  ]
+ },
+ {
+  "char": "蛭",
+  "reading": "질",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 거머리",
+   "참고: 매칭 키워드: 거머리"
+  ]
+ },
+ {
+  "char": "蜈",
+  "reading": "오",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 지네",
+   "참고: 매칭 키워드: 지네"
+  ]
+ },
+ {
+  "char": "蜻",
+  "reading": "청",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 귀뚜라미",
+   "참고: 매칭 키워드: 귀뚜라미"
+  ]
+ },
+ {
+  "char": "蝎",
+  "reading": "갈",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 전갈",
+   "참고: 매칭 키워드: 전갈"
+  ]
+ },
+ {
+  "char": "蝙",
+  "reading": "편",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 박쥐",
+   "참고: 매칭 키워드: 박쥐"
+  ]
+ },
+ {
+  "char": "蝠",
+  "reading": "복",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 박쥐",
+   "참고: 매칭 키워드: 박쥐"
+  ]
+ },
+ {
+  "char": "蝸",
+  "reading": "와",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 달팽이",
+   "참고: 매칭 키워드: 달팽이"
+  ]
+ },
+ {
+  "char": "蟀",
+  "reading": "솔",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 귀뚜라미",
+   "참고: 매칭 키워드: 귀뚜라미"
+  ]
+ },
+ {
+  "char": "蟋",
+  "reading": "실",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 귀뚜라미",
+   "참고: 매칭 키워드: 귀뚜라미"
+  ]
+ },
+ {
+  "char": "蟾",
+  "reading": "섬",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 두꺼비",
+   "참고: 매칭 키워드: 두꺼비"
+  ]
+ },
+ {
+  "char": "蠅",
+  "reading": "승",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 파리",
+   "참고: 매칭 키워드: 파리"
+  ]
+ },
+ {
+  "char": "蠍",
+  "reading": "갈",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 전갈",
+   "참고: 매칭 키워드: 전갈"
+  ]
+ },
+ {
+  "char": "豨",
+  "reading": "희",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 멧돼지",
+   "참고: 매칭 키워드: 멧돼지"
+  ]
+ },
+ {
+  "char": "鶹",
+  "reading": "류/유",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 올빼미",
+   "참고: 매칭 키워드: 올빼미"
+  ]
+ },
+ {
+  "char": "鼀",
+  "reading": "축",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 두꺼비",
+   "참고: 매칭 키워드: 두꺼비"
+  ]
+ },
+ {
+  "char": "鼢",
+  "reading": "분",
+  "reasons": [
+   "이름뜻어색함-동물(자동스캔): 두더지",
+   "참고: 매칭 키워드: 두더지"
+  ]
+ },
+ {
+  "char": "瓜",
+  "reading": "과",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 오이",
+   "참고: 매칭 키워드: 오이"
+  ]
+ },
+ {
+  "char": "粕",
+  "reading": "박",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 지게미",
+   "참고: 매칭 키워드: 지게미"
+  ]
+ },
+ {
+  "char": "糟",
+  "reading": "조",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 지게미",
+   "참고: 매칭 키워드: 지게미"
+  ]
+ },
+ {
+  "char": "茄",
+  "reading": "가",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 가지",
+   "참고: 매칭 키워드: 가지"
+  ]
+ },
+ {
+  "char": "菔",
+  "reading": "복",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 무",
+   "참고: 매칭 키워드: 무"
+  ]
+ },
+ {
+  "char": "菹",
+  "reading": "저",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 김치",
+   "참고: 매칭 키워드: 김치"
+  ]
+ },
+ {
+  "char": "葫",
+  "reading": "호",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 마늘",
+   "참고: 매칭 키워드: 마늘"
+  ]
+ },
+ {
+  "char": "葷",
+  "reading": "훈",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 매운 채소",
+   "참고: 매칭 키워드: 매운 채소"
+  ]
+ },
+ {
+  "char": "薑",
+  "reading": "강",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 생강",
+   "참고: 매칭 키워드: 생강"
+  ]
+ },
+ {
+  "char": "蘿",
+  "reading": "나/라",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 무",
+   "참고: 매칭 키워드: 무"
+  ]
+ },
+ {
+  "char": "豉",
+  "reading": "시",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 메주",
+   "참고: 매칭 키워드: 메주"
+  ]
+ },
+ {
+  "char": "韭",
+  "reading": "구",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 부추",
+   "참고: 매칭 키워드: 부추"
+  ]
+ },
+ {
+  "char": "鮨",
+  "reading": "지",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 젓갈",
+   "참고: 매칭 키워드: 젓갈"
+  ]
+ },
+ {
+  "char": "麴",
+  "reading": "국",
+  "reasons": [
+   "이름뜻어색함-음식식물(자동스캔): 누룩",
+   "참고: 매칭 키워드: 누룩"
+  ]
+ },
+ {
+  "char": "爪",
+  "reading": "조",
+  "reasons": [
+   "이름뜻어색함-신체부위(자동스캔): 손톱",
+   "참고: 매칭 키워드: 손톱"
+  ]
+ },
+ {
+  "char": "耳",
+  "reading": "이",
+  "reasons": [
+   "이름뜻어색함-신체부위(자동스캔): 귀",
+   "참고: 매칭 키워드: 귀"
+  ]
+ },
+ {
+  "char": "脖",
+  "reading": "발",
+  "reasons": [
+   "이름뜻어색함-신체부위(자동스캔): 배꼽",
+   "참고: 매칭 키워드: 배꼽"
+  ]
+ },
+ {
+  "char": "脛",
+  "reading": "경",
+  "reasons": [
+   "이름뜻어색함-신체부위(자동스캔): 정강이",
+   "참고: 매칭 키워드: 정강이"
+  ]
+ },
+ {
+  "char": "腋",
+  "reading": "액",
+  "reasons": [
+   "이름뜻어색함-신체부위(자동스캔): 겨드랑이",
+   "참고: 매칭 키워드: 겨드랑이"
+  ]
+ },
+ {
+  "char": "臍",
+  "reading": "제",
+  "reasons": [
+   "이름뜻어색함-신체부위(자동스캔): 배꼽",
+   "참고: 매칭 키워드: 배꼽"
+  ]
+ },
+ {
+  "char": "踝",
+  "reading": "과",
+  "reasons": [
+   "이름뜻어색함-신체부위(자동스캔): 복사뼈",
+   "참고: 매칭 키워드: 복사뼈"
+  ]
+ },
+ {
+  "char": "鼻",
+  "reading": "비",
+  "reasons": [
+   "이름뜻어색함-신체부위(자동스캔): 코",
+   "참고: 매칭 키워드: 코"
+  ]
+ },
+ {
+  "char": "剴",
+  "reading": "개",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 낫",
+   "참고: 매칭 키워드: 낫"
+  ]
+ },
+ {
+  "char": "匙",
+  "reading": "시",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 숟가락",
+   "참고: 매칭 키워드: 숟가락"
+  ]
+ },
+ {
+  "char": "垌",
+  "reading": "동",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 항아리",
+   "참고: 매칭 키워드: 항아리"
+  ]
+ },
+ {
+  "char": "帉",
+  "reading": "분",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 걸레",
+   "참고: 매칭 키워드: 걸레"
+  ]
+ },
+ {
+  "char": "斧",
+  "reading": "부",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 도끼",
+   "참고: 매칭 키워드: 도끼"
+  ]
+ },
+ {
+  "char": "槃",
+  "reading": "반",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 쟁반",
+   "참고: 매칭 키워드: 쟁반"
+  ]
+ },
+ {
+  "char": "瓮",
+  "reading": "옹",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 항아리",
+   "참고: 매칭 키워드: 항아리"
+  ]
+ },
+ {
+  "char": "甕",
+  "reading": "옹",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 항아리",
+   "참고: 매칭 키워드: 항아리"
+  ]
+ },
+ {
+  "char": "矡",
+  "reading": "확",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 호미",
+   "참고: 매칭 키워드: 호미"
+  ]
+ },
+ {
+  "char": "筐",
+  "reading": "광",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 광주리",
+   "참고: 매칭 키워드: 광주리"
+  ]
+ },
+ {
+  "char": "箸",
+  "reading": "저",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 젓가락",
+   "참고: 매칭 키워드: 젓가락"
+  ]
+ },
+ {
+  "char": "缸",
+  "reading": "항",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 항아리",
+   "참고: 매칭 키워드: 항아리"
+  ]
+ },
+ {
+  "char": "耒",
+  "reading": "뇌/뢰",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 쟁기",
+   "참고: 매칭 키워드: 쟁기"
+  ]
+ },
+ {
+  "char": "耦",
+  "reading": "우",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 쟁기",
+   "참고: 매칭 키워드: 쟁기"
+  ]
+ },
+ {
+  "char": "釤",
+  "reading": "삼",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 낫",
+   "참고: 매칭 키워드: 낫"
+  ]
+ },
+ {
+  "char": "鈇",
+  "reading": "부",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 도끼",
+   "참고: 매칭 키워드: 도끼"
+  ]
+ },
+ {
+  "char": "鉏",
+  "reading": "서",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 호미",
+   "참고: 매칭 키워드: 호미"
+  ]
+ },
+ {
+  "char": "鉞",
+  "reading": "월",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 도끼",
+   "참고: 매칭 키워드: 도끼"
+  ]
+ },
+ {
+  "char": "鋤",
+  "reading": "서",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 호미",
+   "참고: 매칭 키워드: 호미"
+  ]
+ },
+ {
+  "char": "錤",
+  "reading": "기",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 호미",
+   "참고: 매칭 키워드: 호미"
+  ]
+ },
+ {
+  "char": "鍉",
+  "reading": "시",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 숟가락",
+   "참고: 매칭 키워드: 숟가락"
+  ]
+ },
+ {
+  "char": "鎌",
+  "reading": "겸",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 낫",
+   "참고: 매칭 키워드: 낫"
+  ]
+ },
+ {
+  "char": "鎡",
+  "reading": "자",
+  "reasons": [
+   "이름뜻어색함-생활용품(자동스캔): 호미",
+   "참고: 매칭 키워드: 호미"
+  ]
+ },
+ {
+  "char": "冢",
+  "reading": "총",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 무덤",
+   "참고: 매칭 키워드: 무덤"
+  ]
+ },
+ {
+  "char": "厠",
+  "reading": "측",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 뒷간",
+   "참고: 매칭 키워드: 뒷간"
+  ]
+ },
+ {
+  "char": "圂",
+  "reading": "혼",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 뒷간",
+   "참고: 매칭 키워드: 뒷간"
+  ]
+ },
+ {
+  "char": "圊",
+  "reading": "청",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 뒷간",
+   "참고: 매칭 키워드: 뒷간"
+  ]
+ },
+ {
+  "char": "城",
+  "reading": "성",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 보루",
+   "참고: 매칭 키워드: 보루"
+  ]
+ },
+ {
+  "char": "堀",
+  "reading": "굴",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 굴뚝",
+   "참고: 매칭 키워드: 굴뚝"
+  ]
+ },
+ {
+  "char": "塋",
+  "reading": "영",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 무덤",
+   "참고: 매칭 키워드: 무덤"
+  ]
+ },
+ {
+  "char": "塞",
+  "reading": "새/색",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 변방",
+   "참고: 매칭 키워드: 변방"
+  ]
+ },
+ {
+  "char": "墓",
+  "reading": "묘",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 무덤",
+   "참고: 매칭 키워드: 무덤"
+  ]
+ },
+ {
+  "char": "戍",
+  "reading": "수",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 수자리",
+   "참고: 매칭 키워드: 수자리"
+  ]
+ },
+ {
+  "char": "砦",
+  "reading": "채",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 울타리",
+   "참고: 매칭 키워드: 울타리"
+  ]
+ },
+ {
+  "char": "籬",
+  "reading": "리/이",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 울타리",
+   "참고: 매칭 키워드: 울타리"
+  ]
+ },
+ {
+  "char": "郭",
+  "reading": "곽",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 성곽",
+   "참고: 매칭 키워드: 성곽"
+  ]
+ },
+ {
+  "char": "陲",
+  "reading": "수",
+  "reasons": [
+   "이름뜻어색함-지리행정(자동스캔): 변방",
+   "참고: 매칭 키워드: 변방"
+  ]
+ },
+ {
+  "char": "倔",
+  "reading": "굴",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 딱딱할",
+   "참고: 매칭 키워드: 딱딱할"
+  ]
+ },
+ {
+  "char": "利",
+  "reading": "리/이",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 날카로울",
+   "참고: 매칭 키워드: 날카로울"
+  ]
+ },
+ {
+  "char": "汰",
+  "reading": "태",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 미끄러울",
+   "참고: 매칭 키워드: 미끄러울"
+  ]
+ },
+ {
+  "char": "澁",
+  "reading": "삽",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 떫을",
+   "참고: 매칭 키워드: 떫을"
+  ]
+ },
+ {
+  "char": "粗",
+  "reading": "조",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 거칠",
+   "참고: 매칭 키워드: 거칠"
+  ]
+ },
+ {
+  "char": "苛",
+  "reading": "가",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 매울",
+   "참고: 매칭 키워드: 매울"
+  ]
+ },
+ {
+  "char": "荒",
+  "reading": "황",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 거칠",
+   "참고: 매칭 키워드: 거칠"
+  ]
+ },
+ {
+  "char": "鈍",
+  "reading": "둔",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 무딜",
+   "참고: 매칭 키워드: 무딜"
+  ]
+ },
+ {
+  "char": "銳",
+  "reading": "예",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 날카로울",
+   "참고: 매칭 키워드: 날카로울"
+  ]
+ },
+ {
+  "char": "鹹",
+  "reading": "함",
+  "reasons": [
+   "이름뜻어색함-감각촉감(자동스캔): 짤",
+   "참고: 매칭 키워드: 짤"
+  ]
+ },
+ {
+  "char": "蠡",
+  "reading": "려/여",
+  "reasons": [
+   "이름뜻어색함-부식노화(자동스캔): 좀먹을",
+   "참고: 매칭 키워드: 좀먹을"
+  ]
+ },
+ {
+  "char": "黴",
+  "reading": "미",
+  "reasons": [
+   "이름뜻어색함-부식노화(자동스캔): 곰팡이",
+   "참고: 매칭 키워드: 곰팡이"
+  ]
+ },
+ {
+  "char": "旱",
+  "reading": "한",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 가물",
+   "참고: 매칭 키워드: 가물"
+  ]
+ },
+ {
+  "char": "滈",
+  "reading": "호",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 장마",
+   "참고: 매칭 키워드: 장마"
+  ]
+ },
+ {
+  "char": "霆",
+  "reading": "정",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 벼락",
+   "참고: 매칭 키워드: 벼락"
+  ]
+ },
+ {
+  "char": "震",
+  "reading": "진",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 벼락",
+   "참고: 매칭 키워드: 벼락"
+  ]
+ },
+ {
+  "char": "霔",
+  "reading": "주",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 장마",
+   "참고: 매칭 키워드: 장마"
+  ]
+ },
+ {
+  "char": "霖",
+  "reading": "림/임",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 장마",
+   "참고: 매칭 키워드: 장마"
+  ]
+ },
+ {
+  "char": "霜",
+  "reading": "상",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 서리",
+   "참고: 매칭 키워드: 서리"
+  ]
+ },
+ {
+  "char": "霪",
+  "reading": "음",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 장마",
+   "참고: 매칭 키워드: 장마"
+  ]
+ },
+ {
+  "char": "霹",
+  "reading": "벽",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 벼락",
+   "참고: 매칭 키워드: 벼락"
+  ]
+ },
+ {
+  "char": "靂",
+  "reading": "력/역",
+  "reasons": [
+   "이름뜻어색함-거친자연현상(자동스캔): 벼락",
+   "참고: 매칭 키워드: 벼락"
+  ]
+ },
+ {
+  "char": "戈",
+  "reading": "과",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "戵",
+  "reading": "구",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "柊",
+  "reading": "종",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 방망이",
+   "참고: 매칭 키워드: 방망이"
+  ]
+ },
+ {
+  "char": "棍",
+  "reading": "곤",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 몽둥이",
+   "참고: 매칭 키워드: 몽둥이"
+  ]
+ },
+ {
+  "char": "棒",
+  "reading": "봉",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 몽둥이",
+   "참고: 매칭 키워드: 몽둥이"
+  ]
+ },
+ {
+  "char": "棨",
+  "reading": "계",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "椎",
+  "reading": "추",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 쇠몽둥이",
+   "참고: 매칭 키워드: 쇠몽둥이"
+  ]
+ },
+ {
+  "char": "槊",
+  "reading": "삭",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "槌",
+  "reading": "퇴",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 몽둥이",
+   "참고: 매칭 키워드: 몽둥이"
+  ]
+ },
+ {
+  "char": "槍",
+  "reading": "창",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "矛",
+  "reading": "모",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "釘",
+  "reading": "정",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "鈒",
+  "reading": "삽",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "鈗",
+  "reading": "윤",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "鏈",
+  "reading": "련/연",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 쇠사슬",
+   "참고: 매칭 키워드: 쇠사슬"
+  ]
+ },
+ {
+  "char": "鏦",
+  "reading": "총",
+  "reasons": [
+   "이름뜻어색함-무기흉기(자동스캔): 창",
+   "참고: 매칭 키워드: 창"
+  ]
+ },
+ {
+  "char": "屁",
+  "reading": "비",
+  "reasons": [
+   "이름뜻어색함-생리현상(자동스캔): 방귀",
+   "참고: 매칭 키워드: 방귀"
+  ]
+ },
+ {
+  "char": "欠",
+  "reading": "흠",
+  "reasons": [
+   "이름뜻어색함-생리현상(자동스캔): 하품",
+   "참고: 매칭 키워드: 하품"
+  ]
+ },
+ {
+  "char": "鼾",
+  "reading": "한",
+  "reasons": [
+   "이름뜻어색함-생리현상(자동스캔): 코골",
+   "참고: 매칭 키워드: 코골"
+  ]
  }
 ]

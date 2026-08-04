@@ -76,10 +76,14 @@ export async function getHanjaByReading(reading: string): Promise<Hanja[]> {
 
 // 작명 후보 생성용 한자 풀(CLAUDE.md Phase 4). 인명용 한자이면서 불용문자가 아닌 전체를 반환한다.
 // 자원오행(element) 매치 여부는 필터가 아니라 candidates.ts에서 가산점으로만 쓴다 (3.5).
+// hun(한글 훈)이 없는 한자는 제외한다(2026.8.3) — getHanjaByReading(한자 찾기, 3.10)에 이미
+// 적용된 것과 같은 규칙을 여기도 적용한 것. 훈을 모르면 사용자가 그 글자가 왜 좋은지 판단할
+// 근거가 없어 새 후보로 추천하기에 부적합하다(이미 지어진 이름을 채점하는 getHanjaByChar에는
+// 이 조건을 적용하지 않는다 — 기존 이름은 훈이 없어도 그대로 채점해야 하므로).
 export async function getEligibleHanjaPool(): Promise<Hanja[]> {
   const client = getDbClient();
   const result = await client.execute({
-    sql: `SELECT ${HANJA_COLUMNS} FROM hanja WHERE is_name_allowed = 1 AND is_forbidden = 0`,
+    sql: `SELECT ${HANJA_COLUMNS} FROM hanja WHERE is_name_allowed = 1 AND is_forbidden = 0 AND hun IS NOT NULL`,
     args: [],
   });
   return result.rows.map((row) => rowToHanja(row as unknown as Record<string, unknown>));
