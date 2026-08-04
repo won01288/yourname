@@ -6,13 +6,20 @@ import InputForm, { NAMING_WIZARD_LAST_STEP } from "@/app/components/InputForm";
 import LoadingStages from "@/app/components/LoadingStages";
 import ResultsDashboard from "@/app/components/ResultsDashboard";
 import AuthRequiredModal from "@/app/components/AuthRequiredModal";
+import PaymentRequiredModal from "@/app/components/PaymentRequiredModal";
 import { submitNaming, type NameApiResult, type NameRequestPayload } from "@/app/lib/name-client";
+import type { CandidateCount } from "@/lib/naming/config";
 
 type Stage = "form" | "loading" | "result";
 
 // 로그인 베타 — 로그인 안내 모달로 이어질 때 지금까지 입력한 값을 임시 보관하는 키.
 // /naming?resume=1로 돌아왔을 때 이 값을 읽어 폼을 다시 채운다(위저드 처음부터 반복 방지).
 const PENDING_NAMING_KEY = "yourname_pending_naming";
+
+// 결제(CLAUDE.md 0.4) — 결제 모달로 이어질 때 지금까지 입력한 값을 임시 보관하는 키. 모바일
+// 풀리다이렉트로 결제창에 갔다가 /naming?paymentReturn=1&orderId=N으로 돌아왔을 때 이 값을
+// 읽어 폼을 복원한다. PENDING_NAMING_KEY와 동일한 목적, 결제 단계 전용으로 분리했다.
+const PENDING_PAYMENT_KEY = "yourname_pending_payment";
 
 interface NamingWizardClientProps {
   isLoggedIn: boolean;
@@ -58,7 +65,31 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [result, setResult] = useState<NameApiResult | null>(null);
   const [showAuthModal, setShowAuthModal] = useState(false);
+  // 결제(CLAUDE.md 0.4) — 이번 세션에서 결제를 마친 주문. candidateCount를 함께 들고 있어야
+  // 사용자가 개수를 바꾸면(이전 결제는 무효) 다시 결제를 요구할 수 있다.
+  const [paidOrder, setPaidOrder] = useState<{ id: number; candidateCount: CandidateCount } | null>(null);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [priceByCount, setPriceByCount] = useState<Partial<Record<CandidateCount, number>>>({});
   const pendingResult = useRef<NameApiResult | null>(null);
+
+  // 결제 모달에 미리 가격을 보여주기 위한 공개 가격 조회(app/api/payment/price-tiers, 인증 불필요).
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/payment/price-tiers")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { tiers?: { candidateCount: CandidateCount; price: number }[] } | null) => {
+        if (cancelled || !data?.tiers) return;
+        const map: Partial<Record<CandidateCount, number>> = {};
+        for (const tier of data.tiers) map[tier.candidateCount] = tier.price;
+        setPriceByCount(map);
+      })
+      .catch(() => {
+        // 가격 표시만 실패할 뿐 결제 자체(checkout API)는 별도로 가격을 다시 조회하므로 무시한다.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const doSubmit = useCallback(async (payload: NameRequestPayload) => {
     setLastPayload(payload);
@@ -80,6 +111,14 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
         setShowAuthModal(true);
         return;
       }
+      // 결제(CLAUDE.md 0.4) — 서버가 402를 준 드문 경우(주문이 다른 이유로 무효화된 등)에도
+      // 결제 모달로 되돌려 다시 결제를 시도할 수 있게 한다. 무효화된 주문을 잊는다.
+      if (outcome.paymentRequired) {
+        setPaidOrder(null);
+        sessionStorage.setItem(PENDING_PAYMENT_KEY, JSON.stringify(payload));
+        setShowPaymentModal(true);
+        return;
+      }
       setErrorMessage(outcome.error);
       setSurnameOptions(outcome.surnameOptions ?? null);
       return;
@@ -96,6 +135,63 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
     setShowAuthModal(true);
   }, []);
 
+  const handlePaymentRequired = useCallback((payload: NameRequestPayload) => {
+    sessionStorage.setItem(PENDING_PAYMENT_KEY, JSON.stringify(payload));
+    setLastPayload(payload);
+    setShowPaymentModal(true);
+  }, []);
+
+  const handlePaymentPaid = useCallback(
+    (orderId: number) => {
+      setShowPaymentModal(false);
+      sessionStorage.removeItem(PENDING_PAYMENT_KEY);
+      setLastPayload((current) => {
+        if (!current) return current;
+        setPaidOrder({ id: orderId, candidateCount: current.candidateCount });
+        void doSubmit({ ...current, orderId });
+        return current;
+      });
+    },
+    [doSubmit]
+  );
+
+  // 결제(CLAUDE.md 0.4) — 모바일 등 풀리다이렉트 결제 흐름에서 결제창을 마치고 돌아온 경우.
+  // returnUrl(app/api/payment/checkout)이 /naming?paymentReturn=1&orderId=N 형태로 넘겨준다.
+  // 결제 완료(paid) 여부를 한 번 조회해, 완료됐으면 곧바로 이어서 제출하고, 아직이면(취소 등)
+  // 마지막 단계로만 복원해 사용자가 다시 시도하게 둔다.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("paymentReturn") !== "1") return;
+    const orderId = Number(params.get("orderId"));
+    const raw = sessionStorage.getItem(PENDING_PAYMENT_KEY);
+    sessionStorage.removeItem(PENDING_PAYMENT_KEY);
+    if (!raw || !Number.isInteger(orderId)) return;
+    let payload: NameRequestPayload;
+    try {
+      payload = JSON.parse(raw) as NameRequestPayload;
+    } catch {
+      return;
+    }
+
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setLastPayload(payload);
+    setResumeToLastStep(true);
+
+    fetch(`/api/payment/orders/${orderId}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { status?: string } | null) => {
+        if (data?.status === "paid") {
+          setPaidOrder({ id: orderId, candidateCount: payload.candidateCount });
+          void doSubmit({ ...payload, orderId });
+        }
+        // paid가 아니면(취소·아직 웹훅 미도착 등) 위저드 마지막 단계로만 복원해 두고, 사용자가
+        // 다시 제출을 누르면 InputForm이 paidOrder 없음을 감지해 결제 모달을 다시 띄운다.
+      })
+      .catch(() => {
+        // 조회 실패 시에도 동일하게 마지막 단계 복원만 유지한다.
+      });
+  }, [doSubmit]);
+
   const handleLoadingComplete = useCallback(() => {
     if (pendingResult.current) {
       setResult(pendingResult.current);
@@ -110,6 +206,7 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
     setLastPayload(null);
     setResumeToLastStep(false);
     setRequestDone(false);
+    setPaidOrder(null);
     pendingResult.current = null;
     setStage("form");
   }, []);
@@ -132,6 +229,8 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
             initialValues={lastPayload}
             isLoggedIn={isLoggedIn}
             onLoginRequired={handleLoginRequired}
+            onPaymentRequired={handlePaymentRequired}
+            paidOrder={paidOrder}
             initialStep={resumeToLastStep ? NAMING_WIZARD_LAST_STEP : undefined}
           />
         </>
@@ -154,6 +253,15 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
         <AuthRequiredModal
           onClose={() => setShowAuthModal(false)}
           loginHref={`/login?next=${encodeURIComponent("/naming?resume=1")}`}
+        />
+      )}
+
+      {showPaymentModal && lastPayload && (
+        <PaymentRequiredModal
+          candidateCount={lastPayload.candidateCount}
+          amount={priceByCount[lastPayload.candidateCount] ?? null}
+          onClose={() => setShowPaymentModal(false)}
+          onPaid={handlePaymentPaid}
         />
       )}
     </main>

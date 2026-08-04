@@ -18,6 +18,10 @@ export interface NameRequestPayload {
   gender: Gender;
   /** 추천받을 이름 개수(3/5/10). CLAUDE.md 3.6(Phase 8) — 후보 개수 선택. */
   candidateCount: CandidateCount;
+  /** 결제(CLAUDE.md 0.4) — candidateCount만큼 생성할 권리를 산 payment_order.id. 위저드가 결제
+   * 완료 후에만 채워 넣는다 — 폼 입력 단계(초안 저장·재개)에서는 아직 없을 수 있어 선택 필드다.
+   * submitNaming을 호출하는 시점에는 항상 채워져 있어야 한다(서버가 누락 시 400을 반환한다). */
+  orderId?: number;
 }
 
 export interface NameApiResult {
@@ -38,7 +42,7 @@ export interface NameApiError {
 
 export type NameApiOutcome =
   | { ok: true; data: NameApiResult }
-  | { ok: false; error: string; surnameOptions?: string[]; authRequired?: boolean };
+  | { ok: false; error: string; surnameOptions?: string[]; authRequired?: boolean; paymentRequired?: boolean };
 
 export async function submitNaming(payload: NameRequestPayload): Promise<NameApiOutcome> {
   let response: Response;
@@ -67,6 +71,9 @@ export async function submitNaming(payload: NameRequestPayload): Promise<NameApi
       // 직접 호출했거나, 제출 도중 세션이 만료된 드문 경우) 일반 에러 배너 대신 로그인 필요
       // 모달로 수렴시키기 위한 플래그.
       authRequired: response.status === 401 && body.code === "AUTH_REQUIRED",
+      // 결제(CLAUDE.md 0.4) — 402 + PAYMENT_REQUIRED면 일반 에러 배너 대신 결제 모달로 수렴시킨다
+      // (프론트 사전 체크를 건너뛰고 직접 호출했거나, 제출 도중 주문 상태가 바뀐 드문 경우).
+      paymentRequired: response.status === 402 && body.code === "PAYMENT_REQUIRED",
     };
   }
 

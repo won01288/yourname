@@ -60,6 +60,21 @@
   - **기존 데이터 자동 정정**: 버그 수정 이전에 만들어진 계정(placeholder 이메일 등)은 코드만 고쳐서는 그대로 남는다 — `findOrCreateOAuthUser`(`lib/db-auth.ts`)가 이미 연결된 계정이면 저장된 값을 그대로 반환하고 갱신하지 않았기 때문이다. 사용자 결정에 따라 **매 로그인마다 최신 값으로 동기화**하도록 바꿨다: `displayName`/`phone`/`realName`은 `COALESCE`로 갱신(제공자가 이번 요청에 값을 안 내려줬다고 기존 확보 값을 지우지 않음), `email`은 달라졌을 때만 UPDATE하되 다른 계정이 이미 그 이메일을 쓰고 있어 UNIQUE 제약과 충돌하면(극히 드문 경우) 조용히 건너뛴다 — 그 정도로 로그인 자체를 막지 않기 위함이다. 즉 이미 가입된 사용자도 **다음 로그인 시** placeholder 이메일이 실제 이메일로 자동 교체된다.
   - **관리자 회원관리 화면 신설**: `ADMIN_EMAILS`(6장·`lib/auth.ts` `isAdminUser`)로 로그인한 관리자만 `/admin/users`에서 전체 회원의 가입 시 수집 정보(이메일·가입 방식·닉네임·회원이름·휴대전화번호·연결된 소셜 계정과 `provider_account_id`)를 그대로 나열해 볼 수 있다. 새 판정·집계를 만들지 않고 `user`/`oauth_account` 테이블 값을 그대로 옮기는 조회 전용 화면이다(`lib/db-auth.ts` `listAllUsersForAdmin`). 이 화면 자체가 이번 버그를 발견한 경로였다.
 
+### 0.4 결제(페이앱) — 프리미엄 작명 유료화 1단계 (Phase 14 확정, 2026.8.4)
+
+`/naming`(프리미엄 작명)에 실결제를 붙였다. 결제수단은 카드·카카오페이·네이버페이, 가격은 추천 개수(3.6.1의 `candidateCount`, 3/5/10)별로 5,900원/8,900원/14,900원이며 관리자가 `/admin/pricing`에서 바꿀 수 있다. PG사는 페이앱(PayApp)이다.
+
+- **삼성페이는 지원하지 않는다**: 페이앱 웹 결제(JS/REST API)의 `openpaytype`에는 card/kakaopay/naverpay/applepay 등은 있지만 삼성페이는 없다 — 삼성페이는 페이앱의 오프라인 대면결제 APP SDK 전용이다. `openpaytype=card,kakaopay,naverpay` 3종만 연동한다.
+- **PG사 추상화 — 토스페이먼츠 교체 대비**: `lib/payment/`(신규 폴더, `lib/naming/`과 별개 — 결제는 외부 PG/DB를 다루는 인프라라 8.1의 "LLM/Next/DB 금지" 대상이 아니다)에 `PaymentProvider` 인터페이스(`provider.ts`)를 두고, 현재는 이를 구현하는 `payapp.ts` 하나만 있다. 추후 토스페이먼츠로 바꿀 때는 `PaymentProvider`를 구현하는 `toss.ts`를 추가하고 `PAYMENT_PROVIDER` 환경변수를 `toss`로 바꾸면 된다 — `lib/db-payment.ts`·결제 API 라우트·프론트(체크아웃 위젯을 로드하는 부분 제외)는 PG사가 무엇인지 몰라도 되게 설계했다.
+- **페이앱 REST가 아니라 JS SDK(lite.js)를 쓴다**: REST API(`cmd=payrequest`)는 `recvphone`(수신 휴대폰번호)이 문서상 필수인데, 이는 페이앱의 원래 용도인 "SMS로 결제링크 청구서 발송" 흐름 때문이다. 우리 서비스는 로그인 방식에 따라(이메일 가입, 카카오 로그인 등 — 0.3) 전화번호가 없는 사용자가 흔해 이 요구사항과 맞지 않는다. JS SDK는 `recvphone`이 선택사항이라 "내 사이트에서 바로 결제창 띄우기" 용도에 맞는다. 그래서 `POST /api/payment/checkout`은 페이앱 서버를 직접 호출하지 않는다 — 로컬 `payment_order`(pending)만 만들고, 프론트(`PaymentCheckoutButton.tsx`)가 `lite.payapp.kr/public/api/v2/payapp-lite.js`를 동적 로드해 직접 결제창을 연다.
+- **결제 상태의 유일한 신뢰 소스는 웹훅**: 브라우저 콜백은 페이앱 문서에 명시돼 있지 않아 신뢰하지 않는다. `POST /api/payment/webhook`(페이앱 `feedbackurl`)이 `userid`/`linkkey`/`linkval`을 `.env`의 `PAYAPP_USERID`/`PAYAPP_LINKKEY`/`PAYAPP_LINKVAL`과 대조해(불일치 시 스푸핑으로 간주) `pay_state`로 상태를 갱신한다(`payment_order.status`: `pending → paid`). 응답은 반드시 순수 텍스트 `"SUCCESS"` + HTTP 200이어야 한다(문서 요구사항, 다르면 최대 10회 재시도). 프론트는 `GET /api/payment/orders/[id]`를 폴링해 웹훅이 갱신한 상태를 확인할 뿐, 그 자체로 상태를 만들지 않는다.
+- **이중사용 방지 — 원자적 claim**: `app/api/name/route.ts`는 성씨 검증 등 "무료로 재시도 가능한" 입력 검증을 전부 통과한 뒤, 가장 비싼 단계(DB 풀 조회·LLM 호출) 진입 직전에 `claimPaymentOrder(orderId, userId, candidateCount)`로 `UPDATE payment_order SET status='consumed' WHERE ... AND status='paid'`를 원자적으로 실행한다. `rowsAffected`가 0이면(이미 소비됐거나, 다른 유저 소유이거나, 아직 결제가 완료되지 않음) `402 PAYMENT_REQUIRED`로 막는다 — 같은 주문으로 두 번 생성 요청(더블클릭, 새로고침 재시도)을 막는다. 이후 LLM 호출이 실패(502)하면 사용자가 결과를 못 받고도 결제를 잃는 일이 없도록 `revertPaymentOrderToPaid`로 `consumed → paid`를 되돌려 같은 주문으로 재시도할 수 있게 한다.
+- **관리자 게이트는 그대로 유지**: `app/naming/page.tsx`의 `isAdminUser` 게이트(정식 출시 전 임시 제한, 5장 Phase 6~)는 이번 결제 기능과 별개로 그대로 둔다. 즉 이 결제 흐름은 현재 관리자 계정으로만 도달 가능하다 — 공개 오픈(게이트 제거) 여부는 별도 결정이다(6장).
+- **관리자 가격 수정**: `/admin/pricing`(`app/admin/pricing/page.tsx`, `isAdminUser` 게이트는 `/admin/users`와 동일)에서 Server Action(`updatePriceTier` 호출)으로 `price_tier` 테이블을 직접 갱신한다 — 별도 API 라우트를 두지 않았다(8.3, `SocialLoginButtons.tsx`의 Server Action 선례를 따름). 가격 변경은 이후 새로 만들어지는 주문부터 반영되고, 이미 만든 주문의 `amount`(스냅샷)는 바뀌지 않는다.
+- **취소/환불은 이번 범위 밖**: `payment_order.status`에 `canceled`/`failed`는 두어 웹훅으로 들어오는 취소 통보를 기록하지만, 관리자가 취소를 "실행"하는 버튼/API는 만들지 않았다 — 필요하면 당장은 페이앱 관리자 사이트에서 직접 처리한다.
+- **코드 위치**: `lib/payment/{types,config,provider,payapp}.ts`, `lib/db-payment.ts`(price_tier/payment_order CRUD), `app/api/payment/{checkout,webhook,orders/[id],price-tiers}/route.ts`, `app/components/{PaymentRequiredModal,PaymentCheckoutButton}.tsx`, `app/admin/pricing/page.tsx`. `app/api/name/route.ts`·`app/lib/name-client.ts`·`app/components/InputForm.tsx`·`app/naming/NamingWizardClient.tsx`에 결제 게이트/모달을 배선했다(로그인 모달과 동일한 sessionStorage 기반 재개 패턴, 모바일 풀리다이렉트 복귀는 `returnUrl=/naming?paymentReturn=1&orderId=N`).
+- **환경변수**: `PAYMENT_PROVIDER`(기본 `payapp`), `PAYAPP_USERID/LINKKEY/LINKVAL`(판매자 관리사이트 "설정 > 연동정보"), `PAYAPP_SHOPNAME`, `APP_BASE_URL`(웹훅/returnurl 절대 URL 생성용, 미설정 시 `VERCEL_URL` → `localhost:3000` 순으로 폴백 — 로컬에서 실제 웹훅을 받으려면 ngrok 등 외부 접근 가능한 URL이 필요).
+
 ## 1. 기술 스택 (확정)
 
 | 영역 | 선택 | 비고 |
@@ -397,6 +412,15 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 
 기존 4테이블(hanja/surname/numerology_81/given_name)과 동일하게 **FK 제약을 쓰지 않는다** — 소유권은 매 조회 SQL의 `WHERE ... AND user_id = ?`(+ 필요시 `expires_at` 조건)로 강제한다. `lib/db.ts`(읽기 전용 참조 데이터)와 성격이 달라 쓰기 전용 접근 함수는 신규 `lib/db-auth.ts`로 분리했다(8.2 참고).
 
+### 4.8 price_tier / payment_order (결제, Phase 14 확정, 2026.8.4)
+
+| 테이블 | 컬럼 | 설명 |
+|---|---|---|
+| `price_tier` | candidate_count(PK, 3/5/10), price, updated_at | 관리자가 `/admin/pricing`에서 직접 갱신(0.4 참고). 코드 상수가 아니라 DB에 두어 배포 없이 가격을 바꿀 수 있게 했다. |
+| `payment_order` | id, user_id, candidate_count, amount, status, provider, provider_order_id, naming_result_id, created_at, updated_at | 결제 주문 1건 = "candidate_count개 생성 1회 이용권". `amount`는 주문 시점 `price_tier` 가격 스냅샷(이후 가격이 바뀌어도 이미 만든 주문엔 영향 없음). `status`는 `pending → paid`(페이앱 웹훅으로만 전이, 유일한 신뢰 소스) `→ consumed`(`app/api/name`이 원자적 UPDATE로 claim) 순으로 진행하거나 `paid` 이전에 `canceled`/`failed`로 끝난다. `provider_order_id`는 페이앱 `mul_no`. |
+
+기존 테이블들과 동일하게 FK 제약을 쓰지 않고 `WHERE user_id = ?`로 소유권을 강제한다. 웹훅(`app/api/payment/webhook`)만 예외적으로 `user_id` 없이 조회한다 — 웹훅은 유저 세션이 아니라 페이앱의 `userid`/`linkkey`/`linkval`로 인증되기 때문이다(0.4 참고).
+
 ---
 
 ## 5. 개발 로드맵
@@ -411,6 +435,7 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 - [x] **Phase 8 — 프리미엄 작명 후보 개수 선택 · 순위 폐지 · 유사 이름 소프트 필터 (2026.7.27)**: 3.6.1 참고. `CANDIDATE_COUNT_OPTIONS=[3,5,10]`로 후보 개수를 선택형으로 바꿨고(`InputForm`·`/api/name`), LLM `rank` 필드를 제거해 순위를 없앤 대신 결정적으로 계산되는 강점 태그(`Candidate.highlights`)를 신설해 벤토 타일을 동일 크기로 통일했다(`HighlightBadges.tsx`, `CandidateDetail.tsx`). 표시 순서는 `app/lib/shuffle.ts`로 응답 직전 무작위화한다. `lib/naming/similarity.ts`(자모 단위 유사도)로 "규리/규린/규나"류 이름이 한 결과에 몰리는 것을 완화 단계별 소프트 필터(`CANDIDATE_DIVERSITY.stages.avoidSimilar`)로 최대한 거른다. vitest(`similarity.test.ts`, `candidates.test.ts` 갱신)·tsc 통과 확인.
 - [x] **Phase 9 — 로그인(이메일/비밀번호) 베타 + 마이페이지 (2026.7.28)**: 0.2·4.7 참고. `lib/auth.ts`(비밀번호 scrypt 해시, DB-backed opaque 세션)·`lib/db-auth.ts`(user/session/score_result/naming_result CRUD) 신설, `app/api/auth/{signup,login,logout}` 라우트 추가. `app/api/name/route.ts`는 최상단 401 게이트(로그인 필수) + 성공 시 `naming_result` best-effort 저장을 추가했고, `app/api/score/route.ts`는 게이트 없이 로그인 상태일 때만 자동 저장하도록 했다. `app/naming/page.tsx`를 Server Component로 바꾸고 기존 위저드 로직은 `NamingWizardClient.tsx`로 옮겨, 비로그인 최종 제출 시 `AuthRequiredModal`을 띄우고 `sessionStorage`로 입력값을 보존했다가 로그인 후 `/naming?resume=1`에서 복원한다(폼 재입력 방지). `Nav.tsx`는 이미 Server Component였음을 확인하고 `async` 전환 후 `getCurrentUser()`를 직접 호출해 로그인 상태별 링크(로그인/회원가입 ↔ 마이페이지/로그아웃)를 표시한다 — 이로 인해 Nav를 포함한 모든 라우트가 정적 프리렌더링에서 동적 렌더링으로 바뀌는 트레이드오프를 받아들였다. `app/mypage/*` 페이지에서 저장된 결과를 `ScoreDashboard`/`ResultsDashboard`(신규 `restartLabel` prop으로 문구만 다르게)로 그대로 재현한다. `GET /api/history/*` 같은 조회용 API는 만들지 않고 마이페이지 Server Component가 `lib/db-auth.ts`를 직접 호출하며, 클라이언트 인터랙션이 필요한 삭제(`DELETE /api/history/score/[id]`)만 API로 뒀다(8.3). vitest(`lib/auth.test.ts`, 해시/세션 토큰 유일성)·tsc·eslint 통과 확인.
 - [x] **Phase 10 — SNS 로그인(카카오/네이버, 최초엔 구글 포함) (2026.7.31)**: 0.3·4.7 참고. 사업자 등록 완료로 0.2에서 미뤄뒀던 소셜 로그인을 붙였다. `next-auth`(Auth.js v5 beta) 설치, `lib/oauth.ts`에 구글/카카오/네이버 프로바이더와 jwt/session 콜백을 설정해 `lib/db-auth.ts`의 신규 `findOrCreateOAuthUser`(provider_account_id 기준 매칭, 이메일 일치 시 자동 연동)로 우리 `user` 테이블과 연결한다. `oauth_account` 테이블 신설, `user.display_name` 컬럼 추가(둘 다 스키마 마이그레이션, 기존 데이터 영향 없음). `lib/auth.ts`의 `getCurrentUser()`가 커스텀 쿠키 세션 다음으로 next-auth JWT 세션을 확인하도록 확장 — 이 한 지점만 넓혀 `/naming`·`/score`·마이페이지·관리자 판별 등 나머지 코드는 변경 없이 그대로 동작한다. `app/api/auth/[...nextauth]/route.ts`(handlers 노출), `app/components/SocialLoginButtons.tsx`(Server Action 기반 로그인 버튼, 로그인/회원가입 페이지에 배치), `next-auth.d.ts`(타입 보강) 추가. 로그아웃은 커스텀 세션과 next-auth 세션을 모두 정리한다. tsc·eslint·vitest(81개, `lib/auth.test.ts`에 `./oauth` 스텁 추가 — next-auth가 next/server를 불러와 순수 Node 테스트 환경과 맞지 않아 db-auth와 동일하게 모킹) 통과 확인. **같은 날 구글 연동 제거**(0.3 "구글 제거" 참고) — 이후 지원 제공자는 카카오/네이버 둘뿐이다. 각 제공자 앱 등록·Client ID/Secret 발급은 사용자가 직접 진행.
+- [x] **Phase 14 — 결제(페이앱) 연동 (2026.8.4)**: 0.4·4.8 참고. 카드·카카오페이·네이버페이 3종, 추천 개수(3/5/10)별 5,900/8,900/14,900원. `lib/payment/`(PG 추상화, `PaymentProvider` 인터페이스 + `payapp.ts` 구현)·`lib/db-payment.ts`(`price_tier`/`payment_order` CRUD, 원자적 `claimPaymentOrder`) 신설. `app/api/payment/{checkout,webhook,orders/[id],price-tiers}` 라우트 추가, `app/api/name/route.ts`에 결제 소비 게이트(성씨 검증 등 무료 재시도 가능한 단계 통과 후, LLM 호출 직전에 claim) 배선. `app/admin/pricing`(Server Action)으로 관리자가 가격 직접 수정. 프론트는 `AuthRequiredModal`과 동일한 sessionStorage 재개 패턴으로 `PaymentRequiredModal`/`PaymentCheckoutButton`을 `InputForm`/`NamingWizardClient`에 배선(모바일 풀리다이렉트 복귀 포함). `app/naming/page.tsx`의 관리자 전용 게이트는 그대로 유지 — 이번 결제 흐름은 관리자 계정으로만 도달 가능하며, 실결제 검증은 사용자 본인이 진행.
 
 ---
 
@@ -438,7 +463,12 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 - **성씨 테이블 확장 (2026.7.28, 30개 → 100개/102행으로 완료)**: `etc/korean_sung.hwp` 기준 상위 100개 성씨로 확장했다(4.4 참고). 남은 갭: 이 100개 밖의 희귀 성씨·이체자(예: 100위 밖 성씨, 흔치 않은 한자 표기)는 여전히 없다. (`오행배속표.hwp`의 "성씨" 목록은 분류 근거가 불명확해 채택하지 않았음 — 기존 판단 유지.) 복성(남궁 외 제갈·황보·선우 등)은 이번 표에 남궁 하나만 포함되어 있어, 다른 복성이 필요해지면 별도 출처 확인이 필요하다.
 - **4격(원격·형격·이격·정격) 계산의 이름 1글자 보정**: 현재 `calcSagyeok`은 이름이 1글자면 형격=이격이 되는 단순 합산만 적용. 일부 유파는 가상 획수를 더하는 보정을 쓰므로 검수 후 결정.
 - **이름 점수 확인 서비스(3.10)의 1글자·3글자 이상 이름 미지원**: `GIVEN_NAME_LENGTH=2`와 같은 이유로 채점도 두 글자만 받는다. 위 4격 1글자 보정이 확정되면 함께 확장 검토.
-- **유료 서비스 실제 결제 게이트**: 코드베이스에 결제 시스템 자체가 없다(0.1) — `/naming`은 로그인(Phase 9, 0.2)은 필수가 됐지만 실제 과금은 아직 없어 개념상 "프리미엄"일 뿐 기술적으로는 로그인만 하면 열려 있다. 실제 결제 연동은 별도 결정.
+- **결제(페이앱, 0.4·Phase 14)의 남은 갭**:
+  - **결제 취소/환불 자동화** — `payment_order.status`에 `canceled`/`failed`는 있지만, 관리자가 취소를 "실행"하는 버튼/API는 없다. 현재는 페이앱 관리자 사이트에서 직접 처리해야 한다.
+  - **프리미엄 작명 공개 오픈 여부** — `app/naming/page.tsx`의 관리자 전용 게이트(정식 출시 전 임시 제한, 5장 Phase 6~)를 이번 결제 기능과 별개로 그대로 유지했다. 즉 지금은 결제 인프라만 구축됐을 뿐, 관리자가 아닌 일반 사용자는 여전히 `/naming`에 진입할 수 없다. 게이트를 언제·어떻게 제거할지는 별도 결정.
+  - **삼성페이 미지원** — 페이앱 웹 결제(JS/REST)에는 삼성페이 옵션이 없다(대면결제 APP SDK 전용). 필요하면 페이앱에 별도 문의해 재검토.
+  - **로컬 개발 환경에서 웹훅 테스트 불가** — 페이앱이 `localhost`로 웹훅을 보낼 수 없어, 실제 결제 흐름 검증에는 ngrok 등 외부 접근 가능한 URL(`APP_BASE_URL`)이 필요하다.
+  - **가격 변경 이력 없음** — `price_tier.updated_at`만 갱신되고 과거 가격 이력은 남지 않는다. 필요해지면 별도 이력 테이블 결정.
 - **로그인 베타의 의도적 제외 항목 (0.2, Phase 9)**: 비밀번호 재설정(이메일 발송 인프라 없음 — 문의 시 운영자가 수동으로 `password_hash` 갱신), 이메일 소유권 인증, 가입/로그인 rate limit(Vercel Firewall/WAF 레벨에서 거는 게 더 정확하다고 판단해 앱 코드에서는 보류). 소셜 로그인(카카오/네이버)은 Phase 10(0.3)에서 완료.
 - **SNS 로그인(0.3, Phase 10)의 남은 갭**: 카카오는 이메일 동의 항목이 카카오 측 별도 심사 대상이라, 심사 전에는 이메일 없이 닉네임만 받을 수 있다(현재는 placeholder 이메일 + display_name으로 처리, 7장 참고). OAuth 프로필 이메일이 기존 계정과 일치하면 자동 연동하는데, 이는 두 제공자 모두 이메일을 검증된 값으로만 내려준다는 전제에 기반한 판단이다 — 이 전제가 깨지는 사례(예: 제공자 정책 변경)가 확인되면 재검토 필요. 계정 연결 해제(특정 소셜 계정만 분리)·복수 소셜 계정 연결 UI는 아직 없음.
 

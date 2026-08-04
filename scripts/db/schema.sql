@@ -133,3 +133,31 @@ CREATE TABLE IF NOT EXISTS naming_result (
 );
 
 CREATE INDEX IF NOT EXISTS idx_naming_result_user_id ON naming_result(user_id);
+
+-- 결제(페이앱, CLAUDE.md 0.4) — 프리미엄 작명 유료화 1단계. candidate_count(3/5/10) 티어별
+-- 가격을 관리자가 바꿀 수 있도록 코드 상수가 아니라 DB에 둔다.
+CREATE TABLE IF NOT EXISTS price_tier (
+  candidate_count INTEGER PRIMARY KEY CHECK (candidate_count IN (3, 5, 10)),
+  price INTEGER NOT NULL,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 결제 주문 1건 = "candidate_count개 생성 1회 이용권". status는 pending(생성 직후)
+-- -> paid(페이앱 feedbackurl 웹훅으로만 전이 — 유일한 신뢰 소스) -> consumed(app/api/name이
+-- 원자적 UPDATE로 claim, 이중사용 방지) 순으로 진행하거나, paid 이전에 canceled/failed로 끝난다.
+-- FK 제약은 기존 관례와 동일하게 쓰지 않고, 소유권은 매 조회 WHERE user_id = ?로 강제한다.
+CREATE TABLE IF NOT EXISTS payment_order (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  candidate_count INTEGER NOT NULL,
+  amount INTEGER NOT NULL,           -- 주문 시점 price_tier 가격 스냅샷(이후 가격이 바뀌어도 영향 없음)
+  status TEXT NOT NULL DEFAULT 'pending'
+    CHECK (status IN ('pending', 'paid', 'consumed', 'canceled', 'failed')),
+  provider TEXT NOT NULL DEFAULT 'payapp',
+  provider_order_id TEXT,            -- 페이앱 mul_no 등 PG사 측 주문번호(웹훅 수신 후 채워짐)
+  naming_result_id INTEGER,          -- 이 주문으로 생성된 naming_result.id (소비 후 best-effort 연결)
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_payment_order_user_id ON payment_order(user_id);

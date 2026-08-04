@@ -14,6 +14,7 @@ import { shuffleArray } from "@/app/lib/shuffle";
 import type { Gender } from "@/lib/naming/types";
 import { getCurrentUser, isAdminUser } from "@/lib/auth";
 import { saveNamingResult } from "@/lib/db-auth";
+import { claimPaymentOrder, linkPaymentOrderToNamingResult, revertPaymentOrderToPaid } from "@/lib/db-payment";
 
 interface NameRequestBody extends BirthInput {
   surnameHangul: string;
@@ -24,6 +25,8 @@ interface NameRequestBody extends BirthInput {
   gender: Gender;
   /** Phase 8 — 추천받을 이름 개수(3/5/10). 생략 시 DEFAULT_CANDIDATE_COUNT(5). */
   candidateCount?: number;
+  /** 결제(CLAUDE.md 0.4) — candidateCount만큼 생성할 권리를 산 payment_order.id. 필수. */
+  orderId: number;
 }
 
 function isValidBirthInput(body: Partial<NameRequestBody>): body is NameRequestBody {
@@ -37,7 +40,8 @@ function isValidBirthInput(body: Partial<NameRequestBody>): body is NameRequestB
     typeof body.surnameHangul === "string" &&
     body.surnameHangul.length > 0 &&
     (body.gender === "M" || body.gender === "F") &&
-    (body.candidateCount === undefined || (CANDIDATE_COUNT_OPTIONS as readonly number[]).includes(body.candidateCount))
+    (body.candidateCount === undefined || (CANDIDATE_COUNT_OPTIONS as readonly number[]).includes(body.candidateCount)) &&
+    typeof body.orderId === "number"
   );
 }
 
@@ -70,7 +74,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "필수 필드가 누락되었습니다. year/month/day/hour/minute/isLunar/surnameHangul/gender(M 또는 F)를 확인하고, " +
+          "필수 필드가 누락되었습니다. year/month/day/hour/minute/isLunar/surnameHangul/gender(M 또는 F)/orderId를 확인하고, " +
           `candidateCount를 지정했다면 ${CANDIDATE_COUNT_OPTIONS.join("/")} 중 하나인지 확인하세요.`,
       },
       { status: 400 }
@@ -97,6 +101,18 @@ export async function POST(request: Request) {
         options: surnameOptions.map((s) => s.hanja),
       },
       { status: 400 }
+    );
+  }
+
+  // 결제(CLAUDE.md 0.4) — 무료로 재시도 가능한 입력 검증(성씨 등록 여부·한자 특정)은 전부 통과한
+  // 뒤, 가장 비싼 단계(DB 풀 조회·LLM 호출) 진입 직전에만 결제를 소비한다. 이 주문이 이 유저·이
+  // 개수로 결제 완료(paid) 상태인지 원자적으로 확인하며 동시에 소비 처리한다(claimPaymentOrder) —
+  // 이미 소비됐거나, 다른 유저 소유이거나, 아직 결제 완료 웹훅이 도착하지 않았으면 실패한다.
+  const claimed = await claimPaymentOrder(body.orderId, currentUser.id, candidateCount);
+  if (!claimed) {
+    return NextResponse.json(
+      { error: "유효하지 않거나 이미 사용된 결제입니다.", code: "PAYMENT_REQUIRED" },
+      { status: 402 }
     );
   }
 
@@ -146,6 +162,11 @@ export async function POST(request: Request) {
       });
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
+      // 결제(CLAUDE.md 0.4) — LLM 호출 실패로 사용자가 결과를 못 받게 됐으니, 이미 소비 처리한
+      // 주문을 paid로 되돌려 같은 orderId로 재시도할 수 있게 한다(재결제를 요구하지 않는다).
+      await revertPaymentOrderToPaid(body.orderId).catch((revertErr) => {
+        console.error("결제 소비 되돌리기 실패:", revertErr);
+      });
       return NextResponse.json({ error: `해설 생성 중 오류가 발생했습니다: ${message}` }, { status: 502 });
     }
   }
@@ -163,7 +184,11 @@ export async function POST(request: Request) {
   // best-effort 저장 — 이미 비용을 지불해 생성된 LLM 결과를 저장 실패 때문에 사용자가 못 받는
   // 일이 없도록, 저장이 실패해도 정상 응답은 그대로 반환한다(30일 재조회는 CLAUDE.md 신규 결정).
   try {
-    await saveNamingResult(currentUser.id, body, responseBody);
+    const namingResultId = await saveNamingResult(currentUser.id, body, responseBody);
+    // 결제(CLAUDE.md 0.4) — best-effort. 실패해도 이미 생성된 결과 응답에는 영향 없다.
+    await linkPaymentOrderToNamingResult(body.orderId, namingResultId).catch((err) => {
+      console.error("payment_order ↔ naming_result 연결 실패:", err);
+    });
   } catch (err) {
     console.error("naming_result 저장 실패:", err);
   }

@@ -20,6 +20,12 @@ interface InputFormProps {
   /** isLoggedIn이 false일 때 최종 제출 대신 호출된다. 지금까지 입력한 값을 그대로 넘겨,
    * 로그인 후 이어서 제출할 수 있게 한다(부모가 sessionStorage에 보관). */
   onLoginRequired: (payload: NameRequestPayload) => void;
+  /** 결제(CLAUDE.md 0.4) — 로그인은 통과했지만 이번 candidateCount에 대한 유효 결제(paidOrderId)가
+   * 없을 때 최종 제출 대신 호출된다. onLoginRequired와 동일한 목적으로 payload를 그대로 넘긴다. */
+  onPaymentRequired: (payload: NameRequestPayload) => void;
+  /** 결제(CLAUDE.md 0.4) — 이미 결제를 마친 주문. candidateCount가 이 주문의 것과 다르면(개수를
+   * 바꾸면 이전 결제는 무효) 다시 결제가 필요하다고 판단한다. */
+  paidOrder: { id: number; candidateCount: CandidateCount } | null;
   /** 로그인 후 이어서 제출하는 흐름(resume)에서만 마지막 단계로 바로 이동시키기 위해 쓴다.
    * 생략하면 항상 0단계(기본 정보)부터 시작한다 — 성씨 한자 재선택처럼 처음부터 다시 확인해야
    * 하는 경우와 구분하기 위함(2026.7.30). */
@@ -44,6 +50,8 @@ export default function InputForm({
   initialValues,
   isLoggedIn,
   onLoginRequired,
+  onPaymentRequired,
+  paidOrder,
   initialStep,
 }: InputFormProps) {
   const [step, setStep] = useState(initialStep ?? 0);
@@ -105,7 +113,13 @@ export default function InputForm({
       onLoginRequired(payload);
       return;
     }
-    onSubmit(payload);
+    // 결제(CLAUDE.md 0.4) — 이번 candidateCount에 대해 결제를 마친 주문이 없으면 결제 안내로
+    // 대신한다. 서버도 orderId 검증을 독립적으로 강제하므로 이 체크는 UX용 사전 차단일 뿐이다.
+    if (!paidOrder || paidOrder.candidateCount !== candidateCount) {
+      onPaymentRequired(payload);
+      return;
+    }
+    onSubmit({ ...payload, orderId: paidOrder.id });
   }
 
   return (
