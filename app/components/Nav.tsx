@@ -53,14 +53,11 @@ export default async function Nav() {
           </Link>
           {isAdminUser(user) && (
             <Link
-              href="/admin/users"
+              href="/admin"
               className="flex min-h-11 flex-col items-center justify-center rounded-control px-2 text-center font-medium text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)] sm:px-2.5"
             >
-              <span className="flex flex-col items-center text-[11px] leading-[1.2] sm:hidden">
-                <span>회원</span>
-                <span>관리</span>
-              </span>
-              <span className="hidden text-[13px] sm:inline">회원관리</span>
+              <span className="text-[11px] leading-[1.2] sm:hidden">관리자</span>
+              <span className="hidden text-[13px] sm:inline">관리자</span>
             </Link>
           )}
           {user ? (
