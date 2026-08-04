@@ -75,6 +75,20 @@
 - **코드 위치**: `lib/payment/{types,config,provider,payapp}.ts`, `lib/db-payment.ts`(price_tier/payment_order CRUD), `app/api/payment/{checkout,webhook,orders/[id],price-tiers}/route.ts`, `app/components/{PaymentRequiredModal,PaymentCheckoutButton}.tsx`, `app/admin/pricing/page.tsx`. `app/api/name/route.ts`·`app/lib/name-client.ts`·`app/components/InputForm.tsx`·`app/naming/NamingWizardClient.tsx`에 결제 게이트/모달을 배선했다(로그인 모달과 동일한 sessionStorage 기반 재개 패턴, 모바일 풀리다이렉트 복귀는 `returnUrl=/naming?paymentReturn=1&orderId=N`).
 - **환경변수**: `PAYMENT_PROVIDER`(기본 `payapp`), `PAYAPP_USERID/LINKKEY/LINKVAL`(판매자 관리사이트 "설정 > 연동정보"), `PAYAPP_SHOPNAME`, `APP_BASE_URL`(웹훅/returnurl 절대 URL 생성용, 미설정 시 `VERCEL_URL` → `localhost:3000` 순으로 폴백 — 로컬에서 실제 웹훅을 받으려면 ngrok 등 외부 접근 가능한 URL이 필요).
 
+### 0.5 회원 문의하기 (Phase 15 확정, 2026.8.4)
+
+로그인한 회원이 텍스트로 문의를 남기고, 관리자가 관리자 페이지에서 답변하는 기능. 결제(0.4)처럼 별도 인프라(이메일 발송 등)를 두지 않고 기존 로그인 베타(0.2)의 DB-backed 세션 위에 테이블 하나만 얹는 최소 구현이다.
+
+- **비공개**: 문의는 작성한 본인과 관리자만 볼 수 있다. 다른 회원에게는 노출되지 않는다 — 기존 `score_result`/`naming_result`와 동일하게 소유권을 매 조회 SQL의 `WHERE user_id = ?`로 강제한다(FK 제약 없음, 8.2 관례와 동일).
+- **텍스트 전용, 영구 보관**: 문의·답변 모두 텍스트만 지원한다(첨부파일 없음). `score_result`와 같은 이유로 영구 보관하며, 자동 만료·정리 배치는 두지 않는다.
+- **상태 판정**: 별도 `status` 컬럼 없이 `answer`(및 `answered_at`)가 `NULL`이면 "답변대기", 채워지면 "답변완료"로 판정한다 — 두 값이 이미 상태를 함의하므로 중복 컬럼을 두지 않는다(8.3).
+- **관리자 답변**: `/admin/inquiries`(`ADMIN_EMAILS` 게이트, 기존 `/admin/users`·`/admin/pricing`과 동일)에서 답변대기 문의가 위로 정렬되어 보이고, 관리자가 텍스트로 답변을 등록하면 즉시 회원 쪽에도 노출된다. "영업일 1~3일 내 답변"은 SLA 안내 문구일 뿐 시스템이 강제하지는 않는다(예: 알림·타이머 없음) — 운영 프로세스로 지켜야 하는 약속이다.
+- **삭제**: 관리자만 문의를 하드 삭제할 수 있다(`deleteInquiryAdmin`, `user_id` 조건 없음 — 어떤 회원의 문의든 삭제 가능해야 하므로). 회원 본인은 삭제할 수 없다(요청 범위 밖).
+- **회원 탈퇴 연동**: `deleteUserAccount`(`lib/db-auth.ts`)에 `DELETE FROM inquiry WHERE user_id = ?`를 추가해, 탈퇴 시 다른 사용자 생성 데이터(`score_result`/`naming_result`/`session`/`oauth_account`)와 함께 정리되도록 했다.
+- **코드 위치**: `lib/db-auth.ts`(`InquiryRow`/`AdminInquiryRow` + CRUD), `app/api/inquiry/route.ts`(회원의 문의 등록, POST 전용), `app/api/admin/inquiries/[id]/route.ts`(관리자의 답변 등록 PATCH·삭제 DELETE), `app/mypage/inquiries/page.tsx` + `app/components/InquiryPageClient.tsx`(회원 화면, 등록 폼 + 내 문의 목록), `app/admin/inquiries/page.tsx` + `app/components/AdminInquiryPanel.tsx`(관리자 화면). 목록 조회는 8.3 원칙대로 Server Component가 `lib/db-auth.ts`를 직접 호출하고, 클라이언트 인터랙션이 실제로 필요한 등록·답변·삭제만 API 라우트로 뒀다.
+
+---
+
 ## 1. 기술 스택 (확정)
 
 | 영역 | 선택 | 비고 |
@@ -421,6 +435,19 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 
 기존 테이블들과 동일하게 FK 제약을 쓰지 않고 `WHERE user_id = ?`로 소유권을 강제한다. 웹훅(`app/api/payment/webhook`)만 예외적으로 `user_id` 없이 조회한다 — 웹훅은 유저 세션이 아니라 페이앱의 `userid`/`linkkey`/`linkval`로 인증되기 때문이다(0.4 참고).
 
+### 4.9 inquiry (회원 문의하기, Phase 15 확정, 2026.8.4)
+
+| 컬럼 | 타입 | 설명 |
+|---|---|---|
+| id | INTEGER PK | |
+| user_id | INTEGER NOT NULL | 소유권 강제는 조회 시 `WHERE user_id = ?`(FK 없음, 기존 관례와 동일). |
+| content | TEXT NOT NULL | 회원이 작성한 문의 본문(텍스트만). |
+| answer | TEXT | 관리자 답변(nullable). `NULL`이면 답변대기, 값이 있으면 답변완료 — 별도 status 컬럼 없음(0.5). |
+| answered_at | TEXT | 답변 등록 시각(nullable, `UPDATE ... SET answered_at = CURRENT_TIMESTAMP`로 채워짐). |
+| created_at | TEXT NOT NULL | 문의 등록 시각. |
+
+FK 제약 없음, `idx_inquiry_user_id` 인덱스만 둔다. 영구 보관(자동 만료 없음), 삭제는 관리자 전용 하드 삭제(`deleteInquiryAdmin`, `user_id` 조건 없이 id만으로 삭제).
+
 ---
 
 ## 5. 개발 로드맵
@@ -436,6 +463,7 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 - [x] **Phase 9 — 로그인(이메일/비밀번호) 베타 + 마이페이지 (2026.7.28)**: 0.2·4.7 참고. `lib/auth.ts`(비밀번호 scrypt 해시, DB-backed opaque 세션)·`lib/db-auth.ts`(user/session/score_result/naming_result CRUD) 신설, `app/api/auth/{signup,login,logout}` 라우트 추가. `app/api/name/route.ts`는 최상단 401 게이트(로그인 필수) + 성공 시 `naming_result` best-effort 저장을 추가했고, `app/api/score/route.ts`는 게이트 없이 로그인 상태일 때만 자동 저장하도록 했다. `app/naming/page.tsx`를 Server Component로 바꾸고 기존 위저드 로직은 `NamingWizardClient.tsx`로 옮겨, 비로그인 최종 제출 시 `AuthRequiredModal`을 띄우고 `sessionStorage`로 입력값을 보존했다가 로그인 후 `/naming?resume=1`에서 복원한다(폼 재입력 방지). `Nav.tsx`는 이미 Server Component였음을 확인하고 `async` 전환 후 `getCurrentUser()`를 직접 호출해 로그인 상태별 링크(로그인/회원가입 ↔ 마이페이지/로그아웃)를 표시한다 — 이로 인해 Nav를 포함한 모든 라우트가 정적 프리렌더링에서 동적 렌더링으로 바뀌는 트레이드오프를 받아들였다. `app/mypage/*` 페이지에서 저장된 결과를 `ScoreDashboard`/`ResultsDashboard`(신규 `restartLabel` prop으로 문구만 다르게)로 그대로 재현한다. `GET /api/history/*` 같은 조회용 API는 만들지 않고 마이페이지 Server Component가 `lib/db-auth.ts`를 직접 호출하며, 클라이언트 인터랙션이 필요한 삭제(`DELETE /api/history/score/[id]`)만 API로 뒀다(8.3). vitest(`lib/auth.test.ts`, 해시/세션 토큰 유일성)·tsc·eslint 통과 확인.
 - [x] **Phase 10 — SNS 로그인(카카오/네이버, 최초엔 구글 포함) (2026.7.31)**: 0.3·4.7 참고. 사업자 등록 완료로 0.2에서 미뤄뒀던 소셜 로그인을 붙였다. `next-auth`(Auth.js v5 beta) 설치, `lib/oauth.ts`에 구글/카카오/네이버 프로바이더와 jwt/session 콜백을 설정해 `lib/db-auth.ts`의 신규 `findOrCreateOAuthUser`(provider_account_id 기준 매칭, 이메일 일치 시 자동 연동)로 우리 `user` 테이블과 연결한다. `oauth_account` 테이블 신설, `user.display_name` 컬럼 추가(둘 다 스키마 마이그레이션, 기존 데이터 영향 없음). `lib/auth.ts`의 `getCurrentUser()`가 커스텀 쿠키 세션 다음으로 next-auth JWT 세션을 확인하도록 확장 — 이 한 지점만 넓혀 `/naming`·`/score`·마이페이지·관리자 판별 등 나머지 코드는 변경 없이 그대로 동작한다. `app/api/auth/[...nextauth]/route.ts`(handlers 노출), `app/components/SocialLoginButtons.tsx`(Server Action 기반 로그인 버튼, 로그인/회원가입 페이지에 배치), `next-auth.d.ts`(타입 보강) 추가. 로그아웃은 커스텀 세션과 next-auth 세션을 모두 정리한다. tsc·eslint·vitest(81개, `lib/auth.test.ts`에 `./oauth` 스텁 추가 — next-auth가 next/server를 불러와 순수 Node 테스트 환경과 맞지 않아 db-auth와 동일하게 모킹) 통과 확인. **같은 날 구글 연동 제거**(0.3 "구글 제거" 참고) — 이후 지원 제공자는 카카오/네이버 둘뿐이다. 각 제공자 앱 등록·Client ID/Secret 발급은 사용자가 직접 진행.
 - [x] **Phase 14 — 결제(페이앱) 연동 (2026.8.4)**: 0.4·4.8 참고. 카드·카카오페이·네이버페이 3종, 추천 개수(3/5/10)별 5,900/8,900/14,900원. `lib/payment/`(PG 추상화, `PaymentProvider` 인터페이스 + `payapp.ts` 구현)·`lib/db-payment.ts`(`price_tier`/`payment_order` CRUD, 원자적 `claimPaymentOrder`) 신설. `app/api/payment/{checkout,webhook,orders/[id],price-tiers}` 라우트 추가, `app/api/name/route.ts`에 결제 소비 게이트(성씨 검증 등 무료 재시도 가능한 단계 통과 후, LLM 호출 직전에 claim) 배선. `app/admin/pricing`(Server Action)으로 관리자가 가격 직접 수정. 프론트는 `AuthRequiredModal`과 동일한 sessionStorage 재개 패턴으로 `PaymentRequiredModal`/`PaymentCheckoutButton`을 `InputForm`/`NamingWizardClient`에 배선(모바일 풀리다이렉트 복귀 포함). `app/naming/page.tsx`의 관리자 전용 게이트는 그대로 유지 — 이번 결제 흐름은 관리자 계정으로만 도달 가능하며, 실결제 검증은 사용자 본인이 진행.
+- [x] **Phase 15 — 회원 문의하기 (2026.8.4)**: 0.5·4.9 참고. 로그인 회원이 `/mypage/inquiries`에서 텍스트 문의를 등록하면 관리자가 `/admin/inquiries`에서 답변하는 최소 문의 시스템. `inquiry` 테이블 신설(`user_id`·`content`·`answer`·`answered_at`·`created_at`, FK 없음). `lib/db-auth.ts`에 CRUD 추가(`createInquiry`/`listInquiriesByUser`/`listAllInquiriesForAdmin`/`answerInquiry`/`deleteInquiryAdmin`), `deleteUserAccount`에도 정리 로직 추가. `app/api/inquiry`(등록)·`app/api/admin/inquiries/[id]`(답변·삭제) 라우트, 회원용 `InquiryPageClient.tsx`·관리자용 `AdminInquiryPanel.tsx`(둘 다 낙관적 목록 갱신) 추가. `app/admin/page.tsx` 허브와 `app/mypage/page.tsx`에 진입 링크 배선. tsc·eslint·`next build` 통과 확인.
 
 ---
 
@@ -527,6 +555,10 @@ yourname/                 ← 프로젝트 루트 (CLAUDE.md 위치)
 ├─ next-auth.d.ts         ← next-auth Session/JWT 타입 보강 (내부 회원 id·닉네임 필드, 0.3)
 ├─ app/api/history/score/[id]/route.ts ← 저장된 점수 결과 삭제(DELETE) 전용
 ├─ app/api/hanja-search/route.ts ← "한자 찾기" 조회 전용, 계산 없음.
+├─ app/mypage/inquiries/page.tsx ← 회원 문의하기(0.5, Phase 15) 등록/내역 화면
+├─ app/api/inquiry/route.ts ← 문의 등록(POST) 전용
+├─ app/admin/inquiries/page.tsx ← 관리자 회원문의관리 화면 (0.5, Phase 15)
+├─ app/api/admin/inquiries/[id]/route.ts ← 문의 답변(PATCH)·삭제(DELETE) 전용
 └─ app/admin/users/page.tsx ← 관리자 전용(ADMIN_EMAILS) 회원관리 조회 화면 (2026.8.1, 0.3 "관리자 회원관리 화면 신설" 참고)
 ```
 

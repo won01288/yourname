@@ -161,3 +161,18 @@ CREATE TABLE IF NOT EXISTS payment_order (
 );
 
 CREATE INDEX IF NOT EXISTS idx_payment_order_user_id ON payment_order(user_id);
+
+-- 회원 문의하기(CLAUDE.md 0.5) — 로그인한 회원 전용, 다른 회원에게 공개되지 않는다(소유권은
+-- 매 조회 WHERE user_id = ?로 강제, 기존 관례와 동일). answer/answered_at이 둘 다 NULL이면
+-- "답변대기", 채워지면 "답변완료"다 — 별도 status 컬럼을 두지 않고 이 두 값으로 상태를 판별한다.
+-- 텍스트 문의/답변만 지원하고, 영구 보관하되 관리자가 원하면 하드 삭제할 수 있다.
+CREATE TABLE IF NOT EXISTS inquiry (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  content TEXT NOT NULL,
+  answer TEXT,
+  answered_at TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_inquiry_user_id ON inquiry(user_id);

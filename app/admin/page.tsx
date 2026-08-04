@@ -17,6 +17,11 @@ const ADMIN_SECTIONS = [
     title: "가격관리",
     description: "프리미엄 작명 추천 개수(3/5/10개)별 가격을 직접 수정합니다.",
   },
+  {
+    href: "/admin/inquiries",
+    title: "회원문의관리",
+    description: "회원이 남긴 문의에 답변하거나, 필요 시 문의를 삭제합니다.",
+  },
 ];
 
 export default async function AdminHubPage() {

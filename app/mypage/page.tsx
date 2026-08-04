@@ -93,6 +93,19 @@ export default async function MyPage() {
           )}
         </div>
 
+        <Link
+          href="/mypage/inquiries"
+          className="mt-8 flex items-center justify-between rounded-card border border-border bg-surface p-6 shadow-[var(--shadow-elevated)] transition-colors hover:bg-brand-50 sm:p-8"
+        >
+          <div>
+            <h2 className="text-[16px] font-semibold text-text-primary">문의하기</h2>
+            <p className="mt-1 text-[13px] text-text-secondary">궁금한 점을 남기고 답변을 확인하세요.</p>
+          </div>
+          <span aria-hidden="true" className="text-[13px] font-semibold text-brand-600">
+            이동하기 →
+          </span>
+        </Link>
+
         <AccountDeleteSection isPasswordAccount={isPasswordAccount} />
       </section>
     </main>

@@ -27,6 +27,20 @@ export interface NamingResultRow {
   expiresAt: string;
 }
 
+export interface InquiryRow {
+  id: number;
+  content: string;
+  answer: string | null;
+  answeredAt: string | null;
+  createdAt: string;
+}
+
+export interface AdminInquiryRow extends InquiryRow {
+  userId: number;
+  userEmail: string;
+  userDisplayName: string | null;
+}
+
 // user 테이블 -----------------------------------------------------------
 
 export async function createUser(email: string, passwordHash: string): Promise<AuthUser> {
@@ -224,6 +238,7 @@ export async function deleteUserAccount(userId: number): Promise<void> {
       { sql: `DELETE FROM oauth_account WHERE user_id = ?`, args: [userId] },
       { sql: `DELETE FROM score_result WHERE user_id = ?`, args: [userId] },
       { sql: `DELETE FROM naming_result WHERE user_id = ?`, args: [userId] },
+      { sql: `DELETE FROM inquiry WHERE user_id = ?`, args: [userId] },
       { sql: `DELETE FROM user WHERE id = ?`, args: [userId] },
     ],
     "write"
@@ -390,4 +405,85 @@ export async function getNamingResultById(id: number, userId: number): Promise<N
   });
   if (result.rows.length === 0) return null;
   return rowToNamingResult(result.rows[0] as unknown as Record<string, unknown>);
+}
+
+// inquiry 테이블 ------------------------------------------------------------
+// 회원 문의하기(CLAUDE.md 0.5). 다른 회원에게 공개되지 않는다 — 소유권은 기존 테이블들과
+// 동일하게 매 조회의 WHERE user_id = ?로 강제한다. answer/answeredAt이 둘 다 null이면
+// "답변대기", 채워지면 "답변완료"다(별도 status 컬럼 없이 이 두 값으로 판별).
+
+function rowToInquiry(row: Record<string, unknown>): InquiryRow {
+  return {
+    id: row.id as number,
+    content: row.content as string,
+    answer: (row.answer as string | null) ?? null,
+    answeredAt: (row.answered_at as string | null) ?? null,
+    createdAt: row.created_at as string,
+  };
+}
+
+export async function createInquiry(userId: number, content: string): Promise<InquiryRow> {
+  const client = getDbClient();
+  const inserted = await client.execute({
+    sql: `INSERT INTO inquiry (user_id, content) VALUES (?, ?)`,
+    args: [userId, content],
+  });
+  return {
+    id: Number(inserted.lastInsertRowid),
+    content,
+    answer: null,
+    answeredAt: null,
+    createdAt: new Date().toISOString(),
+  };
+}
+
+export async function listInquiriesByUser(userId: number): Promise<InquiryRow[]> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `SELECT id, content, answer, answered_at, created_at FROM inquiry
+          WHERE user_id = ? ORDER BY created_at DESC`,
+    args: [userId],
+  });
+  return result.rows.map((row) => rowToInquiry(row as unknown as Record<string, unknown>));
+}
+
+// 관리자 회원문의관리 화면 전용 — 어떤 회원이 문의했는지 식별할 수 있도록 user 테이블과 조인한다.
+export async function listAllInquiriesForAdmin(): Promise<AdminInquiryRow[]> {
+  const client = getDbClient();
+  const result = await client.execute(
+    `SELECT i.id, i.user_id, u.email, u.display_name, i.content, i.answer, i.answered_at, i.created_at
+     FROM inquiry i
+     JOIN user u ON u.id = i.user_id
+     ORDER BY (i.answer IS NULL) DESC, i.created_at DESC`
+  );
+  return result.rows.map((row) => {
+    const r = row as unknown as Record<string, unknown>;
+    return {
+      ...rowToInquiry(r),
+      userId: r.user_id as number,
+      userEmail: r.email as string,
+      userDisplayName: (r.display_name as string | null) ?? null,
+    };
+  });
+}
+
+// 답변 저장(관리자 전용, 게이트는 호출부에서 isAdminUser로 확인). rowsAffected가 0이면 해당 id의
+// 문의가 존재하지 않는 것 — 호출부가 404 근거로 쓴다.
+export async function answerInquiry(id: number, answer: string): Promise<boolean> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `UPDATE inquiry SET answer = ?, answered_at = CURRENT_TIMESTAMP WHERE id = ?`,
+    args: [answer, id],
+  });
+  return result.rowsAffected > 0;
+}
+
+// 하드 삭제(관리자 전용). user_id 조건이 없다 — 관리자는 어떤 회원의 문의든 삭제할 수 있어야 한다.
+export async function deleteInquiryAdmin(id: number): Promise<boolean> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `DELETE FROM inquiry WHERE id = ?`,
+    args: [id],
+  });
+  return result.rowsAffected > 0;
 }
