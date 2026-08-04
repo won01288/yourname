@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { NameRequestPayload } from "@/app/lib/name-client";
 import type { Gender } from "@/lib/naming/types";
 import { CANDIDATE_COUNT_OPTIONS, DEFAULT_CANDIDATE_COUNT, type CandidateCount } from "@/lib/naming/config";
@@ -59,6 +59,40 @@ export default function InputForm({
   const [gender, setGender] = useState<Gender | null>(initialValues?.gender ?? null);
   const [surnameHangul, setSurnameHangul] = useState(initialValues?.surnameHangul ?? "");
   const [surnameHanja, setSurnameHanja] = useState("");
+  // 등록된 성씨(4.4, 현재 100개/102행)인지 입력 즉시(디바운스) 확인한다 — 이게 없으면 등록 안 된
+  // 성씨로 4단계 위저드를 끝까지 채우고 로그인·결제까지 거친 뒤에야 마지막 제출에서 실패를 알게 된다.
+  // "확인 중" 상태는 별도 state로 두지 않고, 마지막으로 확인 완료된 값(surnameCheckResult)과
+  // 현재 입력값을 렌더 시점에 비교해 파생한다 — effect 본문에서 setState를 동기 호출하면
+  // cascading render를 유발한다는 린트 규칙(react-hooks/set-state-in-effect)을 피하기 위함이다.
+  const [surnameCheckResult, setSurnameCheckResult] = useState<{
+    hangul: string;
+    status: "valid" | "invalid" | "error";
+    hanjaOptions: string[];
+  } | null>(null);
+  // 응답이 도착했을 때 이미 더 최신 입력에 대한 요청이 진행 중이면(빠르게 이어 타이핑) 그 응답을
+  // 버리기 위한 순번 가드.
+  const surnameCheckRequestId = useRef(0);
+
+  useEffect(() => {
+    const trimmed = surnameHangul.trim();
+    if (!trimmed) return;
+    const requestId = ++surnameCheckRequestId.current;
+    const timer = setTimeout(() => {
+      fetch(`/api/surname-check?hangul=${encodeURIComponent(trimmed)}`)
+        .then((res) => (res.ok ? res.json() : Promise.reject(new Error("check failed"))))
+        .then((data: { hanjaOptions?: string[] }) => {
+          if (surnameCheckRequestId.current !== requestId) return;
+          const options = data.hanjaOptions ?? [];
+          setSurnameCheckResult({ hangul: trimmed, status: options.length > 0 ? "valid" : "invalid", hanjaOptions: options });
+        })
+        .catch(() => {
+          if (surnameCheckRequestId.current !== requestId) return;
+          setSurnameCheckResult({ hangul: trimmed, status: "error", hanjaOptions: [] });
+        });
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [surnameHangul]);
+
   const [candidateCount, setCandidateCount] = useState<CandidateCount>(
     initialValues?.candidateCount ?? DEFAULT_CANDIDATE_COUNT
   );
@@ -78,8 +112,22 @@ export default function InputForm({
   // 매 렌더마다 유효 범위로 클램프한다 — effect로 별도 setState하지 않고 읽는 시점에만 보정한다.
   const effectiveDay = Math.min(day, dayOptions.length);
 
+  const trimmedSurnameHangul = surnameHangul.trim();
+  const surnameCheckMatchesInput = surnameCheckResult?.hangul === trimmedSurnameHangul;
+  const surnameCheckStatus: "idle" | "checking" | "valid" | "invalid" | "error" = !trimmedSurnameHangul
+    ? "idle"
+    : surnameCheckMatchesInput
+      ? surnameCheckResult.status
+      : "checking";
+  // 성씨 한자 선택지 — 서버가 실제 제출 시 돌려준 값(surnameOptions prop, 드문 폴백)이 있으면
+  // 그걸 우선하고, 없으면 위 사전 확인(surnameCheckResult)이 찾은 값을 쓴다.
+  const hanjaOptions =
+    surnameOptions ?? (surnameCheckStatus === "valid" && surnameCheckMatchesInput ? surnameCheckResult.hanjaOptions : null);
   const step1Valid =
-    gender !== null && surnameHangul.trim().length > 0 && (!surnameOptions || surnameHanja.length > 0);
+    gender !== null &&
+    trimmedSurnameHangul.length > 0 &&
+    surnameCheckStatus === "valid" &&
+    (!hanjaOptions || hanjaOptions.length <= 1 || surnameHanja.length > 0);
   const step2Valid = year > 0 && month >= 1 && month <= 12;
   const step3Valid = true;
   const step4Valid = candidateCount !== null;
@@ -197,15 +245,31 @@ export default function InputForm({
                 maxLength={2}
                 className="w-full rounded-control border border-border bg-surface px-3.5 py-2.5 text-[15px] text-text-primary outline-none transition-colors focus:border-brand-400"
               />
+              {surnameCheckStatus === "checking" && (
+                <p className="mt-1.5 text-[12px] text-text-secondary">확인 중…</p>
+              )}
+              {surnameCheckStatus === "invalid" && (
+                <p role="alert" className="mt-1.5 text-[12px] text-[var(--status-alert)]">
+                  등록되지 않은 성씨입니다. 다른 성씨를 입력해 주세요.
+                </p>
+              )}
+              {surnameCheckStatus === "error" && (
+                <p role="alert" className="mt-1.5 text-[12px] text-[var(--status-alert)]">
+                  성씨 확인에 실패했습니다. 잠시 후 다시 시도해 주세요.
+                </p>
+              )}
+              {surnameCheckStatus === "valid" && hanjaOptions && hanjaOptions.length <= 1 && (
+                <p className="mt-1.5 text-[12px] text-brand-600">사용 가능한 성씨입니다.</p>
+              )}
             </div>
 
-            {surnameOptions && surnameOptions.length > 0 && (
+            {hanjaOptions && hanjaOptions.length > 1 && (
               <div>
                 <label className="mb-1.5 block text-[13px] font-medium text-text-primary">
                   성씨 한자를 선택해 주세요
                 </label>
                 <div className="flex flex-wrap gap-2">
-                  {surnameOptions.map((hanja) => (
+                  {hanjaOptions.map((hanja) => (
                     <button
                       key={hanja}
                       type="button"
