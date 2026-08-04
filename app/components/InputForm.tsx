@@ -30,6 +30,10 @@ interface InputFormProps {
    * 생략하면 항상 0단계(기본 정보)부터 시작한다 — 성씨 한자 재선택처럼 처음부터 다시 확인해야
    * 하는 경우와 구분하기 위함(2026.7.30). */
   initialStep?: number;
+  /** 결제(CLAUDE.md 0.4) — 추천 개수 선택 화면에 개수별 가격을 함께 보여주기 위해 부모
+   * (NamingWizardClient)가 이미 조회해둔 값을 그대로 받는다. 조회 실패/로딩 중이면 빈 객체이며,
+   * 그 경우 해당 개수의 가격 표시만 생략한다(다른 기능에는 영향 없음). */
+  priceByCount?: Partial<Record<CandidateCount, number>>;
 }
 
 const STEP_LABELS = ["기본 정보", "생년월일", "태어난 시각", "추천 개수"];
@@ -53,6 +57,7 @@ export default function InputForm({
   onPaymentRequired,
   paidOrder,
   initialStep,
+  priceByCount,
 }: InputFormProps) {
   const [step, setStep] = useState(initialStep ?? 0);
 
@@ -333,12 +338,22 @@ export default function InputForm({
                 }`}
               >
                 <span>
-                  <span
-                    className={`block text-[16px] font-semibold ${
-                      candidateCount === count ? "text-brand-800" : "text-text-primary"
-                    }`}
-                  >
-                    {count}개 추천받기
+                  <span className="flex items-baseline gap-2">
+                    <span
+                      className={`block text-[16px] font-semibold ${
+                        candidateCount === count ? "text-brand-800" : "text-text-primary"
+                      }`}
+                    >
+                      {count}개 추천받기
+                    </span>
+                    {priceByCount?.[count] !== undefined && (
+                      <span className="text-[13px] font-medium text-text-secondary">
+                        {priceByCount[count]!.toLocaleString("ko-KR")}원
+                        <span className="ml-1 text-[11px] font-normal text-text-secondary opacity-80">
+                          (이름당 {Math.round(priceByCount[count]! / count).toLocaleString("ko-KR")}원)
+                        </span>
+                      </span>
+                    )}
                   </span>
                   <span className="mt-0.5 block text-[12px] text-text-secondary">
                     {CANDIDATE_COUNT_DESCRIPTIONS[count]}

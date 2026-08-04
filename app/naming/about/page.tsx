@@ -11,6 +11,9 @@ import FeatureSection from "@/app/components/premium-about/FeatureSection";
 import ScreenFrame from "@/app/components/premium-about/ScreenFrame";
 import CandidateShowcase from "@/app/components/premium-about/CandidateShowcase";
 import SupportingFeatures from "@/app/components/premium-about/SupportingFeatures";
+import PricingSection from "@/app/components/premium-about/PricingSection";
+import { getPriceTiers } from "@/lib/db-payment";
+import type { CandidateCount } from "@/lib/naming/config";
 import {
   SAMPLE_BIRTH_LINE,
   SAMPLE_ELEMENT_DISTRIBUTION,
@@ -32,7 +35,11 @@ export const metadata: Metadata = {
 // 피드백에 따라 각 부분을 FeatureSection(제목+설명)으로 분리하고, 실제 화면 조각은 ScreenFrame으로
 // 감싸 "이건 미리보기다"라는 것을 시각적으로 구분했다. ServiceCards.tsx의 "상품 안내" 버튼이 이
 // 페이지로 연결된다.
-export default function PremiumAboutPage() {
+export default async function PremiumAboutPage() {
+  const tiers = await getPriceTiers();
+  const priceByCount: Partial<Record<CandidateCount, number>> = {};
+  for (const tier of tiers) priceByCount[tier.candidateCount] = tier.price;
+
   return (
     <main className="flex flex-1 flex-col pb-20">
       <PageHero
@@ -167,6 +174,8 @@ export default function PremiumAboutPage() {
       </FeatureSection>
 
       <SupportingFeatures />
+
+      <PricingSection priceByCount={priceByCount} />
 
       <section className="mx-auto mt-4 w-full max-w-2xl px-6 text-center">
         <div className="rounded-card border border-brand-600 bg-gradient-to-br from-brand-50 to-surface p-8 shadow-[var(--shadow-brand-glow)] sm:p-10">

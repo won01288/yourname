@@ -232,6 +232,7 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
             onPaymentRequired={handlePaymentRequired}
             paidOrder={paidOrder}
             initialStep={resumeToLastStep ? NAMING_WIZARD_LAST_STEP : undefined}
+            priceByCount={priceByCount}
           />
         </>
       )}
