@@ -34,7 +34,7 @@ function buildClientConfig(ctx: CheckoutContext): Record<string, string> {
     feedbackurl: ctx.feedbackUrl,
     returnurl: ctx.returnUrl,
     openpaytype: OPEN_PAY_TYPE,
-    smsuse: "n",
+    smsuse: "y",
   };
 }
 
