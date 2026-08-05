@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Hero from "@/app/components/Hero";
+import InAppBrowserGuard from "@/app/components/InAppBrowserGuard";
 import InputForm, { NAMING_WIZARD_LAST_STEP } from "@/app/components/InputForm";
 import LoadingStages from "@/app/components/LoadingStages";
 import ResultsDashboard from "@/app/components/ResultsDashboard";
@@ -213,6 +214,7 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
 
   return (
     <main className="flex flex-1 flex-col">
+      <InAppBrowserGuard />
       {stage === "form" && (
         <>
           <Hero />

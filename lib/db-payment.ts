@@ -107,6 +107,21 @@ export async function getPaymentOrderById(id: number, userId?: number): Promise<
   return rowToPaymentOrder(result.rows[0] as unknown as Record<string, unknown>);
 }
 
+// 웹훅 전용 — 페이앱의 "최초 결제요청" 통보(pay_state=1)로 mul_no를 결제 완료 전에 미리 확보한다.
+// 이걸 알아야 결제가 끝나기 전에도 요청취소(paycancel) API를 호출할 수 있다(사용자가 결제 확인
+// 화면에서 취소를 눌렀을 때, 이미 휴대폰에 간 카카오페이/네이버페이 승인 알림을 실제로 무효화하는
+// 용도). status='pending'이고 아직 값이 없을 때만 채워, 이미 정리된 주문이나 기존 값을 덮어쓰지
+// 않는다.
+export async function setPaymentOrderProviderOrderId(orderId: number, providerOrderId: string): Promise<void> {
+  const client = getDbClient();
+  await client.execute({
+    sql: `UPDATE payment_order
+          SET provider_order_id = ?, updated_at = CURRENT_TIMESTAMP
+          WHERE id = ? AND status = 'pending' AND provider_order_id IS NULL`,
+    args: [providerOrderId, orderId],
+  });
+}
+
 // 웹훅 전용. status='pending'일 때만 전이시켜 페이앱의 중복 통보(문서상 여러 번 호출될 수 있음)에
 // 안전하다 — 이미 paid/consumed/canceled로 정리된 주문을 다시 덮어쓰지 않는다.
 export async function markOrderStatus(

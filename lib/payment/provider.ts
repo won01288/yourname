@@ -28,14 +28,25 @@ export interface WebhookResult {
   recognized: boolean;
   orderId: number | null;
   providerOrderId: string | null;
-  status: "paid" | "canceled" | "failed" | "ignored";
+  /** "requested" = 최초 결제요청 접수(아직 미완료). providerOrderId를 결제 완료 전에 미리 확보해
+   *  중간 취소(cancelPendingRequest)를 가능하게 하는 용도로만 쓴다 — 주문 status는 바꾸지 않는다. */
+  status: "requested" | "paid" | "canceled" | "failed" | "ignored";
   amount: number | null;
+}
+
+export interface CancelResult {
+  success: boolean;
 }
 
 export interface PaymentProvider {
   name: string;
   buildCheckoutSession(ctx: CheckoutContext): CheckoutSession;
   parseWebhook(form: Record<string, string>): WebhookResult;
+  /** 아직 완료되지 않은 결제 요청(휴대폰으로 간 카카오페이/네이버페이 승인 알림 포함)을 무효화한다.
+   *  이미 결제가 완료된 건은 취소하지 않아야 한다(구현체가 PG사의 "요청 상태만 취소" 옵션 등으로
+   *  보장) — 사용자가 취소를 누른 순간과 거의 동시에 승인이 끝나는 레이스에서 이미 낸 돈을 실수로
+   *  취소 처리하지 않기 위함이다. */
+  cancelPendingRequest(providerOrderId: string): Promise<CancelResult>;
 }
 
 export function getPaymentProvider(): PaymentProvider {

@@ -12,6 +12,10 @@ interface PaymentRequiredModalProps {
 
 // 결제(CLAUDE.md 0.4) — AuthRequiredModal.tsx와 동일한 스타일. 로그인은 이미 통과했지만 이번
 // 추천 개수에 대해 유효한(paid, 미소비) 결제가 없을 때 최종 제출 대신 뜬다.
+//
+// "취소" 버튼은 PaymentCheckoutButton 안에 있다 — 결제창을 연 뒤(휴대폰에 카카오페이/네이버페이
+// 승인 알림이 나갔을 수 있는 뒤)에는 그냥 닫는 게 아니라 페이앱 쪽 요청 자체를 취소해야 하는데,
+// 그 orderId·폴링 상태를 이미 그 컴포넌트가 들고 있어 취소 확인·API 호출도 함께 두는 게 자연스럽다.
 export default function PaymentRequiredModal({
   candidateCount,
   amount,
@@ -29,15 +33,7 @@ export default function PaymentRequiredModal({
           <p className="mb-6 text-[22px] font-semibold text-text-primary">{amount.toLocaleString("ko-KR")}원</p>
         )}
 
-        <PaymentCheckoutButton candidateCount={candidateCount} onPaid={onPaid} />
-
-        <button
-          type="button"
-          onClick={onClose}
-          className="mt-3 w-full rounded-control border border-border bg-surface px-4 py-3 text-[14px] font-medium text-text-primary transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
-        >
-          취소
-        </button>
+        <PaymentCheckoutButton candidateCount={candidateCount} onPaid={onPaid} onClose={onClose} />
       </div>
     </div>
   );

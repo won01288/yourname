@@ -3,7 +3,7 @@
 // 200이어야 한다(다르면 문서 기준 최대 10회 재시도) — NextResponse.json을 쓰지 않는 이유.
 
 import { NextResponse } from "next/server";
-import { markOrderStatus } from "@/lib/db-payment";
+import { markOrderStatus, setPaymentOrderProviderOrderId } from "@/lib/db-payment";
 import { getPaymentProvider } from "@/lib/payment/provider";
 
 function successResponse() {
@@ -39,8 +39,12 @@ export async function POST(request: Request) {
 
   if (result.status === "paid" || result.status === "canceled" || result.status === "failed") {
     await markOrderStatus(result.orderId, result.status, result.providerOrderId);
+  } else if (result.status === "requested" && result.providerOrderId) {
+    // 아직 결제 완료 전 — 상태는 바꾸지 않고 mul_no만 미리 저장해, 결제 확인 화면에서 사용자가
+    // 취소를 누르면 이 값으로 요청취소(paycancel)를 호출할 수 있게 한다.
+    await setPaymentOrderProviderOrderId(result.orderId, result.providerOrderId);
   }
-  // status === "ignored" (요청/대기 등 이번 범위에서 다루지 않는 pay_state)는 아무 것도 하지 않고
+  // status === "ignored" (결제대기 등 이번 범위에서 다루지 않는 pay_state)는 아무 것도 하지 않고
   // 그냥 SUCCESS로 응답해 페이앱이 재시도하지 않게 한다.
 
   return successResponse();
