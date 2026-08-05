@@ -43,6 +43,10 @@ interface NamingWizardClientProps {
 
 export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: NamingWizardClientProps) {
   const [stage, setStage] = useState<Stage>(inProgressOrder ? "loading" : "form");
+  // 2026.8.5 — 서버가 최초 페이지 로드 시점에 판단한 inProgressOrder(prop, 불변)와 별개로, 탭이
+  // 다시 보이는 시점마다 클라이언트가 새로 알아낸 값을 담는 state. 아래 visibilitychange 기반
+  // effect가 갱신한다 — 이 state를 진짜 소스로 쓴다(prop은 초기값일 뿐).
+  const [activeInProgressOrder, setActiveInProgressOrder] = useState<InProgressOrder | null>(inProgressOrder);
   const [submitting, setSubmitting] = useState(false);
   const [requestDone, setRequestDone] = useState(false);
   // 로그인 후 /naming?resume=1로 돌아온 경우, 모달을 띄우기 직전 sessionStorage에 저장해둔
@@ -226,11 +230,48 @@ export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: Nami
       });
   }, [doSubmit, inProgressOrder]);
 
-  // 2026.8.5 — 위 paymentReturn effect와 달리 URL 쿼리·sessionStorage 어느 쪽에도 의존하지 않는다.
-  // inProgressOrder는 서버(app/naming/page.tsx)가 이미 "결제 소비됐고 결과 없음"으로 판단한
-  // 값이라, 카카오페이 승인 앱 전환으로 브라우저 컨텍스트가 바뀌어 새로고침됐어도 그대로 복구된다.
+  // 2026.8.5 — 결제 앱(카카오톡 등)에서 돌아올 때 브라우저가 항상 페이지를 완전히 새로고침하는
+  // 건 아니다(백그라운드로 보냈던 탭을 그대로 복원하는 bfcache 방식이 흔하다) — 이 경우 서버
+  // 컴포넌트가 다시 실행되지 않아 최초 렌더의 inProgressOrder prop이 최신 상태를 반영하지 못하고,
+  // 사용자가 수동으로 새로고침해야만 로딩 화면이 나타났다(실사용 확인). 탭이 다시 보이는 시점
+  // (pageshow/visibilitychange/focus)마다 클라이언트가 직접 /api/payment/in-progress로 재확인해,
+  // 새로고침 없이도 1~3초 내로 로딩 화면으로 전환되게 한다. URL 쿼리·sessionStorage 어느 쪽에도
+  // 의존하지 않는다 — 로그인한 사용자 기준으로 서버가 직접 조회한 값이라 어느 경로로 돌아왔든 같다.
   useEffect(() => {
-    if (!inProgressOrder) return;
+    if (stage !== "form" || activeInProgressOrder) return;
+
+    const checkInProgress = () => {
+      if (document.visibilityState === "hidden") return;
+      fetch("/api/payment/in-progress")
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data: InProgressOrder | null) => {
+          if (!data) return;
+          setActiveInProgressOrder(data);
+          setStage("loading");
+        })
+        .catch(() => {
+          // 네트워크 일시 오류 — 다음 pageshow/visibilitychange/focus에서 재시도
+        });
+    };
+
+    checkInProgress(); // 마운트 시 1회 — 하이드레이션 사이 상태가 바뀐 경우 대비
+    document.addEventListener("visibilitychange", checkInProgress);
+    window.addEventListener("pageshow", checkInProgress);
+    window.addEventListener("focus", checkInProgress);
+    return () => {
+      document.removeEventListener("visibilitychange", checkInProgress);
+      window.removeEventListener("pageshow", checkInProgress);
+      window.removeEventListener("focus", checkInProgress);
+    };
+  }, [stage, activeInProgressOrder]);
+
+  // activeInProgressOrder가 확인되면(서버 prop 또는 위 visibilitychange 재확인) 완료될 때까지
+  // 주기적으로 상태를 조회한다. inProgressOrder는 서버(app/naming/page.tsx)가 이미 "결제 소비됐고
+  // 결과 없음"으로 판단한 값이라, 카카오페이 승인 앱 전환으로 브라우저 컨텍스트가 바뀌어
+  // 새로고침됐어도 그대로 복구된다.
+  useEffect(() => {
+    if (!activeInProgressOrder) return;
+    const { orderId, candidateCount } = activeInProgressOrder;
 
     let cancelled = false;
     const deadline = Date.now() + IN_PROGRESS_POLL_TIMEOUT_MS;
@@ -244,7 +285,7 @@ export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: Nami
         return;
       }
 
-      fetch(`/api/payment/orders/${inProgressOrder.orderId}`)
+      fetch(`/api/payment/orders/${orderId}`)
         .then((res) => (res.ok ? res.json() : null))
         .then(
           (
@@ -266,10 +307,11 @@ export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: Nami
               clearInterval(timer);
               setStage("form");
               setErrorMessage("이전 생성 요청이 실패했습니다. 다시 시도해 주세요.");
+              setActiveInProgressOrder(null);
               if (data.payload) {
                 setLastPayload(data.payload);
                 setResumeToLastStep(true);
-                setPaidOrder({ id: inProgressOrder.orderId, candidateCount: inProgressOrder.candidateCount });
+                setPaidOrder({ id: orderId, candidateCount });
               }
             }
             // status === 'consumed' && namingResultId 없음 — 여전히 생성 중, 다음 폴링에서 재확인.
@@ -284,7 +326,7 @@ export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: Nami
       cancelled = true;
       clearInterval(timer);
     };
-  }, [inProgressOrder]);
+  }, [activeInProgressOrder]);
 
   const handleLoadingComplete = useCallback(() => {
     if (pendingResult.current) {
@@ -337,7 +379,7 @@ export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: Nami
           isDone={requestDone}
           onComplete={handleLoadingComplete}
           longFinalStage
-          candidateCount={lastPayload?.candidateCount ?? inProgressOrder?.candidateCount}
+          candidateCount={lastPayload?.candidateCount ?? activeInProgressOrder?.candidateCount}
         />
       )}
 
