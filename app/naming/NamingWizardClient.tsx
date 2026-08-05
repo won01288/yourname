@@ -22,12 +22,27 @@ const PENDING_NAMING_KEY = "yourname_pending_naming";
 // 읽어 폼을 복원한다. PENDING_NAMING_KEY와 동일한 목적, 결제 단계 전용으로 분리했다.
 const PENDING_PAYMENT_KEY = "yourname_pending_payment";
 
-interface NamingWizardClientProps {
-  isLoggedIn: boolean;
+// 2026.8.5 — 백그라운드 생성 복구 폴링 주기·타임아웃. LLM 해설 생성이 최대 3분 가까이 걸릴 수
+// 있어(LoadingStages의 estimateWaitLabel 참고) 결제 폴링(1.5초)보다 느슨하게, 타임아웃은 넉넉하게 둔다.
+const IN_PROGRESS_POLL_INTERVAL_MS = 3000;
+const IN_PROGRESS_POLL_TIMEOUT_MS = 5 * 60 * 1000;
+
+interface InProgressOrder {
+  orderId: number;
+  candidateCount: CandidateCount;
 }
 
-export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientProps) {
-  const [stage, setStage] = useState<Stage>("form");
+interface NamingWizardClientProps {
+  isLoggedIn: boolean;
+  /** 서버(app/naming/page.tsx)가 이미 판단한 "결제는 끝났지만 아직 결과가 안 나온" 진행 중 주문
+   * (2026.8.5). 있으면 위저드를 그릴 필요 없이 곧바로 로딩 화면만 보여준다 — 카카오페이 승인 앱
+   * 전환 등으로 클라이언트 상태(로딩 화면)가 유실된 채 /naming을 새로고침해도, 사용자가 "처음
+   * 화면으로 돌아갔다"고 오인하지 않도록 한다. */
+  inProgressOrder: InProgressOrder | null;
+}
+
+export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: NamingWizardClientProps) {
+  const [stage, setStage] = useState<Stage>(inProgressOrder ? "loading" : "form");
   const [submitting, setSubmitting] = useState(false);
   const [requestDone, setRequestDone] = useState(false);
   // 로그인 후 /naming?resume=1로 돌아온 경우, 모달을 띄우기 직전 sessionStorage에 저장해둔
@@ -168,6 +183,9 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
   // URL에 있으면 어느 탭/브라우저에서 열어도 복원할 수 있다. sessionStorage는 같은 탭이 유지되는
   // 흔한 경우를 위한 보조 폴백으로만 남겨둔다.
   useEffect(() => {
+    // inProgressOrder가 있으면 이미 로딩 화면 + 아래 전용 폴링 effect가 복구를 맡고 있다 — 이
+    // effect가 끼어들 필요가 없다(둘 다 같은 orderId를 다른 목적으로 조회하는 중복도 피한다).
+    if (inProgressOrder) return;
     const params = new URLSearchParams(window.location.search);
     if (params.get("paymentReturn") !== "1") return;
     const orderId = Number(params.get("orderId"));
@@ -206,7 +224,67 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
         setLastPayload(fallbackPayload);
         setResumeToLastStep(true);
       });
-  }, [doSubmit]);
+  }, [doSubmit, inProgressOrder]);
+
+  // 2026.8.5 — 위 paymentReturn effect와 달리 URL 쿼리·sessionStorage 어느 쪽에도 의존하지 않는다.
+  // inProgressOrder는 서버(app/naming/page.tsx)가 이미 "결제 소비됐고 결과 없음"으로 판단한
+  // 값이라, 카카오페이 승인 앱 전환으로 브라우저 컨텍스트가 바뀌어 새로고침됐어도 그대로 복구된다.
+  useEffect(() => {
+    if (!inProgressOrder) return;
+
+    let cancelled = false;
+    const deadline = Date.now() + IN_PROGRESS_POLL_TIMEOUT_MS;
+
+    const timer = setInterval(() => {
+      if (cancelled) return;
+      if (Date.now() > deadline) {
+        clearInterval(timer);
+        setStage("form");
+        setErrorMessage("결과 생성이 예상보다 오래 걸리고 있어요. 마이페이지에서 완료 여부를 확인해 주세요.");
+        return;
+      }
+
+      fetch(`/api/payment/orders/${inProgressOrder.orderId}`)
+        .then((res) => (res.ok ? res.json() : null))
+        .then(
+          (
+            data: { status?: string; namingResultId?: number | null; payload?: NameRequestPayload | null } | null
+          ) => {
+            if (cancelled || !data) return;
+
+            if (data.namingResultId) {
+              // 생성이 이미 끝나 결과가 저장돼 있다 — 마이페이지 상세(기존 화면 재사용)로 이동한다.
+              clearInterval(timer);
+              window.location.href = `/mypage/naming/${data.namingResultId}`;
+              return;
+            }
+
+            if (data.status !== "consumed") {
+              // 더 이상 생성 중이 아닌데 결과도 없다 — LLM 실패 등으로 status가 'paid'로 되돌아간
+              // 경우(0.4의 revertPaymentOrderToPaid)다. 같은 주문으로 재시도할 수 있게 위저드
+              // 마지막 단계로 복원한다(결제를 다시 하지 않아도 되도록 paidOrder도 함께 채운다).
+              clearInterval(timer);
+              setStage("form");
+              setErrorMessage("이전 생성 요청이 실패했습니다. 다시 시도해 주세요.");
+              if (data.payload) {
+                setLastPayload(data.payload);
+                setResumeToLastStep(true);
+                setPaidOrder({ id: inProgressOrder.orderId, candidateCount: inProgressOrder.candidateCount });
+              }
+            }
+            // status === 'consumed' && namingResultId 없음 — 여전히 생성 중, 다음 폴링에서 재확인.
+          }
+        )
+        .catch(() => {
+          // 네트워크 일시 오류 — 다음 폴링에서 재시도
+        });
+    }, IN_PROGRESS_POLL_INTERVAL_MS);
+
+    return () => {
+      cancelled = true;
+      clearInterval(timer);
+    };
+  }, [inProgressOrder]);
 
   const handleLoadingComplete = useCallback(() => {
     if (pendingResult.current) {
@@ -259,7 +337,7 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
           isDone={requestDone}
           onComplete={handleLoadingComplete}
           longFinalStage
-          candidateCount={lastPayload?.candidateCount}
+          candidateCount={lastPayload?.candidateCount ?? inProgressOrder?.candidateCount}
         />
       )}
 

@@ -41,5 +41,9 @@ export async function GET(_request: Request, context: { params: Promise<{ id: st
     // 모바일 풀리다이렉트 복귀 시 sessionStorage 유실에 대비한 서버 측 위저드 입력값 스냅샷
     // (2026.8.5). 저장된 적 없으면(레거시 주문 등) null.
     payload: parsePendingPayload(order.pendingPayload),
+    // 생성이 끝나 결과가 저장됐는지(2026.8.5) — status='consumed'인데 이 값이 아직 없으면 백그라운드
+    // 에서 여전히 생성 중이라는 뜻이다. NamingWizardClient가 이 값으로 완료 시점의 결과 페이지로
+    // 이동한다.
+    namingResultId: order.namingResultId,
   });
 }

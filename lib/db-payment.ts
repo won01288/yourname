@@ -111,6 +111,28 @@ export async function getPaymentOrderById(id: number, userId?: number): Promise<
   return rowToPaymentOrder(result.rows[0] as unknown as Record<string, unknown>);
 }
 
+// /naming 진입 시(2026.8.5) — 이 유저의 결제가 이미 소비됐는데(claimPaymentOrder로 status='consumed')
+// 아직 naming_result로 연결되지 않은 주문이 있으면, 백그라운드에서 여전히 생성 중이라는 뜻이다.
+// 결제 후 카카오페이/네이버페이 앱 전환처럼 브라우저 컨텍스트가 바뀌며 클라이언트 상태(로딩 화면)가
+// 유실돼도, 서버 쪽 진행 상태만으로 새로고침 후에도 로딩 화면을 그대로 복원할 수 있게 한다 —
+// sessionStorage나 URL 쿼리에 의존하지 않는다.
+export async function getInProgressNamingOrder(
+  userId: number
+): Promise<{ orderId: number; candidateCount: CandidateCount } | null> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `SELECT id, candidate_count FROM payment_order
+          WHERE user_id = ? AND status = 'consumed' AND naming_result_id IS NULL
+          ORDER BY created_at DESC LIMIT 1`,
+    args: [userId],
+  });
+  if (result.rows.length === 0) return null;
+  const row = result.rows[0] as unknown as Record<string, unknown>;
+  const candidateCount = row.candidate_count as number;
+  if (!isCandidateCount(candidateCount)) return null;
+  return { orderId: row.id as number, candidateCount };
+}
+
 // 웹훅 전용 — 페이앱의 "최초 결제요청" 통보(pay_state=1)로 mul_no를 결제 완료 전에 미리 확보한다.
 // 이걸 알아야 결제가 끝나기 전에도 요청취소(paycancel) API를 호출할 수 있다(사용자가 결제 확인
 // 화면에서 취소를 눌렀을 때, 이미 휴대폰에 간 카카오페이/네이버페이 승인 알림을 실제로 무효화하는
