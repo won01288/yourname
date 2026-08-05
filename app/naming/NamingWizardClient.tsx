@@ -158,29 +158,41 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
 
   // 결제(CLAUDE.md 0.4) — 모바일 등 풀리다이렉트 결제 흐름에서 결제창을 마치고 돌아온 경우.
   // returnUrl(app/api/payment/checkout)이 /naming?paymentReturn=1&orderId=N 형태로 넘겨준다.
-  // 결제 완료(paid) 여부를 한 번 조회해, 완료됐으면 곧바로 이어서 제출하고, 아직이면(취소 등)
-  // 마지막 단계로만 복원해 사용자가 다시 시도하게 둔다.
+  //
+  // 2026.8.5 — sessionStorage(PENDING_PAYMENT_KEY)를 진짜 소스로 쓰지 않는다. 카카오페이/네이버페이
+  // 승인처럼 앱 전환이 끼는 결제는, 카카오톡 인앱브라우저를 벗어나 Safari 등 정상 브라우저에서
+  // 진행해도 승인 앱(카카오톡 등)을 왕복하는 과정에서 실제로 다른 탭/브라우저 컨텍스트로 돌아오는
+  // 경우가 있어 원래 탭의 sessionStorage가 비어 있을 수 있다 — 그 결과 입력값을 복원하지 못하고
+  // 위저드 첫 화면으로 되돌아가 버렸다(실사용 확인). 진짜 소스는 이제 서버에 저장해둔
+  // payment_order.pending_payload다(app/api/payment/checkout이 결제 시작 시점에 저장) — orderId만
+  // URL에 있으면 어느 탭/브라우저에서 열어도 복원할 수 있다. sessionStorage는 같은 탭이 유지되는
+  // 흔한 경우를 위한 보조 폴백으로만 남겨둔다.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get("paymentReturn") !== "1") return;
     const orderId = Number(params.get("orderId"));
+    if (!Number.isInteger(orderId)) return;
+
     const raw = sessionStorage.getItem(PENDING_PAYMENT_KEY);
     sessionStorage.removeItem(PENDING_PAYMENT_KEY);
-    if (!raw || !Number.isInteger(orderId)) return;
-    let payload: NameRequestPayload;
-    try {
-      payload = JSON.parse(raw) as NameRequestPayload;
-    } catch {
-      return;
-    }
-
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setLastPayload(payload);
-    setResumeToLastStep(true);
+    const fallbackPayload = ((): NameRequestPayload | null => {
+      if (!raw) return null;
+      try {
+        return JSON.parse(raw) as NameRequestPayload;
+      } catch {
+        return null;
+      }
+    })();
 
     fetch(`/api/payment/orders/${orderId}`)
       .then((res) => (res.ok ? res.json() : null))
-      .then((data: { status?: string } | null) => {
+      .then((data: { status?: string; payload?: NameRequestPayload | null } | null) => {
+        const payload = data?.payload ?? fallbackPayload;
+        if (!payload) return; // 복원할 입력값이 없으면 위저드 첫 화면에 그대로 둔다.
+
+        setLastPayload(payload);
+        setResumeToLastStep(true);
+
         if (data?.status === "paid") {
           setPaidOrder({ id: orderId, candidateCount: payload.candidateCount });
           void doSubmit({ ...payload, orderId });
@@ -189,7 +201,10 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
         // 다시 제출을 누르면 InputForm이 paidOrder 없음을 감지해 결제 모달을 다시 띄운다.
       })
       .catch(() => {
-        // 조회 실패 시에도 동일하게 마지막 단계 복원만 유지한다.
+        // 조회 자체가 실패해도 세션스토리지 폴백이 있으면 최소한 마지막 단계 복원은 시도한다.
+        if (!fallbackPayload) return;
+        setLastPayload(fallbackPayload);
+        setResumeToLastStep(true);
       });
   }, [doSubmit]);
 
@@ -263,6 +278,7 @@ export default function NamingWizardClient({ isLoggedIn }: NamingWizardClientPro
         <PaymentRequiredModal
           candidateCount={lastPayload.candidateCount}
           amount={priceByCount[lastPayload.candidateCount] ?? null}
+          payload={lastPayload}
           onClose={() => setShowPaymentModal(false)}
           onPaid={handlePaymentPaid}
         />

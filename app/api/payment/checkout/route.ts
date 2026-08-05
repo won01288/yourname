@@ -11,6 +11,11 @@ import { getPaymentProvider } from "@/lib/payment/provider";
 
 interface CheckoutRequestBody {
   candidateCount?: number;
+  /** 결제 시작 시점의 위저드 입력값(NameRequestPayload) — orderId는 아직 없어 빠져 있다. 모바일
+   * 풀리다이렉트 복귀 시 sessionStorage 유실에 대비해 서버에도 스냅샷으로 저장해둔다(2026.8.5).
+   * 이 값은 화면 복원 편의용일 뿐 실제 작명 계산에는 쓰이지 않으므로 깊은 검증 없이 그대로
+   * 직렬화한다 — 최종 제출은 어차피 app/api/name/route.ts가 다시 검증한다. */
+  payload?: unknown;
 }
 
 export async function POST(request: Request) {
@@ -42,7 +47,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "가격 정보를 찾을 수 없습니다." }, { status: 500 });
   }
 
-  const order = await createPaymentOrder(currentUser.id, candidateCount, price);
+  const pendingPayload =
+    body.payload && typeof body.payload === "object" ? JSON.stringify(body.payload) : null;
+  const order = await createPaymentOrder(currentUser.id, candidateCount, price, pendingPayload);
 
   const baseUrl = getAppBaseUrl();
   const provider = getPaymentProvider();

@@ -14,6 +14,9 @@ export interface PaymentOrder {
   status: PaymentStatus;
   provider: string;
   providerOrderId: string | null;
+  /** 결제 시작 시점의 NameRequestPayload(JSON 문자열) 스냅샷. 모바일 풀리다이렉트 복귀 시
+   * sessionStorage가 유실돼도 orderId만으로 원래 입력값을 복원하기 위한 용도(2026.8.5). */
+  pendingPayload: string | null;
   namingResultId: number | null;
   createdAt: string;
   updatedAt: string;

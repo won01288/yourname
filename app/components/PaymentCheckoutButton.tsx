@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { NameRequestPayload } from "@/app/lib/name-client";
 import type { CandidateCount } from "@/lib/naming/config";
 
 // 결제(CLAUDE.md 0.4) — 페이앱 JS SDK(lite.js) 결제창을 여는 버튼. 결제 성사 여부의 유일한 신뢰
@@ -58,12 +59,16 @@ interface CancelOrderResponse {
 
 interface PaymentCheckoutButtonProps {
   candidateCount: CandidateCount;
+  /** 결제 시작 시점의 위저드 입력값. 체크아웃 요청에 함께 실어 서버(payment_order.pending_payload)에
+   * 스냅샷으로 저장한다 — 모바일 풀리다이렉트(카카오페이 등 앱 전환) 복귀 시 브라우저 탭/컨텍스트가
+   * 바뀌어 sessionStorage가 유실돼도 orderId만으로 복원할 수 있게 하기 위함(2026.8.5). */
+  payload: NameRequestPayload;
   onPaid: (orderId: number) => void;
   /** 결제 요청 자체가 취소되어(또는 애초에 시작 전이라) 모달을 닫아도 될 때 호출된다. */
   onClose: () => void;
 }
 
-export default function PaymentCheckoutButton({ candidateCount, onPaid, onClose }: PaymentCheckoutButtonProps) {
+export default function PaymentCheckoutButton({ candidateCount, payload, onPaid, onClose }: PaymentCheckoutButtonProps) {
   const [status, setStatus] = useState<"idle" | "creating" | "waiting" | "error" | "timeout">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [orderId, setOrderId] = useState<number | null>(null);
@@ -121,7 +126,7 @@ export default function PaymentCheckoutButton({ candidateCount, onPaid, onClose 
       const res = await fetch("/api/payment/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ candidateCount }),
+        body: JSON.stringify({ candidateCount, payload }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}) as { error?: string });
@@ -152,7 +157,7 @@ export default function PaymentCheckoutButton({ candidateCount, onPaid, onClose 
       setStatus("error");
       setErrorMessage(err instanceof Error ? err.message : "결제를 시작하지 못했습니다.");
     }
-  }, [candidateCount, pollOrder]);
+  }, [candidateCount, payload, pollOrder]);
 
   const handleCancelClick = useCallback(() => {
     // 결제창을 아직 연 적이 없으면(주문 미생성) 무효화할 요청 자체가 없으므로 바로 닫는다.

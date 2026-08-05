@@ -32,6 +32,7 @@ function rowToPaymentOrder(row: Record<string, unknown>): PaymentOrder {
     status: row.status as PaymentStatus,
     provider: row.provider as string,
     providerOrderId: (row.provider_order_id as string | null) ?? null,
+    pendingPayload: (row.pending_payload as string | null) ?? null,
     namingResultId: (row.naming_result_id as number | null) ?? null,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
@@ -72,12 +73,15 @@ export async function updatePriceTier(candidateCount: CandidateCount, price: num
 export async function createPaymentOrder(
   userId: number,
   candidateCount: CandidateCount,
-  amount: number
+  amount: number,
+  // 결제 시작 시점의 NameRequestPayload(JSON 문자열) 스냅샷 — 모바일 풀리다이렉트 복귀 시
+  // sessionStorage가 유실돼도 orderId만으로 복원할 수 있게 한다(2026.8.5, app/api/payment/checkout).
+  pendingPayload: string | null = null
 ): Promise<PaymentOrder> {
   const client = getDbClient();
   const inserted = await client.execute({
-    sql: `INSERT INTO payment_order (user_id, candidate_count, amount) VALUES (?, ?, ?)`,
-    args: [userId, candidateCount, amount],
+    sql: `INSERT INTO payment_order (user_id, candidate_count, amount, pending_payload) VALUES (?, ?, ?, ?)`,
+    args: [userId, candidateCount, amount, pendingPayload],
   });
   const id = Number(inserted.lastInsertRowid);
   const order = await getPaymentOrderById(id);
@@ -93,13 +97,13 @@ export async function getPaymentOrderById(id: number, userId?: number): Promise<
     userId === undefined
       ? await client.execute({
           sql: `SELECT id, user_id, candidate_count, amount, status, provider, provider_order_id,
-                       naming_result_id, created_at, updated_at
+                       pending_payload, naming_result_id, created_at, updated_at
                 FROM payment_order WHERE id = ?`,
           args: [id],
         })
       : await client.execute({
           sql: `SELECT id, user_id, candidate_count, amount, status, provider, provider_order_id,
-                       naming_result_id, created_at, updated_at
+                       pending_payload, naming_result_id, created_at, updated_at
                 FROM payment_order WHERE id = ? AND user_id = ?`,
           args: [id, userId],
         });

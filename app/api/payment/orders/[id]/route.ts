@@ -5,6 +5,17 @@ import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
 import { getPaymentOrderById } from "@/lib/db-payment";
 
+// 저장된 pending_payload(JSON 문자열)를 파싱한다. 저장 형식이 깨진 극히 드문 경우에도 조회
+// 자체는 실패시키지 않고 조용히 null로 취급한다(호출부가 사용자 측 다른 복원 수단으로 넘어감).
+function parsePendingPayload(raw: string | null): unknown {
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
 export async function GET(_request: Request, context: { params: Promise<{ id: string }> }) {
   const user = await getCurrentUser();
   if (!user) {
@@ -27,5 +38,8 @@ export async function GET(_request: Request, context: { params: Promise<{ id: st
     status: order.status,
     candidateCount: order.candidateCount,
     amount: order.amount,
+    // 모바일 풀리다이렉트 복귀 시 sessionStorage 유실에 대비한 서버 측 위저드 입력값 스냅샷
+    // (2026.8.5). 저장된 적 없으면(레거시 주문 등) null.
+    payload: parsePendingPayload(order.pendingPayload),
   });
 }

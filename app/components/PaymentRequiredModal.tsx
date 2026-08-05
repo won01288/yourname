@@ -1,11 +1,15 @@
 "use client";
 
+import type { NameRequestPayload } from "@/app/lib/name-client";
 import type { CandidateCount } from "@/lib/naming/config";
 import PaymentCheckoutButton from "./PaymentCheckoutButton";
 
 interface PaymentRequiredModalProps {
   candidateCount: CandidateCount;
   amount: number | null;
+  /** PaymentCheckoutButton에 그대로 전달 — 체크아웃 시점에 서버(payment_order.pending_payload)에
+   * 스냅샷으로 저장돼 모바일 풀리다이렉트 복귀 시 복원에 쓰인다(2026.8.5). */
+  payload: NameRequestPayload;
   onClose: () => void;
   onPaid: (orderId: number) => void;
 }
@@ -19,6 +23,7 @@ interface PaymentRequiredModalProps {
 export default function PaymentRequiredModal({
   candidateCount,
   amount,
+  payload,
   onClose,
   onPaid,
 }: PaymentRequiredModalProps) {
@@ -33,7 +38,7 @@ export default function PaymentRequiredModal({
           <p className="mb-6 text-[22px] font-semibold text-text-primary">{amount.toLocaleString("ko-KR")}원</p>
         )}
 
-        <PaymentCheckoutButton candidateCount={candidateCount} onPaid={onPaid} onClose={onClose} />
+        <PaymentCheckoutButton candidateCount={candidateCount} payload={payload} onPaid={onPaid} onClose={onClose} />
       </div>
     </div>
   );
