@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { CANDIDATE_COUNT_OPTIONS } from "@/lib/naming/config";
+import { formatShortDateTimeFromSql } from "@/app/lib/date-format";
 
 const MIN_CANDIDATE_TIER = Math.min(...CANDIDATE_COUNT_OPTIONS);
 
@@ -22,7 +23,7 @@ export interface SavedNamingItem {
   candidateCount: number;
   /** 이 리포트에서 추천된 이름(한글) 목록. 예: ["동연", "동훈", "이준"]. */
   candidateNames: string[];
-  /** 검색에 입력한 생년월일시. 예: "1993년 8월 23일 양력 08시 40분" */
+  /** 검색에 입력한 생년월일시. 예: "93.8.23 08:40" */
   birthLabel: string;
   /** 세션의 최신 라운드(추가 라운드가 있으면 그중 최신, 없으면 이 항목 자신) 기준
    * "더 추천받기" 잔여 개수. */
@@ -33,20 +34,6 @@ export interface SavedNamingItem {
 
 interface SavedNamingListProps {
   items: SavedNamingItem[];
-}
-
-function formatDateTime(iso: string): string {
-  // DB의 created_at은 SQLite CURRENT_TIMESTAMP(UTC, "YYYY-MM-DD HH:MM:SS") 형식이라
-  // Date가 그대로 파싱하도록 "T"를 넣어 ISO 형태로 보정한다.
-  const date = new Date(iso.includes("T") ? iso : `${iso.replace(" ", "T")}Z`);
-  if (Number.isNaN(date.getTime())) return iso;
-  return date.toLocaleString("ko-KR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
 }
 
 // 마이페이지 — 저장된 "프리미엄 작명" 결과 목록. 30일 자동 만료와 별개로 사용자가
@@ -97,10 +84,14 @@ export default function SavedNamingList({ items: initialItems }: SavedNamingList
             <Link href={`/mypage/naming/${item.id}`} className="flex-1 min-w-0">
               <p className="truncate text-[14px] font-medium text-text-primary">
                 {item.surnameLabel}씨 작명 리포트 · 후보 {item.candidateCount}개
-                {item.candidateNames.length > 0 && ` (${item.candidateNames.join(", ")})`}
               </p>
+              {item.candidateNames.length > 0 && (
+                <p className="text-[12px] text-text-secondary break-words">{item.candidateNames.join(", ")}</p>
+              )}
               <p className="text-[12px] text-text-secondary">생년월일시: {item.birthLabel}</p>
-              <p className="text-[12px] text-text-secondary">검색일시: {formatDateTime(item.createdAt)}</p>
+              <p className="text-[12px] text-text-secondary">
+                검색일시: {formatShortDateTimeFromSql(item.createdAt)}
+              </p>
             </Link>
             <button
               type="button"
@@ -129,13 +120,15 @@ export default function SavedNamingList({ items: initialItems }: SavedNamingList
                 <Link
                   key={round.id}
                   href={`/mypage/naming/${round.id}`}
-                  className="flex flex-wrap items-center justify-between gap-x-3 gap-y-0.5 rounded-control px-2 py-1.5 text-[12px] text-text-secondary transition-colors hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface-muted)]"
+                  className="flex flex-col gap-0.5 rounded-control px-2 py-1.5 text-[12px] text-text-secondary transition-colors hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface-muted)]"
                 >
                   <span className="font-medium text-text-primary">
                     {i + 2}차 추가 추천 결과 확인 · 후보 {round.candidateCount}개
-                    {round.candidateNames.length > 0 && ` (${round.candidateNames.join(", ")})`}
                   </span>
-                  <span>검색일시: {formatDateTime(round.createdAt)}</span>
+                  {round.candidateNames.length > 0 && (
+                    <span className="break-words">{round.candidateNames.join(", ")}</span>
+                  )}
+                  <span>검색일시: {formatShortDateTimeFromSql(round.createdAt)}</span>
                 </Link>
               ))}
             </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { formatShortDateTimeFromSql } from "@/app/lib/date-format";
 
 export interface SavedScoreItem {
   id: number;
@@ -9,26 +10,12 @@ export interface SavedScoreItem {
   nameLabel: string; // 예: "김서준"
   totalScore: number;
   grade: string;
-  /** 검색에 입력한 생년월일시. 예: "1993년 8월 23일 양력 08시 40분" */
+  /** 검색에 입력한 생년월일시. 예: "93.8.23 08:40" */
   birthLabel: string;
 }
 
 interface SavedScoreListProps {
   items: SavedScoreItem[];
-}
-
-function formatDateTime(iso: string): string {
-  // DB의 created_at은 SQLite CURRENT_TIMESTAMP(UTC, "YYYY-MM-DD HH:MM:SS") 형식이라
-  // Date가 그대로 파싱하도록 "T"를 넣어 ISO 형태로 보정한다.
-  const date = new Date(iso.includes("T") ? iso : `${iso.replace(" ", "T")}Z`);
-  if (Number.isNaN(date.getTime())) return iso;
-  return date.toLocaleString("ko-KR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
 }
 
 // 마이페이지 — 저장된 "이름 점수 확인" 결과 목록. 영구 보관이라 목록에 삭제 버튼이 필요하다
@@ -80,7 +67,9 @@ export default function SavedScoreList({ items: initialItems }: SavedScoreListPr
               {item.nameLabel} · {item.totalScore}점 ({item.grade})
             </p>
             <p className="text-[12px] text-text-secondary">생년월일시: {item.birthLabel}</p>
-            <p className="text-[12px] text-text-secondary">검색일시: {formatDateTime(item.createdAt)}</p>
+            <p className="text-[12px] text-text-secondary">
+              검색일시: {formatShortDateTimeFromSql(item.createdAt)}
+            </p>
           </Link>
           <button
             type="button"

@@ -7,9 +7,11 @@ import SavedScoreList, { type SavedScoreItem } from "@/app/components/SavedScore
 import SavedNamingList, { type SavedNamingItem } from "@/app/components/SavedNamingList";
 import PageHero from "@/app/components/PageHero";
 import AccountDeleteSection from "@/app/components/AccountDeleteSection";
+import { formatShortDate, formatShortTime } from "@/app/lib/date-format";
 import Link from "next/link";
 
-// 검색 당시 입력한 생년월일시를 "1993년 8월 23일 양력 08시 40분" 형태로 표시한다.
+// 검색 당시 입력한 생년월일시를 "93.8.23(음) 16:30" 형태로 짧게 표시한다. 모바일에서 긴 문장이
+// 잘리는 문제(2026.8.6)를 해결하기 위해 "1993년 8월 23일 양력 08시 40분" 형태를 대체했다.
 function formatBirthLabel(payload: {
   year: number;
   month: number;
@@ -19,10 +21,11 @@ function formatBirthLabel(payload: {
   isLunar: boolean;
   isLeapMonth?: boolean;
 }): string {
-  const calendarLabel = payload.isLunar ? `음력${payload.isLeapMonth ? "(윤달)" : ""}` : "양력";
-  const hh = String(payload.hour).padStart(2, "0");
-  const mm = String(payload.minute).padStart(2, "0");
-  return `${payload.year}년 ${payload.month}월 ${payload.day}일 ${calendarLabel} ${hh}시 ${mm}분`;
+  const calendarSuffix = payload.isLunar ? (payload.isLeapMonth ? "(음·윤)" : "(음)") : "";
+  return `${formatShortDate(payload.year, payload.month, payload.day)}${calendarSuffix} ${formatShortTime(
+    payload.hour,
+    payload.minute
+  )}`;
 }
 
 // "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — listNamingResultsByUser는 이미 세션의 모든 행(루트+
