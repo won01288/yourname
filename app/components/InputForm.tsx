@@ -18,6 +18,10 @@ interface InputFormProps {
   /** 로그인 베타 — 프리미엄 작명은 로그인이 필요하다. 서버(app/api/name/route.ts)의 401이
    * 실제 보안 경계이고, 이 prop은 UX 목적(제출 자체를 막고 안내)일 뿐이다. */
   isLoggedIn: boolean;
+  /** 서버(app/naming/page.tsx)가 isAdminUser()로 판단한 값. ADMIN_FREE_TIER_CANDIDATE_COUNT
+   * 무료 티어는 관리자에게만 적용해야 한다 — 관리자 전용 게이트가 제거된 뒤에는 이 화면에
+   * 일반 사용자도 도달하므로, "도달했으면 항상 관리자"라고 가정하면 안 된다(2026.8.6 회귀 수정). */
+  isAdmin: boolean;
   /** isLoggedIn이 false일 때 최종 제출 대신 호출된다. 지금까지 입력한 값을 그대로 넘겨,
    * 로그인 후 이어서 제출할 수 있게 한다(부모가 sessionStorage에 보관). */
   onLoginRequired: (payload: NameRequestPayload) => void;
@@ -57,6 +61,7 @@ export default function InputForm({
   errorMessage,
   initialValues,
   isLoggedIn,
+  isAdmin,
   onLoginRequired,
   onPaymentRequired,
   paidOrder,
@@ -180,11 +185,12 @@ export default function InputForm({
       onLoginRequired(payload);
       return;
     }
-    // 관리자 테스트 편의(lib/payment/config.ts ADMIN_FREE_TIER_CANDIDATE_COUNT) — 이 화면은
-    // 이미 관리자 전용 게이트(app/naming/page.tsx) 뒤에 있어 도달한 사용자는 항상 관리자다.
-    // 최소 티어를 선택했으면 결제 모달 없이 바로 제출한다 — 서버(app/api/name/route.ts)가
-    // 같은 조건으로 결제 소비 자체를 건너뛰므로 orderId 없이 보내도 정상 처리된다.
-    if (candidateCount === ADMIN_FREE_TIER_CANDIDATE_COUNT) {
+    // 관리자 테스트 편의(lib/payment/config.ts ADMIN_FREE_TIER_CANDIDATE_COUNT) — 관리자 전용
+    // 게이트가 제거된 뒤에는 이 화면에 일반 사용자도 도달하므로, isAdmin(서버가 판단한 실제 값)을
+    // 함께 확인한다. 관리자가 최소 티어를 선택했을 때만 결제 모달 없이 바로 제출한다 — 서버
+    // (app/api/name/route.ts)도 같은 조건(isAdminUser && candidateCount===...)일 때만 결제 소비를
+    // 건너뛰므로, 여기서 조건이 어긋나면 서버가 orderId를 요구해 실패한다.
+    if (isAdmin && candidateCount === ADMIN_FREE_TIER_CANDIDATE_COUNT) {
       onSubmit(payload);
       return;
     }
@@ -373,7 +379,7 @@ export default function InputForm({
                     >
                       {count}개 추천받기
                     </span>
-                    {count === ADMIN_FREE_TIER_CANDIDATE_COUNT ? (
+                    {isAdmin && count === ADMIN_FREE_TIER_CANDIDATE_COUNT ? (
                       <span className="text-[13px] font-medium text-brand-600">무료(관리자 테스트)</span>
                     ) : (
                       priceByCount?.[count] !== undefined && (

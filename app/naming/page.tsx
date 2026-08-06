@@ -1,5 +1,5 @@
 import NamingWizardClient from "./NamingWizardClient";
-import { getCurrentUser } from "@/lib/auth";
+import { getCurrentUser, isAdminUser } from "@/lib/auth";
 import { getInProgressNamingOrder } from "@/lib/db-payment";
 import { resolveNamingSessionRootId, getNamingSessionResults } from "@/lib/db-auth";
 import type { NameApiResult, NameRequestPayload } from "@/app/lib/name-client";
@@ -12,7 +12,9 @@ import type { NameApiResult, NameRequestPayload } from "@/app/lib/name-client";
 // 6장 미결정 "프리미엄 작명 공개 오픈 여부"가 확정돼 제거했다 — app/api/name/route.ts의 동일 게이트도
 // 같은 시점에 함께 제거했다(둘이 항상 같은 기준을 공유해야 한다는 기존 원칙 유지). ADMIN_FREE_TIER_
 // CANDIDATE_COUNT(lib/payment/config.ts) 무료 티어는 여전히 관리자 전용으로 남는다 — 일반 사용자는
-// 이제 전부 정상 결제를 거친다.
+// 이제 전부 정상 결제를 거친다. 게이트 제거 이후 이 화면엔 관리자가 아닌 사용자도 도달하므로,
+// isAdmin을 명시적으로 계산해 클라이언트에 내려준다(InputForm이 "도달했으면 관리자"라고 가정하던
+// 이전 로직의 회귀 버그 수정, 2026.8.6).
 export default async function NamingPage({
   searchParams,
 }: {
@@ -54,6 +56,11 @@ export default async function NamingPage({
   }
 
   return (
-    <NamingWizardClient isLoggedIn={Boolean(user)} inProgressOrder={inProgressOrder} moreMode={moreMode} />
+    <NamingWizardClient
+      isLoggedIn={Boolean(user)}
+      isAdmin={isAdminUser(user)}
+      inProgressOrder={inProgressOrder}
+      moreMode={moreMode}
+    />
   );
 }

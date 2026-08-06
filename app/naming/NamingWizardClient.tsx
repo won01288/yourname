@@ -41,6 +41,11 @@ export interface MoreModeInfo {
 
 interface NamingWizardClientProps {
   isLoggedIn: boolean;
+  /** 서버(app/naming/page.tsx)가 getCurrentUser() 직후 isAdminUser()로 판단한 값(CLAUDE.md 0.4).
+   * ADMIN_FREE_TIER_CANDIDATE_COUNT 무료 티어 표시·제출 분기(InputForm)에 그대로 전달한다 — 관리자
+   * 전용 게이트가 제거된 뒤에도 이 화면엔 일반 사용자가 도달하므로, "도달했으면 항상 관리자"라고
+   * 가정하지 않고 실제 값을 확인한다. */
+  isAdmin: boolean;
   /** 서버(app/naming/page.tsx)가 이미 판단한 "결제는 끝났지만 아직 결과가 안 나온" 진행 중 주문
    * (2026.8.5). 있으면 위저드를 그릴 필요 없이 곧바로 로딩 화면만 보여준다 — 카카오페이 승인 앱
    * 전환 등으로 클라이언트 상태(로딩 화면)가 유실된 채 /naming을 새로고침해도, 사용자가 "처음
@@ -51,7 +56,7 @@ interface NamingWizardClientProps {
   moreMode: MoreModeInfo | null;
 }
 
-export default function NamingWizardClient({ isLoggedIn, inProgressOrder, moreMode }: NamingWizardClientProps) {
+export default function NamingWizardClient({ isLoggedIn, isAdmin, inProgressOrder, moreMode }: NamingWizardClientProps) {
   const [stage, setStage] = useState<Stage>(inProgressOrder ? "loading" : "form");
   // 2026.8.5 — 서버가 최초 페이지 로드 시점에 판단한 inProgressOrder(prop, 불변)와 별개로, 탭이
   // 다시 보이는 시점마다 클라이언트가 새로 알아낸 값을 담는 state. 아래 visibilitychange 기반
@@ -385,6 +390,7 @@ export default function NamingWizardClient({ isLoggedIn, inProgressOrder, moreMo
             errorMessage={errorMessage}
             initialValues={lastPayload}
             isLoggedIn={isLoggedIn}
+            isAdmin={isAdmin}
             onLoginRequired={handleLoginRequired}
             onPaymentRequired={handlePaymentRequired}
             paidOrder={paidOrder}
