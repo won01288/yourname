@@ -364,6 +364,33 @@ export async function deleteScoreResult(id: number, userId: number): Promise<boo
   return result.rowsAffected > 0;
 }
 
+// 관리자 회원관리(app/admin/users) 전용 — 전 회원의 이름 점수 확인 결과를 한 번에 조회한다.
+// listAllUsersForAdmin과 동일한 패턴(호출부가 isAdminUser를 이미 확인했다고 가정). user_id를
+// 함께 반환해 호출부가 회원별로 그룹핑할 수 있게 한다.
+export async function listAllScoreResultsForAdmin(): Promise<(ScoreResultRow & { userId: number })[]> {
+  const client = getDbClient();
+  const result = await client.execute(
+    `SELECT id, user_id, request_payload, result, created_at FROM score_result ORDER BY created_at DESC`
+  );
+  return result.rows.map((row) => {
+    const record = row as unknown as Record<string, unknown>;
+    return { ...rowToScoreResult(record), userId: record.user_id as number };
+  });
+}
+
+// 관리자 전용 단건 조회 — 소유권(user_id) 조건 없이 id만으로 찾는다. 위 목록 화면에서 "리포트
+// 보기" 링크가 이 함수를 쓰는 상세 라우트로 이어진다.
+export async function getScoreResultByIdForAdmin(id: number): Promise<(ScoreResultRow & { userId: number }) | null> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `SELECT id, user_id, request_payload, result, created_at FROM score_result WHERE id = ?`,
+    args: [id],
+  });
+  if (result.rows.length === 0) return null;
+  const record = result.rows[0] as unknown as Record<string, unknown>;
+  return { ...rowToScoreResult(record), userId: record.user_id as number };
+}
+
 // naming_result 테이블 ------------------------------------------------------
 // 프리미엄 "작명" 결과. 생성 후 30일간만 재조회 가능 — 별도 삭제 기능은 없고, 만료 여부를
 // 조회 SQL의 WHERE 조건으로만 판정한다(정리 크론 없음, CLAUDE.md 8.3).
@@ -419,6 +446,37 @@ export async function getNamingResultById(id: number, userId: number): Promise<N
   });
   if (result.rows.length === 0) return null;
   return rowToNamingResult(result.rows[0] as unknown as Record<string, unknown>);
+}
+
+// 관리자 회원관리(app/admin/users) 전용 — 전 회원의 작명 결과를 한 번에 조회한다. 사용자 화면
+// (listNamingResultsByUser)과 달리 만료(expires_at) 필터를 두지 않는다 — 관리자는 문의 대응 등의
+// 목적으로 만료된 결과도 확인할 수 있어야 한다(결과 JSON 자체는 만료 이후에도 DB에 그대로 남아
+// 있고, 30일 만료는 회원 화면 노출만 막을 뿐 별도 정리 크론이 없다, CLAUDE.md 0.2).
+export async function listAllNamingResultsForAdmin(): Promise<(NamingResultRow & { userId: number })[]> {
+  const client = getDbClient();
+  const result = await client.execute(
+    `SELECT id, user_id, request_payload, result, created_at, expires_at, parent_naming_result_id
+     FROM naming_result ORDER BY created_at DESC`
+  );
+  return result.rows.map((row) => {
+    const record = row as unknown as Record<string, unknown>;
+    return { ...rowToNamingResult(record), userId: record.user_id as number };
+  });
+}
+
+// 관리자 전용 단건 조회 — 소유권·만료 조건 없이 id만으로 찾는다(위와 같은 이유).
+export async function getNamingResultByIdForAdmin(
+  id: number
+): Promise<(NamingResultRow & { userId: number }) | null> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `SELECT id, user_id, request_payload, result, created_at, expires_at, parent_naming_result_id
+          FROM naming_result WHERE id = ?`,
+    args: [id],
+  });
+  if (result.rows.length === 0) return null;
+  const record = result.rows[0] as unknown as Record<string, unknown>;
+  return { ...rowToNamingResult(record), userId: record.user_id as number };
 }
 
 // "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 대상 naming_result의 소유권+만료를 확인하며

@@ -203,3 +203,16 @@ export async function linkPaymentOrderToNamingResult(orderId: number, namingResu
     args: [namingResultId, orderId],
   });
 }
+
+// 관리자 회원관리(app/admin/users) 전용 — 전 회원의 결제 내역을 한 번에 조회한다. 호출부가
+// isAdminUser를 이미 확인했다고 가정한다(listAllUsersForAdmin과 동일한 패턴). user_id로 그룹핑은
+// 호출부(페이지)에서 한다 — 이 파일은 db-auth.ts의 user 타입을 모르므로 여기서 합치지 않는다.
+export async function listAllPaymentOrdersForAdmin(): Promise<PaymentOrder[]> {
+  const client = getDbClient();
+  const result = await client.execute(
+    `SELECT id, user_id, candidate_count, amount, status, provider, provider_order_id,
+            pending_payload, naming_result_id, created_at, updated_at
+     FROM payment_order ORDER BY created_at DESC`
+  );
+  return result.rows.map((row) => rowToPaymentOrder(row as unknown as Record<string, unknown>));
+}
