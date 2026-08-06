@@ -59,7 +59,10 @@ export default function ComparisonSection() {
             className="grid grid-cols-1 gap-2 border-b border-border px-4 py-4 last:border-b-0 sm:grid-cols-[1.1fr_1fr_1fr] sm:items-center sm:gap-0 sm:py-5"
           >
             <p className="text-[13px] font-semibold text-text-primary sm:px-1">{row.label}</p>
-            <p className="text-[13px] leading-6 text-text-secondary sm:border-l sm:border-border sm:px-4">
+            <p className="flex items-start gap-1.5 text-[13px] leading-6 text-text-secondary sm:border-l sm:border-border sm:px-4">
+              <span aria-hidden="true" className="mt-0.5 shrink-0 text-text-secondary">
+                ✕
+              </span>
               {row.traditional}
             </p>
             <p className="flex items-start gap-1.5 text-[13px] leading-6 text-text-primary sm:border-l sm:border-border sm:px-4">

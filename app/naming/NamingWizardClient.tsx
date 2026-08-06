@@ -272,6 +272,11 @@ export default function NamingWizardClient({ isLoggedIn, isAdmin, inProgressOrde
         .then((res) => (res.ok ? res.json() : null))
         .then((data: InProgressOrder | null) => {
           if (!data) return;
+          // bfcache(뒤로/앞으로가기 캐시)로 페이지가 복원되면 결제 앱으로 떠나기 직전 열려
+          // 있던 결제 모달의 showPaymentModal=true가 그대로 남아 있을 수 있다 — 이미 결제가
+          // 끝나 로딩 화면으로 전환하는 것이므로 모달도 함께 닫아 로딩 화면 위에 결제 모달이
+          // 겹쳐 보이지 않게 한다.
+          setShowPaymentModal(false);
           setActiveInProgressOrder(data);
           setStage("loading");
         })
