@@ -12,7 +12,7 @@ import { CANDIDATE_COUNT_OPTIONS, DEFAULT_CANDIDATE_COUNT, type CandidateCount }
 import { explainCandidates } from "@/lib/llm/explain";
 import { shuffleArray } from "@/app/lib/shuffle";
 import type { Gender } from "@/lib/naming/types";
-import { getCurrentUser, isAdminUser } from "@/lib/auth";
+import { getCurrentUser, isAdminUser } from "@/lib/auth"; // isAdminUser는 ADMIN_FREE_TIER_CANDIDATE_COUNT 판정에만 쓴다(0.4).
 import { saveNamingResult, resolveNamingSessionRootId, getNamingSessionResults } from "@/lib/db-auth";
 import { claimPaymentOrder, linkPaymentOrderToNamingResult, revertPaymentOrderToPaid } from "@/lib/db-payment";
 import { ADMIN_FREE_TIER_CANDIDATE_COUNT } from "@/lib/payment/config";
@@ -59,15 +59,6 @@ export async function POST(request: Request) {
   const currentUser = await getCurrentUser();
   if (!currentUser) {
     return NextResponse.json({ error: "로그인이 필요합니다.", code: "AUTH_REQUIRED" }, { status: 401 });
-  }
-
-  // 정식 출시 전 임시 게이트 — app/naming/page.tsx의 화면 차단과 별개로, API 자체도 관리자가
-  // 아니면 막는다(직접 호출로 화면 차단을 우회하지 못하게).
-  if (!isAdminUser(currentUser)) {
-    return NextResponse.json(
-      { error: "프리미엄 작명은 서비스 준비 중입니다.", code: "SERVICE_NOT_READY" },
-      { status: 403 }
-    );
   }
 
   let body: Partial<NameRequestBody>;
