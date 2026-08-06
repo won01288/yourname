@@ -25,6 +25,9 @@ export default async function MyPageNamingDetail({ params }: { params: Promise<{
   }
 
   const data = JSON.parse(row.result) as NameApiResult;
+  // "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 저장 시점엔 자기 id를 몰라 result JSON 자체에는
+  // 없다(닭-달걀 문제). 조회 시점에 라우트 파라미터로 채운다.
+  data.namingResultId = numericId;
   const requestPayload = JSON.parse(row.requestPayload) as NameRequestPayload;
   return <NamingDetailClient data={data} requestPayload={requestPayload} />;
 }

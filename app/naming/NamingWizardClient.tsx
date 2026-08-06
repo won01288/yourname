@@ -31,6 +31,14 @@ interface InProgressOrder {
   candidateCount: CandidateCount;
 }
 
+// "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — app/naming/page.tsx가 이미 세션 루트를 확인하고
+// 남은 개수(0 초과)까지 검증해 내려주는 값.
+export interface MoreModeInfo {
+  parentNamingResultId: number;
+  moreAvailableCount: number;
+  prefillPayload: NameRequestPayload;
+}
+
 interface NamingWizardClientProps {
   isLoggedIn: boolean;
   /** 서버(app/naming/page.tsx)가 이미 판단한 "결제는 끝났지만 아직 결과가 안 나온" 진행 중 주문
@@ -38,9 +46,12 @@ interface NamingWizardClientProps {
    * 전환 등으로 클라이언트 상태(로딩 화면)가 유실된 채 /naming을 새로고침해도, 사용자가 "처음
    * 화면으로 돌아갔다"고 오인하지 않도록 한다. */
   inProgressOrder: InProgressOrder | null;
+  /** "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — /naming?more=1&parentId=N으로 진입했을 때만 값이
+   * 있다. 있으면 위저드를 처음부터 채우지 않고 추천 개수 선택 단계(마지막 단계)부터 시작한다. */
+  moreMode: MoreModeInfo | null;
 }
 
-export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: NamingWizardClientProps) {
+export default function NamingWizardClient({ isLoggedIn, inProgressOrder, moreMode }: NamingWizardClientProps) {
   const [stage, setStage] = useState<Stage>(inProgressOrder ? "loading" : "form");
   // 2026.8.5 — 서버가 최초 페이지 로드 시점에 판단한 inProgressOrder(prop, 불변)와 별개로, 탭이
   // 다시 보이는 시점마다 클라이언트가 새로 알아낸 값을 담는 state. 아래 visibilitychange 기반
@@ -80,6 +91,17 @@ export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: Nami
     setLastPayload(payload);
     setResumeToLastStep(true);
   }, []);
+
+  // "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 서버(app/naming/page.tsx)가 이미 세션을 검증해
+  // 내려준 moreMode가 있으면, 원본 생년월일시·성별·성씨를 그대로 채우고 추천 개수 선택 단계로
+  // 바로 이동한다. resume 이펙트와 동일한 스타일(마운트 시 1회, 데이터가 있을 때만 setState).
+  useEffect(() => {
+    if (!moreMode) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setLastPayload({ ...moreMode.prefillPayload, parentNamingResultId: moreMode.parentNamingResultId });
+    setResumeToLastStep(true);
+  }, [moreMode]);
+
   const [surnameOptions, setSurnameOptions] = useState<string[] | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [result, setResult] = useState<NameApiResult | null>(null);
@@ -368,6 +390,7 @@ export default function NamingWizardClient({ isLoggedIn, inProgressOrder }: Nami
             paidOrder={paidOrder}
             initialStep={resumeToLastStep ? NAMING_WIZARD_LAST_STEP : undefined}
             priceByCount={priceByCount}
+            moreAvailableCount={moreMode?.moreAvailableCount}
           />
         </>
       )}

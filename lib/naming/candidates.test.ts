@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   requiredPhoneticElements,
   buildCandidates,
+  buildCandidatesDetailed,
   selectDiverseCandidates,
   buildRandomizedSelectionPool,
   isCrossGenderSkewed,
@@ -490,6 +491,94 @@ describe("buildCandidates", () => {
       curatedGivenNames: [{ hangul: "미가", frequency: 100 }],
     });
     expect(result.map((c) => c.hangul)).toEqual(["미가"]);
+  });
+});
+
+// CLAUDE.md 0.6·3.6.7 — "같은 사주로 더 추천받기". buildCandidatesDetailed가 buildCandidates와
+// 동일한 후보를 반환하면서(위임 회귀 가드) poolSize·excludeHangul을 추가로 다루는지 검증한다.
+describe("buildCandidatesDetailed", () => {
+  const surnameStroke = 8;
+  const surnameElement: Element = "金";
+
+  const hanjaPool: Hanja[] = [
+    makeHanja({ char: "美", readings: ["미"], strokeOriginal: 5, element: "水" }),
+    makeHanja({ char: "敏", readings: ["민"], strokeOriginal: 4, element: null }),
+    makeHanja({ char: "佳", readings: ["가"], strokeOriginal: 3, element: "木" }),
+    makeHanja({ char: "建", readings: ["건"], strokeOriginal: 2, element: null }),
+  ];
+
+  function makeNumerologyTable(auspicious: number[]): Map<number, Numerology81> {
+    const map = new Map<number, Numerology81>();
+    for (let n = 1; n <= 30; n++) {
+      map.set(n, { number: n, fortune: auspicious.includes(n) ? "길" : "흉", title: null, description: null });
+    }
+    return map;
+  }
+  const ALL_AUSPICIOUS = makeNumerologyTable(Array.from({ length: 30 }, (_, i) => i + 1));
+
+  const baseInput = {
+    surnameStroke,
+    surnameElement,
+    yongsin: ["水", "木"] as Element[],
+    distribution: NEUTRAL_DISTRIBUTION,
+    hanjaPool,
+    numerologyTable: ALL_AUSPICIOUS,
+    random: NO_SHUFFLE,
+  };
+
+  it("buildCandidates(기존 함수)와 candidates 배열이 동일하다 (위임 회귀 가드)", () => {
+    const curatedGivenNames = [
+      { hangul: "미가", frequency: 100 },
+      { hangul: "미건", frequency: 50 },
+    ];
+    const legacy = buildCandidates({ ...baseInput, candidateCount: 5, curatedGivenNames });
+    const detailed = buildCandidatesDetailed({ ...baseInput, candidateCount: 5, curatedGivenNames });
+    expect(detailed.candidates).toEqual(legacy);
+  });
+
+  it("poolSize는 candidateCount 선택 전 게이트 통과 전체 풀 크기이며 candidates.length 이상이다", () => {
+    const curatedGivenNames = [
+      { hangul: "미가", frequency: 100 },
+      { hangul: "미건", frequency: 50 },
+    ];
+    const result = buildCandidatesDetailed({ ...baseInput, candidateCount: 1, curatedGivenNames });
+    expect(result.candidates).toHaveLength(1);
+    expect(result.poolSize).toBe(2); // 두 이름 모두 게이트를 통과하는 조합.
+    expect(result.poolSize).toBeGreaterThanOrEqual(result.candidates.length);
+  });
+
+  it("excludeHangul에 있는 이름은 결과에도 poolSize 계산에도 포함되지 않는다", () => {
+    const curatedGivenNames = [
+      { hangul: "미가", frequency: 100 },
+      { hangul: "미건", frequency: 50 },
+    ];
+    const withoutExclude = buildCandidatesDetailed({ ...baseInput, candidateCount: 5, curatedGivenNames });
+    expect(withoutExclude.poolSize).toBe(2);
+
+    const withExclude = buildCandidatesDetailed({
+      ...baseInput,
+      candidateCount: 5,
+      curatedGivenNames,
+      excludeHangul: new Set(["미가"]),
+    });
+    expect(withExclude.candidates.map((c) => c.hangul)).not.toContain("미가");
+    expect(withExclude.poolSize).toBe(1); // exclude된 만큼 풀 크기도 함께 줄어든다.
+  });
+
+  it("반대 성별 필터(isCrossGenderSkewed)와 exclude 필터가 함께 적용된다", () => {
+    const curatedGivenNames = [
+      { hangul: "미가", frequency: 100 },
+      { hangul: "미건", frequency: 50 },
+    ];
+    const result = buildCandidatesDetailed({
+      ...baseInput,
+      candidateCount: 5,
+      curatedGivenNames,
+      excludeHangul: new Set(["미건"]), // 미건은 exclude로 제외
+      oppositeGenderFrequency: new Map([["미가", 300]]), // 미가는 반대 성별 편중으로 제외(300 >= 100*2)
+    });
+    expect(result.candidates).toEqual([]);
+    expect(result.poolSize).toBe(0);
   });
 });
 

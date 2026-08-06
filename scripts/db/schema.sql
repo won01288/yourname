@@ -129,10 +129,14 @@ CREATE TABLE IF NOT EXISTS naming_result (
   request_payload TEXT NOT NULL,     -- NameRequestPayload JSON 원본
   result TEXT NOT NULL,              -- NameApiResult JSON 원본 (LLM report 포함)
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  expires_at TEXT NOT NULL           -- INSERT 시 datetime('now','+30 days')로 계산
+  expires_at TEXT NOT NULL,          -- INSERT 시 datetime('now','+30 days')로 계산
+  parent_naming_result_id INTEGER    -- "같은 사주로 더 추천받기" 세션의 루트 naming_result.id.
+                                      -- NULL이면 이 행 자체가 루트. 항상 루트를 가리키는 star
+                                      -- topology(체인 아님) — 서버가 매 요청마다 재계산해 강제한다.
 );
 
 CREATE INDEX IF NOT EXISTS idx_naming_result_user_id ON naming_result(user_id);
+CREATE INDEX IF NOT EXISTS idx_naming_result_parent ON naming_result(parent_naming_result_id);
 
 -- 결제(페이앱, CLAUDE.md 0.4) — 프리미엄 작명 유료화 1단계. candidate_count(3/5/10) 티어별
 -- 가격을 관리자가 바꿀 수 있도록 코드 상수가 아니라 DB에 둔다.

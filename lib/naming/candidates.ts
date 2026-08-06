@@ -301,6 +301,11 @@ export interface BuildCandidatesInput {
    * 성별 쪽에서 CROSS_GENDER_FREQUENCY_RATIO배 이상 더 흔하면 후보에서 제외한다. 생략 시(기본
    * 빈 Map) 이 필터를 적용하지 않는다 — random과 동일하게 옵셔널 + 안전한 기본값 패턴. */
   oppositeGenderFrequency?: Map<string, number>;
+  /** CLAUDE.md 0.6·3.6.7 — "같은 사주로 더 추천받기". 이미 이 세션에서 추천된 이름은 후보에서
+   * 제외한다. hangul만으로 충분한 이유: curatedGivenNames 순회 시 bestRealization()이 이름
+   * (hangul)마다 최고점 한자 조합 1개만 남기므로(위 143-147행 주석) hangul 자체가 이름의 유니크
+   * 키다. 생략 시(기본값 없음) 이 필터를 적용하지 않는다. */
+  excludeHangul?: Set<string>;
   /** 최종 반환할 후보 개수. 3/5/10 중 사용자가 선택한다 (config.ts CANDIDATE_COUNT_OPTIONS, Phase 8). */
   candidateCount: number;
   /** [0,1) 난수 생성기. 상위 비율 안 무작위 선택(3.6.5)에 쓰인다. 생략 시 Math.random.
@@ -363,13 +368,21 @@ function buildHighlights(
   return highlights;
 }
 
+// CLAUDE.md 0.6·3.6.7 — buildCandidatesDetailed의 poolSize(게이트+exclude 적용 후 전체 후보 풀
+// 크기)를 함께 노출하기 위한 반환 타입. "더 추천받기" 잔여 개수(moreAvailableCount = poolSize -
+// candidates.length)를 계산하는 기준값이다.
+export interface BuildCandidatesResult {
+  candidates: Candidate[];
+  poolSize: number;
+}
+
 // 용신 + 성씨 제약으로 이름 후보를 생성해 candidateCount개를 반환한다. 이름(hangul) 자체는
 // curatedGivenNames에 있는 것만 쓴다. 하드 필터(3.6.4): score.ts scoreName() 총점이
 // CANDIDATE_MIN_TOTAL_SCORE(90) 이상. 게이트 통과 후 내부 순위: 자원오행 일치(3.5·3.6.3) +
 // 친숙한 한자(3.6) + 음양 균형(3.4). 동점자는 이름의 실사용 빈도(frequency)가 높은 쪽을 우선한다.
 // 최종 선택은 이 순위 최상위를 그대로 쓰지 않고, 게이트 통과 풀 크기에 따른 상위 비율 안에서
 // 무작위로 뽑는다(3.6.5) — 같은 주용신을 가진 사용자끼리 결과가 거의 겹치는 문제 완화.
-export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
+export function buildCandidatesDetailed(input: BuildCandidatesInput): BuildCandidatesResult {
   const {
     surnameStroke,
     surnameElement,
@@ -381,6 +394,7 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
     candidateCount,
     random = Math.random,
     oppositeGenderFrequency = new Map<string, number>(),
+    excludeHangul,
   } = input;
 
   const syllableIndex = groupBySyllable(hanjaPool);
@@ -388,6 +402,9 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
 
   for (const entry of curatedGivenNames) {
     if (entry.hangul.length !== GIVEN_NAME_LENGTH) continue; // 방어적 — 데이터 계층에서 이미 걸러짐.
+
+    // CLAUDE.md 0.6·3.6.7 — "더 추천받기" 세션에서 이미 추천된 이름은 한자 탐색 전에 건너뛴다.
+    if (excludeHangul?.has(entry.hangul)) continue;
 
     // CLAUDE.md 3.6.6(Phase 13) — 반대 성별 쪽에서 훨씬 더 흔한 이름은 한자 탐색 전에 건너뛴다
     // (실사용 성별 인상과 어긋나는 추천 방지). 한자 조합과 무관하게 이름(hangul)만으로 정해지므로
@@ -465,8 +482,16 @@ export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
   // 실제로 반환되는 후보들끼리 비교해야 의미가 있으므로(다른 회차 결과와 비교하는 값이 아니다),
   // 최종 선택이 끝난 뒤 이 배치 안에서 중앙값을 계산한다.
   const medianFrequencyInBatch = medianOf(picked.map((c) => c.frequency));
-  return picked.map((candidate) => ({
+  const candidates = picked.map((candidate) => ({
     ...candidate,
     highlights: buildHighlights(candidate, surnameStroke, yongsin, numerologyTable, medianFrequencyInBatch),
   }));
+
+  return { candidates, poolSize: scored.length };
+}
+
+// buildCandidatesDetailed의 얇은 wrapper — candidateCount개의 후보 배열만 필요한 기존 호출부
+// (scripts/debug/*, candidates.test.ts 등)를 위해 시그니처를 그대로 유지한다.
+export function buildCandidates(input: BuildCandidatesInput): Candidate[] {
+  return buildCandidatesDetailed(input).candidates;
 }

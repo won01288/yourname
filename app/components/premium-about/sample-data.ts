@@ -157,7 +157,9 @@ export const SAMPLE_CANDIDATES: Candidate[] = [
   },
 ];
 
-export const SAMPLE_REPORT: NamingReport = {
+// summary/sajuStory는 lib/llm/explain.ts에서 "같은 사주로 더 추천받기" 추가 라운드(0.6)에 한해
+// 선택 필드가 됐지만, 이 소개 페이지용 샘플은 항상 최초 라운드 예시라 둘 다 반드시 있다.
+export const SAMPLE_REPORT: NamingReport & { summary: string; sajuStory: { title: string; body: string } } = {
   summary:
     "태어난 날의 천간이 火(화)인 丙(병) 일간인데, 사주 여덟 자 안에 水(수) 3.33, 金(금) 2.53으로 " +
     "물과 쇠의 기운이 크게 몰려 있어 정작 나를 지탱할 火(화)와 이를 살려줄 木(목)은 빈약합니다. " +

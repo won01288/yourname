@@ -90,6 +90,7 @@
   - **해결**: `GET /api/payment/in-progress`(신규, 인증된 사용자 기준으로 `getInProgressNamingOrder` 그대로 재사용)를 클라이언트가 직접 호출할 수 있게 열고, `NamingWizardClient`가 탭이 다시 보이는 시점(`visibilitychange`·`pageshow`·`focus` 이벤트, 마운트 시 1회 포함)마다 이 API로 재확인한다. `activeInProgressOrder`(state, `inProgressOrder` prop을 초기값으로 하되 이후로는 이 재확인이 갱신하는 값을 진짜 소스로 씀)가 잡히면 그 즉시 `stage='loading'`으로 전환하고 기존 폴링 effect가 이어받는다 — URL 쿼리·sessionStorage 어디에도 의존하지 않고 "로그인한 사용자에게 지금 진행 중인 게 있는가"만 묻는 방식이라, 어떤 경로로 탭이 복원됐든 동일하게 동작한다. 이벤트 기반이라 새로고침 없이 보통 1~3초 내로 전환된다(사용자 요청사항).
 - **코드 위치**: `lib/payment/{types,config,provider,payapp}.ts`, `lib/db-payment.ts`(price_tier/payment_order CRUD, `setPaymentOrderProviderOrderId`·`getInProgressNamingOrder` 포함), `app/api/payment/{checkout,webhook,orders/[id],orders/[id]/cancel,in-progress,price-tiers}/route.ts`, `app/components/{PaymentRequiredModal,PaymentCheckoutButton}.tsx`, `app/admin/pricing/page.tsx`. `app/api/name/route.ts`·`app/lib/name-client.ts`·`app/components/InputForm.tsx`·`app/naming/page.tsx`(`getInProgressNamingOrder` 조회)·`app/naming/NamingWizardClient.tsx`(`inProgressOrder`/`activeInProgressOrder`, 백그라운드 생성 복구 폴링 + 탭 재활성 재확인)에 결제 게이트/모달을 배선했다(로그인 모달과 동일한 sessionStorage 기반 재개 패턴, 모바일 풀리다이렉트 복귀는 `returnUrl=/naming?paymentReturn=1&orderId=N`).
 - **환경변수**: `PAYMENT_PROVIDER`(기본 `payapp`), `PAYAPP_USERID/LINKKEY/LINKVAL`(판매자 관리사이트 "설정 > 연동정보"), `PAYAPP_SHOPNAME`, `APP_BASE_URL`(웹훅/returnurl 절대 URL 생성용, 미설정 시 `VERCEL_URL` → `localhost:3000` 순으로 폴백 — 로컬에서 실제 웹훅을 받으려면 ngrok 등 외부 접근 가능한 URL이 필요).
+- **관리자 무료 티어 — 최소 개수(3개)는 결제 없이 생성 (2026.8.6)**: `/naming`은 이미 관리자 전용으로 게이트돼 있어(정식 출시 전 임시 제한, 5장 Phase 6~) 이 화면에 도달하는 사용자는 항상 관리자다. 결제(재결제 포함, 0.6 "더 추천받기")를 매번 반복하지 않고도 나머지 파이프라인(사주 계산 → 후보 생성 → LLM 해설)을 빠르게 검증할 수 있도록, `candidateCount`가 `lib/payment/config.ts`의 `ADMIN_FREE_TIER_CANDIDATE_COUNT`(3, 최소 티어)와 같으면 `app/api/name/route.ts`가 `claimPaymentOrder` 호출 자체를 건너뛴다(`orderId`도 요구하지 않는다) — `InputForm.tsx`도 같은 조건이면 결제 모달을 띄우지 않고 바로 제출하고, 3개 타일에 가격 대신 "무료(관리자 테스트)"를 표시한다. **서버 쪽 조건(`isFreeAdminTier = isAdminUser(currentUser) && candidateCount === ADMIN_FREE_TIER_CANDIDATE_COUNT`)이 실제 강제이고, 클라이언트는 UX 편의일 뿐**이다 — 관리자 게이트를 우회한 사용자가 무료로 생성할 수 없다는 뜻이다. **주의**: 이 조건은 관리자 게이트가 살아있는 동안만 안전하다. 6장 미결정 "프리미엄 작명 공개 오픈 여부"가 결정돼 게이트가 풀리면, `isAdminUser` 체크가 그대로 있는 한 일반 사용자에게는 여전히 적용되지 않지만(관리자만 무료), 실제 오픈 시점에 이 결정 자체를 재검토해야 한다(예: 그때도 관리자 무료 티어를 유지할지).
 
 ### 0.5 회원 문의하기 (Phase 15 확정, 2026.8.4)
 
@@ -102,6 +103,21 @@
 - **삭제**: 관리자만 문의를 하드 삭제할 수 있다(`deleteInquiryAdmin`, `user_id` 조건 없음 — 어떤 회원의 문의든 삭제 가능해야 하므로). 회원 본인은 삭제할 수 없다(요청 범위 밖).
 - **회원 탈퇴 연동**: `deleteUserAccount`(`lib/db-auth.ts`)에 `DELETE FROM inquiry WHERE user_id = ?`를 추가해, 탈퇴 시 다른 사용자 생성 데이터(`score_result`/`naming_result`/`session`/`oauth_account`)와 함께 정리되도록 했다.
 - **코드 위치**: `lib/db-auth.ts`(`InquiryRow`/`AdminInquiryRow` + CRUD), `app/api/inquiry/route.ts`(회원의 문의 등록, POST 전용), `app/api/admin/inquiries/[id]/route.ts`(관리자의 답변 등록 PATCH·삭제 DELETE), `app/mypage/inquiries/page.tsx` + `app/components/InquiryPageClient.tsx`(회원 화면, 등록 폼 + 내 문의 목록), `app/admin/inquiries/page.tsx` + `app/components/AdminInquiryPanel.tsx`(관리자 화면). 목록 조회는 8.3 원칙대로 Server Component가 `lib/db-auth.ts`를 직접 호출하고, 클라이언트 인터랙션이 실제로 필요한 등록·답변·삭제만 API 라우트로 뒀다.
+
+### 0.6 같은 사주로 이름 더 추천받기 (Phase 16 확정, 2026.8.6)
+
+작명 리포트 하단과 마이페이지 작명 결과 목록에서, 이미 받은 후보를 제외하고 같은 사주로 이름을 더 추천받을 수 있는 기능.
+
+- **유료 — 매번 재결제**: candidate_count(3/5/10)당 가격이 "세트 절대가"로 설계돼 있고(0.4), `payment_order`는 orderId 하나당 정확히 한 번만 소비되도록 만들어져 있어 "결제에 얹어 추가로 받는" 개념이 애초에 없다. 그래서 "더 추천받기"도 새 `payment_order`를 만들고 기존 결제 흐름(체크아웃·웹훅·claim)을 그대로 재사용하는 것으로 결정했다 — 별도 인프라를 새로 만들지 않는다.
+- **잔여 개수 = 이미 추천된 이름을 제외한 실제 남은 개수**: "최대 N개 더 추천받을 수 있어요"의 N은 고정된 전체 풀 크기가 아니라, 이 사주 세션에서 지금까지 나온 모든 이름(hangul)을 제외하고 계산한 값이다. 받을 때마다 줄어든다.
+- **저장 구조 — 별도 row + star topology 연결**: 추가로 생성된 후보(및 LLM 해설)는 기존 `naming_result` row에 이어붙이지 않고 매번 새 row로 저장한다(3.9 이하 원칙과 동일 — result JSON은 완결된 스냅샷 하나를 통째로 저장하는 구조라 append용 UPDATE를 새로 만드는 것보다, 기존과 동일하게 "매번 새로 저장"하는 편이 더 단순했다). 대신 `naming_result.parent_naming_result_id`(nullable, FK 없음) 컬럼으로 같은 사주 세션임을 표시한다 — **항상 세션의 루트 id를 가리키는 star topology**로 설계했다(체인이 아님). 즉 3번째, 4번째 라운드를 만들어도 `parent_naming_result_id`는 항상 최초 생성 시점의 루트를 가리킨다. 이렇게 하면 세션 전체를 `WHERE id = root OR parent_naming_result_id = root` 한 방 쿼리로 가져올 수 있다(`lib/db-auth.ts` `getNamingSessionResults`). 클라이언트가 보낸 parentId를 그대로 신뢰하지 않고, 서버가 매 요청마다 `resolveNamingSessionRootId`로 재계산해 루트를 강제한다.
+- **exclude 계산과 poolSize 노출(3.6.7 참고)**: 세션 내 모든 row의 `result.candidates[].hangul`을 모아 `buildCandidatesDetailed`의 `excludeHangul`로 전달한다. 이 함수가 함께 반환하는 `poolSize`(exclude+게이트 적용 후 전체 통과 풀 크기)에서 이번에 실제로 뽑힌 후보 개수를 뺀 값을 `moreAvailableCount`로 계산해 **매 생성 시점에 result JSON에 스냅샷으로 저장**한다. 실시간으로 다시 계산하는 별도 API는 만들지 않았다 — 세션에서 가장 최근에 만들어진 row의 `moreAvailableCount`가 이전 라운드를 모두 제외하고 계산된 값이라 항상 최신 잔여치와 같기 때문이다(8.3 — 문제가 실제로 생기기 전엔 인프라를 늘리지 않는다는 원칙과 동일).
+- **트리거 UX — 모달이 아니라 `/naming` 위저드 재사용**: `/naming`에는 이미 결제·로딩·복구 인프라(0.4에 기술된 카카오톡 인앱 대응, 결제 확인 중 취소, pending_payload 서버 스냅샷, 탭 재활성 시 in-progress 재확인 등 다단계 실전 버그 수정)가 정교하게 구축돼 있다. 새 모달을 만들면 이 모든 엣지케이스를 재구현하거나 공유화해야 해 리스크가 크므로, 대신 `/naming?more=1&parentId=<naming_result.id>`로 위저드를 열어 기존 "resume 메커니즘"(로그인 재개·결제 복귀와 동일하게 `initialValues` + `initialStep=NAMING_WIZARD_LAST_STEP`로 마지막 단계로 점프)을 그대로 재사용한다 — 새 위저드 스텝 없이 "추천 개수 선택부터 시작"이 자연스럽게 된다. `app/naming/page.tsx`가 진입 시 세션을 검증하고(소유권·만료·잔여 개수>0) `NamingWizardClient`에 `moreMode` prop으로 내려준다. 결제해도 그만큼 못 받는 상황을 막기 위해, `InputForm`은 `moreAvailableCount`를 넘는 후보 개수 티어를 비활성화한다.
+- **CTA 노출 임계값**: 잔여 개수가 0보다 클 때가 아니라 **최소 결제 티어(3, `CANDIDATE_COUNT_OPTIONS`의 최솟값) 이상일 때만** "더 추천받기" 버튼을 보여준다 — 1~2개만 남았는데 버튼을 눌러도 아무 티어도 선택할 수 없는 상황을 막기 위함.
+- **UI 배치**: `ResultsDashboard.tsx` 하단(법적 고지 위)에 잔여 개수 안내 + 아웃라인 CTA를 추가했다 — 이 컴포넌트를 `/naming` 결과 화면과 `/mypage/naming/[id]` 상세 화면이 공유하므로 양쪽에 자동 적용된다.
+- **마이페이지 목록 — 루트만 상위 항목, 추가 라운드는 그 밑에 누적 (2026.8.6 갱신)**: 처음엔 추가 라운드도 각자 독립된 상위 항목으로 나열했으나(생성 시각순), 실사용 확인 결과 최신 라운드가 원본(1차) 위에 별개 항목처럼 뜨는 게 부자연스럽다는 피드백에 따라 바꿨다. `app/mypage/page.tsx`의 `computeNamingDisplayGroups`가 `listNamingResultsByUser` 조회 결과(세션의 모든 row가 이미 포함됨, 추가 DB 쿼리 없음)를 루트(`parent_naming_result_id`가 없는 행)별로 그룹핑해, 화면에는 **루트만 상위 항목으로** 보여주고 추가 라운드는 그 루트 항목 안에 `additionalRounds`(오래된 순)로 실어 내려보낸다. `SavedNamingList.tsx`는 각 루트 항목 아래에 "이름 더 추천받기 · 최대 N개" 버튼(항상 1차 결과 바로 밑, 브랜드 아웃라인)을 두고, 그 밑에 이미 받은 추가 라운드들을 "N차 추가 추천 결과 확인 · 후보 M개 · 검색일시: ..." 형태로 하나씩 누적해서 쌓는다(라운드마다 몇 개를 더 받았는지·언제 받았는지 함께 표시) — 별도 상위 목록 항목을 만들지 않는다. **고아 라운드 처리**: 각 `naming_result` 행은 독립적으로 30일 만료되므로, 드물게 루트가 먼저 만료(또는 삭제)된 뒤에도 그 세션의 추가 라운드가 남아있을 수 있다 — 이 경우 `computeNamingDisplayGroups`가 해당 행을 그 자체로 표시용 루트로 승격시켜(다시 그룹의 최상위가 됨) 목록에서 조용히 사라지지 않게 한다.
+- **추가 라운드는 LLM 비용을 최소화 — summary·사주풀이(sajuStory)를 아예 생성하지 않음 (2026.8.6 갱신)**: 처음엔 매 라운드마다 `explainCandidates()`를 동일하게 호출해 요약·사주풀이·후보 해설을 전부 새로 생성했으나, 사주풀이는 최초 라운드에서 이미 한 번 보여준 내용이라 반복 생성이 불필요한 LLM 비용이라는 지적에 따라 바꿨다. `explainCandidates(input)`의 `isAdditionalRound`(route.ts가 `parentNamingResultId` 존재 여부로 계산)가 true면 응답 JSON 스키마 자체에서 `summary`/`sajuStory` 속성을 뺀다(값을 비워서 숨기는 게 아니라 애초에 모델이 그 내용을 생성하지 않게 해 실제 출력 토큰을 줄인다) — `candidates[]`의 `explanation`도 "sajuStory에서 나온 결핍을 환기"·"sajuStory와 같은 비유를 다시 불러와 맺기" 같은 문구 대신, 오행 분포·신강신약·용신 사실을 직접 근거로 삼는 독립형 5단계 구조로 바뀐다(`lib/llm/explain.ts`의 `buildExplanationDescription`/`buildExplanationInstructions`가 `hasStory` 여부로 분기). `NamingReport.summary`/`sajuStory`는 그래서 선택 필드가 됐다. 화면(`ResultsDashboard.tsx`)은 `data.isAdditionalRound`면 제목 위에 "추가 추천 결과입니다" 배지를 보여주고, `report?.summary`/`report?.sajuStory`가 없으므로 자연스럽게 그 두 섹션은 생략된 채 만세력(`ManseryeokTable`)·사주 요약(`SajuReportCard`) 다음 바로 후보 설명으로 넘어간다 — 새 prop 분기 없이 기존 옵셔널 렌더링 패턴(`{report?.field && ...}`)만으로 해결된다.
+- **코드 위치**: `lib/db-auth.ts`(`resolveNamingSessionRootId`/`getNamingSessionResults`/`saveNamingResult` 4번째 인자), `lib/naming/candidates.ts`(`excludeHangul`, `buildCandidatesDetailed`, 3.6.7), `lib/llm/explain.ts`(`isAdditionalRound`, `buildResponseSchema`/`buildUserPrompt`/`buildSystemPrompt`의 `hasStory` 분기), `app/api/name/route.ts`(세션 해석·정합성 검사·exclude 계산·`moreAvailableCount`/`isAdditionalRound` 계산), `app/naming/page.tsx`/`NamingWizardClient.tsx`(`moreMode`), `app/components/InputForm.tsx`(티어 비활성화), `app/components/ResultsDashboard.tsx`(`MoreCandidatesSection`, 추가 라운드 배지), `app/mypage/page.tsx`(`computeNamingDisplayGroups`), `app/components/SavedNamingList.tsx`(`additionalRounds` 누적 렌더링).
 
 ---
 
@@ -288,6 +304,13 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 - **한계**: `given_name.frequency`는 두 출처(기존 `korean_name.xlsx` 상위 300 + 신규 `namechart.kr`)가 섞여 스케일이 다를 수 있다는 기존 한계(3.7.1)가 이 비교에도 그대로 적용된다 — 다만 비교 대상 대부분이 최근 신규 풀(같은 스케일)이라 실질적 왜곡은 크지 않은 것으로 판단했다. 배수(2배) 임계값 자체는 사용자 지시값을 그대로 채택한 것으로, 실사용 피드백에 따라 재조정될 수 있다.
 - **회귀 테스트**: `lib/naming/candidates.test.ts` — `isCrossGenderSkewed` 전용 describe(경계값 2배 포함) + `buildCandidates`에 반대 성별 빈도 필터 3종(정확히 2배 제외·2배 미만 미제외·미전달 시 미적용) 추가. tsc·전체 vitest(95개)·eslint 통과.
 
+### 3.6.7 exclude 필터 + poolSize 노출 (Phase 16 확정, 2026.8.6)
+
+0.6 "같은 사주로 이름 더 추천받기"를 위해 `buildCandidates`에 두 가지가 추가로 필요했다: (1) 이미 추천된 이름을 제외하는 기능, (2) "몇 개 더 받을 수 있는지" 계산에 쓸 게이트 통과 전체 풀 크기.
+
+- **`excludeHangul`**: `BuildCandidatesInput`에 `excludeHangul?: Set<string>` 필드를 추가하고, `curatedGivenNames` 순회 진입 직후(반대 성별 필터와 같은 자리)에서 걸러 한자 탐색 전에 제외한다. `hangul`만으로 충분한 이유는 3.6.4의 `bestRealization()`이 이름(hangul)마다 최고점 한자 조합 1개만 남기기 때문이다 — hangul 자체가 이미 이름의 유니크 키다.
+- **`buildCandidates`의 반환 타입은 바꾸지 않았다**: `Candidate[]`를 직접 소비하는 기존 호출부(`candidates.test.ts`, `scripts/debug/*.ts`)가 많아, 반환 타입을 바꾸면 그 전부를 고쳐야 했다. 대신 `buildCandidatesDetailed(input): { candidates: Candidate[]; poolSize: number }`를 신설하고, 기존 `buildCandidates`는 `buildCandidatesDetailed(input).candidates`를 반환하는 1줄 wrapper로 재작성했다 — `app/api/name/route.ts`만 새 함수로 갈아탔고 나머지 호출부는 무수정이다. `poolSize`는 exclude+게이트(총점 90) 적용 후, candidateCount로 자르기 전 `scored` 배열의 크기다.
+
 ### 3.7 이름(한글) 후보 풀 — 실사용 이름 표 기반으로 전환 (Phase 6 확정, 2026.7.26)
 
 - **배경**: 3.6의 `is_common` 가중치로도 여전히 실제로는 거의 쓰이지 않는 한자·이름이 후보에 나올 수 있었다(발음오행·수리·자원오행 조건만 만족하면 되는 자유 조합이라, "존재는 하지만 아무도 안 쓰는 이름"을 만들어낼 구조적 위험이 남아 있었다). 사용자가 대한민국 출생 등록 통계 기반의 실사용 이름 표(`etc/korean_name.xlsx`, 성별별 시트, 이름 A열 + 사용빈도 B열, 시트당 원본 3,600행)를 제공했다.
@@ -438,7 +461,7 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 | `session` | id, user_id, created_at, expires_at | `id`엔 원본 토큰이 아니라 **SHA-256 해시**만 저장(0.2 참고). `expires_at`은 INSERT 시 `datetime('now','+30 days')`로 SQL이 계산. 이메일/비밀번호 로그인 전용 — SNS 로그인은 next-auth 자체 JWT 세션을 쓴다(0.3). |
 | `oauth_account` | id, user_id, provider, provider_account_id, created_at | SNS 로그인(0.3, Phase 10) — 어떤 소셜 계정이 어떤 회원과 연결되는지. `UNIQUE(provider, provider_account_id)`. |
 | `score_result` | id, user_id, request_payload(JSON), result(JSON), created_at | 무료 서비스 결과. `result`는 `ScoreApiResult`를 그대로 직렬화 — 재계산 없이 화면 재현 가능. 영구 보관, 삭제는 `DELETE /api/history/score/[id]`. |
-| `naming_result` | id, user_id, request_payload(JSON), result(JSON), created_at, expires_at | 프리미엄 결과. `result`엔 비용이 든 LLM `report`까지 포함 — 재열람 시 LLM을 다시 호출하지 않기 위해 verbatim 저장. `expires_at`도 INSERT 시 `datetime('now','+30 days')`로 계산, 조회 시 이 조건으로 필터링. 삭제는 `DELETE /api/history/naming/[id]`(2026.8.6 추가, score_result와 동일 패턴 — 만료 전에도 사용자가 직접 지울 수 있다).
+| `naming_result` | id, user_id, request_payload(JSON), result(JSON), created_at, expires_at, parent_naming_result_id | 프리미엄 결과. `result`엔 비용이 든 LLM `report`까지 포함 — 재열람 시 LLM을 다시 호출하지 않기 위해 verbatim 저장. `expires_at`도 INSERT 시 `datetime('now','+30 days')`로 계산, 조회 시 이 조건으로 필터링. 삭제는 `DELETE /api/history/naming/[id]`(2026.8.6 추가, score_result와 동일 패턴 — 만료 전에도 사용자가 직접 지울 수 있다). `parent_naming_result_id`(nullable, Phase 16, 0.6)는 "같은 사주로 더 추천받기" 세션의 루트 id — NULL이면 이 행 자체가 루트이며, 항상 루트를 가리키는 star topology(체인 아님)로 서버가 매번 재계산해 강제한다. `result` JSON에는 `moreAvailableCount`(그 시점 기준 잔여 개수 스냅샷)가 함께 저장되지만, `namingResultId`(자기 자신의 id)는 저장 시점엔 알 수 없어(닭-달걀 문제) JSON에 없고 조회 시점에만 채워진다.
 
 기존 4테이블(hanja/surname/numerology_81/given_name)과 동일하게 **FK 제약을 쓰지 않는다** — 소유권은 매 조회 SQL의 `WHERE ... AND user_id = ?`(+ 필요시 `expires_at` 조건)로 강제한다. `lib/db.ts`(읽기 전용 참조 데이터)와 성격이 달라 쓰기 전용 접근 함수는 신규 `lib/db-auth.ts`로 분리했다(8.2 참고).
 
@@ -481,12 +504,14 @@ FK 제약 없음, `idx_inquiry_user_id` 인덱스만 둔다. 영구 보관(자�
 - [x] **Phase 14 — 결제(페이앱) 연동 (2026.8.4)**: 0.4·4.8 참고. 카드·카카오페이·네이버페이 3종, 추천 개수(3/5/10)별 5,900/8,900/14,900원. `lib/payment/`(PG 추상화, `PaymentProvider` 인터페이스 + `payapp.ts` 구현)·`lib/db-payment.ts`(`price_tier`/`payment_order` CRUD, 원자적 `claimPaymentOrder`) 신설. `app/api/payment/{checkout,webhook,orders/[id],price-tiers}` 라우트 추가, `app/api/name/route.ts`에 결제 소비 게이트(성씨 검증 등 무료 재시도 가능한 단계 통과 후, LLM 호출 직전에 claim) 배선. `app/admin/pricing`(Server Action)으로 관리자가 가격 직접 수정. 프론트는 `AuthRequiredModal`과 동일한 sessionStorage 재개 패턴으로 `PaymentRequiredModal`/`PaymentCheckoutButton`을 `InputForm`/`NamingWizardClient`에 배선(모바일 풀리다이렉트 복귀 포함). `app/naming/page.tsx`의 관리자 전용 게이트는 그대로 유지 — 이번 결제 흐름은 관리자 계정으로만 도달 가능하며, 실결제 검증은 사용자 본인이 진행.
 - [x] **Phase 15 — 회원 문의하기 (2026.8.4)**: 0.5·4.9 참고. 로그인 회원이 `/mypage/inquiries`에서 텍스트 문의를 등록하면 관리자가 `/admin/inquiries`에서 답변하는 최소 문의 시스템. `inquiry` 테이블 신설(`user_id`·`content`·`answer`·`answered_at`·`created_at`, FK 없음). `lib/db-auth.ts`에 CRUD 추가(`createInquiry`/`listInquiriesByUser`/`listAllInquiriesForAdmin`/`answerInquiry`/`deleteInquiryAdmin`), `deleteUserAccount`에도 정리 로직 추가. `app/api/inquiry`(등록)·`app/api/admin/inquiries/[id]`(답변·삭제) 라우트, 회원용 `InquiryPageClient.tsx`·관리자용 `AdminInquiryPanel.tsx`(둘 다 낙관적 목록 갱신) 추가. `app/admin/page.tsx` 허브와 `app/mypage/page.tsx`에 진입 링크 배선. tsc·eslint·`next build` 통과 확인.
 - [x] **마이페이지 목록 개선 — 생년월일시 표시 + 작명 결과 삭제 (2026.8.6)**: 마이페이지 두 목록(이름 점수 확인·프리미엄 작명) 모두 검색 당시 입력한 생년월일시(`request_payload`의 `year`/`month`/`day`/`hour`/`minute`/`isLunar`/`isLeapMonth`를 `formatBirthLabel()`로 조합)와 검색일시(기존엔 날짜만 표시하던 것을 `toLocaleString`으로 시각까지 표시)를 함께 보여주도록 `app/mypage/page.tsx`·`SavedScoreList.tsx`를 갱신했다. 작명 결과는 기존엔 삭제 기능이 아예 없었는데(30일 자동 만료만 있었음, 4.7 원래 기술), score_result와 같은 패턴으로 `deleteNamingResult`(`lib/db-auth.ts`)·`DELETE /api/history/naming/[id]`·`SavedNamingList.tsx`(신규, `SavedScoreList.tsx`와 동일 구조)를 추가해 사용자가 만료 전에도 직접 삭제할 수 있게 했다. tsc·eslint 통과 확인.
+- [x] **Phase 16 — 같은 사주로 이름 더 추천받기 (2026.8.6)**: 0.6·3.6.7·4.7 참고. `naming_result.parent_naming_result_id`(nullable, star topology) 컬럼 추가(`scripts/db/migrate-add-naming-result-parent.js`). `lib/db-auth.ts`에 `resolveNamingSessionRootId`/`getNamingSessionResults` 신설, `saveNamingResult`에 4번째 인자 추가. `lib/naming/candidates.ts`에 `excludeHangul` 필터와 `buildCandidatesDetailed`(`{candidates, poolSize}` 반환) 신설 — 기존 `buildCandidates`는 이를 감싸는 wrapper로 재작성해 기존 호출부를 그대로 보존했다. `app/api/name/route.ts`가 `parentNamingResultId` 있을 때 세션 루트 해석·사주 정합성 검사·exclude 계산을 결제 소비(`claimPaymentOrder`) 이전에 수행하고, 응답에 `moreAvailableCount`(저장되는 스냅샷)·`namingResultId`(응답 전용, 저장 안 됨)를 추가한다. `/naming?more=1&parentId=N`으로 위저드를 "더 추천받기 모드"로 열어 기존 resume 메커니즘을 재사용한다(`app/naming/page.tsx`의 `moreMode`, `NamingWizardClient.tsx`, `InputForm.tsx`의 티어 비활성화). `ResultsDashboard.tsx` 하단과 `SavedNamingList.tsx`(세션 그룹핑은 `app/mypage/page.tsx`의 `computeNamingSessionInfo`)에 CTA를 배선했다. `candidates.test.ts`에 `buildCandidatesDetailed` describe 추가(32개 테스트 통과), tsc·eslint·`next build` 통과 확인.
 
 ---
 
 ## 6. 미결정 사항 (진행하며 확정)
 
 - 조후용신 우선 적용 기준의 구체적 임계값.
+- **"같은 사주로 더 추천받기"(0.6, Phase 16)의 남은 갭**: 반복 횟수 제한이 없다(세션당 `naming_result` row가 30일 만료 외 별도 상한 없이 계속 늘어날 수 있음). `candidateCount`가 `moreAvailableCount`를 초과해도 서버는 강제하지 않는다(UI에서만 티어를 비활성화 — 작은 후보 풀에서 요청보다 적게 나오는 걸 이미 허용해온 것과 동일한 한계, 3.6.1). 세션을 시각적으로 묶어 보여주는 전용 화면(예: "이 사주의 모든 라운드 보기")은 없고, 마이페이지 목록에서 최신 항목 ↔ 이전 항목 간 링크로만 이동할 수 있다.
 - **후보 선정 점수의 가중치 (3.6 재조정, 3.6.3 재설계 완료, 2026.8.1)**: `wonhaengMatch`/`commonHanja` 만점을 3/3(=6점)로 동률로 맞춘 2026.7.26 결정은 유지하되, wonhaeng 쪽은 이진 매치(0/1/2)에서 주/보조 용신 차등 + 오행분포 부족량 비례 연속 점수로 재설계됐다(3.6.3 — 같은 성씨면 사주가 달라도 상위 후보가 반복되던 문제의 대응). 여전히 실사용 데이터 없이 판단한 값이라 더 많은 피드백이 쌓이면 재조정이 필요할 수 있다. 이 점수는 선택된 개수(3.6.1) 안에서 어떤 후보를 뽑을지에만 관여하며, 화면 표시 순서는 순위가 아니라 무작위화된 순서다(3.6.1 — Phase 8에서 LLM `rank` 재배열을 폐지).
 - 후보 순위 알고리즘의 가중치 (수리 vs 발음 vs 자원오행 vs 친숙도(`is_common`) 비중) — 위 항목과 별개로, 수리(81수리)·발음오행은 현재 하드 필터(통과/탈락만 있고 점수화되지 않음)라 소프트 스코어에 아직 반영되지 않는다. 필요해지면 하드 필터를 소프트 스코어로 바꿀지 별도 결정 필요. 이 하드 필터가 "성씨당 고정 통과 풀"을 만드는 근본 원인이라(3.6.3), 근본적으로 다양성을 늘리려면 이 미결정이 함께 다뤄져야 한다.
 - 항렬자 지원 여부.
@@ -543,14 +568,17 @@ yourname/                 ← 프로젝트 루트 (CLAUDE.md 위치)
 │  │  ├─ elements.ts  ← 팔자 → 오행 분포 집계
 │  │  ├─ yongsin.ts   ← 신강약 판정 + 억부 용신 도출 (규칙 엔진)
 │  │  ├─ manseryeok.ts← 만세력 상세: 십신·지장간 정기·공망 계산 (3.8)
-│  │  ├─ candidates.ts← 이름 후보 생성(탐색·다양성 선택) — 유료 전용 (Phase 4/6/8)
+│  │  ├─ candidates.ts← 이름 후보 생성(탐색·다양성 선택) — 유료 전용 (Phase 4/6/8).
+│  │  │                  buildCandidatesDetailed가 {candidates, poolSize} 반환, excludeHangul로
+│  │  │                  이미 추천된 이름 제외 (Phase 16, 3.6.7)
 │  │  ├─ similarity.ts← 이름 두 글자 간 자모 유사도 판정 — 유사 이름 소프트 필터용 (3.6.1, Phase 8)
 │  │  └─ score.ts     ← 이름 채점(등급 판정) — 무료 전용 (3.10, Phase 7)
 │  ├─ saju.ts         ← @fullstackfamily/manseryeok 를 감싸 Saju 타입 반환
 │  ├─ db.ts           ← Turso 접속 + 조회 함수 (한자·성씨·수리·한자 음 검색, 읽기 전용 참조 데이터)
 │  ├─ auth.ts         ← 로그인 베타(Phase 9): 비밀번호 scrypt 해시, DB-backed 세션 발급/조회 (0.2).
 │  │                     getCurrentUser()가 oauth.ts의 next-auth 세션도 함께 확인한다(0.3).
-│  ├─ db-auth.ts      ← user/session/score_result/naming_result/oauth_account CRUD (getDbClient는 db.ts에서 재사용)
+│  ├─ db-auth.ts      ← user/session/score_result/naming_result/oauth_account CRUD (getDbClient는 db.ts에서 재사용).
+│  │                     resolveNamingSessionRootId/getNamingSessionResults — "더 추천받기" 세션 조회 (Phase 16)
 │  └─ oauth.ts        ← SNS 로그인(Phase 10): next-auth(Auth.js v5) 설정 — 카카오/네이버 프로바이더,
 │                        jwt/session 콜백에서 db-auth.ts의 findOrCreateOAuthUser 연동 (0.3)
 │

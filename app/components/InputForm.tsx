@@ -4,6 +4,7 @@ import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { NameRequestPayload } from "@/app/lib/name-client";
 import type { Gender } from "@/lib/naming/types";
 import { CANDIDATE_COUNT_OPTIONS, DEFAULT_CANDIDATE_COUNT, type CandidateCount } from "@/lib/naming/config";
+import { ADMIN_FREE_TIER_CANDIDATE_COUNT } from "@/lib/payment/config";
 import { BirthDateFields, BirthTimeFields, daysInMonth } from "./BirthDateTimeFields";
 
 interface InputFormProps {
@@ -34,6 +35,9 @@ interface InputFormProps {
    * (NamingWizardClient)가 이미 조회해둔 값을 그대로 받는다. 조회 실패/로딩 중이면 빈 객체이며,
    * 그 경우 해당 개수의 가격 표시만 생략한다(다른 기능에는 영향 없음). */
   priceByCount?: Partial<Record<CandidateCount, number>>;
+  /** "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 더 추천받기 모드일 때만 값이 있다. 이 개수를
+   * 넘는 티어는 결제해도 그만큼 못 받으므로 선택지에서 비활성화한다. */
+  moreAvailableCount?: number;
 }
 
 const STEP_LABELS = ["기본 정보", "생년월일", "태어난 시각", "추천 개수"];
@@ -58,6 +62,7 @@ export default function InputForm({
   paidOrder,
   initialStep,
   priceByCount,
+  moreAvailableCount,
 }: InputFormProps) {
   const [step, setStep] = useState(initialStep ?? 0);
 
@@ -98,9 +103,15 @@ export default function InputForm({
     return () => clearTimeout(timer);
   }, [surnameHangul]);
 
-  const [candidateCount, setCandidateCount] = useState<CandidateCount>(
-    initialValues?.candidateCount ?? DEFAULT_CANDIDATE_COUNT
-  );
+  // "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — initialValues(원본 세션의 candidateCount)가
+  // moreAvailableCount보다 크면(예: 원래 10개를 받았는데 이번엔 7개만 남음) 비활성화될 타일이
+  // 기본 선택값이 되지 않도록, 남은 개수 이하의 가장 큰 티어로 보정한다.
+  const [candidateCount, setCandidateCount] = useState<CandidateCount>(() => {
+    const preferred = initialValues?.candidateCount ?? DEFAULT_CANDIDATE_COUNT;
+    if (moreAvailableCount === undefined || preferred <= moreAvailableCount) return preferred;
+    const eligible = CANDIDATE_COUNT_OPTIONS.filter((count) => count <= moreAvailableCount);
+    return eligible[eligible.length - 1] ?? preferred;
+  });
 
   const [isLunar, setIsLunar] = useState(initialValues?.isLunar ?? false);
   const [isLeapMonth, setIsLeapMonth] = useState(initialValues?.isLeapMonth ?? false);
@@ -159,11 +170,22 @@ export default function InputForm({
       day: effectiveDay,
       hour: timeUnknown ? 12 : hour,
       minute: timeUnknown ? 0 : minute,
+      // "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — initialValues를 통해 그대로 흘러가는 제어
+      // 값이라 별도 로컬 state 없이 여기서 직접 읽는다.
+      ...(initialValues?.parentNamingResultId ? { parentNamingResultId: initialValues.parentNamingResultId } : {}),
     };
     // 로그인 베타 — 비로그인 상태면 API를 호출하지 않고(비용 방지) 로그인 안내로 대신한다.
     // 서버도 독립적으로 401을 강제하므로 이 체크는 UX용 사전 차단일 뿐이다.
     if (!isLoggedIn) {
       onLoginRequired(payload);
+      return;
+    }
+    // 관리자 테스트 편의(lib/payment/config.ts ADMIN_FREE_TIER_CANDIDATE_COUNT) — 이 화면은
+    // 이미 관리자 전용 게이트(app/naming/page.tsx) 뒤에 있어 도달한 사용자는 항상 관리자다.
+    // 최소 티어를 선택했으면 결제 모달 없이 바로 제출한다 — 서버(app/api/name/route.ts)가
+    // 같은 조건으로 결제 소비 자체를 건너뛰므로 orderId 없이 보내도 정상 처리된다.
+    if (candidateCount === ADMIN_FREE_TIER_CANDIDATE_COUNT) {
+      onSubmit(payload);
       return;
     }
     // 결제(CLAUDE.md 0.4) — 이번 candidateCount에 대해 결제를 마친 주문이 없으면 결제 안내로
@@ -324,14 +346,19 @@ export default function InputForm({
         {step === 3 && (
           <div className="flex flex-col gap-2">
             <p className="mb-1 text-[13px] leading-6 text-text-secondary">
-              순위 없이 모든 후보를 각자의 강점과 함께 보여드립니다. 원하는 개수를 선택해 주세요.
+              {moreAvailableCount !== undefined
+                ? `이미 추천된 이름은 제외하고, 같은 사주로 최대 ${moreAvailableCount}개까지 더 받을 수 있어요.`
+                : "순위 없이 모든 후보를 각자의 강점과 함께 보여드립니다. 원하는 개수를 선택해 주세요."}
             </p>
-            {CANDIDATE_COUNT_OPTIONS.map((count) => (
+            {CANDIDATE_COUNT_OPTIONS.map((count) => {
+              const disabled = moreAvailableCount !== undefined && count > moreAvailableCount;
+              return (
               <button
                 key={count}
                 type="button"
+                disabled={disabled}
                 onClick={() => setCandidateCount(count)}
-                className={`flex items-center justify-between rounded-control border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] ${
+                className={`flex items-center justify-between rounded-control border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] disabled:cursor-not-allowed disabled:opacity-40 ${
                   candidateCount === count
                     ? "border-brand-600 bg-brand-50"
                     : "border-border bg-surface hover:bg-surface-muted"
@@ -346,13 +373,17 @@ export default function InputForm({
                     >
                       {count}개 추천받기
                     </span>
-                    {priceByCount?.[count] !== undefined && (
-                      <span className="text-[13px] font-medium text-text-secondary">
-                        {priceByCount[count]!.toLocaleString("ko-KR")}원
-                        <span className="ml-1 text-[11px] font-normal text-text-secondary opacity-80">
-                          (이름당 {Math.round(priceByCount[count]! / count).toLocaleString("ko-KR")}원)
+                    {count === ADMIN_FREE_TIER_CANDIDATE_COUNT ? (
+                      <span className="text-[13px] font-medium text-brand-600">무료(관리자 테스트)</span>
+                    ) : (
+                      priceByCount?.[count] !== undefined && (
+                        <span className="text-[13px] font-medium text-text-secondary">
+                          {priceByCount[count]!.toLocaleString("ko-KR")}원
+                          <span className="ml-1 text-[11px] font-normal text-text-secondary opacity-80">
+                            (이름당 {Math.round(priceByCount[count]! / count).toLocaleString("ko-KR")}원)
+                          </span>
                         </span>
-                      </span>
+                      )
                     )}
                   </span>
                   <span className="mt-0.5 block text-[12px] text-text-secondary">
@@ -365,7 +396,8 @@ export default function InputForm({
                   </span>
                 )}
               </button>
-            ))}
+              );
+            })}
           </div>
         )}
 

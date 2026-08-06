@@ -25,6 +25,9 @@ export interface NamingResultRow {
   result: string;
   createdAt: string;
   expiresAt: string;
+  /** "같은 사주로 더 추천받기" 세션의 루트 naming_result.id. NULL이면 이 행 자체가 루트
+   * (star topology — 체인이 아님, CLAUDE.md 0.6). */
+  parentNamingResultId: number | null;
 }
 
 export interface InquiryRow {
@@ -372,15 +375,24 @@ function rowToNamingResult(row: Record<string, unknown>): NamingResultRow {
     result: row.result as string,
     createdAt: row.created_at as string,
     expiresAt: row.expires_at as string,
+    parentNamingResultId: (row.parent_naming_result_id as number | null) ?? null,
   };
 }
 
-export async function saveNamingResult(userId: number, requestPayload: unknown, result: unknown): Promise<number> {
+export async function saveNamingResult(
+  userId: number,
+  requestPayload: unknown,
+  result: unknown,
+  // "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 이 결과가 어느 세션의 추가 라운드인지. 세션의
+  // 루트 id를 그대로 전달한다(호출부가 이미 resolveNamingSessionRootId로 해석해 둔 값). 최초
+  // 생성이면 null(기본값, 기존 호출부와 하위호환).
+  parentNamingResultId: number | null = null
+): Promise<number> {
   const client = getDbClient();
   const inserted = await client.execute({
-    sql: `INSERT INTO naming_result (user_id, request_payload, result, expires_at)
-          VALUES (?, ?, ?, datetime('now', '+30 days'))`,
-    args: [userId, JSON.stringify(requestPayload), JSON.stringify(result)],
+    sql: `INSERT INTO naming_result (user_id, request_payload, result, expires_at, parent_naming_result_id)
+          VALUES (?, ?, ?, datetime('now', '+30 days'), ?)`,
+    args: [userId, JSON.stringify(requestPayload), JSON.stringify(result), parentNamingResultId],
   });
   return Number(inserted.lastInsertRowid);
 }
@@ -388,7 +400,8 @@ export async function saveNamingResult(userId: number, requestPayload: unknown, 
 export async function listNamingResultsByUser(userId: number): Promise<NamingResultRow[]> {
   const client = getDbClient();
   const result = await client.execute({
-    sql: `SELECT id, request_payload, result, created_at, expires_at FROM naming_result
+    sql: `SELECT id, request_payload, result, created_at, expires_at, parent_naming_result_id
+          FROM naming_result
           WHERE user_id = ? AND expires_at > CURRENT_TIMESTAMP
           ORDER BY created_at DESC`,
     args: [userId],
@@ -399,12 +412,39 @@ export async function listNamingResultsByUser(userId: number): Promise<NamingRes
 export async function getNamingResultById(id: number, userId: number): Promise<NamingResultRow | null> {
   const client = getDbClient();
   const result = await client.execute({
-    sql: `SELECT id, request_payload, result, created_at, expires_at FROM naming_result
+    sql: `SELECT id, request_payload, result, created_at, expires_at, parent_naming_result_id
+          FROM naming_result
           WHERE id = ? AND user_id = ? AND expires_at > CURRENT_TIMESTAMP`,
     args: [id, userId],
   });
   if (result.rows.length === 0) return null;
   return rowToNamingResult(result.rows[0] as unknown as Record<string, unknown>);
+}
+
+// "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 대상 naming_result의 소유권+만료를 확인하며
+// 세션의 루트 id를 반환한다. 이미 parent_naming_result_id가 있으면 그 값(루트)을, 없으면
+// 자기 id(자신이 루트)를 반환한다 — 클라이언트가 보낸 parentId를 그대로 신뢰하지 않고 서버가
+// 매번 재계산하기 위함.
+export async function resolveNamingSessionRootId(id: number, userId: number): Promise<number | null> {
+  const row = await getNamingResultById(id, userId);
+  if (!row) return null;
+  return row.parentNamingResultId ?? row.id;
+}
+
+// 세션(루트 + 모든 추가 라운드) 전체를 한 방 쿼리로 가져온다 — star topology라 체인을 따라갈
+// 필요가 없다. 루트 행이 배열에 없을 수 있다(각 행이 독립적으로 30일 만료되므로, 루트가 먼저
+// 만료돼 사라진 뒤에도 더 나중에 만들어진 자식 행은 아직 살아있을 수 있음) — 호출부는 배열
+// 인덱스를 가정하지 말고 항상 rows.find(r => r.id === rootId)로 루트를 찾아야 한다.
+export async function getNamingSessionResults(rootId: number, userId: number): Promise<NamingResultRow[]> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `SELECT id, request_payload, result, created_at, expires_at, parent_naming_result_id
+          FROM naming_result
+          WHERE user_id = ? AND (id = ? OR parent_naming_result_id = ?) AND expires_at > CURRENT_TIMESTAMP
+          ORDER BY created_at ASC`,
+    args: [userId, rootId, rootId],
+  });
+  return result.rows.map((row) => rowToNamingResult(row as unknown as Record<string, unknown>));
 }
 
 // 삭제된 행이 있으면 true(정상 삭제), 0개면 false(존재하지 않거나 소유자가 아님) — 호출부가

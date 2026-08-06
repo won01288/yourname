@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { NameApiResult, NameRequestPayload } from "@/app/lib/name-client";
 import { matchReportEntry } from "@/app/lib/match-report";
 import { formatBirthLine, formatGenderLabel } from "@/app/lib/search-summary";
+import { CANDIDATE_COUNT_OPTIONS } from "@/lib/naming/config";
 import ManseryeokTable from "./ManseryeokTable";
 import SajuReportCard from "./SajuReportCard";
 import SajuStoryCard from "./SajuStoryCard";
@@ -40,6 +42,11 @@ export default function ResultsDashboard({ data, onRestart, restartLabel, search
         <AmbientBackdrop />
         <div className="relative flex items-start justify-between gap-4">
           <div>
+            {data.isAdditionalRound && (
+              <span className="mb-2 inline-flex items-center gap-1 rounded-pill bg-brand-50 px-2.5 py-1 text-[12px] font-medium text-brand-800">
+                추가 추천 결과입니다
+              </span>
+            )}
             <h1 className="text-[22px] font-bold text-text-primary">
               {surname.hangul}(<span className="text-brand-600">{surname.hanja}</span>)씨 사주 작명 리포트
             </h1>
@@ -75,13 +82,16 @@ export default function ResultsDashboard({ data, onRestart, restartLabel, search
         </div>
       </div>
 
-      {report && <p className="mb-8 text-[15px] leading-8 text-text-primary">{report.summary}</p>}
+      {report?.summary && <p className="mb-8 text-[15px] leading-8 text-text-primary">{report.summary}</p>}
 
       <ManseryeokTable manseryeok={manseryeok} />
 
       <SajuReportCard elementDistribution={elementDistribution} yongsin={yongsin} dayStem={saju?.day.stem} />
 
-      {report && <SajuStoryCard title={report.sajuStory.title} body={report.sajuStory.body} />}
+      {/* "같은 사주로 더 추천받기"(CLAUDE.md 0.6) 추가 라운드에는 sajuStory 자체가 없다(LLM
+          비용 최소화를 위해 애초에 생성하지 않음) — 최초 라운드에서 이미 한 번 보여줬으므로
+          만세력·사주 요약만 보여주고 바로 후보 설명으로 넘어간다. */}
+      {report?.sajuStory && <SajuStoryCard title={report.sajuStory.title} body={report.sajuStory.body} />}
 
       {candidates.length === 0 ? (
         <section className="rounded-card border border-border bg-surface p-8 text-center shadow-[var(--shadow-card)]">
@@ -134,9 +144,47 @@ export default function ResultsDashboard({ data, onRestart, restartLabel, search
         </>
       )}
 
+      {data.namingResultId != null && (
+        <MoreCandidatesSection namingResultId={data.namingResultId} moreAvailableCount={data.moreAvailableCount ?? 0} />
+      )}
+
       <div className="-mx-6 mt-8">
         <LegalNotice />
       </div>
     </div>
+  );
+}
+
+// "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 이 사주로 아직 받을 수 있는 이름이 남아있는지
+// 안내하고, 있으면 /naming을 "더 추천받기 모드"로 여는 아웃라인 CTA를 보여준다. 최소 결제
+// 티어(CANDIDATE_COUNT_OPTIONS 중 최솟값) 미만이 남았을 땐 어차피 아무 티어도 결제할 수 없으므로
+// 버튼 대신 "모두 받았다" 안내로 대체한다.
+function MoreCandidatesSection({
+  namingResultId,
+  moreAvailableCount,
+}: {
+  namingResultId: number;
+  moreAvailableCount: number;
+}) {
+  const minTier = Math.min(...CANDIDATE_COUNT_OPTIONS);
+
+  return (
+    <section className="mt-8 rounded-card border border-border bg-surface-muted p-5 text-center">
+      {moreAvailableCount >= minTier ? (
+        <>
+          <p className="mb-3 text-[13px] leading-6 text-text-secondary">
+            이미 추천된 이름은 제외하고, 같은 사주로 최대 {moreAvailableCount}개 더 추천받을 수 있어요.
+          </p>
+          <Link
+            href={`/naming?more=1&parentId=${namingResultId}`}
+            className="inline-flex min-h-11 w-fit items-center gap-1 rounded-control border border-brand-600 px-4 text-[14px] font-semibold text-brand-600 transition-colors hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface-muted)]"
+          >
+            같은 사주로 이름 더 추천받기
+          </Link>
+        </>
+      ) : (
+        <p className="text-[13px] text-text-secondary">이 사주로 추천 가능한 이름을 모두 받으셨어요.</p>
+      )}
+    </section>
   );
 }

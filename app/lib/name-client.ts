@@ -22,6 +22,9 @@ export interface NameRequestPayload {
    * 완료 후에만 채워 넣는다 — 폼 입력 단계(초안 저장·재개)에서는 아직 없을 수 있어 선택 필드다.
    * submitNaming을 호출하는 시점에는 항상 채워져 있어야 한다(서버가 누락 시 400을 반환한다). */
   orderId?: number;
+  /** "같은 사주로 더 추천받기"(CLAUDE.md 0.6). 이 결과가 속한 세션의 naming_result.id(루트든
+   * 자식이든 무관 — 서버가 매번 세션 루트를 재계산한다). 최초 생성이면 없다. */
+  parentNamingResultId?: number;
 }
 
 export interface NameApiResult {
@@ -32,6 +35,18 @@ export interface NameApiResult {
   surname: Surname;
   candidates: Candidate[];
   report: NamingReport | null;
+  /** CLAUDE.md 0.6·3.6.7 — 이 결과 생성 시점 기준 "같은 사주로 더 추천받기" 잔여 개수 스냅샷.
+   * 레거시 데이터(이 필드 신설 이전에 저장된 결과)는 undefined — 0으로 취급한다. */
+  moreAvailableCount?: number;
+  /** 이 결과가 저장된 naming_result.id. DB에 저장되는 JSON 자체에는 없다(저장 시점엔 자기 id를
+   * 모르는 닭-달걀 문제) — /api/name 응답에는 저장 직후 채워 보내고, 마이페이지 상세 조회 시엔
+   * 라우트 파라미터 id로 채운다. "더 추천받기" 이동 대상(parentId) 계산 전용. */
+  namingResultId?: number | null;
+  /** CLAUDE.md 0.6 — "같은 사주로 더 추천받기" 추가 라운드로 생성된 결과인지. true면 report에
+   * summary·sajuStory가 없다(LLM 비용 최소화를 위해 생성 자체를 생략했다) — 화면은 이 경우
+   * 만세력·사주 요약만 보여주고 사주풀이 없이 바로 후보 설명으로 넘어간다. 저장 시점에 이미
+   * 알 수 있는 값이라(namingResultId와 달리 닭-달걀 문제 없음) result JSON에 그대로 저장된다. */
+  isAdditionalRound?: boolean;
 }
 
 export interface NameApiError {
