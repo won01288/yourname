@@ -3,18 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export interface SavedScoreItem {
+export interface SavedNamingItem {
   id: number;
   createdAt: string;
-  nameLabel: string; // 예: "김서준"
-  totalScore: number;
-  grade: string;
+  surnameLabel: string; // 예: "김(金)"
+  candidateCount: number;
   /** 검색에 입력한 생년월일시. 예: "1993년 8월 23일 양력 08시 40분" */
   birthLabel: string;
 }
 
-interface SavedScoreListProps {
-  items: SavedScoreItem[];
+interface SavedNamingListProps {
+  items: SavedNamingItem[];
 }
 
 function formatDateTime(iso: string): string {
@@ -31,9 +30,9 @@ function formatDateTime(iso: string): string {
   });
 }
 
-// 마이페이지 — 저장된 "이름 점수 확인" 결과 목록. 영구 보관이라 목록에 삭제 버튼이 필요하다
-// (naming_result는 30일 자동 만료라 삭제 UI가 없음, app/mypage/page.tsx 참고).
-export default function SavedScoreList({ items: initialItems }: SavedScoreListProps) {
+// 마이페이지 — 저장된 "프리미엄 작명" 결과 목록. 30일 자동 만료와 별개로 사용자가
+// 직접 삭제할 수 있다(app/api/history/naming/[id] DELETE).
+export default function SavedNamingList({ items: initialItems }: SavedNamingListProps) {
   const [items, setItems] = useState(initialItems);
   const [deletingId, setDeletingId] = useState<number | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -42,7 +41,7 @@ export default function SavedScoreList({ items: initialItems }: SavedScoreListPr
     setErrorMessage(null);
     setDeletingId(id);
     try {
-      const response = await fetch(`/api/history/score/${id}`, { method: "DELETE" });
+      const response = await fetch(`/api/history/naming/${id}`, { method: "DELETE" });
       if (!response.ok) {
         setErrorMessage("삭제에 실패했습니다. 잠시 후 다시 시도해 주세요.");
         return;
@@ -58,7 +57,7 @@ export default function SavedScoreList({ items: initialItems }: SavedScoreListPr
   if (items.length === 0) {
     return (
       <p className="rounded-control border border-border bg-surface-muted p-4 text-[13px] text-text-secondary">
-        저장된 이름 점수 확인 결과가 없습니다.
+        저장된 작명 결과가 없습니다.
       </p>
     );
   }
@@ -75,9 +74,9 @@ export default function SavedScoreList({ items: initialItems }: SavedScoreListPr
           key={item.id}
           className="flex items-center justify-between gap-3 rounded-control border border-border bg-surface-muted px-4 py-3"
         >
-          <Link href={`/mypage/score/${item.id}`} className="flex-1 min-w-0">
+          <Link href={`/mypage/naming/${item.id}`} className="flex-1 min-w-0">
             <p className="truncate text-[14px] font-medium text-text-primary">
-              {item.nameLabel} · {item.totalScore}점 ({item.grade})
+              {item.surnameLabel}씨 작명 리포트 · 후보 {item.candidateCount}개
             </p>
             <p className="text-[12px] text-text-secondary">생년월일시: {item.birthLabel}</p>
             <p className="text-[12px] text-text-secondary">검색일시: {formatDateTime(item.createdAt)}</p>

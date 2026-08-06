@@ -407,6 +407,17 @@ export async function getNamingResultById(id: number, userId: number): Promise<N
   return rowToNamingResult(result.rows[0] as unknown as Record<string, unknown>);
 }
 
+// 삭제된 행이 있으면 true(정상 삭제), 0개면 false(존재하지 않거나 소유자가 아님) — 호출부가
+// 404를 내리는 근거로 쓴다. score_result와 동일하게 사용자가 직접 지울 수 있게 한다(만료 전에도).
+export async function deleteNamingResult(id: number, userId: number): Promise<boolean> {
+  const client = getDbClient();
+  const result = await client.execute({
+    sql: `DELETE FROM naming_result WHERE id = ? AND user_id = ?`,
+    args: [id, userId],
+  });
+  return result.rowsAffected > 0;
+}
+
 // inquiry 테이블 ------------------------------------------------------------
 // 회원 문의하기(CLAUDE.md 0.5). 다른 회원에게 공개되지 않는다 — 소유권은 기존 테이블들과
 // 동일하게 매 조회의 WHERE user_id = ?로 강제한다. answer/answeredAt이 둘 다 null이면

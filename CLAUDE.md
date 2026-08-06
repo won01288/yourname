@@ -34,7 +34,7 @@
 
 - **`/score`(무료)**: 로그인 없이 지금처럼 완전히 이용 가능. 로그인 상태일 때만 결과가 **자동 저장**된다(별도 "저장" 버튼 없음). 게스트는 저장·이력 없음.
 - **`/naming`(프리미엄)**: 위저드 화면 자체는 비로그인도 볼 수 있지만, **최종 제출 버튼을 누르면 로그인 필요 안내**가 뜨고 API 호출 자체가 막힌다. 실제 보안 경계는 `app/api/name/route.ts`의 401(로그인 없이 호출 시 DB 조회·LLM 호출 전에 즉시 차단)이고, 클라이언트 모달(`AuthRequiredModal.tsx`)은 UX일 뿐이다.
-- **보관 정책**: 이름 점수 확인 결과는 **영구 저장**(사용자가 원하면 개별 삭제). 작명 결과는 **생성 후 30일간**만 재조회 가능 — 별도 정리 배치/크론 없이 조회 시점 SQL `WHERE expires_at > CURRENT_TIMESTAMP` 필터로만 처리한다(문제가 실제로 생기기 전엔 인프라를 늘리지 않는다는 8.3 원칙).
+- **보관 정책**: 이름 점수 확인 결과는 **영구 저장**(사용자가 원하면 개별 삭제). 작명 결과는 **생성 후 30일간**만 재조회 가능 — 별도 정리 배치/크론 없이 조회 시점 SQL `WHERE expires_at > CURRENT_TIMESTAMP` 필터로만 처리한다(문제가 실제로 생기기 전엔 인프라를 늘리지 않는다는 8.3 원칙). 만료 전에도 사용자가 원하면 개별 삭제할 수 있다(2026.8.6 추가, 아래 참고) — score_result와 동일하게 자동 만료와 수동 삭제가 함께 적용된다.
 - **인증 방식**: 비밀번호는 Node 내장 `crypto`(scrypt)로 해시하며, 새 라이브러리 의존성을 추가하지 않았다(`lib/auth.ts`). 세션은 JWT가 아니라 **DB-backed opaque 토큰**이다 — 쿠키엔 랜덤 원본 토큰을, DB(`session.id`)엔 그 SHA-256 해시만 저장해 DB가 유출돼도 세션을 재사용할 수 없게 했다. 이 방식은 새 시크릿 env var가 필요 없고 로그아웃 즉시 무효화가 가능하다.
 - **비밀번호 재설정·이메일 인증은 이번 베타 범위 밖**이다(이메일 발송 인프라 자체가 없음) — 6장 미결정 사항 참고.
 - 데이터 모델은 4.7, 코드 위치는 8.2를 참고.
@@ -438,7 +438,7 @@ LLM이 **하지 않는 일**: 사주를 세우지 않는다. 획수를 세지 �
 | `session` | id, user_id, created_at, expires_at | `id`엔 원본 토큰이 아니라 **SHA-256 해시**만 저장(0.2 참고). `expires_at`은 INSERT 시 `datetime('now','+30 days')`로 SQL이 계산. 이메일/비밀번호 로그인 전용 — SNS 로그인은 next-auth 자체 JWT 세션을 쓴다(0.3). |
 | `oauth_account` | id, user_id, provider, provider_account_id, created_at | SNS 로그인(0.3, Phase 10) — 어떤 소셜 계정이 어떤 회원과 연결되는지. `UNIQUE(provider, provider_account_id)`. |
 | `score_result` | id, user_id, request_payload(JSON), result(JSON), created_at | 무료 서비스 결과. `result`는 `ScoreApiResult`를 그대로 직렬화 — 재계산 없이 화면 재현 가능. 영구 보관, 삭제는 `DELETE /api/history/score/[id]`. |
-| `naming_result` | id, user_id, request_payload(JSON), result(JSON), created_at, expires_at | 프리미엄 결과. `result`엔 비용이 든 LLM `report`까지 포함 — 재열람 시 LLM을 다시 호출하지 않기 위해 verbatim 저장. `expires_at`도 INSERT 시 `datetime('now','+30 days')`로 계산, 조회 시 이 조건으로 필터링(별도 삭제 기능 없음).
+| `naming_result` | id, user_id, request_payload(JSON), result(JSON), created_at, expires_at | 프리미엄 결과. `result`엔 비용이 든 LLM `report`까지 포함 — 재열람 시 LLM을 다시 호출하지 않기 위해 verbatim 저장. `expires_at`도 INSERT 시 `datetime('now','+30 days')`로 계산, 조회 시 이 조건으로 필터링. 삭제는 `DELETE /api/history/naming/[id]`(2026.8.6 추가, score_result와 동일 패턴 — 만료 전에도 사용자가 직접 지울 수 있다).
 
 기존 4테이블(hanja/surname/numerology_81/given_name)과 동일하게 **FK 제약을 쓰지 않는다** — 소유권은 매 조회 SQL의 `WHERE ... AND user_id = ?`(+ 필요시 `expires_at` 조건)로 강제한다. `lib/db.ts`(읽기 전용 참조 데이터)와 성격이 달라 쓰기 전용 접근 함수는 신규 `lib/db-auth.ts`로 분리했다(8.2 참고).
 
@@ -480,6 +480,7 @@ FK 제약 없음, `idx_inquiry_user_id` 인덱스만 둔다. 영구 보관(자�
 - [x] **Phase 10 — SNS 로그인(카카오/네이버, 최초엔 구글 포함) (2026.7.31)**: 0.3·4.7 참고. 사업자 등록 완료로 0.2에서 미뤄뒀던 소셜 로그인을 붙였다. `next-auth`(Auth.js v5 beta) 설치, `lib/oauth.ts`에 구글/카카오/네이버 프로바이더와 jwt/session 콜백을 설정해 `lib/db-auth.ts`의 신규 `findOrCreateOAuthUser`(provider_account_id 기준 매칭, 이메일 일치 시 자동 연동)로 우리 `user` 테이블과 연결한다. `oauth_account` 테이블 신설, `user.display_name` 컬럼 추가(둘 다 스키마 마이그레이션, 기존 데이터 영향 없음). `lib/auth.ts`의 `getCurrentUser()`가 커스텀 쿠키 세션 다음으로 next-auth JWT 세션을 확인하도록 확장 — 이 한 지점만 넓혀 `/naming`·`/score`·마이페이지·관리자 판별 등 나머지 코드는 변경 없이 그대로 동작한다. `app/api/auth/[...nextauth]/route.ts`(handlers 노출), `app/components/SocialLoginButtons.tsx`(Server Action 기반 로그인 버튼, 로그인/회원가입 페이지에 배치), `next-auth.d.ts`(타입 보강) 추가. 로그아웃은 커스텀 세션과 next-auth 세션을 모두 정리한다. tsc·eslint·vitest(81개, `lib/auth.test.ts`에 `./oauth` 스텁 추가 — next-auth가 next/server를 불러와 순수 Node 테스트 환경과 맞지 않아 db-auth와 동일하게 모킹) 통과 확인. **같은 날 구글 연동 제거**(0.3 "구글 제거" 참고) — 이후 지원 제공자는 카카오/네이버 둘뿐이다. 각 제공자 앱 등록·Client ID/Secret 발급은 사용자가 직접 진행.
 - [x] **Phase 14 — 결제(페이앱) 연동 (2026.8.4)**: 0.4·4.8 참고. 카드·카카오페이·네이버페이 3종, 추천 개수(3/5/10)별 5,900/8,900/14,900원. `lib/payment/`(PG 추상화, `PaymentProvider` 인터페이스 + `payapp.ts` 구현)·`lib/db-payment.ts`(`price_tier`/`payment_order` CRUD, 원자적 `claimPaymentOrder`) 신설. `app/api/payment/{checkout,webhook,orders/[id],price-tiers}` 라우트 추가, `app/api/name/route.ts`에 결제 소비 게이트(성씨 검증 등 무료 재시도 가능한 단계 통과 후, LLM 호출 직전에 claim) 배선. `app/admin/pricing`(Server Action)으로 관리자가 가격 직접 수정. 프론트는 `AuthRequiredModal`과 동일한 sessionStorage 재개 패턴으로 `PaymentRequiredModal`/`PaymentCheckoutButton`을 `InputForm`/`NamingWizardClient`에 배선(모바일 풀리다이렉트 복귀 포함). `app/naming/page.tsx`의 관리자 전용 게이트는 그대로 유지 — 이번 결제 흐름은 관리자 계정으로만 도달 가능하며, 실결제 검증은 사용자 본인이 진행.
 - [x] **Phase 15 — 회원 문의하기 (2026.8.4)**: 0.5·4.9 참고. 로그인 회원이 `/mypage/inquiries`에서 텍스트 문의를 등록하면 관리자가 `/admin/inquiries`에서 답변하는 최소 문의 시스템. `inquiry` 테이블 신설(`user_id`·`content`·`answer`·`answered_at`·`created_at`, FK 없음). `lib/db-auth.ts`에 CRUD 추가(`createInquiry`/`listInquiriesByUser`/`listAllInquiriesForAdmin`/`answerInquiry`/`deleteInquiryAdmin`), `deleteUserAccount`에도 정리 로직 추가. `app/api/inquiry`(등록)·`app/api/admin/inquiries/[id]`(답변·삭제) 라우트, 회원용 `InquiryPageClient.tsx`·관리자용 `AdminInquiryPanel.tsx`(둘 다 낙관적 목록 갱신) 추가. `app/admin/page.tsx` 허브와 `app/mypage/page.tsx`에 진입 링크 배선. tsc·eslint·`next build` 통과 확인.
+- [x] **마이페이지 목록 개선 — 생년월일시 표시 + 작명 결과 삭제 (2026.8.6)**: 마이페이지 두 목록(이름 점수 확인·프리미엄 작명) 모두 검색 당시 입력한 생년월일시(`request_payload`의 `year`/`month`/`day`/`hour`/`minute`/`isLunar`/`isLeapMonth`를 `formatBirthLabel()`로 조합)와 검색일시(기존엔 날짜만 표시하던 것을 `toLocaleString`으로 시각까지 표시)를 함께 보여주도록 `app/mypage/page.tsx`·`SavedScoreList.tsx`를 갱신했다. 작명 결과는 기존엔 삭제 기능이 아예 없었는데(30일 자동 만료만 있었음, 4.7 원래 기술), score_result와 같은 패턴으로 `deleteNamingResult`(`lib/db-auth.ts`)·`DELETE /api/history/naming/[id]`·`SavedNamingList.tsx`(신규, `SavedScoreList.tsx`와 동일 구조)를 추가해 사용자가 만료 전에도 직접 삭제할 수 있게 했다. tsc·eslint 통과 확인.
 
 ---
 
@@ -570,6 +571,7 @@ yourname/                 ← 프로젝트 루트 (CLAUDE.md 위치)
 ├─ app/api/auth/[...nextauth]/route.ts ← SNS 로그인(카카오/네이버) OAuth 핸들러 (Phase 10, 0.3)
 ├─ next-auth.d.ts         ← next-auth Session/JWT 타입 보강 (내부 회원 id·닉네임 필드, 0.3)
 ├─ app/api/history/score/[id]/route.ts ← 저장된 점수 결과 삭제(DELETE) 전용
+├─ app/api/history/naming/[id]/route.ts ← 저장된 작명 결과 삭제(DELETE) 전용 (2026.8.6 추가)
 ├─ app/api/hanja-search/route.ts ← "한자 찾기" 조회 전용, 계산 없음.
 ├─ app/mypage/inquiries/page.tsx ← 회원 문의하기(0.5, Phase 15) 등록/내역 화면
 ├─ app/api/inquiry/route.ts ← 문의 등록(POST) 전용
