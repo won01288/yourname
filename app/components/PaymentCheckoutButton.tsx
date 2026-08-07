@@ -63,12 +63,21 @@ interface PaymentCheckoutButtonProps {
    * 스냅샷으로 저장한다 — 모바일 풀리다이렉트(카카오페이 등 앱 전환) 복귀 시 브라우저 탭/컨텍스트가
    * 바뀌어 sessionStorage가 유실돼도 orderId만으로 복원할 수 있게 하기 위함(2026.8.5). */
   payload: NameRequestPayload;
+  /** PaymentRequiredModal에서 "적용"까지 마친 할인코드(2026.8.7). 체크아웃 요청에 그대로 실어
+   * 보내면 서버가 다시 조회·재계산해 최종 금액을 정한다 — 여기서는 어떤 금액 계산도 하지 않는다. */
+  discountCode?: string | null;
   onPaid: (orderId: number) => void;
   /** 결제 요청 자체가 취소되어(또는 애초에 시작 전이라) 모달을 닫아도 될 때 호출된다. */
   onClose: () => void;
 }
 
-export default function PaymentCheckoutButton({ candidateCount, payload, onPaid, onClose }: PaymentCheckoutButtonProps) {
+export default function PaymentCheckoutButton({
+  candidateCount,
+  payload,
+  discountCode,
+  onPaid,
+  onClose,
+}: PaymentCheckoutButtonProps) {
   const [status, setStatus] = useState<"idle" | "creating" | "waiting" | "error" | "timeout">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [orderId, setOrderId] = useState<number | null>(null);
@@ -126,7 +135,7 @@ export default function PaymentCheckoutButton({ candidateCount, payload, onPaid,
       const res = await fetch("/api/payment/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ candidateCount, payload }),
+        body: JSON.stringify({ candidateCount, payload, discountCode: discountCode || undefined }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}) as { error?: string });
@@ -157,7 +166,7 @@ export default function PaymentCheckoutButton({ candidateCount, payload, onPaid,
       setStatus("error");
       setErrorMessage(err instanceof Error ? err.message : "결제를 시작하지 못했습니다.");
     }
-  }, [candidateCount, payload, pollOrder]);
+  }, [candidateCount, payload, discountCode, pollOrder]);
 
   const handleCancelClick = useCallback(() => {
     // 결제창을 아직 연 적이 없으면(주문 미생성) 무효화할 요청 자체가 없으므로 바로 닫는다.

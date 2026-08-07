@@ -18,6 +18,11 @@ const ADMIN_SECTIONS = [
     description: "프리미엄 작명 추천 개수(3/5/10개)별 가격을 직접 수정합니다.",
   },
   {
+    href: "/admin/discount-codes",
+    title: "할인코드 관리",
+    description: "마케팅 채널로 배포할 할인코드를 만들고 할인율·유효기간을 관리합니다.",
+  },
+  {
     href: "/admin/inquiries",
     title: "회원문의관리",
     description: "회원이 남긴 문의에 답변하거나, 필요 시 문의를 삭제합니다.",

@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS payment_order (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   user_id INTEGER NOT NULL,
   candidate_count INTEGER NOT NULL,
-  amount INTEGER NOT NULL,           -- 주문 시점 price_tier 가격 스냅샷(이후 가격이 바뀌어도 영향 없음)
+  amount INTEGER NOT NULL,           -- 실제 결제(청구)한 금액. 할인코드가 적용되면 할인 후 금액(2026.8.7).
   status TEXT NOT NULL DEFAULT 'pending'
     CHECK (status IN ('pending', 'paid', 'consumed', 'canceled', 'failed')),
   provider TEXT NOT NULL DEFAULT 'payapp',
@@ -166,12 +166,30 @@ CREATE TABLE IF NOT EXISTS payment_order (
                                       -- 풀리다이렉트(카카오페이 등 앱 전환)로 복귀할 때 브라우저
                                       -- 탭/컨텍스트가 바뀌어 sessionStorage가 유실될 수 있어, 서버가
                                       -- 진짜 소스로 들고 있다가 orderId만으로 복원할 수 있게 한다.
+  discount_code TEXT,                -- 적용된 할인코드(대문자 정규화), 없으면 NULL (2026.8.7, 할인코드).
+  discount_percent INTEGER,          -- 적용 당시 할인율 스냅샷(코드가 나중에 바뀌어도 이 주문엔 영향 없음).
+  original_amount INTEGER,           -- 할인 전 price_tier 가격 스냅샷. 화면에 취소선 원가를 보여주는 용도.
   naming_result_id INTEGER,          -- 이 주문으로 생성된 naming_result.id (소비 후 best-effort 연결)
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE INDEX IF NOT EXISTS idx_payment_order_user_id ON payment_order(user_id);
+
+-- 할인코드(CLAUDE.md 0.4 연장, 2026.8.7) — 마케팅 채널로 배포하는 코드(예: "XXLX2026")를 결제
+-- 모달에서 입력하면 candidate_count 가격에 할인율을 적용한다. 사용 횟수 제한은 두지 않는다 —
+-- 유효기간 내에는 누구나 반복 사용할 수 있는 일반적인 프로모션 코드로 설계했고, 관리자가
+-- is_active를 0으로 내리면 유효기간이 남아 있어도 즉시 막을 수 있다.
+CREATE TABLE IF NOT EXISTS discount_code (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  code TEXT NOT NULL UNIQUE,         -- 대문자로 정규화해 저장(대소문자 구분 없이 매칭).
+  discount_percent INTEGER NOT NULL CHECK (discount_percent BETWEEN 1 AND 100),
+  valid_from TEXT,                   -- NULL이면 즉시 유효. "YYYY-MM-DD HH:MM:SS"(UTC, CURRENT_TIMESTAMP와 동일 형식).
+  valid_until TEXT NOT NULL,         -- 위와 동일 형식. 이 시각 이후로는 만료.
+  is_active INTEGER NOT NULL DEFAULT 1, -- 관리자가 유효기간과 무관하게 즉시 껐다 켤 수 있는 스위치.
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 
 -- 회원 문의하기(CLAUDE.md 0.5) — 로그인한 회원 전용, 다른 회원에게 공개되지 않는다(소유권은
 -- 매 조회 WHERE user_id = ?로 강제, 기존 관례와 동일). answer/answered_at이 둘 다 NULL이면

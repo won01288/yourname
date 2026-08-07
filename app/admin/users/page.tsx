@@ -224,6 +224,12 @@ export default async function AdminUsersPage() {
                           {order.payType && (
                             <span className="text-text-secondary">{PAYMENT_TYPE_LABEL[order.payType] ?? order.payType}</span>
                           )}
+                          {order.discountCode && (
+                            <span className="text-text-secondary">
+                              할인코드 {order.discountCode}({order.discountPercent}%)
+                              {order.originalAmount !== null && ` · 원가 ${formatAmount(order.originalAmount)}`}
+                            </span>
+                          )}
                           <span className="text-text-secondary">{order.provider}</span>
                           <span className="text-text-secondary">{formatDateTime(order.createdAt)}</span>
                         </li>

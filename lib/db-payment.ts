@@ -5,7 +5,7 @@
 import { getDbClient } from "./db";
 import type { CandidateCount } from "./naming/config";
 import { CANDIDATE_COUNT_OPTIONS } from "./naming/config";
-import type { PaymentOrder, PaymentStatus, PriceTier } from "./payment/types";
+import type { DiscountCode, PaymentOrder, PaymentStatus, PriceTier } from "./payment/types";
 
 function isCandidateCount(value: number): value is CandidateCount {
   return (CANDIDATE_COUNT_OPTIONS as readonly number[]).includes(value);
@@ -34,7 +34,23 @@ function rowToPaymentOrder(row: Record<string, unknown>): PaymentOrder {
     providerOrderId: (row.provider_order_id as string | null) ?? null,
     payType: (row.pay_type as string | null) ?? null,
     pendingPayload: (row.pending_payload as string | null) ?? null,
+    discountCode: (row.discount_code as string | null) ?? null,
+    discountPercent: (row.discount_percent as number | null) ?? null,
+    originalAmount: (row.original_amount as number | null) ?? null,
     namingResultId: (row.naming_result_id as number | null) ?? null,
+    createdAt: row.created_at as string,
+    updatedAt: row.updated_at as string,
+  };
+}
+
+function rowToDiscountCode(row: Record<string, unknown>): DiscountCode {
+  return {
+    id: row.id as number,
+    code: row.code as string,
+    discountPercent: row.discount_percent as number,
+    validFrom: (row.valid_from as string | null) ?? null,
+    validUntil: row.valid_until as string,
+    isActive: (row.is_active as number) === 1,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
   };
@@ -77,12 +93,24 @@ export async function createPaymentOrder(
   amount: number,
   // 결제 시작 시점의 NameRequestPayload(JSON 문자열) 스냅샷 — 모바일 풀리다이렉트 복귀 시
   // sessionStorage가 유실돼도 orderId만으로 복원할 수 있게 한다(2026.8.5, app/api/payment/checkout).
-  pendingPayload: string | null = null
+  pendingPayload: string | null = null,
+  // 할인코드가 적용된 주문이면 코드/할인율/할인 전 원가 스냅샷을 함께 남긴다(2026.8.7).
+  // app/api/payment/checkout/route.ts가 서버에서 재검증·재계산한 값만 여기로 넘긴다.
+  discount: { code: string; percent: number; originalAmount: number } | null = null
 ): Promise<PaymentOrder> {
   const client = getDbClient();
   const inserted = await client.execute({
-    sql: `INSERT INTO payment_order (user_id, candidate_count, amount, pending_payload) VALUES (?, ?, ?, ?)`,
-    args: [userId, candidateCount, amount, pendingPayload],
+    sql: `INSERT INTO payment_order (user_id, candidate_count, amount, pending_payload, discount_code, discount_percent, original_amount)
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      userId,
+      candidateCount,
+      amount,
+      pendingPayload,
+      discount?.code ?? null,
+      discount?.percent ?? null,
+      discount?.originalAmount ?? null,
+    ],
   });
   const id = Number(inserted.lastInsertRowid);
   const order = await getPaymentOrderById(id);
@@ -98,13 +126,15 @@ export async function getPaymentOrderById(id: number, userId?: number): Promise<
     userId === undefined
       ? await client.execute({
           sql: `SELECT id, user_id, candidate_count, amount, status, provider, provider_order_id,
-                       pay_type, pending_payload, naming_result_id, created_at, updated_at
+                       pay_type, pending_payload, discount_code, discount_percent, original_amount,
+                       naming_result_id, created_at, updated_at
                 FROM payment_order WHERE id = ?`,
           args: [id],
         })
       : await client.execute({
           sql: `SELECT id, user_id, candidate_count, amount, status, provider, provider_order_id,
-                       pay_type, pending_payload, naming_result_id, created_at, updated_at
+                       pay_type, pending_payload, discount_code, discount_percent, original_amount,
+                       naming_result_id, created_at, updated_at
                 FROM payment_order WHERE id = ? AND user_id = ?`,
           args: [id, userId],
         });
@@ -214,8 +244,69 @@ export async function listAllPaymentOrdersForAdmin(): Promise<PaymentOrder[]> {
   const client = getDbClient();
   const result = await client.execute(
     `SELECT id, user_id, candidate_count, amount, status, provider, provider_order_id,
-            pay_type, pending_payload, naming_result_id, created_at, updated_at
+            pay_type, pending_payload, discount_code, discount_percent, original_amount,
+            naming_result_id, created_at, updated_at
      FROM payment_order ORDER BY created_at DESC`
   );
   return result.rows.map((row) => rowToPaymentOrder(row as unknown as Record<string, unknown>));
+}
+
+// 할인코드 테이블 ---------------------------------------------------------
+
+// 결제 모달 검증(app/api/payment/discount-code/validate)·체크아웃(app/api/payment/checkout)
+// 양쪽에서 쓰는 조회다 — 활성 + 유효기간(now가 valid_from~valid_until 사이) 조건을 SQL이 직접
+// CURRENT_TIMESTAMP로 판정한다(애플리케이션 코드에서 날짜를 다시 비교하지 않음).
+export async function getActiveDiscountCodeByCode(code: string): Promise<DiscountCode | null> {
+  const client = getDbClient();
+  const normalized = code.trim().toUpperCase();
+  if (!normalized) return null;
+  const result = await client.execute({
+    sql: `SELECT id, code, discount_percent, valid_from, valid_until, is_active, created_at, updated_at
+          FROM discount_code
+          WHERE code = ? AND is_active = 1
+                AND (valid_from IS NULL OR valid_from <= CURRENT_TIMESTAMP)
+                AND valid_until >= CURRENT_TIMESTAMP`,
+    args: [normalized],
+  });
+  if (result.rows.length === 0) return null;
+  return rowToDiscountCode(result.rows[0] as unknown as Record<string, unknown>);
+}
+
+// 관리자 전용(app/admin/discount-codes) — 호출부가 isAdminUser를 이미 확인했다고 가정한다.
+export async function listDiscountCodesForAdmin(): Promise<DiscountCode[]> {
+  const client = getDbClient();
+  const result = await client.execute(
+    `SELECT id, code, discount_percent, valid_from, valid_until, is_active, created_at, updated_at
+     FROM discount_code ORDER BY created_at DESC`
+  );
+  return result.rows.map((row) => rowToDiscountCode(row as unknown as Record<string, unknown>));
+}
+
+export async function createDiscountCode(
+  code: string,
+  discountPercent: number,
+  validFrom: string | null,
+  validUntil: string
+): Promise<void> {
+  const client = getDbClient();
+  await client.execute({
+    sql: `INSERT INTO discount_code (code, discount_percent, valid_from, valid_until) VALUES (?, ?, ?, ?)`,
+    args: [code.trim().toUpperCase(), discountPercent, validFrom, validUntil],
+  });
+}
+
+export async function updateDiscountCode(
+  id: number,
+  discountPercent: number,
+  validFrom: string | null,
+  validUntil: string,
+  isActive: boolean
+): Promise<void> {
+  const client = getDbClient();
+  await client.execute({
+    sql: `UPDATE discount_code
+          SET discount_percent = ?, valid_from = ?, valid_until = ?, is_active = ?, updated_at = CURRENT_TIMESTAMP
+          WHERE id = ?`,
+    args: [discountPercent, validFrom, validUntil, isActive ? 1 : 0, id],
+  });
 }

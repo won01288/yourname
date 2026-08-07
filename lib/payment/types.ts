@@ -19,6 +19,12 @@ export interface PaymentOrder {
   /** 결제 시작 시점의 NameRequestPayload(JSON 문자열) 스냅샷. 모바일 풀리다이렉트 복귀 시
    * sessionStorage가 유실돼도 orderId만으로 원래 입력값을 복원하기 위한 용도(2026.8.5). */
   pendingPayload: string | null;
+  /** 적용된 할인코드(대문자 정규화), 없으면 null (2026.8.7, 할인코드). */
+  discountCode: string | null;
+  /** 적용 당시 할인율 스냅샷 — discount_code.discount_percent가 나중에 바뀌어도 이 주문엔 영향 없음. */
+  discountPercent: number | null;
+  /** 할인 전 price_tier 가격 스냅샷. discountCode가 없으면 null(=amount와 동일하다는 뜻). */
+  originalAmount: number | null;
   namingResultId: number | null;
   createdAt: string;
   updatedAt: string;
@@ -27,5 +33,16 @@ export interface PaymentOrder {
 export interface PriceTier {
   candidateCount: CandidateCount;
   price: number;
+  updatedAt: string;
+}
+
+export interface DiscountCode {
+  id: number;
+  code: string;
+  discountPercent: number;
+  validFrom: string | null;
+  validUntil: string;
+  isActive: boolean;
+  createdAt: string;
   updatedAt: string;
 }

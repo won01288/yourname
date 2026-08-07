@@ -20,3 +20,11 @@ export function getAppBaseUrl(): string {
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
   return "http://localhost:3000";
 }
+
+// 할인코드(2026.8.7) — 페이앱 최소 결제금액(1,000원, app/admin/pricing의 기존 가드와 동일 기준)
+// 밑으로는 내려가지 않도록 클램프한다. 검증 API와 체크아웃 API가 정확히 같은 계산을 하도록
+// 공용 함수로 뺐다 — 둘 중 하나만 고치면 표시 금액과 실제 청구 금액이 어긋나는 사고를 막는다.
+export function computeDiscountedAmount(originalAmount: number, discountPercent: number): number {
+  const discounted = Math.round((originalAmount * (100 - discountPercent)) / 100);
+  return Math.max(1000, discounted);
+}
