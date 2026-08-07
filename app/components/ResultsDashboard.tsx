@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { NameApiResult, NameRequestPayload } from "@/app/lib/name-client";
 import { matchReportEntry } from "@/app/lib/match-report";
 import { formatBirthLine, formatGenderLabel } from "@/app/lib/search-summary";
-import { CANDIDATE_COUNT_OPTIONS } from "@/lib/naming/config";
+import { MORE_CANDIDATE_COUNT_MIN } from "@/lib/payment/config";
 import ManseryeokTable from "./ManseryeokTable";
 import SajuReportCard from "./SajuReportCard";
 import SajuStoryCard from "./SajuStoryCard";
@@ -155,10 +155,10 @@ export default function ResultsDashboard({ data, onRestart, restartLabel, search
   );
 }
 
-// "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 이 사주로 아직 받을 수 있는 이름이 남아있는지
-// 안내하고, 있으면 /naming을 "더 추천받기 모드"로 여는 아웃라인 CTA를 보여준다. 최소 결제
-// 티어(CANDIDATE_COUNT_OPTIONS 중 최솟값) 미만이 남았을 땐 어차피 아무 티어도 결제할 수 없으므로
-// 버튼 대신 "모두 받았다" 안내로 대체한다.
+// "같은 사주로 더 추천받기"(CLAUDE.md 0.6, Phase 20) — 이 사주로 아직 받을 수 있는 이름이
+// 남아있는지 안내하고, 있으면 /naming을 "더 추천받기 모드"로 여는 아웃라인 CTA를 보여준다.
+// 이름당 정액(1,100원, 1~10개 자유 선택)이라 최소 구매 단위는 1개뿐이므로, 잔여 개수가
+// MORE_CANDIDATE_COUNT_MIN(1) 미만(=0)일 때만 버튼 대신 "모두 받았다" 안내로 대체한다.
 function MoreCandidatesSection({
   namingResultId,
   moreAvailableCount,
@@ -166,11 +166,9 @@ function MoreCandidatesSection({
   namingResultId: number;
   moreAvailableCount: number;
 }) {
-  const minTier = Math.min(...CANDIDATE_COUNT_OPTIONS);
-
   return (
     <section className="mt-8 rounded-card border border-border bg-surface-muted p-5 text-center">
-      {moreAvailableCount >= minTier ? (
+      {moreAvailableCount >= MORE_CANDIDATE_COUNT_MIN ? (
         <>
           <p className="mb-3 text-[13px] leading-6 text-text-secondary">
             이미 추천된 이름은 제외하고, 같은 사주로 최대 {moreAvailableCount}개 더 추천받을 수 있어요.

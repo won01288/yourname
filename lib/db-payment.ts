@@ -4,11 +4,14 @@
 
 import { getDbClient } from "./db";
 import type { CandidateCount } from "./naming/config";
-import { CANDIDATE_COUNT_OPTIONS } from "./naming/config";
 import type { DiscountCode, PaymentOrder, PaymentStatus, PriceTier } from "./payment/types";
 
+// CandidateCount는 1~10 정수 전체를 아우른다(Phase 20, "더 추천받기"가 1~10 자유 선택을 도입하며
+// 3/5/10로 좁았던 범위를 넓혔다 — lib/naming/config.ts 참고). price_tier 행은 여전히 3/5/10만
+// 있지만(테이블 CHECK 제약), payment_order는 더 추천받기 주문으로 1~10 전체가 들어올 수 있어
+// 이 가드도 함께 넓혀야 한다.
 function isCandidateCount(value: number): value is CandidateCount {
-  return (CANDIDATE_COUNT_OPTIONS as readonly number[]).includes(value);
+  return Number.isInteger(value) && value >= 1 && value <= 10;
 }
 
 function rowToPriceTier(row: Record<string, unknown>): PriceTier {

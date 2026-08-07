@@ -205,11 +205,17 @@ export const RADICAL_ELEMENT: Record<number, Element> = {
 // Phase 4에서는 다루지 않는다.
 export const GIVEN_NAME_LENGTH = 2;
 
-// Phase 8 — 최종 추천 후보 개수. 사용자가 3/5/10 중 선택한다(CLAUDE.md 3.6 "후보 개수 선택" 확정,
-// 2026.7.27). 예전엔 CANDIDATE_COUNT=5 고정값이었으나, 순위를 없앤 대신(아래 참고) 더 많은 후보를
-// 보고 스스로 고르고 싶어하는 사용자를 위해 개수를 선택지로 열었다.
+// Phase 8 — 최종 추천 후보 개수. 최초 프리미엄 결제는 사용자가 3/5/10 중 선택한다(CLAUDE.md 3.6
+// "후보 개수 선택" 확정, 2026.7.27). 예전엔 CANDIDATE_COUNT=5 고정값이었으나, 순위를 없앤 대신(아래
+// 참고) 더 많은 후보를 보고 스스로 고르고 싶어하는 사용자를 위해 개수를 선택지로 열었다.
 export const CANDIDATE_COUNT_OPTIONS = [3, 5, 10] as const;
-export type CandidateCount = (typeof CANDIDATE_COUNT_OPTIONS)[number];
+// Phase 20(CLAUDE.md 0.6, 2026.8.7) — "같은 사주로 더 추천받기"가 1~10개 자유 선택 + 이름당 정액
+// 요금(lib/payment/config.ts MORE_CANDIDATE_PRICE_PER_NAME)을 도입하면서, 3/5/10 세 값만 유효했던
+// 타입을 1~10 정수 전체로 넓혔다. 최초 결제(3/5/10, price_tier)는 여전히 CANDIDATE_COUNT_OPTIONS로
+// 제한되며 이 타입 자체를 넓힌다고 그 제약이 느슨해지지 않는다 — payment_order.candidate_count
+// 컬럼(더 추천받기 주문 포함)과 buildCandidates 등 순수 개수 값을 다루는 자리에서만 넓은 범위가
+// 필요했다.
+export type CandidateCount = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 export const DEFAULT_CANDIDATE_COUNT: CandidateCount = 5;
 
 // Phase 8 — 유사 이름 소프트 필터 임계값(CLAUDE.md 3.6, 2026.7.27). 두 이름(고정 2글자)을 초성·

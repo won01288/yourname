@@ -15,7 +15,11 @@ import type { Gender } from "@/lib/naming/types";
 import { getCurrentUser, isAdminUser } from "@/lib/auth"; // isAdminUser는 ADMIN_FREE_TIER_CANDIDATE_COUNT 판정에만 쓴다(0.4).
 import { saveNamingResult, resolveNamingSessionRootId, getNamingSessionResults } from "@/lib/db-auth";
 import { claimPaymentOrder, linkPaymentOrderToNamingResult, revertPaymentOrderToPaid } from "@/lib/db-payment";
-import { ADMIN_FREE_TIER_CANDIDATE_COUNT } from "@/lib/payment/config";
+import {
+  ADMIN_FREE_TIER_CANDIDATE_COUNT,
+  MORE_CANDIDATE_COUNT_MAX,
+  MORE_CANDIDATE_COUNT_MIN,
+} from "@/lib/payment/config";
 import type { NameApiResult } from "@/app/lib/name-client";
 
 interface NameRequestBody extends BirthInput {
@@ -35,6 +39,16 @@ interface NameRequestBody extends BirthInput {
   parentNamingResultId?: number;
 }
 
+// "같은 사주로 더 추천받기"(CLAUDE.md 0.6, Phase 20) — parentNamingResultId가 있으면 candidateCount는
+// 3/5/10 세트가 아니라 1~10 사이 아무 정수나 허용한다(lib/payment/config.ts MORE_CANDIDATE_COUNT_MIN/MAX와
+// 동일한 범위, checkout route와 일관성 유지). 없으면(최초 결제) 기존과 동일하게 3/5/10만 허용한다.
+function isValidCandidateCount(candidateCount: number, isMoreMode: boolean): boolean {
+  if (isMoreMode) {
+    return Number.isInteger(candidateCount) && candidateCount >= MORE_CANDIDATE_COUNT_MIN && candidateCount <= MORE_CANDIDATE_COUNT_MAX;
+  }
+  return (CANDIDATE_COUNT_OPTIONS as readonly number[]).includes(candidateCount);
+}
+
 function isValidBirthInput(body: Partial<NameRequestBody>): body is NameRequestBody {
   return (
     typeof body.year === "number" &&
@@ -46,7 +60,8 @@ function isValidBirthInput(body: Partial<NameRequestBody>): body is NameRequestB
     typeof body.surnameHangul === "string" &&
     body.surnameHangul.length > 0 &&
     (body.gender === "M" || body.gender === "F") &&
-    (body.candidateCount === undefined || (CANDIDATE_COUNT_OPTIONS as readonly number[]).includes(body.candidateCount)) &&
+    (body.candidateCount === undefined ||
+      isValidCandidateCount(body.candidateCount, body.parentNamingResultId !== undefined)) &&
     (body.orderId === undefined || typeof body.orderId === "number") &&
     (body.parentNamingResultId === undefined || typeof body.parentNamingResultId === "number")
   );
@@ -73,7 +88,9 @@ export async function POST(request: Request) {
       {
         error:
           "필수 필드가 누락되었습니다. year/month/day/hour/minute/isLunar/surnameHangul/gender(M 또는 F)를 확인하고, " +
-          `candidateCount를 지정했다면 ${CANDIDATE_COUNT_OPTIONS.join("/")} 중 하나인지, orderId를 지정했다면 숫자인지 확인하세요.`,
+          `candidateCount를 지정했다면 parentNamingResultId 없이는 ${CANDIDATE_COUNT_OPTIONS.join("/")} 중 하나인지, ` +
+          `parentNamingResultId와 함께라면 ${MORE_CANDIDATE_COUNT_MIN}~${MORE_CANDIDATE_COUNT_MAX} 사이 정수인지, ` +
+          "orderId를 지정했다면 숫자인지 확인하세요.",
       },
       { status: 400 }
     );

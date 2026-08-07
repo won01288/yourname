@@ -1,6 +1,6 @@
 import { CANDIDATE_COUNT_OPTIONS, DEFAULT_CANDIDATE_COUNT, type CandidateCount } from "@/lib/naming/config";
 
-const DESCRIPTIONS: Record<CandidateCount, string> = {
+const DESCRIPTIONS: Record<(typeof CANDIDATE_COUNT_OPTIONS)[number], string> = {
   3: "가장 빠르게 핵심만 훑어보고 싶다면",
   5: "균형 잡힌 개수로 비교하고 싶다면",
   10: "폭넓게 비교하며 직접 고르고 싶다면",

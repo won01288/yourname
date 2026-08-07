@@ -4,9 +4,16 @@
 
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
+import { resolveNamingSessionRootId } from "@/lib/db-auth";
 import { createPaymentOrder, getActiveDiscountCodeByCode, getPriceForCandidateCount } from "@/lib/db-payment";
 import { CANDIDATE_COUNT_OPTIONS, type CandidateCount } from "@/lib/naming/config";
-import { computeDiscountedAmount, getAppBaseUrl } from "@/lib/payment/config";
+import {
+  computeDiscountedAmount,
+  computeMorePrice,
+  getAppBaseUrl,
+  MORE_CANDIDATE_COUNT_MAX,
+  MORE_CANDIDATE_COUNT_MIN,
+} from "@/lib/payment/config";
 import { getPaymentProvider } from "@/lib/payment/provider";
 
 interface CheckoutRequestBody {
@@ -35,20 +42,54 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "요청 본문이 올바른 JSON이 아닙니다." }, { status: 400 });
   }
 
-  if (
-    typeof body.candidateCount !== "number" ||
-    !(CANDIDATE_COUNT_OPTIONS as readonly number[]).includes(body.candidateCount)
-  ) {
-    return NextResponse.json(
-      { error: `candidateCount는 ${CANDIDATE_COUNT_OPTIONS.join("/")} 중 하나여야 합니다.` },
-      { status: 400 }
-    );
-  }
-  const candidateCount = body.candidateCount as CandidateCount;
+  // "같은 사주로 더 추천받기"(CLAUDE.md 0.6, Phase 20) — payload에 parentNamingResultId가 있으면
+  // 이 체크아웃은 3/5/10 세트가 아니라 1~10개 자유 선택 + 이름당 정액(1,100원) 요금이다. 클라이언트
+  // 주장을 그대로 믿지 않고 app/api/name/route.ts와 동일하게 소유권·세션 루트를 서버가 다시
+  // 확인한다 — 그래야 아무 값이나 넣어 더 싼 정액제로 최초 결제를 위장할 수 없다.
+  const rawPayload = body.payload && typeof body.payload === "object" ? (body.payload as Record<string, unknown>) : null;
+  const parentNamingResultId =
+    rawPayload && typeof rawPayload.parentNamingResultId === "number" ? rawPayload.parentNamingResultId : undefined;
 
-  const price = await getPriceForCandidateCount(candidateCount);
-  if (price === null) {
-    return NextResponse.json({ error: "가격 정보를 찾을 수 없습니다." }, { status: 500 });
+  let candidateCount: CandidateCount;
+  let price: number;
+
+  if (parentNamingResultId !== undefined) {
+    if (
+      typeof body.candidateCount !== "number" ||
+      !Number.isInteger(body.candidateCount) ||
+      body.candidateCount < MORE_CANDIDATE_COUNT_MIN ||
+      body.candidateCount > MORE_CANDIDATE_COUNT_MAX
+    ) {
+      return NextResponse.json(
+        { error: `candidateCount는 ${MORE_CANDIDATE_COUNT_MIN}~${MORE_CANDIDATE_COUNT_MAX} 사이의 정수여야 합니다.` },
+        { status: 400 }
+      );
+    }
+    candidateCount = body.candidateCount as CandidateCount;
+
+    const sessionRootId = await resolveNamingSessionRootId(parentNamingResultId, currentUser.id);
+    if (sessionRootId === null) {
+      return NextResponse.json({ error: "더 추천받기 대상 결과를 찾을 수 없습니다." }, { status: 404 });
+    }
+
+    price = computeMorePrice(candidateCount);
+  } else {
+    if (
+      typeof body.candidateCount !== "number" ||
+      !(CANDIDATE_COUNT_OPTIONS as readonly number[]).includes(body.candidateCount)
+    ) {
+      return NextResponse.json(
+        { error: `candidateCount는 ${CANDIDATE_COUNT_OPTIONS.join("/")} 중 하나여야 합니다.` },
+        { status: 400 }
+      );
+    }
+    candidateCount = body.candidateCount as CandidateCount;
+
+    const tierPrice = await getPriceForCandidateCount(candidateCount);
+    if (tierPrice === null) {
+      return NextResponse.json({ error: "가격 정보를 찾을 수 없습니다." }, { status: 500 });
+    }
+    price = tierPrice;
   }
 
   let amount = price;
@@ -70,7 +111,10 @@ export async function POST(request: Request) {
   const provider = getPaymentProvider();
   const checkout = provider.buildCheckoutSession({
     order,
-    goodName: `유어네임 프리미엄 작명 ${candidateCount}개`,
+    goodName:
+      parentNamingResultId !== undefined
+        ? `유어네임 이름 더 추천받기 ${candidateCount}개`
+        : `유어네임 프리미엄 작명 ${candidateCount}개`,
     feedbackUrl: `${baseUrl}/api/payment/webhook`,
     returnUrl: `${baseUrl}/naming?paymentReturn=1&orderId=${order.id}`,
   });

@@ -62,7 +62,7 @@ export default function PaymentRequiredModal({
       const res = await fetch("/api/payment/discount-code/validate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code: trimmed, candidateCount }),
+        body: JSON.stringify({ code: trimmed, candidateCount, parentNamingResultId: payload.parentNamingResultId }),
       });
       const data = (await res.json().catch(() => ({}))) as Partial<ValidateResponse>;
       if (!res.ok || !data.valid || data.discountPercent === undefined || data.discountedAmount === undefined) {
@@ -81,7 +81,7 @@ export default function PaymentRequiredModal({
     } finally {
       setChecking(false);
     }
-  }, [codeInput, candidateCount]);
+  }, [codeInput, candidateCount, payload]);
 
   const handleRemoveApplied = useCallback(() => {
     setApplied(null);
@@ -94,7 +94,9 @@ export default function PaymentRequiredModal({
       <div className="w-full max-w-sm rounded-card border border-border bg-[var(--glass-bg)] p-6 shadow-[var(--shadow-elevated)] backdrop-blur-[var(--glass-blur)] sm:p-8">
         <h2 className="mb-2 text-[16px] font-semibold text-text-primary">결제가 필요한 서비스입니다</h2>
         <p className="mb-4 text-[13px] leading-6 text-text-secondary">
-          {candidateCount}개 추천 결과를 생성하려면 결제가 필요합니다. 카드·애플페이·페이코·가상계좌·휴대폰결제로 결제할 수 있습니다.
+          {payload.parentNamingResultId !== undefined
+            ? `이름 1개당 1,100원, 총 ${candidateCount}개를 더 추천받으려면 결제가 필요합니다. 카드·애플페이·페이코·가상계좌·휴대폰결제로 결제할 수 있습니다.`
+            : `${candidateCount}개 추천 결과를 생성하려면 결제가 필요합니다. 카드·애플페이·페이코·가상계좌·휴대폰결제로 결제할 수 있습니다.`}
         </p>
 
         {amount !== null && (

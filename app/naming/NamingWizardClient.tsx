@@ -9,6 +9,7 @@ import AuthRequiredModal from "@/app/components/AuthRequiredModal";
 import PaymentRequiredModal from "@/app/components/PaymentRequiredModal";
 import { submitNaming, type NameApiResult, type NameRequestPayload } from "@/app/lib/name-client";
 import type { CandidateCount } from "@/lib/naming/config";
+import { computeMorePrice } from "@/lib/payment/config";
 
 type Stage = "form" | "loading" | "result";
 
@@ -429,7 +430,14 @@ export default function NamingWizardClient({ isLoggedIn, isAdmin, inProgressOrde
       {showPaymentModal && lastPayload && (
         <PaymentRequiredModal
           candidateCount={lastPayload.candidateCount}
-          amount={priceByCount[lastPayload.candidateCount] ?? null}
+          // "같은 사주로 더 추천받기"(CLAUDE.md 0.6, Phase 20) — parentNamingResultId가 있는 요청은
+          // price_tier(3/5/10 세트)가 아니라 이름당 정액(1,100원)이라 priceByCount 조회 대상이
+          // 아니다. 서버(app/api/payment/checkout)가 최종 금액을 다시 계산하므로 여기서는 표시용으로만 쓴다.
+          amount={
+            lastPayload.parentNamingResultId !== undefined
+              ? computeMorePrice(lastPayload.candidateCount)
+              : (priceByCount[lastPayload.candidateCount] ?? null)
+          }
           payload={lastPayload}
           onClose={() => setShowPaymentModal(false)}
           onPaid={handlePaymentPaid}

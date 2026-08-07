@@ -2,10 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CANDIDATE_COUNT_OPTIONS } from "@/lib/naming/config";
+import { MORE_CANDIDATE_COUNT_MIN } from "@/lib/payment/config";
 import { formatShortDateTimeFromSql } from "@/app/lib/date-format";
-
-const MIN_CANDIDATE_TIER = Math.min(...CANDIDATE_COUNT_OPTIONS);
 
 /** "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 루트 항목 밑에 누적되어 쌓이는 추가 라운드 하나. */
 export interface SavedNamingAdditionalRound {
@@ -104,7 +102,7 @@ export default function SavedNamingList({ items: initialItems }: SavedNamingList
           </div>
           {/* "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — 항상 루트 항목 바로 밑에 위치한다(1차
               추천 결과 밑). 잔여 개수는 세션의 최신 라운드 기준. */}
-          {item.moreAvailableCount >= MIN_CANDIDATE_TIER && (
+          {item.moreAvailableCount >= MORE_CANDIDATE_COUNT_MIN && (
             <Link
               href={`/naming?more=1&parentId=${item.id}`}
               className="inline-flex min-h-11 w-fit items-center gap-1 self-start rounded-control border border-brand-600 px-4 text-[13px] font-semibold text-brand-600 transition-colors hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface-muted)]"

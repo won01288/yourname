@@ -4,7 +4,12 @@ import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { NameRequestPayload } from "@/app/lib/name-client";
 import type { Gender } from "@/lib/naming/types";
 import { CANDIDATE_COUNT_OPTIONS, DEFAULT_CANDIDATE_COUNT, type CandidateCount } from "@/lib/naming/config";
-import { ADMIN_FREE_TIER_CANDIDATE_COUNT } from "@/lib/payment/config";
+import {
+  ADMIN_FREE_TIER_CANDIDATE_COUNT,
+  MORE_CANDIDATE_COUNT_MAX,
+  MORE_CANDIDATE_COUNT_MIN,
+  MORE_CANDIDATE_PRICE_PER_NAME,
+} from "@/lib/payment/config";
 import { BirthDateFields, BirthTimeFields, daysInMonth } from "./BirthDateTimeFields";
 
 interface InputFormProps {
@@ -48,7 +53,7 @@ const STEP_LABELS = ["기본 정보", "생년월일", "태어난 시각", "추�
 export const NAMING_WIZARD_LAST_STEP = STEP_LABELS.length - 1;
 const CURRENT_YEAR = new Date().getFullYear();
 
-const CANDIDATE_COUNT_DESCRIPTIONS: Record<CandidateCount, string> = {
+const CANDIDATE_COUNT_DESCRIPTIONS: Record<(typeof CANDIDATE_COUNT_OPTIONS)[number], string> = {
   3: "가장 빠르게 핵심만 훑어보고 싶다면",
   5: "균형 잡힌 개수로 비교하고 싶다면",
   10: "폭넓게 비교하며 직접 고르고 싶다면",
@@ -108,14 +113,15 @@ export default function InputForm({
     return () => clearTimeout(timer);
   }, [surnameHangul]);
 
-  // "같은 사주로 더 추천받기"(CLAUDE.md 0.6) — initialValues(원본 세션의 candidateCount)가
-  // moreAvailableCount보다 크면(예: 원래 10개를 받았는데 이번엔 7개만 남음) 비활성화될 타일이
-  // 기본 선택값이 되지 않도록, 남은 개수 이하의 가장 큰 티어로 보정한다.
+  // "같은 사주로 더 추천받기"(CLAUDE.md 0.6, Phase 20) — 더 추천받기 모드는 1~10개 자유 선택이라
+  // initialValues(원본 세션의 candidateCount, 3/5/10 중 하나)가 이번에 남은 개수보다 크면(예: 원래
+  // 10개를 받았는데 이번엔 7개만 남음) 남은 개수 이하로 그대로 클램프한다 — 더 이상 3/5/10 타일
+  // 중에서 고를 필요가 없다.
   const [candidateCount, setCandidateCount] = useState<CandidateCount>(() => {
     const preferred = initialValues?.candidateCount ?? DEFAULT_CANDIDATE_COUNT;
-    if (moreAvailableCount === undefined || preferred <= moreAvailableCount) return preferred;
-    const eligible = CANDIDATE_COUNT_OPTIONS.filter((count) => count <= moreAvailableCount);
-    return eligible[eligible.length - 1] ?? preferred;
+    if (moreAvailableCount === undefined) return preferred;
+    const maxSelectable = Math.min(MORE_CANDIDATE_COUNT_MAX, moreAvailableCount);
+    return Math.min(preferred, maxSelectable) as CandidateCount;
   });
 
   const [isLunar, setIsLunar] = useState(initialValues?.isLunar ?? false);
@@ -351,59 +357,64 @@ export default function InputForm({
 
         {step === 3 && (
           <div className="flex flex-col gap-2">
-            <p className="mb-1 text-[13px] leading-6 text-text-secondary">
-              {moreAvailableCount !== undefined
-                ? `이미 추천된 이름은 제외하고, 같은 사주로 최대 ${moreAvailableCount}개까지 더 받을 수 있어요.`
-                : "순위 없이 모든 후보를 각자의 강점과 함께 보여드립니다. 원하는 개수를 선택해 주세요."}
-            </p>
-            {CANDIDATE_COUNT_OPTIONS.map((count) => {
-              const disabled = moreAvailableCount !== undefined && count > moreAvailableCount;
-              return (
-              <button
-                key={count}
-                type="button"
-                disabled={disabled}
-                onClick={() => setCandidateCount(count)}
-                className={`flex items-center justify-between rounded-control border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] disabled:cursor-not-allowed disabled:opacity-40 ${
-                  candidateCount === count
-                    ? "border-brand-600 bg-brand-50"
-                    : "border-border bg-surface hover:bg-surface-muted"
-                }`}
-              >
-                <span>
-                  <span className="flex items-baseline gap-2">
-                    <span
-                      className={`block text-[16px] font-semibold ${
-                        candidateCount === count ? "text-brand-800" : "text-text-primary"
-                      }`}
-                    >
-                      {count}개 추천받기
-                    </span>
-                    {isAdmin && count === ADMIN_FREE_TIER_CANDIDATE_COUNT ? (
-                      <span className="text-[13px] font-medium text-brand-600">무료(관리자 테스트)</span>
-                    ) : (
-                      priceByCount?.[count] !== undefined && (
-                        <span className="text-[13px] font-medium text-text-secondary">
-                          {priceByCount[count]!.toLocaleString("ko-KR")}원
-                          <span className="ml-1 text-[11px] font-normal text-text-secondary opacity-80">
-                            (이름당 {Math.round(priceByCount[count]! / count).toLocaleString("ko-KR")}원)
-                          </span>
+            {moreAvailableCount !== undefined ? (
+              <MoreCandidateCountPicker
+                candidateCount={candidateCount}
+                onChange={setCandidateCount}
+                maxSelectable={Math.min(MORE_CANDIDATE_COUNT_MAX, moreAvailableCount)}
+                isAdmin={isAdmin}
+              />
+            ) : (
+              <>
+                <p className="mb-1 text-[13px] leading-6 text-text-secondary">
+                  순위 없이 모든 후보를 각자의 강점과 함께 보여드립니다. 원하는 개수를 선택해 주세요.
+                </p>
+                {CANDIDATE_COUNT_OPTIONS.map((count) => (
+                  <button
+                    key={count}
+                    type="button"
+                    onClick={() => setCandidateCount(count)}
+                    className={`flex items-center justify-between rounded-control border px-4 py-3 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] ${
+                      candidateCount === count
+                        ? "border-brand-600 bg-brand-50"
+                        : "border-border bg-surface hover:bg-surface-muted"
+                    }`}
+                  >
+                    <span>
+                      <span className="flex items-baseline gap-2">
+                        <span
+                          className={`block text-[16px] font-semibold ${
+                            candidateCount === count ? "text-brand-800" : "text-text-primary"
+                          }`}
+                        >
+                          {count}개 추천받기
                         </span>
-                      )
+                        {isAdmin && count === ADMIN_FREE_TIER_CANDIDATE_COUNT ? (
+                          <span className="text-[13px] font-medium text-brand-600">무료(관리자 테스트)</span>
+                        ) : (
+                          priceByCount?.[count] !== undefined && (
+                            <span className="text-[13px] font-medium text-text-secondary">
+                              {priceByCount[count]!.toLocaleString("ko-KR")}원
+                              <span className="ml-1 text-[11px] font-normal text-text-secondary opacity-80">
+                                (이름당 {Math.round(priceByCount[count]! / count).toLocaleString("ko-KR")}원)
+                              </span>
+                            </span>
+                          )
+                        )}
+                      </span>
+                      <span className="mt-0.5 block text-[12px] text-text-secondary">
+                        {CANDIDATE_COUNT_DESCRIPTIONS[count]}
+                      </span>
+                    </span>
+                    {candidateCount === count && (
+                      <span aria-hidden="true" className="text-brand-600">
+                        ✓
+                      </span>
                     )}
-                  </span>
-                  <span className="mt-0.5 block text-[12px] text-text-secondary">
-                    {CANDIDATE_COUNT_DESCRIPTIONS[count]}
-                  </span>
-                </span>
-                {candidateCount === count && (
-                  <span aria-hidden="true" className="text-brand-600">
-                    ✓
-                  </span>
-                )}
-              </button>
-              );
-            })}
+                  </button>
+                ))}
+              </>
+            )}
           </div>
         )}
 
@@ -458,5 +469,66 @@ export default function InputForm({
         </div>
       </div>
     </section>
+  );
+}
+
+// "같은 사주로 더 추천받기"(CLAUDE.md 0.6, Phase 20 2026.8.7) 전용 개수 선택기 — 최초 결제(3/5/10
+// 고정 세트)와 달리 이름 1개당 정액(MORE_CANDIDATE_PRICE_PER_NAME, 1,100원)이라 1~10개 중 원하는
+// 만큼만 스테퍼로 고른다. maxSelectable은 호출부(InputForm)가 MORE_CANDIDATE_COUNT_MAX와 이번
+// 세션의 실제 잔여 개수(moreAvailableCount) 중 작은 값으로 이미 계산해 넘겨준다.
+function MoreCandidateCountPicker({
+  candidateCount,
+  onChange,
+  maxSelectable,
+  isAdmin,
+}: {
+  candidateCount: CandidateCount;
+  onChange: (count: CandidateCount) => void;
+  maxSelectable: number;
+  isAdmin: boolean;
+}) {
+  const price = candidateCount * MORE_CANDIDATE_PRICE_PER_NAME;
+  const isFreeAdminTier = isAdmin && candidateCount === ADMIN_FREE_TIER_CANDIDATE_COUNT;
+
+  return (
+    <div className="flex flex-col gap-4">
+      <p className="text-[13px] leading-6 text-text-secondary">
+        이미 추천된 이름은 제외하고, 이름 1개당 {MORE_CANDIDATE_PRICE_PER_NAME.toLocaleString("ko-KR")}원으로 최대{" "}
+        {maxSelectable}개까지 더 받을 수 있어요.
+      </p>
+
+      <div className="flex items-center justify-center gap-4 rounded-control border border-border bg-surface px-4 py-4">
+        <button
+          type="button"
+          onClick={() => onChange(Math.max(MORE_CANDIDATE_COUNT_MIN, candidateCount - 1) as CandidateCount)}
+          disabled={candidateCount <= MORE_CANDIDATE_COUNT_MIN}
+          aria-label="개수 줄이기"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-control border border-border text-[18px] font-semibold text-text-primary transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
+        >
+          −
+        </button>
+        <span className="min-w-16 text-center text-[24px] font-semibold text-text-primary">{candidateCount}개</span>
+        <button
+          type="button"
+          onClick={() => onChange(Math.min(maxSelectable, candidateCount + 1) as CandidateCount)}
+          disabled={candidateCount >= maxSelectable}
+          aria-label="개수 늘리기"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-control border border-border text-[18px] font-semibold text-text-primary transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
+        >
+          +
+        </button>
+      </div>
+
+      {isFreeAdminTier ? (
+        <p className="text-center text-[14px] font-semibold text-brand-600">무료(관리자 테스트)</p>
+      ) : (
+        <p className="text-center text-[16px] font-semibold text-text-primary">
+          {price.toLocaleString("ko-KR")}원
+          <span className="ml-1.5 text-[12px] font-normal text-text-secondary">
+            (이름당 {MORE_CANDIDATE_PRICE_PER_NAME.toLocaleString("ko-KR")}원)
+          </span>
+        </p>
+      )}
+    </div>
   );
 }

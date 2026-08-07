@@ -28,3 +28,15 @@ export function computeDiscountedAmount(originalAmount: number, discountPercent:
   const discounted = Math.round((originalAmount * (100 - discountPercent)) / 100);
   return Math.max(1000, discounted);
 }
+
+// "같은 사주로 더 추천받기"(CLAUDE.md 0.6, Phase 20 2026.8.7) 전용 가격 정책 — 최초 프리미엄 결제
+// (price_tier, 3/5/10 세트 절대가)와 달리 이름 1개당 정액을 매기고 1~10개를 자유롭게 선택하게
+// 한다. 세트 가격이 아니라 개당 가격인 이유는, 더 추천받기는 이미 한 번 받은 세트의 "나머지"를
+// 채우는 소액 추가 결제라 3/5/10 같은 고정 세트보다 원하는 만큼만 사는 편이 자연스럽기 때문이다.
+export const MORE_CANDIDATE_PRICE_PER_NAME = 1100;
+export const MORE_CANDIDATE_COUNT_MIN = 1;
+export const MORE_CANDIDATE_COUNT_MAX = 10;
+
+export function computeMorePrice(candidateCount: number): number {
+  return candidateCount * MORE_CANDIDATE_PRICE_PER_NAME;
+}
