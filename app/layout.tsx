@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 };
 
 // 다크모드 FOUC 방지: React 하이드레이션 전에 저장된 테마를 <html>에 반영한다.
-// 기본 테마는 다크 — 사용자가 토글로 라이트를 명시적으로 선택한 적이 없으면 항상 다크.
+// 기본 테마는 라이트 — 사용자가 토글로 다크를 명시적으로 선택한 적이 없으면 항상 라이트.
 const THEME_INIT_SCRIPT = `
 (function () {
   try {
     var stored = window.localStorage.getItem('theme');
-    var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
+    var theme = stored === 'light' || stored === 'dark' ? stored : 'light';
     document.documentElement.setAttribute('data-theme', theme);
   } catch (e) {}
 })();
