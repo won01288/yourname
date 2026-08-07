@@ -32,6 +32,7 @@ function rowToPaymentOrder(row: Record<string, unknown>): PaymentOrder {
     status: row.status as PaymentStatus,
     provider: row.provider as string,
     providerOrderId: (row.provider_order_id as string | null) ?? null,
+    payType: (row.pay_type as string | null) ?? null,
     pendingPayload: (row.pending_payload as string | null) ?? null,
     namingResultId: (row.naming_result_id as number | null) ?? null,
     createdAt: row.created_at as string,
@@ -97,13 +98,13 @@ export async function getPaymentOrderById(id: number, userId?: number): Promise<
     userId === undefined
       ? await client.execute({
           sql: `SELECT id, user_id, candidate_count, amount, status, provider, provider_order_id,
-                       pending_payload, naming_result_id, created_at, updated_at
+                       pay_type, pending_payload, naming_result_id, created_at, updated_at
                 FROM payment_order WHERE id = ?`,
           args: [id],
         })
       : await client.execute({
           sql: `SELECT id, user_id, candidate_count, amount, status, provider, provider_order_id,
-                       pending_payload, naming_result_id, created_at, updated_at
+                       pay_type, pending_payload, naming_result_id, created_at, updated_at
                 FROM payment_order WHERE id = ? AND user_id = ?`,
           args: [id, userId],
         });
@@ -153,14 +154,16 @@ export async function setPaymentOrderProviderOrderId(orderId: number, providerOr
 export async function markOrderStatus(
   orderId: number,
   status: Extract<PaymentStatus, "paid" | "canceled" | "failed">,
-  providerOrderId: string | null
+  providerOrderId: string | null,
+  payType: string | null = null
 ): Promise<void> {
   const client = getDbClient();
   await client.execute({
     sql: `UPDATE payment_order
-          SET status = ?, provider_order_id = COALESCE(?, provider_order_id), updated_at = CURRENT_TIMESTAMP
+          SET status = ?, provider_order_id = COALESCE(?, provider_order_id),
+              pay_type = COALESCE(?, pay_type), updated_at = CURRENT_TIMESTAMP
           WHERE id = ? AND status = 'pending'`,
-    args: [status, providerOrderId, orderId],
+    args: [status, providerOrderId, payType, orderId],
   });
 }
 
@@ -211,7 +214,7 @@ export async function listAllPaymentOrdersForAdmin(): Promise<PaymentOrder[]> {
   const client = getDbClient();
   const result = await client.execute(
     `SELECT id, user_id, candidate_count, amount, status, provider, provider_order_id,
-            pending_payload, naming_result_id, created_at, updated_at
+            pay_type, pending_payload, naming_result_id, created_at, updated_at
      FROM payment_order ORDER BY created_at DESC`
   );
   return result.rows.map((row) => rowToPaymentOrder(row as unknown as Record<string, unknown>));

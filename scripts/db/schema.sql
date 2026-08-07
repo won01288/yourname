@@ -159,6 +159,9 @@ CREATE TABLE IF NOT EXISTS payment_order (
     CHECK (status IN ('pending', 'paid', 'consumed', 'canceled', 'failed')),
   provider TEXT NOT NULL DEFAULT 'payapp',
   provider_order_id TEXT,            -- 페이앱 mul_no 등 PG사 측 주문번호(웹훅 수신 후 채워짐)
+  pay_type TEXT,                     -- 실제 사용된 결제수단(card/applepay/payco/vbank/phone 등,
+                                      -- 웹훅 pay_type+paymethod_group을 정규화). 관리자 가시성 전용,
+                                      -- 결제/주문 상태 판정에는 쓰이지 않는다(2026.8.7).
   pending_payload TEXT,              -- 결제 시작 시점의 NameRequestPayload(JSON) 스냅샷. 모바일
                                       -- 풀리다이렉트(카카오페이 등 앱 전환)로 복귀할 때 브라우저
                                       -- 탭/컨텍스트가 바뀌어 sessionStorage가 유실될 수 있어, 서버가

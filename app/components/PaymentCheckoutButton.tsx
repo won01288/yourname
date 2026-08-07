@@ -235,6 +235,8 @@ export default function PaymentCheckoutButton({ candidateCount, payload, onPaid,
       {status === "timeout" && (
         <p className="text-[12px] leading-5 text-[var(--status-alert)]">
           결제 확인이 지연되고 있습니다. 결제를 완료하셨다면 페이지를 새로고침해 확인해 주세요.
+          가상계좌를 선택하신 경우 입금 완료까지 시간이 걸려 자동으로 반영되지 않을 수 있습니다 —
+          입금 후 잠시 뒤 다시 접속해 확인해 주세요.
         </p>
       )}
       {status === "error" && errorMessage && (

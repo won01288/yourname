@@ -12,9 +12,14 @@
 
 import type { CancelResult, CheckoutContext, CheckoutSession, PaymentProvider, WebhookResult } from "./provider";
 
-// CLAUDE.md 0.4 — 삼성페이는 페이앱 웹 결제(JS/REST) openpaytype에 없다(오프라인 대면결제 APP
-// SDK 전용). 카드/카카오페이/네이버페이 3종만 지원한다.
-const OPEN_PAY_TYPE = "card,kakaopay,naverpay";
+// CLAUDE.md 0.4 (2026.8.7 갱신) — 페이앱 담당자로부터 "카카오페이·네이버페이는 우리 서비스에서
+// 지원 불가"라는 통보를 받아 제거하고, 대신 애플페이·페이코·가상계좌·휴대폰결제를 추가했다.
+// 삼성페이는 여전히 불가능하다 — 페이앱 웹 결제(JS SDK/REST) openpaytype 자체에 옵션이 없고
+// 오프라인 대면결제 전용 APP SDK에서만 제공된다(페이앱 개발자센터 문서로 재확인). 카카오페이/
+// 네이버페이가 막힌 것도 이 코드가 아니라 페이앱 판매자 관리자센터 설정/계약 문제일 가능성이
+// 높으므로, 여기서 openpaytype에 값을 넣어도 "판매자 결제 설정의 값이 우선"이라 실제 노출은
+// 판매자 설정에서 별도 확인이 필요하다(6장 참고).
+const OPEN_PAY_TYPE = "card,applepay,payco,vbank,phone";
 
 // pay_state 코드 → 우리 쪽 상태. 페이앱 문서: 1=요청(최초 접수, 미완료), 4=결제완료, 8/32=요청취소,
 // 9/64=승인취소, 그 외(10=결제대기, 70/71=부분취소 등)는 이번 범위에서 다루지 않고 무시한다.
@@ -24,6 +29,34 @@ const OPEN_PAY_TYPE = "card,kakaopay,naverpay";
 const REQUESTED_STATES = new Set(["1"]);
 const PAID_STATES = new Set(["4"]);
 const CANCELED_STATES = new Set(["8", "32", "9", "64"]);
+
+// pay_type(정수 코드, 페이앱 개발자센터 문서 기준) → 우리 쪽 openpaytype 값과 동일한 표기로 정규화.
+// 현재 openpaytype에 없는 값(kakaopay/naverpay 등)도 매핑에 남겨둔다 — 판매자 설정이 코드와
+// 별개로 다른 값을 허용할 가능성에 대한 방어적 처리이며, PG사 고유 코드는 이 파일 밖으로 새지
+// 않는다. 페이코는 pay_type=1(카드)로 오되 paymethod_group=35로만 구분되는 특이 케이스라 별도 처리.
+const PAY_TYPE_LABELS: Record<string, string> = {
+  "1": "card",
+  "2": "phone",
+  "4": "offline",
+  "6": "rbank",
+  "7": "vbank",
+  "15": "kakaopay",
+  "16": "naverpay",
+  "17": "registered",
+  "21": "smilepay",
+  "22": "wechat",
+  "23": "applepay",
+  "24": "myaccount",
+  "25": "tosspay",
+  "26": "dvpay",
+};
+const PAYCO_METHOD_GROUP = "35";
+
+function normalizePayType(form: Record<string, string>): string | null {
+  if (!form.pay_type) return null;
+  if (form.pay_type === "1" && form.paymethod_group === PAYCO_METHOD_GROUP) return "payco";
+  return PAY_TYPE_LABELS[form.pay_type] ?? form.pay_type;
+}
 
 const PAYAPP_API_URL = "https://api.payapp.kr/oapi/apiLoad.html";
 
@@ -76,6 +109,7 @@ function parseWebhook(form: Record<string, string>): WebhookResult {
     providerOrderId,
     status,
     amount: amount !== null && !Number.isNaN(amount) ? amount : null,
+    payType: normalizePayType(form),
   };
 }
 

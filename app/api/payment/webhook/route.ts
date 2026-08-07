@@ -38,7 +38,7 @@ export async function POST(request: Request) {
   }
 
   if (result.status === "paid" || result.status === "canceled" || result.status === "failed") {
-    await markOrderStatus(result.orderId, result.status, result.providerOrderId);
+    await markOrderStatus(result.orderId, result.status, result.providerOrderId, result.payType);
   } else if (result.status === "requested" && result.providerOrderId) {
     // 아직 결제 완료 전 — 상태는 바꾸지 않고 mul_no만 미리 저장해, 결제 확인 화면에서 사용자가
     // 취소를 누르면 이 값으로 요청취소(paycancel)를 호출할 수 있게 한다.

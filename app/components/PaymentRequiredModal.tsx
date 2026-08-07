@@ -32,7 +32,7 @@ export default function PaymentRequiredModal({
       <div className="w-full max-w-sm rounded-card border border-border bg-[var(--glass-bg)] p-6 shadow-[var(--shadow-elevated)] backdrop-blur-[var(--glass-blur)] sm:p-8">
         <h2 className="mb-2 text-[16px] font-semibold text-text-primary">결제가 필요한 서비스입니다</h2>
         <p className="mb-4 text-[13px] leading-6 text-text-secondary">
-          {candidateCount}개 추천 결과를 생성하려면 결제가 필요합니다. 카드·카카오페이·네이버페이로 결제할 수 있습니다.
+          {candidateCount}개 추천 결과를 생성하려면 결제가 필요합니다. 카드·애플페이·페이코·가상계좌·휴대폰결제로 결제할 수 있습니다.
         </p>
         {amount !== null && (
           <p className="mb-6 text-[22px] font-semibold text-text-primary">{amount.toLocaleString("ko-KR")}원</p>

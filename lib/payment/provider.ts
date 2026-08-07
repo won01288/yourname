@@ -32,6 +32,10 @@ export interface WebhookResult {
    *  중간 취소(cancelPendingRequest)를 가능하게 하는 용도로만 쓴다 — 주문 status는 바꾸지 않는다. */
   status: "requested" | "paid" | "canceled" | "failed" | "ignored";
   amount: number | null;
+  /** 실제 사용된 결제수단(정규화된 문자열, 예: "card"/"applepay"/"payco"/"vbank"/"phone").
+   *  PG사가 이번 통보에서 결제수단을 알려주지 않았거나 인식 못한 값이면 null(관리자 가시성 전용,
+   *  주문 상태 판정에는 쓰이지 않는다). */
+  payType: string | null;
 }
 
 export interface CancelResult {

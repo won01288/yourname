@@ -26,6 +26,24 @@ const PAYMENT_STATUS_LABEL: Record<PaymentStatus, string> = {
   failed: "실패",
 };
 
+// 웹훅 pay_type 정규화 값(lib/payment/payapp.ts normalizePayType) → 표시용 한글 라벨.
+// 목록에 없는 값은 원본 문자열을 그대로 보여준다(2026.8.7).
+const PAYMENT_TYPE_LABEL: Record<string, string> = {
+  card: "카드",
+  applepay: "애플페이",
+  payco: "페이코",
+  vbank: "가상계좌",
+  phone: "휴대폰결제",
+  kakaopay: "카카오페이",
+  naverpay: "네이버페이",
+  rbank: "계좌이체",
+  smilepay: "스마일페이",
+  wechat: "위챗페이",
+  myaccount: "내통장결제",
+  tosspay: "토스페이",
+  dvpay: "나나결제",
+};
+
 // 결제 자체가 확정된(웹훅으로 돈이 실제로 들어온) 상태만 "결제한 금액" 합계에 포함한다.
 // consumed는 그 결제로 생성까지 마쳤다는 뜻일 뿐 여전히 결제완료 상태다.
 const PAID_STATUSES: PaymentStatus[] = ["paid", "consumed"];
@@ -203,6 +221,9 @@ export default async function AdminUsersPage() {
                             {order.candidateCount}개 추천 · {formatAmount(order.amount)}
                           </span>
                           <span className="text-text-secondary">{PAYMENT_STATUS_LABEL[order.status]}</span>
+                          {order.payType && (
+                            <span className="text-text-secondary">{PAYMENT_TYPE_LABEL[order.payType] ?? order.payType}</span>
+                          )}
                           <span className="text-text-secondary">{order.provider}</span>
                           <span className="text-text-secondary">{formatDateTime(order.createdAt)}</span>
                         </li>
