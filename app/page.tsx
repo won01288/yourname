@@ -1,5 +1,7 @@
 import Link from "next/link";
 import LandingHero from "./components/LandingHero";
+import TrustSection from "./components/TrustSection";
+import HowItWorksSection from "./components/HowItWorksSection";
 import ServiceCards from "./components/ServiceCards";
 import { getCurrentUser } from "@/lib/auth";
 
@@ -13,6 +15,8 @@ export default async function Home() {
   return (
     <main className="flex flex-1 flex-col">
       <LandingHero />
+      <TrustSection />
+      <HowItWorksSection />
       <ServiceCards />
       {user && (
         <section className="mx-auto -mt-16 w-full max-w-3xl px-6 pb-24 text-center">

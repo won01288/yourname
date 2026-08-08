@@ -83,7 +83,14 @@ export default function ScoreDashboard({ data, onRestart, restartLabel, searchPa
         <p className="text-[13px] font-medium text-text-secondary">{surname.hanja}{hanjaText} ({surname.hangul}{hangulText})</p>
         <div className="mt-2 flex items-center justify-center gap-3">
           <span className="text-[56px] font-bold leading-none text-text-primary">{score.totalScore}</span>
-          <span className="rounded-pill bg-brand-50 px-3 py-1 text-[18px] font-bold text-brand-800">{score.grade}</span>
+          {/* design.md 1.3.1/4장 — S등급은 최상위 성취라는 정보를 골드로 인코딩(장식이 아니라 표시). */}
+          <span
+            className={`rounded-pill px-3 py-1 text-[18px] font-bold ${
+              score.grade === "S" ? "bg-[var(--gold)] text-[var(--on-gold)]" : "bg-brand-50 text-brand-800"
+            }`}
+          >
+            {score.grade}
+          </span>
         </div>
         <p className="mt-3 text-[14px] text-text-secondary">{GRADE_DESCRIPTION[score.grade]}</p>
 

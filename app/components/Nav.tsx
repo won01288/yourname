@@ -17,12 +17,11 @@ export default async function Nav() {
           href="/"
           className="flex shrink-0 items-center gap-2 rounded-control text-[17px] font-semibold tracking-tight text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-400)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]"
         >
-          <svg width="26" height="26" viewBox="-30 -30 60 60" aria-hidden="true" className="shrink-0">
-            <circle cx="0" cy="0" r="30" fill="none" stroke="var(--brand-600)" strokeWidth="2.5" />
-            <path
-              d="M 12 -19 A 23 23 0 1 0 12 19 A 17.5 17.5 0 1 1 12 -19 Z"
-              fill="var(--brand-600)"
-            />
+          {/* design.md 3.9 — "이름에 도장을 찍다"를 상징하는 도장(印) 모티프 로고. 원형 링에서
+              살짝 회전한 사각 인장으로 교체(2026.8.7). */}
+          <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" className="shrink-0 -rotate-6">
+            <rect x="1.5" y="1.5" width="23" height="23" rx="6" fill="var(--brand-600)" />
+            <rect x="6" y="6" width="14" height="14" rx="2.5" fill="none" stroke="var(--bg-page)" strokeWidth="1.4" />
           </svg>
           {/* 좁은 화면(360px대)에서 워드마크+링크 2개+토글이 한 줄에 빡빡해지지 않도록,
               가장 덜 중요한 워드마크 텍스트부터 숨긴다. 대신 아이콘 자체를 키워(20→26px) 텍스트가

@@ -51,7 +51,14 @@ function ServiceCard({ href, badge, badgeTone, title, description, cta, icon, se
         badgeTone === "premium" ? "border-brand-600" : "border-border"
       }`}
     >
-      <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-brand-400 to-brand-600" />
+      {/* design.md 1.3.1/4장 — 프리미엄 카드는 골드 헤어라인으로 재질 구분(색 대결이 아니라 재질 구분). */}
+      <div
+        className={`absolute inset-x-0 top-0 h-[3px] ${
+          badgeTone === "premium"
+            ? "bg-gradient-to-r from-[var(--gold-deep)] via-[var(--gold)] to-[var(--gold-deep)]"
+            : "bg-gradient-to-r from-brand-400 to-brand-600"
+        }`}
+      />
 
       <div className="flex items-start justify-between">
         <ServiceIcon icon={icon} badgeTone={badgeTone} />
@@ -97,29 +104,50 @@ function ServiceCard({ href, badge, badgeTone, title, description, cta, icon, se
   );
 }
 
+// design.md 3.9 — 서비스 카드 섹션은 브랜드 컬러 radial 글로우 배경 위에 배치해 랜딩의
+// 컬러 블로킹 리듬을 만든다(평면 단색 블록이 아니라 3.6 앰비언트 글로우 방식의 확장).
 export default function ServiceCards() {
   return (
-    <section className="mx-auto grid w-full max-w-3xl grid-cols-1 gap-5 px-6 pb-24 sm:grid-cols-2">
-      <ServiceCard
-        href="/score"
-        badge="무료"
-        badgeTone="free"
-        icon="score"
-        title="이름 점수 확인하기"
-        description="이미 지어진 이름의 한자를 입력하면, 발음오행·수리사격·자원오행·음양 배열을 계산해 점수와 근거를 바로 알려드립니다."
-        cta="점수 확인하기"
+    <section className="relative overflow-hidden py-16 sm:py-20">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(60% 55% at 20% 15%, color-mix(in srgb, var(--brand-600) 16%, transparent), transparent 72%), radial-gradient(50% 50% at 85% 85%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 74%)",
+        }}
       />
-      <ServiceCard
-        href="/naming"
-        badge="프리미엄"
-        badgeTone="premium"
-        icon="naming"
-        title="프리미엄 작명"
-        description="생년월일시로 사주를 분석해 용신을 도출하고, 조건에 맞는 이름 후보와 전문가 수준의 상세 해설 리포트를 받아보세요."
-        cta="작명 시작하기"
-        secondaryHref="/naming/about"
-        secondaryCta="상품 안내"
-      />
+      <div className="mx-auto w-full max-w-3xl px-6 text-center sm:text-left">
+        <p className="flex items-center justify-center gap-2 text-[12.5px] font-bold tracking-wide text-brand-600 sm:justify-start">
+          <span aria-hidden="true" className="h-[2px] w-[18px] bg-brand-600" />
+          서비스 선택
+        </p>
+        <h2 className="mt-3 text-[28px] font-extrabold leading-tight tracking-tight text-text-primary sm:text-[36px]">
+          지금 필요한 만큼만 시작하세요
+        </h2>
+      </div>
+      <div className="mx-auto mt-8 grid w-full max-w-3xl grid-cols-1 gap-5 px-6 sm:grid-cols-2">
+        <ServiceCard
+          href="/score"
+          badge="무료"
+          badgeTone="free"
+          icon="score"
+          title="이름 점수 확인하기"
+          description="이미 지어진 이름의 한자를 입력하면, 발음오행·수리사격·자원오행·음양 배열을 계산해 점수와 근거를 바로 알려드립니다."
+          cta="점수 확인하기"
+        />
+        <ServiceCard
+          href="/naming"
+          badge="프리미엄"
+          badgeTone="premium"
+          icon="naming"
+          title="프리미엄 작명"
+          description="생년월일시로 사주를 분석해 용신을 도출하고, 조건에 맞는 이름 후보와 전문가 수준의 상세 해설 리포트를 받아보세요."
+          cta="작명 시작하기"
+          secondaryHref="/naming/about"
+          secondaryCta="상품 안내"
+        />
+      </div>
     </section>
   );
 }
